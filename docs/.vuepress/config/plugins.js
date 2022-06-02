@@ -1,14 +1,14 @@
 const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
 const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 const { searchPlugin } = require('@vuepress/plugin-search')
-const { prismjsPlugin } = require('@vuepress/plugin-prismjs')
 
 module.exports = [
   googleAnalyticsPlugin({
     id: 'G-7Q9JVXXQBW'
   }),
   mediumZoomPlugin({
-    selector: '.theme-container img:not(.no-zoom)'
+    // <a> 标签以外的所有图片不包括.no-zoom都支持缩放
+    selector: ':not(a) > img:not(.no-zoom)'
   }),
   searchPlugin({
     maxSuggestions: 20,

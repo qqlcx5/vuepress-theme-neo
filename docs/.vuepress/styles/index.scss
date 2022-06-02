@@ -1,0 +1,8 @@
+// index.styl，它的工作是重写应用的默认样式。
+// 根据 CSS 的优先级原则，后一种样式具有更高的优先级，因此应该在 CSS 文件的末尾生成。
+
+// 滚动条样式
+::-webkit-scrollbar-thumb {
+  background-color: #49b1f5 !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent) !important;
+}

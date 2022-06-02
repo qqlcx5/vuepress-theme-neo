@@ -53,4 +53,4 @@ tags:
 
 一起学习和技术交流，请添加我微信，我会直接将你拉进前端有道交流群。合作意向，请表明来意。
 
-<img src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "300" height = "300" alt="wechat" />
+<img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "300" height = "300" alt="wechat" />
