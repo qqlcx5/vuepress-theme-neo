@@ -1,18 +1,14 @@
-const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
 const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
 const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
-const { nprogressPlugin } = require('@vuepress/plugin-nprogress')
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { prismjsPlugin } = require('@vuepress/plugin-prismjs')
 
 module.exports = [
-  backToTopPlugin(),
-  nprogressPlugin(),
   googleAnalyticsPlugin({
-    id: 'G-XXXXXXXXXX'
+    id: 'G-7Q9JVXXQBW'
   }),
   mediumZoomPlugin({
-    selector: '.theme-container img:not(.logo)'
+    selector: '.theme-container img:not(.no-zoom)'
   }),
   searchPlugin({
     maxSuggestions: 20,
@@ -21,5 +17,4 @@ module.exports = [
     // 允许搜索 Frontmatter 中的 `tags` `categories`
     getExtraFields: page => (page.frontmatter.tags || page.frontmatter.categories) ?? []
   }),
-  prismjsPlugin({})
 ]
