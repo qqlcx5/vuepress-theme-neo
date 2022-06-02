@@ -1,7 +1,12 @@
-import { defineUserConfig } from 'vuepress'
+const head = require('./config/head')
+const plugins = require('./config/plugins')
+const theme = require('./config/theme')
 
-export default defineUserConfig({
+module.exports = {
   lang: 'zh-CN',
-  title: '你好， VuePress ！',
-  description: '这是我的第一个 VuePress 站点',
-})
+  title: '前端有道',
+  description: '前端有道,技术博客,前端,前端开发,前端博客,前端框架,web前端,前端面试,技术文档,学习,面试,JavaScript,js,es6,typeScript,ts,vue,python,css3,html5,node,git,github,markdown,vuepress,react',
+  head,
+  theme,
+  plugins,
+}
