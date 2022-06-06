@@ -2,24 +2,17 @@ const { defaultTheme } = require('@vuepress/theme-default')
 const navbar = require('./theme/navbar')
 // const sidebar = require('./theme/sidebar')
 
-const path = require('path') // 路径模块
-const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
-const setFrontmatter = require('../utils/setFrontmatter')
-const getSidebarData = require('../utils/getSidebarData')
+// const path = require('path') // 路径模块
+// const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
+// const setFrontmatter = require('../utils/setFrontmatter')
+// const getSidebarData = require('../utils/getSidebarData')
 
-setFrontmatter(sourceDir, {})
-const sidebarData = getSidebarData(sourceDir, (collapsable = true))
-console.log('sidebarData-------', JSON.stringify(sidebarData))
+// setFrontmatter(sourceDir, {})
+// const sidebarData = getSidebarData(sourceDir, (collapsable = true))
+// console.log('sidebarData-------', JSON.stringify(sidebarData))
 module.exports = defaultTheme({
   navbar, // 导航栏配置
-  sidebar: {
-    '/pages/': [
-      {
-        text: 'VuePress Reference',
-        children: ['/02.component/08.Vue Popover组件开发.md', 'sss', '/pages/6f932c/']
-      }
-    ]
-  }, // 侧边栏配置
+  sidebar, // 侧边栏配置
   logo: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.ico', // 导航栏logo
   docsDir: 'docs',
   docsBranch: 'master',
