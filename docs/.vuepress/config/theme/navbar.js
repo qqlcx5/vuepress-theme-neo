@@ -9,6 +9,6 @@ module.exports = [
   },
   {
     text: '组件',
-    link: '/component/'
+    link: '02.component/pages/8ea1aa/'
   }
 ]

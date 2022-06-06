@@ -1,6 +1,12 @@
 const { defaultTheme } = require('@vuepress/theme-default')
-const navbar = require('./navbar')
-const sidebar = require('./sidebar')
+const navbar = require('./theme/navbar')
+const sidebar = require('./theme/sidebar')
+
+const path = require('path') // 路径模块
+const docsRoot = path.join(__dirname, '..', '..') // docs相对路径
+const setFrontmatter = require("../utils/setFrontmatter")
+
+setFrontmatter(docsRoot, {})
 module.exports = defaultTheme({
   navbar, // 导航栏配置
   sidebar, // 侧边栏配置
