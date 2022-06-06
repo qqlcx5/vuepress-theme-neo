@@ -5,10 +5,10 @@ module.exports = [
   },
   {
     text: '指南',
-    link: '/guide/'
+    link: '/pages/07b5aa/'
   },
   {
     text: '组件',
-    link: '02.component/pages/8ea1aa/'
+    link: '/pages/8a68ce/'
   }
 ]
