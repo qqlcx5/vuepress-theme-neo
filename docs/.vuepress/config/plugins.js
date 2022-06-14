@@ -6,8 +6,8 @@ module.exports = [
   googleAnalyticsPlugin({
     id: 'G-7Q9JVXXQBW'
   }),
+  // <a> 标签以外的所有图片不包括.no-zoom都支持缩放
   mediumZoomPlugin({
-    // <a> 标签以外的所有图片不包括.no-zoom都支持缩放
     selector: ':not(a) > img:not(.no-zoom)'
   }),
   searchPlugin({
