@@ -8,7 +8,11 @@ module.exports = [
     link: '/pages/07b5aa/'
   },
   {
-    text: '组件',
-    link: '/pages/8a68ce/'
+    text: '组件库',
+    link: '/02.component/01.手写el-form表单组件.md'
+  },
+  {
+    text: '工具函数',
+    link: '/utils/Array/chunk转换二维数组.md'
   }
 ]
