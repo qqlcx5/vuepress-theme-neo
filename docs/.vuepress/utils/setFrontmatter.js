@@ -60,9 +60,9 @@ function setFrontmatter(sourceDir, themeConfig) {
 // permalink: ${getPermalink()}${file.filePath.indexOf('_posts') > -1 ? os.EOL + 'sidebar: auto' : ''}${cateStr}${tagsStr}
 // ${extendFrontmatterStr}---`;
     const fmData = `---
-    title: ${file.name}
-    date: ${dateStr}
-    ---`;
+title: ${file.name}
+date: ${dateStr}
+---`;
       fs.writeFileSync(file.filePath, `${fmData}${os.EOL}${fileMatterObj.content}`); // 写入
       log(chalk.blue('tip ') + chalk.green(`write frontmatter(写入frontmatter)：${file.filePath} `))
 
