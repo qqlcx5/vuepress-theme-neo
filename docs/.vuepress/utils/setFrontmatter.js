@@ -34,32 +34,35 @@ function setFrontmatter(sourceDir, themeConfig) {
       const dateStr = dateFormat(
         getBirthtime(stat)
       ); // 文件的创建时间
-      const categories = getCategories(
-        file,
-        categoryText
-      );
+    //   const categories = getCategories(
+    //     file,
+    //     categoryText
+    //   );
 
-      let cateLabelStr = '';
-      categories.forEach(item => {
-        cateLabelStr += os.EOL + '  - ' + item
-      });
+    //   let cateLabelStr = '';
+    //   categories.forEach(item => {
+    //     cateLabelStr += os.EOL + '  - ' + item
+    //   });
 
-      let cateStr = '';
-      if (!(isCategory === false)) {
-        cateStr = os.EOL + 'categories:' + cateLabelStr
-      };
+    //   let cateStr = '';
+    //   if (!(isCategory === false)) {
+    //     cateStr = os.EOL + 'categories:' + cateLabelStr
+    //   };
 
       // 注意下面这些反引号字符串的格式会映射到文件
-      const tagsStr = isTag === false ? '' : `
-tags:
-  - `;
+//       const tagsStr = isTag === false ? '' : `
+// tags:
+//   - `;
 
-      const fmData = `---
-title: ${file.name}
-date: ${dateStr}
-permalink: ${getPermalink()}${file.filePath.indexOf('_posts') > -1 ? os.EOL + 'sidebar: auto' : ''}${cateStr}${tagsStr}
-${extendFrontmatterStr}---`;
-
+//       const fmData = `---
+// title: ${file.name}
+// date: ${dateStr}
+// permalink: ${getPermalink()}${file.filePath.indexOf('_posts') > -1 ? os.EOL + 'sidebar: auto' : ''}${cateStr}${tagsStr}
+// ${extendFrontmatterStr}---`;
+    const fmData = `---
+    title: ${file.name}
+    date: ${dateStr}
+    ---`;
       fs.writeFileSync(file.filePath, `${fmData}${os.EOL}${fileMatterObj.content}`); // 写入
       log(chalk.blue('tip ') + chalk.green(`write frontmatter(写入frontmatter)：${file.filePath} `))
 
