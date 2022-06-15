@@ -2,12 +2,12 @@ const { defaultTheme } = require('@vuepress/theme-default')
 const navbar = require('./themes/navbar')
 const sidebar = require('./themes/sidebar')
 
-const path = require('path') // 路径模块
-const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
-const setFrontmatter = require('../utils/setFrontmatter')
-const getSidebarData = require('../utils/getSidebarData')
+// const path = require('path') // 路径模块
+// const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
+// const setFrontmatter = require('../utils/setFrontmatter')
+// const getSidebarData = require('../utils/getSidebarData')
 
-setFrontmatter(sourceDir, {})
+// setFrontmatter(sourceDir, {})
 // const sidebarData = getSidebarData(sourceDir, (collapsable = true))
 // console.log('sidebarData-------', JSON.stringify(sidebarData))
 module.exports = defaultTheme({
