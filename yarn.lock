@@ -66,9 +66,9 @@
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
 "@types/node@*":
-  version "17.0.42"
-  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.42.tgz#d7e8f22700efc94d125103075c074396b5f41f9b"
-  integrity sha512-Q5BPGyGKcvQgAMbsr7qEGN/kIPN6zZecYYABeTDBizOsau+2NMdSVTar9UQw21A2+JyA2KRNDYaYrPB0Rpk2oQ==
+  version "17.0.43"
+  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.43.tgz#7f16898cdd791c9d64069000ad448b47b3ca8353"
+  integrity sha512-jnUpgw8fL9kP2iszfIDyBQtw5Mf4/XSqy0Loc1J9pI14ejL83XcCEvSf50Gs/4ET0I9VCCDoOfufQysj0S66xA==
 
 "@vitejs/plugin-vue@^2.3.3":
   version "2.3.3"
@@ -294,7 +294,7 @@
     "@vuepress/utils" "2.0.0-beta.48"
     execa "^5.1.1"
 
-"@vuepress/plugin-google-analytics@^2.0.0-beta.46":
+"@vuepress/plugin-google-analytics@^2.0.0-beta.48":
   version "2.0.0-beta.48"
   resolved "https://registry.npmjs.org/@vuepress/plugin-google-analytics/-/plugin-google-analytics-2.0.0-beta.48.tgz#76a8571abe77eed5efeeb84e80dfb58112392f81"
   integrity sha512-MuEOdu7xX+0cisozoO6quaqNcqtiwleFXZs55Vj7386DFpnsTsdZ//OkSeWwvhwnFNWC5r255OHq3N9CIpjxAA==
@@ -342,7 +342,7 @@
     "@vuepress/core" "2.0.0-beta.48"
     prismjs "^1.28.0"
 
-"@vuepress/plugin-search@^2.0.0-beta.46":
+"@vuepress/plugin-search@^2.0.0-beta.48":
   version "2.0.0-beta.48"
   resolved "https://registry.npmjs.org/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.48.tgz#0bd99542148b430d580d920a318e203541cbdf2c"
   integrity sha512-1ADG3Zw6CBwERiW5l3spoONrHT6pcOGzlEiOhjAEYcOv7edzaoGQTahpgGvCXiXY5b11Z9bsr13NgCgr0YMGIQ==
@@ -535,9 +535,9 @@ cac@^6.7.12:
   integrity sha512-rM7E2ygtMkJqD9c7WnFU6fruFcN3xe4FM5yUmgxhZzIKJk4uHl9U/fhwdajGFQbQuv43FAUo1Fe8gX/oIKDeSA==
 
 caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001349:
-  version "1.0.30001352"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001352.tgz#cc6f5da3f983979ad1e2cdbae0505dccaa7c6a12"
-  integrity sha512-GUgH8w6YergqPQDGWhJGt8GDRnY0L/iJVQcU3eJ46GYf52R8tk0Wxp0PymuFVZboJYXGiCqwozAYZNRjVj6IcA==
+  version "1.0.30001354"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001354.tgz#95c5efdb64148bb4870771749b9a619304755ce5"
+  integrity sha512-mImKeCkyGDAHNywYFA4bqnLAzTUvVkqPvhY4DV47X+Gl2c5Z8c3KNETnXp14GQt11LvxE8AwjzGxJ+rsikiOzg==
 
 chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
@@ -632,9 +632,9 @@ dir-glob@^3.0.1:
     path-type "^4.0.0"
 
 electron-to-chromium@^1.4.147:
-  version "1.4.154"
-  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.154.tgz#d69c60499fc467a6c59591d29183e520afbc78a1"
-  integrity sha512-GbV9djOkrnj6xmW+YYVVEI3VCQnJ0pnSTu7TW2JyjKd5cakoiSaG5R4RbEtfaD92GsY10DzbU3GYRe+IOA9kqA==
+  version "1.4.156"
+  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.156.tgz#fc398e1bfbe586135351ebfaf198473a82923af5"
+  integrity sha512-/Wj5NC7E0wHaMCdqxWz9B0lv7CcycDTiHyXCtbbu3pXM9TV2AOp8BtMqkVuqvJNdEvltBG6LxT2Q+BxY4LUCIA==
 
 entities@~3.0.1:
   version "3.0.1"
