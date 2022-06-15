@@ -1,3 +1,7 @@
+---
+title: typeFn类型判断
+date: 2022-06-15 17:20:46
+---
 # `typeFn`类型判断
 
 判断是否是 `Array` `Object` `String` `Number`类型

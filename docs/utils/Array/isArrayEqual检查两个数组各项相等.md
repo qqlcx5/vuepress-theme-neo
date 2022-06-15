@@ -1,3 +1,7 @@
+---
+title: isArrayEqual检查两个数组各项相等
+date: 2022-06-15 17:20:46
+---
 # `isArrayEqual`检查两个数组各项相等
 
 比较两个数组内的各项值是否相等，返回一个`Boolean`值

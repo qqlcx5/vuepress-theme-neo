@@ -1,3 +1,7 @@
+---
+title: intersection数组交集
+date: 2022-06-15 17:20:46
+---
 # `intersection`数组集合
 
 创建一个共有的`array`值的数组，每个值包含在其他给定的数组中。

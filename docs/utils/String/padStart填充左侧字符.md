@@ -1,3 +1,7 @@
+---
+title: padStart填充左侧字符
+date: 2022-06-15 17:20:46
+---
 # padStart填充左侧字符
 
 如果`string`字符串长度小于 `length` 则在左侧填充字符。 如果超出`length`长度则截断超出的部分。

@@ -3,8 +3,6 @@
  */
 const fs = require('fs') // 文件模块
 const path = require('path') // 路径模块
-const chalk = require('chalk') // 命令行打印美化
-const log = console.log
 
 function readFile(dir, collapsible = false,  filesList = [], fpath = '') {
   const files = fs.readdirSync(dir)

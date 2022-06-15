@@ -1,3 +1,7 @@
+---
+title: flattenDeep指定层级扁平化数组
+date: 2022-06-15 17:20:46
+---
 # `flattenDeep`指定层级扁平化数组
 
 将多层嵌套数组（array）拆分成指定层级数组.

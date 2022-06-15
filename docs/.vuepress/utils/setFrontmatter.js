@@ -82,26 +82,26 @@ date: ${dateStr}
         hasChange = true;
       }
 
-      if (!matterData.hasOwnProperty('permalink')) { // 永久链接
-        matterData.permalink = getPermalink();
-        hasChange = true;
-      }
+    //   if (!matterData.hasOwnProperty('permalink')) { // 永久链接
+    //     matterData.permalink = getPermalink();
+    //     hasChange = true;
+    //   }
 
-      if (file.filePath.indexOf('_posts') > -1 && !matterData.hasOwnProperty('sidebar')) { // auto侧边栏，_posts文件夹特有
-        matterData.sidebar = "auto";
-        hasChange = true;
-      }
+    //   if (file.filePath.indexOf('_posts') > -1 && !matterData.hasOwnProperty('sidebar')) { // auto侧边栏，_posts文件夹特有
+    //     matterData.sidebar = "auto";
+    //     hasChange = true;
+    //   }
 
-      if (!matterData.hasOwnProperty('pageComponent') && matterData.article !== false) { // 是文章页才添加分类和标签
-        if (isCategory !== false && !matterData.hasOwnProperty('categories')) { // 分类
-          matterData.categories = getCategories(file, categoryText)
-          hasChange = true;
-        }
-        if (isTag !== false && !matterData.hasOwnProperty('tags')) { // 标签
-          matterData.tags = [''];
-          hasChange = true;
-        }
-      }
+    //   if (!matterData.hasOwnProperty('pageComponent') && matterData.article !== false) { // 是文章页才添加分类和标签
+    //     if (isCategory !== false && !matterData.hasOwnProperty('categories')) { // 分类
+    //       matterData.categories = getCategories(file, categoryText)
+    //       hasChange = true;
+    //     }
+    //     if (isTag !== false && !matterData.hasOwnProperty('tags')) { // 标签
+    //       matterData.tags = [''];
+    //       hasChange = true;
+    //     }
+    //   }
 
       // 扩展自动生成frontmatter的字段
       if (type(extendFrontmatter) === 'object') {

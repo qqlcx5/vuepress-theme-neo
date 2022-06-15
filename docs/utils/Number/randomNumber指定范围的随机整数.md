@@ -1,3 +1,7 @@
+---
+title: randomNumber指定范围的随机整数
+date: 2022-06-15 17:20:46
+---
 # `randomNumber`指定范围的随机整数
 
 ```js
