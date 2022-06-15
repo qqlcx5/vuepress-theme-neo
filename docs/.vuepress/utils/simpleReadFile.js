@@ -30,7 +30,6 @@ function readFile(dir, collapsible = false,  filesList = [], fpath = '') {
       }
     }
   })
-  console.log(filesList);
   return filesList
 }
 
