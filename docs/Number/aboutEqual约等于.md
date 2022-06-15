@@ -8,8 +8,8 @@ aboutEqual(n1, n2, epsilon)
 
 **参数**
 
--   `n1 n2` 要比较的数字
--   `epsilon` 误差可接受范围内
+- `n1 n2` 要比较的数字
+- `epsilon` 误差可接受范围内
 
 **例子**
 

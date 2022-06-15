@@ -1,6 +1,6 @@
 const { defaultTheme } = require('@vuepress/theme-default')
-const navbar = require('./themes/navbar')
-const sidebar = require('./themes/sidebar')
+const navbar = require('./theme/navbar')
+const sidebar = require('./theme/sidebar')
 
 // const path = require('path') // 路径模块
 // const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
