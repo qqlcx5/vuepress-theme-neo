@@ -16,7 +16,7 @@ export default {
                         if (--loop >= 0) this.querySelector()
                         else console.error(error)
                     }
-                }, 200)
+                },500)
             }
         })
         // beforeUnmount(() => {

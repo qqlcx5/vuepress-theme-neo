@@ -604,7 +604,7 @@ export default {
     top: 0;
     height: 100vh;
     width: 100%;
-    z-index: 0;
+    z-index: -1;
 }
 
 .hidden {
@@ -616,18 +616,22 @@ export default {
 
 .vdoing-index-class {
     margin-top: 0 !important;
-    height: 100vh;
     background-attachment: fixed !important;
     .home {
         padding: 0;
         max-width: none;
+    }
+    .hero {
+        z-index: 10;
+        margin-top: 50vh;
+        color: #fff;
+        height: 0;
     }
     .navbar {
         transition: transform 0.3s;
         background-color: transparent;
         backdrop-filter: saturate(200%) blur(20px);
         border-bottom: 1px solid transparent;
-        color: var(--c-tip-bg);
         color: var(--c-text);
     }
     .navbar-items a:hover,

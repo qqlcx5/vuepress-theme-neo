@@ -1,7 +1,8 @@
 import Typed from 'typed.js'
 
 const handleTyped = config => {
-    const tag = document.querySelector('.vdoing-index-class .home .hero')
+    const tag = document.querySelector(config.selector)
+    console.log('config.selector', config.selector);
     if (!tag) throw Error('打字指定的Selector错误tag =>' + tag)
     const id = 'typed-' + Math.random().toString(36).replace(/0./, '')
     const tagValue = tag.innerText || tag.innerHTML
@@ -9,7 +10,7 @@ const handleTyped = config => {
     tag.innerHTML = `<span class='${id}' style="font-size: ${config.fontSize || '1.6rem'}">${tagValue}</span>`
     new Typed('.' + id, {
         ...config,
-        strings: [''].concat(config.strings), //输入内容, 支持html标签
+        strings: config.strings, //输入内容, 支持html标签
         typeSpeed: config.typeSpeed || 100, //打字速度
         backSpeed: config.backSpeed || 200, //回退速度
         loop: config.loop ?? true
