@@ -12,7 +12,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
 <template>
     <div class="theme-container pkfrom-container">
         <div class="theme-default-content">
-            <div class="warpper">
+            <div class="page-info">
                 <img
                     src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/404-light.gif"
                     alt="404 error"
@@ -39,7 +39,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
     align-items: center;
 }
 
-.info {
+.page-info {
     position: relative;
     z-index: 999;
     margin-top: -12vh;
