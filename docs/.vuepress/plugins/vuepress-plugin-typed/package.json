@@ -1,7 +1,7 @@
 {
-  "name": "vuepress-plugin-typed",
+  "name": "vuepress-plugin-typed2",
   "version": "1.0.5",
-  "description": "VuePress plugin for typed",
+  "description": "VuePress2.0 plugin for typed",
   "keywords": [
     "vuepress",
     "plugin",

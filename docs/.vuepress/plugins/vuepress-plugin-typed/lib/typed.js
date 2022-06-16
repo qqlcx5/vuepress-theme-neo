@@ -2,11 +2,10 @@ import Typed from 'typed.js'
 
 const handleTyped = config => {
     const tag = document.querySelector(config.selector)
-    console.log('config.selector', config.selector);
-    if (!tag) throw Error('打字指定的Selector错误tag =>' + tag)
+    if (!tag) return console.log('打字指定的Selector =>', tag);
     const id = 'typed-' + Math.random().toString(36).replace(/0./, '')
     const tagValue = tag.innerText || tag.innerHTML
-    
+
     tag.innerHTML = `<span class='${id}' style="font-size: ${config.fontSize || '1.6rem'}">${tagValue}</span>`
     new Typed('.' + id, {
         ...config,

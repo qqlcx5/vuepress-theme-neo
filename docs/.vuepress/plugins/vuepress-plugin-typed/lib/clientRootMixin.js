@@ -1,5 +1,5 @@
 import { handleTyped } from './typed'
-import { onMounted, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref } from 'vue'
 
 export default {
     setup() {
@@ -8,20 +8,20 @@ export default {
         let options = TYPED_OPTIONS
         onMounted(() => {
             querySelector()
-            function querySelector() {
-                timer = setTimeout(() => {
-                    try {
-                        handleTyped(options)
-                    } catch (error) {
-                        if (--loop >= 0) this.querySelector()
-                        else console.error(error)
-                    }
-                },500)
-            }
         })
-        // beforeUnmount(() => {
-        //     clearTimeout(timer)
-        //     timer = null
-        // })
+        function querySelector() {
+            timer = setTimeout(() => {
+                try {
+                    handleTyped(options)
+                } catch (error) {
+                    if (--loop >= 0) querySelector()
+                    else console.error(error)
+                }
+            }, 200)
+        }
+        onBeforeUnmount(() => {
+            clearTimeout(timer)
+            timer = null
+        })
     }
 }

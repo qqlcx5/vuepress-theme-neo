@@ -10,6 +10,26 @@ html body {
     }
 }
 // 隐藏首页展示文案
-// .home .hero {
-//     display: none;
+// .vdoing-index-class {
+//     margin-top: 30vh !important;
+//     .hero span:not(.typed-cursor) {
+//         display: inline-block;
+//         border-radius: 6px;
+//         backdrop-filter: blur(6px);
+//         background-color: rgba(17, 126, 236, 0.075);
+//         line-height: 2;
+//         padding: 0 20px 0 12px;
+//         border-bottom: 0 solid hsla(0, 0%, 100%, 0.4);
+//         border-right: 0 solid hsla(0, 0%, 100%, 0.4);
+//         border-color: hsla(0, 0%, 100%, 0.4) rgba(40, 40, 40, 0.35) rgba(40, 40, 40, 0.35) hsla(0, 0%, 100%, 0.4);
+//         border-style: solid;
+//         border-width: 0;
+//         color: #fff;
+//     }
+//     .typed-cursor {
+//         top: -2px;
+//         left: -14px;
+//         z-index: 10;
+//         position: relative;
+//     }
 // }

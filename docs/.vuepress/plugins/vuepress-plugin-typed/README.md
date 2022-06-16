@@ -5,7 +5,7 @@
 ### 使用`npm`安装
 
 ```bash
-$ npm i vuepress-plugin-typed
+npm i vuepress-plugin-typed2
 ```
 
 ### 开始使用和配置
@@ -207,6 +207,6 @@ $ npm i vuepress-plugin-typed
 
 ## 最后
 
--   刚开始想做一个打字效果文字时`style`调整了一段时间感觉并不理想
--   改用`javascript`使用库[typed.js](https://mattboldt.com/demos/typed-js/)实现起来非常容易,但需要配置`vuepress`的 enhanceApp.js
--   但是目前没有 vuepress 的打字效果插件于是... 有了此插件
+- 刚开始想做一个打字效果文字时`style`调整了一段时间感觉并不理想
+- 改用`javascript`使用库[typed.js](https://mattboldt.com/demos/typed-js/)实现起来非常容易,但需要配置`vuepress`的 enhanceApp.js
+- 但是目前没有 vuepress 的打字效果插件于是... 有了此插件

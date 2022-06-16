@@ -622,10 +622,12 @@ export default {
         max-width: none;
     }
     .hero {
-        z-index: 10;
-        margin-top: 50vh;
-        color: #fff;
+        margin-top: 38vh;
         height: 0;
+        color: var(--c-bg);
+    }
+    .home .hero .description {
+        color: var(--c-bg);
     }
     .navbar {
         transition: transform 0.3s;
@@ -634,8 +636,8 @@ export default {
         border-bottom: 1px solid transparent;
         color: var(--c-text);
     }
-    .navbar-items a:hover,
-    .navbar-items a.router-link-active {
+    // .navbar-items a.router-link-active 
+    .navbar-items a:hover{
         color: var(--c-text-accent);
     }
     .navbar .icon {
