@@ -7,6 +7,6 @@ const setFrontmatter = require('../../utils/setFrontmatter')
 setFrontmatter(docsRoot, {})
 
 module.exports = {
+    '/el-component/': readFile(docsRoot + '/el-component'),
     '/utils/': readFile(docsRoot + '/utils'),
-    '/component/': readFile(docsRoot + '/component')
 }
