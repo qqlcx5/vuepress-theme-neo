@@ -1,6 +1,11 @@
 ---
 title: sum数组中值总和
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Number
+tags: 
+  - 
 ---
 # `accum`数组中值总和
 

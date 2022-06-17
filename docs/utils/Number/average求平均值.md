@@ -1,6 +1,11 @@
 ---
 title: average求平均值
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Number
+tags: 
+  - 
 ---
 # `average`求平均值
 

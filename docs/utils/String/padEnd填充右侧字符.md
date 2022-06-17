@@ -1,6 +1,11 @@
 ---
 title: padEnd填充右侧字符
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - String
+tags: 
+  - 
 ---
 # padEnd填充右侧字符
 

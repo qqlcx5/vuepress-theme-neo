@@ -1,6 +1,11 @@
 ---
 title: treeData生成树结构数据
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `treeData`生成树结构数据
 

@@ -1,6 +1,11 @@
 ---
 title: padStart填充左侧字符
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - String
+tags: 
+  - 
 ---
 # padStart填充左侧字符
 

@@ -1,6 +1,11 @@
 ---
 title: sortDesc数组降序
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `sortDesc`数组降序
 

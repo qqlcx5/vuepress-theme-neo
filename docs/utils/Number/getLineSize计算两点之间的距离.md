@@ -1,6 +1,11 @@
 ---
 title: getLineSize计算两点之间的距离
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Number
+tags: 
+  - 
 ---
 # `getLineSize`计算两点之间的距离
 

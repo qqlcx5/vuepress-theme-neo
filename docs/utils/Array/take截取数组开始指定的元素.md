@@ -1,6 +1,11 @@
 ---
 title: take截取数组开始指定的元素
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `take`截取数组开始指定的元素
 

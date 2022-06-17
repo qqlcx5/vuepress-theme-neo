@@ -1,6 +1,11 @@
 ---
 title: calcFn加减乘除运算
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Function
+tags: 
+  - 
 ---
 # `calcFn`加减乘除运算
 

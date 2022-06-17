@@ -1,6 +1,11 @@
 ---
 title: thousands每隔三位数字添加逗号
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - String
+tags: 
+  - 
 ---
 # `thousands`数字每隔三位数加分号
 

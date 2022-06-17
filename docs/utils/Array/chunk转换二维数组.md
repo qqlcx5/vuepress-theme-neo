@@ -1,6 +1,11 @@
 ---
 title: chunk转换二维数组
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `chunk`转换二维数组
 

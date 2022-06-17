@@ -1,6 +1,11 @@
 ---
 title: takeLast截取数组最后指定的元素
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `takeLast`截取数组末尾元素
 

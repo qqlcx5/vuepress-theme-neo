@@ -1,6 +1,11 @@
 ---
 title: shuffle打乱数组
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `shuffle`打乱数组
 

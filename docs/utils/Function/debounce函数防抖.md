@@ -1,6 +1,11 @@
 ---
 title: debounce函数防抖
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Function
+tags: 
+  - 
 ---
 # `debounce`函数防抖
 

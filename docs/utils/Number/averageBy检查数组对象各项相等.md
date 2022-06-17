@@ -1,6 +1,11 @@
 ---
 title: averageBy检查数组对象各项相等
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Number
+tags: 
+  - 
 ---
 # `averageBy`检查数组对象各项相等
 

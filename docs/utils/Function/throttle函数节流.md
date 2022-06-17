@@ -1,6 +1,11 @@
 ---
 title: throttle函数节流
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Function
+tags: 
+  - 
 ---
 # `throttle`函数节流
 

@@ -1,6 +1,11 @@
 ---
 title: compact去除数组中的无效值
 date: 2022-06-15 17:20:46
+categories: 
+  - utils
+  - Array
+tags: 
+  - 
 ---
 # `compact`去除数组中的无效值
 

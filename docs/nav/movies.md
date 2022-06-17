@@ -2,6 +2,10 @@
 title: 影视网站推荐
 date: 2022-02-08 19:49:49
 permalink: /movies/
+categories: 
+  - nav
+tags: 
+  - 
 ---
 
 收集一些免费的影视网站，如果你有更好的网站推荐，可以在评论留言。

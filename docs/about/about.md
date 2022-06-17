@@ -1,6 +1,10 @@
 ---
 title: 关于 - 我
 date: 2022-04-16 17:52:59
+categories: 
+  - about
+tags: 
+  - 
 ---
 
 # 关于 - 我
