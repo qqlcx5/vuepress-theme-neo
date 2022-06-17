@@ -56,8 +56,7 @@ tags:
 
       const fmData = `---
 title: ${file.name}
-date: ${dateStr}
-${cateStr}${tagsStr}
+date: ${dateStr}${cateStr}${tagsStr}
 ${extendFrontmatterStr}---`;
 
       fs.writeFileSync(file.filePath, `${fmData}${os.EOL}${fileMatterObj.content}`); // 写入
