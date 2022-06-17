@@ -2,6 +2,7 @@ const head = require('./config/head')
 const plugins = require('./config/plugins')
 const theme = require('./config/theme')
 const { viteBundler } = require('@vuepress/bundler-vite')
+console.log(theme, '----');
 
 module.exports = {
     lang: 'zh-CN',

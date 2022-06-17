@@ -3,7 +3,6 @@ const navbar = require('./theme/navbar')
 const sidebar = require('./theme/sidebar')
 const { path } = require('@vuepress/utils')
 
-// console.log(defaultTheme())
 module.exports = {
     // 继承默认主题
     extends: defaultTheme({
@@ -18,6 +17,7 @@ module.exports = {
     }),
     // 覆盖 `404` 布局
     layouts: {
-        404: path.resolve(__dirname, '../theme/lib/client/layouts/404.vue')
+        404: path.resolve(__dirname, '../theme/lib/client/layouts/404.vue'),
+        Layout: path.resolve(__dirname, '../theme/lib/client/layouts/Layout.vue'),
     }
 }

@@ -8,5 +8,5 @@ setFrontmatter(docsRoot, {})
 
 module.exports = {
     '/el-component/': readFile(docsRoot + '/el-component'),
-    '/utils/': readFile(docsRoot + '/utils'),
+    '/utils/': readFile(docsRoot + '/utils', true),
 }
