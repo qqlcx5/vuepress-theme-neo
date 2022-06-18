@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Home from '@vuepress/theme-default/lib/client/components/Home.vue'
+import Home from '../components/Home.vue'
 import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
 import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
 import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'

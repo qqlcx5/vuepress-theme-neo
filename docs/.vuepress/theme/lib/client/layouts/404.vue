@@ -40,15 +40,13 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
 }
 
 .page-info {
-    position: relative;
-    z-index: 999;
     margin-top: -12vh;
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
     font-weight: 300;
     text-align: center;
 }
 
-.info .desc {
+.page-info .desc {
     line-height: 1.6rem;
     color: #1b334d;
     margin: 1rem 0;
@@ -66,10 +64,6 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
     text-transform: uppercase;
     display: inline-block;
     background-color: #ffad32;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     text-decoration: none;
     cursor: pointer;

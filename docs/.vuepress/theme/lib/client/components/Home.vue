@@ -19,23 +19,24 @@
             height="600"
         ></canvas>
         <canvas id="display"></canvas>
+        <bubbles />
+
     </div>
 </template>
 
 <script>
-import { onMounted } from 'vue'
-
+import { onMounted, ref } from 'vue'
+import bubbles from './bubbles.vue';
 export default {
+    components: {
+        bubbles
+    },
     setup() {
+        const dynamicComponent = ref(null)
         onMounted(() => {
-            mountedElement();
-            init();
+            handleInit();
         })
-        function mountedElement() {
-            let fantasy = document.getElementsByClassName("fantasy")[0];
-            document.getElementsByClassName("home")[0].appendChild(fantasy);
-        }
-        function init() {
+        function handleInit() {
             var cvs = document.getElementById("cvs");
             if (!cvs) {
                 return;
@@ -618,31 +619,20 @@ export default {
 .custom-home-class {
     margin-top: 0 !important;
     background-attachment: fixed !important;
-    .home {
-        padding: 0;
-        max-width: none;
-    }
-    .hero {
-        margin-top: 38vh;
-        height: 0;
-        color: var(--c-bg);
-    }
-    .home .hero .description {
-        color: var(--c-bg);
-    }
     .navbar {
         transition: transform 0.3s;
         background-color: transparent;
-        backdrop-filter: saturate(200%) blur(20px);
+        backdrop-filter: saturate(230%) blur(20px);
+        background-color: rgba(255, 255, 255, 0.23);
         border-bottom: 1px solid transparent;
+        transition: background-color 0.5s cubic-bezie(0.28, 0.11, 0.32, 1);
+        transition-property: background-color, backdrop-filter,
+            -webkit-backdrop-filter;
         color: var(--c-text);
     }
-    // .navbar-items a.router-link-active
     .navbar-items a:hover {
         color: var(--c-text-accent);
-    }
-    .navbar .icon {
-        color: var(--c-text-accent);
+        transform: scale(1.1);
     }
 }
 </style>
