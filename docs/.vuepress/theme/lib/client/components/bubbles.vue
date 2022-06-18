@@ -5,7 +5,6 @@
     />
 </template>
 <script>
-import { throttle, copyObj } from 'comutils'
 import { onMounted, onUnmounted, computed, ref } from 'vue'
 export default {
     name: 'bubblesEffect',
@@ -15,104 +14,83 @@ export default {
             default: () => {
                 return {}
             }
+        },
+        selectRef: {
+            type: String,
+            default: ''
         }
     },
     setup(props) {
         let canvasRef = ref(null)
         let requestAniId = ref(null)
 
-        const opts = computed(() => {
-            return copyObj({}, {
-                color: 'rgba(225,225,225,0.5)',
-                radius: 15,
-                densety: 0.2,
-                clearOffset: 0.3
-            }, props.options)
-        })
         onMounted(() => {
-            let width, height, canvas, ctx, circles = [], settings = opts
-            initContainer()
+            let width, height, canvas, ctx, bubbles = []
+            handleInitCanvas()
 
-            function initContainer() {
-                width = window.innerWidth
-                height = window.innerHeight
+            function handleInitCanvas() {
                 canvas = canvasRef.value
-                canvas.width = width
-                canvas.height = height
+                resizeRef()
                 ctx = canvas.getContext('2d')
-                for (let x = 0; x < width * settings.value.densety; x++) {
-                    let c = new Circle()
-                    circles.push(c)
+                //建立泡泡
+                var num = width * 0.06;//气泡数量
+                for (let x = 0; x < num; x++) {
+                    var c = new Bubble();
+                    bubbles.push(c);
                 }
-                console.log(circles, 'circles');
-                animate()
+                animate();
             }
-
             function animate() {
                 cancelAnimationFrame(requestAniId)
-                console.log('requestAniId1', requestAniId);
-                ctx.clearRect(0, 0, width, height)
-                for (let i in circles) {
-                    circles[i].draw()
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < bubbles.length; i++) {
+                    bubbles[i].draw();
                 }
-                requestAniId = requestAnimationFrame(animate)
-                console.log('requestAniId2', requestAniId);
-
+                requestAniId = requestAnimationFrame(animate);
             }
-            const resize = (calback, delay = 200) => {
-                window.addEventListener('resize', throttle(calback, delay));
+            function resizeRef() {
+                width = window.innerWidth
+                height = window.innerHeight
+                canvas.width = width;
+                canvas.height = height;
+                console.log('resizeRef', width, height);
             }
-            function Circle() {
-                let pos = {}
-                let alpha = 0
-                let scale = 0
-                let speed = 0
-                let color = 0
-                init()
 
+            window.onresize = () => {
+                resizeRef();
+            }
+
+            function Bubble() {
+                var _this = this;
+                (function () {
+                    _this.pos = {};
+                    init();
+                })();
                 function init() {
-                    pos.x = Math.random() * width
-                    pos.y = height + Math.random() * 100
-                    alpha = 0.1 + Math.random() * settings.value.clearOffset
-                    scale = 0.1 + Math.random() * 0.3
-                    speed = Math.random()
-                    color = settings.value.color === 'random' ? randomColor() : settings.value.color
+                    _this.pos.x = Math.random() * width;
+                    _this.pos.y = height + Math.random() * 100;
+                    _this.alpha = 0.1 + Math.random() * 0.3;//气泡透明度
+                    _this.alpha_change = 0.0002 + Math.random() * 0.0005;//气泡透明度变化速度
+                    _this.scale = 0.2 + Math.random() * 0.5;//气泡大小
+                    _this.scale_change = Math.random() * 0.002;//气泡大小变化速度
+                    _this.speed = 0.1 + Math.random() * 0.4;//气泡上升速度
                 }
-
+                //气泡
                 this.draw = function () {
-                    console.log('draw');
-                    if (alpha <= 0) {
+                    if (_this.alpha <= 0) {
                         init();
                     }
-                    pos.y -= speed
-                    alpha -= 0.0005
-                    ctx.beginPath()
-                    ctx.arc(pos.x, pos.y, scale * settings.value.radius, 0, 2 * Math.PI, false)
-                    ctx.fillStyle = color
-                    ctx.fill()
-                    ctx.closePath()
+                    _this.pos.y -= _this.speed;
+                    _this.alpha -= _this.alpha_change;
+                    _this.scale += _this.scale_change;
+                    ctx.beginPath();
+                    ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
+                    ctx.fill();
                 };
             }
 
-            resize(() => {
-                ctx.clearRect(0, 0, width, height);
-                width = window.innerWidth;
-                height = window.innerHeight;
-                canvas = null
-                canvas = canvasRef.value
-                canvas.width = width;
-                canvas.height = height;
-                ctx = canvas.getContext('2d')
-            })
         })
-        function randomColor() {
-            let r = Math.floor(Math.random() * 255)
-            let g = Math.floor(Math.random() * 255)
-            let b = Math.floor(Math.random() * 255)
-            let alpha = Math.random().toPrecision(2)
-            let rgba = `rgba(${r}, ${g}, ${b}, ${alpha})`
-            return rgba
-        }
         onUnmounted(() => {
             cancelAnimationFrame(requestAniId)
         })
