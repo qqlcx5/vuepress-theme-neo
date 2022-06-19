@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Home from '../components/Home.vue'
+import CategoriesPage from '../components/CategoriesPage.vue'
+import TagsPage from '../components/TagsPage.vue'
+import ArchivesPage from '../components/ArchivesPage.vue'
 import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
 import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
 import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'
@@ -106,7 +109,14 @@ const onBeforeLeave = scrollPromise.pending
     </slot>
 
     <slot name="page">
+      <!-- 首页 -->
       <Home v-if="frontmatter.home" />
+      <!-- 分类 -->
+      <CategoriesPage v-else-if="frontmatter.categoriesPage" />
+      <!-- 标签 -->
+      <TagsPage v-else-if="frontmatter.tagsPage" />
+      <!-- 归档 -->
+      <ArchivesPage v-else-if="frontmatter.archivesPage" />
 
       <Transition
         v-else

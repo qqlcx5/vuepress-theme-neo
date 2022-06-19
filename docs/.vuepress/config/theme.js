@@ -19,5 +19,6 @@ module.exports = {
     layouts: {
         404: path.resolve(__dirname, '../theme/lib/client/layouts/404.vue'),
         Layout: path.resolve(__dirname, '../theme/lib/client/layouts/Layout.vue'),
-    }
+    },
+    // clientConfigFile: path.resolve(__dirname, '../theme/lib/client/config.js'),
 }
