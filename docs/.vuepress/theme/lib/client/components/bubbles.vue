@@ -23,12 +23,10 @@ export default {
     setup(props) {
         let canvasRef = ref(null)
         let frameTimer = ref(null)
-        let width = 0, height = 0, canvas, ctx, bubbles = []
+        let width, height, canvas, ctx, bubbles = []
         let opts = computed(() => {
             return Object.assign({}, {
-                color: 'rgba(225,225,225,0.5)',
-                densety: 0.1, // 密度
-                clearOffset: 0.2
+                densety: 0.08, // 密度
             }, props.options)
         })
         onMounted(() => {
@@ -57,35 +55,22 @@ export default {
         // const debounce = (function () {
         //     const timer = {}
         //     return function (func, wait = 500) {
-        //         console.log('onresize', func);
         //         const context = this // 注意 this 指向
         //         const args = arguments // arguments中存着e
         //         const randomText = String(args[0]).replace(/[\r\n]|\s+/g, '')
         //         const name = 'debounce' + randomText
         //         if (timer[name]) clearTimeout(timer[name])
         //         timer[name] = setTimeout(() => {
-        //             console.log(func);
         //             func && func.apply(context, args)
         //         }, wait)
         //     }
         // })()
 
-        // const resizeRef = (calback, delay) => {
-        //     window.addEventListener('resize', () => {
-        //         console.log('resizeRef');
-        //         debounce(calback(), delay)
-        //     });
-        // }
-        // resizeRef(() => {
-        //     console.log('resizeRef');
-        //     const target = props.selectRef && document.querySelector(props.selectRef)
-        //     width = target?.offsetWidth ?? (window.innerWidth || 0)
-        //     height = target?.offsetHeight ?? (window.innerHeight || 0)
-        //     canvas.width = width;
-        //     canvas.height = height;
-        // })
+        window.addEventListener('resize', () => {
+            resizeRef()
+        })
+
         function resizeRef() {
-            console.log('resizeRef');
             const target = props.selectRef && document.querySelector(props.selectRef)
             width = target?.offsetWidth ?? (window.innerWidth || 0)
             height = target?.offsetHeight ?? (window.innerHeight || 0)
@@ -94,20 +79,31 @@ export default {
         }
 
         function Bubble() {
+            // this 指 Bubble 实例
             var _this = this;
-            (function () {
-                _this.pos = {};
-                init();
-            })();
+            _this.pos = {};
+            init();
+
             function init() {
                 _this.pos.x = Math.random() * width;
                 _this.pos.y = height + Math.random() * 100;
                 _this.alpha = 0.1 + Math.random() * 0.3;//气泡透明度
                 _this.alpha_change = 0.0002 + Math.random() * 0.0005;//气泡透明度变化速度
-                _this.scale = 0.2 + Math.random() * 0.5;//气泡大小
-                _this.scale_change = Math.random() * 0.002;//气泡大小变化速度
-                _this.speed = 0.1 + Math.random() * 0.4;//气泡上升速度
+                _this.scale = 0.2 + Math.random() * 0.8;//气泡大小
+                _this.scale_change = Math.random() * 0.001;//气泡大小变化速度
+                _this.speed = 0.1 + Math.random() * 0.5;//气泡上升速度
+                // _this.color = randomColor() // 多色气泡
             }
+
+            // function randomColor() {
+            //     let r = Math.floor(Math.random() * 255)
+            //     let g = Math.floor(Math.random() * 255)
+            //     let b = Math.floor(Math.random() * 255)
+            //     let alpha = Math.random().toPrecision(2)
+            //     let rgba = `rgba(${r}, ${g}, ${b}, ${alpha})`
+            //     return rgba
+            // }
+
             //气泡
             this.draw = function () {
                 if (_this.alpha <= 0) {
@@ -118,7 +114,8 @@ export default {
                 _this.scale += _this.scale_change;
                 ctx.beginPath();
                 ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
-                ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
+                ctx.fillStyle = 'rgba(245,245,245,' + _this.alpha + ')';
+                // ctx.fillStyle = _this.color // 多色气泡
                 ctx.fill();
             };
         }

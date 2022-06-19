@@ -24,14 +24,13 @@
 </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import bubbles from './bubbles.vue';
 export default {
     components: {
         bubbles
     },
     setup() {
-        const dynamicComponent = ref(null)
         onMounted(() => {
             handleInit();
         })
