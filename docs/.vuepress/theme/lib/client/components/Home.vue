@@ -20,7 +20,6 @@
         ></canvas>
         <canvas id="display"></canvas>
         <bubbles />
-
     </div>
 </template>
 
