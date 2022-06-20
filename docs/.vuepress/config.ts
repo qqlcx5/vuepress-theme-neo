@@ -1,10 +1,10 @@
 const head = require('./config/head')
 const plugins = require('./config/plugins')
-const theme = require('./config/theme')
 const { viteBundler } = require('@vuepress/bundler-vite')
-console.log(theme, '----');
+import { defineUserConfig } from 'vuepress'
+import theme from './config/theme'
 
-module.exports = {
+export default defineUserConfig({
     lang: 'zh-CN',
     title: '前端有道',
     base: '/vuepress-next/',
@@ -19,4 +19,4 @@ module.exports = {
         },
         vuePluginOptions: {}
     })
-}
+})
