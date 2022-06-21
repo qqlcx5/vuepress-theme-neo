@@ -1,15 +1,15 @@
-/**
- * 生成分类标签等数据
- * */
+const setFrontmatter = require('./utils/setFrontmatter')
+const { createPage, deletePage } = require('./utils/handlePage')
+const genSitePages = require('./utils/genSitePages')
 
-const setFrontmatter = require('../utils/setFrontmatter')
-const { createPage, deletePage } = require('../utils/handlePage')
-
-function sitePage(sourceDir, themeConfig) {
-    // sourceDir themeConfig 存在未传入值情况
+// 生成分类标签等数据
+function useFrontmatter(sourceDir, themeConfig) {
+    // sourceDir themeConfig 存在第一次未传入值情况
     if (!sourceDir || !themeConfig) return
+
     // 所有.md文件设置frontmatter(标题、日期)
     setFrontmatter(sourceDir, themeConfig)
+
     // 创建分类页文件
     if (themeConfig.category !== false) {
         createPage(sourceDir, 'categoriesPage')
@@ -31,5 +31,12 @@ function sitePage(sourceDir, themeConfig) {
         deletePage(sourceDir, 'archivesPage')
     }
 }
+// 生成 $site.pages 数据
+function useSitePages(sourceDir) {
+    return genSitePages(sourceDir)
+}
 
-module.exports = sitePage
+module.exports = {
+    useFrontmatter,
+    useSitePages
+}

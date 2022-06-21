@@ -6,14 +6,15 @@ import { path } from '@vuepress/utils'
 const plugins = require('./config/plugins')
 
 const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
-const useSitePage = require('./useSitePage');
+const { useSitePages, useFrontmatter } = require('./setSitePages')
+
 export const localTheme = (options: DefaultThemeOptions): Theme => {
-    useSitePage(sourceDir, options)
+    useFrontmatter(sourceDir, options)
     return {
         name: 'minimalism-theme',
         extends: defaultTheme(options),
         define: {
-            __FOO__: 'test',
+            __SITEPAGES__: useSitePages(sourceDir)
         },
         plugins,
         layouts: {
