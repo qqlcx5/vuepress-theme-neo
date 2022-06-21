@@ -11,5 +11,9 @@ export default localTheme({
     docsDir: 'docs',
     docsBranch: 'master',
     docsRepo: 'https://github.com/qqlcx5/vuepress-next',
-    editLinkPattern: ':repo/edit/:branch/:path'
+    editLinkPattern: ':repo/edit/:branch/:path',
+    // @ts-ignore 自定义配置项
+    // category: true, // 默认展示
+    // tag: true, // 默认展示
+    // archive: true, // 默认展示
 })

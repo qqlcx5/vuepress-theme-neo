@@ -5,10 +5,10 @@ import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 const plugins = require('./config/plugins')
 
+const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
 const useSitePage = require('./useSitePage');
-console.log('useSitePage', useSitePage());
-
 export const localTheme = (options: DefaultThemeOptions): Theme => {
+    useSitePage(sourceDir, options)
     return {
         name: 'minimalism-theme',
         extends: defaultTheme(options),

@@ -2,25 +2,34 @@
  * 生成分类标签等数据
  * */
 
-const path = require('path') // 路径模块
-const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
 const setFrontmatter = require('../utils/setFrontmatter')
-const { createPage } = require('./handlePage')
+const { createPage, deletePage } = require('../utils/handlePage')
 
-// 所有.md文件设置frontmatter(标题、日期)
-setFrontmatter(sourceDir, {})
+function sitePage(sourceDir, themeConfig) {
+    // sourceDir themeConfig 存在未传入值情况
+    if (!sourceDir || !themeConfig) return
+    // 所有.md文件设置frontmatter(标题、日期)
+    setFrontmatter(sourceDir, themeConfig)
+    // 创建分类页文件
+    if (themeConfig.category !== false) {
+        createPage(sourceDir, 'categoriesPage')
+    } else {
+        deletePage(sourceDir, 'categoriesPage')
+    }
 
-// 创建分类页.md文件
-createPage(sourceDir, 'categoriesPage')
+    // 创建标签页文件
+    if (themeConfig.tag !== false) {
+        createPage(sourceDir, 'tagsPage')
+    } else {
+        deletePage(sourceDir, 'tagsPage')
+    }
 
-// 创建标签页.md文件
-createPage(sourceDir, 'tagsPage')
-
-// 创建归档页.md文件
-createPage(sourceDir, 'archivesPage')
-
-function hello(params) {
-    return 'hello'
+    // 创建归档页文件
+    if (themeConfig.archive !== false) {
+        createPage(sourceDir, 'archivesPage')
+    } else {
+        deletePage(sourceDir, 'archivesPage')
+    }
 }
 
-module.exports = hello
+module.exports = sitePage
