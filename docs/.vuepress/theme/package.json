@@ -1,0 +1,28 @@
+{
+    "name": "vuepress-theme-acme",
+    "version": "1.0.0",
+    "description": "Default external theme of VuePress",
+    "keywords": [
+        "vuepress-theme",
+        "vuepress",
+        "theme",
+        "acme"
+    ],
+    "license": "MIT",
+    "author": "feyoudao.cn",
+    "main": "lib/client/index.js",
+    "files": [
+        "lib",
+        "templates"
+    ],
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "gray-matter": "^4.0.3",
+        "json2yaml": "^1.1.0",
+        "postcss": "^8.4.14",
+        "tailwindcss": "2.2.19"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

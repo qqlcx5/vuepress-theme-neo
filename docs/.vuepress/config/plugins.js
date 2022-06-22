@@ -24,12 +24,4 @@ module.exports = [
     registerComponentsPlugin({
         componentsDir: path.resolve(__dirname, '../components')
     })
-    //   typed({
-    //     // 对应的标签选择器
-    //     selector: '.vdoing-index-class .home .hero',
-    //     // 打字内容
-    //     strings: ["苦难磨炼一些人，也毁灭另一些人。——富勒", "一个不注意小事情的人，永远不会成就大事业。——卡耐基", "内外相应，言行相称。——韩非", "阅读一切好书如同和过去最杰出的人谈话。——笛卡儿"],
-    //     typeSpeed: 100, // 打字速度
-    //     backSpeed: 130, // 回退速度
-    //   })
 ]
