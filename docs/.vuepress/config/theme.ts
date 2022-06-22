@@ -1,6 +1,6 @@
 const navbar = require('./navbar')
 const sidebar = require('./sidebar')
-import { localTheme } from '../theme'
+import { localTheme } from '../theme/lib/client/index'
 
 export default localTheme({
     // 默认主题配置项

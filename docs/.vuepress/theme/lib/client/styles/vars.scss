@@ -1,0 +1,16 @@
+// 颜色
+$bannerTextColor: #fff; // 首页 banner区(博客标题)文本颜色
+$accentColor: #11a8cd;
+$activeColor: #ff5722;
+$arrowBgColor: #ccc;
+$badgeTipColor: #42b983;
+$badgeWarningColor: darken(#ffe564, 35%);
+$badgeErrorColor: #da5961;
+// 布局
+$navbarHeight: 3.6rem;
+$sidebarWidth: 18rem;
+$contentWidth: 860px;
+$homePageWidth: 1100px;
+$rightMenuWidth: 230px; // 右侧菜单;
+
+$MQMobile: 719px !default;

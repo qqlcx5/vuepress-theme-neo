@@ -1,8 +1,8 @@
 // palete.styl 在编译期间，主题颜色常量应该首先由预处理器解析，然后应用于全局上下文。
 :root {
-  // 图片提供可缩放的功能css
-  .medium-zoom-overlay {
-    --medium-zoom-bg-color: #000;
-    --medium-zoom-opacity: 0.8;
-  }
+    // 图片提供可缩放的功能css
+    .medium-zoom-overlay {
+        --medium-zoom-bg-color: #000;
+        --medium-zoom-opacity: 0.8;
+    }
 }

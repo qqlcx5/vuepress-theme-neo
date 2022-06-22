@@ -1,6 +1,6 @@
-const setFrontmatter = require('./utils/setFrontmatter')
-const { createPage, deletePage } = require('./utils/handlePage')
-const genSitePages = require('./utils/genSitePages')
+const setFrontmatter = require('./setFrontmatter')
+const { createPage, deletePage } = require('./handlePage')
+const genSitePages = require('./genSitePages')
 
 // 生成分类标签等数据
 function useFrontmatter(sourceDir, themeConfig) {

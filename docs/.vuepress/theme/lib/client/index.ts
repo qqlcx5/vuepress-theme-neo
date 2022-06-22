@@ -5,8 +5,9 @@ import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 const plugins = require('./config/plugins')
 
-const sourceDir = path.join(__dirname, '..', '..') // docs相对路径
-const { useSitePages, useFrontmatter } = require('./setSitePages')
+const sourceDir = path.join(__dirname, '..', '..', '..', '..') // docs相对路径
+
+const { useSitePages, useFrontmatter } = require('./node_utils/setSitePages')
 
 export const localTheme = (options: DefaultThemeOptions): Theme => {
     useFrontmatter(sourceDir, options)
@@ -18,9 +19,9 @@ export const localTheme = (options: DefaultThemeOptions): Theme => {
         },
         plugins,
         layouts: {
-            404: path.resolve(__dirname, 'lib/client/layouts/404.vue'),
-            Layout: path.resolve(__dirname, 'lib/client/layouts/Layout.vue')
+            404: path.resolve(__dirname, 'layouts/404.vue'),
+            Layout: path.resolve(__dirname, 'layouts/Layout.vue')
         },
-        clientConfigFile: path.resolve(__dirname, 'client.js')
+        clientConfigFile: path.resolve(__dirname, 'config.js')
     }
 }
