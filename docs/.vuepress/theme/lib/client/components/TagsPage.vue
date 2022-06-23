@@ -3,8 +3,8 @@
         TagsPage
     </main>
 </template>
-<script lang="ts">
+<script>
 export default {
-    setup() {},
+    setup() { },
 }
 </script>

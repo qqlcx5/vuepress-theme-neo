@@ -4,7 +4,7 @@ const { viteBundler } = require('@vuepress/bundler-vite')
 import { defineUserConfig } from 'vuepress'
 import theme from './config/theme'
 
-// console.log('acme-theme', theme);
+// console.log('vuepress-theme-acme', theme);
 export default defineUserConfig({
     lang: 'zh-CN',
     title: '前端有道',

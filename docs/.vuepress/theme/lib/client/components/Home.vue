@@ -27,9 +27,7 @@
 import { onMounted } from 'vue'
 import bubbles from './bubbles.vue';
 export default {
-    components: {
-        bubbles
-    },
+    components: { bubbles },
     setup() {
         onMounted(() => {
             handleInit();

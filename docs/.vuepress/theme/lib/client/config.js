@@ -1,11 +1,13 @@
 import { defineClientConfig } from '@vuepress/client'
-import { onMounted, computed, provide } from 'vue'
+import { onMounted, computed, provide, readonly } from 'vue'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
 export default defineClientConfig({
     // 函数会在客户端应用创建后被调用，你可以对 Vue 应用添加各种能力。
     enhance({ app, router, siteData }) {},
+
     setup() {
-        onMounted(() => { })
+        onMounted(() => {})
+
         const $filterPosts = computed(() => {
             return filterPosts(__SITEPAGES__)
         })
@@ -21,11 +23,17 @@ export default defineClientConfig({
         const $categoriesAndTags = computed(() => {
             return categoriesAndTags($groupPosts.value)
         })
-        console.log('$filterPosts', $filterPosts);
-        console.log('$sortPosts', $sortPosts);
-        console.log('$sortPostsByDate', $sortPostsByDate);
-        console.log('$groupPosts', $groupPosts);
-        console.log('$categoriesAndTags', $categoriesAndTags);
+        // 设置全局数据
+        provide('$filterPosts', readonly($filterPosts))
+        provide('$sortPosts', readonly($sortPosts))
+        provide('$sortPostsByDate', readonly($sortPostsByDate))
+        provide('$groupPosts', readonly($groupPosts))
+        provide('$categoriesAndTags', readonly($categoriesAndTags))
+        // console.log('$filterPosts', $filterPosts.value)
+        // console.log('$sortPosts', $sortPosts.value)
+        // console.log('$sortPostsByDate', $sortPostsByDate.value)
+        // console.log('$groupPosts', $groupPosts.value)
+        // console.log('$categoriesAndTags', $categoriesAndTags.value)
     },
     rootComponents: []
 })

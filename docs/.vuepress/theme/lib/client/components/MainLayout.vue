@@ -11,7 +11,7 @@
     </main>
 </template>
 <style lang="scss">
-@import '../styles/vars.scss';
+@import '../styles/_variables';
 
 .main-wrapper {
     // padding: 0 0.9rem;
