@@ -6,7 +6,7 @@
         >
             <div
                 class="post card-box"
-                :class="item.frontmatter.sticky && 'iconfont icon-zhiding'"
+                :class="[`effect-border-${random(1, 5)}`, (item.frontmatter.sticky && 'iconfont icon-zhiding')]"
                 v-for="item in sortPosts"
                 :key="item.key"
             >
@@ -54,12 +54,7 @@
                         <span
                             title="标签"
                             class="iconfont icon-biaoqian tags"
-                            v-if="
-                $themeConfig.tag !== false &&
-                item.frontmatter.tags &&
-                item.frontmatter.tags[0]
-              "
-                        >
+                            v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
                             <router-link
                                 :to="`/tags/?tag=${encodeURIComponent(t)}`"
                                 v-for="(t, index) in item.frontmatter.tags"
@@ -114,6 +109,7 @@ export default {
     setup(props, { emit }) {
         let sortPosts = ref([])
         let postListOffsetTop = ref(0)
+        
         const $groupPosts = inject('$groupPosts').value
         const $sortPosts = inject('$sortPosts').value
         const $themeConfig = useThemeData().value
@@ -141,7 +137,8 @@ export default {
             let posts = type ? $groupPosts.categories[type] : $sortPosts
             sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
-        return { $themeConfig, sortPosts }
+        const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
+        return { $themeConfig, sortPosts, random }
     }
 
 }
@@ -163,14 +160,14 @@ export default {
             opacity: 0;
             transform: translateX(-20px);
         }
-        &::before {
-            position: absolute;
-            top: -1px;
-            right: 0;
-            font-size: 2.5rem;
-            color: $activeColor;
-            opacity: 0.85;
-        }
+        // &::before {
+        //     position: absolute;
+        //     top: -1px;
+        //     right: 0;
+        //     font-size: 2.5rem;
+        //     color: $activeColor;
+        //     opacity: 0.85;
+        // }
         .title-wrapper {
             a {
                 color: var(--textColor);

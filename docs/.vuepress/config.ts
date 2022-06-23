@@ -13,12 +13,12 @@ export default defineUserConfig({
     head,
     theme,
     plugins,
-    bundler: viteBundler({
-        viteOptions: {
-            css: { postcss: { plugins: [require('tailwindcss')(), require('autoprefixer')({})] } },
-            optimizeDeps: { exclude: ['vue'] }
-        },
-        vuePluginOptions: {}
-    }),
+    // bundler: viteBundler({
+    //     viteOptions: {
+    //         css: { postcss: { plugins: [require('tailwindcss')(), require('autoprefixer')({})] } },
+    //         optimizeDeps: { exclude: ['vue'] }
+    //     },
+    //     vuePluginOptions: {}
+    // }),
     debug: true
 })

@@ -1,0 +1,153 @@
+// 来自：https://juejin.cn/post/6918921604160290830
+
+// hover边框左边顶部长度拉伸
+.effect-border-1 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    &::before {
+        top: 0px;
+        left: 0px;
+        border-top: 2px solid var(--c-border-accent);
+        border-left: 2px solid var(--c-border-accent);
+    }
+
+    &::after {
+        right: 0px;
+        bottom: 0px;
+        border-bottom: 2px solid var(--c-border-accent);
+        border-right: 2px solid var(--c-border-accent);
+    }
+
+    &:hover::before,
+    &:hover::after {
+        transition: all 0.6s;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+    }
+}
+// 四色旋转动画
+.effect-border-2 {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    &:hover::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: #399953;
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+        animation: linearRotate 4s linear infinite;
+    }
+    &:hover::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 3px;
+        top: 3px;
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        background: var(--c-bg);
+        border-radius: 3px;
+    }
+}
+// 曲线渐变边框旋转动画
+.effect-border-3 {
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    &:hover::before {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(transparent, var(--c-border-accent), transparent 30%);
+        animation: linearRotate 4s linear infinite;
+    }
+    &:hover::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 4px;
+        top: 4px;
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        background: var(--c-bg);
+        border-radius: 3px;
+    }
+}
+
+@keyframes linearRotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+// 渐变边框旋转动画
+.effect-border-4 {
+    border: 3px solid transparent;
+    &:hover {
+        border-image: linear-gradient(45deg, gold, deeppink) 1;
+        clip-path: inset(0px round 3px);
+        animation: huerotate 3.6s infinite linear;
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes huerotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+// 线性旋转动画
+.effect-border-5 {
+    position: relative;
+    &:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid var(--c-border-accent);
+        border-radius: 3px;
+        transition: all 0.5s;
+        animation: clippath 3s infinite linear;
+    }
+}
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
+    }
+}

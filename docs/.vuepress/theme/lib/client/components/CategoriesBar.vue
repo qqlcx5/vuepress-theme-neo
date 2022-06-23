@@ -94,8 +94,8 @@ export default {
             }
             span {
                 float: right;
-                background-color: var(--textColor);
-                color: var(--mainBg);
+                background-color: var(--c-bg-lighter);
+                color: var(--c-text);
                 border-radius: 8px;
                 padding: 0 0.13rem;
                 min-width: 1rem;
@@ -108,7 +108,7 @@ export default {
             }
             &.active {
                 background: $accentColor;
-                color: var(--mainBg);
+                // color: var(--mainBg);
                 padding-left: 0.8rem;
                 border-radius: 1px;
                 border-color: transparent;
@@ -116,7 +116,8 @@ export default {
         }
     }
 }
-.theme-mode-dark .categories-wrapper .categories a:not(.active):hover, .theme-mode-read .categories-wrapper .categories a:not(.active):hover {
+.theme-mode-dark .categories-wrapper .categories a:not(.active):hover,
+.theme-mode-read .categories-wrapper .categories a:not(.active):hover {
     background: var(--customBlockBg);
 }
 </style>

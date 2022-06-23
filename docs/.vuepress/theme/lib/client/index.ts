@@ -7,7 +7,6 @@ const { useSitePages, useFrontmatter } = require('./node_utils/setSitePages')
 
 export const localTheme = (options: DefaultThemeOptions): Theme => {
     useFrontmatter(sourceDir, options)
-
     return {
         name: 'vuepress-theme-acme',
         extends: defaultTheme(options),
