@@ -5,7 +5,6 @@
             class="title iconfont icon-wenjianjia"
             title="全部分类"
         >{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link>
-
         <div class="categories">
             <router-link
                 :to="`/categories/?category=${encodeURIComponent(item.key)}`"
@@ -26,6 +25,7 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 export default {
     props: {
         category: {
@@ -41,14 +41,13 @@ export default {
             default: 'all'
         }
     },
-    computed: {
-        categories() {
-            if (this.length === 'all') {
-                return this.categoriesData
-            } else {
-                return this.categoriesData.slice(0, this.length)
-            }
-        }
+    setup(props) {
+        // const { categoriesData } = toRefs(props)
+
+        const categories = computed(() => {
+            return props.length === 'all' ? props.categoriesData : props.categoriesData.slice(0, props.length)
+        })
+        return { categories }
     }
 }
 </script>

@@ -13,6 +13,10 @@
 <style lang="scss">
 @import '../styles/_variables';
 
+.custom-page {
+    padding-top: var(--navbar-height);
+    padding-bottom: 2rem;
+}
 .main-wrapper {
     max-width: $homePageWidth;
     padding-top: var(--navbar-height);

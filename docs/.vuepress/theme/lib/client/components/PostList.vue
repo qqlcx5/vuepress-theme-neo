@@ -54,7 +54,8 @@
                         <span
                             title="标签"
                             class="iconfont icon-biaoqian tags"
-                            v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
+                            v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]"
+                        >
                             <router-link
                                 :to="`/tags/?tag=${encodeURIComponent(t)}`"
                                 v-for="(t, index) in item.frontmatter.tags"
@@ -83,7 +84,7 @@
 
 <script>
 import { onMounted, ref, inject, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
 
 export default {
@@ -109,17 +110,18 @@ export default {
     setup(props, { emit }) {
         let sortPosts = ref([])
         let postListOffsetTop = ref(0)
-        
         const $groupPosts = inject('$groupPosts').value
         const $sortPosts = inject('$sortPosts').value
         const $themeConfig = useThemeData().value
         const $route = useRoute()
+        const $router = useRouter()
         onMounted(() => {
             handleSetPosts()
         })
         watch(() => props.currentPage, (currentPage) => {
+            console.log($route.query.p, currentPage, '$route.query.p != currentPage');
             if ($route.query.p != currentPage) {
-                $route.push({ query: { ...$route.query, p: currentPage } })
+                $router.push({ query: { ...$route.query, p: currentPage } })
             }
             setTimeout(() => {
                 window.scrollTo({ top: postListOffsetTop }) // behavior: 'smooth'
@@ -133,8 +135,9 @@ export default {
             const currentPage = props.currentPage
             const perPage = props.perPage
             console.log();
-            let type = props.category || props.tag
-            let posts = type ? $groupPosts.categories[type] : $sortPosts
+            let type = props.category ? 'categories' : 'tags'
+            let typeValue = props.category || props.tag
+            let posts = typeValue ? $groupPosts[type][typeValue] : $sortPosts
             sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
@@ -158,7 +161,7 @@ export default {
         }
         &.post-enter {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(-100px);
         }
         // &::before {
         //     position: absolute;

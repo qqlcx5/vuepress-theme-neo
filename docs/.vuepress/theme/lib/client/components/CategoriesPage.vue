@@ -11,13 +11,13 @@
                     :perPage="perPage"
                     :category="category"
                 />
-                <!-- <Pagination
+                <Pagination
                     :total="total"
                     :perPage="perPage"
                     :currentPage="currentPage"
                     @getCurrentPage="handlePagination"
                     v-show="Math.ceil(total / perPage) > 1"
-                /> -->
+                />
             </template>
             <template #mainRight>
                 <CategoriesBar
@@ -35,7 +35,7 @@ import MainLayout from './MainLayout.vue'
 import PostList from './PostList.vue'
 import Pagination from './Pagination.vue'
 import CategoriesBar from './CategoriesBar.vue'
-import { onMounted, ref, inject, watch, isRef } from 'vue'
+import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
@@ -71,6 +71,10 @@ export default {
             total.value = category.value ? $groupPosts.categories[category.value].length : $sortPosts.length
             currentPage.value = Number(p)
         }
+        // 分页
+        function handlePagination(page) {
+            currentPage.value = page
+        }
 
         return {
             $groupPosts,
@@ -79,7 +83,8 @@ export default {
             category,
             total,
             perPage,
-            currentPage
+            currentPage,
+            handlePagination
         }
     }
 }
@@ -87,9 +92,6 @@ export default {
 
 <style lang='scss'>
 @import '../styles/_variables';
-.custom-page {
-    padding-top: var(--navbar-height);
-}
 .categories-page {
     .categories-wrapper {
         position: sticky;
