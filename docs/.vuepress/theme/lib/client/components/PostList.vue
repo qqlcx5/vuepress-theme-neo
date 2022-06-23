@@ -1,8 +1,5 @@
 <template>
-    <div
-        class="post-list"
-        ref="postList"
-    >
+    <div class="post-list">
         <transition-group
             name="post"
             tag="div"
@@ -42,13 +39,11 @@
                             title="创建时间"
                             class="iconfont icon-riqi"
                             v-if="item.frontmatter.date"
-                        >{{ item.frontmatter.date.split(' ')[0] }}</span>
+                        >{{ item.frontmatter.date.split('T')[0] }}</span>
                         <span
                             title="分类"
                             class="iconfont icon-wenjian"
-                            v-if="
-                $themeConfig.category !== false && item.frontmatter.categories
-              "
+                            v-if="$themeConfig.category !== false && item.frontmatter.categories"
                         >
                             <router-link
                                 :to="`/categories/?category=${encodeURIComponent(c)}`"
