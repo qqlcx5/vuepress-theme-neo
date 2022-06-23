@@ -15,14 +15,13 @@
             >
                 <div class="title-wrapper">
                     <h2>
-                        <router-link :to="item.path">
+                        <router-link :to="item.relativePath">
                             {{ item.title }}
                             <span
                                 class="title-tag"
                                 v-if="item.frontmatter.titleTag"
-                            >{{
-                item.frontmatter.titleTag
-              }}</span>
+                            >
+                                {{ item.frontmatter.titleTag }}</span>
                         </router-link>
                     </h2>
                     <div class="article-info">
@@ -95,6 +94,8 @@
 <script>
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
+
 export default {
     props: {
         category: {
@@ -120,6 +121,7 @@ export default {
         let postListOffsetTop = ref(0)
         const $groupPosts = inject('$groupPosts').value
         const $sortPosts = inject('$sortPosts').value
+        const $themeConfig = useThemeData().value
         const $route = useRoute()
         onMounted(() => {
             handleSetPosts()
@@ -134,7 +136,6 @@ export default {
             handleSetPosts()
         })
         watch([() => props.category, () => props.tag], ([category, tag], [prevCategory, prevTag]) => {
-            console.log('new----', category, tag, 'old', prevCategory, prevTag);
             handleSetPosts()
         })
         function handleSetPosts() {
@@ -144,9 +145,8 @@ export default {
             let type = props.category || props.tag
             let posts = type ? $groupPosts.categories[type] : $sortPosts
             sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
-            console.log(sortPosts, 'sortPosts');
         }
-        return { sortPosts }
+        return { $themeConfig, sortPosts }
     }
 
 }

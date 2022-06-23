@@ -13,7 +13,7 @@ export default localTheme({
     docsRepo: 'https://github.com/qqlcx5/vuepress-next',
     editLinkPattern: ':repo/edit/:branch/:path',
     // @ts-ignore 自定义配置项
-    // category: false,
-    // tag: false,
-    // archive: false,
+    category: true,
+    tag: true,
+    archive: true,
 })
