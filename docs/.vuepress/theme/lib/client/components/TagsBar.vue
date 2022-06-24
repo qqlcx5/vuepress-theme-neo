@@ -8,14 +8,13 @@
         <div class="tags">
             <template
                 v-for="(item, index) in tags"
-                :key="index"
+                :key="item.key"
             >
                 <router-link
                     :to="`/tags/?tag=${encodeURIComponent(item.key)}`"
                     :style="tagStyleList[index]"
-                    :class="{active: item.key === tag}"
-                >{{item.key}}</router-link>
-                <!-- <span :key="index + tags.length" /> -->
+                    :class="{ active: item.key === tag }"
+                >{{item.key}} {{item.length}}</router-link>
             </template>
             <router-link
                 to="/tags/"
@@ -55,8 +54,8 @@ export default {
             }
         })
         function getTagStyle() {
-            const randomColor = tagBgColor.value[Math.floor(Math.random() * tagBgColor.value.length)]
-            return `background: ${randomColor};--randomColor:${randomColor};`
+            const useColorRandom = tagBgColor.value[Math.floor(Math.random() * tagBgColor.value.length)]
+            return `background: ${useColorRandom}; --c-random: ${useColorRandom};`
         }
         return {
             tags,
@@ -83,6 +82,7 @@ export default {
         text-align: justify;
         padding: 0.8rem 0.5rem 0.5rem 0.5rem;
         margin: 0 -0.5rem -0.5rem -0.5rem;
+        color: var(--c-bg);
         a {
             opacity: 0.8;
             display: inline-block;
@@ -97,20 +97,19 @@ export default {
             line-height: 1rem;
             font-size: 0.8rem;
             text-align: center;
+            text-decoration: none;
             @media (max-width: $MQMobile) {
                 font-weight: 400;
             }
             &:hover {
                 opacity: 1;
                 transform: scale(1.1);
+                box-shadow: 0 5px 10px -5px var(--c-random, rgba(0, 0, 0, 0.15));
             }
             &.active {
-                box-shadow: 0 5px 10px -5px var(--randomColor, rgba(0, 0, 0, 0.15));
+                box-shadow: 0 5px 10px -5px var(--c-random, rgba(0, 0, 0, 0.15));
                 transform: scale(1.22);
                 opacity: 1;
-                &:hover {
-                    text-decoration: none;
-                }
             }
         }
     }
