@@ -3,17 +3,12 @@
         <template v-if="cardData[0].title != undefined">
             <div style="text-align: center; font-weight: 900">{{ cardData[0].title }}</div>
         </template>
+
         <div class="kbt-row">
             <div
                 class="card-nav-box"
-                :style="
-        cardListSize == 4
-          ? 'width: 25%;'
-          : cardListSize == 2
-          ? 'width: 50%;'
-          : 'width: 33.333%;'
-      "
-                v-for="(item,index) in cardData"
+                :style="cardListSize == 4 ? 'width: 25%;' : cardListSize == 2 ? 'width: 50%;' : 'width: 33.333%;'"
+                v-for="(item, index) in cardData"
                 :key="index"
             >
                 <a
@@ -82,7 +77,6 @@ export default {
                 document.head.appendChild(style);
             }
         }
-        return {...props}
     }
 };
 </script>
@@ -99,7 +93,7 @@ export default {
     box-sizing: border-box;
 }
 .card-nav-box a:hover {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 .card-nav-item {
     min-height: 76px;

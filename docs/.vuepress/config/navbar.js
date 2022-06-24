@@ -25,7 +25,7 @@ module.exports = [
         activeMatch: '^/movies/'
     },
     {
-        text: 'Group',
+        text: '索引',
         children: [
             {
                 text: '分类',

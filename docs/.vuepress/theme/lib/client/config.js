@@ -1,11 +1,14 @@
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, computed, provide, readonly } from 'vue'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
+import { AcIcon, NavCard } from './components/global'
 import './styles/index.scss'
 export default defineClientConfig({
     // 函数会在客户端应用创建后被调用，你可以对 Vue 应用添加各种能力。
-    enhance({ app, router, siteData }) {},
-
+    enhance({ app, router, siteData }) {
+        app.component('AcIcon', AcIcon)
+        app.component('NavCard', NavCard)
+    },
     setup() {
         onMounted(() => {})
 

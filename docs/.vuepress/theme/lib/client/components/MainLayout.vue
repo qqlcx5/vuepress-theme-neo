@@ -20,6 +20,7 @@
 .main-wrapper {
     max-width: $homePageWidth;
     padding-top: var(--navbar-height);
+    padding-left: 0.9rem;
     margin: 0 auto;
     position: relative;
     display: flex;

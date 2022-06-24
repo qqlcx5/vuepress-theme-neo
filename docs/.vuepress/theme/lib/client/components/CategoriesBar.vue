@@ -2,7 +2,7 @@
     <div class="categories-wrapper card-box">
         <router-link
             to="/categories/"
-            class="title iconfont icon-wenjianjia"
+            class="title acme acme-24gf-folderStar"
             title="全部分类"
         >{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link>
         <div class="categories">
