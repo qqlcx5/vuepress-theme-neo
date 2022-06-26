@@ -15,7 +15,7 @@
                     :href="item.cardSrc"
                     target="_blank"
                 >
-                    <div class="card-nav-item">
+                    <div class="card-nav-item" :class="[`effect-border-${random(1, 5)}`]">
                         <div class="card-nav-title">
                             <img
                                 v-if="item.cardImgSrc && item.cardImgSrc != ''"
@@ -77,6 +77,8 @@ export default {
                 document.head.appendChild(style);
             }
         }
+        const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
+        return { random }
     }
 };
 </script>

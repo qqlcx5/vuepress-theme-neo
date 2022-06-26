@@ -19,8 +19,7 @@
 }
 .main-wrapper {
     max-width: $homePageWidth;
-    padding-top: var(--navbar-height);
-    padding-left: 0.9rem;
+    padding: 0.9rem;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -44,8 +43,7 @@
 // 719px以下
 @media (max-width: $MQMobile) {
     .main-wrapper {
-        margin: 0.9rem 0;
-        padding: 0;
+        padding: 0.9rem;
         display: block;
         .main-left {
             width: 100%;

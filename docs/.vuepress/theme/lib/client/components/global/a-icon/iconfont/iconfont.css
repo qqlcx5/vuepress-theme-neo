@@ -1,9 +1,9 @@
 @font-face {
   font-family: "acme"; /* Project id 3483216 */
-  src: url('iconfont.woff2?t=1656062116911') format('woff2'),
-       url('iconfont.woff?t=1656062116911') format('woff'),
-       url('iconfont.ttf?t=1656062116911') format('truetype'),
-       url('iconfont.svg?t=1656062116911#acme') format('svg');
+  src: url('iconfont.woff2?t=1656087843590') format('woff2'),
+       url('iconfont.woff?t=1656087843590') format('woff'),
+       url('iconfont.ttf?t=1656087843590') format('truetype'),
+       url('iconfont.svg?t=1656087843590#acme') format('svg');
 }
 
 .acme {
@@ -14,8 +14,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.acme-24gf-folderStar:before {
-  content: "\eac5";
+.acme-fenlei:before {
+  content: "\e67b";
+}
+
+.acme-fenlei1:before {
+  content: "\e689";
+}
+
+.acme-fenlei2:before {
+  content: "\e695";
 }
 
 .acme-sousuo:before {

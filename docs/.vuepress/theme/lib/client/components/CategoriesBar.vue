@@ -5,13 +5,14 @@
             class="categories-title"
             title="全部分类"
         >
-            <ac-icon
-                name="acme-24gf-folderStar"
+            <a-icon
+                name="acmefenlei1"
                 size="1.4rem"
+                use-svg
             />
             <span>&nbsp;&nbsp;{{ length === 'all' ? '全部分类' : '文章分类' }}</span>
         </RouterLink>
-        <div class="categories-item">
+        <div class="categories">
             <RouterLink
                 :to="`/categories/?category=${encodeURIComponent(item.key)}`"
                 v-for="(item, index) in categories"
@@ -19,7 +20,7 @@
                 :class="{ active: item.key === category }"
             >
                 {{ item.key }}
-                <span class="categories-item__num">{{ item.length }}</span>
+                <span class="categories__num">{{ item.length }}</span>
             </RouterLink>
             <RouterLink
                 to="/categories/"
@@ -64,10 +65,11 @@ export default {
         font-size: 1rem;
         opacity: 0.9;
         padding-left: 0.95rem;
-        display: flex;
-        align-items: center;
+        & > svg {
+            vertical-align: -0.22em;
+        }
     }
-    .categories-item {
+    .categories {
         margin-top: 0.6rem;
         a {
             display: block;
@@ -96,7 +98,7 @@ export default {
         }
         &__num {
             float: right;
-            background-color: var(--c-bg-lighter);
+            background-color: var(--c-tip-bg);
             color: var(--c-text);
             border-radius: 8px;
             padding: 0 0.13rem;

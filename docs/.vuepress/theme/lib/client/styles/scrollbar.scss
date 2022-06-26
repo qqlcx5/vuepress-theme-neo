@@ -1,32 +1,21 @@
+@import 'variables';
 
-html body {
-    box-sizing: border-box;
-}
-
-.card-box {
-    box-shadow: var(--box-shadow);
-    background-color: var(--c-bg);
-    border-radius: 5px;
-    &:hover {
-        box-shadow: var(--box-shadow-hover);
+@mixin scrollbar() {
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    // 全局默认样式
+    ::-webkit-scrollbar-thumb {
+        border-radius: 12px;
+        background-color: #49b1f5;
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
     }
 }
 
-// 分类标签页面行内块样式
-// .abstract-item {
-//     position: relative;
-//     transition: all 0.3s;
-//     cursor: pointer;
-//     overflow: hidden;
-//     &:hover {
-//         &::before {
-//             content: "";
-//             border: 2px solid transparent;
-//             border-top-color: #647ea0;
-//             border-right-color: #647ea0;
-//             transition: width 0.2s ease-out, height 0.2s ease-out 0.25s;
-//         }
-//     }
-// }
+@include scrollbar();
 
-
+@media (max-width: $MQMobile) {
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+}

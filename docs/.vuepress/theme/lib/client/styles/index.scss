@@ -3,9 +3,6 @@
 @use 'border-effect'; // 边框动画
 @use 'scrollbar'; // 滚动条效果
 
-@import '//at.alicdn.com/t/font_1678482_4tbhmh589x.css'; // iconfont字体
-@import 'iconfont/iconfont.css'; // iconfont字体
-
 html body {
     box-sizing: border-box;
 }
@@ -18,22 +15,5 @@ html body {
         box-shadow: var(--box-shadow-hover);
     }
 }
-
-// 分类标签页面行内块样式
-// .abstract-item {
-//     position: relative;
-//     transition: all 0.3s;
-//     cursor: pointer;
-//     overflow: hidden;
-//     &:hover {
-//         &::before {
-//             content: "";
-//             border: 2px solid transparent;
-//             border-top-color: #647ea0;
-//             border-right-color: #647ea0;
-//             transition: width 0.2s ease-out, height 0.2s ease-out 0.25s;
-//         }
-//     }
-// }
 
 

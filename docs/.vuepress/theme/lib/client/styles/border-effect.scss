@@ -1,5 +1,16 @@
 // 来自：https://juejin.cn/post/6918921604160290830
 
+
+// @function randomNum($min, $max) {
+//     $rand: random();
+//     $randomNum: $min + floor($rand * (($max - $min) + 1));
+//     @return $randomNum;
+//   }
+
+// .effect-border-random {
+//     width: randomNum(1, 5);
+// }
+
 // hover边框左边顶部长度拉伸
 .effect-border-1 {
     position: relative;

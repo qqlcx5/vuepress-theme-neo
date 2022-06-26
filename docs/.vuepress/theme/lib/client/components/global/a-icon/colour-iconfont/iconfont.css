@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "acme"; /* Project id 3484198 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1656091295457') format('woff2'),
+       url('iconfont.woff?t=1656091295457') format('woff'),
+       url('iconfont.ttf?t=1656091295457') format('truetype');
+}
+
+.acme {
+  font-family: "acme" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.acmefenlei:before {
+  content: "\e689";
+}
+
+.acmefenlei1:before {
+  content: "\e695";
+}
+

@@ -79,7 +79,6 @@ export default {
 
 <style lang='scss'>
 @import '../styles/_variables';
-
 .tags-page {
     .tags-wrapper {
         position: sticky;
@@ -95,20 +94,6 @@ export default {
             overflow-x: hidden;
             overflow-y: auto;
             transition: all 0.2s;
-            &::-webkit-scrollbar-track-piece {
-                background-color: rgba(0, 0, 0, 0.05);
-            }
-            &::-webkit-scrollbar-thumb:vertical {
-                background-color: rgba(0, 0, 0, 0.15);
-            }
-            &:hover {
-                &::-webkit-scrollbar-track-piece {
-                    background-color: rgba(0, 0, 0, 0.1);
-                }
-                &::-webkit-scrollbar-thumb:vertical {
-                    background-color: rgba(0, 0, 0, 0.25);
-                }
-            }
         }
     }
 }
