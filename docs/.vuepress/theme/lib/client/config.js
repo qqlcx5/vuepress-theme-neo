@@ -11,7 +11,6 @@ export default defineClientConfig({
     },
     setup() {
         onMounted(() => {})
-
         const $filterPosts = computed(() => {
             return filterPosts(__SITEPAGES__)
         })

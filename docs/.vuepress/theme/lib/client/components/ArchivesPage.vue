@@ -4,7 +4,7 @@
             <h1>
                 <img
                     :src="currentBadge"
-                    v-if="$themeConfig.titleBadge === false ? false : true"
+                    v-if="$themeConfig.titleBadge !== false"
                 />
                 {{ $page.title }}
             </h1>
@@ -21,15 +21,10 @@
                         v-if="(year = getYear(index)) !== getYear(index - 1)"
                         :key="index + $sortPostsByDate.length"
                     >
-                        <h2>
-                            {{ year }}
-                            <span>
-                                <i>{{ countByYear[year] }}</i> 篇
-                            </span>
-                        </h2>
+                        <h2> {{ year }} <span> <i>{{ countByYear[year] }}</i> 篇 </span> </h2>
                     </li>
                     <li>
-                        <router-link :to="item.path">
+                        <router-link :to="item.relativePath">
                             <span class="date">{{ getDate(item) }}</span>
                             {{ item.title }}
                             <span
@@ -57,15 +52,18 @@ export default {
     setup(props) {
         let postsList = ref([]) // 当前页面的文章数据
         let countByYear = reactive({}) // 根据年份统计的文章数
-        let perPage = ref(80)   // 每页长度
-        let currentPage = ref([])   // 当前页面
+        let perPage = ref(80) // 每页长度
+        let currentPage = ref(1) // 当前页面
         const $sortPostsByDate = inject('$sortPostsByDate').value
         const $themeConfig = useThemeData().value
         const $route = useRoute()
 
         getPageData()
+
         for (let i = 0; i < $sortPostsByDate.length; i++) {
-            const { frontmatter: { date } } = $sortPostsByDate[i];
+            const {
+                frontmatter: { date }
+            } = $sortPostsByDate[i]
             if (date && type(date) === 'string') {
                 const year = date.slice(0, 4)
                 if (!countByYear[year]) {
@@ -74,22 +72,26 @@ export default {
                 countByYear[year] = countByYear[year] + 1
             }
         }
-        // countByYear = countByYear
+        // console.log('countByYear', countByYear);
+        countByYear = countByYear
+
         onMounted(() => {
-            window.addEventListener('scroll', debounce(() => {
-                if (postsList.value.length < $sortPostsByDate.length) {
-                    const docEl = document.documentElement
-                    const docBody = document.body
-                    const scrollTop = docEl.scrollTop || docBody.scrollTop;
-                    const clientHeight = docEl.clientHeight || docBody.clientHeight;
-                    const scrollHeight = docEl.scrollHeight || docBody.scrollHeight;
+            window.addEventListener(
+                'scroll',
+                debounce(() => {
+                    if (postsList.value.length < $sortPostsByDate.length) {
+                        const docEl = document.documentElement
+                        const docBody = document.body
+                        const scrollTop = docEl.scrollTop || docBody.scrollTop
+                        const clientHeight = docEl.clientHeight || docBody.clientHeight
+                        const scrollHeight = docEl.scrollHeight || docBody.scrollHeight
 
-                    if (scrollHeight > clientHeight && scrollTop + clientHeight >= scrollHeight - 250) {
-                        loadmore()
+                        if (scrollHeight > clientHeight && scrollTop + clientHeight >= scrollHeight - 250) {
+                            loadmore()
+                        }
                     }
-                }
-
-            }, 200))
+                }, 200)
+            )
         })
 
         function getPageData() {
@@ -103,19 +105,23 @@ export default {
         function getYear(index) {
             const item = postsList[index]
             if (!item) return
-            const { frontmatter: { date } } = item
+            const {
+                frontmatter: { date }
+            } = item
             if (date && type(date) === 'string') {
                 return date.slice(0, 4)
             }
         }
 
         function getDate(item) {
-            const { frontmatter: { date } } = item
+            const {
+                frontmatter: { date }
+            } = item
             if (date && type(date) === 'string') {
                 return date.slice(5, 10)
             }
         }
-
+        // 标题图标
         let badges = ref([
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC',
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==',
@@ -126,10 +132,12 @@ export default {
             badges.value = $themeConfig.titleBadgeIcons
         }
         currentBadge.value = getBadge()
-        console.log(getBadge(), 'getBadge()');
-        watch(() => $route.path, () => {
-            currentBadge.value = getBadge()
-        })
+        watch(
+            () => $route.path,
+            () => {
+                currentBadge.value = getBadge()
+            }
+        )
         function getBadge() {
             return badges.value[Math.floor(Math.random() * badges.value.length)]
         }
@@ -147,7 +155,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 @import '../styles/wrapper.scss';
 @import '../styles/_variables';
 
@@ -160,7 +168,7 @@ export default {
         }
         .count {
             text-align: right;
-            margin-top: -2.5rem;
+            margin-top: -2.8rem;
             font-size: 0.85rem;
             opacity: 0.8;
         }
