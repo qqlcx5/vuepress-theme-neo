@@ -5,7 +5,7 @@
     margin: 0 auto;
     padding: 1rem 2.5rem 2rem 2.5rem;
     &:not(.footer) {
-        background: var(--mainBg);
+        background: var(--c-bg);
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
         margin-bottom: 1rem;
         @media (min-width: ($contentWidth + 80)) {

@@ -89,7 +89,7 @@ export default {
             padding: 0.2rem 0.4rem;
             transition: all 0.4s;
             background-color: var(--textColor);
-            color: var(--mainBg);
+            color: var(--c-bg);
             border-radius: 3px;
             margin: 0 0.3rem 0.5rem 0;
             min-width: 2rem;

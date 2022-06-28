@@ -230,7 +230,7 @@ export default {
             margin: 0.3rem;
             &.active {
                 background: $accentColor;
-                color: var(--mainBg);
+                color: var(--c-bg);
             }
         }
     }
