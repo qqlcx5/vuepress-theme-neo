@@ -1,0 +1,23 @@
+{
+  "id": "3484198",
+  "name": "colour-vuepress2.x",
+  "font_family": "acme",
+  "css_prefix_text": "acme",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "27045205",
+      "name": "标签",
+      "font_class": "biaoqian",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
+      "icon_id": "6880945",
+      "name": "分类",
+      "font_class": "fenlei1",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    }
+  ]
+}

@@ -1,10 +1,17 @@
 <template>
     <div class="tags-wrapper card-box">
-        <router-link
+        <RouterLink
             to="/tags/"
-            class="title iconfont icon-biaoqian1"
+            class="tags-title"
             title="全部标签"
-        >{{ length === 'all' ? '全部标签' : '热门标签' }}</router-link>
+        >
+            <a-icon
+                name="acmebiaoqian"
+                size="1.4rem"
+                use-svg
+            />
+            <span>&nbsp;&nbsp;{{ length === 'all' ? '全部标签' : '热门标签' }}</span>
+        </RouterLink>
         <div class="tags">
             <template
                 v-for="(item, index) in tags"
@@ -69,19 +76,19 @@ export default {
 @import '../styles/_variables';
 
 .tags-wrapper {
-    padding: 0 0.95rem;
-    .title {
-        color: var(--textColor);
+    .tags-title {
+        color: var(--c-text);
+        font-size: 1rem;
         opacity: 0.9;
-        font-size: 1.2rem;
-        &::before {
-            margin-right: 0.3rem;
+        padding-left: 0.5rem;
+        & > svg {
+            vertical-align: -0.22em;
         }
     }
     .tags {
         text-align: justify;
         padding: 0.8rem 0.5rem 0.5rem 0.5rem;
-        margin: 0 -0.5rem -0.5rem -0.5rem;
+        // margin: 0 -0.5rem -0.5rem -0.5rem;
         color: var(--c-bg);
         a {
             opacity: 0.8;
