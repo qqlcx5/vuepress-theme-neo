@@ -7,7 +7,7 @@
         >
             <a-icon
                 name="acmefenlei1"
-                size="1.4rem"
+                size="1.32rem"
                 use-svg
             />
             <span>&nbsp;&nbsp;{{ length === 'all' ? '全部分类' : '文章分类' }}</span>
@@ -65,8 +65,8 @@ export default {
         font-size: 1rem;
         opacity: 0.9;
         padding-left: 0.95rem;
-        & > svg {
-            vertical-align: -0.22em;
+        .acme-colour {
+            vertical-align: -0.23em;
         }
     }
     .categories {

@@ -7,7 +7,7 @@
         >
             <a-icon
                 name="acmebiaoqian"
-                size="1.4rem"
+                size="1.5rem"
                 use-svg
             />
             <span>&nbsp;&nbsp;{{ length === 'all' ? '全部标签' : '热门标签' }}</span>
@@ -81,8 +81,8 @@ export default {
         font-size: 1rem;
         opacity: 0.9;
         padding-left: 0.5rem;
-        & > svg {
-            vertical-align: -0.22em;
+        .acme-colour {
+            vertical-align: -0.26em;
         }
     }
     .tags {

@@ -10,7 +10,7 @@ html body {
 .card-box {
     box-shadow: var(--box-shadow);
     background-color: var(--c-bg);
-    border-radius: 5px;
+    border-radius: 6px;
     &:hover {
         box-shadow: var(--box-shadow-hover);
     }

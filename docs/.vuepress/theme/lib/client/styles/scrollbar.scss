@@ -3,6 +3,7 @@
 @mixin scrollbar() {
     ::-webkit-scrollbar {
         width: 6px;
+        height: 6px;
     }
     // 全局默认样式
     ::-webkit-scrollbar-thumb {
@@ -13,9 +14,9 @@
 }
 
 @include scrollbar();
-
 @media (max-width: $MQMobile) {
     ::-webkit-scrollbar {
         width: 3px;
+        height: 3px;
     }
 }

@@ -5,7 +5,6 @@
                 {{ $page.title }}
                 <div class="title-count"> 总共 <i>{{ $sortPostsByDate.length }}</i> 篇文章 </div>
             </h1>
-
             <Timeline></Timeline>
         </main>
     </div>
