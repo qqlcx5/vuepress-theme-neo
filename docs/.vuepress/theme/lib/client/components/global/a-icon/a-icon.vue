@@ -1,8 +1,14 @@
 <template>
-    <svg v-if="useSvg_" class="acme-colour" aria-hidden="true" :style="[iconStyle_]">
+    <svg
+        v-if="useSvg_"
+        class="acme-colour"
+        aria-hidden="true"
+        :style="[iconStyle_]"
+    >
         <use :xlink:href="`#${name}`"></use>
     </svg>
-    <i  v-else
+    <i
+        v-else
         class="a-icon acme"
         :class="[name]"
         :style="[iconStyle_]"
@@ -10,8 +16,6 @@
 </template>
 <script>
 import { defineComponent, computed } from 'vue'
-import './colour-iconfont/iconfont.js'
-
 export default defineComponent({
     name: 'AIcon',
     props: {
@@ -52,7 +56,6 @@ export default defineComponent({
     },
     emits: ['click'],
     setup(props, { emit }) {
-        // 通用的事件句柄
         const handleClick = (e) => {
             emit('click', e, false)
         }
