@@ -15,7 +15,7 @@
     />
 </template>
 <script>
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, onMounted } from 'vue'
 export default defineComponent({
     name: 'AIcon',
     props: {
@@ -59,6 +59,7 @@ export default defineComponent({
         const handleClick = (e) => {
             emit('click', e, false)
         }
+        onMounted(async () => { })
         // 偏转角度
         const rotate_ = computed(() => {
             return String(props.rotate) !== 'false' && props.rotate
