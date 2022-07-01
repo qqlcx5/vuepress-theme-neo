@@ -628,7 +628,6 @@ export default {
     }
     .navbar-items a:hover {
         color: var(--c-text-accent);
-        transform: scale(1.1);
     }
 }
 </style>

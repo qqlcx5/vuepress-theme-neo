@@ -28,16 +28,34 @@ module.exports = [
         text: '索引',
         children: [
             {
-                text: '分类',
-                link: '/categories/'
+                text: '分类标题',
+                children: [
+                    {
+                        text: '分类',
+                        link: '/categories/',
+                        activeMatch: '/categories/'
+                    }
+                ]
             },
             {
-                text: '标签',
-                link: '/tags/'
+                text: '标签标题',
+                children: [
+                    {
+                        text: '分类',
+                        link: '/categories/',
+                        activeMatch: '/categories/'
+                    }
+                ]
             },
             {
-                text: '归档',
-                link: '/archives/'
+                text: '归档标题',
+                children: [
+                    {
+                        text: '归档',
+                        link: '/archives/',
+                        activeMatch: '/archives/'
+                    }
+                ]
             }
         ]
     }

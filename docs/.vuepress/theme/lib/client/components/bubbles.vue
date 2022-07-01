@@ -31,6 +31,9 @@ export default {
         })
         onMounted(() => {
             handleInitCanvas()
+            window.addEventListener('resize', () => {
+                resizeRef()
+            })
         })
         function handleInitCanvas() {
             canvas = canvasRef.value
@@ -65,10 +68,6 @@ export default {
         //         }, wait)
         //     }
         // })()
-
-        window.addEventListener('resize', () => {
-            resizeRef()
-        })
 
         function resizeRef() {
             const target = props.selectRef && document.querySelector(props.selectRef)
