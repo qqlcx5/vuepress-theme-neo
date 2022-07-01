@@ -10,7 +10,7 @@
     ],
     "license": "MIT",
     "author": "feyoudao.cn",
-    "main": "lib/client/index.js",
+    "main": "lib/node/index.js",
     "files": [
         "lib",
         "templates"
