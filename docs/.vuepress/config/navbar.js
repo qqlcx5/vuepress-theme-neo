@@ -41,9 +41,9 @@ module.exports = [
                 text: '标签标题',
                 children: [
                     {
-                        text: '分类',
-                        link: '/categories/',
-                        activeMatch: '/categories/'
+                        text: '标签',
+                        link: '/tags/',
+                        activeMatch: '/tags/'
                     }
                 ]
             },
