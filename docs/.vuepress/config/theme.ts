@@ -16,4 +16,9 @@ export default localTheme({
     category: true,
     tag: true,
     archive: true,
+    authorInfo: {
+        name: '星野',
+        avatar: 'https://avatars0.githubusercontent.com/u/888',
+        link: 'https://feyoudao.cn'
+    }
 })
