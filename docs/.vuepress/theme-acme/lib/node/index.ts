@@ -2,8 +2,7 @@ import { path } from '@vuepress/utils'
 import { defaultTheme } from '@vuepress/theme-default'
 import type { Theme } from '@vuepress/core'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
-// const sourceDir = path.join(__dirname, '..', '..', '..', '..') // docs相对路径
-const { useSitePages, useFrontmatter } = require('./node_utils/setSitePages')
+const { useSitePages, useFrontmatter } = require('./utils/setSitePages')
 
 export const localTheme = (options: DefaultThemeOptions): Theme => {
     return {
