@@ -3,6 +3,7 @@ import Home from '../components/Home.vue'
 import CategoriesPage from '../components/CategoriesPage.vue'
 import TagsPage from '../components/TagsPage.vue'
 import ArchivesPage from '../components/ArchivesPage.vue'
+// @ts-ignore
 import Page from '../components/Page.vue'
 // @ts-ignore
 import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'

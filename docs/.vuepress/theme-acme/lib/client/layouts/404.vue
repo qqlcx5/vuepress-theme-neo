@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouteLocale } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
- 
+
 const routeLocale = useRouteLocale()
 const themeLocale = useThemeLocaleData()
 
@@ -37,40 +37,39 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    .page-info {
+        margin-top: -12vh;
+        font-family: 'Raleway', Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        text-align: center;
+    }
 
-.page-info {
-    margin-top: -12vh;
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    text-align: center;
-}
-
-.page-info .desc {
-    line-height: 1.6rem;
-    color: #1b334d;
-    margin: 1rem 0;
-}
-.btn {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
-    border: 0px solid;
-    border-bottom: 2px solid;
-    border-color: #ec9228;
-    padding: 10px 41px;
-    border-radius: 5px;
-    background: none;
-    text-transform: uppercase;
-    display: inline-block;
-    background-color: #ffad32;
-    transition: all 0.5s ease-in-out;
-    text-decoration: none;
-    cursor: pointer;
-}
-.btn:hover {
-    background: #ec9228;
-    color: #ffffff;
-    text-decoration: none;
+    .page-info .desc {
+        line-height: 1.6rem;
+        color: #1b334d;
+        margin: 1rem 0;
+    }
+    .btn {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+        border: 0px solid;
+        border-bottom: 2px solid;
+        border-color: #ec9228;
+        padding: 10px 41px;
+        border-radius: 5px;
+        background: none;
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: #ffad32;
+        transition: all 0.5s ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background: #ec9228;
+        color: #ffffff;
+        text-decoration: none;
+    }
 }
 </style>
