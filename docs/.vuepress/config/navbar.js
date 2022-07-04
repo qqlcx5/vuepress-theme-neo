@@ -25,6 +25,11 @@ module.exports = [
         activeMatch: '^/movies/'
     },
     {
+        text: '测试用例',
+        link: '/test-demo/tabs',
+        activeMatch: '^/test/'
+    },
+    {
         text: '索引',
         children: [
             {

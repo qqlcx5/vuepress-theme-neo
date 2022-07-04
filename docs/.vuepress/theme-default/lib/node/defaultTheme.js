@@ -23,9 +23,7 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
         alias: Object.fromEntries(utils_1.fs
             .readdirSync(utils_1.path.resolve(__dirname, '../client/components'))
             .filter((file) => file.endsWith('.vue'))
-            .map((file) => [
-            `@theme/${file}`,
-            utils_1.path.resolve(__dirname, '../client/components', file),
+            .map((file) => [`@theme/${file}`, utils_1.path.resolve(__dirname, '../client/components', file),
         ])),
         clientConfigFile: utils_1.path.resolve(__dirname, '../client/config.js'),
         extendsPage: (page) => {
