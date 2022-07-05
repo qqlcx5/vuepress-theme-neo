@@ -4,10 +4,9 @@ import CategoriesPage from '../components/CategoriesPage.vue'
 import TagsPage from '../components/TagsPage.vue'
 import ArchivesPage from '../components/ArchivesPage.vue'
 // @ts-ignore
-import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
-// import Page from '../components/Page.vue'
-// @ts-ignore
 import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
+// @ts-ignore
+import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
 // @ts-ignore
 import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
