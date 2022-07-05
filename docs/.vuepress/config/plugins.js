@@ -4,7 +4,7 @@ const { searchPlugin } = require('@vuepress/plugin-search')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 // const typed = require('../plugins/vuepress-plugin-typed')
 const { path } = require('@vuepress/utils')
-// const { copyCodePlugin } = require('vuepress-plugin-copy-code2')
+const { copyCodePlugin } = require('vuepress-plugin-copy-code2')
 const { photoSwipePlugin } = require('vuepress-plugin-photo-swipe')
 const { mdEnhancePlugin } = require('vuepress-plugin-md-enhance')
 const { commentPlugin } = require('vuepress-plugin-comment2')
@@ -28,9 +28,9 @@ module.exports = [
     registerComponentsPlugin({
         componentsDir: path.resolve(__dirname, '../components')
     }),
-    // copyCodePlugin({
-    //     showInMobile: false
-    // }),
+    copyCodePlugin({
+        showInMobile: false
+    }),
     photoSwipePlugin({
         // 你的选项
     }),
