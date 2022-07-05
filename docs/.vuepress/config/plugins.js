@@ -36,13 +36,13 @@ module.exports = [
     // photoSwipePlugin({
     //     // 你的选项
     // }),
-    // commentPlugin({
-    //     provider: 'Twikoo',
-    //     envId: 'https://twikoo-qqlcx5.vercel.app/'
-    // }),
-    // readingTimePlugin({
-    //     // 你的选项
-    // }),
+    commentPlugin({
+        provider: 'Twikoo',
+        envId: 'https://twikoo-qqlcx5.vercel.app/'
+    }),
+    readingTimePlugin({
+        // 你的选项
+    }),
     sitemapPlugin({
         hostname: "feyoudao.cn",
     }),
