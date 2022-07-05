@@ -40,9 +40,9 @@ module.exports = [
     photoSwipePlugin({
         // 你的选项
     }),
-    readingTimePlugin({
-        // 你的选项
-    }),
+    // readingTimePlugin({
+    //     // 你的选项
+    // }),
     sitemapPlugin({
         hostname: 'feyoudao.cn'
     }),
