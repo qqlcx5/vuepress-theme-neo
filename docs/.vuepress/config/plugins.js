@@ -7,7 +7,7 @@ const { path } = require('@vuepress/utils')
 const { copyCodePlugin } = require('vuepress-plugin-copy-code2')
 const { photoSwipePlugin } = require('vuepress-plugin-photo-swipe')
 const { mdEnhancePlugin } = require('vuepress-plugin-md-enhance')
-const { commentPlugin } = require('vuepress-plugin-comment2')
+// const { commentPlugin } = require('vuepress-plugin-comment2')
 
 module.exports = [
     googleAnalyticsPlugin({
@@ -34,10 +34,10 @@ module.exports = [
     photoSwipePlugin({
         // 你的选项
     }),
-    commentPlugin({
-        provider: "Twikoo",
-        envId: 'https://twikoo-qqlcx5.vercel.app/',
-    }),
+    // commentPlugin({
+    //     provider: "Twikoo",
+    //     envId: 'https://twikoo-qqlcx5.vercel.app/',
+    // }),
     mdEnhancePlugin({
         tabs: true, // 添加选项卡支持
         codetabs: true, // 启用代码块分组
