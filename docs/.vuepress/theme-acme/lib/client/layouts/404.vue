@@ -12,16 +12,16 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
 <template>
     <div class="theme-container pkfrom-container">
         <div class="theme-default-content">
-            <div class="page-info">
+            <div class="pkfrom-info">
                 <img
                     src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/404-light.gif"
                     alt="404 error"
                 />
                 <!-- end Rabbit -->
-                <p class="desc">The page you are looking for was moved, removed,<br />
+                <p class="pkfrom-info__desc">The page you are looking for was moved, removed,<br />
                     renamed or might never existed.</p>
                 <RouterLink
-                    class="btn"
+                    class="pkfrom-info__btn"
                     :to="homeLink"
                 >{{ homeText }}</RouterLink>
             </div>
@@ -37,39 +37,38 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
     display: flex;
     justify-content: center;
     align-items: center;
-    .page-info {
+    .pkfrom-info {
         margin-top: -12vh;
         font-family: 'Raleway', Helvetica, Arial, sans-serif;
         font-weight: 300;
         text-align: center;
-    }
-
-    .page-info .desc {
-        line-height: 1.6rem;
-        color: #1b334d;
-        margin: 1rem 0;
-    }
-    .btn {
-        font-size: 18px;
-        font-weight: 600;
-        color: #ffffff;
-        border: 0px solid;
-        border-bottom: 2px solid;
-        border-color: #ec9228;
-        padding: 10px 41px;
-        border-radius: 5px;
-        background: none;
-        text-transform: uppercase;
-        display: inline-block;
-        background-color: #ffad32;
-        transition: all 0.5s ease-in-out;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    .btn:hover {
-        background: #ec9228;
-        color: #ffffff;
-        text-decoration: none;
+        &__desc {
+            line-height: 1.6rem;
+            color: #1b334d;
+            margin: 1rem 0;
+        }
+        &__btn {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            border: 0px solid;
+            border-bottom: 2px solid;
+            border-color: #ec9228;
+            padding: 10px 41px;
+            border-radius: 5px;
+            background: none;
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: #ffad32;
+            transition: all 0.5s ease-in-out;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+                background: #ec9228;
+                color: #ffffff;
+                text-decoration: none;
+            }
+        }
     }
 }
 </style>

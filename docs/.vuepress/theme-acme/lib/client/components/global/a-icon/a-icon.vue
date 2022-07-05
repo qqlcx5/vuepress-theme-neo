@@ -89,8 +89,8 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-@import '//at.alicdn.com/t/font_1678482_4tbhmh589x.css'; // vdoing iconfont字体
-@import './iconfont/iconfont.css';
+// @import '//at.alicdn.com/t/font_1678482_4tbhmh589x.css'; // vdoing iconfont字体
+// @import './iconfont/iconfont.css';
 
 .a-icon {
     position: relative;
