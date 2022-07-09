@@ -1,8 +1,8 @@
 const navbar = require('./navbar')
 const sidebar = require('./sidebar')
-import { localTheme } from '../theme-acme/lib/node/index'
+import { acmeTheme } from '../theme-acme/lib/node/index'
 
-export default localTheme({
+export default acmeTheme({
     // 默认主题配置项
     navbar, // 导航栏配置
     sidebar, // 侧边栏配置

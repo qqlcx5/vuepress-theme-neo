@@ -34,15 +34,13 @@ module.exports = [
     //     provider: 'Twikoo',
     //     envId: 'https://twikoo-qqlcx5.vercel.app/'
     // }),
+    // readingTimePlugin({
+    // }),
     copyCodePlugin({
         showInMobile: false
     }),
     photoSwipePlugin({
-        // 你的选项
     }),
-    // readingTimePlugin({
-    //     // 你的选项
-    // }),
     sitemapPlugin({
         hostname: 'feyoudao.cn'
     }),

@@ -4,7 +4,7 @@ import type { Theme } from '@vuepress/core'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
 const { useSitePages, useFrontmatter } = require('./utils/setSitePages')
 
-export const localTheme = (options: DefaultThemeOptions): Theme => {
+export const acmeTheme = (options: DefaultThemeOptions): Theme => {
     return {
         name: 'vuepress-theme-acme',
         extends: defaultTheme(options),
@@ -26,6 +26,8 @@ export const localTheme = (options: DefaultThemeOptions): Theme => {
             404: path.resolve(__dirname, '../client/layouts/404.vue'),
             Layout: path.resolve(__dirname, '../client/layouts/Layout.vue')
         },
-        clientConfigFile: path.resolve(__dirname, '../client/config.js')
+        clientConfigFile: path.resolve(__dirname, '../client/config.js'),
+        templateDev: path.resolve(__dirname, '../../templates/build.html'),
+        templateBuild: path.resolve(__dirname, '../../templates/build.html'),
     }
 }

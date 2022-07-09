@@ -86,11 +86,11 @@ export default {
             text-overflow: ellipsis;
             &:not(.active):hover {
                 background: #f5f5f5;
-                color: var(--c-border-accent);
-                border-color: var(--c-border-accent);
+                color: var(--c-brand-light);
+                border-color: var(--c-brand-light);
             }
             &.active {
-                background: var(--c-border-accent);
+                background: var(--c-brand-light);
                 padding-left: 0.8rem;
                 border-radius: 2px;
                 border-color: transparent;
