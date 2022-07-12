@@ -1,18 +1,18 @@
-@use 'variables'; // scss变量
 @use 'vars'; // root变量
-@use 'border-effect'; // 边框动画
+@use 'variables'; // scss变量
 @use 'scrollbar'; // 滚动条效果
+@use 'border-effect'; // 边框动画
 
 html body {
     box-sizing: border-box;
 }
 
 .card-box {
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--acme-box-shadow);
     background-color: var(--c-bg);
     border-radius: 6px;
     &:hover {
-        box-shadow: var(--box-shadow-hover);
+        box-shadow: var(--acme-box-shadow-hover);
     }
 }
 

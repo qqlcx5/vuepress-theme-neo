@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import MainLayout from './MainLayout.vue'
+import Layout from './Layout.vue'
 import Timeline from './Timeline.vue'
 import { inject } from 'vue'
 
 export default {
-    components: { MainLayout, Timeline },
+    components: { Layout, Timeline },
     setup() {
         const $sortPostsByDate = inject('$sortPostsByDate').value
         return { $sortPostsByDate }

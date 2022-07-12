@@ -1,18 +1,20 @@
-// 颜色
-$bannerTextColor: #fff; // 首页 banner区(博客标题)文本颜色
-$accentColor: #5F98E7;
+// colors
+$accentColor: #49b1f5;
 $activeColor: #ff5722;
-$arrowBgColor: #ccc;
-$badgeTipColor: #42b983;
-$badgeWarningColor: darken(#ffe564, 35%);
-$badgeErrorColor: #da5961;
+// $accentColor: #3eaf7c;
+// $textColor: #2c3e50;
+// $borderColor: #eaecef;
+// $codeBgColor: #282c34;
+// $arrowBgColor: #ccc;
+// $badgeTipColor: #42b983;
+// $badgeWarningColor: darken(#ffe564, 35%);
+// $badgeErrorColor: #DA5961;
 
-// 布局
+// layout
 $navbarHeight: 3.6rem;
-$sidebarWidth: 18rem;
-$contentWidth: 860px;
-$homePageWidth: 1200px;
-$rightMenuWidth: 230px; // 右侧菜单;
+$sidebarWidth: 20rem;
+$contentWidth: 740px;
+$homePageWidth: 960px;
 
 // responsive breakpoints
 $MQNarrow: 959px !default;

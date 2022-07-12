@@ -1,7 +1,7 @@
 <template>
     <div class="custom-page tags-page">
-        <MainLayout>
-            <template #mainLeft>
+        <Layout>
+            <template #content-left>
                 <TagsBar
                     v-if="$categoriesAndTags.tags.length"
                     :tagsData="$categoriesAndTags.tags"
@@ -20,26 +20,26 @@
                     v-show="Math.ceil(total / perPage) > 1"
                 />
             </template>
-            <template #mainRight>
+            <template #content-right>
                 <TagsBar
                     v-if="$categoriesAndTags.tags.length"
                     :tagsData="$categoriesAndTags.tags"
                     :tag="tag"
                 />
             </template>
-        </MainLayout>
+        </Layout>
     </div>
 </template>
 
 <script>
-import MainLayout from './MainLayout.vue'
+import Layout from './Layout.vue'
 import PostList from './PostList.vue'
 import Pagination from './Pagination.vue'
 import TagsBar from './TagsBar.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 export default {
-    components: { MainLayout, PostList, Pagination, TagsBar },
+    components: { Layout, PostList, Pagination, TagsBar },
     setup() {
         let tag = ref()
         let total = ref(0) // 总长

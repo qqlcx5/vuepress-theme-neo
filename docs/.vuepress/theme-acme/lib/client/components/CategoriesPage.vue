@@ -1,11 +1,11 @@
 <template>
     <div class="custom-page categories-page">
-        <MainLayout>
-            <template #mainLeft>
-                <CategoriesBar
+        <Layout>
+            <template #content-left>
+                <!-- <CategoriesBar
                     :categoriesData="$categoriesAndTags.categories"
                     :category="category"
-                />
+                /> -->
                 <PostList
                     :currentPage="currentPage"
                     :perPage="perPage"
@@ -19,19 +19,19 @@
                     v-show="Math.ceil(total / perPage) > 1"
                 />
             </template>
-            <template #mainRight>
+            <template #content-right>
                 <CategoriesBar
                     v-if="$categoriesAndTags?.categories.length"
                     :categoriesData="$categoriesAndTags?.categories"
                     :category="category"
                 />
             </template>
-        </MainLayout>
+        </Layout>
     </div>
 </template>
 
 <script>
-import MainLayout from './MainLayout.vue'
+import Layout from './Layout.vue'
 import PostList from './PostList.vue'
 import Pagination from './Pagination.vue'
 import CategoriesBar from './CategoriesBar.vue'
@@ -39,7 +39,7 @@ import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
-    components: { MainLayout, PostList, Pagination, CategoriesBar },
+    components: { Layout, PostList, Pagination, CategoriesBar },
     setup() {
         const $groupPosts = inject('$groupPosts').value
         const $sortPosts = inject('$sortPosts').value
@@ -92,42 +92,42 @@ export default {
 
 <style lang='scss'>
 @import '../styles/_variables';
-.categories-page {
-    .categories-wrapper {
-        position: sticky;
-        top: ($navbarHeight + 0.9rem);
-        max-height: calc(100vh - 10rem);
-        min-height: 4.2rem;
-        @media (max-width: $MQMobile) {
-            display: none;
-        }
-        .categories {
-            padding-right: 0.5rem;
-            max-height: calc(100vh - 14rem);
-            min-height: 2.2rem;
-            overflow-y: auto;
-            transition: all 0.2s;
-            position: relative;
-        }
-    }
-}
-.categories-page {
-    .main-left {
-        .categories-wrapper {
-            position: relative;
-            top: 0;
-            padding: 0.9rem 1.5rem;
-            margin-bottom: 0.9rem;
-            max-height: 15rem;
-            border-radius: 0;
-            display: none;
-            @media (max-width: $MQMobile) {
-                display: block;
-            }
-            .categories {
-                max-height: 12rem;
-            }
-        }
-    }
-}
+// .categories-page {
+//     .categories-wrapper {
+//         position: sticky;
+//         top: ($navbarHeight + 0.9rem);
+//         max-height: calc(100vh - 10rem);
+//         min-height: 4.2rem;
+//         @media (max-width: $MQMobile) {
+//             display: none;
+//         }
+//         .categories {
+//             padding-right: 0.5rem;
+//             max-height: calc(100vh - 14rem);
+//             min-height: 2.2rem;
+//             overflow-y: auto;
+//             transition: all 0.2s;
+//             position: relative;
+//         }
+//     }
+// }
+// .categories-page {
+//     .main-left {
+//         .categories-wrapper {
+//             position: relative;
+//             top: 0;
+//             padding: 0.9rem 1.5rem;
+//             margin-bottom: 0.9rem;
+//             max-height: 15rem;
+//             border-radius: 0;
+//             display: none;
+//             @media (max-width: $MQMobile) {
+//                 display: block;
+//             }
+//             .categories {
+//                 max-height: 12rem;
+//             }
+//         }
+//     }
+// }
 </style>
