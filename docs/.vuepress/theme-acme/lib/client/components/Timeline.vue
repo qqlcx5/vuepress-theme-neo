@@ -11,7 +11,7 @@
                 <h2> {{ year }} <span> <i>{{ countByYear[year] }}</i> 篇 </span> </h2>
             </li>
             <li>
-                <router-link :to="item.relativePath">
+                <router-link :to="item.path">
                     <span class="date">{{ getDate(item) }}</span>
                     {{ item.title }}
                     <!-- 标题标签 -->

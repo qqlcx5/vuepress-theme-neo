@@ -1,33 +1,31 @@
 <template>
-    <div class="custom-page categories-page">
-        <Layout>
-            <template #content-left>
-                <!-- <CategoriesBar
-                    :categoriesData="$categoriesAndTags.categories"
-                    :category="category"
-                /> -->
-                <PostList
-                    :currentPage="currentPage"
-                    :perPage="perPage"
-                    :category="category"
-                />
-                <Pagination
-                    :total="total"
-                    :perPage="perPage"
-                    :currentPage="currentPage"
-                    @getCurrentPage="handlePagination"
-                    v-show="Math.ceil(total / perPage) > 1"
-                />
-            </template>
-            <template #content-right>
-                <CategoriesBar
-                    v-if="$categoriesAndTags?.categories.length"
-                    :categoriesData="$categoriesAndTags?.categories"
-                    :category="category"
-                />
-            </template>
-        </Layout>
-    </div>
+    <Layout>
+        <template #content-left>
+            <CategoriesBar
+                :categoriesData="$categoriesAndTags.categories"
+                :category="category"
+            />
+            <PostList
+                :currentPage="currentPage"
+                :perPage="perPage"
+                :category="category"
+            />
+            <Pagination
+                :total="total"
+                :perPage="perPage"
+                :currentPage="currentPage"
+                @getCurrentPage="handlePagination"
+                v-show="Math.ceil(total / perPage) > 1"
+            />
+        </template>
+        <template #content-right>
+            <CategoriesBar
+                v-if="$categoriesAndTags?.categories.length"
+                :categoriesData="$categoriesAndTags?.categories"
+                :category="category"
+            />
+        </template>
+    </Layout>
 </template>
 
 <script>
@@ -89,45 +87,18 @@ export default {
     }
 }
 </script>
-
 <style lang='scss'>
 @import '../styles/_variables';
-// .categories-page {
-//     .categories-wrapper {
-//         position: sticky;
-//         top: ($navbarHeight + 0.9rem);
-//         max-height: calc(100vh - 10rem);
-//         min-height: 4.2rem;
-//         @media (max-width: $MQMobile) {
-//             display: none;
-//         }
-//         .categories {
-//             padding-right: 0.5rem;
-//             max-height: calc(100vh - 14rem);
-//             min-height: 2.2rem;
-//             overflow-y: auto;
-//             transition: all 0.2s;
-//             position: relative;
-//         }
-//     }
-// }
-// .categories-page {
-//     .main-left {
-//         .categories-wrapper {
-//             position: relative;
-//             top: 0;
-//             padding: 0.9rem 1.5rem;
-//             margin-bottom: 0.9rem;
-//             max-height: 15rem;
-//             border-radius: 0;
-//             display: none;
-//             @media (max-width: $MQMobile) {
-//                 display: block;
-//             }
-//             .categories {
-//                 max-height: 12rem;
-//             }
-//         }
-//     }
-// }
+
+.content-left .categories-wrapper {
+    display: none;
+    @media (max-width: $MQNarrow) {
+        display: block;
+        margin-bottom: 0.75rem;
+        .categories {
+            max-height: 12rem;
+            overflow-y: auto;
+        }
+    }
+}
 </style>

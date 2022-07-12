@@ -1,8 +1,8 @@
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, computed, provide, readonly } from 'vue'
-import { sitePagesData } from '@vuepress/theme-acme/temp'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
 import { AIcon, NavCard } from './components/global'
+import { pageMap } from '@temp/theme-acme/pageMap'
 import './styles/index.scss'
 
 export default defineClientConfig({
@@ -11,11 +11,12 @@ export default defineClientConfig({
         app.component('AIcon', AIcon)
         app.component('NavCard', NavCard)
     },
+    extendsPage: page => {},
     setup() {
         onMounted(() => {})
 
         const $filterPosts = computed(() => {
-            return filterPosts(JSON.parse(sitePagesData))
+            return filterPosts(pageMap)
         })
         const $sortPosts = computed(() => {
             return sortPosts($filterPosts.value)

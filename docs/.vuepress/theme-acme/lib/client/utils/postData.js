@@ -5,9 +5,9 @@ import { type, compareDate } from './index'
  * @param {Array} posts 所有文章数据
  */
 export function filterPosts (posts) {
-  posts = posts.filter(item => {
-    const { frontmatter: { pageComponent, article, home } } = item
-    return !(pageComponent || article === false || home === true) // 存在页面组件、article字段为false，以及首页
+  posts = posts.filter(page => {
+    // filePathRelative 舍弃那些不是从 Markdown 文件生成的页面
+    return Boolean(page.filePathRelative) && !page.frontmatter["home"] && page.frontmatter.article !== false
   })
   return posts
 }

@@ -73,9 +73,8 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '../styles/_variables';
-
 .tags-wrapper {
+    padding-top: 0.75rem;
     .tags-title {
         color: var(--c-text);
         font-size: 1rem;
@@ -88,7 +87,6 @@ export default {
     .tags {
         text-align: justify;
         padding: 0.8rem 0.5rem 0.5rem 0.5rem;
-        // margin: 0 -0.5rem -0.5rem -0.5rem;
         color: var(--c-bg);
         a {
             opacity: 0.8;
@@ -105,9 +103,6 @@ export default {
             font-size: 0.8rem;
             text-align: center;
             text-decoration: none;
-            @media (max-width: $MQMobile) {
-                font-weight: 400;
-            }
             &:hover {
                 opacity: 1;
                 transform: scale(1.1);

@@ -1,6 +1,5 @@
 const setFrontmatter = require('./setFrontmatter')
 const { createPage, deletePage } = require('./handlePage')
-const genSitePages = require('./genSitePages')
 
 // 生成分类标签等数据
 function useFrontmatter(sourceDir, themeConfig) {
@@ -31,12 +30,5 @@ function useFrontmatter(sourceDir, themeConfig) {
         deletePage(sourceDir, 'archivesPage')
     }
 }
-// 生成 $site.pages 数据
-function useSitePages(sourceDir) {
-    return genSitePages(sourceDir)
-}
 
-module.exports = {
-    useFrontmatter,
-    useSitePages
-}
+module.exports = useFrontmatter

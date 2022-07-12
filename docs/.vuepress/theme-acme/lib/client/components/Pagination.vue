@@ -204,13 +204,13 @@ export default {
         }
         &.prev {
             left: 0;
-            border-top-right-radius: 32px;
-            border-bottom-right-radius: 32px;
+            // border-top-right-radius: 32px;
+            // border-bottom-right-radius: 32px;
         }
         &.next {
             right: 0;
-            border-top-left-radius: 32px;
-            border-bottom-left-radius: 32px;
+            // border-top-left-radius: 32px;
+            // border-bottom-left-radius: 32px;
             &::before {
                 float: right;
                 margin-left: 0.3rem;

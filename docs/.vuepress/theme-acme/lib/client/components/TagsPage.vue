@@ -1,34 +1,32 @@
 <template>
-    <div class="custom-page tags-page">
-        <Layout>
-            <template #content-left>
-                <TagsBar
-                    v-if="$categoriesAndTags.tags.length"
-                    :tagsData="$categoriesAndTags.tags"
-                    :tag="tag"
-                />
-                <PostList
-                    :currentPage="currentPage"
-                    :perPage="perPage"
-                    :tag="tag"
-                />
-                <Pagination
-                    :total="total"
-                    :perPage="perPage"
-                    :currentPage="currentPage"
-                    @getCurrentPage="handlePagination"
-                    v-show="Math.ceil(total / perPage) > 1"
-                />
-            </template>
-            <template #content-right>
-                <TagsBar
-                    v-if="$categoriesAndTags.tags.length"
-                    :tagsData="$categoriesAndTags.tags"
-                    :tag="tag"
-                />
-            </template>
-        </Layout>
-    </div>
+    <Layout>
+        <template #content-left>
+            <TagsBar
+                v-if="$categoriesAndTags.tags.length"
+                :tagsData="$categoriesAndTags.tags"
+                :tag="tag"
+            />
+            <PostList
+                :currentPage="currentPage"
+                :perPage="perPage"
+                :tag="tag"
+            />
+            <Pagination
+                :total="total"
+                :perPage="perPage"
+                :currentPage="currentPage"
+                @getCurrentPage="handlePagination"
+                v-show="Math.ceil(total / perPage) > 1"
+            />
+        </template>
+        <template #content-right>
+            <TagsBar
+                v-if="$categoriesAndTags.tags.length"
+                :tagsData="$categoriesAndTags.tags"
+                :tag="tag"
+            />
+        </template>
+    </Layout>
 </template>
 
 <script>
@@ -79,40 +77,14 @@ export default {
 
 <style lang='scss'>
 @import '../styles/_variables';
-.tags-page {
-    .tags-wrapper {
-        position: sticky;
-        top: ($navbarHeight + 0.9rem);
-        max-height: calc(100vh - 10rem);
-        min-height: 4.2rem;
-        @media (max-width: $MQMobile) {
-            display: none;
-        }
+.content-left .tags-wrapper {
+    display: none;
+    @media (max-width: $MQNarrow) {
+        display: block;
+        margin-bottom: 0.75rem;
         .tags {
-            max-height: calc(100vh - 14rem);
-            min-height: 2.2rem;
-            overflow-x: hidden;
+            max-height: 12rem;
             overflow-y: auto;
-            transition: all 0.2s;
-        }
-    }
-}
-.tags-page {
-    .main-left {
-        .tags-wrapper {
-            position: relative;
-            top: 0;
-            padding: 0.9rem 1.5rem;
-            margin-bottom: 0.9rem;
-            max-height: 15rem;
-            border-radius: 0;
-            display: none;
-            @media (max-width: $MQMobile) {
-                display: block;
-            }
-            .tags {
-                max-height: 11.5rem;
-            }
         }
     }
 }

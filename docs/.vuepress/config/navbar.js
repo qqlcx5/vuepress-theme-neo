@@ -53,10 +53,10 @@ module.exports = [
                 ]
             },
             {
-                text: '归档标题',
+                text: '时间线标题',
                 children: [
                     {
-                        text: '归档',
+                        text: '时间线',
                         link: '/archives/',
                         activeMatch: '/archives/'
                     }

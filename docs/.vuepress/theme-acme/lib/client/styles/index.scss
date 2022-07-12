@@ -1,5 +1,5 @@
 @use 'vars'; // root变量
-@use 'variables'; // scss变量
+@use '_variables'; // scss变量
 @use 'scrollbar'; // 滚动条效果
 @use 'border-effect'; // 边框动画
 

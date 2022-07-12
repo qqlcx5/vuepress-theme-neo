@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-page categories-page">
+    <div class="archives-page">
         <main class="archives-wrapper">
             <h1 class="title">
                 {{ $page.title }}
@@ -25,18 +25,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../styles/_variables';
+.archives-page {
+    padding-top: calc(var(--navbar-height) + 0.75rem);
 
-.archives-wrapper {
-    max-width: $MQNarrow;
-    padding: 0.9rem;
-    margin: 0 auto;
-    .title {
-        padding-left: 0.5em;
-        &-count {
-            font-size: 0.85rem;
-            margin-top: 1.4rem;
-            opacity: 0.8;
-            float: right;
+    .archives-wrapper {
+        max-width: $MQNarrow;
+        padding: 0.9rem;
+        margin: 0 auto;
+        .title {
+            padding-left: 0.5em;
+            &-count {
+                font-size: 0.85rem;
+                margin-top: 1.4rem;
+                opacity: 0.8;
+                float: right;
+            }
         }
     }
 }

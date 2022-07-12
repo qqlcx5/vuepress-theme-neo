@@ -12,7 +12,7 @@
             >
                 <div class="title-wrapper">
                     <h2>
-                        <router-link :to="item.relativePath">
+                        <router-link :to="item.path">
                             {{ item.title }}
                             <span
                                 class="title-tag"

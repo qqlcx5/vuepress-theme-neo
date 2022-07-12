@@ -40,7 +40,7 @@ article: false
   } else if (page.indexOf('archives') > -1) {
     content = `---
 archivesPage: true
-title: 归档
+title: 时间线
 permalink: /archives/
 article: false
 ---`

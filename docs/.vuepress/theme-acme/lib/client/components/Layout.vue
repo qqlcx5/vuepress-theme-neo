@@ -4,9 +4,9 @@
             <div class="content-left">
                 <slot name="content-left" />
             </div>
-            <div class="content-right">
+            <aside class="content-right">
                 <slot name="content-right" />
-            </div>
+            </aside>
         </div>
     </main>
 </template>
@@ -32,6 +32,7 @@
             flex: 0 0 300px;
             box-sizing: border-box;
             height: auto;
+            max-height: calc(100vh - 6rem);
             margin-top: 0;
             margin-left: 0.75rem;
             margin-bottom: 0.75rem;
@@ -42,6 +43,9 @@
     @media (max-width: $MQNarrow) {
         .acme-theme-content {
             padding: 0 1rem;
+        }
+        .content-right{
+            display: none;
         }
     }
 }
