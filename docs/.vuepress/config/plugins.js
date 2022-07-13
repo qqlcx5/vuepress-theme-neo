@@ -30,10 +30,10 @@ module.exports = [
     // registerComponentsPlugin({
     //     componentsDir: path.resolve(__dirname, '../components')
     // }),
-    // commentPlugin({
-    //     provider: 'Twikoo',
-    //     envId: 'https://twikoo-qqlcx5.vercel.app/'
-    // }),
+    commentPlugin({
+        provider: 'Twikoo',
+        envId: 'https://twikoo-qqlcx5.vercel.app/'
+    }),
     // readingTimePlugin({
     // }),
     copyCodePlugin({

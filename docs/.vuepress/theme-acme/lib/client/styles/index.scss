@@ -8,9 +8,9 @@ html body {
 }
 
 .card-box {
-    box-shadow: var(--acme-box-shadow);
-    background-color: var(--c-bg);
     border-radius: 6px;
+    background-color: var(--c-bg);
+    box-shadow: var(--acme-box-shadow);
     &:hover {
         box-shadow: var(--acme-box-shadow-hover);
     }

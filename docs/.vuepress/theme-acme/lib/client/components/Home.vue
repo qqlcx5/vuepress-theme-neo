@@ -19,15 +19,15 @@
             height="600"
         ></canvas>
         <canvas id="display"></canvas>
-        <bubbles />
+        <Bubbles />
     </div>
 </template>
 
 <script>
+import Bubbles from './Bubbles.vue'
 import { onMounted } from 'vue'
-import bubbles from './bubbles.vue';
 export default {
-    components: { bubbles },
+    components: { Bubbles },
     setup() {
         onMounted(() => {
             handleInit();
