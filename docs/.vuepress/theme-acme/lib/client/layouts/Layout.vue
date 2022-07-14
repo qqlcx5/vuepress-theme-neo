@@ -160,7 +160,6 @@ const onBeforeLeave = scrollPromise.pending
           </template>
           <template #bottom>
             <slot name="page-bottom" />
-            CommentService is a service for commenting.
             <CommentService :darkmode="isDarkMode" />
           </template>
         </Page>

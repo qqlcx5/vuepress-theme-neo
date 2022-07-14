@@ -1,14 +1,14 @@
 // const { path } = require('@vuepress/utils')
 const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
 const { searchPlugin } = require('@vuepress/plugin-search')
-const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+// const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 // const typed = require('../plugins/vuepress-plugin-typed')
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+// const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 const { copyCodePlugin } = require('vuepress-plugin-copy-code2')
 const { photoSwipePlugin } = require('vuepress-plugin-photo-swipe')
 const { mdEnhancePlugin } = require('vuepress-plugin-md-enhance')
 const { commentPlugin } = require('vuepress-plugin-comment2')
-const { readingTimePlugin } = require('vuepress-plugin-reading-time2')
+// const { readingTimePlugin } = require('vuepress-plugin-reading-time2')
 const { sitemapPlugin } = require('vuepress-plugin-sitemap2')
 
 module.exports = [
@@ -34,13 +34,11 @@ module.exports = [
         provider: 'Twikoo',
         envId: 'https://twikoo-qqlcx5.vercel.app/'
     }),
-    // readingTimePlugin({
-    // }),
+    // readingTimePlugin({}),
     copyCodePlugin({
         showInMobile: false
     }),
-    photoSwipePlugin({
-    }),
+    photoSwipePlugin({}),
     sitemapPlugin({
         hostname: 'feyoudao.cn'
     }),
