@@ -44,7 +44,7 @@ jobs:
       - name: Generate CNAME
         run: cd ./docs/.vuepress/dist && echo 'feyoudao.cn' > CNAME
 
-      - name: Generate CNAME
+      - name: Generate nojekyll
         run: cd ./docs/.vuepress/dist && echo > .nojekyll
 
       # 查看 workflow 的文档来获取更多信息
