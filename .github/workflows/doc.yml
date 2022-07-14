@@ -1,5 +1,5 @@
 name: Deploy to GitHub Pages
-include: ['_commonjsHelpers.*']
+# include: ['_commonjsHelpers.*']
 
 on:
   push:
@@ -44,6 +44,9 @@ jobs:
 
       - name: Generate CNAME
         run: cd ./docs/.vuepress/dist && echo 'feyoudao.cn' > CNAME
+
+      - name: Generate CNAME
+        run: cd ./docs/.vuepress/dist && echo > .nojekyll
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
