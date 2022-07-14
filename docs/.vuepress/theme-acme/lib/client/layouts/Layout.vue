@@ -4,7 +4,7 @@ import CategoriesPage from '../components/CategoriesPage.vue'
 import TagsPage from '../components/TagsPage.vue'
 import ArchivesPage from '../components/ArchivesPage.vue'
 // @ts-ignore
-import Page from '../components/Page.vue'
+import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
 // @ts-ignore
 import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
 // @ts-ignore
@@ -161,7 +161,7 @@ const onBeforeLeave = scrollPromise.pending
           <template #bottom>
             <slot name="page-bottom" />
             CommentService is a service for commenting.
-            <!-- <CommentService :darkmode="isDarkMode" /> -->
+            <CommentService :darkmode="isDarkMode" />
           </template>
         </Page>
       </Transition>
