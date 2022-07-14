@@ -6,23 +6,23 @@ import PageNav from '@vuepress/theme-default/lib/client/components/PageNav.vue'
 </script>
 
 <template>
-    <main class="page">
-        <slot name="top" />
+  <main class="page">
+    <slot name="top" />
 
-        <div class="theme-default-content">
-            <slot name="content-top" />
+    <div class="theme-default-content">
+      <slot name="content-top" />
 
-            <Content />
+      <Content />
 
-            <slot name="content-bottom" />
-        </div>
+      <slot name="content-bottom" />
+    </div>
 
-        <PageMeta />
+    <PageMeta />
 
-        <PageNav />
+    <PageNav />
 
-        <slot name="bottom" />
-    </main>
+    <slot name="bottom" />
+  </main>
 </template>
 <style lang="scss">
 @import '../styles/_variables';
