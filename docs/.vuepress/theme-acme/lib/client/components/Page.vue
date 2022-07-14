@@ -21,8 +21,6 @@ import PageNav from '@vuepress/theme-default/lib/client/components/PageNav.vue'
 
         <PageNav />
 
-        <CommentService />
-
         <slot name="bottom" />
     </main>
 </template>

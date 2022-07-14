@@ -10,7 +10,7 @@ import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
 // @ts-ignore
 import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { DefaultThemePageFrontmatter } from '@vuepress/theme-default/lib/shared'
 import {
@@ -62,6 +62,9 @@ const containerClass = computed(() => [
   frontmatter.value.pageClass,
 ])
 
+let observer;
+const isDarkMode = ref(false);
+
 // close sidebar after navigation
 let unregisterRouterHook
 onMounted(() => {
@@ -69,7 +72,24 @@ onMounted(() => {
   unregisterRouterHook = router.afterEach(() => {
     toggleSidebar(false)
   })
+
+  const html = document.querySelector("html") as HTMLElement;
+  isDarkMode.value = html.classList.contains("dark");
+  
+  // watch theme change
+  observer = new MutationObserver(() => {
+    isDarkMode.value = html.classList.contains("dark");
+  });
+  observer.observe(html, {
+    attributeFilter: ["class"],
+    attributes: true,
+  });
 })
+
+onBeforeUnmount(() => {
+  observer.disconnect();
+});
+
 onUnmounted(() => {
   unregisterRouterHook()
 })
@@ -140,6 +160,7 @@ const onBeforeLeave = scrollPromise.pending
           </template>
           <template #bottom>
             <slot name="page-bottom" />
+            <CommentService :darkmode="false" />
           </template>
         </Page>
       </Transition>
