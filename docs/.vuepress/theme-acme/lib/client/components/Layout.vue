@@ -30,7 +30,6 @@
             position: sticky;
             top: calc(var(--navbar-height) + 0.75rem);
             flex: 0 0 300px;
-            box-sizing: border-box;
             height: auto;
             max-height: calc(100vh - 6rem);
             margin-top: 0;

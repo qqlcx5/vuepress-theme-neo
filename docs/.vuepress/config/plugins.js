@@ -32,7 +32,8 @@ module.exports = [
     // }),
     commentPlugin({
         provider: 'Twikoo',
-        envId: 'https://twikoo-qqlcx5.vercel.app/'
+        envId: 'https://twikoo-qqlcx5.vercel.app/',
+        comment: false,
     }),
     // readingTimePlugin({}),
     copyCodePlugin({

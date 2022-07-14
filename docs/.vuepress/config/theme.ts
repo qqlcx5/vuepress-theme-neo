@@ -20,5 +20,6 @@ export default acmeTheme({
         name: '星野',
         avatar: 'https://avatars0.githubusercontent.com/u/888',
         link: 'https://feyoudao.cn'
-    }
+    },
+    comment: false,
 })
