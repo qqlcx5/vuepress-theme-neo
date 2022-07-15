@@ -93,7 +93,7 @@ $headings: (2, 3, 4, 5, 6);
 .toc-place-holder {
     position: sticky;
     top: calc(var(--navbar-height) + 2rem);
-    z-index: 99;
+    z-index: 10;
     max-width: var(--content-width);
     margin: 0 auto;
 }
