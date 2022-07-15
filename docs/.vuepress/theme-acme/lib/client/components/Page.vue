@@ -28,19 +28,19 @@ import TOC from './TOC.vue';
 </template>
 <style lang="scss">
 @import '../styles/_variables';
-// 没有侧边栏的情况下，大于MQNarrow在页面右侧添加toc容器
-.theme-container.no-sidebar .page {
-    @media (min-width: $MQMobile) {
-        padding-left: 0;
-    }
-    @media (min-width: $MQNarrow) {
-        padding-right: 13rem;
-    }
-}
-// 有侧边栏的情况下，大于1380px在页面右侧添加toc容器
-.theme-container .page {
-    @media (min-width: 1380px) {
-        padding-right: 16rem;
-    }
-}
+// // 没有侧边栏的情况下，大于MQNarrow在页面右侧添加toc容器
+// .theme-container.no-sidebar .page {
+//     @media (min-width: $MQMobile) {
+//         padding-left: 0;
+//     }
+//     @media (min-width: $MQNarrow) {
+//         padding-right: 13rem;
+//     }
+// }
+// // 有侧边栏的情况下，大于1380px在页面右侧添加toc容器
+// .theme-container:not(.no-sidebar) .page {
+//     @media (min-width: 1380px) {
+//         padding-right: 16rem;
+//     }
+// }
 </style>

@@ -105,11 +105,11 @@ $headings: (2, 3, 4, 5, 6);
     min-width: 10rem;
     max-width: 15rem;
 
-    @media (min-width: 1200px) {
-        .has-toc & {
-            display: block;
-        }
-    }
+    // @media (min-width: 1200px) {
+    //     .has-toc & {
+    //         display: block;
+    //     }
+    // }
 
     .toc-header {
         margin: 0 0 0.75rem 0.5rem;
@@ -139,7 +139,7 @@ $headings: (2, 3, 4, 5, 6);
             left: 0;
             z-index: -1;
             width: 2px;
-            background: var(--border-color);
+            background: var(--c-border);
         }
     }
 
@@ -159,7 +159,7 @@ $headings: (2, 3, 4, 5, 6);
 
         max-width: 100%;
 
-        color: var(--light-grey);
+        color: var(--c-text-light);
 
         line-height: inherit;
         text-overflow: ellipsis;
@@ -193,18 +193,18 @@ $headings: (2, 3, 4, 5, 6);
 
         &:hover {
             > .toc-link {
-                color: var(--theme-color);
+                color: var(--c-brand);
             }
         }
 
         &.active {
             > .toc-link {
-                color: var(--theme-color);
+                color: var(--c-brand);
                 font-weight: bold;
             }
 
             &::before {
-                background: var(--theme-color);
+                background: var(--c-brand);
             }
         }
     }
