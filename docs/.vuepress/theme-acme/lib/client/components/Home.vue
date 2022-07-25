@@ -1,633 +1,326 @@
 <template>
-    <div class="fantasy">
-        <canvas
-            id="cvs"
-            class="hidden"
-            width="1980"
-            height="1080"
-        ></canvas>
-        <canvas
-            id="screenImage"
-            class="hidden"
-            width="234"
-            height="357"
-        ></canvas>
-        <canvas
-            id="rili"
-            class="hidden"
-            width="600"
-            height="600"
-        ></canvas>
-        <canvas id="display"></canvas>
+    <main class="home-blog">
+        <div
+            class="hero"
+            :style="{ 'background-image': bgImagePath }"
+        >
+            <div
+                v-if="bgImageMask"
+                class="hero-mask"
+                :style="{ background: bgImageMask }"
+            />
+
+            <div
+                class="hero-content"
+                :style="{ opacity: headerOpacity }"
+            >
+                <img
+                    class="hero-avatar hide-on-mobile"
+                    :src="withBase(personalInfo.avatar)"
+                    alt="hero"
+                    @mouseover="fetchHitokoto"
+                />
+
+                <div
+                    v-if="hitokotoAPI"
+                    class="hero-bubble"
+                >
+                    <div class="hero-bubble__body">
+                        <p>{{ hitokotoText }}</p>
+                    </div>
+                    <div class="hero-bubble__tile" />
+                </div>
+
+                <div class="hero-info">
+                    <h1>{{ personalInfo.name }}</h1>
+                    <p class="description">
+                        {{ personalInfo.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
         <Bubbles />
-    </div>
+    </main>
 </template>
 
-<script>
+<script setup lang="ts">
+import { withBase } from '@vuepress/client'
+import { computed, onMounted, ref } from 'vue'
+import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 import Bubbles from './Bubbles.vue'
-import { onMounted } from 'vue'
-export default {
-    components: { Bubbles },
-    setup() {
-        onMounted(() => {
-            handleInit();
+const themeLocale = useThemeLocaleData()
+const bgImages = themeLocale.value.homeHeaderImages
+
+
+const bgImageIndex = ref(-1)
+const headerOpacity = ref(1)
+
+// -------- Scroll --------
+
+const scrollToPost = () => {
+    window.scrollTo({
+        top: (document.querySelector('.hero') as HTMLElement).clientHeight,
+        behavior: 'smooth',
+    })
+}
+
+// -------- Hitokoto --------
+const hitokotoAPI = themeLocale.value.hitokoto
+const hitokotoText = ref('正在加载一言...')
+let hasFetchedHitokoto = false
+
+const fetchHitokoto = () => {
+    if (!hitokotoAPI || hasFetchedHitokoto) return
+
+    hasFetchedHitokoto = true
+
+    let api = hitokotoAPI
+    api = typeof api === 'string' ? api : 'https://v1.hitokoto.cn'
+
+    fetch(api)
+        .then((response) => response.json())
+        .then((data) => (hitokotoText.value = data.hitokoto))
+        .catch((error) => {
+            console.log(`Get ${api} error: `, error)
         })
-        function handleInit() {
-            var cvs = document.getElementById("cvs");
-            if (!cvs) {
-                return;
-            }
-            var ctx = cvs.getContext("2d");
-
-            var display = document.getElementById("display");
-            var displayCtx = display.getContext("2d");
-
-            var screenImage = document.getElementById("screenImage");
-            var screenImageCtx = screenImage.getContext("2d");
-
-            var rili = document.getElementById("rili");
-            var riliCtx = rili.getContext("2d");
-
-            var songInfo = {};
-            var AllTimeBak = 0;
-            var NowBak = 0;
-            var DrawWarning = false;
-            var EnMonth = false;
-
-            // 出处：https://blog.csdn.net/u012601195/article/details/47860617
-            function drawRili() {
-                riliCtx.clearRect(0, 0, 600, 600);
-                var date = new Date();
-                var year = date.getYear();
-                var mouth = date.getMonth();
-                var today = date.getDate();
-                var week = date.getDay();
-
-                var cardSize = 40;
-
-                var array_three = [4, 6, 9, 11];
-                var array_threeone = [1, 3, 5, 7, 8, 10, 12];
-                var array_week = ["SUN", "MON", "TUES", "WED", "THUR", "FRI", "SAT"];
-
-                var firstDraw; //1号绘制位置
-                var wIdx = (today - 1) % 7;
-
-                if (week >= wIdx) {
-                    firstDraw = week - wIdx;
-                } else {
-                    firstDraw = week - wIdx + 7;
-                }
-
-                var dayIndex = 1;
-                var countDay = 30;
-
-                if (array_three.indexOf(mouth + 1) > -1) {
-                    countDay = 30;
-                } else if (array_threeone.indexOf(mouth + 1) > -1) {
-                    countDay = 31;
-                } else {
-                    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
-                        countDay = 29;
-                    else countDay = 28;
-                }
-
-                var row = 6;
-                // if (7 - firstDraw + 7 * 4 < countDay) { //确定表格行数，防止日期绘制不全
-                //     row = 7;
-                //}
-
-                function drawTodaybg(i, j) {
-                    riliCtx.save();
-
-                    riliCtx.beginPath();
-                    riliCtx.strokeStyle = "#900";
-                    riliCtx.arc(
-                        45 + i * cardSize * 1.7 + cardSize / 1.18,
-                        50 + j * cardSize + cardSize / 2,
-                        cardSize / 2 - 10,
-                        -Math.PI,
-                        Math.PI * 1
-                    );
-                    riliCtx.stroke();
-                    riliCtx.closePath();
-
-                    riliCtx.beginPath();
-                    riliCtx.arc(
-                        45 + i * cardSize * 1.7 + cardSize / 1.18,
-                        50 + j * cardSize + cardSize / 2,
-                        cardSize / 2 - 9,
-                        -Math.PI,
-                        Math.PI * 0.9
-                    );
-                    riliCtx.stroke();
-                    riliCtx.closePath();
-
-                    riliCtx.beginPath();
-                    riliCtx.arc(
-                        45 + i * cardSize * 1.7 + cardSize / 1.18,
-                        50 + j * cardSize + cardSize / 2,
-                        cardSize / 2 - 8,
-                        -Math.PI,
-                        Math.PI * 0.8
-                    );
-                    riliCtx.stroke();
-                    riliCtx.closePath();
-
-                    riliCtx.beginPath();
-                    riliCtx.arc(
-                        45 + i * cardSize * 1.7 + cardSize / 1.18,
-                        50 + j * cardSize + cardSize / 2,
-                        cardSize / 2 - 7,
-                        -Math.PI,
-                        Math.PI * 0.7
-                    );
-                    riliCtx.stroke();
-                    riliCtx.closePath();
-
-                    riliCtx.beginPath();
-                    riliCtx.arc(
-                        45 + i * cardSize * 1.7 + cardSize / 1.18,
-                        50 + j * cardSize + cardSize / 2,
-                        cardSize / 2 - 6,
-                        -Math.PI,
-                        Math.PI * 0.6
-                    );
-                    riliCtx.stroke();
-                    riliCtx.closePath();
-
-                    riliCtx.restore();
-                }
-
-                var isNum = /^\d+(\d+)?$/;
-
-                function drawDate(txt, i, j) {
-                    riliCtx.textAlign = "center";
-                    riliCtx.fillStyle = "rgb(69,68,84)";
-                    riliCtx.font = cardSize / 1.5 + "px Impact";
-                    var yOffest = 3;
-
-                    if ((j == 0 || j == 6) && isNum.test(txt)) {
-                        riliCtx.fillStyle = "#900";
-                    }
-
-                    riliCtx.fillText(
-                        txt.toString(),
-                        45 + j * cardSize * 1.7 + cardSize / 1.18,
-                        50 + i * cardSize + (cardSize / 3) * 2 + yOffest
-                    );
-
-                    if (txt == today) {
-                        drawTodaybg(j, i);
-                    }
-                }
-
-                riliCtx.fillStyle = "rgb(69,68,84)";
-                riliCtx.font = "900 26pt SimHei";
-                riliCtx.textAlign = "center";
-                var monthCN = [
-                    "一",
-                    "二",
-                    "三",
-                    "四",
-                    "五",
-                    "六",
-                    "七",
-                    "八",
-                    "九",
-                    "十",
-                    "十一",
-                    "十二",
-                ];
-                var monthEN = [
-                    " January",
-                    "February",
-                    "  March",
-                    "  April",
-                    "   May",
-                    "  June",
-                    "  July",
-                    " August",
-                    "September",
-                    " October",
-                    "November",
-                    " December",
-                ];
-
-                if (EnMonth) {
-                    riliCtx.scale(1.1, 1);
-                    riliCtx.fillText(monthEN[mouth], 245, 32);
-                    riliCtx.resetTransform();
-                } else {
-                    riliCtx.scale(1.1, 1);
-                    riliCtx.fillText(monthCN[mouth] + "月", 260, 32);
-                    riliCtx.resetTransform();
-
-                    riliCtx.font = "20pt SimHei";
-                    riliCtx.textAlign = "end";
-                    riliCtx.fillText(today + "日", 520, 38);
-                }
-
-                for (var i = 0; i < row; i++) {
-                    for (var j = 0; j < 7; j++) {
-                        riliCtx.strokeRect(
-                            45 + j * cardSize * 1.7,
-                            50 + i * cardSize,
-                            cardSize * 1.7,
-                            cardSize
-                        );
-                    }
-                }
-
-                dayIndex = 1;
-
-                for (var i = 0; i < row; i++) {
-                    //开始绘制日期数
-                    for (var j = 0; j < 7; j++) {
-                        if (i == 0) {
-                            //表格第一行绘制星期
-                            drawDate(array_week[j], i, j);
-                            continue;
-                        }
-
-                        if (i == 1 && j < firstDraw) {
-                            //确定1号绘制位置
-                            continue;
-                        }
-
-                        if (dayIndex > countDay) {
-                            //只绘制月份的天数
-                            break;
-                        }
-
-                        drawDate(dayIndex++, i, j);
-                    }
-                }
-            }
-
-            var riliInterval = setInterval(drawRili, 3600000);
-            drawRili();
-
-            // Canvas奇妙的剪切蒙版实现
-            var screenMask = new Image();
-            screenMask.src = "/fantasy/Screenmask.png";
-
-            var screen = new Image();
-            screen.src = "/fantasy/screen.png";
-
-            var iv = setInterval(() => {
-                if (screen.complete && screenMask.complete) {
-                    screenImageCtx.drawImage(screen, -300, -50, 1280, 720);
-                    screenImageCtx.globalCompositeOperation = "destination-atop";
-                    screenImageCtx.drawImage(screenMask, 0, 0);
-                    screenImageCtx.globalCompositeOperation = "source-over";
-                    clearInterval(iv);
-                }
-            }, 14);
-
-            // 奇妙的屏幕大小自适应
-            window.onresize = function () {
-                display.width = window.innerWidth;
-                if (window.innerWidth / window.innerHeight > 1.8333333333333) {
-                    display.height = (window.innerWidth / 1980) * 1080;
-                    // window.scrollTo(0, (window.innerHeight - 123) / 16);
-                } else {
-                    display.height = window.innerHeight;
-                }
-            };
-
-            window.onresize();
-
-            // 加载图片
-            var bg = new Image();
-            bg.src = "/fantasy/bg.png";
-
-            var mask = new Image();
-            mask.src = "/fantasy/mask.png";
-
-            var light = new Image();
-            light.src = "/fantasy/light.png";
-
-            var caidai = new Image();
-            caidai.src = "/fantasy/caidai.png";
-
-            var two = new Image();
-            two.src = "/fantasy/22.png";
-
-            var screenLight = new Image();
-            screenLight.src = "/fantasy/screenLight.png";
-
-            var phoneLight = new Image();
-            phoneLight.src = "/fantasy/phoneLight.png";
-
-            var phoneText = JSON.parse(
-                '[{"time":0,"text":"凌晨啦!"},{"time":6,"text":"早上好!"},{"time":8,"text":"上午好!"},{"time":11,"text":"你吃了吗"},{"time":13,"text":"下午好鸭!"},{"time":16,"text":"傍晚咯!"},{"time":19,"text":"晚安!"}]'
-            );
-
-            var noRili = false;
-            var updateSongInfoHandler = -1;
-
-            var data = new Array(128);
-            var animData = new Array(128);
-            var SoundPlaying = false;
-
-            // 奇妙的初始化
-            for (var i = 0; i < 128; i++) {
-                data[i] = animData[i] = 0;
-            }
-
-            // 奇妙的Normalize
-            var peakValue = 1;
-            if (window.wallpaperRegisterAudioListener) {
-                window.wallpaperRegisterAudioListener(function (audioData) {
-                    var max = 0;
-
-                    for (var i = 0; i < 128; i++) {
-                        if (audioData[i] > max) max = audioData[i];
-                    }
-
-                    peakValue = peakValue * 0.99 + max * 0.01;
-
-                    for (i = 0; i < 64; i++) {
-                        data[63 - i] = audioData[i] / peakValue;
-                    }
-
-                    for (i = 0; i < 64; i++) {
-                        data[127 - i] = audioData[127 - i];
-                    }
-                });
-            } else {
-                var iva;
-                let audio = document.getElementsByClassName("aplayer-button")[0];
-                if (audio) {
-                    audio.onclick = () => {
-                        let play = document.getElementsByClassName("aplayer-play")[0];
-                        if (play) {
-                            iva = setInterval(() => {
-                                for (i = 0; i < 64; i++) {
-                                    peakValue = peakValue * 0.99 + 1 * 0.01;
-                                    data[63 - i] =
-                                        ((Math.random() * 0.4) / peakValue) * Math.random();
-                                }
-                                for (i = 0; i < 64; i++) {
-                                    data[127 - i] = Math.random() * 0.2 * Math.random();
-                                }
-                                // for (var i = 0; i < 128; i++) {
-                                //     data[i] = Math.random();
-                                // }
-                            }, 130);
-                        } else {
-                            clearInterval(iva);
-                            for (var i = 0; i < 128; i++) {
-                                data[i] = animData[i] = 0;
-                            }
-                        }
-                    };
-                }
-            }
-
-            // ....
-            function min(a, b) {
-                return a > b ? b : a;
-            }
-
-            function max(a, b) {
-                return a > b ? a : b;
-            }
-
-            // 奇妙的颜色变化
-            var targetColor = { r: 80, g: 120, b: 169 };
-            var currentColor = { r: 80, g: 120, b: 169 };
-            var lightColor = { r: 0, g: 34, b: 77, a: 0 };
-
-            function colorToRgb(color) {
-                return (
-                    "rgb(" +
-                    color.r.toString() +
-                    "," +
-                    color.g.toString() +
-                    "," +
-                    color.b.toString() +
-                    ")"
-                );
-            }
-
-            function colorToRgba(colorWithA) {
-                return (
-                    "rgba(" +
-                    colorWithA.r.toString() +
-                    "," +
-                    colorWithA.g.toString() +
-                    "," +
-                    colorWithA.b.toString() +
-                    "," +
-                    colorWithA.a.toString() +
-                    ")"
-                );
-            }
-
-            var night = false;
-            var debug = false;
-
-            // Canvas的奇妙冒险!
-            function render() {
-                for (var i = 0; i < 128; i++) {
-                    animData[i] += (data[i] - animData[i]) * 0.3;
-                    animData[i] = min(animData[i], 1);
-                }
-
-                currentColor.r += (targetColor.r - currentColor.r) * 0.01;
-                currentColor.r = min(currentColor.r, 255);
-                currentColor.r = max(currentColor.r, 0);
-
-                currentColor.g += (targetColor.g - currentColor.g) * 0.01;
-                currentColor.g = min(currentColor.g, 255);
-                currentColor.g = max(currentColor.g, 0);
-
-                currentColor.b += (targetColor.b - currentColor.b) * 0.01;
-                currentColor.b = min(currentColor.b, 255);
-                currentColor.b = max(currentColor.b, 0);
-
-                ctx.clearRect(0, 0, 1980, 1080);
-                ctx.drawImage(bg, 0, 0);
-                ctx.drawImage(mask, 954, 99);
-
-                ctx.fillStyle = "#97adbb"; // 时间的颜色
-                ctx.font = "32pt Impact";
-
-                ctx.transform(1, 2.05 * (Math.PI / 180), 0, 1, 0, 0);
-
-                var time = new Date();
-                ctx.fillText(
-                    (time.getHours() < 10 ? "0" : "") +
-                    time.getHours().toString() +
-                    ":" +
-                    (time.getMinutes() < 10 ? "0" : "") +
-                    time.getMinutes() +
-                    ":" +
-                    (time.getSeconds() < 10 ? "0" : "") +
-                    time.getSeconds().toString(),
-                    725,
-                    318
-                );
-                ctx.resetTransform();
-
-                // 日历本
-                ctx.transform(0.9645, 0, 0 * (Math.PI / 180), 0.96, 967, 100);
-                ctx.rotate(6 * (Math.PI / 180));
-
-                if (!noRili) {
-                    ctx.drawImage(rili, 0, 0);
-
-                    ctx.resetTransform();
-
-                    ctx.transform(0.9645, 0, 9 * (Math.PI / 180), 1, 825, 160);
-                    ctx.rotate(7 * (Math.PI / 180));
-                }
-
-                targetColor = { r: 80, g: 120, b: 169 };
-
-                if (night) {
-                    targetColor = { r: 255, g: 75, b: 80 };
-                }
-
-                if (!noRili) {
-                    ctx.fillStyle = "rgba(0,0,0,0.5)";
-                    ctx.fillRect(-10, 320, 650, 2);
-                }
-
-                ctx.fillStyle = colorToRgb(currentColor);
-
-                if (!noRili) {
-                    for (var i = 32; i < 95; i++)
-                        ctx.fillRect(
-                            10 * (i - 32),
-                            20 + (300 - 300 * animData[i]),
-                            4,
-                            300 * animData[i]
-                        );
-                } else
-                    for (var i = 32; i < 95; i++)
-                        ctx.fillRect(
-                            40 + 7.5 * (i - 32),
-                            30 + (300 - 300 * animData[i]),
-                            4,
-                            300 * animData[i]
-                        );
-
-                ctx.resetTransform();
-
-                ctx.globalCompositeOperation = "overlay";
-                ctx.drawImage(light, 971, 197);
-                ctx.globalCompositeOperation = "source-over";
-
-                ctx.drawImage(caidai, 949, 25);
-                ctx.drawImage(two, 1319, 345);
-
-                // 夜间光照
-                if (night && lightColor.a < 0.7) {
-                    lightColor.a += 0.005;
-                    lightColor.a = min(lightColor.a, 0.7);
-                } else if (!night) {
-                    lightColor.a -= 0.005;
-                    lightColor.a = max(lightColor.a, 0.0);
-                }
-
-                if (lightColor.a > 0) {
-                    ctx.globalCompositeOperation = "hard-light";
-                    ctx.fillStyle = colorToRgba(lightColor);
-                    ctx.fillRect(0, 0, 1980, 1080);
-                    ctx.globalCompositeOperation = "source-over";
-
-                    ctx.globalAlpha = lightColor.a / 0.7;
-                    ctx.drawImage(phoneLight, 860, 437);
-                    ctx.globalAlpha = 1;
-                }
-
-                // 屏幕
-                ctx.drawImage(screenImage, 0, 0);
-                if (lightColor.a > 0) {
-                    ctx.globalAlpha = lightColor.a / 0.7;
-                    ctx.drawImage(screenLight, 0, 0);
-                    ctx.globalAlpha = 1;
-                }
-
-                night = true;
-                var greeting = "凌晨啦!";
-
-                phoneText.forEach((v) => {
-                    if (time.getHours() >= v.time) {
-                        greeting = v.text;
-                    }
-                });
-
-                if (time.getHours() >= 6 && time.getHours() <= 18) {
-                    night = false;
-                }
-
-                night = debug ? !night : night;
-
-                // 手机
-                ctx.fillStyle = "#000";
-                ctx.font = "31.02pt SimHei";
-
-                ctx.transform(
-                    1.0911,
-                    -35 * (Math.PI / 180),
-                    0,
-                    0.5868,
-                    1132.94,
-                    564.07
-                );
-                ctx.rotate(56.5 * (Math.PI / 180));
-                ctx.textAlign = "center";
-                ctx.fillStyle = "#fff";
-                ctx.fillText(greeting, 135, 100);
-                ctx.textAlign = "start";
-                ctx.resetTransform();
-
-                displayCtx.drawImage(cvs, 0, 0, display.width, display.height);
-                window.requestAnimationFrame(render);
-            }
-
-            window.requestAnimationFrame(render);
+}
+
+onMounted(() => {
+    if (bgImages && bgImages.length > 0)
+        bgImageIndex.value = Math.floor(Math.random() * bgImages.length)
+})
+
+// -------- Header images --------
+
+const switchImage = (n: number) => {
+    if (!(bgImages && bgImages.length > 0)) return
+    const len = bgImages.length
+    bgImageIndex.value = (bgImageIndex.value + n + len) % len
+}
+
+const bgImagePath = computed(() => {
+    return bgImages && bgImages.length > 0 && bgImageIndex.value !== -1
+        ? `url(${withBase(bgImages[bgImageIndex.value].path)})`
+        : 'none'
+})
+
+const bgImageMask = computed(() => {
+    return bgImages && bgImages.length > 0 && bgImageIndex.value !== -1
+        ? bgImages[bgImageIndex.value].mask
+        : null
+})
+
+// -------- Other configs --------
+
+const personalInfo = themeLocale.value.personalInfo as PersonalConfig
+</script>
+<style lang="scss" scoped>
+@import '../styles/_variables';
+.home-blog {
+    padding: 0;
+    // padding-bottom: 150px;
+    margin: 0px auto;
+
+    .hero {
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+
+        .hero-mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
         }
 
-    },
-};
-</script>
+        .hero-content {
+            z-index: 2;
+            width: 36%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-<style lang="scss">
-.fantasy {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-}
+            .hero-avatar {
+                width: 120px;
+                height: 120px;
+                cursor: auto;
+                padding: 5px;
+                border-radius: 100%;
+                box-shadow: inset 0 0 10px #000;
+            }
 
-.hidden {
-    display: none;
-}
-#display {
-    margin: auto;
-}
+            .hero-bubble {
+                opacity: 0;
+                position: absolute;
+                left: 50%;
+                margin-left: 100px;
+                top: 50%;
+                margin-top: -200px;
 
-.custom-home-class {
-    margin-top: 0 !important;
-    background-attachment: fixed !important;
-    .navbar {
-        transition: transform 0.3s;
-        background-color: transparent;
-        backdrop-filter: saturate(230%) blur(20px);
-        background-color: rgba(255, 255, 255, 0.23);
-        border-bottom: 1px solid transparent;
-        transition: background-color 0.5s cubic-bezie(0.28, 0.11, 0.32, 1);
-        transition-property: background-color, backdrop-filter,
-            -webkit-backdrop-filter;
-        color: var(--c-text);
+                &__body {
+                    min-width: 150px;
+                    max-width: 250px;
+                    min-height: 80px;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: 10px;
+                    p {
+                        font-size: 15px;
+                        padding: 10px 20px;
+                        color: white;
+                        text-align: left;
+                        line-height: 1.7;
+                    }
+                }
+                &__tile {
+                    position: absolute;
+                    content: '';
+                    margin-left: -23px;
+                    top: 0;
+                    margin-top: 60px;
+                    width: 23px;
+                    height: 44px;
+                    border-width: 0;
+                    border-style: solid;
+                    border-top-width: 20px;
+                    border-radius: 56px 0 0 0;
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            .hero-info {
+                background: rgba(0, 0, 0, 0.5);
+                width: 100%;
+                padding: 17px;
+                letter-spacing: 0;
+                border-radius: 10px;
+                box-sizing: initial;
+                white-space: nowrap;
+                margin-top: 20px;
+                color: white;
+
+                h1 {
+                    display: block;
+                    font-size: 25px;
+                    line-height: 20px;
+                    margin-top: 0;
+                }
+                p {
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 15px;
+                    margin-bottom: 0;
+                }
+            }
+
+            .sns-wrapper {
+                margin-top: 10px;
+            }
+
+            .hero-img-prev,
+            .hero-img-next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                margin-top: -30px;
+                width: auto;
+                padding: 15px 6px;
+                color: rgba(255, 255, 255, 0.6);
+                background-color: rgba(0, 0, 0, 0.3);
+                border: none;
+                outline: none;
+                transition: 0.6s ease;
+
+                svg.ov-icon {
+                    width: 20px;
+                }
+
+                &:hover {
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.6);
+                }
+            }
+            .hero-img-prev {
+                left: 0;
+                border-radius: 0 3px 3px 0;
+            }
+            .hero-img-next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .hero-arrow-down {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                margin-left: -12px;
+                cursor: pointer;
+
+                svg.ov-icon {
+                    color: white;
+                    height: 30px;
+                    width: 30px;
+                    transition: 0.4s ease;
+
+                    &:active,
+                    &:hover {
+                        color: #a7a7a7;
+                    }
+                }
+            }
+        }
     }
-    .navbar-items a:hover {
-        color: var(--c-text-accent);
+}
+
+@media (min-width: $MQNarrow) {
+    .home-blog .hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: $MQNarrow) {
+    .home-blog {
+        padding-bottom: 0;
+
+        .hide-on-mobile {
+            display: none;
+        }
+        .hero {
+            height: auto !important;
+            padding: 150px 0;
+            .hero-info {
+                background: transparent !important;
+                width: auto !important;
+                position: relative !important;
+                &__text h1 {
+                    font-size: 80px !important;
+                }
+            }
+        }
+        .home-blog-wrapper {
+            padding: 0 13px 0 14px;
+        }
+    }
+}
+
+@media (max-width: $MQMobile) {
+    .home-blog .hero {
+        padding: 80px 0 60px;
+        .hero-mask {
+            height: calc(100% + 1.2rem);
+        }
+        .hero-info__text h1 {
+            font-size: 50px !important;
+        }
     }
 }
 </style>

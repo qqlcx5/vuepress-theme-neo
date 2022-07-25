@@ -21,5 +21,26 @@ export default acmeTheme({
         avatar: 'https://avatars0.githubusercontent.com/u/888',
         link: 'https://feyoudao.cn'
     },
-    comment: false,
+    // personal information
+    personalInfo: {
+        name: 'acme',
+        avatar: '/img/avatar.jpeg',
+        description: 'A blog theme for VuePress'
+    },
+
+    // header images on home page
+    homeHeaderImages: [
+        {
+            path: '/img/home-bg/1.jpg',
+            mask: 'rgba(40, 57, 101, .4)'
+        },
+        {
+            path: '/img/home-bg/2.jpg',
+            mask: 'rgb(251, 170, 152, .2)'
+        },
+        {
+            path: '/img/home-bg/4.jpg',
+            mask: 'rgba(19, 75, 50, .2)'
+        }
+    ]
 })
