@@ -119,7 +119,6 @@ export default {
             handleSetPosts()
         })
         watch(() => props.currentPage, (currentPage) => {
-            console.log($route.query.p, currentPage, '$route.query.p != currentPage');
             if ($route.query.p != currentPage) {
                 $router.push({ query: { ...$route.query, p: currentPage } })
             }
@@ -134,7 +133,6 @@ export default {
         function handleSetPosts() {
             const currentPage = props.currentPage
             const perPage = props.perPage
-            console.log();
             let type = props.category ? 'categories' : 'tags'
             let typeValue = props.category || props.tag
             let posts = typeValue ? $groupPosts[type][typeValue] : $sortPosts

@@ -44,7 +44,6 @@ module.exports = [
         hostname: 'feyoudao.cn'
     }),
     mdEnhancePlugin({
-        enableAll: true,
         tabs: true, // 添加选项卡支持
         codetabs: true, // 启用代码块分组
         imageMark: true, // 启用图片标记
