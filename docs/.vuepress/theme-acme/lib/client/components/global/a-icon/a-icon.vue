@@ -9,7 +9,7 @@
     </svg>
     <i
         v-else
-        class="a-icon acme"
+        class="acme a-icon"
         :class="[name]"
         :style="[iconStyle_]"
     />
@@ -28,7 +28,6 @@ export default defineComponent({
             type: [String, Boolean],
             default: 'inherit'
         },
-        // 彩色展示
         useSvg: {
             type: [String, Boolean],
             default: false
@@ -89,15 +88,13 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-// @import '//at.alicdn.com/t/font_1678482_4tbhmh589x.css'; // vdoing iconfont字体
-// @import './iconfont/iconfont.css';
+@import '/iconfont/iconfont.css';
 
 .a-icon {
     position: relative;
     display: inline-block;
     font-size: inherit;
     text-rendering: auto;
-    // vertical-align: -0.15em;
     -webkit-font-smoothing: antialiased;
 }
 .acme-colour {

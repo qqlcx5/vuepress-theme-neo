@@ -55,19 +55,6 @@ export default {
             }
             frameTimer = requestAnimationFrame(animate);
         }
-        // const debounce = (function () {
-        //     const timer = {}
-        //     return function (func, wait = 500) {
-        //         const context = this // 注意 this 指向
-        //         const args = arguments // arguments中存着e
-        //         const randomText = String(args[0]).replace(/[\r\n]|\s+/g, '')
-        //         const name = 'debounce' + randomText
-        //         if (timer[name]) clearTimeout(timer[name])
-        //         timer[name] = setTimeout(() => {
-        //             func && func.apply(context, args)
-        //         }, wait)
-        //     }
-        // })()
 
         function resizeRef() {
             const target = props.selectRef && document.querySelector(props.selectRef)

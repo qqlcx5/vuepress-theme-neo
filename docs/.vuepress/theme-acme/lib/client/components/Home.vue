@@ -37,9 +37,24 @@
                         {{ personalInfo.description }}
                     </p>
                 </div>
+                <button
+                    class="hero-img-prev hide-on-mobile"
+                    @click="switchImage(-1)"
+                >
+                    <AIcon name="acme-Left" />
+                </button>
+                <button
+                    class="hero-img-next hide-on-mobile"
+                    @click="switchImage(1)"
+                >
+                    <AIcon
+                        name="acme-Right"
+                        color="#fff"
+                    />
+                </button>
             </div>
         </div>
-        <Bubbles />
+        <Bubbles selectRef=".hero" />
     </main>
 </template>
 
@@ -50,7 +65,6 @@ import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composabl
 import Bubbles from './Bubbles.vue'
 const themeLocale = useThemeLocaleData()
 const bgImages = themeLocale.value.homeHeaderImages
-
 
 const bgImageIndex = ref(-1)
 const headerOpacity = ref(1)
@@ -118,8 +132,8 @@ const personalInfo = themeLocale.value.personalInfo as PersonalConfig
 @import '../styles/_variables';
 .home-blog {
     padding: 0;
-    // padding-bottom: 150px;
-    margin: 0px auto;
+    padding-bottom: 650px;
+    margin: 0 auto;
 
     .hero {
         margin: 0 auto;
