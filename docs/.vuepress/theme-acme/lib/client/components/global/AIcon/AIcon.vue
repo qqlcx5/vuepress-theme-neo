@@ -35,7 +35,7 @@ export default defineComponent({
         // icon 大小
         size: {
             type: [Number, String],
-            default: 20
+            default: 18
         },
         // 偏转角度
         rotate: {
@@ -98,8 +98,8 @@ export default defineComponent({
     -webkit-font-smoothing: antialiased;
 }
 .acme-colour {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;

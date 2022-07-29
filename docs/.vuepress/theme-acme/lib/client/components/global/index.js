@@ -1,3 +1,3 @@
-import AIcon from './a-icon/a-icon.vue';
+import AIcon from './AIcon/AIcon.vue'
 import NavCard from './NavCard.vue';
 export { AIcon, NavCard };

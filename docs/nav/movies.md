@@ -110,7 +110,7 @@ export default {
         },
         {
           cardSrc: "https://dsxys.com/",
-          cardImgSrc: "https://ae01.alicdn.com/kf/U6e42273cc75f48b3bffbc37817f80cf48.jpg",
+          cardImgSrc: "",
           cardName: "大师兄影视",
           cardContent:"免费全球影视资源在线观看的平台",
         },

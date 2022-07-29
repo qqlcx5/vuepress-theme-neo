@@ -5,11 +5,7 @@
             class="categories-title"
             title="全部分类"
         >
-            <a-icon
-                name="acmefenlei1"
-                size="1.3rem"
-                use-svg
-            />
+            <AIcon name="acme-cfenlei" />
             <span>&nbsp;&nbsp;{{ length === 'all' ? '全部分类' : '文章分类' }}</span>
         </RouterLink>
         <div class="categories">
@@ -63,9 +59,9 @@ export default {
     .categories-title {
         padding-left: 0.95rem;
         color: var(--c-text);
-        font-size: 1.1rem;
-        .acme-colour {
-            vertical-align: -0.21em;
+        font-size: 1rem;
+        .acme-cfenlei {
+            vertical-align: -0.1em;
         }
     }
     .categories {

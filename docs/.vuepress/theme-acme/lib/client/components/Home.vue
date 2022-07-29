@@ -126,7 +126,7 @@ const bgImageMask = computed(() => {
 
 // -------- Other configs --------
 
-const personalInfo = themeLocale.value.personalInfo as PersonalConfig
+const personalInfo = themeLocale.value.personalInfo
 </script>
 <style lang="scss" scoped>
 @import '../styles/_variables';

@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import Layout from './Layout.vue'
-import PostList from './PostList.vue'
-import Pagination from './Pagination.vue'
-import CategoriesBar from './CategoriesBar.vue'
+import Layout from '@theme/Layout.vue'
+import PostList from '@theme/PostList.vue'
+import Pagination from '@theme/Pagination.vue'
+import CategoriesBar from '@theme/CategoriesBar.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 

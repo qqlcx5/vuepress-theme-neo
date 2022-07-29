@@ -1,4 +1,4 @@
-import { path } from '@vuepress/utils'
+import { path, fs } from '@vuepress/utils'
 import { defaultTheme } from '@vuepress/theme-default'
 import type { Theme } from '@vuepress/core'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
@@ -9,7 +9,7 @@ export const acmeTheme = (options: DefaultThemeOptions): Theme => {
         name: 'vuepress-theme-acme',
         extends: defaultTheme(options),
         define: {},
-        alias: app => ({}),
+        alias: Object.fromEntries(fs.readdirSync(path.resolve(__dirname, '../client/components')).filter(file => file.endsWith('.vue')).map(file => [`@theme/${file}`, path.resolve(__dirname, '../client/components', file)])),
         async onInitialized(app) {
             let sourceDir = app.dir.source()
             useFrontmatter(sourceDir, options) // 写入frontmatter信息

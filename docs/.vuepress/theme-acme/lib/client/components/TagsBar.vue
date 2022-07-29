@@ -5,11 +5,7 @@
             class="tags-title"
             title="全部标签"
         >
-            <a-icon
-                name="acmebiaoqian"
-                size="1.5rem"
-                use-svg
-            />
+            <AIcon name="acme-tags" />
             <span>&nbsp;&nbsp;{{ length === 'all' ? '全部标签' : '热门标签' }}</span>
         </RouterLink>
         <div class="tags">
