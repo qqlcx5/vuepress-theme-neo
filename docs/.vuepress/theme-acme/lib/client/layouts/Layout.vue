@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import Home from '../components/Home.vue'
-import CategoriesPage from '../components/CategoriesPage.vue'
-import TagsPage from '../components/TagsPage.vue'
-import ArchivesPage from '../components/ArchivesPage.vue'
 // @ts-ignore
-import Page from '../components/Page.vue'
+import Home from '@theme/Home.vue'
 // @ts-ignore
-import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
+import CategoriesPage from '@theme/CategoriesPage.vue'
+// @ts-ignore
+import TagsPage from '@theme/TagsPage.vue'
+// @ts-ignore
+import ArchivesPage from '@theme/ArchivesPage.vue'
+// @ts-ignore
+import Page from '@theme/Page.vue'
+// @ts-ignore
+import Navbar from '@theme/Navbar.vue'
 // @ts-ignore
 import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
