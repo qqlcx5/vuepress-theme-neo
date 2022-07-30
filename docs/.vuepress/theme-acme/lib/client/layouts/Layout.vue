@@ -8,9 +8,9 @@ import TagsPage from '@theme/TagsPage.vue'
 // @ts-ignore
 import ArchivesPage from '@theme/ArchivesPage.vue'
 // @ts-ignore
-import Page from '@theme/Page.vue'
+import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
 // @ts-ignore
-import Navbar from '@theme/Navbar.vue'
+import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
 // @ts-ignore
 import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
