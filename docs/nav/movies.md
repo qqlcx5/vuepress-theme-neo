@@ -67,7 +67,7 @@ export default {
           cardContent:"专为中国用户提供奈飞中文电影的网站",
         },
         {
-          cardSrc: "http://dianying.im/",
+          cardSrc: "http://dianyingim.com",
           cardImgSrc: "https://cdn.jsdelivr.net/gh/imdianying/im@2021032601/statics/images/index-logo.png",
           cardName: "电影先生",
           cardContent:"电影先生聚合全网影片，你想看的全都有！",
