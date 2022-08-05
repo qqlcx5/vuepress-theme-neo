@@ -18,8 +18,6 @@
 
 这意味着功能和 API 尚未固定，在未来的更新中仍有概率出现破坏性更改。
 
-虽然该项目有 V1 的稳定版本，并且存放在 [V1 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/) 中，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
-
 ---
 
 ## 详情

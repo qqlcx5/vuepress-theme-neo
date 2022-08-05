@@ -88,7 +88,7 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-@import '/iconfont/iconfont.css';
+@import '//at.alicdn.com/t/c/font_3483216_da492tmkntd.css';
 
 .a-icon {
     position: relative;
