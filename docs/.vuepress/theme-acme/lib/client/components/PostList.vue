@@ -24,43 +24,50 @@
                     <div class="article-info">
                         <a
                             title="作者"
-                            class="iconfont icon-touxiang"
                             target="_blank"
-                            v-if="item.author && item.author.href"
-                            :href="item.author.href"
-                        >{{ item.author.name ? item.author.name : item.author }}</a>
+                            v-if="item.AuthorInfo.name && item.AuthorInfo.url"
+                            :href="item.AuthorInfo.url"
+                        >
+                            <AIcon name="acme-yonghu" />
+                            {{ item.AuthorInfo.name }}
+                        </a>
                         <span
+                            v-else-if="item.AuthorInfo.name"
                             title="作者"
-                            class="iconfont icon-touxiang"
-                            v-else-if="item.author"
-                        >{{ item.author.name ? item.author.name : item.author }}</span>
+                        >
+                            <AIcon name="acme-yonghu" />
+                            {{ item.AuthorInfo.name }}
+                        </span>
 
                         <span
                             title="创建时间"
-                            class="iconfont icon-riqi"
                             v-if="item.frontmatter.date"
-                        >{{ item.frontmatter.date.split('T')[0] }}</span>
-                        <span
-                            title="分类"
-                            class="iconfont icon-wenjian"
-                            v-if="$themeConfig.category !== false && item.frontmatter.categories"
                         >
-                            <router-link
-                                :to="`/categories/?category=${encodeURIComponent(c)}`"
-                                v-for="(c, index) in item.frontmatter.categories"
-                                :key="index"
-                            >{{ c }}</router-link>
+                            <AIcon name="acme-riqi" />
+                            {{ item.frontmatter.date.split('T')[0] }}
                         </span>
-                        <span
-                            title="标签"
-                            class="iconfont icon-biaoqian tags"
-                            v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]"
-                        >
-                            <router-link
-                                :to="`/tags/?tag=${encodeURIComponent(t)}`"
-                                v-for="(t, index) in item.frontmatter.tags"
-                                :key="index"
-                            >{{ t }}</router-link>
+                        <span v-if="$themeConfig.category !== false && item.frontmatter.categories">
+                            <AIcon name="acme-wenjianjia" />
+                            <span title="分类">
+                                <router-link
+                                    :to="`/categories/?category=${encodeURIComponent(c)}`"
+                                    v-for="(c, index) in item.frontmatter.categories"
+                                    :key="index"
+                                >{{ c }}</router-link>
+                            </span>
+                        </span>
+                        <span v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
+                            <AIcon name="acme-tag" />
+                            <span
+                                title="标签"
+                                class="tags"
+                            >
+                                <router-link
+                                    :to="`/tags/?tag=${encodeURIComponent(t)}`"
+                                    v-for="(t, index) in item.frontmatter.tags"
+                                    :key="index"
+                                >{{ t }}</router-link>
+                            </span>
                         </span>
                     </div>
                 </div>
@@ -74,8 +81,14 @@
                     ></div>
                     <router-link
                         :to="item.path"
-                        class="readmore iconfont icon-jiantou-you"
-                    >阅读全文</router-link>
+                        class="readmore"
+                    >
+                        <AIcon
+                            name="acme-yuedu"
+                            size="20"
+                        />
+                        阅读全文
+                    </router-link>
                 </div>
             </div>
         </transition-group>
@@ -243,13 +256,7 @@ export default {
             }
             .readmore {
                 float: right;
-                margin-right: 1rem;
                 line-height: 1rem;
-                &::before {
-                    float: right;
-                    font-size: 0.8rem;
-                    margin: 0.1rem 0 0 0.2rem;
-                }
             }
         }
     }

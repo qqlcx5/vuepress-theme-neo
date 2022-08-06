@@ -3,6 +3,7 @@ import { onMounted, computed, provide, readonly } from 'vue'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
 import { AIcon, NavCard } from './components/global'
 import { pageMap } from '@temp/theme-acme/pageMap'
+import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 import './styles/index.scss'
 
 export default defineClientConfig({
@@ -14,6 +15,19 @@ export default defineClientConfig({
     extendsPage: page => {},
     setup() {
         onMounted(() => {})
+        pageMap.map(item => {
+            const {
+                frontmatter: { AuthorInfo = [], author = '' }
+            } = item
+            !item.AuthorInfo && (item.AuthorInfo = {})
+            if (AuthorInfo[0] || author) {
+                item.AuthorInfo.name = AuthorInfo[0]?.name || author
+                item.AuthorInfo.url = AuthorInfo[0]?.url || ''
+            } else {
+                const themeLocale = useThemeLocaleData()
+                item.AuthorInfo = themeLocale.value.AuthorInfo
+            }
+        })
 
         const $filterPosts = computed(() => {
             return filterPosts(pageMap)
@@ -36,10 +50,5 @@ export default defineClientConfig({
         provide('$sortPostsByDate', readonly($sortPostsByDate))
         provide('$groupPosts', readonly($groupPosts))
         provide('$categoriesAndTags', readonly($categoriesAndTags))
-        // console.log('$filterPosts', $filterPosts.value)
-        // console.log('$sortPosts', $sortPosts.value)
-        // console.log('$sortPostsByDate', $sortPostsByDate.value)
-        // console.log('$groupPosts', $groupPosts.value)
-        // console.log('$categoriesAndTags', $categoriesAndTags.value)
     }
 })

@@ -17,6 +17,14 @@ export function dateFormat(date) {
     return `${date.getUTCFullYear()}-${zero(date.getUTCMonth() + 1)}-${zero(date.getUTCDate())}`
 }
 
+// 修复ISO8601时间格式为普通时间格式
+export function repairUTCDate(date) {
+    if (!(date instanceof Date)) {
+        date = new Date(date)
+    }
+    return `${date.getUTCFullYear()}-${zero(date.getUTCMonth() + 1)}-${zero(date.getUTCDate())} ${zero(date.getUTCHours())}:${zero(date.getUTCMinutes())}:${zero(date.getUTCSeconds())}`
+}
+
 // 获取时间的时间戳
 export function getTimeNum(post) {
     let dateStr = post.frontmatter.date || post.lastUpdated || new Date()

@@ -65,9 +65,9 @@ export default defineComponent({
         const useSvg_ = computed(() => {
             return String(props.useSvg) !== 'false'
         })
-        function addUnit(unit) {
-            // 如果没有单位，默认为px
-            return parseInt(unit) === unit ? unit += 'px' : unit
+        const isNumeric = (val) => typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
+        function addUnit(value, unit = 'px') {
+                return isNumeric(value) ? value + unit : String(value);
         }
         const iconStyle_ = computed(() => {
             const fontSize = addUnit(props.size)
@@ -88,13 +88,14 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-@import '//at.alicdn.com/t/c/font_3483216_da492tmkntd.css';
+@import '//at.alicdn.com/t/c/font_3483216_ot3j5d2775.css';
 
 .a-icon {
     position: relative;
     display: inline-block;
     font-size: inherit;
     text-rendering: auto;
+    vertical-align: -0.1em;
     -webkit-font-smoothing: antialiased;
 }
 .acme-colour {

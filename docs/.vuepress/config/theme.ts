@@ -16,10 +16,10 @@ export default acmeTheme({
     category: true,
     tag: true,
     archive: true,
-    authorInfo: {
+    AuthorInfo: {
         name: '星野',
+        url: 'https://feyoudao.cn',
         avatar: 'https://avatars0.githubusercontent.com/u/888',
-        link: 'https://feyoudao.cn'
     },
     // personal information
     personalInfo: {
