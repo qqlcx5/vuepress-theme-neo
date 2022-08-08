@@ -23,23 +23,23 @@ export default acmeTheme({
     },
     // personal information
     personalInfo: {
-        name: 'acme',
-        avatar: '/img/avatar.jpeg',
-        description: 'A blog theme for VuePress'
+        name: 'vueprss-theme-acme',
+        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
+        description: 'A blog theme for VuePress2.x'
     },
 
     // header images on home page
     homeHeaderImages: [
         {
-            path: '/img/home-bg/1.jpg',
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/1.jpg',
             mask: 'rgba(40, 57, 101, .4)'
         },
         {
-            path: '/img/home-bg/2.jpg',
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/62.jpg',
             mask: 'rgb(251, 170, 152, .2)'
         },
         {
-            path: '/img/home-bg/4.jpg',
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
             mask: 'rgba(19, 75, 50, .2)'
         }
     ]
