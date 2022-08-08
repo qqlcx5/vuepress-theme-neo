@@ -20,8 +20,8 @@ export default defineClientConfig({
                 frontmatter: { author = [] }
             } = item
             !item.author && (item.author = {})
-            if (author) {
-                item.author.name = author[0]?.name || ''
+            if (author?.length) {
+                item.author.name = author[0]?.name || author
                 item.author.url = author[0]?.url || ''
             } else {
                 const themeLocale = useThemeLocaleData()
