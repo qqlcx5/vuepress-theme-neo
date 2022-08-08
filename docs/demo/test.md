@@ -1,9 +1,8 @@
 ---
 title: 选项卡
 date: 2022-07-03 00:19:42
-permalink: /test-demo/tabs
 categories:
-  - test-demo
+  - demo
 tags:
   - 
 ---

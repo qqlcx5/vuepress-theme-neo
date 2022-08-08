@@ -5,4 +5,5 @@ const docsRoot = path.join(__dirname, '..', '..') // docs相对路径
 module.exports = {
     '/el-component/': readFile(docsRoot + '/el-component'),
     '/utils/': readFile(docsRoot + '/utils', true),
+    '/demo/': readFile(docsRoot + '/demo'),
 }

@@ -26,8 +26,8 @@ module.exports = [
     },
     {
         text: '测试用例',
-        link: '/test-demo/tabs',
-        activeMatch: '^/test/'
+        link: '/demo/test',
+        activeMatch: '^/demo/'
     },
     {
         text: '索引',
