@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Layout from '@theme/Layout.vue'
+import Layout from '@theme/TwoColumnLayout.vue'
 import PostList from '@theme/PostList.vue'
 import Pagination from '@theme/Pagination.vue'
 import TagsBar from '@theme/TagsBar.vue'

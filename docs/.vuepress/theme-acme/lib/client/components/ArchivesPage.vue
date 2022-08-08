@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Layout from '@theme/Layout.vue'
+import Layout from '@theme/TwoColumnLayout.vue'
 import Timeline from '@theme/Timeline.vue'
 import { inject } from 'vue'
 
