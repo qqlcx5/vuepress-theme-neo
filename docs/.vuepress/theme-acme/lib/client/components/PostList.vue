@@ -6,7 +6,7 @@
         >
             <div
                 class="post card-box"
-                :class="[`effect-border-${random(1, 5)}`, (item.frontmatter.sticky && 'iconfont icon-zhiding')]"
+                :class="[`effect-border-${random(2, 5)}`, (item.frontmatter.sticky && 'iconfont icon-zhiding')]"
                 v-for="item in sortPosts"
                 :key="item.key"
             >

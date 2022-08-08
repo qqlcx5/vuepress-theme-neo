@@ -15,7 +15,7 @@
                     :href="item.cardSrc"
                     target="_blank"
                 >
-                    <div class="card-nav-item" :class="[`effect-border-${random(1, 5)}`]">
+                    <div class="card-nav-item" :class="[`effect-border-${random(2, 5)}`]">
                         <div class="card-nav-title">
                             <img
                                 v-if="item.cardImgSrc && item.cardImgSrc != ''"
