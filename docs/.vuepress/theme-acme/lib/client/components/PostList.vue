@@ -25,18 +25,18 @@
                         <a
                             title="作者"
                             target="_blank"
-                            v-if="item.AuthorInfo.name && item.AuthorInfo.url"
-                            :href="item.AuthorInfo.url"
+                            v-if="item.author.name && item.author.url"
+                            :href="item.author.url"
                         >
                             <AIcon name="acme-yonghu" />
-                            {{ item.AuthorInfo.name }}
+                            {{ item.author.name }}
                         </a>
                         <span
-                            v-else-if="item.AuthorInfo.name"
+                            v-else-if="item.author.name"
                             title="作者"
                         >
                             <AIcon name="acme-yonghu" />
-                            {{ item.AuthorInfo.name }}
+                            {{ item.author.name }}
                         </span>
 
                         <span

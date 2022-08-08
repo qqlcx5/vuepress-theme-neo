@@ -87,9 +87,7 @@ export default defineComponent({
     }
 })
 </script>
-<style lang="scss">
-@import '//at.alicdn.com/t/c/font_3483216_ot3j5d2775.css';
-
+<style lang="scss" scoped>
 .a-icon {
     position: relative;
     display: inline-block;

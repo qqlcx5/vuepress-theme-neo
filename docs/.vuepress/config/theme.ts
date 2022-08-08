@@ -16,10 +16,10 @@ export default acmeTheme({
     category: true,
     tag: true,
     archive: true,
-    AuthorInfo: {
+    // iconAssets: '//at.alicdn.com/t/c/font_3483216_ot3j5d2775.css',
+    author: {
         name: '星野',
         url: 'https://feyoudao.cn',
-        avatar: 'https://avatars0.githubusercontent.com/u/888',
     },
     // personal information
     personalInfo: {

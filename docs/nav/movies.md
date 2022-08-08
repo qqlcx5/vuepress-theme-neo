@@ -6,7 +6,7 @@ categories:
   - nav
 tags: 
   - 影视
-AuthorInfo:
+author:
   - name: 布兰特·斯克林
     url: https://feyoudao.cn
     avatar: https://avatars0.githubusercontent.com/u/888

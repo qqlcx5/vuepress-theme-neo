@@ -17,15 +17,15 @@ export default defineClientConfig({
         onMounted(() => {})
         pageMap.map(item => {
             const {
-                frontmatter: { AuthorInfo = [], author = '' }
+                frontmatter: { author = [] }
             } = item
-            !item.AuthorInfo && (item.AuthorInfo = {})
-            if (AuthorInfo[0] || author) {
-                item.AuthorInfo.name = AuthorInfo[0]?.name || author
-                item.AuthorInfo.url = AuthorInfo[0]?.url || ''
+            !item.author && (item.author = {})
+            if (author) {
+                item.author.name = author[0]?.name || ''
+                item.author.url = author[0]?.url || ''
             } else {
                 const themeLocale = useThemeLocaleData()
-                item.AuthorInfo = themeLocale.value.AuthorInfo
+                item.author = themeLocale.value?.author || {}
             }
         })
 
