@@ -125,7 +125,6 @@ $headings: (2, 3, 4, 5, 6);
 
         overflow-x: hidden;
         overflow-y: auto;
-
         max-height: 75vh;
         margin: 0 0.5rem;
         padding-left: 8px;
@@ -133,16 +132,9 @@ $headings: (2, 3, 4, 5, 6);
         text-overflow: ellipsis;
         white-space: nowrap;
         scroll-behavior: smooth;
-
-        &::before {
-            content: ' ';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            width: 2px;
-            background: var(--c-border);
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
         }
     }
 
@@ -151,6 +143,17 @@ $headings: (2, 3, 4, 5, 6);
         margin: 0;
         // override ul default padding
         padding: 0;
+        position: relative;
+        &::before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -0.5rem;
+            z-index: -1;
+            width: 2px;
+            background: var(--c-border);
+        }
     }
 
     .toc-link {

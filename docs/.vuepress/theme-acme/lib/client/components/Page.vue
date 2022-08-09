@@ -41,7 +41,7 @@ import PageNav from '@vuepress/theme-default/lib/client/components/PageNav.vue'
 // 有侧边栏的情况下，大于1380px在页面右侧添加toc容器
 .theme-container:not(.no-sidebar) .page {
     @media (min-width: 1200px) {
-        padding-right: 16rem;
+        padding-right: 12rem;
     }
 }
 </style>
