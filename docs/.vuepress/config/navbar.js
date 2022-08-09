@@ -26,7 +26,7 @@ module.exports = [
     },
     {
         text: '测试用例',
-        link: '/demo/test',
+        link: '/demo/http',
         activeMatch: '^/demo/'
     },
     {
