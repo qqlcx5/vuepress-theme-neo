@@ -42,7 +42,7 @@ jobs:
         run: yarn docs:build
 
       - name: Generate CNAME
-        run: cd ./docs/.vuepress/dist && echo 'feyoudao.cn' > CNAME
+        run: cd ./docs/.vuepress/dist && echo 'acme.feyoudao.cn' > CNAME
 
       - name: Generate nojekyll
         run: cd ./docs/.vuepress/dist && echo > .nojekyll
