@@ -3,7 +3,7 @@ import { onMounted, computed, provide, readonly } from 'vue'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
 import { AIcon, NavCard } from './components/global'
 import { pageMap } from '@temp/theme-acme/pageMap'
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import './styles/index.scss'
 
 export default defineClientConfig({

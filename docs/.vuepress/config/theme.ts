@@ -1,10 +1,9 @@
 // const navbar = require('./navbar')
 // const sidebar = require('./sidebar')
-// import { acmeTheme } from '../theme-acme/lib/node/index'
-// import { defaultTheme } from '../theme-default-v51/lib/node/index'
-import { defaultTheme } from '@vuepress/theme-default'
+import { acmeTheme } from '../theme-acme/lib/node/index'
+// import { defaultTheme } from '@vuepress/theme-default'
 
-export default defaultTheme({
+export default acmeTheme({
     // 默认主题配置项
     // navbar, // 导航栏配置
     // sidebar, // 侧边栏配置
@@ -18,7 +17,6 @@ export default defaultTheme({
     category: true,
     tag: true,
     archive: true,
-    // iconAssets: '//at.alicdn.com/t/c/font_3483216_ot3j5d2775.css',
     author: {
         name: '星野',
         url: 'https://feyoudao.cn',

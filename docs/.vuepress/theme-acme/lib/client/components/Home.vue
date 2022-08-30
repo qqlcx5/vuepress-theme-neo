@@ -61,7 +61,7 @@
 <script setup lang="ts">
 import { withBase } from '@vuepress/client'
 import { computed, onMounted, ref } from 'vue'
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import Bubbles from './Bubbles.vue'
 const themeLocale = useThemeLocaleData()
 const bgImages = themeLocale.value.homeHeaderImages
