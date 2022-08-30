@@ -8,7 +8,7 @@ import TagsPage from '@theme/TagsPage.vue'
 // @ts-ignore
 import ArchivesPage from '@theme/ArchivesPage.vue'
 // @ts-ignore
-import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
+import Page from '@theme/Page.vue'
 // @ts-ignore
 import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
 // @ts-ignore
