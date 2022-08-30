@@ -5,7 +5,8 @@ import { AIcon, NavCard } from './components/global'
 import { pageMap } from '@temp/theme-acme/pageMap'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import './styles/index.scss'
-
+import Layout from './layouts/Layout.vue';
+import NotFound from './layouts/NotFound.vue';
 export default defineClientConfig({
     // 函数会在客户端应用创建后被调用，你可以对 Vue 应用添加各种能力。
     enhance({ app, router, siteData }) {
@@ -50,5 +51,9 @@ export default defineClientConfig({
         provide('$sortPostsByDate', readonly($sortPostsByDate))
         provide('$groupPosts', readonly($groupPosts))
         provide('$categoriesAndTags', readonly($categoriesAndTags))
-    }
+    },
+    layouts: {
+        Layout,
+        NotFound,
+    },
 })

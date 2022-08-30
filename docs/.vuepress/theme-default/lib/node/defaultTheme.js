@@ -15,16 +15,19 @@ export const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
     assignDefaultLocaleOptions(localeOptions);
     return {
         name: '@vuepress/theme-default',
-        layouts: path.resolve(__dirname, '../client/layouts'),
         templateBuild: path.resolve(__dirname, '../../templates/build.html'),
-        // use alias to make all components replaceable
-        alias: Object.fromEntries(fs
-            .readdirSync(path.resolve(__dirname, '../client/components'))
-            .filter((file) => file.endsWith('.vue'))
-            .map((file) => [
-            `@theme/${file}`,
-            path.resolve(__dirname, '../client/components', file),
-        ])),
+        alias: {
+            // use alias to make all components replaceable
+            ...Object.fromEntries(fs
+                .readdirSync(path.resolve(__dirname, '../client/components'))
+                .filter((file) => file.endsWith('.vue'))
+                .map((file) => [
+                `@theme/${file}`,
+                path.resolve(__dirname, '../client/components', file),
+            ])),
+            // workaround for https://github.com/vitejs/vite/issues/7621
+            '@vuepress/theme-default/client': path.resolve(__dirname, '../client/index.js'),
+        },
         clientConfigFile: path.resolve(__dirname, '../client/config.js'),
         extendsPage: (page) => {
             // save relative file path into page data to generate edit link

@@ -53,7 +53,7 @@ export const resolveSidebarItems = (frontmatter, themeLocale) => {
  */
 export const headerToSidebarItem = (header, sidebarDepth) => ({
     text: header.title,
-    link: `#${header.slug}`,
+    link: header.link,
     children: headersToSidebarItemChildren(header.children, sidebarDepth),
 });
 export const headersToSidebarItemChildren = (headers, sidebarDepth) => sidebarDepth > 0
