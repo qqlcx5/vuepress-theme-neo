@@ -1,12 +1,17 @@
-const fs = require('fs'); // 文件模块
-const matter = require('gray-matter'); // FrontMatter解析器 https://github.com/jonschlinkert/gray-matter
-const jsonToYaml = require('json2yaml')
-const chalk = require('chalk') // 命令行打印美化
+// const fs = require('fs'); // 文件模块
+// const matter = require('gray-matter');
+// const jsonToYaml = require('json2yaml')
+// const chalk = require('chalk') // 命令行打印美化
 const readFileList = require('./readFileList');
 const { type, repairDate, dateFormat } = require('./fn');
 const log = console.log
-const path = require('path');
-const os = require('os');
+// const path = require('path');
+// const os = require('os');
+import os from 'os';
+import jsonToYaml from 'json2yaml';
+import chalk from 'chalk';
+import { path, fs } from '@vuepress/utils'
+import matter from 'gray-matter' // FrontMatter解析器 https://github.com/jonschlinkert/gray-matter
 
 const PREFIX = '/pages/'
 

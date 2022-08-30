@@ -1,8 +1,10 @@
-import { path, fs } from '@vuepress/utils'
+import { path, getDirname, fs } from '@vuepress/utils'
+const __dirname = getDirname(import.meta.url)
 import { defaultTheme } from '@vuepress/theme-default'
 import type { Theme } from '@vuepress/core'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
-const useFrontmatter = require('./utils/useFrontmatter')
+// const useFrontmatter = require('./utils/useFrontmatter')
+console.log('__dirname-------------', path.resolve(__dirname, '../client/layouts'));
 
 export const acmeTheme = (options: DefaultThemeOptions): Theme => {
     return {
@@ -11,8 +13,8 @@ export const acmeTheme = (options: DefaultThemeOptions): Theme => {
         define: {},
         alias: Object.fromEntries(fs.readdirSync(path.resolve(__dirname, '../client/components')).filter(file => file.endsWith('.vue')).map(file => [`@theme/${file}`, path.resolve(__dirname, '../client/components', file)])),
         async onInitialized(app) {
-            let sourceDir = app.dir.source()
-            useFrontmatter(sourceDir, options) // 写入frontmatter信息
+            // let sourceDir = app.dir.source()
+            // useFrontmatter(sourceDir, options) // 写入frontmatter信息
             await app.writeTemp(`theme-acme/pageMap.js`, `export const pageMap = ${JSON.stringify(app.pages)}`)
         },
         layouts: {

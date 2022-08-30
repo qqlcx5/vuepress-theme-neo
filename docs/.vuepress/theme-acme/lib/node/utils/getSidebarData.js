@@ -1,5 +1,6 @@
-const fs = require('fs'); // 文件模块
-const path = require('path'); // 路径模块
+// const fs = require('fs'); // 文件模块
+// const path = require('path'); // 路径模块
+import { path, fs } from '@vuepress/utils'
 const chalk = require('chalk') // 命令行打印美化
 const matter = require('gray-matter'); // front matter解析器
 const log = console.log
