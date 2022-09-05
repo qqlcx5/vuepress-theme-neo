@@ -1,20 +1,24 @@
-// const { path } = require('@vuepress/utils')
-const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
-const { searchPlugin } = require('@vuepress/plugin-search')
-const { docsearchPlugin } = require('@vuepress/plugin-docsearch')
-// const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
-// const typed = require('../plugins/vuepress-plugin-typed')
-// const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
-const { copyCodePlugin } = require('vuepress-plugin-copy-code2')
-const { photoSwipePlugin } = require('vuepress-plugin-photo-swipe')
-const { mdEnhancePlugin } = require('vuepress-plugin-md-enhance')
-const { commentPlugin } = require('vuepress-plugin-comment2')
-// const { readingTimePlugin } = require('vuepress-plugin-reading-time2')
-const { sitemapPlugin } = require('vuepress-plugin-sitemap2')
+// const { path } from '@vuepress/utils'
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+// import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+// import typed from '../plugins/vuepress-plugin-typed'
+// import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+import { copyCodePlugin } from 'vuepress-plugin-copy-code2'
+import { photoSwipePlugin } from 'vuepress-plugin-photo-swipe'
+import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
+import { commentPlugin } from 'vuepress-plugin-comment2'
+// import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
+import { sitemapPlugin } from 'vuepress-plugin-sitemap2'
+import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 
 module.exports = [
     googleAnalyticsPlugin({
         id: 'G-7Q9JVXXQBW'
+    }),
+    themeDataPlugin({
+        // 配置项
     }),
     searchPlugin({
         maxSuggestions: 20,

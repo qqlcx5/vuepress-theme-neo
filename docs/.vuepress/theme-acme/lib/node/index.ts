@@ -3,11 +3,8 @@ const __dirname = getDirname(import.meta.url)
 import { defaultTheme, type DefaultThemeOptions } from '@vuepress/theme-default'
 import type { Theme } from '@vuepress/core'
 // const useFrontmatter = require('./utils/useFrontmatter')
-console.log('__dirname-------------', path.resolve(__dirname, '../client/layouts'));
 
 export const acmeTheme = (options: DefaultThemeOptions): Theme => {
-    // console.log('defaultTheme', defaultTheme(options));
-
     return {
         name: 'vuepress-theme-acme',
         extends: defaultTheme(options),
