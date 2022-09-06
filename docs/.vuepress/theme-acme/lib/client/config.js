@@ -3,7 +3,9 @@ import { onMounted, computed, provide, readonly } from 'vue'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
 import { AIcon, NavCard } from './components/global'
 import { pageMap } from '@temp/theme-acme/pageMap'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+// import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+import { setupDarkMode, setupSidebarItems, useScrollPromise, useThemeLocaleData } from './composables/index.js';
+
 import './styles/index.scss'
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
@@ -15,6 +17,8 @@ export default defineClientConfig({
     },
     extendsPage: page => {},
     setup() {
+        setupDarkMode();
+        setupSidebarItems();
         onMounted(() => {})
         pageMap.map(item => {
             const {

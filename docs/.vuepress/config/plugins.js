@@ -11,14 +11,10 @@ import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 import { commentPlugin } from 'vuepress-plugin-comment2'
 // import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
 import { sitemapPlugin } from 'vuepress-plugin-sitemap2'
-import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 
 module.exports = [
     googleAnalyticsPlugin({
         id: 'G-7Q9JVXXQBW'
-    }),
-    themeDataPlugin({
-        // 配置项
     }),
     searchPlugin({
         maxSuggestions: 20,

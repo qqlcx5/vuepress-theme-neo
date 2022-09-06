@@ -30,7 +30,8 @@
 import { debounce } from 'lodash'
 import { type } from '../utils'
 
-import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
+// import { useThemeData } from '@vuepress/plugin-theme-data/client'
+import { useThemeData } from '../composables/index.js'
 import { reactive, ref, onMounted, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 export default {

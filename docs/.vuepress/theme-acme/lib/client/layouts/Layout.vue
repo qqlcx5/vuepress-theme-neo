@@ -10,18 +10,18 @@ import ArchivesPage from '@theme/ArchivesPage.vue'
 // @ts-ignore
 import Page from '@theme/Page.vue'
 // @ts-ignore
-import Navbar from '@vuepress/theme-default/lib/client/components/Navbar.vue'
+import Navbar from '@vuepress/theme-default/components/Navbar.vue'
 // @ts-ignore
-import Sidebar from '@vuepress/theme-default/lib/client/components/Sidebar.vue'
+import Sidebar from '@vuepress/theme-default/components/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { DefaultThemePageFrontmatter } from '@vuepress/theme-default/lib/shared'
 import {
-    useScrollPromise,
-    useSidebarItems,
-} from '@vuepress/theme-default/lib/client/composables'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+  useScrollPromise,
+  useSidebarItems,
+  useThemeLocaleData,
+} from '../composables/index.js'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()

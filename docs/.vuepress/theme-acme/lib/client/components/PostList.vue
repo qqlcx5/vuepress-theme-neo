@@ -98,8 +98,8 @@
 <script>
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
-
+// import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeData } from '../composables/index.js'
 export default {
     props: {
         category: {
