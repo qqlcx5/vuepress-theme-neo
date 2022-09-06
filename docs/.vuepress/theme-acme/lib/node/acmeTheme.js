@@ -2,7 +2,7 @@ import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 import { defaultTheme } from '@vuepress/theme-default'
 import useFrontmatter from './utils/useFrontmatter'
-
+console.log("Object.fromEntries---------", path.resolve(__dirname, '../client/components'));
 export const acmeTheme = options => {
     return {
         name: 'vuepress-theme-acme',

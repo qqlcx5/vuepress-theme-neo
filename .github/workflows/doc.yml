@@ -21,25 +21,25 @@ jobs:
           node-version: '16'
 
       # 缓存 node_modules
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      # - name: Cache dependencies
+      #   uses: actions/cache@v3
+      #   id: yarn-cache
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
         # if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: npm install
         # run: yarn --frozen-lockfile
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: yarn docs:build
+        run: npm run docs:build
 
       - name: Generate CNAME
         run: cd ./docs/.vuepress/dist && echo 'acme.feyoudao.cn' > CNAME
