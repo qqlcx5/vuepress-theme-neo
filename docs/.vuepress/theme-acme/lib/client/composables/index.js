@@ -4,3 +4,6 @@ export * from './useResolveRouteWithRedirect.js';
 export * from './useScrollPromise.js';
 export * from './useSidebarItems.js';
 export * from './useThemeData.js';
+
+// custom
+export * from './usePageData.js';

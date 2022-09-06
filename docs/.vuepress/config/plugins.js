@@ -12,7 +12,7 @@ import { commentPlugin } from 'vuepress-plugin-comment2'
 // import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
 import { sitemapPlugin } from 'vuepress-plugin-sitemap2'
 
-module.exports = [
+export default [
     googleAnalyticsPlugin({
         id: 'G-7Q9JVXXQBW'
     }),

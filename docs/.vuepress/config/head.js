@@ -1,3 +1,4 @@
+
 export default [
     // ['link', { rel: 'icon', href: '/image/favicon.ico' }],
     ['link', { rel: 'icon', href: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico' }],
