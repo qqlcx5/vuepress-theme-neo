@@ -941,4 +941,4 @@ export default {
     };
   },
 }
-</script>>
+</script>

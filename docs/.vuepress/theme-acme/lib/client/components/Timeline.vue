@@ -27,10 +27,9 @@
     </ul>
 </template>
 <script>
-import { debounce } from 'lodash'
+import  lodash from 'lodash'
 import { type } from '../utils'
-
-// import { useThemeData } from '@vuepress/plugin-theme-data/client'
+const { debounce } = lodash
 import { useThemeData } from '../composables/index.js'
 import { reactive, ref, onMounted, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
