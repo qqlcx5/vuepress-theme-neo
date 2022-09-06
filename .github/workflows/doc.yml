@@ -94,7 +94,6 @@ on:
 
 jobs:
   deploy-gh-pages:
-    name: Deploy V2 docs to gh pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -115,11 +114,6 @@ jobs:
           cache: pnpm
 
       - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
-
-      - name: Docs build
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:build
