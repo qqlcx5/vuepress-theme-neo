@@ -1,5 +1,4 @@
-// head
-module.exports = [
+export default [
     // ['link', { rel: 'icon', href: '/image/favicon.ico' }],
     ['link', { rel: 'icon', href: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],

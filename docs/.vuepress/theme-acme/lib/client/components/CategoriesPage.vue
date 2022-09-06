@@ -2,7 +2,7 @@
     <Layout>
         <template #content-left>
             <CategoriesBar
-                :categoriesData="$categoriesAndTags.categories"
+                :categoriesData="_categoriesAndTags.categories"
                 :category="category"
             />
             <PostList
@@ -20,8 +20,8 @@
         </template>
         <template #content-right>
             <CategoriesBar
-                v-if="$categoriesAndTags?.categories.length"
-                :categoriesData="$categoriesAndTags?.categories"
+                v-if="_categoriesAndTags?.categories.length"
+                :categoriesData="_categoriesAndTags?.categories"
                 :category="category"
             />
         </template>
@@ -39,9 +39,9 @@ import { useRoute } from 'vue-router'
 export default {
     components: { Layout, PostList, Pagination, CategoriesBar },
     setup() {
-        const $groupPosts = inject('$groupPosts').value
-        const $sortPosts = inject('$sortPosts').value
-        const $categoriesAndTags = inject('$categoriesAndTags').value
+        const _groupPosts = inject('_groupPosts').value
+        const _sortPosts = inject('_sortPosts').value
+        const _categoriesAndTags = inject('_categoriesAndTags').value
         const $route = useRoute()
         let category = ref(null);
         let total = ref(0) // 总长
@@ -66,7 +66,7 @@ export default {
         })
         function refreshTotal(queryCategory, p = 1) {
             category.value = queryCategory ? decodeURIComponent(queryCategory) : ''
-            total.value = category.value ? $groupPosts.categories[category.value].length : $sortPosts.length
+            total.value = category.value ? _groupPosts.categories[category.value].length : _sortPosts.length
             currentPage.value = Number(p)
         }
         // 分页
@@ -75,9 +75,9 @@ export default {
         }
 
         return {
-            $groupPosts,
-            $sortPosts,
-            $categoriesAndTags,
+            _groupPosts,
+            _sortPosts,
+            _categoriesAndTags,
             category,
             total,
             perPage,

@@ -1,4 +1,4 @@
-module.exports = [
+export default [
     {
         text: '导航页',
         link: '/nav-page/',

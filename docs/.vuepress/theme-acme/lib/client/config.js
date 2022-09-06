@@ -1,6 +1,6 @@
 import { defineClientConfig } from '@vuepress/client'
 import { AIcon, NavCard } from './components/global'
-import { setupDarkMode, setupSidebarItems } from './composables/index.js';
+import { setupDarkMode, setupSidebarItems, setupPageData } from './composables/index.js';
 import './styles/index.scss'
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
@@ -14,6 +14,7 @@ export default defineClientConfig({
     setup() {
         setupDarkMode();
         setupSidebarItems();
+        setupPageData()
     },
     layouts: {
         Layout,
