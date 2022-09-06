@@ -3,7 +3,6 @@ const { createPage, deletePage } = require('./handlePage')
 
 // 生成分类标签等数据
 function useFrontmatter(sourceDir, themeConfig) {
-    // sourceDir themeConfig 存在第一次未传入值情况
     if (!sourceDir || !themeConfig) return
 
     // 所有.md文件设置frontmatter(标题、日期)

@@ -18,9 +18,9 @@ import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { DefaultThemePageFrontmatter } from '@vuepress/theme-default/lib/shared'
 import {
-  useScrollPromise,
-  useSidebarItems,
-  useThemeLocaleData,
+    useScrollPromise,
+    useSidebarItems,
+    useThemeLocaleData,
 } from '../composables/index.js'
 
 const page = usePageData()

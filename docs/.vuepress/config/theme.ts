@@ -1,6 +1,6 @@
 // const navbar = require('./navbar')
 // const sidebar = require('./sidebar')
-import { acmeTheme } from '../theme-acme/lib/node/index'
+import acmeTheme from '../theme-acme'
 // import { defaultTheme } from '@vuepress/theme-default'
 
 export default acmeTheme({

@@ -1,11 +1,6 @@
 import { defineClientConfig } from '@vuepress/client'
-import { onMounted, computed, provide, readonly } from 'vue'
-import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from './utils/postData'
 import { AIcon, NavCard } from './components/global'
-import { pageMap } from '@temp/theme-acme/pageMap'
-// import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { setupDarkMode, setupSidebarItems, useScrollPromise, useThemeLocaleData } from './composables/index.js';
-
+import { setupDarkMode, setupSidebarItems } from './composables/index.js';
 import './styles/index.scss'
 import Layout from './layouts/Layout.vue';
 import NotFound from './layouts/NotFound.vue';
@@ -19,42 +14,6 @@ export default defineClientConfig({
     setup() {
         setupDarkMode();
         setupSidebarItems();
-        onMounted(() => {})
-        pageMap.map(item => {
-            const {
-                frontmatter: { author = [] }
-            } = item
-            !item.author && (item.author = {})
-            if (author?.length) {
-                item.author.name = author[0]?.name || author
-                item.author.url = author[0]?.url || ''
-            } else {
-                const themeLocale = useThemeLocaleData()
-                item.author = themeLocale.value?.author || {}
-            }
-        })
-
-        const $filterPosts = computed(() => {
-            return filterPosts(pageMap)
-        })
-        const $sortPosts = computed(() => {
-            return sortPosts($filterPosts.value)
-        })
-        const $sortPostsByDate = computed(() => {
-            return sortPostsByDate($filterPosts.value)
-        })
-        const $groupPosts = computed(() => {
-            return groupPosts($sortPostsByDate.value)
-        })
-        const $categoriesAndTags = computed(() => {
-            return categoriesAndTags($groupPosts.value)
-        })
-        // 设置全局数据
-        provide('$filterPosts', readonly($filterPosts))
-        provide('$sortPosts', readonly($sortPosts))
-        provide('$sortPostsByDate', readonly($sortPostsByDate))
-        provide('$groupPosts', readonly($groupPosts))
-        provide('$categoriesAndTags', readonly($categoriesAndTags))
     },
     layouts: {
         Layout,
