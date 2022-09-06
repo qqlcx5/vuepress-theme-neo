@@ -25,14 +25,14 @@
                         <a
                             title="作者"
                             target="_blank"
-                            v-if="item.author.name && item.author.url"
+                            v-if="item.author?.name && item.author?.url"
                             :href="item.author.url"
                         >
                             <AIcon name="acme-yonghu" />
                             {{ item.author.name }}
                         </a>
                         <span
-                            v-else-if="item.author.name"
+                            v-else-if="item.author?.name"
                             title="作者"
                         >
                             <AIcon name="acme-yonghu" />
@@ -123,8 +123,8 @@ export default {
     setup(props, { emit }) {
         let sortPosts = ref([])
         let postListOffsetTop = ref(0)
-        const $groupPosts = inject('$groupPosts').value
-        const $sortPosts = inject('$sortPosts').value
+        const _groupPosts = inject('_groupPosts').value
+        const _sortPosts = inject('_sortPosts').value
         const $themeConfig = useThemeData().value
         const $route = useRoute()
         const $router = useRouter()
@@ -148,7 +148,7 @@ export default {
             const perPage = props.perPage
             let type = props.category ? 'categories' : 'tags'
             let typeValue = props.category || props.tag
-            let posts = typeValue ? $groupPosts[type][typeValue] : $sortPosts
+            let posts = typeValue ? _groupPosts[type][typeValue] : _sortPosts
             sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min

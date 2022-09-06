@@ -2,8 +2,8 @@
     <Layout>
         <template #content-left>
             <TagsBar
-                v-if="$categoriesAndTags.tags.length"
-                :tagsData="$categoriesAndTags.tags"
+                v-if="_categoriesAndTags.tags.length"
+                :tagsData="_categoriesAndTags.tags"
                 :tag="tag"
             />
             <PostList
@@ -21,8 +21,8 @@
         </template>
         <template #content-right>
             <TagsBar
-                v-if="$categoriesAndTags.tags.length"
-                :tagsData="$categoriesAndTags.tags"
+                v-if="_categoriesAndTags.tags.length"
+                :tagsData="_categoriesAndTags.tags"
                 :tag="tag"
             />
         </template>
@@ -43,9 +43,9 @@ export default {
         let total = ref(0) // 总长
         let perPage = ref(10) // 每页长
         let currentPage = ref(1) // 当前页
-        const $groupPosts = inject('$groupPosts').value
-        const $sortPosts = inject('$sortPosts').value
-        const $categoriesAndTags = inject('$categoriesAndTags').value
+        const _groupPosts = inject('_groupPosts').value
+        const _sortPosts = inject('_sortPosts').value
+        const _categoriesAndTags = inject('_categoriesAndTags').value
         const $route = useRoute()
         onMounted(() => {
             let { tag = '', p = 1 } = useRoute().query
@@ -56,7 +56,7 @@ export default {
         })
         function refreshTotal(queryTag, p = 1) {
             tag.value = queryTag ? decodeURIComponent(queryTag) : ''
-            total.value = tag.value ? $groupPosts.tags[tag.value].length : $sortPosts.length
+            total.value = tag.value ? _groupPosts.tags[tag.value].length : _sortPosts.length
             currentPage.value = Number(p)
         }
         // 分页
@@ -68,7 +68,7 @@ export default {
             total,
             perPage,
             currentPage,
-            $categoriesAndTags,
+            _categoriesAndTags,
             handlePagination
         }
     }

@@ -2,9 +2,9 @@
 // @ts-ignore
 import TOC from '@theme/TOC.vue'
 // @ts-ignore
-// import PageMeta from '@vuepress/theme-default/lib/client/components/PageMeta.vue'
+import PageMeta from '@vuepress/theme-default/components/PageMeta.vue'
 // @ts-ignore
-// import PageNav from '@vuepress/theme-default/lib/client/components/PageNav.vue'
+import PageNav from '@vuepress/theme-default/components/PageNav.vue'
 </script>
 
 <template>
@@ -20,9 +20,9 @@ import TOC from '@theme/TOC.vue'
             <slot name="content-bottom" />
         </div>
 
-        <!-- <PageMeta /> -->
+        <PageMeta />
 
-        <!-- <PageNav /> -->
+        <PageNav />
 
         <slot name="bottom" />
     </main>

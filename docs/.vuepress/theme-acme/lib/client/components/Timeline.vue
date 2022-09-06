@@ -2,7 +2,7 @@
     <ul>
         <template
             v-for="(item, index) in postsList"
-            :key="index + $sortPostsByDate.length"
+            :key="index + _sortPostsByDate.length"
         >
             <li
                 v-if="(year = getYear(index)) !== getYear(index - 1)"
@@ -39,16 +39,16 @@ export default {
         let countByYear = reactive({}) // 根据年份统计的文章数
         let perPage = ref(80) // 每页长度
         let currentPage = ref(1) // 当前页面
-        const $sortPostsByDate = inject('$sortPostsByDate').value
+        const _sortPostsByDate = inject('_sortPostsByDate').value
         const $themeConfig = useThemeData().value
         const $route = useRoute()
 
         getPageData()
 
-        for (let i = 0; i < $sortPostsByDate.length; i++) {
+        for (let i = 0; i < _sortPostsByDate.length; i++) {
             const {
                 frontmatter: { date }
-            } = $sortPostsByDate[i]
+            } = _sortPostsByDate[i]
             if (date && type(date) === 'string') {
                 const year = date.slice(0, 4)
                 if (!countByYear[year]) {
@@ -64,7 +64,7 @@ export default {
             window.addEventListener(
                 'scroll',
                 debounce(() => {
-                    if (postsList.value.length < $sortPostsByDate.length) {
+                    if (postsList.value.length < _sortPostsByDate.length) {
                         const docEl = document.documentElement
                         const docBody = document.body
                         const scrollTop = docEl.scrollTop || docBody.scrollTop
@@ -80,7 +80,7 @@ export default {
         })
 
         function getPageData() {
-            postsList.value = postsList.value.concat($sortPostsByDate.slice((currentPage.value - 1) * perPage.value, currentPage.value * perPage.value))
+            postsList.value = postsList.value.concat(_sortPostsByDate.slice((currentPage.value - 1) * perPage.value, currentPage.value * perPage.value))
         }
 
         function loadmore() {
@@ -130,7 +130,7 @@ export default {
             countByYear,
             getYear,
             getDate,
-            $sortPostsByDate,
+            _sortPostsByDate,
             $themeConfig,
             currentBadge
         }
