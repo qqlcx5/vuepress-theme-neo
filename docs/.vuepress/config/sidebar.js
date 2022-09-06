@@ -4,7 +4,7 @@ const readFile = require('../utils/simpleReadFile') // 读取文件函数模块
 const docsRoot = path.resolve(__dirname, '..', '..') // docs相对路径
 
 export default {
-    '/el-component/': readFile(docsRoot + '/el-component'),
+    // '/el-component/': readFile(docsRoot + '/el-component'),
     '/utils/': readFile(docsRoot + '/utils', true),
     '/demo/': readFile(docsRoot + '/demo')
 }
