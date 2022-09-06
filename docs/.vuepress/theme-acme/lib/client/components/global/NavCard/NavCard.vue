@@ -11,11 +11,14 @@
                 v-for="(item, index) in cardData"
                 :key="index"
             >
-                <a
+                <router-link
                     :href="item.cardSrc"
                     target="_blank"
                 >
-                    <div class="card-nav-item" :class="[`effect-border-${random(2, 5)}`]">
+                    <div
+                        class="card-nav-item"
+                        :class="[`effect-border-${random(2, 5)}`]"
+                    >
                         <div class="card-nav-title">
                             <img
                                 v-if="item.cardImgSrc && item.cardImgSrc != ''"
@@ -37,7 +40,7 @@
                             {{ item.cardContent }}
                         </div>
                     </div>
-                </a>
+                </router-link>
             </div>
         </div>
     </div>
