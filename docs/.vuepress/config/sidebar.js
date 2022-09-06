@@ -5,6 +5,6 @@ const docsRoot = path.resolve(__dirname, '..', '..') // docs相对路径
 
 export default {
     // '/el-component/': readFile(docsRoot + '/el-component'),
-    '/utils/': readFile(docsRoot + '/utils', true),
-    '/demo/': readFile(docsRoot + '/demo')
+    // '/utils/': readFile(docsRoot + '/utils', true),
+    // '/demo/': readFile(docsRoot + '/demo')
 }
