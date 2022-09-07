@@ -11,7 +11,7 @@
                 v-for="(item, index) in cardData"
                 :key="index"
             >
-                <router-link
+                <a
                     :href="item.cardSrc"
                     target="_blank"
                 >
@@ -40,7 +40,7 @@
                             {{ item.cardContent }}
                         </div>
                     </div>
-                </router-link>
+                </a>
             </div>
         </div>
     </div>
