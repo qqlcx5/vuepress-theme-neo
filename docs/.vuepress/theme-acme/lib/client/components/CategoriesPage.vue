@@ -2,7 +2,7 @@
     <Layout>
         <template #content-left>
             <CategoriesBar
-                :categoriesData="_categoriesAndTags.categories"
+                :categoriesData="categoriesAndTagsSymbol.categories"
                 :category="category"
             />
             <PostList
@@ -20,8 +20,8 @@
         </template>
         <template #content-right>
             <CategoriesBar
-                v-if="_categoriesAndTags?.categories.length"
-                :categoriesData="_categoriesAndTags?.categories"
+                v-if="categoriesAndTagsSymbol?.categories.length"
+                :categoriesData="categoriesAndTagsSymbol?.categories"
                 :category="category"
             />
         </template>
@@ -39,9 +39,9 @@ import { useRoute } from 'vue-router'
 export default {
     components: { Layout, PostList, Pagination, CategoriesBar },
     setup() {
-        const _groupPosts = inject('_groupPosts').value
-        const _sortPosts = inject('_sortPosts').value
-        const _categoriesAndTags = inject('_categoriesAndTags').value
+        const groupPostsSymbol = inject('groupPostsSymbol').value
+        const sortPostsSymbol = inject('sortPostsSymbol').value
+        const categoriesAndTagsSymbol = inject('categoriesAndTagsSymbol').value
         const $route = useRoute()
         let category = ref(null);
         let total = ref(0) // 总长
@@ -66,7 +66,7 @@ export default {
         })
         function refreshTotal(queryCategory, p = 1) {
             category.value = queryCategory ? decodeURIComponent(queryCategory) : ''
-            total.value = category.value ? _groupPosts.categories[category.value].length : _sortPosts.length
+            total.value = category.value ? groupPostsSymbol.categories[category.value].length : sortPostsSymbol.length
             currentPage.value = Number(p)
         }
         // 分页
@@ -75,9 +75,9 @@ export default {
         }
 
         return {
-            _groupPosts,
-            _sortPosts,
-            _categoriesAndTags,
+            sortPostsSymbol,
+            groupPostsSymbol,
+            categoriesAndTagsSymbol,
             category,
             total,
             perPage,

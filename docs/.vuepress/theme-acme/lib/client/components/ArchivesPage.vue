@@ -3,7 +3,7 @@
         <main class="archives-wrapper">
             <h1 class="title">
                 {{ $page.title }}
-                <div class="title-count"> 总共 <i>{{ _sortPostsByDate.length }}</i> 篇文章 </div>
+                <div class="title-count"> 总共 <i>{{ sortPostsByDateSymbol.length }}</i> 篇文章 </div>
             </h1>
             <Timeline></Timeline>
         </main>
@@ -18,8 +18,8 @@ import { inject } from 'vue'
 export default {
     components: { Layout, Timeline },
     setup() {
-        const _sortPostsByDate = inject('_sortPostsByDate').value
-        return { _sortPostsByDate }
+        const sortPostsByDateSymbol = inject('sortPostsByDateSymbol').value
+        return { sortPostsByDateSymbol }
     }
 }
 </script>

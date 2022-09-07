@@ -123,8 +123,8 @@ export default {
     setup(props, { emit }) {
         let sortPosts = ref([])
         let postListOffsetTop = ref(0)
-        const _groupPosts = inject('_groupPosts').value
-        const _sortPosts = inject('_sortPosts').value
+        const groupPostsSymbol = inject('groupPostsSymbol').value
+        const sortPostsSymbol = inject('sortPostsSymbol').value
         const $themeConfig = useThemeData().value
         const $route = useRoute()
         const $router = useRouter()
@@ -148,7 +148,7 @@ export default {
             const perPage = props.perPage
             let type = props.category ? 'categories' : 'tags'
             let typeValue = props.category || props.tag
-            let posts = typeValue ? _groupPosts[type][typeValue] : _sortPosts
+            let posts = typeValue ? groupPostsSymbol[type][typeValue] : sortPostsSymbol
             sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
