@@ -1,5 +1,5 @@
 const readFileList = require('./readFileList');
-const { type, repairDate, dateFormat } = require('./fn');
+import { typeOf, repairDate, dateFormat } from './index'
 const log = console.log
 import os from 'os';
 import jsonToYaml from 'json2yaml';
@@ -99,7 +99,7 @@ ${extendFrontmatterStr}---`;
       }
 
       // 扩展自动生成frontmatter的字段
-      if (type(extendFrontmatter) === 'object') {
+      if (typeOf(extendFrontmatter) === 'object') {
         Object.keys(extendFrontmatter).forEach(keyName => {
           if (!matterData.hasOwnProperty(keyName)) {
             matterData[keyName] = extendFrontmatter[keyName]
@@ -109,7 +109,7 @@ ${extendFrontmatterStr}---`;
       }
 
       if (hasChange) {
-        if (matterData.date && type(matterData.date) === 'date') {
+        if (matterData.date && typeOf(matterData.date) === 'date') {
           matterData.date = repairDate(matterData.date) // 修复时间格式
         }
         const newData = jsonToYaml.stringify(matterData).replace(/\n\s{2}/g, "\n").replace(/"/g, "") + '---' + os.EOL + fileMatterObj.content;

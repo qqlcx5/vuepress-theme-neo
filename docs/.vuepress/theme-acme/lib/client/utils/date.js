@@ -1,10 +1,9 @@
 // 小于10补0
-export function zero(d) {
-    return d.toString().padStart(2, '0')
+export function addZero(d, len = 2) {
+    return d.toString().padStart(len, '0')
 }
-
 // 类型判断
-export function type(o) {
+export function typeOf(o) {
     const s = Object.prototype.toString.call(o)
     return s.match(/\[object (.*?)\]/)[1].toLowerCase()
 }
@@ -14,7 +13,7 @@ export function dateFormat(date) {
     if (!(date instanceof Date)) {
         date = new Date(date)
     }
-    return `${date.getUTCFullYear()}-${zero(date.getUTCMonth() + 1)}-${zero(date.getUTCDate())}`
+    return `${date.getUTCFullYear()}-${addZero(date.getUTCMonth() + 1)}-${addZero(date.getUTCDate())}`
 }
 
 // 修复ISO8601时间格式为普通时间格式
@@ -22,7 +21,7 @@ export function repairUTCDate(date) {
     if (!(date instanceof Date)) {
         date = new Date(date)
     }
-    return `${date.getUTCFullYear()}-${zero(date.getUTCMonth() + 1)}-${zero(date.getUTCDate())} ${zero(date.getUTCHours())}:${zero(date.getUTCMinutes())}:${zero(date.getUTCSeconds())}`
+    return `${date.getUTCFullYear()}-${addZero(date.getUTCMonth() + 1)}-${addZero(date.getUTCDate())} ${addZero(date.getUTCHours())}:${addZero(date.getUTCMinutes())}:${addZero(date.getUTCSeconds())}`
 }
 
 // 获取时间的时间戳

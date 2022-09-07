@@ -27,12 +27,12 @@
     </ul>
 </template>
 <script>
-import  lodash from 'lodash'
-import { type } from '../utils'
-const { debounce } = lodash
+import { typeOf } from '../utils'
+import lodash from 'lodash'
 import { useThemeData } from '../composables/index.js'
 import { reactive, ref, onMounted, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
+const { debounce } = lodash
 export default {
     setup(props) {
         let postsList = ref([]) // 当前页面的文章数据
@@ -49,7 +49,7 @@ export default {
             const {
                 frontmatter: { date }
             } = _sortPostsByDate[i]
-            if (date && type(date) === 'string') {
+            if (date && typeOf(date) === 'string') {
                 const year = date.slice(0, 4)
                 if (!countByYear[year]) {
                     countByYear[year] = 0
@@ -91,7 +91,7 @@ export default {
             const item = postsList.value[index]
             if (!item) return
             const { frontmatter: { date } } = item
-            if (date && type(date) === 'string') {
+            if (date && typeOf(date) === 'string') {
                 return date.slice(0, 4)
             }
         }
@@ -100,7 +100,7 @@ export default {
             const {
                 frontmatter: { date }
             } = item
-            if (date && type(date) === 'string') {
+            if (date && typeOf(date) === 'string') {
                 return date.slice(5, 10)
             }
         }

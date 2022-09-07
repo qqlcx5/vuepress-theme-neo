@@ -1,8 +1,6 @@
 /**
  *  选择指定目录读取所有md文件数据
  */
-// const fs = require('fs') // 文件模块
-// const path = require('path') // 路径模块
 import { path, fs } from '@vuepress/utils'
 
 function readFile(dir, collapsible = false,  filesList = [], fpath = '') {
