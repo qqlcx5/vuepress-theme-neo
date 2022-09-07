@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="cardData[0].title != undefined">
-            <div style="text-align: center; font-weight: 900">{{ cardData[0].title }}</div>
+            <div style="text-align: center; font-weight: bold">{{ cardData[0].title }}</div>
         </div>
 
         <div class="kbt-row">
