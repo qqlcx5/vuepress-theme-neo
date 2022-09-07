@@ -1,12 +1,6 @@
-// const fs = require('fs'); // 文件模块
-// const matter = require('gray-matter');
-// const jsonToYaml = require('json2yaml')
-// const chalk = require('chalk') // 命令行打印美化
 const readFileList = require('./readFileList');
 const { type, repairDate, dateFormat } = require('./fn');
 const log = console.log
-// const path = require('path');
-// const os = require('os');
 import os from 'os';
 import jsonToYaml from 'json2yaml';
 import chalk from 'chalk';
@@ -65,7 +59,7 @@ date: ${dateStr}${cateStr}${tagsStr}
 ${extendFrontmatterStr}---`;
 
       fs.writeFileSync(file.filePath, `${fmData}${os.EOL}${fileMatterObj.content}`); // 写入
-      log(chalk.blue('tip ') + chalk.green(`write frontmatter(写入frontmatter)：${file.filePath} `))
+      log(chalk.blue('tip ') + chalk.green(`write frontmatter：${file.filePath} `))
 
     } else { // 已有FrontMatter
       let matterData = fileMatterObj.data;
@@ -120,7 +114,7 @@ ${extendFrontmatterStr}---`;
         }
         const newData = jsonToYaml.stringify(matterData).replace(/\n\s{2}/g, "\n").replace(/"/g, "") + '---' + os.EOL + fileMatterObj.content;
         fs.writeFileSync(file.filePath, newData); // 写入
-        log(chalk.blue('tip ') + chalk.green(`write frontmatter(写入frontmatter)：${file.filePath} `))
+        log(chalk.blue('tip ') + chalk.green(`write frontmatter：${file.filePath} `))
       }
 
     }

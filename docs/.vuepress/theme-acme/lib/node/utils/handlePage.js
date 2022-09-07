@@ -1,10 +1,6 @@
 // 生成或删除页面（分类页、标签页、归档页...）
-
-// const fs = require('fs'); // 文件模块
-// const path = require('path'); // 路径模块
-// const chalk = require('chalk') // 命令行打印美化
 import { path, fs } from '@vuepress/utils'
-import chalk from 'chalk';
+import chalk from 'chalk'; // 命令行打印美化
 const { type } = require('./fn');
 const log = console.log
 

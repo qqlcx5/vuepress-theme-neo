@@ -1,10 +1,6 @@
-// const fs = require('fs') // 文件模块
-// const path = require('path') // 路径模块
-// const chalk = require('chalk') // 控制台颜色模块
-// const matter = require('gray-matter') // front matter解析器
 import { path, fs } from '@vuepress/utils'
-import chalk from 'chalk';
-import matter from 'gray-matter';
+import chalk from 'chalk'; // 命令行打印美化
+import matter from 'gray-matter'; // front matter解析器
 
 const log = console.log
 let catalogueData = {} // 目录页数据

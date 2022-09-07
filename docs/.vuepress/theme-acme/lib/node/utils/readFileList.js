@@ -1,10 +1,6 @@
 /**
  *  读取所有md文件数据
  */
-// const fs = require('fs'); // 文件模块
-// const path = require('path'); // 路径模块
-// const chalk = require('chalk') // 命令行打印美化
-// import chalk from 'chalk';
 import { path, fs } from '@vuepress/utils'
 
 const log = console.log
