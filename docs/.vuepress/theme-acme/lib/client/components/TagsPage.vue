@@ -16,10 +16,12 @@
                 :perPage="perPage"
                 :currentPage="currentPage"
                 @getCurrentPage="handlePagination"
-                v-show="Math.ceil(total / perPage) > 1"
+                v-show="Math.ceil(total / perPage) > 1 && tag"
             />
+            <NoData :showImg="!tag" />
         </template>
         <template #content-right>
+            <BloggerInfo />
             <TagsBar
                 v-if="categoriesAndTagsSymbol.tags.length"
                 :tagsData="categoriesAndTagsSymbol.tags"
@@ -34,10 +36,12 @@ import Layout from '@theme/TwoColumnLayout.vue'
 import PostList from '@theme/PostList.vue'
 import Pagination from '@theme/Pagination.vue'
 import TagsBar from '@theme/TagsBar.vue'
+import NoData from '@theme/NoData.vue'
+import BloggerInfo from '@theme/BloggerInfo.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 export default {
-    components: { Layout, PostList, Pagination, TagsBar },
+    components: { Layout, PostList, Pagination, TagsBar, NoData, BloggerInfo },
     setup() {
         let tag = ref()
         let total = ref(0) // 总长

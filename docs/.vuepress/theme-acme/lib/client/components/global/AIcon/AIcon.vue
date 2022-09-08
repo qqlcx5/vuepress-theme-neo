@@ -35,7 +35,7 @@ export default defineComponent({
         // icon 大小
         size: {
             type: [Number, String],
-            default: 18
+            default: 16
         },
         // 偏转角度
         rotate: {

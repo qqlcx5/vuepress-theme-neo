@@ -1,7 +1,7 @@
 <template>
     <div class="pagination">
         <span
-            class="card-box prev iconfont icon-jiantou-zuo"
+            class="dark-shadow prev iconfont icon-jiantou-zuo"
             :class="{disabled: currentPage === 1}"
             @click="goPrex()"
         >
@@ -14,7 +14,7 @@
             v-if="pages <= 5"
         >
             <span
-                class="card-box"
+                class="dark-shadow"
                 v-for="item in pages"
                 :key="item"
                 :class="{active: currentPage === item}"
@@ -28,7 +28,7 @@
         >
             <!-- 一号位 -->
             <span
-                class="card-box"
+                class="dark-shadow"
                 :class="{active: currentPage === 1}"
                 @click="goIndex(1)"
             >1</span>
@@ -42,7 +42,7 @@
             />
             <!--这里没有使用v-if的原因是因为部署版本在当前页大于3时刷新页面出现了一些bug-->
             <span
-                class="card-box"
+                class="dark-shadow"
                 v-show="currentPage <= 3"
                 :class="{active: currentPage === 2}"
                 @click="goIndex(2)"
@@ -50,7 +50,7 @@
 
             <!-- 三号位 -->
             <span
-                class="card-box"
+                class="dark-shadow"
                 :class="{active: currentPage >= 3 && currentPage <= (pages - 2)}"
                 @click="goIndex(threeNum())"
             >{{ threeNum() }}</span>
@@ -63,7 +63,7 @@
                 title="下两页"
             />
             <span
-                class="card-box"
+                class="dark-shadow"
                 v-show="currentPage >= (pages - 2)"
                 :class="{active: currentPage === pages-1}"
                 @click="goIndex(pages-1)"
@@ -71,14 +71,14 @@
 
             <!-- 五号位 -->
             <span
-                class="card-box"
+                class="dark-shadow"
                 :class="{active: currentPage === pages}"
                 @click="goIndex(pages)"
             >{{pages}}</span>
         </div>
 
         <span
-            class="card-box next iconfont icon-jiantou-you"
+            class="dark-shadow next iconfont icon-jiantou-you"
             :class="{disabled: currentPage === pages}"
             @click="goNext()"
         >

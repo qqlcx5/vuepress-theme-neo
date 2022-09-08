@@ -1,23 +1,19 @@
 <template>
     <Layout>
         <template #content-left>
-            <CategoriesBar
-                :categoriesData="categoriesAndTagsSymbol.categories"
-                :category="category"
-            />
             <PostList
                 :currentPage="currentPage"
                 :perPage="perPage"
-                :category="category"
+                :article="true"
             />
             <Pagination
                 :total="total"
                 :perPage="perPage"
                 :currentPage="currentPage"
                 @getCurrentPage="handlePagination"
-                v-show="Math.ceil(total / perPage) > 1 && category"
+                v-show="Math.ceil(total / perPage) > 1"
             />
-            <NoData :showImg="!category" />
+            <NoData showImg="false" />
         </template>
         <template #content-right>
             <BloggerInfo />
@@ -41,7 +37,7 @@ import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
-    components: { Layout, PostList, Pagination, CategoriesBar, NoData, BloggerInfo },
+    components: { Layout, PostList, Pagination, BloggerInfo, NoData },
     setup() {
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value

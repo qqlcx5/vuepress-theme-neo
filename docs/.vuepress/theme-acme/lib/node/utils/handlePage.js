@@ -5,7 +5,7 @@ import { typeOf } from './index' // 命令行打印美化
 
 const log = console.log
 
- export function createPage(sourceDir, page) {
+export function createPage(sourceDir, page) {
     const dirPath = path.join(sourceDir, '@pages') // 生成的文件夹路径
 
     // 文件夹不存在时
@@ -27,6 +27,13 @@ const log = console.log
 categoriesPage: true
 title: 分类
 permalink: /categories/
+article: false
+---`
+    } else if (page.indexOf('articles') > -1) {
+        content = `---
+articlesPage: true
+title: 文章
+permalink: /articles/
 article: false
 ---`
     } else if (page.indexOf('tags') > -1) {
@@ -74,4 +81,3 @@ export function deleteDir(dirPath) {
         }
     }
 }
- 

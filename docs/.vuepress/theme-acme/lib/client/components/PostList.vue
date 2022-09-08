@@ -102,12 +102,18 @@ import { useRoute, useRouter } from 'vue-router'
 import { useThemeData } from '../composables/index.js'
 export default {
     props: {
+        // 分类关键字
         category: {
             type: String,
             default: ''
         },
+        // 标签关键字
         tag: {
             type: String,
+            default: ''
+        },
+        article: {
+            type: [String, Boolean],
             default: ''
         },
         currentPage: {
@@ -147,9 +153,10 @@ export default {
             const currentPage = props.currentPage
             const perPage = props.perPage
             let type = props.category ? 'categories' : 'tags'
-            let typeValue = props.category || props.tag
-            let posts = typeValue ? groupPostsSymbol[type][typeValue] : sortPostsSymbol
-            sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
+            let queryKeyword = props.category || props.tag
+            // 文章全部展示 分类和标签隐藏数据 
+            let postsData = queryKeyword ? groupPostsSymbol[type][queryKeyword] : props.article ?  sortPostsSymbol : []
+            sortPosts.value = postsData.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
         return { themeData, sortPosts, random }
