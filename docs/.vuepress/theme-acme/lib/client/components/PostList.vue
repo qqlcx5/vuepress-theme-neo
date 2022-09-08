@@ -46,7 +46,7 @@
                             <AIcon name="acme-riqi" />
                             {{ item.frontmatter.date.split('T')[0] }}
                         </span>
-                        <span v-if="$themeConfig.category !== false && item.frontmatter.categories">
+                        <span v-if="themeData.category !== false && item.frontmatter.categories">
                             <AIcon name="acme-wenjianjia" />
                             <span title="分类">
                                 <router-link
@@ -56,7 +56,7 @@
                                 >{{ c }}</router-link>
                             </span>
                         </span>
-                        <span v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
+                        <span v-if="themeData.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
                             <AIcon name="acme-tag" />
                             <span
                                 title="标签"
@@ -125,15 +125,15 @@ export default {
         let postListOffsetTop = ref(0)
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value
-        const $themeConfig = useThemeData().value
-        const $route = useRoute()
-        const $router = useRouter()
+        const themeData = useThemeData().value
+        const route = useRoute()
+        const router = useRouter()
         onMounted(() => {
             handleSetPosts()
         })
         watch(() => props.currentPage, (currentPage) => {
-            if ($route.query.p != currentPage) {
-                $router.push({ query: { ...$route.query, p: currentPage } })
+            if (route.query.p != currentPage) {
+                router.push({ query: { ...route.query, p: currentPage } })
             }
             setTimeout(() => {
                 window.scrollTo({ top: postListOffsetTop }) // behavior: 'smooth'
@@ -152,7 +152,7 @@ export default {
             sortPosts.value = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
-        return { $themeConfig, sortPosts, random }
+        return { themeData, sortPosts, random }
     }
 
 }

@@ -42,13 +42,13 @@ export default {
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value
         const categoriesAndTagsSymbol = inject('categoriesAndTagsSymbol').value
-        const $route = useRoute()
+        const route = useRoute()
         let category = ref(null);
         let total = ref(0) // 总长
         let perPage = ref(10) // 每页长
         let currentPage = ref(1) // 当前页
         onMounted(() => {
-            let { category = '', p = 1 } = $route.query
+            let { category = '', p = 1 } = route.query
             refreshTotal(category, p)
 
             // 滚动条定位到当前分类（增强用户体验）
@@ -61,7 +61,7 @@ export default {
                 }, 300)
             }
         })
-        watch(() => $route.query.category, (queryCategory, prevCategory) => {
+        watch(() => route.query.category, (queryCategory, prevCategory) => {
             refreshTotal(queryCategory, 1)
         })
         function refreshTotal(queryCategory, p = 1) {

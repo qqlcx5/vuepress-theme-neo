@@ -2,7 +2,6 @@
 import { usePageData } from "@vuepress/client";
 import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-// import { isActiveLink } from "vuepress-shared/lib/client";
 export default defineComponent({
     name: "TOC",
     props: {

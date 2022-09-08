@@ -46,12 +46,12 @@ export default {
         const sortPostsSymbol = inject('sortPostsSymbol').value
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const categoriesAndTagsSymbol = inject('categoriesAndTagsSymbol').value
-        const $route = useRoute()
+        const route = useRoute()
         onMounted(() => {
             let { tag = '', p = 1 } = useRoute().query
             refreshTotal(tag, p)
         })
-        watch(() => $route.query.tag, (tag) => {
+        watch(() => route.query.tag, (tag) => {
             refreshTotal(tag, 1)
         })
         function refreshTotal(queryTag, p = 1) {

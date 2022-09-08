@@ -1,6 +1,6 @@
 ---
 archivesPage: true
-title: 时间线
+title: 时间轴
 permalink: /archives/
 article: false
 ---

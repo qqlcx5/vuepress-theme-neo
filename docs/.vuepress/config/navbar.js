@@ -53,10 +53,10 @@ export default [
                 ]
             },
             {
-                text: '时间线标题',
+                text: '时间轴标题',
                 children: [
                     {
-                        text: '时间线',
+                        text: '时间轴',
                         link: '/archives/',
                         activeMatch: '/archives/'
                     }
