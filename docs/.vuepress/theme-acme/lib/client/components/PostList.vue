@@ -5,7 +5,7 @@
             tag="div"
         >
             <div
-                class="post card-box"
+                class="post dark-shadow"
                 :class="[`effect-border-${random(2, 5)}`, (item.frontmatter.sticky && 'iconfont icon-zhiding')]"
                 v-for="item in sortPosts"
                 :key="item.key"

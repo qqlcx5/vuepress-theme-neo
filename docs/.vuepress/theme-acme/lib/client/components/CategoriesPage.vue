@@ -19,6 +19,7 @@
             />
         </template>
         <template #content-right>
+            <BloggerInfo />
             <CategoriesBar
                 v-if="categoriesAndTagsSymbol?.categories.length"
                 :categoriesData="categoriesAndTagsSymbol?.categories"
@@ -33,11 +34,12 @@ import Layout from '@theme/TwoColumnLayout.vue'
 import PostList from '@theme/PostList.vue'
 import Pagination from '@theme/Pagination.vue'
 import CategoriesBar from '@theme/CategoriesBar.vue'
+import BloggerInfo from '@theme/BloggerInfo.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
-    components: { Layout, PostList, Pagination, CategoriesBar },
+    components: { Layout, PostList, Pagination, CategoriesBar, BloggerInfo },
     setup() {
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value
@@ -75,14 +77,12 @@ export default {
         }
 
         return {
-            sortPostsSymbol,
-            groupPostsSymbol,
-            categoriesAndTagsSymbol,
-            category,
             total,
             perPage,
+            category,
             currentPage,
-            handlePagination
+            handlePagination,
+            categoriesAndTagsSymbol,
         }
     }
 }

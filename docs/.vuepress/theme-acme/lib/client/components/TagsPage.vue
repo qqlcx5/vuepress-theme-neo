@@ -68,8 +68,8 @@ export default {
             total,
             perPage,
             currentPage,
+            handlePagination,
             categoriesAndTagsSymbol,
-            handlePagination
         }
     }
 }

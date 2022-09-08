@@ -7,3 +7,5 @@ export * from './useThemeData.js';
 
 // custom
 export * from './usePageData.js';
+export * from './useNavigate.js';
+export * from './useThemeBlogOptions';

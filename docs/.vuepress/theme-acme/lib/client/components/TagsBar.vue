@@ -1,5 +1,5 @@
 <template>
-    <div class="tags-wrapper card-box">
+    <div class="tags-wrapper dark-shadow">
         <RouterLink
             to="/tags/"
             class="tags-title"

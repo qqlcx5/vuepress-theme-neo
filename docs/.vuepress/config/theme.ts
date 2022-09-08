@@ -1,6 +1,7 @@
 import navbar from './navbar'
 import sidebar from './sidebar'
-import acmeTheme from '../theme-acme'
+import acmeTheme from '../theme-acme/lib/node'
+import { type DefaultThemeOptions } from '@vuepress/theme-default'
 
 export default acmeTheme({
     // 默认主题配置项
@@ -19,6 +20,13 @@ export default acmeTheme({
     author: {
         name: '星野',
         url: 'https://feyoudao.cn'
+    },
+    blog: {
+        name: 'vueprss-theme-acme',
+        roundAvatar: true,
+        intro: 'https://feyoudao.cn',
+        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
+        description: 'A blog theme for VuePress2.x'
     },
     // personal information
     personalInfo: {
@@ -42,4 +50,4 @@ export default acmeTheme({
             mask: 'rgba(19, 75, 50, .2)'
         }
     ]
-})
+} as DefaultThemeOptions)

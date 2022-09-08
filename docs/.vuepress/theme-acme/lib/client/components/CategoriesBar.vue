@@ -1,5 +1,5 @@
 <template>
-    <div class="categories-wrapper card-box">
+    <div class="categories-wrapper dark-shadow">
         <RouterLink
             to="/categories/"
             class="categories-title"
