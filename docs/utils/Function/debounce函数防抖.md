@@ -17,12 +17,12 @@ debounce(fn, wait)
 
 **参数**
 
--   `fn` 要防抖动的函数
--   `wait=500`需要延迟的毫秒数
+- `fn` 要防抖动的函数
+- `wait=500`需要延迟的毫秒数
 
 **例子**
 
-```
+```js
 debounce(()=> { console.log('debounce') }, 1000)
 // => 1秒后打印'debounce'
 ```
@@ -47,4 +47,18 @@ const debounce = (function () {
         }, wait)
     }
 })()
+
+// 方式二
+function debounce(fn, delay) {
+    let timeout;
+    return function(...args) {
+      if (delay) {
+        clearTimeout(timeout);
+        timeout = setTimeout(fn, delay, args);
+      } else {
+        fn.apply(this, args);
+      }
+      return delay;
+    };
+  }
 ```
