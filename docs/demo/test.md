@@ -230,7 +230,7 @@ flowchart TB
     two --> c2
 ```
 
-- [查看详情](mermaid.md)
+<!-- - [查看详情](mermaid.md) -->
 
 ### Tex 语法
 
@@ -239,13 +239,13 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [查看详情](tex.md)
+<!-- - [查看详情](tex.md) -->
 
 ### 导入文件
 
-@include(./demo.snippet.md{5-9})
+<!-- @include(./demo.snippet.md{5-9}) -->
 
-- [查看详情](include.md)
+<!-- - [查看详情](include.md) -->
 
 ### 代码演示
 
@@ -270,7 +270,7 @@ span {
 
 :::
 
-- [查看详情](demo/README.md)
+<!-- - [查看详情](demo/README.md) -->
 
 ### 样式化
 
@@ -278,7 +278,7 @@ span {
 
 设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
 
-- [查看详情](stylize.md)
+<!-- - [查看详情](stylize.md) -->
 
 <!-- markdownlint-enable MD033 -->
 
@@ -315,4 +315,4 @@ $$
 
 @slideend
 
-- [查看详情](presentation/README.md)
+<!-- - [查看详情](presentation/README.md) -->
