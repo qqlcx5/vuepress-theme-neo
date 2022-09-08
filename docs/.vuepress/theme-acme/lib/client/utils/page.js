@@ -3,6 +3,21 @@ export const extRE = /\.(md|html)$/
 export const endingSlashRE = /\/$/
 export const outboundRE = /^[a-z]+:/i
 
+export const debounce = (function () {
+    const timer = {}
+    return function (func, wait = 500) {
+        const context = this // 注意 this 指向
+        const args = arguments // arguments中存着e
+        // 根据方法内容作为键值,保证唯一性
+        const randomText = String(args[0]).replace(/[\r\n]|\s+/g, '')
+        const name = 'debounce' + randomText
+        if (timer[name]) clearTimeout(timer[name])
+        timer[name] = setTimeout(() => {
+            func.apply(context, args)
+        }, wait)
+    }
+})()
+
 export function normalize(path) {
     return decodeURI(path).replace(hashRE, '').replace(extRE, '')
 }

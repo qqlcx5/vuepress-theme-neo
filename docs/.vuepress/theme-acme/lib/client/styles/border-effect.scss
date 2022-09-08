@@ -47,7 +47,7 @@
 // 四色旋转动画
 .effect-border-2 {
     position: relative;
-    z-index: 10;
+    z-index: 2;
     overflow: hidden;
     &:hover::before {
         content: '';
@@ -80,7 +80,7 @@
 .effect-border-3 {
     position: relative;
     overflow: hidden;
-    z-index: 10;
+    z-index: 2;
     &:hover::before {
         content: '';
         position: absolute;

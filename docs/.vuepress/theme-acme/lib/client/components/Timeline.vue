@@ -27,12 +27,10 @@
     </ul>
 </template>
 <script>
-import { typeOf } from '../utils'
-import lodash from 'lodash'
+import { typeOf, debounce } from '../utils'
 import { useThemeData } from '../composables/index.js'
 import { reactive, ref, onMounted, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
-const { debounce } = lodash
 export default {
     setup(props) {
         let postsList = ref([]) // 当前页面的文章数据
