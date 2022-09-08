@@ -1,18 +1,18 @@
-const readFileList = require('./readFileList');
-import { typeOf, repairDate, dateFormat } from './index'
-const log = console.log
 import os from 'os';
-import jsonToYaml from 'json2yaml';
 import chalk from 'chalk';
+import jsonToYaml from 'json2yaml';
 import { path, fs } from '@vuepress/utils'
+import readFileList from './readFileList';
+import { typeOf, repairDate, dateFormat } from './index'
 import matter from 'gray-matter' // FrontMatter解析器 https://github.com/jonschlinkert/gray-matter
+const log = console.log
 
 const PREFIX = '/pages/'
 
 /**
  * 给.md文件设置frontmatter(标题、日期、永久链接等数据)
  */
-function setFrontmatter(sourceDir, themeConfig) {
+ export function setFrontmatter(sourceDir, themeConfig) {
   const { category: isCategory, tag: isTag, categoryText = '随笔', extendFrontmatter } = themeConfig
   const files = readFileList(sourceDir) // 读取所有md文件数据
   // 扩展自定义生成frontmatter
@@ -136,7 +136,6 @@ function getCategories(file, categoryText) {
         const item = filePathArr[ind]
         const firstDotIndex = item.indexOf('.');
         categories.push(item.substring(firstDotIndex + 1) || '') // 获取分类
-        // categories.push(filePathArr[ind].split('.').pop()) // 获取分类
       }
     }
   } else {
@@ -156,5 +155,3 @@ function getPermalink() {
   return `${PREFIX + (Math.random() + Math.random()).toString(16).slice(2, 8)}/`
 }
 
-
-module.exports = setFrontmatter;

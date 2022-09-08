@@ -1,12 +1,12 @@
-const setFrontmatter = require('./setFrontmatter')
-const { createPage, deletePage } = require('./handlePage')
+// const setFrontmatter = require('./setFrontmatter')
+import { createPage, deletePage } from './handlePage'
 
 // 生成分类标签等数据
-function useFrontmatter(sourceDir, themeConfig) {
+export function createPageFile(sourceDir, themeConfig) {
     if (!sourceDir || !themeConfig) return
 
     // 所有.md文件设置frontmatter(标题、日期)
-    setFrontmatter(sourceDir, themeConfig)
+    // setFrontmatter(sourceDir, themeConfig)
 
     // 创建分类页文件
     if (themeConfig.category !== false) {
@@ -29,5 +29,3 @@ function useFrontmatter(sourceDir, themeConfig) {
         deletePage(sourceDir, 'archivesPage')
     }
 }
-
-module.exports = useFrontmatter

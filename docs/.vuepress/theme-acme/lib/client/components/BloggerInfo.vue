@@ -92,8 +92,9 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .blogger-info {
-    padding: 0.1rem;
-    margin-bottom: 0.8rem;
+    // padding: 0.1rem;
+    overflow: hidden;
+    margin-bottom: 0.9rem;
     .blogger {
         padding: 0.5rem;
         text-align: center;

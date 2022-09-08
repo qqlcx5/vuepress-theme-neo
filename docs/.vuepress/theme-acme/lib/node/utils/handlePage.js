@@ -5,7 +5,7 @@ import { typeOf } from './index' // 命令行打印美化
 
 const log = console.log
 
-function createPage(sourceDir, page) {
+ export function createPage(sourceDir, page) {
     const dirPath = path.join(sourceDir, '@pages') // 生成的文件夹路径
 
     // 文件夹不存在时
@@ -52,7 +52,7 @@ article: false
 }
 
 // 删除页面文件
-function deletePage(sourceDir, page) {
+export function deletePage(sourceDir, page) {
     const dirPath = path.join(sourceDir, '@pages') // 文件夹路径
     const pagePath = path.join(dirPath, `${page}.md`) // 文件路径
 
@@ -65,7 +65,7 @@ function deletePage(sourceDir, page) {
 }
 
 // 删除文件夹
-function deleteDir(dirPath) {
+export function deleteDir(dirPath) {
     if (fs.existsSync(dirPath)) {
         const files = fs.readdirSync(dirPath)
         if (typeOf(files) === 'array' && files.length === 0) {
@@ -74,8 +74,4 @@ function deleteDir(dirPath) {
         }
     }
 }
-
-module.exports = {
-    createPage,
-    deletePage
-}
+ 

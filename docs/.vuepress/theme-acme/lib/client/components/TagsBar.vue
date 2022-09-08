@@ -81,21 +81,26 @@ export default {
         }
     }
     .tags {
-        text-align: justify;
         padding: 0.8rem 0.5rem 0.5rem 0.5rem;
         color: var(--c-bg);
+        transition: transform 0.25s ease-in-out 0.04s,
+            opacity 0.25s ease-in-out 0.04s;
+        transform: translateY(0px);
+        justify-content: flex-start;
+        // text-align: justify;
         a {
             opacity: 0.8;
             display: inline-block;
-            padding: 0.2rem 0.4rem;
+            padding: 0.2rem 0.3rem;
             transition: all 0.4s;
             background-color: var(--textColor);
             color: var(--c-bg);
             border-radius: 3px;
-            margin: 0 0.3rem 0.5rem 0;
+            // margin: 0 0.5rem 0.8rem 0;
+            margin: 0.3rem;
             min-width: 2rem;
-            height: 1rem;
-            line-height: 1rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
             font-size: 0.8rem;
             text-align: center;
             text-decoration: none;
@@ -106,7 +111,7 @@ export default {
             }
             &.active {
                 box-shadow: 0 5px 10px -5px var(--c-random, rgba(0, 0, 0, 0.15));
-                transform: scale(1.22);
+                transform: scale(1.2);
                 opacity: 1;
             }
         }
