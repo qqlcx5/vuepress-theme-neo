@@ -70,7 +70,7 @@ export default {
 
 <style lang='scss'>
 .tags-wrapper {
-    padding-top: 0.75rem;
+    padding-top: 0.8rem;
     .tags-title {
         color: var(--c-text);
         font-size: 1rem;

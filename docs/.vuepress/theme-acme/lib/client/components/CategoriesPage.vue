@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <BlogLayout>
         <template #content-left>
             <CategoriesBar
                 :categoriesData="categoriesAndTagsSymbol.categories"
@@ -19,19 +19,19 @@
             />
             <NoData :showImg="!category" />
         </template>
-        <template #content-right>
+        <!-- <template #content-right>
             <BloggerInfo />
             <CategoriesBar
                 v-if="categoriesAndTagsSymbol?.categories.length"
                 :categoriesData="categoriesAndTagsSymbol?.categories"
                 :category="category"
             />
-        </template>
-    </Layout>
+        </template> -->
+    </BlogLayout>
 </template>
 
 <script>
-import Layout from '@theme/TwoColumnLayout.vue'
+import BlogLayout from '@theme/BlogLayout.vue'
 import PostList from '@theme/PostList.vue'
 import Pagination from '@theme/Pagination.vue'
 import CategoriesBar from '@theme/CategoriesBar.vue'
@@ -41,7 +41,7 @@ import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
-    components: { Layout, PostList, Pagination, CategoriesBar, NoData, BloggerInfo },
+    components: { BlogLayout, PostList, Pagination, CategoriesBar, NoData, BloggerInfo },
     setup() {
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value

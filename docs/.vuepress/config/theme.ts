@@ -28,6 +28,8 @@ export default acmeTheme({
         avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
         description: 'A blog theme for VuePress2.x'
     },
+    contentStyle: 'style1', // 内容风格
+    contentBackground: '#fff', // 内容背景
     // personal information
     personalInfo: {
         name: 'vueprss-theme-acme',

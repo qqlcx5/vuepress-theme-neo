@@ -114,7 +114,7 @@ export default {
         },
         article: {
             type: [String, Boolean],
-            default: ''
+            default: false
         },
         currentPage: {
             type: Number,

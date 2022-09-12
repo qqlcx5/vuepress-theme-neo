@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <BlogLayout>
         <template #content-left>
             <TagsBar
                 v-if="categoriesAndTagsSymbol.tags.length"
@@ -20,19 +20,19 @@
             />
             <NoData :showImg="!tag" />
         </template>
-        <template #content-right>
+        <!-- <template #content-right>
             <BloggerInfo />
             <TagsBar
                 v-if="categoriesAndTagsSymbol.tags.length"
                 :tagsData="categoriesAndTagsSymbol.tags"
                 :tag="tag"
             />
-        </template>
-    </Layout>
+        </template> -->
+    </BlogLayout>
 </template>
 
 <script>
-import Layout from '@theme/TwoColumnLayout.vue'
+import BlogLayout from '@theme/BlogLayout.vue'
 import PostList from '@theme/PostList.vue'
 import Pagination from '@theme/Pagination.vue'
 import TagsBar from '@theme/TagsBar.vue'
@@ -41,7 +41,7 @@ import BloggerInfo from '@theme/BloggerInfo.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 export default {
-    components: { Layout, PostList, Pagination, TagsBar, NoData, BloggerInfo },
+    components: { BlogLayout, PostList, Pagination, TagsBar, NoData, BloggerInfo },
     setup() {
         let tag = ref()
         let total = ref(0) // 总长

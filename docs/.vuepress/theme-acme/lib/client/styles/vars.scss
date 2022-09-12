@@ -1,11 +1,13 @@
 :root {
     // 重置主题色
     --c-brand: #49b1f5;
+    --c-brand-rgb: 71, 176, 245;
     --c-brand-light: #5f98e7;
+    --c-brand-light-rgb: 95, 152, 231;
 
     // 额外主题色
-    --acme-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
-    --acme-box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+    --a-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+    --a-box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
 }
 :root.dark {
     --c-brand: #49b1f5;

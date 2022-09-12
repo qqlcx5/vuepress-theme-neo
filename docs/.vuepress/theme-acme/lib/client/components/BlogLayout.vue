@@ -1,22 +1,31 @@
 <template>
     <main class="acme-page">
-        <div class="acme-theme-content">
+        <div class="acme-blog-wrapper">
             <div class="content-left">
                 <slot name="content-left" />
             </div>
             <aside class="content-right">
-                <slot name="content-right" />
+                <slot name="content-right">
+                    <BloggerInfo />
+                    <ArticleBar />
+                </slot>
             </aside>
         </div>
     </main>
 </template>
+<script>
+import ArticleBar from '@theme/ArticleBar.vue'
+import BloggerInfo from '@theme/BloggerInfo.vue'
+export default {
+    components: { BloggerInfo, ArticleBar },
+}
+</script>
 <style lang="scss">
 @import '../styles/_variables';
 .acme-page {
     padding-top: calc(var(--navbar-height) + 0.75rem);
     padding-bottom: 2rem;
-    display: block;
-    .acme-theme-content {
+    .acme-blog-wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -40,10 +49,10 @@
     }
     // 移动端
     @media (max-width: $MQNarrow) {
-        .acme-theme-content {
+        .acme-blog-wrapper {
             padding: 0 1rem;
         }
-        .content-right{
+        .content-right {
             display: none;
         }
     }

@@ -94,7 +94,7 @@ export default defineComponent({
 .blogger-info {
     // padding: 0.1rem;
     overflow: hidden;
-    margin-bottom: 0.9rem;
+    // margin-bottom: 0.9rem;
     .blogger {
         padding: 0.5rem;
         text-align: center;

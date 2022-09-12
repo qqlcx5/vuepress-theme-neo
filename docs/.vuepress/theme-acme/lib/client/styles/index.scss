@@ -10,9 +10,9 @@ html body {
 .dark-shadow {
     border-radius: 6px;
     background-color: var(--c-bg);
-    box-shadow: var(--acme-box-shadow);
+    box-shadow: var(--a-box-shadow);
     &:hover {
-        box-shadow: var(--acme-box-shadow-hover);
+        box-shadow: var(--a-box-shadow-hover);
     }
 }
 

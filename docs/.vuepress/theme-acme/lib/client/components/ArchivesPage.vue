@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import Layout from '@theme/TwoColumnLayout.vue'
+import BlogLayout from '@theme/BlogLayout.vue'
 import Timeline from '@theme/Timeline.vue'
 import { inject } from 'vue'
 
 export default {
-    components: { Layout, Timeline },
+    components: { BlogLayout, Timeline },
     setup() {
         const sortPostsByDateSymbol = inject('sortPostsByDateSymbol').value
         return { sortPostsByDateSymbol }
