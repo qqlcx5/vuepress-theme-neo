@@ -132,7 +132,7 @@ export default {
         }
         function goNext() {
             let currentPage = props.currentPage
-            if (currentPage < props.pages) {
+            if (currentPage < pages.value) {
                 handleEmit(++currentPage)
             }
         }

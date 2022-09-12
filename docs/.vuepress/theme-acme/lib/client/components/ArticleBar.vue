@@ -7,16 +7,17 @@
                 </div>
             </button>
         </div>
-        <CategoriesBar v-if="buttonsType === 'category'" :categoriesData="categoriesAndTagsSymbol?.categories" :category="category" />
-        <TagsBar v-if="buttonsType === 'tag'" :tagsData="categoriesAndTagsSymbol.tags" :tag="tag" />
+        <CategoriesBar v-show="buttonsType === 'category'" :categoriesData="categoriesAndTagsSymbol?.categories" :category="category" />
+        <TagsBar v-show="buttonsType === 'tag'" :tagsData="categoriesAndTagsSymbol.tags" :tag="tag" />
     </div>
 </template>
 
 <script>
-import { ref, computed, inject } from 'vue'
+import { onMounted, ref, computed, inject, watch } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 import CategoriesBar from '@theme/CategoriesBar.vue'
 import TagsBar from '@theme/TagsBar.vue'
+import { useRoute } from 'vue-router'
 
 export default {
     components: { CategoriesBar, TagsBar },
@@ -27,7 +28,7 @@ export default {
             ['category', 'acme-fenlei'],
             ['tag', 'acme-tag']
         ])
-        let buttonsType = ref('category')
+
         const themeLocale = useThemeLocaleData()
 
         const locale = computed(() => themeLocale.value.blogLocales)
@@ -36,14 +37,45 @@ export default {
         }
 
         const categoriesAndTagsSymbol = inject('categoriesAndTagsSymbol').value
+
+        let category = ref(null)
+        let tag = ref(null)
+        let buttonsType = ref('category')
+        const route = useRoute()
+
+        onMounted(() => {
+            let { category = '', tag = '', p = 1 } = route.query
+            refreshTotal(category, tag, p)
+
+            // 滚动条定位到当前分类（增强用户体验）
+            const cateEl = document.querySelector('.categories')
+            if (cateEl) {
+                setTimeout(() => {
+                    const activeEl = cateEl.querySelector('.active')
+                    const topVal = activeEl ? activeEl.offsetTop : 0
+                    cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
+                }, 300)
+            }
+        })
+
+        watch([() => route.query.category, () => route.query.tag], ([category, tag], [prevCategory, prevTag]) => {
+            buttonsType.value = tag ? 'tag' : 'category'
+            refreshTotal(category, tag, 1)
+        })
+
+        function refreshTotal(queryCategory, queryTag, p = 1) {
+            category.value = queryCategory ? decodeURIComponent(queryCategory) : ''
+            tag.value = queryTag ? decodeURIComponent(queryTag) : ''
+        }
+
         return {
+            tag,
+            category,
             buttons,
             buttonsType,
             handleButton,
             locale,
             categoriesAndTagsSymbol
-            // tags,
-            // tagStyleList
         }
     }
 }
