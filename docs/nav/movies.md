@@ -85,7 +85,7 @@ export default {
         },
         {
           cardSrc: "https://www.duboku.tv/",
-          cardImgSrc: "https://www.duboku.tv/template/mytheme/statics/img/logo.png",
+          cardImgSrc: "https://feyoudao.oss-cn-hongkong.aliyuncs.com/logo/logo95.png",
           cardName: "独播库",
           cardContent:"电影,电视剧,动漫,视频网站,高清视频在线看",
         },

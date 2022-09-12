@@ -2,7 +2,7 @@ import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 import { defaultTheme } from '@vuepress/theme-default'
 import {createPageFile, setFrontmatter,  assignLocaleOptions } from './utils/index'
-export const acmeTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
+export const acmeTheme = (localeOptions = {}) => {
     assignLocaleOptions(localeOptions)
     return {
         name: 'vuepress-theme-acme',

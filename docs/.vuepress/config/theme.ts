@@ -36,6 +36,9 @@ export default acmeTheme({
         avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
         description: 'A blog theme for VuePress2.x'
     },
+    themePlugins: {
+        mediumZoom: false
+    },
 
     // header images on home page
     homeHeaderImages: [
