@@ -1,13 +1,18 @@
 <template>
-    <div class="archives-page">
-        <main class="archives-wrapper">
-            <h1 class="title">
-                {{ $page.title }}
-                <div class="title-count"> 总共 <i>{{ sortPostsByDateSymbol.length }}</i> 篇文章 </div>
-            </h1>
-            <Timeline></Timeline>
-        </main>
-    </div>
+    <BlogLayout>
+        <template #content-left>
+            <div class="archives-page">
+                <div class="archives-wrapper">
+                    <h1 class="title">
+                        {{ $page.title }}
+                        <div class="title-count"> 总共 <i>{{ sortPostsByDateSymbol.length }}</i> 篇文章 </div>
+                    </h1>
+                    <Timeline></Timeline>
+                </div>
+            </div>
+        </template>
+    </BlogLayout>
+
 </template>
 
 <script>
@@ -26,12 +31,10 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables';
 .archives-page {
-    padding-top: calc(var(--navbar-height) + 0.75rem);
-
     .archives-wrapper {
-        max-width: $MQNarrow;
-        padding: 0.9rem;
-        margin: 0 auto;
+        // max-width: $MQNarrow;
+        // padding: 0.9rem;
+        // margin: 0 auto;
         .title {
             padding-left: 0.5em;
             &-count {
