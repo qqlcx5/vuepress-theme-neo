@@ -5,7 +5,8 @@ categories:
   - utils
   - Array
 tags: 
-  - 
+  - Array
+sticky: 1
 ---
 # `chunk`转换二维数组
 

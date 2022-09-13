@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - isArrayEqual
 tags: 
-  - 
+  - isArrayEqual
+sticky: 1
 ---
 # `isArrayEqual`检查两个数组各项相等
 

@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - takeLast
 tags: 
-  - 
+  - takeLast
 ---
 # `takeLast`截取数组末尾元素
 
@@ -17,8 +18,8 @@ takeLast(array, n)
 
 **参数**
 
--   `array`要检索的数组。
--   `n=`要提取的元素`n`个数。
+- `array`要检索的数组。
+- `n=`要提取的元素`n`个数。
 
 **例子**
 

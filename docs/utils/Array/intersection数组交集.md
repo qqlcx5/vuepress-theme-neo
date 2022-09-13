@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - intersection
 tags: 
-  - 
+  - intersection
+  sticky: 1
 ---
 # `intersection`数组集合
 
@@ -13,8 +15,8 @@ tags:
 
 **参数**
 
--   `array` 要检查的数组
--   `array2`要包含的数组
+- `array` 要检查的数组
+- `array2`要包含的数组
 
 **例子**
 

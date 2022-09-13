@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Function
+  - calcFn
 tags: 
-  - 
+  - calcFn
 ---
 # `calcFn`加减乘除运算
 
@@ -17,8 +18,8 @@ calcFn.add(value1, value2, value3)
 
 **参数**
 
--   `add`、`sub`、`mul`、`div`运算符
--   `value`要计算的值
+- `add`、`sub`、`mul`、`div`运算符
+- `value`要计算的值
 
 **例子**
 

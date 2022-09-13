@@ -5,7 +5,8 @@ categories:
   - utils
   - Array
 tags: 
-  - 
+  - clone
+sticky: 1
 ---
 # `clone`克隆数组
 

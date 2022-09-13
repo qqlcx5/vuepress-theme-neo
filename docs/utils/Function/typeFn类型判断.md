@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Function
+  - typeFn
 tags: 
-  - 
+  - typeFn
 ---
 # `typeFn`类型判断
 
@@ -17,8 +18,8 @@ typeFn.type(value)
 
 **参数**
 
--   `type` 数据类型
--   `value`要检验的值
+- `type` 数据类型
+- `value`要检验的值
 
 **例子**
 

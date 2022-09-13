@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Function
+  - throttle
 tags: 
-  - 
+  - throttle
 ---
 # `throttle`函数节流
 
@@ -17,8 +18,8 @@ throttle(fn, wait)
 
 **参数**
 
--   `fn` 要节流的函数
--   `wait=500`需要延迟的毫秒数
+- `fn` 要节流的函数
+- `wait=500`需要延迟的毫秒数
 
 **例子**
 

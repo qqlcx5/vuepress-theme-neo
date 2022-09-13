@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - getLineSize
 tags: 
-  - 
+  - getLineSize
 ---
 # `getLineSize`计算两点之间的距离
 
@@ -17,7 +18,7 @@ getLineSize = (x1, y1, x2, y2)
 
 **参数**
 
--   `x1 y1 x2 y2`坐标点
+- `x1 y1 x2 y2`坐标点
 
 **例子**
 

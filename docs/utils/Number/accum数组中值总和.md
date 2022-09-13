@@ -1,11 +1,12 @@
 ---
-title: sum数组中值总和
+title: accum数组中值总和
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - accum
 tags: 
-  - 
+  - accum
 ---
 # `accum`数组中值总和
 
@@ -15,7 +16,7 @@ accum(value1, value2, value3)
 
 **参数**
 
--   `value1 value2 value3`要迭代的数字
+- `value1 value2 value3`要迭代的数字
 
 **例子**
 

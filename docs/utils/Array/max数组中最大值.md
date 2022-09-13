@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - max
 tags: 
-  - 
+  - max
+sticky: 1
 ---
 # `max`数组中最大值
 
@@ -17,7 +19,7 @@ max(array)
 
 **参数**
 
--   `array`待处理的数组
+- `array`待处理的数组
 
 **例子**
 

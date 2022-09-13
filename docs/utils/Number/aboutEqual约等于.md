@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - aboutEqual
 tags: 
-  - 
+  - aboutEqual
 ---
 # `aboutEqual`两个值是否约等于
 

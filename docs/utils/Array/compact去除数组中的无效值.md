@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - compact
 tags: 
-  - 
+  - compact
+sticky: 1
 ---
 # `compact`去除数组中的无效值
 

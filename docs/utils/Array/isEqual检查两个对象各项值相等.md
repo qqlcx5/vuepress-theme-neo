@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - isEqual
 tags: 
-  - 
+  - isEqual
+  sticky: 2
 ---
 # `isEqual`检查两个对象各项值相等
 

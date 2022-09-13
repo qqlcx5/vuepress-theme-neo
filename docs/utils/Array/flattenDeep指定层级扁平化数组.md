@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - flattenDeep
 tags: 
-  - 
+  - flattenDeep
+sticky: 1
 ---
 # `flattenDeep`指定层级扁平化数组
 

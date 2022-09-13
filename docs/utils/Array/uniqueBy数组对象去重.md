@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - uniqueBy
 tags: 
-  - 
+  - uniqueBy
 ---
 # `uniqueBy`数组对象去重
 
@@ -17,8 +18,8 @@ uniqueBy(array)
 
 **参数**
 
--   `array` 要去重的数组
--   `key` 要去重的对象属性值
+- `array` 要去重的数组
+- `key` 要去重的对象属性值
 
 **例子**
 

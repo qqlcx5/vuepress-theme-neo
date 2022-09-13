@@ -4,8 +4,10 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - flatten
 tags: 
-  - 
+  - flatten
+sticky: 1
 ---
 # `flatten`扁平化数组
 

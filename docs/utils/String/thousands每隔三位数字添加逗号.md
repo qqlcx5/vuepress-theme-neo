@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - String
+  - thousands
 tags: 
-  - 
+  - thousands
 ---
 # `thousands`数字每隔三位数加分号
 

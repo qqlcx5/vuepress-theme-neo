@@ -4,19 +4,20 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - averageBy
 tags: 
-  - 
+  - averageBy
 ---
 # `averageBy`检查数组对象各项相等
 
-```
+```js
 averageBy(array, fn)
 ```
 
 **参数**
 
--   `array` 要迭代的数组
--   `fn` 迭代函数
+- `array` 要迭代的数组
+- `fn` 迭代函数
 
 **例子**
 

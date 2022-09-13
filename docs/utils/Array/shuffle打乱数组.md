@@ -4,8 +4,11 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - shuffle
 tags: 
-  - 
+  - shuffle
+sticky: 3
+
 ---
 # `shuffle`打乱数组
 
@@ -17,7 +20,7 @@ shuffle(array)
 
 **参数**
 
--   `array` 要打乱的数组
+- `array` 要打乱的数组
 
 **例子**
 

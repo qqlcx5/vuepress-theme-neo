@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - average
 tags: 
-  - 
+  - average
 ---
 # `average`求平均值
 
@@ -15,7 +16,7 @@ average(value1, value2, value3)
 
 **参数**
 
--   `value` 数字
+- `value` 数字
 
 **例子**
 

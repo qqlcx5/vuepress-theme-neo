@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - randomNumber
 tags: 
-  - 
+  - randomNumber
 ---
 # `randomNumber`指定范围的随机整数
 
@@ -15,8 +16,8 @@ randomNumber(min, max)
 
 **参数**
 
--   `min` 指定范围最小值
--   `max` 指定范围最大值
+- `min` 指定范围最小值
+- `max` 指定范围最大值
 
 **例子**
 
