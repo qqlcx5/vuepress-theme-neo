@@ -90,11 +90,8 @@ export default defineComponent({
     }
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .blogger-info {
-    // padding: 0.1rem;
-    overflow: hidden;
-    // margin-bottom: 0.9rem;
     .blogger {
         padding: 0.5rem;
         text-align: center;
@@ -104,7 +101,6 @@ export default defineComponent({
         width: 8rem;
         height: 8rem;
         margin: 0 auto;
-
         &.round {
             border-radius: 50%;
         }
@@ -123,7 +119,8 @@ export default defineComponent({
     .num-wrapper {
         width: 80%;
         display: flex;
-        margin: 0 auto 1rem;
+        margin: 0 auto;
+        padding-bottom: 1rem;
         justify-content: center;
 
         > div {
@@ -138,14 +135,12 @@ export default defineComponent({
                 color: var(--c-text-accent);
             }
 
-            // stylelint-disable selector-max-compound-selectors
             .num {
                 position: relative;
                 margin-bottom: 0.5rem;
                 font-weight: 600;
                 font-size: 20px;
             }
-            // stylelint-enable selector-max-compound-selectors
         }
     }
 }

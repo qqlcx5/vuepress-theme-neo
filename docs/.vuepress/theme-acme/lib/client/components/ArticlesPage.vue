@@ -87,18 +87,3 @@ export default {
     }
 }
 </script>
-<style lang='scss'>
-@import '../styles/_variables';
-
-.content-left .categories-wrapper {
-    display: none;
-    @media (max-width: $MQNarrow) {
-        display: block;
-        margin-bottom: 0.75rem;
-        .categories {
-            max-height: 12rem;
-            overflow-y: auto;
-        }
-    }
-}
-</style>

@@ -7,7 +7,7 @@ categories:
   - intersection
 tags: 
   - intersection
-  sticky: 1
+sticky: 1
 ---
 # `intersection`数组集合
 

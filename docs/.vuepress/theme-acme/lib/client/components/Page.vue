@@ -27,7 +27,7 @@ import PageNav from '@vuepress/theme-default/components/PageNav.vue'
         <slot name="bottom" />
     </main>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 // @import '../styles/_variables';
 // // 没有侧边栏的情况下，大于MQNarrow在页面右侧添加toc容器
 // .theme-container.no-sidebar .page {

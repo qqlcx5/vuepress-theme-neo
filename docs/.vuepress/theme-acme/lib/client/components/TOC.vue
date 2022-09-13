@@ -89,7 +89,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang='scss'>
+<style lang="scss" scoped>
 $headings: (2, 3, 4, 5, 6);
 
 .toc-place-holder {

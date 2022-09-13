@@ -1,7 +1,7 @@
 <template>
     <div class="post-list">
         <transition-group
-            name="post"
+            name="fade-slide-y"
             tag="div"
         >
             <div
@@ -28,14 +28,14 @@
                             v-if="item.author?.name && item.author?.url"
                             :href="item.author.url"
                         >
-                            <AIcon name="acme-yonghu" />
+                            <AIcon name="acme-wode" />
                             {{ item.author.name }}
                         </a>
                         <span
                             v-else-if="item.author?.name"
                             title="作者"
                         >
-                            <AIcon name="acme-yonghu" />
+                            <AIcon name="acme-wode" />
                             {{ item.author.name }}
                         </span>
 
@@ -43,11 +43,11 @@
                             title="创建时间"
                             v-if="item.frontmatter.date"
                         >
-                            <AIcon name="acme-riqi" />
+                            <AIcon name="acme-rili" />
                             {{ item.frontmatter.date.split('T')[0] }}
                         </span>
                         <span v-if="themeData.category !== false && item.frontmatter.categories">
-                            <AIcon name="acme-wenjianjia" />
+                            <AIcon name="acme-wenjianjia1" />
                             <span title="分类">
                                 <router-link
                                     :to="`/categories/?category=${encodeURIComponent(c)}`"
@@ -57,7 +57,7 @@
                             </span>
                         </span>
                         <span v-if="themeData.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
-                            <AIcon name="acme-tag" />
+                            <AIcon name="acme-biaoqian2" />
                             <span
                                 title="标签"
                                 class="tags"
@@ -155,7 +155,7 @@ export default {
             let type = props.category ? 'categories' : 'tags'
             let queryKeyword = props.category || props.tag
             // 文章全部展示 分类和标签隐藏数据 
-            let postsData = queryKeyword ? groupPostsSymbol[type][queryKeyword] : props.article ?  sortPostsSymbol : []
+            let postsData = queryKeyword ? groupPostsSymbol[type][queryKeyword] : props.article ? sortPostsSymbol : []
             sortPosts.value = postsData.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
@@ -165,35 +165,35 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss" scoped>
 @import '../styles/_variables';
 .post-list {
     margin-bottom: 4rem;
+    :deep(.acme-colour) {
+        vertical-align: -0.2em;
+    }
+    .fade-slide-y-enter-active {
+        transition: all 0.3s ease;
+    }
+
+    .fade-slide-y-leave-active {
+        transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+    }
+
+    .fade-slide-y-enter-from,
+    .fade-slide-y-leave-to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
     .post {
         position: relative;
         padding: 1rem 1.5rem;
         margin-bottom: 0.9rem;
-        transition: all 0.3s;
-        &.post-leave-active {
-            display: none;
-        }
-        &.post-enter {
-            opacity: 0;
-            transform: translateX(-100px);
-        }
-        // &::before {
-        //     position: absolute;
-        //     top: -1px;
-        //     right: 0;
-        //     font-size: 2.5rem;
-        //     color: $activeColor;
-        //     opacity: 0.85;
-        // }
         .title-wrapper {
             a {
                 color: var(--textColor);
                 &:hover {
-                    color: $accentColor;
+                    color: var(--c-brand);
                 }
             }
             h2 {
@@ -203,8 +203,8 @@ export default {
                 .title-tag {
                     height: 1.2rem;
                     line-height: 1.2rem;
-                    border: 1px solid $activeColor;
-                    color: $activeColor;
+                    border: 1px solid var(--c-brand);
+                    color: var(--c-brand);
                     font-size: 0.8rem;
                     padding: 0 0.35rem;
                     border-radius: 0.2rem;

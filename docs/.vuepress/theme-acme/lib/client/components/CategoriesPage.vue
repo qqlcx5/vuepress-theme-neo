@@ -19,14 +19,6 @@
             />
             <NoData :showImg="!category" />
         </template>
-        <!-- <template #content-right>
-            <BloggerInfo />
-            <CategoriesBar
-                v-if="categoriesAndTagsSymbol?.categories.length"
-                :categoriesData="categoriesAndTagsSymbol?.categories"
-                :category="category"
-            />
-        </template> -->
     </BlogLayout>
 </template>
 
@@ -89,7 +81,7 @@ export default {
     }
 }
 </script>
-<style lang='scss'>
+<style lang="scss" scoped>
 @import '../styles/_variables';
 
 .content-left .categories-wrapper {

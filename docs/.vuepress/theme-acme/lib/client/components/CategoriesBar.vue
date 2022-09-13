@@ -1,28 +1,15 @@
 <template>
     <div class="categories-wrapper dark-shadow">
-        <RouterLink
-            to="/categories/"
-            class="categories-title"
-            title="全部分类"
-        >
-            <AIcon name="acme-cfenlei" />
-            <span>&nbsp;&nbsp;{{ length === 'all' ? '全部分类' : '文章分类' }}</span>
+        <RouterLink to="/categories/" class="categories-title" title="全部分类">
+            <AIcon name="acme-gengduo1" size="18" />
+            {{ length === 'all' ? `所有分类` : '文章分类' }}
         </RouterLink>
         <div class="categories">
-            <RouterLink
-                :to="`/categories/?category=${encodeURIComponent(item.key)}`"
-                v-for="(item, index) in categories"
-                :key="index"
-                :class="{ active: item.key === category }"
-            >
+            <RouterLink :to="`/categories/?category=${encodeURIComponent(item.key)}`" v-for="(item, index) in categories" :key="index" :class="{ active: item.key === category }">
                 {{ item.key }}
                 <span class="categories__num">{{ item.length }}</span>
             </RouterLink>
-            <RouterLink
-                to="/categories/"
-                v-if="length !== 'all' && length < categoriesData.length"
-                class="more"
-            >更多 ...</RouterLink>
+            <RouterLink to="/categories/" v-if="length !== 'all' && length < categoriesData.length">更多 ...</RouterLink>
         </div>
     </div>
 </template>
@@ -53,19 +40,18 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss" scoped>
 .categories-wrapper {
-    padding: 0.75rem 0;
     .categories-title {
-        padding-left: 0.95rem;
+        padding: 0.68rem 0.68rem 0.68rem 0.95rem;
         color: var(--c-text);
         font-size: 1rem;
-        .acme-cfenlei {
-            vertical-align: -0.1em;
-        }
+        border-bottom: 1px solid var(--c-border);
+        display: flex;
+        align-items: center;
     }
     .categories {
-        margin-top: 0.3rem;
+        padding: 0.3rem 0;
         a {
             display: block;
             opacity: 0.8;

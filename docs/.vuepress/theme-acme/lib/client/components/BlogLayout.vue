@@ -20,16 +20,19 @@ export default {
     components: { BloggerInfo, ArticleBar },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../styles/_variables';
 .acme-page {
-    padding-top: calc(var(--navbar-height) + 0.75rem);
-    padding-bottom: 2rem;
+    padding-top: var(--navbar-height);
     .acme-blog-wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        padding: 0 2rem;
+        padding-top: 0.75rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 0.75rem;
+        box-sizing: border-box;
         margin: 0 auto;
         .content-left {
             max-width: var(--content-width);
@@ -40,17 +43,17 @@ export default {
             top: calc(var(--navbar-height) + 0.75rem);
             flex: 0 0 300px;
             height: auto;
-            max-height: calc(100vh - 6rem);
-            margin-top: 0;
             margin-left: 0.75rem;
-            margin-bottom: 0.75rem;
             transition: all 0.3s;
         }
     }
     // 移动端
     @media (max-width: $MQNarrow) {
         .acme-blog-wrapper {
-            padding: 0 1rem;
+            padding-top: 0.75rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 0.75rem;
         }
         .content-right {
             display: none;

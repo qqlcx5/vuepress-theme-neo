@@ -3,7 +3,7 @@
         <div class="blog-type-wrapper">
             <button v-for="[key, icon] of buttons" :key="key" class="blog-type-button" @click="handleButton(key)">
                 <div class="icon-wapper" :class="{ active: buttonsType === key }" :aria-label="locale[key]">
-                    <AIcon :name="icon" size="18" spin />
+                    <AIcon :name="icon" size="20" color="#666" :customStyle="false" />
                 </div>
             </button>
         </div>
@@ -25,8 +25,8 @@ export default {
     setup(props) {
         const buttons = new Map([
             // ["article", 'acme-wenzhang'],
-            ['category', 'acme-fenlei'],
-            ['tag', 'acme-tag']
+            ['category', 'acme-all'],
+            ['tag', 'acme-biaoqian4']
         ])
 
         const themeLocale = useThemeLocaleData()
@@ -48,14 +48,14 @@ export default {
             refreshTotal(category, tag, p)
 
             // 滚动条定位到当前分类（增强用户体验）
-            const cateEl = document.querySelector('.categories')
-            if (cateEl) {
-                setTimeout(() => {
-                    const activeEl = cateEl.querySelector('.active')
-                    const topVal = activeEl ? activeEl.offsetTop : 0
-                    cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
-                }, 300)
-            }
+            // const cateEl = document.querySelector('.categories')
+            // if (cateEl) {
+            //     setTimeout(() => {
+            //         const activeEl = cateEl.querySelector('.active')
+            //         const topVal = activeEl ? activeEl.offsetTop : 0
+            //         cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
+            //     }, 300)
+            // }
         })
 
         watch([() => route.query.category, () => route.query.tag], ([category, tag], [prevCategory, prevTag]) => {
@@ -70,50 +70,60 @@ export default {
 
         return {
             tag,
-            category,
+            locale,
             buttons,
+            category,
             buttonsType,
             handleButton,
-            locale,
             categoriesAndTagsSymbol
         }
     }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .articles-wrapper {
-    padding-top: 0.75rem;
     margin-top: 0.75rem;
-}
-.blog-type-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.blog-type-button {
-    border-width: 0;
-    background-color: transparent;
-    margin: 0 8px;
-    padding: 4px;
-
-    &:focus {
-        outline: none;
+    .blog-type-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0.75rem;
     }
 
-    .icon-wapper {
-        width: 20px;
-        height: 20px;
-        padding: 8px;
-        border-radius: 50%;
-        background: rgb(127 127 127 / 15%);
-        &:hover {
-            cursor: pointer;
+    .blog-type-button {
+        border-width: 0;
+        background-color: transparent;
+        margin: 0 8px;
+        padding: 4px;
+
+        &:focus {
+            outline: none;
         }
-        &.active {
-            background-color: rgba(var(--c-brand-rgb), 0.68);
+
+        .icon-wapper {
+            width: 20px;
+            height: 20px;
+            padding: 8px;
+            border-radius: 50%;
+            background: rgb(127 127 127 / 15%);
+            &:hover {
+                cursor: pointer;
+            }
+            &.active {
+                background-color: rgba(var(--c-brand-rgb), 0.68);
+            }
+        }
+    }
+    :deep(.dark-shadow) {
+        box-shadow: none;
+        &:hover {
+            box-shadow: none;
+        }
+        .categories,
+        .tags {
+            max-height: calc(100vh - var(--navbar-height) - 460px);
+            overflow-y: auto;
         }
     }
 }

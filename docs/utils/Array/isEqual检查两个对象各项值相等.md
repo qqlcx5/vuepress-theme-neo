@@ -7,7 +7,7 @@ categories:
   - isEqual
 tags: 
   - isEqual
-  sticky: 2
+sticky: 2
 ---
 # `isEqual`检查两个对象各项值相等
 

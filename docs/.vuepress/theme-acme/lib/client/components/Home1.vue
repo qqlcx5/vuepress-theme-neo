@@ -596,7 +596,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fantasy {
     position: fixed;
     top: 0;

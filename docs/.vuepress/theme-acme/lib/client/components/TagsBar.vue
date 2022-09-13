@@ -5,8 +5,8 @@
             class="tags-title"
             title="全部标签"
         >
-            <AIcon name="acme-tags" />
-            <span>&nbsp;&nbsp;{{ length === 'all' ? '全部标签' : '热门标签' }}</span>
+            <AIcon name="acme-biaoqian2" size="18" />
+            {{ length === 'all' ? '所有标签' : '热门标签' }}
         </RouterLink>
         <div class="tags">
             <template
@@ -68,22 +68,20 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss" scoped>
 .tags-wrapper {
-    padding-top: 0.8rem;
     .tags-title {
+        padding: 0.68rem 0.68rem 0.68rem 0.95rem;
         color: var(--c-text);
         font-size: 1rem;
-        opacity: 0.9;
-        padding-left: 0.5rem;
-        .acme-colour {
-            vertical-align: -0.26em;
-        }
+        border-bottom: 1px solid var(--c-border);
+        display: flex;
+        align-items: center;
     }
     .tags {
-        padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem;
         color: var(--c-bg);
-        transition: transform 0.25s ease-in-out 0.04s,
+        transition: transform 0.25s ease-in-out 0.08s,
             opacity 0.25s ease-in-out 0.04s;
         transform: translateY(0px);
         justify-content: flex-start;
