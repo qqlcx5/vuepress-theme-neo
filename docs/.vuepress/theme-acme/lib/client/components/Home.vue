@@ -41,15 +41,20 @@
                     class="hero-img-prev hide-on-mobile"
                     @click="switchImage(-1)"
                 >
-                    <AIcon name="acme-Left" />
+                    <AIcon
+                        name="acme-zuojiantou"
+                        size="24"
+                        customStyle
+                    />
                 </button>
                 <button
                     class="hero-img-next hide-on-mobile"
                     @click="switchImage(1)"
                 >
                     <AIcon
-                        name="acme-Right"
-                        color="#fff"
+                        name="acme-youjiantou"
+                        size="24"
+                        customStyle
                     />
                 </button>
             </div>
@@ -79,18 +84,16 @@ const scrollToPost = () => {
 }
 
 // -------- Hitokoto --------
-const hitokotoAPI = themeLocale.value.hitokoto
+const hitokotoAPI = themeLocale.value?.hitokoto || true
 const hitokotoText = ref('正在加载一言...')
 let hasFetchedHitokoto = false
 
 const fetchHitokoto = () => {
     if (!hitokotoAPI || hasFetchedHitokoto) return
-
     hasFetchedHitokoto = true
 
     let api = hitokotoAPI
     api = typeof api === 'string' ? api : 'https://v1.hitokoto.cn'
-
     fetch(api)
         .then((response) => response.json())
         .then((data) => (hitokotoText.value = data.hitokoto))
@@ -100,6 +103,7 @@ const fetchHitokoto = () => {
 }
 
 onMounted(() => {
+    fetchHitokoto()
     if (bgImages && bgImages.length > 0)
         bgImageIndex.value = Math.floor(Math.random() * bgImages.length)
 })
@@ -247,7 +251,7 @@ const personalInfo = themeLocale.value.personalInfo
                 top: 50%;
                 margin-top: -30px;
                 width: auto;
-                padding: 15px 6px;
+                padding: 15px 4px;
                 color: rgba(255, 255, 255, 0.6);
                 background-color: rgba(0, 0, 0, 0.3);
                 border: none;

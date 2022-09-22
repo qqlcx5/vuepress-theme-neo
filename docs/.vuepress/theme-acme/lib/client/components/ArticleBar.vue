@@ -3,7 +3,7 @@
         <div class="blog-type-wrapper">
             <button v-for="[key, icon] of buttons" :key="key" class="blog-type-button" @click="handleButton(key)">
                 <div class="icon-wapper" :class="{ active: buttonsType === key }" :aria-label="locale[key]">
-                    <AIcon :name="icon" size="20" color="#666" :customStyle="false" />
+                    <AIcon :name="icon" size="20" color="#666" customStyle />
                 </div>
             </button>
         </div>
