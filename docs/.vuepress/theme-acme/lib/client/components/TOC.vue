@@ -103,15 +103,15 @@ $headings: (2, 3, 4, 5, 6);
 #toc {
     position: absolute;
     left: calc(100% + 1rem);
-    // display: none;
+    display: none;
     min-width: 10rem;
     max-width: 15rem;
 
-    // @media (min-width: 1200px) {
-    //     .has-toc & {
-    //         display: block;
-    //     }
-    // }
+    @media (min-width: 1200px) {
+        .has-toc & {
+            display: block;
+        }
+    }
 
     .toc-header {
         margin: 0 0 0.75rem 0.5rem;

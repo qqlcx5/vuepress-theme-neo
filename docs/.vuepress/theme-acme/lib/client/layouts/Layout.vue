@@ -18,7 +18,8 @@ import Sidebar from '@vuepress/theme-default/components/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { DefaultThemePageFrontmatter } from '@vuepress/theme-default/lib/shared'
+import type { DefaultThemePageFrontmatter } from '../../shared'
+import { useEventListener, useThrottleFn } from '@vueuse/core'
 import {
     useScrollPromise,
     useSidebarItems,
@@ -30,11 +31,18 @@ const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
 // navbar
+const hideNavbar = ref(false)
 const shouldShowNavbar = computed(
     () =>
         frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
 )
 
+/** Get scroll distance */
+const getScrollTop = () =>
+    window.pageYOffset ||
+    document.documentElement.scrollTop ||
+    document.body.scrollTop ||
+    0
 // sidebar
 const sidebarItems = useSidebarItems()
 const isSidebarOpen = ref(false)
@@ -57,11 +65,18 @@ const onTouchEnd = (e): void => {
         }
     }
 }
+const enableToc = computed(
+    () =>
+        frontmatter.value.toc ||
+        (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
+)
 
 // classes
 const containerClass = computed(() => [
     {
         'no-navbar': !shouldShowNavbar.value,
+        'hide-navbar': hideNavbar.value,
+        "has-toc": enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
     },
@@ -73,6 +88,20 @@ const isDarkMode = ref(false)
 
 // close sidebar after navigation
 let unregisterRouterHook
+let lastDistance = 0
+useEventListener(
+    'scroll',
+    useThrottleFn(() => {
+        const distance = getScrollTop()
+        // scroll down
+        if (lastDistance < distance && distance > 58) {
+            if (!isSidebarOpen.value) hideNavbar.value = true
+        }
+        // scroll up
+        else hideNavbar.value = false
+        lastDistance = distance
+    }, 200)
+)
 onMounted(() => {
     const router = useRouter()
     unregisterRouterHook = router.afterEach(() => {

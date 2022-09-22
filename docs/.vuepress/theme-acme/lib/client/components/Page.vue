@@ -28,18 +28,8 @@ import PageNav from '@vuepress/theme-default/components/PageNav.vue'
     </main>
 </template>
 <style lang="scss" scoped>
-// @import '../styles/_variables';
-// // 没有侧边栏的情况下，大于MQNarrow在页面右侧添加toc容器
-// .theme-container.no-sidebar .page {
-//     @media (min-width: $MQMobile) {
-//         padding-left: 0;
-//     }
-//     @media (min-width: $MQNarrow) {
-//         padding-right: 13rem;
-//     }
-// }
-// 有侧边栏的情况下，大于1380px在页面右侧添加toc容器
-.theme-container:not(.no-sidebar) .page {
+// 有侧边栏的情况下，大于1200px在页面右侧添加toc容器
+.theme-container:not(.no-sidebar).has-toc .page {
     @media (min-width: 1200px) {
         padding-right: 12rem;
     }
