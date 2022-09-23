@@ -17,16 +17,16 @@ export default acmeTheme({
     category: true,
     tag: true,
     archive: true,
-    author: {
-        name: '星野',
-        url: 'https://feyoudao.cn'
-    },
     blog: {
         name: 'vueprss-theme-acme',
         roundAvatar: true,
         intro: 'https://feyoudao.cn',
         avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
         description: 'A blog theme for VuePress2.x'
+    },
+    author: {
+        name: '星野',
+        url: 'https://feyoudao.cn'
     },
     contentStyle: 'style1', // 内容风格
     contentBackground: '#fff', // 内容背景
@@ -35,9 +35,6 @@ export default acmeTheme({
         name: 'vueprss-theme-acme',
         avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
         description: 'A blog theme for VuePress2.x'
-    },
-    themePlugins: {
-        mediumZoom: false
     },
 
     // header images on home page

@@ -19,4 +19,8 @@ export const BLOGLOCALES = {
 export const assignLocaleOptions = localeOptions => {
     const blogLocales = localeOptions.blogLocales
     localeOptions.blogLocales = blogLocales ? Object.assign(BLOGLOCALES, blogLocales) : BLOGLOCALES
+    // 关闭默认主题插件
+    localeOptions.themePlugins = {
+        mediumZoom: false
+    }
 }
