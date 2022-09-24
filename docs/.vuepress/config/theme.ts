@@ -41,15 +41,15 @@ export default acmeTheme({
     homeHeaderImages: [
         {
             path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/1.jpg',
-            mask: 'rgba(40, 57, 101, .4)'
+            mask: 'rgba(40, 57, 101, .3)'
         },
         {
             path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/62.jpg',
-            mask: 'rgb(251, 170, 152, .2)'
+            mask: 'rgb(251, 170, 152, .3)'
         },
         {
             path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
-            mask: 'rgba(19, 75, 50, .2)'
+            mask: 'rgba(19, 75, 50, .3)'
         }
     ]
 } as DefaultThemeOptions)

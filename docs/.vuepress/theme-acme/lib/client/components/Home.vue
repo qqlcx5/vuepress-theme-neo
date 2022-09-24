@@ -15,7 +15,7 @@
                 :style="{ opacity: headerOpacity }"
             >
                 <img
-                    class="hero-avatar hide-on-mobile"
+                    class="hero-avatar hide-on-mobile no-zoom"
                     :src="withBase(personalInfo.avatar)"
                     alt="hero"
                     @mouseover="fetchHitokoto"
@@ -57,6 +57,17 @@
                         customStyle
                     />
                 </button>
+                <span
+                    class="hero-arrow-down hide-on-mobile"
+                    @click="scrollToPost()"
+                >
+                    <AIcon
+                        name="acme-xiangxiajiantou"
+                        size="50"
+                        color="rgba(255,255,255,0.8)"
+                        customStyle
+                    />
+                </span>
             </div>
         </div>
         <Bubbles selectRef=".hero" />
@@ -67,7 +78,8 @@
 import { withBase } from '@vuepress/client'
 import { computed, onMounted, ref } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
-import Bubbles from './Bubbles.vue'
+// @ts-ignore
+import Bubbles from '@theme/Bubbles.vue'
 const themeLocale = useThemeLocaleData()
 const bgImages = themeLocale.value.homeHeaderImages
 
@@ -175,6 +187,22 @@ const personalInfo = themeLocale.value.personalInfo
                 padding: 5px;
                 border-radius: 100%;
                 box-shadow: inset 0 0 10px #000;
+                &:hover {
+                    transform: rotate(360deg);
+                    transition: all ease 1s;
+                }
+                &:hover + .hero-bubble {
+                    opacity: 1;
+                }
+            }
+            @keyframes bounce-down {
+                from {
+                    transform: translateY(-5px);
+                }
+
+                to {
+                    transform: translateY(5px);
+                }
             }
 
             .hero-bubble {
@@ -184,6 +212,13 @@ const personalInfo = themeLocale.value.personalInfo
                 margin-left: 100px;
                 top: 50%;
                 margin-top: -200px;
+
+                // float up and down
+                animation-name: bounce-down;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
 
                 &__body {
                     min-width: 150px;
@@ -283,16 +318,15 @@ const personalInfo = themeLocale.value.personalInfo
                 margin-left: -12px;
                 cursor: pointer;
 
-                svg.ov-icon {
-                    color: white;
-                    height: 30px;
+                svg.acme-colour {
                     width: 30px;
-                    transition: 0.4s ease;
+                    margin: -15px 0;
 
-                    &:active,
-                    &:hover {
-                        color: #a7a7a7;
-                    }
+                    animation-name: bounce-down;
+                    animation-duration: 1.5s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
             }
         }
