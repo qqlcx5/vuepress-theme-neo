@@ -136,7 +136,7 @@ const personalInfo = themeLocale.value.personalInfo
 @import '../styles/_variables';
 .home-blog {
     padding: 0;
-    padding-bottom: 650px;
+    padding-bottom: 1250px;
     margin: 0 auto;
 
     .hero {

@@ -19,7 +19,7 @@ import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { DefaultThemePageFrontmatter } from '../../shared'
-import { useEventListener, useThrottleFn } from '@vueuse/core'
+import { useEventListener, useDebounceFn } from '@vueuse/core'
 import {
     useScrollPromise,
     useSidebarItems,
@@ -76,7 +76,7 @@ const containerClass = computed(() => [
     {
         'no-navbar': !shouldShowNavbar.value,
         'hide-navbar': hideNavbar.value,
-        "has-toc": enableToc.value,
+        'has-toc': enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
     },
@@ -91,7 +91,7 @@ let unregisterRouterHook
 let lastDistance = 0
 useEventListener(
     'scroll',
-    useThrottleFn(() => {
+    useDebounceFn(() => {
         const distance = getScrollTop()
         // scroll down
         if (lastDistance < distance && distance > 58) {
