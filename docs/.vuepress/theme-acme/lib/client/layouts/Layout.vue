@@ -71,12 +71,11 @@ const enableToc = computed(
         (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
 )
 const enableInvert = computed(() => frontmatter.value.home && isInvert.value)
-
 // classes
 const containerClass = computed(() => [
     {
         'no-navbar': !shouldShowNavbar.value,
-        'hide-navbar': hideNavbar.value,
+        'hide-navbar': hideNavbar.value && !sidebarItems.value.length,
         'has-toc': enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
