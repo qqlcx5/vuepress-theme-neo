@@ -72,25 +72,56 @@
         </div>
         <Bubbles selectRef=".hero" />
     </main>
+    <BlogLayout>
+        <template #content-left>
+            <PostList
+                :currentPage="currentPage"
+                :perPage="perPage"
+                :offsetTop="offsetTop"
+                :article="true"
+            />
+            <Pagination
+                :total="total"
+                :perPage="perPage"
+                :currentPage="currentPage"
+                @getCurrentPage="handlePagination"
+                v-show="Math.ceil(total / perPage) > 1"
+            />
+        </template>
+    </BlogLayout>
 </template>
 
 <script setup lang="ts">
 import { withBase } from '@vuepress/client'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, inject } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 // @ts-ignore
 import Bubbles from '@theme/Bubbles.vue'
+// @ts-ignore
+import PostList from '@theme/PostList.vue'
+// @ts-ignore
+import BlogLayout from '@theme/BlogLayout.vue'
+// @ts-ignore
+import Pagination from '@theme/Pagination.vue'
+const sortPostsSymbol = inject('sortPostsSymbol').value
+
 const themeLocale = useThemeLocaleData()
 const bgImages = themeLocale.value.homeHeaderImages
 
 const bgImageIndex = ref(-1)
 const headerOpacity = ref(1)
-
+let total = ref(0) // 总长
+let perPage = ref(10) // 每页长
+let currentPage = ref(1) // 当前页
+let offsetTop = ref(0) // 一屏的高度
+total.value = sortPostsSymbol.length
+function handlePagination(page) {
+    currentPage.value = page
+}
 // -------- Scroll --------
-
 const scrollToPost = () => {
     window.scrollTo({
-        top: (document.querySelector('.hero') as HTMLElement).clientHeight,
+        top: offsetTop.value,
         behavior: 'smooth',
     })
 }
@@ -116,6 +147,7 @@ const fetchHitokoto = () => {
 
 onMounted(() => {
     fetchHitokoto()
+    offsetTop.value = (document.querySelector('.home-blog') as HTMLElement)?.clientHeight
     if (bgImages && bgImages.length > 0)
         bgImageIndex.value = Math.floor(Math.random() * bgImages.length)
 })
@@ -148,9 +180,7 @@ const personalInfo = themeLocale.value.personalInfo
 @import '../styles/_variables';
 .home-blog {
     padding: 0;
-    padding-bottom: 1250px;
     margin: 0 auto;
-
     .hero {
         margin: 0 auto;
         position: relative;

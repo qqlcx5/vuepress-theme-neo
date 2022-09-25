@@ -15,15 +15,6 @@
             />
             <NoData showImg="false" />
         </template>
-        <!-- <template #content-right>
-            <BloggerInfo />
-            <ArticleBar />
-            <CategoriesBar
-                v-if="categoriesAndTagsSymbol?.categories.length"
-                :categoriesData="categoriesAndTagsSymbol?.categories"
-                :category="category"
-            />
-        </template> -->
     </BlogLayout>
 </template>
 

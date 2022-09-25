@@ -51,8 +51,8 @@ export default {
             const cateEl = document.querySelector('.categories')
             if (cateEl) {
                 setTimeout(() => {
-                    const activeEl = cateEl.querySelector('.active')
-                    const topVal = activeEl ? activeEl.offsetTop : 0
+                    const activeEl = cateEl.querySelector('.categories .active')
+                    const topVal = activeEl ? Math.abs(cateEl.getBoundingClientRect()?.top - activeEl.getBoundingClientRect()?.top) : 0
                     cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
                 }, 300)
             }
@@ -89,7 +89,7 @@ export default {
     @media (max-width: $MQNarrow) {
         display: block;
         margin-bottom: 0.75rem;
-        .categories {
+        :deep(.categories) {
             max-height: 12rem;
             overflow-y: auto;
         }

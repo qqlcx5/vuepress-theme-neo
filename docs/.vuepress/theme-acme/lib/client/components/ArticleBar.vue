@@ -111,7 +111,7 @@ export default {
                 cursor: pointer;
             }
             &.active {
-                background-color: rgba(var(--c-brand-rgb), 0.68);
+                background-color: var(--c-brand);
             }
         }
     }

@@ -98,7 +98,6 @@
 <script>
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-// import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
 import { useThemeData } from '../composables/index.js'
 export default {
     props: {
@@ -123,12 +122,15 @@ export default {
         perPage: {
             type: Number,
             default: 10
+        },
+        offsetTop: {
+            type: Number,
+            default: 0
         }
     },
 
     setup(props, { emit }) {
         let sortPosts = ref([])
-        let postListOffsetTop = ref(0)
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value
         const themeData = useThemeData().value
@@ -137,15 +139,17 @@ export default {
         onMounted(() => {
             handleSetPosts()
         })
+        // 当前页 
         watch(() => props.currentPage, (currentPage) => {
             if (route.query.p != currentPage) {
                 router.push({ query: { ...route.query, p: currentPage } })
             }
             setTimeout(() => {
-                window.scrollTo({ top: postListOffsetTop }) // behavior: 'smooth'
+                window.scrollTo({ top: props.offsetTop }) // behavior: 'smooth'
             }, 0)
             handleSetPosts()
         })
+        // 分类和标签
         watch([() => props.category, () => props.tag], ([category, tag], [prevCategory, prevTag]) => {
             handleSetPosts()
         })

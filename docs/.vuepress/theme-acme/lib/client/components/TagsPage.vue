@@ -86,7 +86,7 @@ export default {
     @media (max-width: $MQNarrow) {
         display: block;
         margin-bottom: 0.75rem;
-        .tags {
+        :deep(.tags) {
             max-height: 12rem;
             overflow-y: auto;
         }
