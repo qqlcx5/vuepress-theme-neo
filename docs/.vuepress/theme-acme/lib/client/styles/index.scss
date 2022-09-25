@@ -10,7 +10,7 @@
 .navbar {
     backdrop-filter: saturate(150%) blur(4px);
     box-shadow: var(--a-box-shadow);
-    transition: transform .3s;
+    transition: transform .1s;
 }
 
 .theme-container.hide-navbar {

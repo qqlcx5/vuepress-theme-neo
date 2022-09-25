@@ -28,6 +28,7 @@
 </template>
 <script>
 import { typeOf, debounce } from '../utils'
+import { useEventListener, useDebounceFn } from '@vueuse/core'
 import { useThemeData } from '../composables/index.js'
 import { reactive, ref, onMounted, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -59,9 +60,9 @@ export default {
         countByYear = countByYear
 
         onMounted(() => {
-            window.addEventListener(
+            useEventListener(
                 'scroll',
-                debounce(() => {
+                useDebounceFn(() => {
                     if (postsList.value.length < sortPostsByDateSymbol.length) {
                         const docEl = document.documentElement
                         const docBody = document.body
@@ -73,7 +74,7 @@ export default {
                             loadmore()
                         }
                     }
-                }, 200)
+                }, 100)
             )
         })
 

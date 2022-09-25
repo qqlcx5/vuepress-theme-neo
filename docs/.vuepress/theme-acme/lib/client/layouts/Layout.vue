@@ -79,6 +79,7 @@ const containerClass = computed(() => [
         'has-toc': enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
+        'invert': isInvert.value,
     },
     frontmatter.value.pageClass,
 ])
@@ -89,6 +90,7 @@ const isDarkMode = ref(false)
 // close sidebar after navigation
 let unregisterRouterHook
 let lastDistance = 0
+let isInvert = ref(true)
 useEventListener(
     'scroll',
     useDebounceFn(() => {
@@ -100,6 +102,7 @@ useEventListener(
         // scroll up
         else hideNavbar.value = false
         lastDistance = distance
+        isInvert.value = distance <= 58
     }, 200)
 )
 onMounted(() => {
