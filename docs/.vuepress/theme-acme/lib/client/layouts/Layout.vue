@@ -70,6 +70,7 @@ const enableToc = computed(
         frontmatter.value.toc ||
         (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
 )
+const enableInvert = computed(() => frontmatter.value.home && isInvert.value)
 
 // classes
 const containerClass = computed(() => [
@@ -79,7 +80,7 @@ const containerClass = computed(() => [
         'has-toc': enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
-        invert: isInvert.value,
+        invert: enableInvert.value,
     },
     frontmatter.value.pageClass,
 ])
