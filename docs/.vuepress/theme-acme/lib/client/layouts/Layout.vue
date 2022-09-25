@@ -79,7 +79,7 @@ const containerClass = computed(() => [
         'has-toc': enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
-        'invert': isInvert.value,
+        invert: isInvert.value,
     },
     frontmatter.value.pageClass,
 ])
@@ -102,8 +102,8 @@ useEventListener(
         // scroll up
         else hideNavbar.value = false
         lastDistance = distance
-        isInvert.value = distance <= 58
-    }, 200)
+        isInvert.value = distance <= 10
+    }, 60)
 )
 onMounted(() => {
     const router = useRouter()

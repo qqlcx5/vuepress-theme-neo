@@ -103,6 +103,7 @@ import PostList from '@theme/PostList.vue'
 import BlogLayout from '@theme/BlogLayout.vue'
 // @ts-ignore
 import Pagination from '@theme/Pagination.vue'
+// @ts-ignore
 const sortPostsSymbol = inject('sortPostsSymbol').value
 
 const themeLocale = useThemeLocaleData()

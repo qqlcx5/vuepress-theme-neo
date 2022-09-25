@@ -1,1 +1,1 @@
-export declare const setupPageData: () => void;
+export {}
