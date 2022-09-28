@@ -1,3 +1,11 @@
+---
+title: 手写 Promise
+date: 2022-09-28 10:51:34
+categories:
+  - demo
+tags:
+  - 
+---
 
 # 手写 Promise
 

@@ -113,11 +113,11 @@ export default {
         function threeNum() {
             let num = 3
             const currentPage = props.currentPage
-            const pages = pages.value
+            const page = pages?.value || 0
             if (currentPage < 3) {
                 num = 3
-            } else if (currentPage > (pages - 3)) {
-                num = pages - 2
+            } else if (currentPage > (page - 3)) {
+                num = page - 2
             } else {
                 num = currentPage
             }

@@ -13,6 +13,7 @@ export default acmeTheme({
     docsBranch: 'master',
     docsRepo: 'https://github.com/qqlcx5/vuepress-next',
     editLinkPattern: ':repo/edit/:branch/:path',
+    sidebarDepth: 0,
     // 默认主题配置项
     category: true,
     tag: true,
