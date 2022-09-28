@@ -18,5 +18,5 @@ html.dark {
 }
 
 div[class*='language-'].line-numbers-mode::after {
-    border-right: 1px solid var(--c-border);
+    border-right: 1px solid var(--c-border-dark);
 }
