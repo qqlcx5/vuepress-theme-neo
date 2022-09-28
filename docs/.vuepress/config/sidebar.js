@@ -7,5 +7,6 @@ console.log('sidebar __dirname---------------------', docsRoot);
 export default {
     '/el-component/': readFile(docsRoot + '/el-component'),
     '/utils/': readFile(docsRoot + '/utils', true),
-    '/demo/': readFile(docsRoot + '/demo')
+    '/demo/': readFile(docsRoot + '/demo'),
+    '/interview/': readFile(docsRoot + '/interview', true),
 }

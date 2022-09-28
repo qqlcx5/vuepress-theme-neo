@@ -1,7 +1,7 @@
 import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 import { defaultTheme } from '@vuepress/theme-default'
-import {createPageFile, setFrontmatter,  assignLocaleOptions } from './utils/index'
+import { createPageFile, setFrontmatter, assignLocaleOptions } from './utils/index'
 export const acmeTheme = (localeOptions = {}) => {
     assignLocaleOptions(localeOptions)
     return {
@@ -20,7 +20,10 @@ export const acmeTheme = (localeOptions = {}) => {
             createPageFile(sourceDir, localeOptions)
             // 所有.md文件设置frontmatter(标题、日期)
             setFrontmatter(sourceDir, localeOptions)
-            await app.writeTemp(`theme-acme/pagesData.js`, `export const pagesData = ${JSON.stringify(app.pages)}`)
+            const pageMap = app.pages.map(o => {
+                return { data: o.data, path: o.path, title: o.title, frontmatter: o.frontmatter, permalink: o.permalink, filePathRelative: o.filePathRelative }
+            })
+            await app.writeTemp(`theme-acme/pagesData.js`, `export default ${JSON.stringify(pageMap)}`)
         },
         clientConfigFile: path.resolve(__dirname, '../client/config.js'),
         templateDev: path.resolve(__dirname, '../../templates/build.html'),

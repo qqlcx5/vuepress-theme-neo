@@ -1,5 +1,5 @@
 import { computed, provide } from 'vue'
-import { pagesData } from '@temp/theme-acme/pagesData'
+import pagesData from '@temp/theme-acme/pagesData'
 import { filterPosts, sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from '../utils/postData'
 // export const filterPostsSymbol = Symbol('filterPosts');
 export const sortPostsSymbol = Symbol('sortPosts');

@@ -5,6 +5,11 @@ export default [
         activeMatch: '^/nav-page/'
     },
     {
+        text: '面试',
+        link: '/interview/JavaScript/BOM',
+        activeMatch: '^/interview/'
+    },
+    {
         text: '指南',
         link: '/guide/',
         activeMatch: '^/guide/'
