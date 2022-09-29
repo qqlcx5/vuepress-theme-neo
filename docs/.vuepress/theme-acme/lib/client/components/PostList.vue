@@ -6,11 +6,12 @@
         >
             <div
                 class="post dark-shadow"
-                :class="[`effect-border-${random(2, 5)}`, (item.frontmatter.sticky && 'iconfont icon-zhiding')]"
+                :class="[`effect-border-${random(2, 5)}`]"
                 v-for="(item, index) in sortPosts"
                 :key="index"
             >
                 <AIcon
+                    v-if="item.frontmatter.sticky"
                     name="acme-tuding"
                     :customStyle="{
                         position: 'absolute',
