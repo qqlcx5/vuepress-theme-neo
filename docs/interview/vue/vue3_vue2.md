@@ -20,10 +20,12 @@ tags:
 在我们更新（和重写）Vue 的主要版本时，主要考虑两点因素：首先是新的 JavaScript 语言特性在主流浏览器中的受支持水平；其次是当前代码库中随时间推移而逐渐暴露出来的一些设计和架构问题」
 
 简要就是：
+
 - 利用新的语言特性(es6)
 - 解决架构问题
 
 ## 哪些变化
+
  ![](https://static.vue-js.com/9169a900-5087-11eb-85f6-6fac77c0c9b3.png)
 
 从上图中，我们可以概览`Vue3`的新特性，如下：
@@ -33,7 +35,6 @@ tags:
 - 更易维护
 - 更接近原生
 - 更易使用
-
 
 ### 速度更快
 
@@ -51,8 +52,6 @@ tags:
 
  ![](https://static.vue-js.com/ac1d23d0-5087-11eb-ab90-d9ae814b240d.png)
 
-
-
 ### 体积更小
 
 通过`webpack`的`tree-shaking`功能，可以将无用模块“剪辑”，仅打包需要的
@@ -65,9 +64,7 @@ tags:
 
 `vue`可以开发出更多其他的功能，而不必担忧`vue`打包出来的整体体积过多
 
- ![](https://static.vue-js.com/c01af010-5087-11eb-85f6-6fac77c0c9b3.png) 
-
-
+ ![](https://static.vue-js.com/c01af010-5087-11eb-85f6-6fac77c0c9b3.png)
 
 ### 更易维护
 
@@ -77,9 +74,7 @@ tags:
 - 灵活的逻辑组合与复用
 - `Vue3`模块可以和其他框架搭配使用
 
-![](https://static.vue-js.com/c5c919b0-5087-11eb-ab90-d9ae814b240d.png) 
-
-
+![](https://static.vue-js.com/c5c919b0-5087-11eb-ab90-d9ae814b240d.png)
 
 #### 更好的Typescript支持
 
@@ -91,15 +86,11 @@ tags:
 
 ![](https://static.vue-js.com/fcd33800-5087-11eb-85f6-6fac77c0c9b3.png)
 
-
-
 ### 更接近原生
 
 可以自定义渲染 API
 
 ![](https://static.vue-js.com/0c7d88a0-5088-11eb-ab90-d9ae814b240d.png)
-
-
 
 ### 更易使用
 
@@ -111,8 +102,6 @@ tags:
 
 ![](https://static.vue-js.com/43b2fcb0-5088-11eb-ab90-d9ae814b240d.png)
 
-
-
 ## 二、Vue3新增特性
 
 Vue 3 中需要关注的一些新功能包括：
@@ -121,8 +110,6 @@ Vue 3 中需要关注的一些新功能包括：
 - Teleport
 - composition Api
 - createRenderer
-
-
 
 ### framents
 
@@ -136,8 +123,6 @@ Vue 3 中需要关注的一些新功能包括：
   <footer>...</footer>
 </template>
 ```
-
-
 
 ### Teleport
 
@@ -157,8 +142,6 @@ Vue 3 中需要关注的一些新功能包括：
 </teleport>
 ```
 
-
-
 ### createRenderer
 
 通过`createRenderer`，我们能够构建自定义渲染器，我们能够将 `vue` 的开发模型扩展到其他平台
@@ -166,8 +149,6 @@ Vue 3 中需要关注的一些新功能包括：
 我们可以将其生成在`canvas`画布上
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/da4437845ec54eb3829313c92fc81afe~tplv-k3u1fbpfcp-watermark.image)
-
-
 
 关于`createRenderer`，我们了解下基本使用，就不展开讲述了
 
@@ -186,8 +167,6 @@ export { render, createApp }
 
 export * from '@vue/runtime-core'
 ```
-
-
 
 ### composition Api
 
@@ -219,8 +198,6 @@ export default {
 }
 ```
 
-
-
 ### 三、非兼容变更
 
 ### Global API
@@ -239,7 +216,7 @@ export default {
 ### 组件
 
 - 只能使用普通函数创建功能组件
-- `functional` 属性在单文件组件 `(SFC) `
+- `functional` 属性在单文件组件 `(SFC)`
 - 异步组件现在需要 `defineAsyncComponent` 方法来创建
 
 ### 渲染函数
@@ -265,19 +242,17 @@ export default {
 - 一些过渡 `class` 被重命名
 - 组建 watch 选项和实例方法 `$watch`不再支持以点分隔的字符串路径。请改用计算属性函数作为参数。
 - `<template>` 没有特殊指令的标记 (`v-if/else-if/else`、`v-for` 或 `v-slot`) 现在被视为普通元素，并将生成原生的 `<template>` 元素，而不是渲染其内部内容。
-- 在` Vue 2.x` 中，应用根容器的 `outerHTML` 将替换为根组件模板 (如果根组件没有模板/渲染选项，则最终编译为模板)。`Vue 3.x` 现在使用应用容器的 `innerHTML`，这意味着容器本身不再被视为模板的一部分。
+- 在`Vue 2.x` 中，应用根容器的 `outerHTML` 将替换为根组件模板 (如果根组件没有模板/渲染选项，则最终编译为模板)。`Vue 3.x` 现在使用应用容器的 `innerHTML`，这意味着容器本身不再被视为模板的一部分。
 
 ### 移除 API
 
 - `keyCode` 支持作为 `v-on` 的修饰符
-- `$on`，`$off `和` $once` 实例方法
+- `$on`，`$off`和`$once` 实例方法
 - 过滤`filter`
 - 内联模板 `attribute`
-- `$destroy` 实例方法。用户不应再手动管理单个` Vue` 组件的生命周期。
-
-
+- `$destroy` 实例方法。用户不应再手动管理单个`Vue` 组件的生命周期。
 
 ## 参考文献
 
-- https://vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4
-- https://composition-api.vuejs.org/zh/#api-%E4%BB%8B%E7%BB%8D
+- <https://vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4>
+- <https://composition-api.vuejs.org/zh/#api-%E4%BB%8B%E7%BB%8D>

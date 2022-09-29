@@ -17,7 +17,7 @@ tags:
 
 实际上它只是一层对真实`DOM`的抽象，以`JavaScript` 对象 (`VNode` 节点) 作为基础的树，用对象的属性来描述节点，最终可以通过一系列操作使这棵树映射到真实环境上
 
-在`Javascript`对象中，虚拟`DOM` 表现为一个 `Object `对象。并且最少包含标签名 (`tag`)、属性 (`attrs`) 和子元素对象 (`children`) 三个属性，不同框架对这三个属性的名命可能会有差别
+在`Javascript`对象中，虚拟`DOM` 表现为一个 `Object`对象。并且最少包含标签名 (`tag`)、属性 (`attrs`) 和子元素对象 (`children`) 三个属性，不同框架对这三个属性的名命可能会有差别
 
 创建虚拟`DOM`就是为了更好将虚拟的节点渲染到页面视图中，所以虚拟`DOM`对象的节点与真实`DOM`的属性一一照应
 
@@ -48,8 +48,8 @@ const app = new Vue({
 ```js
 (function anonymous(
 ) {
-	with(this){return _c('div',{attrs:{"id":"app"}},[_c('p',{staticClass:"p"},
-					  [_v("节点内容")]),_v(" "),_c('h3',[_v(_s(foo))])])}})
+ with(this){return _c('div',{attrs:{"id":"app"}},[_c('p',{staticClass:"p"},
+       [_v("节点内容")]),_v(" "),_c('h3',[_v(_s(foo))])])}})
 ```
 
 通过`VNode`，`vue`可以对这颗抽象树进行创建节点,删除节点以及修改节点的操作， 经过`diff`算法得出一些需要修改的最小单位,再更新视图，减少了`dom`操作，提高了性能
@@ -72,7 +72,6 @@ const app = new Vue({
 而通过`VNode`，同样更新10个`DOM`节点，虚拟`DOM`不会立即操作`DOM`，而是将这10次更新的`diff`内容保存到本地的一个`js`对象中，最终将这个`js`对象一次性`attach`到`DOM`树上，避免大量的无谓计算
 
 > 很多人认为虚拟 DOM 最大的优势是 diff 算法，减少 JavaScript 操作真实 DOM 的带来的性能消耗。虽然这一个虚拟 DOM 带来的一个优势，但并不是全部。虚拟 DOM 最大的优势在于抽象了原本的渲染过程，实现了跨平台的能力，而不仅仅局限于浏览器的 DOM，可以是安卓和 IOS 的原生组件，可以是近期很火热的小程序，也可以是各种GUI
-
 
 ## 三、如何实现虚拟DOM
 
@@ -226,7 +225,7 @@ export function _createElement(
     } else if ( === SIMPLE_NORMALIZE) {
         children = simpleNormalizeChildren(children)
     }
-	// 创建VNode
+ // 创建VNode
     ...
 }
 ```
@@ -238,7 +237,7 @@ export function _createElement(
 
 - `data` 表示 `VNode` 的数据，它是一个 `VNodeData` 类型
 
-- `children` 表示当前 `VNode `的子节点，它是任意类型的
+- `children` 表示当前 `VNode`的子节点，它是任意类型的
 
 - `normalizationType` 表示子节点规范的类型，类型不同规范的方法也就不一样，主要是参考 `render` 函数是编译生成的还是用户手写的
 
@@ -256,7 +255,7 @@ if (normalizationType === ALWAYS_NORMALIZE) {
 
 `normalizeChildren`方法调用场景分为下面两种：
 
--  `render` 函数是用户手写的
+- `render` 函数是用户手写的
 - 编译 `slot`、`v-for` 的时候会产生嵌套数组
 
 无论是`simpleNormalizeChildren`还是`normalizeChildren`都是对`children`进行规范（使`children` 变成了一个类型为 `VNode` 的 `Array`），这里就不展开说了
@@ -396,7 +395,7 @@ export function createComponent (
 
 稍微提下`createComponent`生成`VNode`的三个关键流程：
 
-- 构造子类构造函数`Ctor `
+- 构造子类构造函数`Ctor`
 - `installComponentHooks`安装组件钩子函数
 - 实例化 `vnode`
 
@@ -406,5 +405,5 @@ export function createComponent (
 
 ## 参考文献
 
-- https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/create-element.html#children-%E7%9A%84%E8%A7%84%E8%8C%83%E5%8C%96
-- https://juejin.cn/post/6876711874050818061
+- <https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/create-element.html#children-%E7%9A%84%E8%A7%84%E8%8C%83%E5%8C%96>
+- <https://juejin.cn/post/6876711874050818061>
