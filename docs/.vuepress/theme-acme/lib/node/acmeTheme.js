@@ -20,9 +20,16 @@ export const acmeTheme = (localeOptions = {}) => {
             createPageFile(sourceDir, localeOptions)
             // 所有.md文件设置frontmatter(标题、日期)
             setFrontmatter(sourceDir, localeOptions)
-            const pageMap = app.pages.map(o => {
-                return { data: o.data, path: o.path, title: o.title, frontmatter: o.frontmatter, permalink: o.permalink, filePathRelative: o.filePathRelative }
-            })
+            const pageMap = app.pages.map(page => ({
+                data: page.data,
+                title: page.title || '',
+                description: page.excerpt || '',
+                author: page.frontmatter.author || localeOptions.author || '',
+                frontmatter: page.frontmatter,
+                permalink: page.permalink,
+                path: page.path,
+                filePathRelative: page.filePathRelative
+            }))
             await app.writeTemp(`theme-acme/pagesData.js`, `export default ${JSON.stringify(pageMap)}`)
         },
         clientConfigFile: path.resolve(__dirname, '../client/config.js'),

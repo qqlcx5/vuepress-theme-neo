@@ -1,15 +1,24 @@
 <template>
     <div class="post-list">
-        <transition-group
+        <TransitionGroup
             name="fade-slide-y"
             tag="div"
         >
             <div
                 class="post dark-shadow"
                 :class="[`effect-border-${random(2, 5)}`, (item.frontmatter.sticky && 'iconfont icon-zhiding')]"
-                v-for="item in sortPosts"
-                :key="item.key"
+                v-for="(item, index) in sortPosts"
+                :key="index"
             >
+                <AIcon
+                    name="acme-tuding"
+                    :customStyle="{
+                        position: 'absolute',
+                        top: '0.4rem',
+                        right: '0.4rem',
+                        color: 'var(--c-brand)'
+                    }"
+                />
                 <div class="title-wrapper">
                     <h2>
                         <router-link :to="item.path">
@@ -91,7 +100,7 @@
                     </router-link>
                 </div>
             </div>
-        </transition-group>
+        </TransitionGroup>
     </div>
 </template>
 

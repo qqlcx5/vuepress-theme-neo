@@ -31,10 +31,6 @@ tags:
 
 从上图可见，黄色部分`diff`算法对比是明显的性能浪费的情况
 
-
-
-
-
 ## 二、如何做
 
 在[React中如何避免不必要的render](https://mp.weixin.qq.com/s/h4NX4Plr6TCjoIhlawiJTg)中，我们了解到如何避免不必要的`render`来应付上面的问题，主要手段是通过`shouldComponentUpdate`、`PureComponent`、`React.memo`，这三种形式这里就不再复述
@@ -51,9 +47,7 @@ tags:
 
 - 服务端渲染
 
-
-
-#### 避免使用内联函数
+### 避免使用内联函数
 
 如果我们使用内联函数，则每次调用`render`函数时都会创建一个新的函数实例，如下：
 
@@ -96,10 +90,6 @@ export default class InlineFunctionComponent extends React.Component {
 }
 ```
 
-
-
-
-
 #### 使用 React Fragments 避免额外标记
 
 用户创建新组件时，每个组件应具有单个父标签。父级不能有两个标签，所以顶部要有一个公共标签，所以我们经常在组件顶部添加额外标签`div`
@@ -121,8 +111,6 @@ export default class NestedRoutingComponent extends React.Component {
 }
 ```
 
-
-
 ### 事件绑定方式
 
 在[事件绑定方式](https://mp.weixin.qq.com/s/VfQ34ZEPXUXsimzMaJ_41A)中，我们了解到四种事假绑定的方式
@@ -130,8 +118,6 @@ export default class NestedRoutingComponent extends React.Component {
 从性能方面考虑，在`render`方法中使用`bind`和`render`方法中使用箭头函数这两种形式在每次组件`render`的时候都会生成新的方法实例，性能欠缺
 
 而`constructor`中`bind`事件与定义阶段使用箭头函数绑定这两种形式只会生成一个方法实例，性能方面会有所改善
-
-
 
 ### 使用 Immutable
 
@@ -141,13 +127,11 @@ export default class NestedRoutingComponent extends React.Component {
 
 `Immutable`通过`is`方法则可以完成对比，而无需像一样通过深度比较的方式比较
 
-
-
 ### 懒加载组件
 
 从工程方面考虑，`webpack`存在代码拆分能力，可以为应用创建多个包，并在运行时动态加载，减少初始包的大小
 
-而在`react`中使用到了`Suspense `和 `lazy`组件实现代码拆分功能，基本使用如下：
+而在`react`中使用到了`Suspense`和 `lazy`组件实现代码拆分功能，基本使用如下：
 
 ```jsx
 const johanComponent = React.lazy(() => import(/* webpackChunkName: "johanComponent" */ './myAwesome.component'));
@@ -158,8 +142,6 @@ export const johanAsyncComponent = props => (
   </React.Suspense>
 );
 ```
-
-
 
 ### 服务端渲染
 
@@ -189,13 +171,9 @@ import MyPage from "./MyPage";
 ReactDOM.render(<MyPage />, document.getElementById('app'));
 ```
 
-
-
 ### 其他
 
 除此之外，还存在的优化手段有组件拆分、合理使用`hooks`等性能优化手段...
-
-
 
 ### 三、总结
 
@@ -207,9 +185,7 @@ ReactDOM.render(<MyPage />, document.getElementById('app'));
 
 通过这三个层面的优化结合，能够使基于`react`项目的性能更上一层楼
 
-
-
 ## 参考文献
 
-- https://zhuanlan.zhihu.com/p/108666350
-- https://segmentfault.com/a/1190000007811296
+- <https://zhuanlan.zhihu.com/p/108666350>
+- <https://segmentfault.com/a/1190000007811296>

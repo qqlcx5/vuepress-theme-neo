@@ -1,10 +1,14 @@
 <template>
     <div class="pagination">
         <span
-            class="dark-shadow prev iconfont icon-jiantou-zuo"
+            class="dark-shadow prev"
             :class="{disabled: currentPage === 1}"
             @click="goPrex()"
         >
+            <AIcon
+                name="acme-zuojiantou"
+                customStyle
+            />
             <p>上一页</p>
         </span>
 
@@ -78,11 +82,15 @@
         </div>
 
         <span
-            class="dark-shadow next iconfont icon-jiantou-you"
+            class="dark-shadow next"
             :class="{disabled: currentPage === pages}"
             @click="goNext()"
         >
             <p>下一页</p>
+            <AIcon
+                name="acme-youjiantou"
+                customStyle
+            />
         </span>
     </div>
 </template>
@@ -235,29 +243,32 @@ export default {
         }
     }
 }
-@media (max-width: 800px) {
-    .pagination {
-        > span {
-            padding: 1rem 1.5rem;
-            p {
-                display: none;
-            }
-        }
-    }
-}
+// @media (max-width: 800px) {
+//     .pagination {
+//         > span {
+//             padding: 1rem 1.5rem;
+//             p {
+//                 display: none;
+//             }
+//         }
+//     }
+// }
 // 719px
 @media (max-width: $MQMobile) {
     .pagination {
         > span {
             // 左右按钮
-            padding: 0.9rem 1.5rem;
+            padding: 0.86rem 1.5rem;
+            p {
+                display: none;
+            }
         }
         .pagination-list {
             span {
                 width: 2.3rem;
                 height: 2.3rem;
                 line-height: 2.3rem;
-                margin: 0.25rem;
+                margin: 0.23rem;
             }
         }
     }
@@ -266,7 +277,7 @@ export default {
     .pagination {
         > span {
             // 左右按钮
-            padding: 0.8rem 1.3rem;
+            padding: 0.7rem 1.3rem;
         }
         .pagination-list {
             span {
