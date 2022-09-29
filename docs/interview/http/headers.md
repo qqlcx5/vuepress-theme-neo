@@ -1,11 +1,11 @@
 ---
-title: headers
+title: 面试官：说说 HTTP 常见的请求头有哪些? 作用？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 HTTP 常见的请求头有哪些? 作用？
 

@@ -1,11 +1,11 @@
 ---
-title: set_map
+title: 面试官：你是怎么理解ES6新增Set、Map两种数据结构的？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - es6
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：你是怎么理解ES6新增Set、Map两种数据结构的？
 

@@ -1,11 +1,11 @@
 ---
-title: linux users
+title: 面试官：说说你对 linux 用户管理的理解？相关的命令有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - linux
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对 linux 用户管理的理解？相关的命令有哪些？
 

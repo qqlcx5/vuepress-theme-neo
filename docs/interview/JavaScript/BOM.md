@@ -1,11 +1,11 @@
 ---
-title: BOM
+title: 面试官：说说你对BOM的理解，常见的BOM对象你了解哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对BOM的理解，常见的BOM对象你了解哪些？
 

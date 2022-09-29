@@ -1,11 +1,11 @@
 ---
-title: continue_to_upload
+title: 面试官：大文件上传如何做断点续传？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：大文件上传如何做断点续传？
 

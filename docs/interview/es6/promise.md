@@ -1,11 +1,11 @@
 ---
-title: promise
+title:  面试官：你是怎么理解ES6中 Promise的？使用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - es6
-tags:
-  - 
+tags: 
+  - null
 ---
 #  面试官：你是怎么理解ES6中 Promise的？使用场景？
 

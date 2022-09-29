@@ -1,5 +1,5 @@
 ---
-title: debounce函数防抖
+title: debounce 函数防抖
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - debounce
 ---
-# `debounce`函数防抖
+# debounce 函数防抖
 
 在事件被触发 n 秒后再执行回调，如果在这 n 秒内又被触发，则重新计时。
 

@@ -1,5 +1,5 @@
 ---
-title: takeLast截取数组最后指定的元素
+title: takeLast 截取数组末尾元素
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - takeLast
 ---
-# `takeLast`截取数组末尾元素
+# takeLast 截取数组末尾元素
 
 从 array 数组的最后一个元素开始提取 n 个元素
 

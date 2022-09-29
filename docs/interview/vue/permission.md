@@ -1,11 +1,11 @@
 ---
-title: permission
+title: 面试官：vue要做权限管理该怎么做？如果控制到按钮级别的权限怎么做？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：vue要做权限管理该怎么做？如果控制到按钮级别的权限怎么做？
 

@@ -1,11 +1,11 @@
 ---
-title: Binding events
+title: 面试官：React事件绑定的方式有哪些？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：React事件绑定的方式有哪些？区别？
 

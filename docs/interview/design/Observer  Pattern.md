@@ -1,11 +1,11 @@
 ---
-title: Observer  Pattern
+title: 面试官：说说你对发布订阅、观察者模式的理解？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - design
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对发布订阅、观察者模式的理解？区别？
 

@@ -1,11 +1,11 @@
 ---
-title: flexbox
+title: 面试官：说说flexbox（弹性盒布局模型）,以及适用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说flexbox（弹性盒布局模型）,以及适用场景？
 

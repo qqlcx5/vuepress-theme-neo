@@ -1,11 +1,11 @@
 ---
-title: Git
+title: 面试官：说说你对Git的理解？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - git
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对Git的理解？
 

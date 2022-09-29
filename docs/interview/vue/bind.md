@@ -1,11 +1,11 @@
 ---
-title: bind
+title:  面试官：双向数据绑定是什么
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 #  面试官：双向数据绑定是什么
 

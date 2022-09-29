@@ -1,11 +1,11 @@
 ---
-title: event_loop
+title: 面试官：说说对Nodejs中的事件循环机制理解?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - NodeJS
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对Nodejs中的事件循环机制理解?
 

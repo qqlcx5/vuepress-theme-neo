@@ -1,11 +1,11 @@
 ---
-title: error
+title: 面试官：你是怎么处理vue项目中的错误的？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：你是怎么处理vue项目中的错误的？
 

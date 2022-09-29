@@ -1,11 +1,11 @@
 ---
-title: High order components
+title: 面试官：说说对高阶组件的理解？应用场景?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对高阶组件的理解？应用场景?
 

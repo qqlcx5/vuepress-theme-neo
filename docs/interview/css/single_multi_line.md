@@ -1,11 +1,11 @@
 ---
-title: single_multi_line
+title: 面试官：如何实现单行／多行文本溢出的省略样式？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：如何实现单行／多行文本溢出的省略样式？
 

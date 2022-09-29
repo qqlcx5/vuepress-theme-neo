@@ -1,5 +1,5 @@
 ---
-title: accum数组中值总和
+title: accum 数组中值总和
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - accum
 ---
-# `accum`数组中值总和
+# accum 数组中值总和
 
 ```js
 accum(value1, value2, value3)

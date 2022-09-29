@@ -1,11 +1,11 @@
 ---
-title: selector
+title: 面试官：css选择器有哪些？优先级？哪些属性可以继承？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：css选择器有哪些？优先级？哪些属性可以继承？
 

@@ -1,11 +1,11 @@
 ---
-title: function
+title:  面试官：对象新增了哪些扩展？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - es6
-tags:
-  - 
+tags: 
+  - null
 ---
 #  面试官：对象新增了哪些扩展？
 

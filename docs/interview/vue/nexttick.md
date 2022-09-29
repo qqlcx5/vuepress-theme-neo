@@ -1,11 +1,11 @@
 ---
-title: nexttick
+title: 面试官：Vue中的$nextTick有什么作用？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Vue中的$nextTick有什么作用？
 

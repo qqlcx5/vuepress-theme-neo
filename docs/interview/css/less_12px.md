@@ -1,11 +1,11 @@
 ---
-title: less_12px
+title: 面试官：让Chrome支持小于12px 的文字方式有哪些？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：让Chrome支持小于12px 的文字方式有哪些？区别？
 

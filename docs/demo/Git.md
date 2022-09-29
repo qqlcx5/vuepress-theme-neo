@@ -1,9 +1,9 @@
 ---
-title: git
+title: Git
 date: 2022-08-08 23:43:24
-categories:
+categories: 
   - demo
-tags:
+tags: 
   - git
 ---
 # Git

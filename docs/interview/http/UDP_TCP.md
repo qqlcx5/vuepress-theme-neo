@@ -1,11 +1,11 @@
 ---
-title: UDP_TCP
+title: 面试官：如何理解UDP 和 TCP? 区别? 应用场景?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：如何理解UDP 和 TCP? 区别? 应用场景?
 

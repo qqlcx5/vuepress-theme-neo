@@ -1,11 +1,11 @@
 ---
-title: loss_accuracy
+title: 面试官：说说 Javascript 数字精度丢失的问题，如何解决？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 Javascript 数字精度丢失的问题，如何解决？
 

@@ -1,11 +1,11 @@
 ---
-title: redux
+title: 说说你对Redux的理解？其工作原理？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 说说你对Redux的理解？其工作原理？
 

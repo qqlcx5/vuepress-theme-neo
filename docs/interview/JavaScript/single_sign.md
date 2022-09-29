@@ -1,11 +1,11 @@
 ---
-title: single_sign
+title: 面试官：什么是单点登录？如何实现？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：什么是单点登录？如何实现？
 

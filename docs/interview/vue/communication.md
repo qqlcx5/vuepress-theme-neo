@@ -1,11 +1,11 @@
 ---
-title: communication
+title: 面试官：Vue组件之间的通信方式都有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Vue组件之间的通信方式都有哪些？
 

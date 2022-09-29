@@ -1,11 +1,11 @@
 ---
-title: React
+title: 面试官：说说对 React 的理解？有哪些特性？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对 React 的理解？有哪些特性？
 

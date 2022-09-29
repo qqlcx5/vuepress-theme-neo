@@ -1,11 +1,11 @@
 ---
-title: life cycle
+title: 面试官：说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？
 

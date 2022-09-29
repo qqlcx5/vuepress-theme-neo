@@ -1,11 +1,11 @@
 ---
-title: DNS
+title: 面试官：DNS协议 是什么？说说DNS 完整的查询过程?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：DNS协议 是什么？说说DNS 完整的查询过程?
 

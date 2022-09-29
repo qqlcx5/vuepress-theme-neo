@@ -1,11 +1,11 @@
 ---
-title: memory_leak
+title: 面试官：说说 JavaScript 中内存泄漏的几种情况？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 JavaScript 中内存泄漏的几种情况？
 

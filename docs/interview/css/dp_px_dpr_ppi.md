@@ -1,11 +1,11 @@
 ---
-title: dp_px_dpr_ppi
+title: 面试官：说说设备像素、css像素、设备独立像素、dpr、ppi 之间的区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说设备像素、css像素、设备独立像素、dpr、ppi 之间的区别？
 

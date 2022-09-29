@@ -1,11 +1,11 @@
 ---
-title: git pull _git fetch
+title: 说说对git pull 和 git fetch 的理解？有什么区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - git
-tags:
-  - 
+tags: 
+  - null
 ---
 # 说说对git pull 和 git fetch 的理解？有什么区别？
 

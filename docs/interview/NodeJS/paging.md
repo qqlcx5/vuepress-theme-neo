@@ -1,11 +1,11 @@
 ---
-title: paging
+title: 面试官：如果让你来设计一个分页功能, 你会怎么设计? 前后端如何交互?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - NodeJS
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：如果让你来设计一个分页功能, 你会怎么设计? 前后端如何交互?
 

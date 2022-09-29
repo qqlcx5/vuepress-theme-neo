@@ -1,11 +1,11 @@
 ---
-title: layout_painting
+title: 面试官：怎么理解回流跟重绘？什么场景下会触发？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：怎么理解回流跟重绘？什么场景下会触发？
 

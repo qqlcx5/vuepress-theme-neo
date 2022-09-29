@@ -1,10 +1,10 @@
 ---
 title: 手写 Promise
 date: 2022-09-28 10:51:34
-categories:
+categories: 
   - demo
-tags:
-  - 
+tags: 
+  - null
 ---
 
 # 手写 Promise

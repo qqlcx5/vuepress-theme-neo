@@ -1,11 +1,11 @@
 ---
-title: git reset_ git revert
+title: 面试官：说说你对git reset 和 git revert 的理解？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - git
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对git reset 和 git revert 的理解？区别？
 

@@ -1,11 +1,11 @@
 ---
-title: vim
+title: 面试官：说说 linux 系统下 文本编辑常用的命令有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - linux
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 linux 系统下 文本编辑常用的命令有哪些？
 

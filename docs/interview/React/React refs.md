@@ -1,11 +1,11 @@
 ---
-title: React refs
+title: 面试官：说说对React refs 的理解？应用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对React refs 的理解？应用场景？
 

@@ -1,11 +1,11 @@
 ---
-title: communication
+title: 面试官：React中组件之间如何通信？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：React中组件之间如何通信？
 

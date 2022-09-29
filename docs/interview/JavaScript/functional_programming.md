@@ -1,11 +1,11 @@
 ---
-title: functional_programming
+title: 面试官：说说你对函数式编程的理解？优缺点？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对函数式编程的理解？优缺点？
 

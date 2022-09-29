@@ -1,5 +1,5 @@
 ---
-title: calcFn加减乘除运算
+title: calcFn 加减乘除运算
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - calcFn
 ---
-# `calcFn`加减乘除运算
+# calcFn 加减乘除运算
 
 因为 JavaScript 遵循 IEEE 754 数学标准，使用 64 位浮点数进行运算。在进行十进制运算时会导致精度丢失。
 

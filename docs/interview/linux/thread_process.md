@@ -1,11 +1,11 @@
 ---
-title: thread_process
+title: 面试官：说说什么是进程？什么是线程？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - linux
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说什么是进程？什么是线程？区别？
 

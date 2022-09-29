@@ -1,17 +1,18 @@
 ---
-title: Rollup_Parcel_snowpack_Vite
+title: 面试官：与webpack类似的工具还有哪些？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - webpack
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：与webpack类似的工具还有哪些？区别？
 
 ![](https://static.vue-js.com/8ed8d520-b1a4-11eb-85f6-6fac77c0c9b3.png)
 
 ## 一、模块化工具
+
 模块化是一种处理复杂系统分解为更好的可管理模块的方式
 
 可以用来分割，组织和打包应用。每个模块完成一个特定的子功能，所有的模块按某种方法组装起来，成为一个整体(`bundle`)
@@ -24,7 +25,7 @@ tags:
 
 ### Rollup
 
-`Rollup` 是一款 `ES Modules` 打包器，从作用上来看，`Rollup` 与 `Webpack` 非常类似。不过相比于 `Webpack`，`Rollup `要小巧的多
+`Rollup` 是一款 `ES Modules` 打包器，从作用上来看，`Rollup` 与 `Webpack` 非常类似。不过相比于 `Webpack`，`Rollup`要小巧的多
 
 现在很多我们熟知的库都都使用它进行打包，比如：`Vue`、`React`和`three.js`等
 
@@ -58,7 +59,7 @@ log(messages.hi)
 然后通过`rollup`进行打包
 
 ```js
-$ npx rollup ./src/index.js --file ./dist/bundle.js
+npx rollup ./src/index.js --file ./dist/bundle.js
 ```
 
 打包结果如下图![](https://static.vue-js.com/8fe07830-b143-11eb-85f6-6fac77c0c9b3.png)
@@ -72,15 +73,11 @@ $ npx rollup ./src/index.js --file ./dist/bundle.js
 - 代码效率更简洁、效率更高
 - 默认支持 Tree-shaking
 
-但缺点也十分明显，加载其他类型的资源文件或者支持导入 `CommonJS` 模块，又或是编译 `ES` 新特性，这些额外的需求 `Rollup `需要使用插件去完成
+但缺点也十分明显，加载其他类型的资源文件或者支持导入 `CommonJS` 模块，又或是编译 `ES` 新特性，这些额外的需求 `Rollup`需要使用插件去完成
 
 综合来看，`rollup`并不适合开发应用使用，因为需要使用第三方模块，而目前第三方模块大多数使用`CommonJs`方式导出成员，并且`rollup`不支持`HMR`，使开发效率降低
 
-但是在用于打包` JavaScript` 库时，`rollup`比 `webpack` 更有优势，因为其打包出来的代码更小、更快，其存在的缺点可以忽略
-
-
-
-
+但是在用于打包`JavaScript` 库时，`rollup`比 `webpack` 更有优势，因为其打包出来的代码更小、更快，其存在的缺点可以忽略
 
 ### Parcel
 
@@ -139,9 +136,7 @@ npx parcel src/index.html
 
 ![](https://static.vue-js.com/ec17e7a0-b1a2-11eb-85f6-6fac77c0c9b3.png)
 
-可以感受到，`Parcel `给开发者一种很大的自由度，只管去实现业务代码，其他事情用`Parcel`解决
-
-
+可以感受到，`Parcel`给开发者一种很大的自由度，只管去实现业务代码，其他事情用`Parcel`解决
 
 ### Snowpack
 
@@ -164,7 +159,7 @@ vite ，是一种新型前端构建工具，能够显著提升前端开发体验
 - 一个开发服务器，它基于 原生 ES 模块 提供了丰富的内建功能，如速度快到惊人的 [模块热更新HMR
 - 一套构建指令，它使用 Rollup打包你的代码，并且它是预配置的，可以输出用于生产环境的优化过的静态资源
 
-其作用类似`webpack `+ `webpack-dev-server`，其特点如下：
+其作用类似`webpack`+ `webpack-dev-server`，其特点如下：
 
 - 快速的冷启动
 - 即时的模块热更新
@@ -179,8 +174,6 @@ vite ，是一种新型前端构建工具，能够显著提升前端开发体验
  ![](https://static.vue-js.com/9f2eed30-b143-11eb-85f6-6fac77c0c9b3.png)
 
 在热模块`HMR`方面，当修改一个模块的时候，仅需让浏览器重新请求该模块即可，无须像`webpack`那样需要把该模块的相关依赖模块全部编译一次，效率更高
-
-
 
 ### webpack
 
@@ -197,10 +190,8 @@ vite ，是一种新型前端构建工具，能够显著提升前端开发体验
 - 快速运行：webpack 使用异步 IO 并具有多级缓存，这使得 webpack 很快且在增量编译上更加快
 - 生态环境好：社区更丰富，出现的问题更容易解决
 
-
-
 ## 参考文献
 
-- https://zhuanlan.zhihu.com/p/95684686
-- https://cn.vitejs.dev/guide/
-- https://segmentfault.com/a/1190000039370642
+- <https://zhuanlan.zhihu.com/p/95684686>
+- <https://cn.vitejs.dev/guide/>
+- <https://segmentfault.com/a/1190000039370642>

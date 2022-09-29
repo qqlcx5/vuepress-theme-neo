@@ -1,11 +1,11 @@
 ---
-title: Singleton Pattern
+title: 面试官：说说你对单例模式的理解？如何实现？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - design
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对单例模式的理解？如何实现？
 

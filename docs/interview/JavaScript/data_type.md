@@ -1,11 +1,11 @@
 ---
-title: data_type
+title: 面试官：说说JavaScript中的数据类型？存储上的差别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说JavaScript中的数据类型？存储上的差别？
 

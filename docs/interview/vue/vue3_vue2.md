@@ -1,11 +1,11 @@
 ---
-title: vue3_vue2
+title: 面试官：vue3有了解过吗？能说说跟vue2的区别吗？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：vue3有了解过吗？能说说跟vue2的区别吗？
 

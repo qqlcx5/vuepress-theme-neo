@@ -1,11 +1,11 @@
 ---
-title: modal_component
+title: 面试官：用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue3
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？
 

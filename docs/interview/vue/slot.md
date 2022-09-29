@@ -1,11 +1,11 @@
 ---
-title: slot
+title: 面试官：说说你对slot的理解？slot使用场景有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对slot的理解？slot使用场景有哪些？
 

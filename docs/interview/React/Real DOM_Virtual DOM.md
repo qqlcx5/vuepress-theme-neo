@@ -1,11 +1,11 @@
 ---
-title: Real DOM_Virtual DOM
+title: 面试官：说说 Real DOM 和 Virtual DOM 的区别？优缺点？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 Real DOM 和 Virtual DOM 的区别？优缺点？
 

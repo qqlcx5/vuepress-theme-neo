@@ -1,11 +1,11 @@
 ---
-title: this
+title: 面试官：谈谈this对象的理解
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：谈谈this对象的理解
 

@@ -1,11 +1,11 @@
 ---
-title: data_type
+title: 面试官：说说 typescript 的数据类型有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - typescript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 typescript 的数据类型有哪些？
 

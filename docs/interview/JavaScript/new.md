@@ -1,11 +1,11 @@
 ---
-title: new
+title: 面试官：说说new操作符具体干了什么？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说new操作符具体干了什么？
 

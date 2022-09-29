@@ -1,11 +1,11 @@
 ---
-title: context_stack
+title: 面试官：JavaScript中执行上下文和执行栈是什么？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：JavaScript中执行上下文和执行栈是什么？
 

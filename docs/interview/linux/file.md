@@ -1,11 +1,11 @@
 ---
-title: file
+title: 面试官：说说 linux系统下 文件操作常用的命令有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - linux
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 linux系统下 文件操作常用的命令有哪些？
 

@@ -1,11 +1,11 @@
 ---
-title: triangle
+title: 面试官：CSS如何画一个三角形？原理是什么？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：CSS如何画一个三角形？原理是什么？
 

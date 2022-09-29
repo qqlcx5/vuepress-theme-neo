@@ -1,11 +1,11 @@
 ---
-title: cache
+title: 面试官：Javascript本地存储的方式有哪些？区别及应用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Javascript本地存储的方式有哪些？区别及应用场景？
 

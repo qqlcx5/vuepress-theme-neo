@@ -1,11 +1,11 @@
 ---
-title: vue
+title: 面试官：说说如何在Vue项目中应用TypeScript？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - typescript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说如何在Vue项目中应用TypeScript？
 

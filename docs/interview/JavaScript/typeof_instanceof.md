@@ -1,11 +1,11 @@
 ---
-title: typeof_instanceof
+title: 面试官：typeof 与 instanceof 区别
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：typeof 与 instanceof 区别
 

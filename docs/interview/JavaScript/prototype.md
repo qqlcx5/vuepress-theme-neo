@@ -1,11 +1,11 @@
 ---
-title: prototype
+title: 面试官：JavaScript原型，原型链 ? 有什么特点？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：JavaScript原型，原型链 ? 有什么特点？
 

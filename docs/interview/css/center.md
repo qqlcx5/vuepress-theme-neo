@@ -1,11 +1,11 @@
 ---
-title: center
+title: 面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？
 

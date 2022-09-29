@@ -1,11 +1,11 @@
 ---
-title: event_Model
+title: 面试官：说说JavaScript中的事件模型
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说JavaScript中的事件模型
 

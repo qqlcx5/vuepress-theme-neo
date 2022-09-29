@@ -1,11 +1,11 @@
 ---
-title: proxy
+title: 面试官：说说webpack proxy工作原理？为什么能解决跨域?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - webpack
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说webpack proxy工作原理？为什么能解决跨域?
 

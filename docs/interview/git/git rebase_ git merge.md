@@ -1,11 +1,11 @@
 ---
-title: git rebase_ git merge
+title: 面试官：说说你对git rebase 和 git merge的理解？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - git
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对git rebase 和 git merge的理解？区别？
 

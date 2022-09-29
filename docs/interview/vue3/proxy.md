@@ -1,11 +1,11 @@
 ---
-title: proxy
+title: 面试官：Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue3
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？
 

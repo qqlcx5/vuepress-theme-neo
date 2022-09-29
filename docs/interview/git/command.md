@@ -1,11 +1,11 @@
 ---
-title: command
+title: 面试官：说说Git常用的命令有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - git
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说Git常用的命令有哪些？
 

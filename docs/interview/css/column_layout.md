@@ -1,11 +1,11 @@
 ---
-title: column_layout
+title: 面试官：如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？
 

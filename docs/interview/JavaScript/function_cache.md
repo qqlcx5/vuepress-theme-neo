@@ -1,11 +1,11 @@
 ---
-title: function_cache
+title: 面试官：Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 

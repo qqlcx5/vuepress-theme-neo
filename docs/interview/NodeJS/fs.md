@@ -1,11 +1,11 @@
 ---
-title: fs
+title: 面试官：说说对 Node 中的 fs模块的理解? 有哪些常用方法
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - NodeJS
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对 Node 中的 fs模块的理解? 有哪些常用方法
 

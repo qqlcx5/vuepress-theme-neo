@@ -1,11 +1,11 @@
 ---
-title: show_if
+title: 面试官：v-show和v-if有什么区别？使用场景分别是什么？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：v-show和v-if有什么区别？使用场景分别是什么？
 

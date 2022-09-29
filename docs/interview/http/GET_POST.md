@@ -1,11 +1,11 @@
 ---
-title: GET_POST
+title: 面试官：说一下 GET 和 POST 的区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说一下 GET 和 POST 的区别？
 

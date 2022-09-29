@@ -1,11 +1,11 @@
 ---
-title: copy
+title: 面试官：深拷贝浅拷贝的区别？如何实现一个深拷贝？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：深拷贝浅拷贝的区别？如何实现一个深拷贝？
 

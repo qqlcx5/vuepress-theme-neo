@@ -1,11 +1,11 @@
 ---
-title: composition
+title: 面试官：Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue3
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？
 

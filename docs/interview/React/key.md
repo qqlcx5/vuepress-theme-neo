@@ -1,11 +1,11 @@
 ---
-title: key
+title: 面试官：React中的key有什么作用？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：React中的key有什么作用？
 

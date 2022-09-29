@@ -1,11 +1,11 @@
 ---
-title: how to use redux
+title: 面试官：你在React项目中是如何使用Redux的? 项目结构是如何划分的？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：你在React项目中是如何使用Redux的? 项目结构是如何划分的？
 

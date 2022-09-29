@@ -1,11 +1,11 @@
 ---
-title: status
+title: 面试官：说说HTTP 常见的状态码有哪些，适用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说HTTP 常见的状态码有哪些，适用场景？
 

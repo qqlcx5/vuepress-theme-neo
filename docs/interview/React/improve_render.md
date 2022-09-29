@@ -1,11 +1,11 @@
 ---
-title: improve_render
+title: 面试官：说说你是如何提高组件的渲染效率的？在React中如何避免不必要的render？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你是如何提高组件的渲染效率的？在React中如何避免不必要的render？
 

@@ -1,11 +1,11 @@
 ---
-title: shell
+title: 面试官：说说你对 shell 的理解？常见的命令？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - linux
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对 shell 的理解？常见的命令？
 

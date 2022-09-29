@@ -1,11 +1,11 @@
 ---
-title: treeshaking
+title: 面试官：说说Vue 3.0中Treeshaking特性？举例说明一下？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue3
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说Vue 3.0中Treeshaking特性？举例说明一下？
 

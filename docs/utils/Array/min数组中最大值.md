@@ -1,5 +1,5 @@
 ---
-title: min数组中最大值
+title: min 数组中最大值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -10,7 +10,7 @@ tags:
 sticky: 10
 ---
 
-# `min`数组中最小值
+# min 数组中最大值
 
 过滤原数组中所有的非假值元素，返回数组中的最小值
 

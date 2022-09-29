@@ -1,5 +1,5 @@
 ---
-title: averageBy检查数组对象各项相等
+title: averageBy 求数组对象平均值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - averageBy
 ---
-# `averageBy`检查数组对象各项相等
+# averageBy 求数组对象平均值
 
 ```js
 averageBy(array, fn)

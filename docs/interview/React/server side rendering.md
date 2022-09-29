@@ -1,11 +1,11 @@
 ---
-title: server side rendering
+title: 面试官：说说React服务端渲染怎么做？原理是什么？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - React
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说React服务端渲染怎么做？原理是什么？
 

@@ -1,11 +1,11 @@
 ---
-title: js_data_structure
+title: 面试官：说说你了解的js数据结构？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你了解的js数据结构？
 

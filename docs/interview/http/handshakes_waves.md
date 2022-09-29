@@ -1,11 +1,11 @@
 ---
-title: handshakes_waves
+title: 面试官：说说TCP为什么需要三次握手和四次挥手？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说TCP为什么需要三次握手和四次挥手？
 

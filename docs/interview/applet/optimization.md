@@ -1,11 +1,11 @@
 ---
-title: optimization
+title: 面试官：说说提高微信小程序的应用速度的手段有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - applet
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说提高微信小程序的应用速度的手段有哪些？
 

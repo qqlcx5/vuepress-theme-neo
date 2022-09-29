@@ -1,5 +1,5 @@
 ---
-title: shuffle打乱数组
+title: shuffle 打乱数组
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,9 +8,8 @@ categories:
 tags: 
   - shuffle
 sticky: 3
-
 ---
-# `shuffle`打乱数组
+# shuffle 打乱数组
 
 创建一个打乱的数组，使用`Fisher-Yates`算法打乱数组的元素
 

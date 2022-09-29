@@ -1,11 +1,11 @@
 ---
-title: tree
+title: 面试官：说说你对树的理解？相关的操作有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - algorithm
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对树的理解？相关的操作有哪些？
 

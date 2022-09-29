@@ -1,11 +1,11 @@
 ---
-title: vnode
+title: 面试官：什么是虚拟DOM？如何实现一个虚拟DOM？说说你的思路
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：什么是虚拟DOM？如何实现一个虚拟DOM？说说你的思路
 

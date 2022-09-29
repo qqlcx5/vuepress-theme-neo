@@ -1,11 +1,11 @@
 ---
-title: design
+title: 面试官：说说对设计模式的理解？常见的设计模式有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - design
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对设计模式的理解？常见的设计模式有哪些？
 

@@ -1,5 +1,5 @@
 ---
-title: treeData生成树结构数据
+title: treeData 生成树结构数据
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - treeData
 ---
-# `treeData`生成树结构数据
+# treeData 生成树结构数据
 
 该函数传入一个数组， 每项`id`对应其父级数据`parent_id`，返回一个树结构数组
 

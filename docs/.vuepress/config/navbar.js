@@ -1,10 +1,5 @@
 export default [
     {
-        text: '导航页',
-        link: '/nav-page/',
-        activeMatch: '^/nav-page/'
-    },
-    {
         text: '面试',
         link: '/interview/JavaScript/BOM',
         activeMatch: '^/interview/'
@@ -23,6 +18,11 @@ export default [
         text: '工具函数',
         link: '/utils/Array/chunk转换二维数组.md',
         activeMatch: '^/utils/'
+    },
+    {
+        text: '导航页',
+        link: '/nav-page/',
+        activeMatch: '^/nav-page/'
     },
     {
         text: '影视推荐',

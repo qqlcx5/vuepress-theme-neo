@@ -1,11 +1,11 @@
 ---
-title: HEAD_tree_index
+title: 面试官：说说Git 中 HEAD、工作树和索引之间的区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - git
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说Git 中 HEAD、工作树和索引之间的区别？
 

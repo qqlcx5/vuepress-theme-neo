@@ -1,11 +1,11 @@
 ---
-title: spa
+title: 面试官：你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢
 

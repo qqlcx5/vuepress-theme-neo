@@ -1,11 +1,11 @@
 ---
-title: middleware
+title: 面试官：说说对中间件概念的理解，如何封装 node 中间件？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - NodeJS
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对中间件概念的理解，如何封装 node 中间件？
 

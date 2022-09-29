@@ -1,11 +1,11 @@
 ---
-title: Algorithm
+title: 面试官：说说你对算法的理解？应用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - algorithm
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对算法的理解？应用场景？
 

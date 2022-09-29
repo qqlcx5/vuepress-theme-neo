@@ -1,11 +1,11 @@
 ---
-title: axios
+title: 面试官：Vue项目中有封装过axios吗？主要是封装哪方面的？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：Vue项目中有封装过axios吗？主要是封装哪方面的？
 

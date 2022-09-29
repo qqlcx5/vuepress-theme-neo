@@ -1,11 +1,11 @@
 ---
-title: BinarySearch
+title: 面试官：说说你对二分查找的理解？如何实现？应用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - algorithm
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对二分查找的理解？如何实现？应用场景？
 

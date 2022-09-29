@@ -1,10 +1,10 @@
 ---
-title: infinity
+title: infinity data
 date: 2022-09-07 16:25:04
-categories:
+categories: 
   - nav
-tags:
-  - 
+tags: 
+  - null
 ---
 # infinity data
 

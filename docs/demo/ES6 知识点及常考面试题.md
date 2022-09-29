@@ -1,10 +1,10 @@
 ---
 title: ES6 知识点及常考面试题
 date: 2022-09-28 10:48:32
-categories:
+categories: 
   - demo
-tags:
-  - 
+tags: 
+  - null
 ---
 # ES6 知识点及常考面试题
 

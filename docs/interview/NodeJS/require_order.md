@@ -1,11 +1,11 @@
 ---
-title: require_order
+title: 面试官：说说 Node 文件查找的优先级以及 Require 方法的文件查找策略?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - NodeJS
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说 Node 文件查找的优先级以及 Require 方法的文件查找策略?
 

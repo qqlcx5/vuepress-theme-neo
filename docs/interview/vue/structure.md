@@ -1,11 +1,11 @@
 ---
-title: structure
+title: 面试官：说下你的vue项目的目录结构，如果是大型项目你该怎么划分结构和划分组件呢？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说下你的vue项目的目录结构，如果是大型项目你该怎么划分结构和划分组件呢？
 

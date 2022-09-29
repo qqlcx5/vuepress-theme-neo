@@ -1,11 +1,11 @@
 ---
-title: CDN
+title: 面试官：如何理解CDN？说说实现原理？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - http
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：如何理解CDN？说说实现原理？
 

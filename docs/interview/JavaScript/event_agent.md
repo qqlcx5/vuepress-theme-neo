@@ -1,11 +1,11 @@
 ---
-title: event_agent
+title: 面试官：解释下什么是事件代理？应用场景？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - JavaScript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：解释下什么是事件代理？应用场景？
 

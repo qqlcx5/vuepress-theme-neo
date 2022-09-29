@@ -1,11 +1,11 @@
 ---
-title: axiosCode
+title: 面试官：你了解axios的原理吗？有看过它的源码吗？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：你了解axios的原理吗？有看过它的源码吗？
 

@@ -1,11 +1,11 @@
 ---
-title: linux
+title: 面试官：说说你对操作系统的理解？核心概念有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - linux
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对操作系统的理解？核心概念有哪些？
 

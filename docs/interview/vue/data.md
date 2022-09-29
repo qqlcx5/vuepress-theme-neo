@@ -1,11 +1,11 @@
 ---
-title: data
+title: 面试官：为什么data属性是一个函数而不是一个对象？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：为什么data属性是一个函数而不是一个对象？
 

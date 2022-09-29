@@ -1,11 +1,11 @@
 ---
-title: typescript_javascript
+title: 面试官：说说你对 TypeScript 的理解？与 JavaScript 的区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - typescript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对 TypeScript 的理解？与 JavaScript 的区别？
 

@@ -1,11 +1,11 @@
 ---
-title: ssr
+title: 面试官：SSR解决了什么问题？有做过SSR吗？你是怎么做的？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：SSR解决了什么问题？有做过SSR吗？你是怎么做的？
 

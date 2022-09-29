@@ -1,11 +1,11 @@
 ---
-title: responsive_layout
+title: 面试官：什么是响应式设计？响应式设计的基本原理是什么？如何做？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：什么是响应式设计？响应式设计的基本原理是什么？如何做？
 

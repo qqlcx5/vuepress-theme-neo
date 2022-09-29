@@ -1,11 +1,11 @@
 ---
-title: applet
+title: 面试官：说说你对微信小程序的理解？优缺点？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - applet
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对微信小程序的理解？优缺点？
 

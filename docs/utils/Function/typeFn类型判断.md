@@ -1,5 +1,5 @@
 ---
-title: typeFn类型判断
+title: typeFn 判断类型
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ categories:
 tags: 
   - typeFn
 ---
-# `typeFn`类型判断
+# typeFn 判断类型
 
 判断是否是 `Array` `Object` `String` `Number`类型
 

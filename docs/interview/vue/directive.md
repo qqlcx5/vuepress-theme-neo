@@ -1,11 +1,11 @@
 ---
-title: directive
+title: 面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？
 

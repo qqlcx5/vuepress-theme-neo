@@ -1,11 +1,11 @@
 ---
-title: namespace_module
+title: 面试官：说说对 TypeScript 中命名空间与模块的理解？区别？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - typescript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说对 TypeScript 中命名空间与模块的理解？区别？
 

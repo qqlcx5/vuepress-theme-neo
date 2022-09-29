@@ -1,11 +1,11 @@
 ---
-title: visual_scrolling
+title: 面试官：如何使用css完成视差滚动效果?
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - css
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：如何使用css完成视差滚动效果?
 

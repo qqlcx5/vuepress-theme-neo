@@ -1,11 +1,11 @@
 ---
-title: data_object_add_attrs
+title: 面试官：动态给vue的data添加一个新的属性时会发生什么？怎样解决？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - vue
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：动态给vue的data添加一个新的属性时会发生什么？怎样解决？
 

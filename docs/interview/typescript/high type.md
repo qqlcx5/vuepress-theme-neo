@@ -1,11 +1,11 @@
 ---
-title: high type
+title: 面试官：说说你对 TypeScript 中高级类型的理解？有哪些？
 date: 2022-07-04 10:46:56
-categories:
+categories: 
   - interview
   - typescript
-tags:
-  - 
+tags: 
+  - null
 ---
 # 面试官：说说你对 TypeScript 中高级类型的理解？有哪些？
 
