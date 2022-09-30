@@ -1,7 +1,7 @@
 <template>
     <div class="categories-wrapper dark-shadow">
         <RouterLink to="/categories/" class="categories-title" title="全部分类">
-            <AIcon name="acme-gengduo1" size="18" />
+            <!-- <AIcon name="acme-gengduo1" size="18" /> -->
             {{ length === 'all' ? `所有分类` : '文章分类' }}
         </RouterLink>
         <div class="categories">

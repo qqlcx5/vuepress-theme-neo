@@ -1,28 +1,14 @@
 <template>
     <div class="tags-wrapper dark-shadow">
-        <RouterLink
-            to="/tags/"
-            class="tags-title"
-            title="全部标签"
-        >
-            <AIcon name="acme-biaoqian2" size="18" />
+        <RouterLink to="/tags/" class="tags-title" title="全部标签">
+            <!-- <AIcon name="acme-biaoqian2" size="18" /> -->
             {{ length === 'all' ? '所有标签' : '热门标签' }}
         </RouterLink>
         <div class="tags">
-            <template
-                v-for="(item, index) in tags"
-                :key="item.key"
-            >
-                <router-link
-                    :to="`/tags/?tag=${encodeURIComponent(item.key)}`"
-                    :style="tagStyleList[index]"
-                    :class="{ active: item.key === tag }"
-                >{{item.key}} {{item.length}}</router-link>
+            <template v-for="(item, index) in tags" :key="item.key">
+                <router-link :to="`/tags/?tag=${encodeURIComponent(item.key)}`" :style="tagStyleList[index]" :class="{ active: item.key === tag }">{{ item.key }} {{ item.length }}</router-link>
             </template>
-            <router-link
-                to="/tags/"
-                v-if="length !== 'all' && tagsData.length > length"
-            >更多...</router-link>
+            <router-link to="/tags/" v-if="length !== 'all' && tagsData.length > length">更多...</router-link>
         </div>
     </div>
 </template>
@@ -81,8 +67,7 @@ export default {
     .tags {
         padding: 0.5rem;
         color: var(--c-bg);
-        transition: transform 0.25s ease-in-out 0.08s,
-            opacity 0.25s ease-in-out 0.04s;
+        transition: transform 0.25s ease-in-out 0.08s, opacity 0.25s ease-in-out 0.04s;
         transform: translateY(0px);
         justify-content: flex-start;
         // text-align: justify;

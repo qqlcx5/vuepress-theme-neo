@@ -1,14 +1,35 @@
 <template>
     <div class="articles-wrapper dark-shadow">
         <div class="blog-type-wrapper">
-            <button v-for="[key, icon] of buttons" :key="key" class="blog-type-button" @click="handleButton(key)">
-                <div class="icon-wapper" :class="{ active: buttonsType === key }" :aria-label="locale[key]">
-                    <AIcon :name="icon" size="20" color="#666" customStyle />
+            <button
+                v-for="[key, icon] of buttons"
+                :key="key"
+                class="blog-type-button"
+                @click="handleButton(key)"
+            >
+                <div
+                    class="icon-wapper"
+                    :class="{ active: buttonsType === key }"
+                    :aria-label="locale[key]"
+                >
+                    <AIcon
+                        :name="icon"
+                        size="20"
+                        customStyle
+                    />
                 </div>
             </button>
         </div>
-        <CategoriesBar v-show="buttonsType === 'category'" :categoriesData="categoriesAndTagsSymbol?.categories" :category="category" />
-        <TagsBar v-show="buttonsType === 'tag'" :tagsData="categoriesAndTagsSymbol.tags" :tag="tag" />
+        <CategoriesBar
+            v-show="buttonsType === 'category'"
+            :categoriesData="categoriesAndTagsSymbol?.categories"
+            :category="category"
+        />
+        <TagsBar
+            v-show="buttonsType === 'tag'"
+            :tagsData="categoriesAndTagsSymbol.tags"
+            :tag="tag"
+        />
     </div>
 </template>
 
@@ -26,7 +47,7 @@ export default {
         const buttons = new Map([
             // ["article", 'acme-wenzhang'],
             ['category', 'acme-all'],
-            ['tag', 'acme-biaoqian4']
+            ['tag', 'acme-biaoqian5']
         ])
 
         const themeLocale = useThemeLocaleData()
@@ -46,16 +67,19 @@ export default {
         onMounted(() => {
             let { category = '', tag = '', p = 1 } = route.query
             refreshTotal(category, tag, p)
+            buttonsType.value = category ? 'category' : 'tag'
 
             // 滚动条定位到当前分类（增强用户体验）
-            // const cateEl = document.querySelector('.categories')
-            // if (cateEl) {
-            //     setTimeout(() => {
-            //         const activeEl = cateEl.querySelector('.active')
-            //         const topVal = activeEl ? activeEl.offsetTop : 0
-            //         cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
-            //     }, 300)
-            // }
+            const cateEl = document.querySelector('.articles-wrapper .categories')
+            if (cateEl) {
+                setTimeout(() => {
+                    const activeEl = cateEl.querySelector('.categories .active')
+                    console.log('activeEl', activeEl);
+                    const topVal = activeEl ? Math.abs(cateEl.getBoundingClientRect()?.top - activeEl.getBoundingClientRect()?.top) : 0
+                    console.log('topVal', topVal, activeEl.offsetTop, cateEl.getBoundingClientRect()?.top, activeEl.getBoundingClientRect()?.top);
+                    cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
+                }, 300)
+            }
         })
 
         watch([() => route.query.category, () => route.query.tag], ([category, tag], [prevCategory, prevTag]) => {
@@ -106,12 +130,14 @@ export default {
             height: 20px;
             padding: 8px;
             border-radius: 50%;
+            color: var(--c-text-lighter);
             background: rgb(127 127 127 / 15%);
             &:hover {
                 cursor: pointer;
             }
             &.active {
-                background-color: var(--c-brand);
+                color: var(--c-brand);
+                background-color: rgba(var(--c-brand-rgb), 0.2);
             }
         }
     }
