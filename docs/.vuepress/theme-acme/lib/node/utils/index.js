@@ -1,4 +1,4 @@
 export * from './date'
-export * from './createPageFile'
+export * from './setCreatePageFile'
 export * from './setFrontmatter'
 export * from './assignLocaleOptions'

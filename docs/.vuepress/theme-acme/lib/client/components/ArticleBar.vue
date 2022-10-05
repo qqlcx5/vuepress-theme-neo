@@ -67,23 +67,21 @@ export default {
         onMounted(() => {
             let { category = '', tag = '', p = 1 } = route.query
             refreshTotal(category, tag, p)
-            buttonsType.value = category ? 'category' : 'tag'
+            // buttonsType.value = route.path === '/tags/' ? 'tag' : 'category'
 
             // 滚动条定位到当前分类（增强用户体验）
             const cateEl = document.querySelector('.articles-wrapper .categories')
             if (cateEl) {
                 setTimeout(() => {
                     const activeEl = cateEl.querySelector('.categories .active')
-                    console.log('activeEl', activeEl);
                     const topVal = activeEl ? Math.abs(cateEl.getBoundingClientRect()?.top - activeEl.getBoundingClientRect()?.top) : 0
-                    console.log('topVal', topVal, activeEl.offsetTop, cateEl.getBoundingClientRect()?.top, activeEl.getBoundingClientRect()?.top);
                     cateEl.scrollTo({ top: topVal, behavior: 'smooth' })
                 }, 300)
             }
         })
 
         watch([() => route.query.category, () => route.query.tag], ([category, tag], [prevCategory, prevTag]) => {
-            buttonsType.value = tag ? 'tag' : 'category'
+            // buttonsType.value = tag ? 'tag' : 'category'
             refreshTotal(category, tag, 1)
         })
 
