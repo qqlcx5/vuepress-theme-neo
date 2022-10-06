@@ -5,7 +5,7 @@
                 v-for="[key, icon] of buttons"
                 :key="key"
                 class="blog-type-button"
-                @click="handleButton(key)"
+                @click="handleClasses(key)"
             >
                 <div
                     class="icon-wapper"
@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import { onMounted, ref, computed, inject, watch } from 'vue'
+import { onMounted, ref, computed, inject, watch, nextTick, onBeforeUnmount } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 import CategoriesBar from '@theme/CategoriesBar.vue'
 import TagsBar from '@theme/TagsBar.vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
     components: { CategoriesBar, TagsBar },
@@ -51,9 +51,8 @@ export default {
         ])
 
         const themeLocale = useThemeLocaleData()
-
         const locale = computed(() => themeLocale.value.blogLocales)
-        function handleButton(key) {
+        function handleClasses(key) {
             buttonsType.value = key
         }
 
@@ -63,11 +62,11 @@ export default {
         let tag = ref(null)
         let buttonsType = ref('category')
         const route = useRoute()
+        const router = useRouter()
 
         onMounted(() => {
-            let { category = '', tag = '', p = 1 } = route.query
-            refreshTotal(category, tag, p)
-            // buttonsType.value = route.path === '/tags/' ? 'tag' : 'category'
+            let { category = '', tag = '' } = route.query
+            refreshTotal(category, tag)
 
             // 滚动条定位到当前分类（增强用户体验）
             const cateEl = document.querySelector('.articles-wrapper .categories')
@@ -81,14 +80,22 @@ export default {
         })
 
         watch([() => route.query.category, () => route.query.tag], ([category, tag], [prevCategory, prevTag]) => {
-            // buttonsType.value = tag ? 'tag' : 'category'
-            refreshTotal(category, tag, 1)
+            refreshTotal(category, tag)
         })
 
         function refreshTotal(queryCategory, queryTag, p = 1) {
             category.value = queryCategory ? decodeURIComponent(queryCategory) : ''
             tag.value = queryTag ? decodeURIComponent(queryTag) : ''
         }
+        // reset open tags after navigation
+        const unregisterRouterHook = router.afterEach((to) => {
+            nextTick(() => {
+                buttonsType.value = route.path === '/tags/' ? 'tag' : 'category'
+            })
+        })
+        onBeforeUnmount(() => {
+            unregisterRouterHook()
+        })
 
         return {
             tag,
@@ -96,7 +103,7 @@ export default {
             buttons,
             category,
             buttonsType,
-            handleButton,
+            handleClasses,
             categoriesAndTagsSymbol
         }
     }
