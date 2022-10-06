@@ -1,6 +1,6 @@
 export default [
     {
-        text: '面试',
+        text: '面试官系列',
         link: '/interview/JavaScript/BOM',
         activeMatch: '^/interview/'
     },

@@ -46,11 +46,11 @@ export default acmeTheme({
         },
         {
             path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/62.jpg',
-            mask: 'rgb(251, 170, 152, .3)'
+            mask: 'rgb(40, 170, 152, .3)'
         },
         {
             path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
-            mask: 'rgba(19, 75, 50, .3)'
+            mask: 'rgba(40, 75, 50, .3)'
         }
     ]
 } as DefaultThemeOptions)
