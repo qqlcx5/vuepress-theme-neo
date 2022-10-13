@@ -1,12 +1,12 @@
 ---
-title: infinity data
+title: infinity插件数据
 date: 2022-09-07 16:25:04
 categories: 
   - nav
 tags: 
   - null
 ---
-# infinity data
+# infinity插件数据
 
 ```json
     "sites": [
