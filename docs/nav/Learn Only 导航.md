@@ -1,5 +1,5 @@
 ---
-title: Learn Only 导航
+title: Learn Only 数据
 date: 2022-10-13 17:26:00
 categories: 
   - nav
@@ -7,7 +7,7 @@ tags:
   - 
 ---
 
-# Learn Only 导航
+# Learn Only 数据
 
 ```js
 ;[
