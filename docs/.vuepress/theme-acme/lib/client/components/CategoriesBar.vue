@@ -1,8 +1,9 @@
 <template>
     <div class="categories-wrapper dark-shadow">
-        <RouterLink to="/categories/" class="categories-title" title="全部分类">
+        <RouterLink to="/categories/" class="categories-title" title="分类">
             <!-- <AIcon name="acme-gengduo1" size="18" /> -->
-            {{ length === 'all' ? `所有分类` : '文章分类' }}
+            <!-- {{ length === 'all' ? `分类` : '分类' }} -->
+            分类
         </RouterLink>
         <div class="categories">
             <RouterLink :to="`/categories/?category=${encodeURIComponent(item.key)}`" v-for="(item, index) in categories" :key="index" :class="{ active: item.key === category }">

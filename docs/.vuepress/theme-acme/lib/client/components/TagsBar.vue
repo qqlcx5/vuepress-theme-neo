@@ -1,8 +1,9 @@
 <template>
     <div class="tags-wrapper dark-shadow">
-        <RouterLink to="/tags/" class="tags-title" title="全部标签">
+        <RouterLink to="/tags/" class="tags-title" title="标签">
             <!-- <AIcon name="acme-biaoqian2" size="18" /> -->
-            {{ length === 'all' ? '所有标签' : '热门标签' }}
+            <!-- {{ length === 'all' ? '所有标签' : '热门标签' }} -->
+            标签
         </RouterLink>
         <div class="tags">
             <template v-for="(item, index) in tags" :key="item.key">
