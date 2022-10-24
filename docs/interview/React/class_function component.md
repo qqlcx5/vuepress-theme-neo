@@ -30,10 +30,6 @@ class Welcome extends React.Component {
 }
 ```
 
-
-
-
-
 ## 二、函数组件
 
 函数组件，顾名思义，就是通过函数编写的形式去实现一个`React`组件，是`React`中定义组件最简单的方式
@@ -46,8 +42,6 @@ function Welcome(props) {
 
 函数第一个参数为`props`用于接收父组件传递过来的参数
 
-
-
 ## 三、区别
 
 针对两种`React`组件，其区别主要分成以下几大方向：
@@ -59,8 +53,6 @@ function Welcome(props) {
 - 调用方式
 
 - 获取渲染的值
-
-
 
 ### 编写形式
 
@@ -87,8 +79,6 @@ class Welcome extends React.Component {
 }
 ```
 
-
-
 ### 状态管理
 
 在`hooks`出来之前，函数组件就是无状态组件，不能保管组件的状态，不像类组件中调用`setState`
@@ -111,8 +101,6 @@ const FunctionalComponent = () => {
 
 在使用`hooks`情况下，一般如果函数组件调用`state`，则需要创建一个类组件或者`state`提升到你的父组件中，然后通过`props`对象传递到子组件
 
-
-
 ### 生命周期
 
 在函数组件中，并不存在生命周期，这是因为这些生命周期钩子都来自于继承的`React.Component`
@@ -132,7 +120,7 @@ const FunctionalComponent = () => {
 
 上述简单的例子对应类组件中的`componentDidMount`生命周期
 
-如果在`useEffect`回调函数中`return `一个函数，则`return`函数会在组件卸载的时候执行，正如`componentWillUnmount`
+如果在`useEffect`回调函数中`return`一个函数，则`return`函数会在组件卸载的时候执行，正如`componentWillUnmount`
 
 ```jsx
 const FunctionalComponent = () => {
@@ -145,10 +133,6 @@ const FunctionalComponent = () => {
 };
 
 ```
-
-
-
-
 
 ### 调用方式
 
@@ -176,8 +160,6 @@ class SayHi extends React.Component {
 const instance = new SayHi(props) // » SayHi {} 
 const result = instance.render() // » <p>Hello, React</p >
 ```
-
-
 
 ### 获取渲染的值
 
@@ -219,13 +201,11 @@ class ProfilePage extends React.Component {
 }
 ```
 
-两者看起来实现功能是一致的，但是在类组件中，输出`this.props.user`，`Props `在 `React `中是不可变的所以它永远不会改变，但是 `this` 总是可变的，以便您可以在 `render` 和生命周期函数中读取新版本
+两者看起来实现功能是一致的，但是在类组件中，输出`this.props.user`，`Props`在 `React`中是不可变的所以它永远不会改变，但是 `this` 总是可变的，以便您可以在 `render` 和生命周期函数中读取新版本
 
-因此，如果我们的组件在请求运行时更新。`this.props` 将会改变。`showMessage `方法从“最新”的 `props` 中读取 `user`
+因此，如果我们的组件在请求运行时更新。`this.props` 将会改变。`showMessage`方法从“最新”的 `props` 中读取 `user`
 
 而函数组件，本身就不存在`this`，`props`并不发生改变，因此同样是点击，`alert`的内容仍旧是之前的内容
-
-
 
 ### 小结
 
@@ -233,11 +213,9 @@ class ProfilePage extends React.Component {
 
 函数组件语法更短、更简单，这使得它更容易开发、理解和测试
 
-而类组件也会因大量使用 `this `而让人感到困惑
-
-
+而类组件也会因大量使用 `this`而让人感到困惑
 
 ## 参考文献
 
-- https://zh-hans.reactjs.org/docs/components-and-props.html#function-and-class-components
-- https://juejin.cn/post/6844903806140973069
+- <https://zh-hans.reactjs.org/docs/components-and-props.html#function-and-class-components>
+- <https://juejin.cn/post/6844903806140973069>
