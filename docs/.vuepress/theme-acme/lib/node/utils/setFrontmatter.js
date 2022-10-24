@@ -2,7 +2,6 @@ import os from 'os'
 import chalk from 'chalk'
 import jsonToYaml from 'json2yaml'
 import { path, fs } from '@vuepress/utils'
-import readFileList from './readFileList'
 import { typeOf, repairDate, dateFormat } from './index'
 import matter from 'gray-matter' // FrontMatter解析器 https://github.com/jonschlinkert/gray-matter
 const log = console.log
@@ -13,7 +12,6 @@ const PREFIX = '/pages/'
  */
 export function setFrontmatter(files, themeConfig) {
     const { category: isCategory, tag: isTag, categoryText = '随笔', extendFrontmatter } = themeConfig
-    // const files = readFileList(sourceDir) // 读取所有md文件数据
     // 扩展自定义生成frontmatter
     const extendFrontmatterStr = extendFrontmatter
         ? jsonToYaml
@@ -23,7 +21,6 @@ export function setFrontmatter(files, themeConfig) {
         : ''
     files.forEach(file => {
         let dataStr = fs.readFileSync(file.filePath, 'utf8') // 读取每个md文件内容
-
         // fileMatterObj => {content:'剔除frontmatter后的文件内容字符串', data:{<frontmatter对象>}, ...}
         const fileMatterObj = matter(dataStr, {})
         // ['', '# isEqual 检查两个对象各项值相等','']
