@@ -10,6 +10,12 @@ export function createPageFile(sourceDir, themeConfig) {
     } else {
         deletePage(sourceDir, 'categoriesPage')
     }
+    // 创建栏目页文件
+    if (themeConfig.column !== false) {
+        createPage(sourceDir, 'columnsPage')
+    } else {
+        deletePage(sourceDir, 'columnsPage')
+    }
     // 创建文章页文件
     if (themeConfig.article !== false) {
         createPage(sourceDir, 'articlesPage')

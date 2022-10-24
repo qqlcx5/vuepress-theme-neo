@@ -29,6 +29,13 @@ title: 分类
 permalink: /categories/
 article: false
 ---`
+    } else if (page.indexOf('column') > -1) {
+        content = `---
+columnsPage: true
+title: 栏目
+permalink: /columns/
+article: false
+---`
     } else if (page.indexOf('articles') > -1) {
         content = `---
 articlesPage: true
