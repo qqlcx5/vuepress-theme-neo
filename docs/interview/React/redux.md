@@ -7,7 +7,7 @@ categories:
 tags: 
   - null
 ---
-# 说说你对Redux的理解？其工作原理？
+# 面试官：说说你对Redux的理解？其工作原理？
 
  ![](https://static.vue-js.com/52394be0-e2a5-11eb-ab90-d9ae814b240d.png)
 
@@ -29,12 +29,11 @@ tags:
 
 注意的是，`redux`并不是只应用在`react`中，还与其他界面库一起使用，如`Vue`
 
-
 ## 二、工作原理
 
-`redux `要求我们把数据都放在 `store `公共存储空间
+`redux`要求我们把数据都放在 `store`公共存储空间
 
-一个组件改变了 `store` 里的数据内容，其他组件就能感知到 `store `的变化，再来取数据，从而间接的实现了这些数据传递的功能
+一个组件改变了 `store` 里的数据内容，其他组件就能感知到 `store`的变化，再来取数据，从而间接的实现了这些数据传递的功能
 
 工作流程图如下所示：
 
@@ -45,8 +44,6 @@ tags:
 整个流程就是借书的用户需要先存在，然后需要借书，需要一句话来描述借什么书，图书馆管理员听到后需要查一下记录本，了解图书的位置，最后图书馆管理员会把这本书给到这个借书人
 
 转换为代码是，`React Components` 需要获取一些数据, 然后它就告知 `Store` 需要获取数据，这就是就是 `Action Creactor` , `Store` 接收到之后去 `Reducer` 查一下， `Reducer` 会告诉 `Store` 应该给这个组件什么数据
-
-
 
 ## 三、如何使用
 
@@ -175,8 +172,6 @@ store.dispatch({
 // console.log(store.getState());
 ```
 
-
-
 ### 小结
 
 - createStore可以帮助创建 store
@@ -184,9 +179,8 @@ store.dispatch({
 - store.getState 这个方法可以帮助获取 store 里边所有的数据内容
 - store.subscrible 方法订阅 store 的改变，只要 store 发生改变， store.subscrible 这个函数接收的这个回调函数就会被执行
 
-
 ## 参考文献
 
-- https://cn.redux.js.org/docs/introduction/
-- https://www.redux.org.cn/docs/basics/Actions.html
-- https://lulujianglab.com/posts/大白话解析 Redux 、 redux-thunk 、redux-saga 和 react-redux
+- <https://cn.redux.js.org/docs/introduction/>
+- <https://www.redux.org.cn/docs/basics/Actions.html>
+- <https://lulujianglab.com/posts/>大白话解析 Redux 、 redux-thunk 、redux-saga 和 react-redux

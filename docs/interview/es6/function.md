@@ -7,11 +7,10 @@ categories:
 tags: 
   - null
 ---
-#  面试官：对象新增了哪些扩展？
+
+# 面试官：对象新增了哪些扩展？
 
 ![](https://static.vue-js.com/54a04a10-5569-11eb-85f6-6fac77c0c9b3.png)
-
-
 
 ## 一、参数
 
@@ -72,8 +71,6 @@ f(, 1) // 报错
 f(undefined, 1) // [1, 1]
 ```
 
-
-
 ## 二、属性
 
 ### 函数的length属性
@@ -98,8 +95,6 @@ f(undefined, 1) // [1, 1]
 (function (a = 0, b, c) {}).length // 0
 (function (a, b = 1, c) {}).length // 1
 ```
-
-
 
 ### name属性
 
@@ -137,8 +132,6 @@ foo.bind({}).name // "bound foo"
 (function(){}).bind({}).name // "bound "
 ```
 
-
-
 ## 三、作用域
 
 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域
@@ -158,8 +151,6 @@ function f(y = x) {
 
 f() // 1
 ```
-
-
 
 ## 四、严格模式
 
@@ -192,8 +183,6 @@ const obj = {
   }
 };
 ```
-
-
 
 ## 五、箭头函数
 
@@ -242,4 +231,5 @@ let getTempItem = id => ({ id: id, name: "Temp" });
 - 不可以使用`yield`命令，因此箭头函数不能用作 Generator 函数
 
 ## 参考文献
-- https://es6.ruanyifeng.com/#docs/function
+
+- <https://es6.ruanyifeng.com/#docs/function>
