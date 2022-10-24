@@ -3,8 +3,6 @@
  */
 import { path, fs } from '@vuepress/utils'
 
-const log = console.log
-
 function readFileList(dir, filesList = []) {
   const files = fs.readdirSync(dir);
   files.forEach((item, index) => {

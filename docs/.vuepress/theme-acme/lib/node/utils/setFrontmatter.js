@@ -8,13 +8,12 @@ import matter from 'gray-matter' // FrontMatter解析器 https://github.com/jons
 const log = console.log
 
 const PREFIX = '/pages/'
-
 /**
  * 给.md文件设置frontmatter(标题、日期、永久链接等数据)
  */
-export function setFrontmatter(sourceDir, themeConfig) {
+export function setFrontmatter(files, themeConfig) {
     const { category: isCategory, tag: isTag, categoryText = '随笔', extendFrontmatter } = themeConfig
-    const files = readFileList(sourceDir) // 读取所有md文件数据
+    // const files = readFileList(sourceDir) // 读取所有md文件数据
     // 扩展自定义生成frontmatter
     const extendFrontmatterStr = extendFrontmatter
         ? jsonToYaml
@@ -22,13 +21,13 @@ export function setFrontmatter(sourceDir, themeConfig) {
               .replace(/\n\s{2}/g, '\n')
               .replace(/"|---\n/g, '')
         : ''
-
     files.forEach(file => {
         let dataStr = fs.readFileSync(file.filePath, 'utf8') // 读取每个md文件内容
 
         // fileMatterObj => {content:'剔除frontmatter后的文件内容字符串', data:{<frontmatter对象>}, ...}
         const fileMatterObj = matter(dataStr, {})
-        const fileTitle = fileMatterObj.content?.split('\n')[0]?.slice(2) || file.name
+        // ['', '# isEqual 检查两个对象各项值相等','']
+        const fileTitle = fileMatterObj.content?.split('\n')?.filter(Boolean)[0]?.slice(2)?.trim() || file.title
         if (Object.keys(fileMatterObj.data).length === 0) {
             // 未定义FrontMatter数据
             const stat = fs.statSync(file.filePath)

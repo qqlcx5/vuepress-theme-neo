@@ -1,12 +1,11 @@
 ---
 title: 手写 Promise
 date: 2022-09-28 10:51:34
-categories: 
+categories:
   - demo
-tags: 
-  - null
+tags:
+  - 
 ---
-
 # 手写 Promise
 
 在上一章节中我们了解了 `Promise` 的一些易错点，在这一章节中，我们会通过手写一个符合 Promise/A+ 规范的 `Promise` 来深入理解它，并且手写 `Promise` 也是一道大厂常考题，在进入正题之前，推荐各位阅读一下 [Promise/A+ 规范](https://link.juejin.cn?target=http%3A%2F%2Fwww.ituring.com.cn%2Farticle%2F66566 "http://www.ituring.com.cn/article/66566")，这样才能更好地理解这个章节的代码。
