@@ -175,6 +175,7 @@ export default {
         line-height: 1rem;
         opacity: 0.9;
         cursor: pointer;
+        user-select: none;
         &:hover {
             color: $accentColor;
         }
@@ -285,7 +286,7 @@ export default {
                 height: 2rem;
                 line-height: 2rem;
                 margin: 0.1rem;
-                margin-top: 0.3rem;
+                // margin-top: 0.3rem;
             }
         }
     }

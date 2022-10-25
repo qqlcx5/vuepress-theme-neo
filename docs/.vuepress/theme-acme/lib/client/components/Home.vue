@@ -93,6 +93,7 @@
 
 <script setup lang="ts">
 import { withBase } from '@vuepress/client'
+import { useRoute } from 'vue-router'
 import { computed, onMounted, ref, inject } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 // @ts-ignore
@@ -111,6 +112,8 @@ const bgImages = themeLocale.value.homeHeaderImages
 
 const bgImageIndex = ref(-1)
 const headerOpacity = ref(1)
+// -------- Pagination --------
+const route = useRoute()
 let total = ref(0) // 总长
 let perPage = ref(10) // 每页长
 let currentPage = ref(1) // 当前页
@@ -148,7 +151,13 @@ const fetchHitokoto = () => {
 
 onMounted(() => {
     fetchHitokoto()
-    offsetTop.value = (document.querySelector('.home-blog') as HTMLElement)?.clientHeight
+    // -------- 刷新页面时，获取当前页 --------
+    let { p = 1 } = route.query
+    currentPage.value = Number(p)
+    // -------- 去除首页一屏的高度 --------
+    offsetTop.value = (
+        document.querySelector('.home-blog') as HTMLElement
+    )?.clientHeight
     if (bgImages && bgImages.length > 0)
         bgImageIndex.value = Math.floor(Math.random() * bgImages.length)
 })
