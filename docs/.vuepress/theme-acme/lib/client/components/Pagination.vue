@@ -7,6 +7,7 @@
         >
             <AIcon
                 name="acme-zuojiantou"
+                size="20"
                 customStyle
             />
             <p>上一页</p>
@@ -99,6 +100,7 @@
             <p>下一页</p>
             <AIcon
                 name="acme-youjiantou"
+                size="20"
                 customStyle
             />
         </span>
@@ -216,18 +218,26 @@ export default {
     > span {
         position: absolute;
         top: 0;
-        padding: 1rem 1.2rem;
+        padding: 0 1rem;
         font-size: 0.95rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        margin: 0.34rem;
+        box-sizing: border-box;
         &.disabled {
             color: rgba(125, 125, 125, 0.5);
         }
         &.prev {
             left: 0;
+            display: flex;
+            align-items: center;
             // border-top-right-radius: 32px;
             // border-bottom-right-radius: 32px;
         }
         &.next {
             right: 0;
+            display: flex;
+            align-items: center;
             // border-top-left-radius: 32px;
             // border-bottom-left-radius: 32px;
             &::before {
@@ -269,7 +279,10 @@ export default {
     .pagination {
         > span {
             // 左右按钮
-            padding: 0.86rem 1.5rem;
+            padding: 0 1rem;
+            height: 2.3rem;
+            margin: 0.32rem;
+            line-height: 2.3rem;
             p {
                 display: none;
             }
@@ -288,8 +301,11 @@ export default {
     .pagination {
         > span {
             // 左右按钮
-            padding: 0.5rem 1.3rem;
-            margin: 0.2rem 0;
+            // padding: 0.5rem 1.3rem;
+            padding: 0 0.5rem;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 0.22rem 0;
         }
         .pagination-list {
             span {
