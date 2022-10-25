@@ -13,6 +13,7 @@
                 <AIcon
                     v-if="item.frontmatter.sticky"
                     name="acme-tuding"
+                    size="20"
                     :customStyle="{
                         position: 'absolute',
                         top: '0.4rem',
@@ -111,6 +112,11 @@ import { useRoute, useRouter } from 'vue-router'
 import { useThemeData } from '../composables/index.js'
 export default {
     props: {
+        mode: {
+            // category, tag, article column
+            type: String,
+            default: 'category'
+        },
         // 分类关键字
         category: {
             type: String,
@@ -169,7 +175,7 @@ export default {
             let type = props.category ? 'categories' : 'tags'
             let queryKeyword = props.category || props.tag
             // 文章全部展示 分类和标签隐藏数据 
-            let postsData = queryKeyword ? groupPostsSymbol[type][queryKeyword] : props.article ? sortPostsSymbol : []
+            let postsData = queryKeyword ? groupPostsSymbol[type][queryKeyword] : sortPostsSymbol
             sortPosts.value = postsData.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min

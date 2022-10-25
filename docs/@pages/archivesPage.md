@@ -1,6 +1,6 @@
 ---
 archivesPage: true
-title: 时间轴
+title: 归档
 permalink: /archives/
 article: false
 ---

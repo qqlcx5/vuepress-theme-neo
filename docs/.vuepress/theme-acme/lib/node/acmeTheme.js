@@ -16,7 +16,7 @@ export const acmeTheme = (localeOptions = {}) => {
         ),
         async onInitialized(app) {
             let sourceDir = app.dir.source()
-            // 创建分类标签时间轴文件页面
+            // 创建分类标签归档文件页面
             createPageFile(sourceDir, localeOptions)
             const pageMap = app.pages
                 .map(page => ({

@@ -37,11 +37,11 @@
     "data": {
         "key": "v-c9afc8f6",
         "path": "/archives/",
-        "title": "时间轴",
+        "title": "归档",
         "lang": "zh-CN",
         "frontmatter": {
             "archivesPage": true,
-            "title": "时间轴",
+            "title": "归档",
             "permalink": "/archives/",
             "article": false,
             "date": "2022-09-22T16:51:21.000Z"
@@ -53,7 +53,7 @@
         },
         "filePathRelative": "@pages/archivesPage.md"
     },
-    "title": "时间轴",
+    "title": "归档",
     "description": "",
     "author": {
         "name": "星野",
@@ -61,7 +61,7 @@
     },
     "frontmatter": {
         "archivesPage": true,
-        "title": "时间轴",
+        "title": "归档",
         "permalink": "/archives/",
         "article": false,
         "date": "2022-09-22T16:51:21.000Z"

@@ -6,18 +6,18 @@
                 :category="category"
             />
             <PostList
-                :currentPage="currentPage"
                 :perPage="perPage"
                 :category="category"
+                :currentPage="currentPage"
             />
             <Pagination
                 :total="total"
                 :perPage="perPage"
                 :currentPage="currentPage"
                 @getCurrentPage="handlePagination"
-                v-show="Math.ceil(total / perPage) > 1 && category"
+                v-show="Math.ceil(total / perPage) > 1"
             />
-            <NoData :showImg="!category" />
+            <!-- <NoData :showImg="!category" /> -->
         </template>
     </BlogLayout>
 </template>

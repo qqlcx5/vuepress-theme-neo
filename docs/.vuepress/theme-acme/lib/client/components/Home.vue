@@ -75,10 +75,10 @@
     <BlogLayout>
         <template #content-left>
             <PostList
-                :currentPage="currentPage"
+                mode="article"
                 :perPage="perPage"
                 :offsetTop="offsetTop"
-                :article="true"
+                :currentPage="currentPage"
             />
             <Pagination
                 :total="total"

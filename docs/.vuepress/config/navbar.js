@@ -38,34 +38,24 @@ export default [
         text: '索引',
         children: [
             {
-                text: '分类标题',
-                children: [
-                    {
-                        text: '分类',
-                        link: '/categories/',
-                        activeMatch: '/categories/'
-                    }
-                ]
+                text: '标签',
+                link: '/tags/',
+                activeMatch: '/tags/'
             },
             {
-                text: '标签标题',
-                children: [
-                    {
-                        text: '标签',
-                        link: '/tags/',
-                        activeMatch: '/tags/'
-                    }
-                ]
+                text: '归档',
+                link: '/archives/',
+                activeMatch: '/archives/'
             },
             {
-                text: '时间轴标题',
-                children: [
-                    {
-                        text: '时间轴',
-                        link: '/archives/',
-                        activeMatch: '/archives/'
-                    }
-                ]
+                text: '分类',
+                link: '/categories/',
+                activeMatch: '/categories/'
+            },
+            {
+                text: '栏目',
+                link: '/columns/',
+                activeMatch: '/columns/'
             }
         ]
     }

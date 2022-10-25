@@ -4,7 +4,7 @@ export const BLOGLOCALES = {
     articleList: '文章列表',
     category: '分类',
     tag: '标签',
-    timeline: '时间轴',
+    timeline: '归档',
     timelineTitle: '昨日不在',
     all: '全部',
     intro: '个人介绍',

@@ -2,9 +2,9 @@
     <BlogLayout>
         <template #content-left>
             <PostList
+                mode="article"
                 :currentPage="currentPage"
                 :perPage="perPage"
-                :article="true"
             />
             <Pagination
                 :total="total"

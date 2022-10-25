@@ -7,18 +7,19 @@
                 :tag="tag"
             />
             <PostList
-                :currentPage="currentPage"
-                :perPage="perPage"
+                mode="tag"
                 :tag="tag"
+                :perPage="perPage"
+                :currentPage="currentPage"
             />
             <Pagination
                 :total="total"
                 :perPage="perPage"
                 :currentPage="currentPage"
                 @getCurrentPage="handlePagination"
-                v-show="Math.ceil(total / perPage) > 1 && tag"
+                v-show="Math.ceil(total / perPage) > 1"
             />
-            <NoData :showImg="!tag" />
+            <!-- <NoData :showImg="!tag" /> -->
         </template>
         <!-- <template #content-right>
             <BloggerInfo />
