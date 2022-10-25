@@ -1,25 +1,31 @@
 <template>
     <div class="categories-wrapper card-box">
-        <router-link
+        <RouterLink
             to="/categories/"
-            class="title acme acme-24gf-folderStar"
+            class="categories-title"
             title="全部分类"
-        >{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link>
-        <div class="categories">
-            <router-link
+        >
+            <ac-icon
+                name="acme-24gf-folderStar"
+                size="1.4rem"
+            />
+            <span>&nbsp;&nbsp;{{ length === 'all' ? '全部分类' : '文章分类' }}</span>
+        </RouterLink>
+        <div class="categories-item">
+            <RouterLink
                 :to="`/categories/?category=${encodeURIComponent(item.key)}`"
                 v-for="(item, index) in categories"
                 :key="index"
                 :class="{ active: item.key === category }"
             >
                 {{ item.key }}
-                <span>{{ item.length }}</span>
-            </router-link>
-            <router-link
+                <span class="categories-item__num">{{ item.length }}</span>
+            </RouterLink>
+            <RouterLink
                 to="/categories/"
                 v-if="length !== 'all' && length < categoriesData.length"
                 class="more"
-            >更多 ...</router-link>
+            >更多 ...</RouterLink>
         </div>
     </div>
 </template>
@@ -42,8 +48,6 @@ export default {
         }
     },
     setup(props) {
-        // const { categoriesData } = toRefs(props)
-
         const categories = computed(() => {
             return props.length === 'all' ? props.categoriesData : props.categoriesData.slice(0, props.length)
         })
@@ -55,68 +59,55 @@ export default {
 <style lang='scss'>
 @import '../styles/_variables';
 .categories-wrapper {
-    .title {
-        color: var(--textColor);
+    .categories-title {
+        color: var(--c-text);
+        font-size: 1rem;
         opacity: 0.9;
-        font-size: 1.2rem;
-        padding: 0 0.95rem;
-        &::before {
-            margin-right: 0.3rem;
-        }
+        padding-left: 0.95rem;
+        display: flex;
+        align-items: center;
     }
-    .categories {
+    .categories-item {
         margin-top: 0.6rem;
         a {
             display: block;
-            padding: 8px 0.95rem 7px 0.95rem;
-            color: var(--textColor);
             opacity: 0.8;
+            color: var(--c-text);
+            padding: 8px 0.95rem 7px 0.95rem;
             font-size: 0.95rem;
             line-height: 0.95rem;
             position: relative;
             transition: all 0.2s;
             border-left: 2px solid transparent;
-            margin-top: -1px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            @media (max-width: $MQMobile) {
-                font-weight: 400;
-            }
             &:not(.active):hover {
-                color: $accentColor;
-                background: #f8f8f8;
-                border-color: $accentColor;
-                span {
-                    opacity: 0.8;
-                }
-            }
-            span {
-                float: right;
-                background-color: var(--c-bg-lighter);
-                color: var(--c-text);
-                border-radius: 8px;
-                padding: 0 0.13rem;
-                min-width: 1rem;
-                height: 1rem;
-                line-height: 1rem;
-                font-size: 0.6rem;
-                text-align: center;
-                opacity: 0.6;
-                transition: opacity 0.3s;
+                background: #f5f5f5;
+                color: var(--c-border-accent);
+                border-color: var(--c-border-accent);
             }
             &.active {
-                background: $accentColor;
-                // color: var(--mainBg);
+                background: var(--c-border-accent);
                 padding-left: 0.8rem;
-                border-radius: 1px;
+                border-radius: 2px;
                 border-color: transparent;
             }
         }
+        &__num {
+            float: right;
+            background-color: var(--c-bg-lighter);
+            color: var(--c-text);
+            border-radius: 8px;
+            padding: 0 0.13rem;
+            min-width: 1rem;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.6rem;
+            text-align: center;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
     }
-}
-.theme-mode-dark .categories-wrapper .categories a:not(.active):hover,
-.theme-mode-read .categories-wrapper .categories a:not(.active):hover {
-    background: var(--customBlockBg);
 }
 </style>
