@@ -1,7 +1,7 @@
 <template>
     <BlogLayout>
         <template #content-left>
-            <div class="archives-page">
+            <div class="archives-page dark-shadow">
                 <div class="archives-wrapper">
                     <h1 class="title">
                         {{ $page.title }}
@@ -31,6 +31,8 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables';
 .archives-page {
+    padding-right: 1.2em;
+    overflow: hidden;
     .archives-wrapper {
         // max-width: $MQNarrow;
         // padding: 0.9rem;

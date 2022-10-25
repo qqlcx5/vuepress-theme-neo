@@ -7,7 +7,7 @@ categories:
 tags: 
   - null
 ---
-#  面试官：请描述下你对vue生命周期的理解？在created和mounted这两个生命周期中请求数据有什么区别呢？
+# 面试官：请描述下你对vue生命周期的理解？在created和mounted这两个生命周期中请求数据有什么区别呢？
 
 ![](https://static.vue-js.com/3a119e10-3aca-11eb-85f6-6fac77c0c9b3.png)
 
@@ -39,7 +39,7 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 
  ![](https://static.vue-js.com/44114780-3aca-11eb-85f6-6fac77c0c9b3.png)
 
-#### 具体分析
+### 具体分析
 
 **beforeCreate -> created**
 
@@ -90,11 +90,7 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 - 完全销毁一个实例。可清理它与其它实例的连接，解绑它的全部指令及事件监听器
 - 并不能清除DOM，仅仅销毁实例
 
-  
-
 **使用场景分析**
-
-  
 
 | 生命周期 | 描述 |
 | :-- | :-- |
@@ -114,11 +110,9 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 
 ## 参考文献
 
-- https://juejin.cn/post/6844903811094413320
-- https://baike.baidu.com/
-- http://cn.vuejs.org/
-
-  
+- <https://juejin.cn/post/6844903811094413320>
+- <https://baike.baidu.com/>
+- <http://cn.vuejs.org/>
 
 面试官VUE系列总进度：4／33
 
