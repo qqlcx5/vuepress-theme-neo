@@ -41,37 +41,47 @@
             <span
                 class="ellipsis ell-two"
                 v-show="currentPage > 3"
-                @click="goIndex(currentPage - 2)"
-                title="上两页"
+                @click="goIndex(currentPage - 3)"
+                title="上三页"
             />
-            <!--这里没有使用v-if的原因是因为部署版本在当前页大于3时刷新页面出现了一些bug-->
-            <span
+            <!-- <span
                 class="dark-shadow"
                 v-show="currentPage <= 3"
                 :class="{active: currentPage === 2}"
                 @click="goIndex(2)"
-            >2</span>
-
+            >2</span> -->
+            <!-- 三号位基点 -->
+            <span
+                class="dark-shadow"
+                :class="{active: currentPage === 2}"
+                @click="goIndex(threeNum() - 1)"
+            >{{ threeNum() - 1 }}</span>
             <!-- 三号位 -->
             <span
                 class="dark-shadow"
                 :class="{active: currentPage >= 3 && currentPage <= (pages - 2)}"
                 @click="goIndex(threeNum())"
             >{{ threeNum() }}</span>
+            <!-- 三号位基点 -->
+            <span
+                class="dark-shadow"
+                :class="{active: currentPage === pages - 1}"
+                @click="goIndex(threeNum() + 1)"
+            >{{ threeNum() + 1 }}</span>
 
             <!-- 四号位 -->
             <span
                 class="ellipsis ell-four"
                 v-show="currentPage < (pages - 2)"
-                @click="goIndex(currentPage + 2)"
-                title="下两页"
+                @click="goIndex(currentPage + 3)"
+                title="下三页"
             />
-            <span
+            <!-- <span
                 class="dark-shadow"
                 v-show="currentPage >= (pages - 2)"
                 :class="{active: currentPage === pages-1}"
                 @click="goIndex(pages-1)"
-            >{{ pages-1 }}</span>
+            >{{ pages-1 }}</span> -->
 
             <!-- 五号位 -->
             <span
@@ -278,14 +288,15 @@ export default {
     .pagination {
         > span {
             // 左右按钮
-            padding: 0.7rem 1.3rem;
+            padding: 0.5rem 1.3rem;
+            margin: 0.2rem 0;
         }
         .pagination-list {
             span {
                 width: 2rem;
                 height: 2rem;
                 line-height: 2rem;
-                margin: 0.1rem;
+                margin: 0.14rem;
                 // margin-top: 0.3rem;
             }
         }
