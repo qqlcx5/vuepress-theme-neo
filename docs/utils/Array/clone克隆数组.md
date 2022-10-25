@@ -1,13 +1,14 @@
 ---
-title: clone克隆数组
+title: clone 拷贝数组
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
 tags: 
-  - 
+  - clone
+sticky: 1
 ---
-# `clone`克隆数组
+# clone 拷贝数组
 
 浅拷贝一份数组副本
 

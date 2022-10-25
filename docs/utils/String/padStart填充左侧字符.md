@@ -4,8 +4,9 @@ date: 2022-06-15 17:20:46
 categories: 
   - utils
   - String
+  - padStart
 tags: 
-  - 
+  - padStart
 ---
 # padStart填充左侧字符
 
@@ -16,6 +17,7 @@ padStart(str, n = 0, maskChar = " ")
 ```
 
 **参数**
+
 1. `[str='']`: 要填充的字符串。
 2. `[n=0]`: 填充的长度。
 3. `[maskChar=' ']`: 填充字符。

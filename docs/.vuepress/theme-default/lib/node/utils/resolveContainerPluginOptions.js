@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.resolveContainerPluginOptions = void 0;
 /**
  * Resolve options for @vuepress/plugin-container
  *
  * For custom containers default title
  */
-const resolveContainerPluginOptions = (localeOptions, type) => {
+export const resolveContainerPluginOptions = (localeOptions, type) => {
     const locales = Object.entries(localeOptions.locales || {}).reduce((result, [key, value]) => {
         result[key] = {
             defaultInfo: value?.[type] ?? localeOptions[type],
@@ -18,4 +15,3 @@ const resolveContainerPluginOptions = (localeOptions, type) => {
         locales,
     };
 };
-exports.resolveContainerPluginOptions = resolveContainerPluginOptions;

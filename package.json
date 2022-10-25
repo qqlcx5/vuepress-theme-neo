@@ -1,25 +1,30 @@
 {
-  "name": "vuepress-next",
-  "version": "1.0.0",
-  "description": "前端有道,技术博客,前端,前端开发,前端博客,前端框架,web前端,前端面试,技术文档,学习,面试,JavaScript,js,es6,typeScript,ts,vue,python,css3,html5,node,git,github,markdown,vuepress,react",
-  "scripts": {
-    "dev": "vuepress dev docs --port 3000",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
-  "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^2.0.0-beta.48",
-    "@vuepress/plugin-register-components": "^2.0.0-beta.48",
-    "@vuepress/plugin-search": "^2.0.0-beta.48",
-    "chalk": "^4.1.2",
-    "gray-matter": "^4.0.3",
-    "json2yaml": "^1.1.0",
-    "lodash": "^4.17.21",
-    "postcss": "^8.4.14",
-    "tailwindcss": "2.2.19",
-    "vuepress": "^2.0.0-beta.48"
-  },
-  "license": "MIT",
-  "author": "feyoudao.cn",
-  "main": "index.js"
+    "name": "vuepress-next",
+    "version": "1.0.0",
+    "description": "前端有道,技术博客,前端,前端开发,前端博客,前端框架,web前端,前端面试,技术文档,学习,面试,JavaScript,js,es6,typeScript,ts,vue,python,css3,html5,node,git,github,markdown,vuepress,react",
+    "scripts": {
+        "dev": "vuepress dev docs --port 3000",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+    },
+    "devDependencies": {
+        "@vuepress/plugin-docsearch": "^2.0.0-beta.51",
+        "@vuepress/plugin-google-analytics": "^2.0.0-beta.51",
+        "@vuepress/plugin-register-components": "^2.0.0-beta.51",
+        "@vuepress/plugin-search": "^2.0.0-beta.51",
+        "chalk": "^5.0.1",
+        "gray-matter": "^4.0.3",
+        "json2yaml": "^1.1.0",
+        "vuepress": "^2.0.0-beta.51",
+        "@vueuse/core": "^9.2.0",
+        "vuepress-plugin-comment2": "^2.0.0-beta.97",
+        "vuepress-plugin-copy-code2": "^2.0.0-beta.97",
+        "vuepress-plugin-md-enhance": "^2.0.0-beta.97",
+        "vuepress-plugin-photo-swipe": "^2.0.0-beta.97",
+        "vuepress-plugin-reading-time2": "^2.0.0-beta.97",
+        "vuepress-plugin-sitemap2": "^2.0.0-beta.97"
+    },
+    "license": "MIT",
+    "author": "feyoudao.cn",
+    "main": "index.js"
 }

@@ -1,33 +1,34 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.defaultTheme = void 0;
-const plugin_active_header_links_1 = require("@vuepress/plugin-active-header-links");
-const plugin_back_to_top_1 = require("@vuepress/plugin-back-to-top");
-const plugin_container_1 = require("@vuepress/plugin-container");
-const plugin_external_link_icon_1 = require("@vuepress/plugin-external-link-icon");
-const plugin_git_1 = require("@vuepress/plugin-git");
-const plugin_medium_zoom_1 = require("@vuepress/plugin-medium-zoom");
-const plugin_nprogress_1 = require("@vuepress/plugin-nprogress");
-const plugin_palette_1 = require("@vuepress/plugin-palette");
-const plugin_prismjs_1 = require("@vuepress/plugin-prismjs");
-const plugin_theme_data_1 = require("@vuepress/plugin-theme-data");
-const utils_1 = require("@vuepress/utils");
-const utils_2 = require("./utils");
-const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
-    (0, utils_2.assignDefaultLocaleOptions)(localeOptions);
+import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
+import { containerPlugin } from '@vuepress/plugin-container';
+import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon';
+import { gitPlugin } from '@vuepress/plugin-git';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { nprogressPlugin } from '@vuepress/plugin-nprogress';
+import { palettePlugin } from '@vuepress/plugin-palette';
+import { prismjsPlugin } from '@vuepress/plugin-prismjs';
+import { themeDataPlugin } from '@vuepress/plugin-theme-data';
+import { fs, getDirname, path } from '@vuepress/utils';
+import { assignDefaultLocaleOptions, resolveContainerPluginOptions, } from './utils/index.js';
+const __dirname = getDirname(import.meta.url);
+export const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
+    assignDefaultLocaleOptions(localeOptions);
     return {
         name: '@vuepress/theme-default',
-        layouts: utils_1.path.resolve(__dirname, '../client/layouts'),
-        templateBuild: utils_1.path.resolve(__dirname, '../../templates/build.html'),
-        // use alias to make all components replaceable
-        alias: Object.fromEntries(utils_1.fs
-            .readdirSync(utils_1.path.resolve(__dirname, '../client/components'))
-            .filter((file) => file.endsWith('.vue'))
-            .map((file) => [
-            `@theme/${file}`,
-            utils_1.path.resolve(__dirname, '../client/components', file),
-        ])),
-        clientConfigFile: utils_1.path.resolve(__dirname, '../client/config.js'),
+        templateBuild: path.resolve(__dirname, '../../templates/build.html'),
+        alias: {
+            // use alias to make all components replaceable
+            ...Object.fromEntries(fs
+                .readdirSync(path.resolve(__dirname, '../client/components'))
+                .filter((file) => file.endsWith('.vue'))
+                .map((file) => [
+                `@theme/${file}`,
+                path.resolve(__dirname, '../client/components', file),
+            ])),
+            // workaround for https://github.com/vitejs/vite/issues/7621
+            '@vuepress/theme-default/client': path.resolve(__dirname, '../client/index.js'),
+        },
+        clientConfigFile: path.resolve(__dirname, '../client/config.js'),
         extendsPage: (page) => {
             // save relative file path into page data to generate edit link
             page.data.filePathRelative = page.filePathRelative;
@@ -37,7 +38,7 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
         plugins: [
             // @vuepress/plugin-active-header-link
             themePlugins.activeHeaderLinks !== false
-                ? (0, plugin_active_header_links_1.activeHeaderLinksPlugin)({
+                ? activeHeaderLinksPlugin({
                     headerLinkSelector: 'a.sidebar-item',
                     headerAnchorSelector: '.header-anchor',
                     // should greater than page transition duration
@@ -45,33 +46,33 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
                 })
                 : [],
             // @vuepress/plugin-back-to-top
-            themePlugins.backToTop !== false ? (0, plugin_back_to_top_1.backToTopPlugin)() : [],
+            themePlugins.backToTop !== false ? backToTopPlugin() : [],
             // @vuepress/plugin-container
             themePlugins.container?.tip !== false
-                ? (0, plugin_container_1.containerPlugin)((0, utils_2.resolveContainerPluginOptions)(localeOptions, 'tip'))
+                ? containerPlugin(resolveContainerPluginOptions(localeOptions, 'tip'))
                 : [],
             themePlugins.container?.warning !== false
-                ? (0, plugin_container_1.containerPlugin)((0, utils_2.resolveContainerPluginOptions)(localeOptions, 'warning'))
+                ? containerPlugin(resolveContainerPluginOptions(localeOptions, 'warning'))
                 : [],
             themePlugins.container?.danger !== false
-                ? (0, plugin_container_1.containerPlugin)((0, utils_2.resolveContainerPluginOptions)(localeOptions, 'danger'))
+                ? containerPlugin(resolveContainerPluginOptions(localeOptions, 'danger'))
                 : [],
             themePlugins.container?.details !== false
-                ? (0, plugin_container_1.containerPlugin)({
+                ? containerPlugin({
                     type: 'details',
                     before: (info) => `<details class="custom-container details">${info ? `<summary>${info}</summary>` : ''}\n`,
                     after: () => '</details>\n',
                 })
                 : [],
             themePlugins.container?.codeGroup !== false
-                ? (0, plugin_container_1.containerPlugin)({
+                ? containerPlugin({
                     type: 'code-group',
                     before: () => `<CodeGroup>\n`,
                     after: () => '</CodeGroup>\n',
                 })
                 : [],
             themePlugins.container?.codeGroupItem !== false
-                ? (0, plugin_container_1.containerPlugin)({
+                ? containerPlugin({
                     type: 'code-group-item',
                     before: (info) => `<CodeGroupItem title="${info}">\n`,
                     after: () => '</CodeGroupItem>\n',
@@ -79,7 +80,7 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
                 : [],
             // @vuepress/plugin-external-link-icon
             themePlugins.externalLinkIcon !== false
-                ? (0, plugin_external_link_icon_1.externalLinkIconPlugin)({
+                ? externalLinkIconPlugin({
                     locales: Object.entries(localeOptions.locales || {}).reduce((result, [key, value]) => {
                         result[key] = {
                             openInNewWindow: value.openInNewWindow ?? localeOptions.openInNewWindow,
@@ -90,7 +91,7 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
                 : [],
             // @vuepress/plugin-git
             themePlugins.git !== false
-                ? (0, plugin_git_1.gitPlugin)({
+                ? gitPlugin({
                     createdTime: false,
                     updatedTime: localeOptions.lastUpdated !== false,
                     contributors: localeOptions.contributors !== false,
@@ -98,7 +99,7 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
                 : [],
             // @vuepress/plugin-medium-zoom
             themePlugins.mediumZoom !== false
-                ? (0, plugin_medium_zoom_1.mediumZoomPlugin)({
+                ? mediumZoomPlugin({
                     selector: '.theme-default-content > img, .theme-default-content :not(a) > img',
                     zoomOptions: {},
                     // should greater than page transition duration
@@ -106,14 +107,13 @@ const defaultTheme = ({ themePlugins = {}, ...localeOptions } = {}) => {
                 })
                 : [],
             // @vuepress/plugin-nprogress
-            themePlugins.nprogress !== false ? (0, plugin_nprogress_1.nprogressPlugin)() : [],
+            themePlugins.nprogress !== false ? nprogressPlugin() : [],
             // @vuepress/plugin-palette
-            (0, plugin_palette_1.palettePlugin)({ preset: 'sass' }),
+            palettePlugin({ preset: 'sass' }),
             // @vuepress/plugin-prismjs
-            themePlugins.prismjs !== false ? (0, plugin_prismjs_1.prismjsPlugin)() : [],
+            themePlugins.prismjs !== false ? prismjsPlugin() : [],
             // @vuepress/plugin-theme-data
-            (0, plugin_theme_data_1.themeDataPlugin)({ themeData: localeOptions }),
+            themeDataPlugin({ themeData: localeOptions }),
         ],
     };
 };
-exports.defaultTheme = defaultTheme;

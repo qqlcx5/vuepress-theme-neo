@@ -1,13 +1,15 @@
 ---
-title: sortAsc数组升序
+title: sortAsc 数组升序
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - sortAsc
 tags: 
-  - 
+  - sortAsc
+sticky: 8
 ---
-# `sortAsc`数组升序
+# sortAsc 数组升序
 
 返回升序后的新数组
 

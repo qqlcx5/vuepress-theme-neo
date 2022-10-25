@@ -1,13 +1,15 @@
 ---
-title: difference数组差集
+title: difference 两个数组中不包含集合
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - difference
 tags: 
-  - 
+  - difference
+sticky: 1
 ---
-# `difference`
+# difference 两个数组中不包含集合
 
 创建一个具有唯一`array`值的数组，每个值不包含在其他给定的数组中。
 

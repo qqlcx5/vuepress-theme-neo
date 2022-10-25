@@ -1,13 +1,14 @@
 ---
-title: chunk转换二维数组
+title: chunk 拆分数组
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
 tags: 
-  - 
+  - Array
+sticky: 1
 ---
-# `chunk`转换二维数组
+# chunk 拆分数组
 
 将数组（array）拆分成多个子数组，并将这些子数组组成一个新数组。
 

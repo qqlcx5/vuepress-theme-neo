@@ -1,13 +1,14 @@
 ---
-title: uniqueBy数组对象去重
+title: uniqueBy 数组对象去重
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - uniqueBy
 tags: 
-  - 
+  - uniqueBy
 ---
-# `uniqueBy`数组对象去重
+# uniqueBy 数组对象去重
 
 创建一个去重后的 array 数组对象副本
 
@@ -17,8 +18,8 @@ uniqueBy(array)
 
 **参数**
 
--   `array` 要去重的数组
--   `key` 要去重的对象属性值
+- `array` 要去重的数组
+- `key` 要去重的对象属性值
 
 **例子**
 

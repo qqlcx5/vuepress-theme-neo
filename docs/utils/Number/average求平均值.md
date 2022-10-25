@@ -1,13 +1,14 @@
 ---
-title: average求平均值
+title: average 求平均值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - average
 tags: 
-  - 
+  - average
 ---
-# `average`求平均值
+# average 求平均值
 
 ```js
 average(value1, value2, value3)
@@ -15,7 +16,7 @@ average(value1, value2, value3)
 
 **参数**
 
--   `value` 数字
+- `value` 数字
 
 **例子**
 

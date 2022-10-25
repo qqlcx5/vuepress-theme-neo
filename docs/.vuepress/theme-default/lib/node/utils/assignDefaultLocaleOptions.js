@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.assignDefaultLocaleOptions = exports.DEFAULT_LOCALE_DATA = exports.DEFAULT_LOCALE_OPTIONS = void 0;
-exports.DEFAULT_LOCALE_OPTIONS = {
+export const DEFAULT_LOCALE_OPTIONS = {
     // color mode
     colorMode: 'auto',
     colorModeSwitch: true,
@@ -34,14 +31,14 @@ exports.DEFAULT_LOCALE_OPTIONS = {
     toggleColorMode: 'toggle color mode',
     toggleSidebar: 'toggle sidebar',
 };
-exports.DEFAULT_LOCALE_DATA = {
+export const DEFAULT_LOCALE_DATA = {
     // navbar
     selectLanguageName: 'English',
 };
 /**
  * Assign default options
  */
-const assignDefaultLocaleOptions = (localeOptions) => {
+export const assignDefaultLocaleOptions = (localeOptions) => {
     if (!localeOptions.locales) {
         localeOptions.locales = {};
     }
@@ -49,12 +46,11 @@ const assignDefaultLocaleOptions = (localeOptions) => {
         localeOptions.locales['/'] = {};
     }
     Object.assign(localeOptions, {
-        ...exports.DEFAULT_LOCALE_OPTIONS,
+        ...DEFAULT_LOCALE_OPTIONS,
         ...localeOptions,
     });
     Object.assign(localeOptions.locales['/'], {
-        ...exports.DEFAULT_LOCALE_DATA,
+        ...DEFAULT_LOCALE_DATA,
         ...localeOptions.locales['/'],
     });
 };
-exports.assignDefaultLocaleOptions = assignDefaultLocaleOptions;

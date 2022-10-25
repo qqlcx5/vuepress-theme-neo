@@ -1,0 +1,22 @@
+@use 'sass:meta';
+
+html body {
+    box-sizing: border-box;
+}
+// reset code style
+html:not(.dark) {
+    @include meta.load-css('one-light');
+}
+
+html.dark {
+    @include meta.load-css('one-dark');
+}
+
+.theme-default-content pre code,
+.theme-default-content pre[class*='language-'] code {
+    color: var(--code-color);
+}
+
+div[class*='language-'].line-numbers-mode::after {
+    border-right: 1px solid var(--c-border-dark);
+}

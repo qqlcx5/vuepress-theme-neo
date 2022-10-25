@@ -1,5 +1,5 @@
 import { isLinkHttp, removeEndingSlash, removeLeadingSlash, } from '@vuepress/shared';
-import { resolveRepoType } from './resolveRepoType';
+import { resolveRepoType } from './resolveRepoType.js';
 export const editLinkPatterns = {
     GitHub: ':repo/edit/:branch/:path',
     GitLab: ':repo/-/edit/:branch/:path',

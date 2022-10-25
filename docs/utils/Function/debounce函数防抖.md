@@ -1,13 +1,14 @@
 ---
-title: debounce函数防抖
+title: debounce 函数防抖
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Function
+  - debounce
 tags: 
-  - 
+  - debounce
 ---
-# `debounce`函数防抖
+# debounce 函数防抖
 
 在事件被触发 n 秒后再执行回调，如果在这 n 秒内又被触发，则重新计时。
 
@@ -17,12 +18,12 @@ debounce(fn, wait)
 
 **参数**
 
--   `fn` 要防抖动的函数
--   `wait=500`需要延迟的毫秒数
+- `fn` 要防抖动的函数
+- `wait=500`需要延迟的毫秒数
 
 **例子**
 
-```
+```js
 debounce(()=> { console.log('debounce') }, 1000)
 // => 1秒后打印'debounce'
 ```
@@ -47,4 +48,18 @@ const debounce = (function () {
         }, wait)
     }
 })()
+
+// 方式二
+function debounce(fn, delay) {
+    let timeout;
+    return function(...args) {
+      if (delay) {
+        clearTimeout(timeout);
+        timeout = setTimeout(fn, delay, args);
+      } else {
+        fn.apply(this, args);
+      }
+      return delay;
+    };
+  }
 ```

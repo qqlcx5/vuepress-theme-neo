@@ -6,12 +6,12 @@ import Sidebar from '@theme/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { DefaultThemePageFrontmatter } from '../../shared'
+import type { DefaultThemePageFrontmatter } from '../../shared/index.js'
 import {
   useScrollPromise,
   useSidebarItems,
   useThemeLocaleData,
-} from '../composables'
+} from '../composables/index.js'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()

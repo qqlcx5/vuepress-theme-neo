@@ -7,9 +7,9 @@ import type {
   DefaultThemeNormalPageFrontmatter,
   DefaultThemePageData,
   NavLink,
-} from '../../shared'
-import { useThemeLocaleData } from '../composables'
-import { resolveEditLink } from '../utils'
+} from '../../shared/index.js'
+import { useThemeLocaleData } from '../composables/index.js'
+import { resolveEditLink } from '../utils/index.js'
 
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData()

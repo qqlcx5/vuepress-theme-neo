@@ -14,7 +14,7 @@ import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
 import { computed, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
-import type { NavLink } from '../../shared'
+import type { NavLink } from '../../shared/index.js'
 
 const props = defineProps({
   item: {

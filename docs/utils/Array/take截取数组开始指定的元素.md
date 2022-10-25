@@ -1,13 +1,14 @@
 ---
-title: take截取数组开始指定的元素
+title: take 截取数组开始指定的元素
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - take
 tags: 
-  - 
+  - take
 ---
-# `take`截取数组开始指定的元素
+# take 截取数组开始指定的元素
 
 从 array 数组的最开始一个元素开始提取 n 个元素
 
@@ -17,8 +18,8 @@ take(array, n)
 
 **参数**
 
--   `array`要检索的数组。
--   `n=1`要提取的元素`n`个数。
+- `array`要检索的数组。
+- `n=1`要提取的元素`n`个数。
 
 **例子**
 

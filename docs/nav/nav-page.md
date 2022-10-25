@@ -6,8 +6,11 @@ categories:
   - nav
 tags: 
   - 编程导航
+author: 2布兰特·斯克林
+article: false
 ---
 
+# 导航页
 
 ## 搜索引擎
 
@@ -940,4 +943,4 @@ export default {
     };
   },
 }
-</script>>
+</script>

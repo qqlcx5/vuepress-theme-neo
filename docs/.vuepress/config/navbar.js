@@ -1,8 +1,8 @@
-module.exports = [
+export default [
     {
-        text: '导航页',
-        link: '/nav-page/',
-        activeMatch: '^/nav-page/'
+        text: '面试官系列',
+        link: '/interview/JavaScript/BOM',
+        activeMatch: '^/interview/'
     },
     {
         text: '指南',
@@ -20,24 +20,42 @@ module.exports = [
         activeMatch: '^/utils/'
     },
     {
+        text: '导航页',
+        link: '/nav-page/',
+        activeMatch: '^/nav-page/'
+    },
+    {
         text: '影视推荐',
         link: '/movies/',
         activeMatch: '^/movies/'
     },
     {
+        text: '测试用例',
+        link: '/demo/http',
+        activeMatch: '^/demo/'
+    },
+    {
         text: '索引',
         children: [
             {
-                text: '分类',
-                link: '/categories/'
-            },
-            {
                 text: '标签',
-                link: '/tags/'
+                link: '/tags/',
+                activeMatch: '/tags/'
             },
             {
                 text: '归档',
-                link: '/archives/'
+                link: '/archives/',
+                activeMatch: '/archives/'
+            },
+            {
+                text: '分类',
+                link: '/categories/',
+                activeMatch: '/categories/'
+            },
+            {
+                text: '栏目',
+                link: '/columns/',
+                activeMatch: '/columns/'
             }
         ]
     }

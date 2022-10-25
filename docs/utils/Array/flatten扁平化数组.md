@@ -1,13 +1,15 @@
 ---
-title: flatten扁平化数组
+title: flatten 扁平化数组
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - flatten
 tags: 
-  - 
+  - flatten
+sticky: 1
 ---
-# `flatten`扁平化数组
+# flatten 扁平化数组
 
 将多层嵌套数组（array）拆分成一个数组。
 

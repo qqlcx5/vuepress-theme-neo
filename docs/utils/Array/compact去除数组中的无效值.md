@@ -1,13 +1,15 @@
 ---
-title: compact去除数组中的无效值
+title: compact 去除数组中的无效值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - compact
 tags: 
-  - 
+  - compact
+sticky: 1
 ---
-# `compact`去除数组中的无效值
+# compact 去除数组中的无效值
 
 创建一个新数组，包含原数组中所有的非假值元素。例如`false`, `null`,`0`, `""`, `undefined`, 和 `NaN` 都是被认为是“假值”。
 

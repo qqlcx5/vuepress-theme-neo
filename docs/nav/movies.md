@@ -2,15 +2,21 @@
 title: 影视网站推荐
 date: 2022-02-08 19:49:49
 permalink: /movies/
-categories: 
-  - nav
-tags: 
-  - 影视
+categories:
+    - nav
+tags:
+    - 影视
+author:
+    - name: 1布兰特·斯克林
+      url: https://feyoudao.cn
+article: false
 ---
+
+# 影视网站推荐
 
 收集一些免费的影视网站，如果你有更好的网站推荐，可以在评论留言。
 
-### 影视网站
+## 影视网站
 
 <ClientOnly>
     <NavCard :cardData="cardData" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
@@ -63,7 +69,7 @@ export default {
           cardContent:"专为中国用户提供奈飞中文电影的网站",
         },
         {
-          cardSrc: "http://dianying.im/",
+          cardSrc: "http://dianyingim.com",
           cardImgSrc: "https://cdn.jsdelivr.net/gh/imdianying/im@2021032601/statics/images/index-logo.png",
           cardName: "电影先生",
           cardContent:"电影先生聚合全网影片，你想看的全都有！",
@@ -82,7 +88,7 @@ export default {
         },
         {
           cardSrc: "https://www.duboku.tv/",
-          cardImgSrc: "https://www.duboku.tv/template/mytheme/statics/img/logo.png",
+          cardImgSrc: "https://feyoudao.oss-cn-hongkong.aliyuncs.com/logo/logo95.png",
           cardName: "独播库",
           cardContent:"电影,电视剧,动漫,视频网站,高清视频在线看",
         },
@@ -106,7 +112,7 @@ export default {
         },
         {
           cardSrc: "https://dsxys.com/",
-          cardImgSrc: "https://ae01.alicdn.com/kf/U6e42273cc75f48b3bffbc37817f80cf48.jpg",
+          cardImgSrc: "",
           cardName: "大师兄影视",
           cardContent:"免费全球影视资源在线观看的平台",
         },
@@ -150,4 +156,4 @@ export default {
     }
   }
 }
-</script>>
+</script>

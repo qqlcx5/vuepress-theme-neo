@@ -1,0 +1,47 @@
+@use 'vars'; // root变量
+// @use '_variables'; // scss变量
+@use 'border-effect'; // 边框动画
+@use 'scrollbar'; // 滚动条效果
+@use 'code'; // reset code 样式
+@import './variables';
+
+// -------- navbar --------
+.navbar {
+    backdrop-filter: saturate(150%) blur(4px);
+    box-shadow: var(--a-box-shadow);
+    transition: transform 0.2s;
+}
+
+@media (min-width: $MQNarrow) {
+    .theme-container.hide-navbar .navbar {
+        transform: translateY(-100%);
+    }
+    .theme-container.hide-navbar,
+    .theme-container.invert {
+        .navbar {
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: none;
+            border-bottom: 1px solid transparent;
+            span.site-name,
+            .toggle-color-mode-button,
+            .navbar-items .navbar-item > a,
+            .navbar-items .navbar-item span.title {
+                color: #ffffff;
+                &:hover,
+                &:focus {
+                    color: rgba(#ffffff, 0.8);
+                }
+            }
+        }
+    }
+}
+
+.dark-shadow {
+    border-radius: 6px;
+    background-color: var(--c-bg);
+    box-shadow: var(--a-box-shadow);
+    &:hover {
+        box-shadow: var(--a-box-shadow-hover);
+    }
+}

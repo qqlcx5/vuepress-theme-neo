@@ -1,13 +1,14 @@
 ---
-title: aboutEqual约等于
+title: aboutEqual 两个值是否约等于
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Number
+  - aboutEqual
 tags: 
-  - 
+  - aboutEqual
 ---
-# `aboutEqual`两个值是否约等于
+# aboutEqual 两个值是否约等于
 
 传入两个数字是否大致相等，误差在可接受范围内
 

@@ -1,13 +1,15 @@
 ---
-title: max数组中最大值
+title: max 数组中最大值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
+  - max
 tags: 
-  - 
+  - max
+sticky: 1
 ---
-# `max`数组中最大值
+# max 数组中最大值
 
 过滤原数组中所有的非假值元素，返回数组中的最大值
 
@@ -17,7 +19,7 @@ max(array)
 
 **参数**
 
--   `array`待处理的数组
+- `array`待处理的数组
 
 **例子**
 
