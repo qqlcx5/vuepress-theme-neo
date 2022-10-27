@@ -11,7 +11,7 @@ const PREFIX = '/pages/'
  * 给.md文件设置frontmatter(标题、日期、永久链接等数据)
  */
 export function setFrontmatter(files, themeConfig) {
-    const { category: isCategory, tag: isTag, categoryText = '随笔', extendFrontmatter } = themeConfig
+    const { category: isCategory, tag: isTag, column: isColumn, categoryText = '随笔', extendFrontmatter } = themeConfig
     // 扩展自定义生成frontmatter
     const extendFrontmatterStr = extendFrontmatter
         ? jsonToYaml
@@ -48,9 +48,15 @@ export function setFrontmatter(files, themeConfig) {
                     : `
 tags:
   - `
+            const colStr =
+                isColumn === false
+                    ? ''
+                    : `
+columns:
+  - `
             const fmData = `---
 title: ${fileTitle}
-date: ${dateStr}${cateStr}${tagsStr}
+date: ${dateStr}${cateStr}${tagsStr}${colStr}
 ${extendFrontmatterStr}---`
 
             fs.writeFileSync(file.filePath, `${fmData}${os.EOL}${fileMatterObj.content}`) // 写入
@@ -95,6 +101,11 @@ ${extendFrontmatterStr}---`
                 if (isTag !== false && !matterData.hasOwnProperty('tags')) {
                     // 标签
                     matterData.tags = ['']
+                    hasChange = true
+                }
+                if (isColumn !== false && !matterData.hasOwnProperty('columns')) {
+                    // 标签
+                    matterData.columns = ['']
                     hasChange = true
                 }
             }
