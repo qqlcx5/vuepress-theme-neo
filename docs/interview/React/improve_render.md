@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你是如何提高组件的渲染效率的？在React中如何避免不必要的render？
 

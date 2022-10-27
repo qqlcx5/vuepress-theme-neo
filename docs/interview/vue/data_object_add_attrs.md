@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：动态给vue的data添加一个新的属性时会发生什么？怎样解决？
 

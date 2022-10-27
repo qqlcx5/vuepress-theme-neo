@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：JavaScript中执行上下文和执行栈是什么？
 

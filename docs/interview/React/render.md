@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说React render方法的原理？在什么时候会被触发？
 

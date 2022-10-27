@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：JavaScript原型，原型链 ? 有什么特点？
 

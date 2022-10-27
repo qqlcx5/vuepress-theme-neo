@@ -6,6 +6,8 @@ categories:
   - vue3
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？
 

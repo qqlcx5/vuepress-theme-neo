@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：怎么理解回流跟重绘？什么场景下会触发？
 

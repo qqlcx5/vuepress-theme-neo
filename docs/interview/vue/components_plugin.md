@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Vue中组件和插件有什么区别？
 

@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：解释下什么是事件代理？应用场景？
 

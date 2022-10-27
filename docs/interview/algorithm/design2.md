@@ -6,6 +6,8 @@ categories:
   - algorithm
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对贪心算法、回溯算法的理解？应用场景？
 

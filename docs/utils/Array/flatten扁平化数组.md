@@ -8,6 +8,8 @@ categories:
 tags: 
   - flatten
 sticky: 5
+columns: 
+  - 
 ---
 # flatten 扁平化数组
 

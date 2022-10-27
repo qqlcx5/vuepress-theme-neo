@@ -8,6 +8,8 @@ categories:
 tags: 
   - compact
 sticky: 3
+columns: 
+  - 
 ---
 # compact 去除数组中的无效值
 

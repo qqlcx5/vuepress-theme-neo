@@ -1,11 +1,13 @@
 ---
-title: 面试官：Vue.observable你有了解过吗？说说看 
+title: 面试官：Vue.observable你有了解过吗？说说看
 date: 2022-07-04 10:46:56
 categories: 
   - interview
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Vue.observable你有了解过吗？说说看 
 

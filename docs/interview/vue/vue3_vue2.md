@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：vue3有了解过吗？能说说跟vue2的区别吗？
 

@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：深拷贝浅拷贝的区别？如何实现一个深拷贝？
 

@@ -5,6 +5,8 @@ categories:
   - interview
 tags: 
   - null
+columns: 
+  - 
 ---
 
 # 面试官：有使用过 vue 吗？说说你对 vue 的理解

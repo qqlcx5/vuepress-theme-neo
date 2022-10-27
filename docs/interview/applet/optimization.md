@@ -6,6 +6,8 @@ categories:
   - applet
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说提高微信小程序的应用速度的手段有哪些？
 

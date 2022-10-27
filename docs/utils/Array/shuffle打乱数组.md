@@ -8,6 +8,8 @@ categories:
 tags: 
   - shuffle
 sticky: 12
+columns: 
+  - 
 ---
 # shuffle 打乱数组
 

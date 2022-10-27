@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢
 

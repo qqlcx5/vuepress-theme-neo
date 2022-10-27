@@ -7,6 +7,8 @@ categories:
 tags: 
   - clone
 sticky: 2
+columns: 
+  - 
 ---
 # clone 拷贝数组
 

@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Javascript如何实现继承？
 

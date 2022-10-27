@@ -6,6 +6,8 @@ categories:
   - git
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说Git常用的命令有哪些？
 

@@ -6,6 +6,8 @@ categories:
   - algorithm
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对二分查找的理解？如何实现？应用场景？
 

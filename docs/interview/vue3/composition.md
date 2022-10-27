@@ -6,6 +6,8 @@ categories:
   - vue3
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？
 

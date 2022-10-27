@@ -6,6 +6,8 @@ categories:
   - linux
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对操作系统的理解？核心概念有哪些？
 

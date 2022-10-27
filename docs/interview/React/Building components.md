@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：React构建组件的方式有哪些？区别？
 

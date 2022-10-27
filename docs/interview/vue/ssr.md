@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：SSR解决了什么问题？有做过SSR吗？你是怎么做的？
 

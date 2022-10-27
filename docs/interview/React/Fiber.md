@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说对Fiber架构的理解？解决了什么问题？
 

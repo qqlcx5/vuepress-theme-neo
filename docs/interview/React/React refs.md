@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说对React refs 的理解？应用场景？
 

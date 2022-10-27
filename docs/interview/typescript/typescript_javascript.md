@@ -6,6 +6,8 @@ categories:
   - typescript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对 TypeScript 的理解？与 JavaScript 的区别？
 

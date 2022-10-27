@@ -6,6 +6,8 @@ categories:
   - es6
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：ES6中数组新增了哪些扩展？
 

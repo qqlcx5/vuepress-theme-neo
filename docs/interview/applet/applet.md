@@ -6,6 +6,8 @@ categories:
   - applet
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对微信小程序的理解？优缺点？
 

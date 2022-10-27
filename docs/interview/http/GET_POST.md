@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说一下 GET 和 POST 的区别？
 

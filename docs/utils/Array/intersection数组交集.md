@@ -8,6 +8,8 @@ categories:
 tags: 
   - intersection
 sticky: 7
+columns: 
+  - 
 ---
 # intersection 两个数组中的集合
 

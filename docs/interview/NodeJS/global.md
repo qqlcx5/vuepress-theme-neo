@@ -6,6 +6,8 @@ categories:
   - NodeJS
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 Node. js 有哪些全局对象？
 

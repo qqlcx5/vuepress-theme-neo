@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：如何理解UDP 和 TCP? 区别? 应用场景?
 

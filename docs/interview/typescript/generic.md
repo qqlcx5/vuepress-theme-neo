@@ -6,6 +6,8 @@ categories:
   - typescript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对 TypeScript 中泛型的理解？应用场景？
 

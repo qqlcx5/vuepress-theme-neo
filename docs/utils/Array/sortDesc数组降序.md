@@ -7,6 +7,8 @@ categories:
   - sortDesc
 tags: 
   - sortDesc
+columns: 
+  - 
 ---
 # sortDesc 数组降序
 

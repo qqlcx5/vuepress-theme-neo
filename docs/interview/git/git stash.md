@@ -6,6 +6,8 @@ categories:
   - git
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对git stash 的理解？应用场景？
 

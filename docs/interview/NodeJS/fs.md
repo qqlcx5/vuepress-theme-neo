@@ -6,6 +6,8 @@ categories:
   - NodeJS
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说对 Node 中的 fs模块的理解? 有哪些常用方法
 

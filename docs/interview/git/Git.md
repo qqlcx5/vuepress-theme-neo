@@ -6,6 +6,8 @@ categories:
   - git
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对Git的理解？
 

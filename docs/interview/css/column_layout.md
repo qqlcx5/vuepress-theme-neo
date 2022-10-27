@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？
 

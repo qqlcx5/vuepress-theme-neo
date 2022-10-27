@@ -6,6 +6,8 @@ categories:
   - typescript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说对 TypeScript 中命名空间与模块的理解？区别？
 

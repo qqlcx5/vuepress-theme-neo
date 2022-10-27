@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对BOM的理解，常见的BOM对象你了解哪些？
 

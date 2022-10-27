@@ -6,6 +6,8 @@ categories:
   - linux
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对 shell 的理解？常见的命令？
 

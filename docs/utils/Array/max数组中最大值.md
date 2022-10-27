@@ -8,6 +8,8 @@ categories:
 tags: 
   - max
 sticky: 9
+columns: 
+  - 
 ---
 # max 数组中最大值
 

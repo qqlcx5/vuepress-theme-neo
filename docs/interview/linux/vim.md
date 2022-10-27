@@ -6,6 +6,8 @@ categories:
   - linux
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 linux 系统下 文本编辑常用的命令有哪些？
 

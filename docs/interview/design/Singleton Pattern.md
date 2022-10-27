@@ -6,6 +6,8 @@ categories:
   - design
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对单例模式的理解？如何实现？
 

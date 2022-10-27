@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：vue要做权限管理该怎么做？如果控制到按钮级别的权限怎么做？
 

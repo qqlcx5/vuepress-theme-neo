@@ -8,6 +8,8 @@ categories:
 tags: 
   - flattenDeep
 sticky: 6
+columns: 
+  - 
 ---
 # flattenDeep 指定层级扁平化数组
 

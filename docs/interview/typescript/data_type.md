@@ -6,6 +6,8 @@ categories:
   - typescript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 typescript 的数据类型有哪些？
 

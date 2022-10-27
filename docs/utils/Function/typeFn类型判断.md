@@ -7,6 +7,8 @@ categories:
   - typeFn
 tags: 
   - typeFn
+columns: 
+  - 
 ---
 # typeFn 判断类型
 

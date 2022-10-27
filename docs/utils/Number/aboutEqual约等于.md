@@ -7,6 +7,8 @@ categories:
   - aboutEqual
 tags: 
   - aboutEqual
+columns: 
+  - 
 ---
 # aboutEqual 两个值是否约等于
 

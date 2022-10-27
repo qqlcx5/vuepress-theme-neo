@@ -6,6 +6,8 @@ categories:
   - typescript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说如何在 React 项目中应用 TypeScript？
 

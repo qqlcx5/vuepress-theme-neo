@@ -7,6 +7,8 @@ categories:
   - averageBy
 tags: 
   - averageBy
+columns: 
+  - 
 ---
 # averageBy 求数组对象平均值
 

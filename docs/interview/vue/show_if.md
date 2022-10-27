@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：v-show和v-if有什么区别？使用场景分别是什么？
 

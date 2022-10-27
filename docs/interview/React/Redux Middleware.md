@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说对Redux中间件的理解？常用的中间件有哪些？实现原理？
 

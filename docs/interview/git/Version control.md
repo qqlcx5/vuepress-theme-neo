@@ -6,6 +6,8 @@ categories:
   - git
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对版本管理的理解？常用的版本管理工具有哪些？
 

@@ -1,11 +1,13 @@
 ---
 title: 面试官：说说微信小程序的实现原理？
 date: 2022-07-04 10:46:56
-categories:
-    - interview
-    - applet
-tags:
-    - null
+categories: 
+  - interview
+  - applet
+tags: 
+  - null
+columns: 
+  - 
 ---
 # 面试官：说说微信小程序的实现原理？
 

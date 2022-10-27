@@ -7,6 +7,8 @@ categories:
   - take
 tags: 
   - take
+columns: 
+  - 
 ---
 # take 截取数组开始指定的元素
 

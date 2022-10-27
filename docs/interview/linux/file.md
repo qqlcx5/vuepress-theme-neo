@@ -6,6 +6,8 @@ categories:
   - linux
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 linux系统下 文件操作常用的命令有哪些？
 

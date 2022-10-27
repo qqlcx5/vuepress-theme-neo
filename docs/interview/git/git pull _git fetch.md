@@ -6,6 +6,8 @@ categories:
   - git
 tags: 
   - null
+columns: 
+  - 
 ---
 # 说说对git pull 和 git fetch 的理解？有什么区别？
 

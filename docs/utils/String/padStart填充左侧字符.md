@@ -7,6 +7,8 @@ categories:
   - padStart
 tags: 
   - padStart
+columns: 
+  - 
 ---
 # padStart填充左侧字符
 

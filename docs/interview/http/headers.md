@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 HTTP 常见的请求头有哪些? 作用？
 

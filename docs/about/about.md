@@ -5,6 +5,8 @@ categories:
   - about
 tags: 
   - 关于
+columns: 
+  - 
 ---
 # 关于 - 我
 

@@ -6,6 +6,8 @@ categories:
   - es6
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说var、let、const之间的区别
 

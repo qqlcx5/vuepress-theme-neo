@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 

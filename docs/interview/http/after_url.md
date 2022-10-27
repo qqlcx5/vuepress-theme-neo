@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说地址栏输入 URL 敲下回车后发生了什么?
 

@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：如何理解CDN？说说实现原理？
 

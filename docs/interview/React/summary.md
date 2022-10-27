@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你在使用React 过程中遇到的常见问题？如何解决?
 

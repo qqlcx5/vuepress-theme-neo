@@ -6,6 +6,8 @@ categories:
   - algorithm
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对图的理解？相关操作有哪些？
 

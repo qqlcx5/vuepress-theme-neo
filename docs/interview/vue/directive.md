@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？
 

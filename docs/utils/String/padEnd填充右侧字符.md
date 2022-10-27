@@ -7,6 +7,8 @@ categories:
   - padEnd
 tags: 
   - padEnd
+columns: 
+  - 
 ---
 # padEnd填充右侧字符
 

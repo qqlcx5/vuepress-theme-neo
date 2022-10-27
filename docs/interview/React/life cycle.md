@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？
 

@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：CSS如何画一个三角形？原理是什么？
 

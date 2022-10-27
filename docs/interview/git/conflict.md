@@ -6,6 +6,8 @@ categories:
   - git
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 git 发生冲突的场景？如何解决？
 

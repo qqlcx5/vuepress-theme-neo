@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：DNS协议 是什么？说说DNS 完整的查询过程?
 

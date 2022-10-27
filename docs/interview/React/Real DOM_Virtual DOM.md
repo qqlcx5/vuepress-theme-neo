@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说 Real DOM 和 Virtual DOM 的区别？优缺点？
 

@@ -6,6 +6,8 @@ categories:
   - linux
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对输入输出重定向和管道的理解？应用场景？
 

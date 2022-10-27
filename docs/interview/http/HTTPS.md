@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：为什么说HTTPS比HTTP安全? HTTPS是如何保证安全的？
 

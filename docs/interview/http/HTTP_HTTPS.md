@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：什么是HTTP? HTTP 和 HTTPS 的区别?
 

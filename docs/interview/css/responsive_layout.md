@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：什么是响应式设计？响应式设计的基本原理是什么？如何做？
 

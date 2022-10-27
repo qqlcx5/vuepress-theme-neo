@@ -6,6 +6,8 @@ categories:
   - NodeJS
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说对Nodejs中的事件循环机制理解?
 

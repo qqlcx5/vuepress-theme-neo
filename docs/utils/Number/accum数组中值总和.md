@@ -7,6 +7,8 @@ categories:
   - accum
 tags: 
   - accum
+columns: 
+  - 
 ---
 # accum 数组中值总和
 

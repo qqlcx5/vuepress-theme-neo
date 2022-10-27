@@ -7,6 +7,8 @@ categories:
 tags: 
   - Array
 sticky: 1
+columns: 
+  - 
 ---
 # chunk 拆分数组
 

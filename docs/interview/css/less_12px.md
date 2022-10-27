@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：让Chrome支持小于12px 的文字方式有哪些？区别？
 

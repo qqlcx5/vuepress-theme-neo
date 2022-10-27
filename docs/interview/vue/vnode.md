@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：什么是虚拟DOM？如何实现一个虚拟DOM？说说你的思路
 

@@ -6,6 +6,8 @@ categories:
   - vue3
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Vue3.0的设计目标是什么？做了哪些优化
 

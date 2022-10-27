@@ -8,6 +8,8 @@ categories:
 tags: 
   - isArrayEqual
 sticky: 8
+columns: 
+  - 
 ---
 # isArrayEqual 两个数组各项相等
 

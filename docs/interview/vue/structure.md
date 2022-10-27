@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说下你的vue项目的目录结构，如果是大型项目你该怎么划分结构和划分组件呢？
 

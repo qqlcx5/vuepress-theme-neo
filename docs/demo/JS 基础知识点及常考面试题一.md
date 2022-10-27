@@ -5,6 +5,8 @@ categories:
   - demo
 tags: 
   - null
+columns: 
+  - 
 ---
 # JS 基础知识点及常考面试题一
 

@@ -5,6 +5,8 @@ categories:
   - demo
 tags: 
   - null
+columns: 
+  - 
 ---
 # ES6 知识点及常考面试题
 

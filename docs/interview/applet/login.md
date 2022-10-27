@@ -6,6 +6,8 @@ categories:
   - applet
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说微信小程序的登录流程？
 

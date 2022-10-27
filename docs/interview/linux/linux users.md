@@ -6,6 +6,8 @@ categories:
   - linux
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对 linux 用户管理的理解？相关的命令有哪些？
 

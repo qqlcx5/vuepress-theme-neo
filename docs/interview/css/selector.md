@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：css选择器有哪些？优先级？哪些属性可以继承？
 

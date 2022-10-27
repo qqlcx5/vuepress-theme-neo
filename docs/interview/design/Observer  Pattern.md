@@ -6,6 +6,8 @@ categories:
   - design
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对发布订阅、观察者模式的理解？区别？
 

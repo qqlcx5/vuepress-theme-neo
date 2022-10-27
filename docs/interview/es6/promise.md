@@ -1,11 +1,13 @@
 ---
-title:  面试官：你是怎么理解ES6中 Promise的？使用场景？
+title: 面试官：你是怎么理解ES6中 Promise的？使用场景？
 date: 2022-07-04 10:46:56
 categories: 
   - interview
   - es6
 tags: 
   - null
+columns: 
+  - 
 ---
 #  面试官：你是怎么理解ES6中 Promise的？使用场景？
 

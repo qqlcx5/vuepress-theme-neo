@@ -8,6 +8,8 @@ categories:
 tags: 
   - difference
 sticky: 4
+columns: 
+  - 
 ---
 # difference 两个数组中不包含集合
 

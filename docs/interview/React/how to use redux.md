@@ -6,6 +6,8 @@ categories:
   - React
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：你在React项目中是如何使用Redux的? 项目结构是如何划分的？
 

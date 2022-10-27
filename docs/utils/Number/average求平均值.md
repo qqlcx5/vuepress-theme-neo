@@ -7,6 +7,8 @@ categories:
   - average
 tags: 
   - average
+columns: 
+  - 
 ---
 # average 求平均值
 

@@ -1,11 +1,13 @@
 ---
-title: 面试官：说说你对vue的mixin的理解，有什么应用场景？ 
+title: 面试官：说说你对vue的mixin的理解，有什么应用场景？
 date: 2022-07-04 10:46:56
 categories: 
   - interview
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对vue的mixin的理解，有什么应用场景？ 
 

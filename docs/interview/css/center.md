@@ -6,6 +6,8 @@ categories:
   - css
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？
 

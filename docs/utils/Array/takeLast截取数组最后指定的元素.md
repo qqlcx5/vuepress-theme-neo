@@ -7,6 +7,8 @@ categories:
   - takeLast
 tags: 
   - takeLast
+columns: 
+  - 
 ---
 # takeLast 截取数组末尾元素
 

@@ -6,6 +6,8 @@ categories:
   - NodeJS
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说Node中的EventEmitter? 如何实现一个EventEmitter?
 

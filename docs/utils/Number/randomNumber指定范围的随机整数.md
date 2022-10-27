@@ -7,6 +7,8 @@ categories:
   - randomNumber
 tags: 
   - randomNumber
+columns: 
+  - 
 ---
 # randomNumber 指定范围的随机整数
 

@@ -6,6 +6,8 @@ categories:
   - http
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说HTTP 常见的状态码有哪些，适用场景？
 

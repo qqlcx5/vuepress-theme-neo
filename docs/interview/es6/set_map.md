@@ -6,6 +6,8 @@ categories:
   - es6
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：你是怎么理解ES6新增Set、Map两种数据结构的？
 

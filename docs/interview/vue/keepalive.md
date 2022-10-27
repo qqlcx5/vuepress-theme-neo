@@ -6,6 +6,8 @@ categories:
   - vue
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：说说你对keep-alive的理解是什么？
 ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9nSDMxdUY5VklpYlRaSXdpY3ZmUkR3STRiamRBVGlhVEpFZDNzamRoeTd3MDlVM0k5ZERjNUVVSUNFVk1WSVE2aDFYMjVpY1NRT3lraWFwWEpEUFM0VGJST0l3LzY0MA?x-oss-process=image/format,png)

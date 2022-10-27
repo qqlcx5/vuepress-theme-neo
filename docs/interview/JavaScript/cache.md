@@ -6,6 +6,8 @@ categories:
   - JavaScript
 tags: 
   - null
+columns: 
+  - 
 ---
 # 面试官：Javascript本地存储的方式有哪些？区别及应用场景？
 

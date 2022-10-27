@@ -8,6 +8,8 @@ categories:
 tags: 
   - min
 sticky: 10
+columns: 
+  - 
 ---
 
 # min 数组中最大值
