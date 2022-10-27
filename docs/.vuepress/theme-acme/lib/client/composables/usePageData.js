@@ -7,8 +7,9 @@ export const groupPostsSymbol = Symbol('groupPosts');
 export const categoriesAndTagsSymbol = Symbol('categoriesAndTags');
 
 export const setupPageData = () => {
+    const temPagesData = JSON.parse(JSON.stringify(pagesData))
     const sortPosts_ = computed(() => sortPosts(pagesData))
-    const sortPostsByDate_ = computed(() => sortPostsByDate(pagesData))
+    const sortPostsByDate_ = computed(() => sortPostsByDate(temPagesData))
     const groupPosts_ = computed(() => groupPosts(sortPosts_.value))
     const categoriesAndTags_ = computed(() => categoriesAndTags(groupPosts_.value))
     provide('sortPostsSymbol', sortPosts_)

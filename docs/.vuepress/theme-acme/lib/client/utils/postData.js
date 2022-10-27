@@ -21,7 +21,7 @@ export function sortPosts(posts) {
         const prevSticky = prev.frontmatter.sticky
         const nextSticky = next.frontmatter.sticky
         if (prevSticky && nextSticky) {
-            return prevSticky == nextSticky ? compareDate(prev, next) : prevSticky - nextSticky
+            return prevSticky == nextSticky ? compareDate(prev, next) :  nextSticky - prevSticky
         } else if (prevSticky && !nextSticky) {
             return -1
         } else if (!prevSticky && nextSticky) {
