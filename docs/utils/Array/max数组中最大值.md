@@ -1,5 +1,5 @@
 ---
-title: max 数组中最大值
+title: max 数组中最大值 sticky 9
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -7,7 +7,7 @@ categories:
   - max
 tags: 
   - max
-sticky: 1
+sticky: 9
 ---
 # max 数组中最大值
 

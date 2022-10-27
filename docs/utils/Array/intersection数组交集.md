@@ -1,5 +1,5 @@
 ---
-title: intersection 两个数组中的集合
+title: intersection 两个数组中的集合 sticky 7
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -7,7 +7,7 @@ categories:
   - intersection
 tags: 
   - intersection
-sticky: 1
+sticky: 7
 ---
 # intersection 两个数组中的集合
 

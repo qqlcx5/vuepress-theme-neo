@@ -1,5 +1,5 @@
 ---
-title: sortAsc 数组升序
+title: sortAsc 数组升序 sticky 13
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -7,7 +7,7 @@ categories:
   - sortAsc
 tags: 
   - sortAsc
-sticky: 8
+sticky: 13
 ---
 # sortAsc 数组升序
 

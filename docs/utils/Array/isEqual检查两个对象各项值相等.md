@@ -1,5 +1,5 @@
 ---
-title: isEqual 检查两个对象各项值相等
+title: isEqual 检查两个对象各项值相等 sticky 11
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -7,7 +7,7 @@ categories:
   - isEqual
 tags: 
   - isEqual
-sticky: 2
+sticky: 11
 ---
 # isEqual 检查两个对象各项值相等
 

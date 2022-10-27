@@ -129,9 +129,9 @@ export default {
             countByYear,
             getYear,
             getDate,
-            sortPostsByDateSymbol,
             themeData,
-            currentBadge
+            currentBadge,
+            sortPostsByDateSymbol
         }
     }
 }

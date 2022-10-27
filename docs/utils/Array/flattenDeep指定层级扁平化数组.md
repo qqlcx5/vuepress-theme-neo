@@ -1,5 +1,5 @@
 ---
-title: flattenDeep 指定层级扁平化数组
+title: flattenDeep 指定层级扁平化数组 sticky 6
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -7,7 +7,7 @@ categories:
   - flattenDeep
 tags: 
   - flattenDeep
-sticky: 1
+sticky: 6
 ---
 # flattenDeep 指定层级扁平化数组
 

@@ -1,5 +1,5 @@
 ---
-title: flatten 扁平化数组
+title: flatten 扁平化数组 sticky 5
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -7,7 +7,7 @@ categories:
   - flatten
 tags: 
   - flatten
-sticky: 1
+sticky: 5
 ---
 # flatten 扁平化数组
 

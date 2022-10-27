@@ -1,13 +1,13 @@
 ---
-title: difference 两个数组中不包含集合
-date: 2022-06-15 17:20:46
+title: difference 两个数组中不包含集合 sticky 4
+date: 2022-10-16 17:20:46
 categories: 
   - utils
   - Array
   - difference
 tags: 
   - difference
-sticky: 1
+sticky: 4
 ---
 # difference 两个数组中不包含集合
 

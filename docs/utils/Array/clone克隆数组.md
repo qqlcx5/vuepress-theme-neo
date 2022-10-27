@@ -1,12 +1,12 @@
 ---
-title: clone 拷贝数组
+title: clone 拷贝数组 sticky 2
 date: 2022-06-15 17:20:46
 categories: 
   - utils
   - Array
 tags: 
   - clone
-sticky: 1
+sticky: 2
 ---
 # clone 拷贝数组
 
