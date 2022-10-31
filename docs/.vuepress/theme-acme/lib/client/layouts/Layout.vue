@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-ignore
-import Home from '@theme/Home.vue'
+import Blog from '@theme/Blog.vue'
 // @ts-ignore
 import ArticlesPage from '@theme/ArticlesPage.vue'
 // @ts-ignore
@@ -177,7 +177,7 @@ const onBeforeLeave = scrollPromise.pending
 
         <slot name="page">
             <!-- 首页 -->
-            <Home v-if="frontmatter.home" />
+            <Blog v-if="frontmatter.home" />
             <!-- 文章 -->
             <ArticlesPage v-else-if="frontmatter.articlesPage" />
             <!-- 分类 -->
