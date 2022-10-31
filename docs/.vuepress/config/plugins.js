@@ -83,10 +83,10 @@ export default [
         indexName: '9d972c785b0197e79df852a925cbfe88',
         locales: {
             '/': {
-                placeholder: 'Search Documentation',
+                placeholder: '搜索文档 docs',
                 translations: {
                     button: {
-                        buttonText: 'Search Documentation'
+                        buttonText: '搜索文档'
                     }
                 }
             },
