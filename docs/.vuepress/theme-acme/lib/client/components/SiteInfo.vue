@@ -62,7 +62,7 @@
 <script>
 import { onMounted, ref, inject } from 'vue'
 import { dayDiff, timeDiff } from '../utils/index.js'
-import busuanzi from '../composables/busuanzi'
+import busuanzi from '../composables/ownbusuanzi'
 import { useThemeLocaleData } from '../composables/index.js'
 
 export default {
