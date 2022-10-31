@@ -1,7 +1,7 @@
 import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 import { defaultTheme } from '@vuepress/theme-default'
-import { createPageFile, setFrontmatter, assignLocaleOptions } from './utils/index'
+import { createPageFile, setFrontmatter, assignLocaleOptions, readTotalFileWords,formatWordCount, readTime } from './utils/index'
 export const acmeTheme = (localeOptions = {}) => {
     assignLocaleOptions(localeOptions)
     return {
@@ -18,22 +18,24 @@ export const acmeTheme = (localeOptions = {}) => {
             let sourceDir = app.dir.source()
             // 创建分类标签归档文件页面
             createPageFile(sourceDir, localeOptions)
-            const pageMap = app.pages
-                .map(page => ({
-                    data: page.data,
-                    title: page.title || '',
-                    description: page.excerpt || '',
-                    frontmatter: page.frontmatter || {},
-                    author: page.frontmatter.author || localeOptions.author || '',
-                    path: page.path,
-                    permalink: page.permalink,
-                    filePath: page.filePath,
-                    filePathRelative: page.filePathRelative
-                }))
-                .filter(page => !!page.filePathRelative && !page.frontmatter['home'] && page.frontmatter.article !== false)
+            const usefulPages = app.pages.filter(page => !!page.filePathRelative && !page.frontmatter['home'] && page.frontmatter.article !== false)
+            const pagesMap = usefulPages.map(page => ({
+                title: page.title || '',
+                description: page.excerpt || '',
+                data: page.data || {},
+                frontmatter: page.frontmatter || {},
+                author: page.frontmatter.author || localeOptions.author || '',
+                path: page.path,
+                permalink: page.permalink,
+                filePath: page.filePath, // 绝对路径
+                filePathRelative: page.filePathRelative, // 相对路径
+                ...formatWordCount(page.content)
+            }))
             // 所有.md文件设置frontmatter(标题、日期)
-            setFrontmatter(pageMap, localeOptions)
-            await app.writeTemp(`theme-acme/pagesData.js`, `export default ${JSON.stringify(pageMap)}`)
+            setFrontmatter(pagesMap, localeOptions)
+            // 所有文章总字数
+            const allWordCount = readTotalFileWords(usefulPages)
+            await app.writeTemp(`theme-acme/pagesData.js`, `export const allWordCount = ${JSON.stringify(allWordCount)}; export const pagesData = ${JSON.stringify(pagesMap)}`)
         },
         clientConfigFile: path.resolve(__dirname, '../client/config.js'),
         templateDev: path.resolve(__dirname, '../../templates/build.html'),
