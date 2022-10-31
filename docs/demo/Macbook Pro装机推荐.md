@@ -12,7 +12,7 @@ columns:
 
 ## Why
 
-最近偶然见看到[苹果键盘维修计划](https://support.apple.com/zh-cn/keyboard-service-program-for-mac-notebooks)，正好我的笔记本符合条件，于是我就申请售后，免费更换新的键盘和电池，不过由于我的系统装了`13 Ventura beta`版，维修时告知需要回退系统到`12 monterey`，导致我的软件不得已重新安装。
+最近偶然间看到[苹果键盘维修计划](https://support.apple.com/zh-cn/keyboard-service-program-for-mac-notebooks)，我的笔记本符合条件，于是我就申请售后更换了新的键盘和电池，不过由于我的系统装了`13 Ventura beta`版，维修时告知需要回退系统到`12 monterey`，导致我的软件需要重新安装。
 
 > 若有好的 App / 开发工具推荐，欢迎评论~
 
