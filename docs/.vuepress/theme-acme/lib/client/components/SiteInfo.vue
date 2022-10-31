@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { onMounted, ref, inject, watch } from 'vue'
+import { onMounted, ref, inject } from 'vue'
 import { dayDiff, timeDiff } from '../utils/index.js'
 import busuanzi from '../composables/busuanzi'
 import { useThemeLocaleData } from '../composables/index.js'
@@ -71,7 +71,6 @@ export default {
         let mdFileCount = ref(0) // markdown 文档总数
         let createToNowDay = ref(0) // 博客创建时间距今多少天
         let lastActiveDate = ref('') // 最后活动时间
-        let indexView = ref(true) // 开启访问量和排名统计
         let totalWords = inject('allWordCountSymbol') // 本站总字数
         const sortPostsSymbol = inject('sortPostsSymbol').value
         const sortPostsByDateSymbol = inject('sortPostsByDateSymbol').value
@@ -87,8 +86,7 @@ export default {
             mdFileCount,
             createToNowDay,
             lastActiveDate,
-            totalWords,
-            indexView
+            totalWords
         }
     }
 }
