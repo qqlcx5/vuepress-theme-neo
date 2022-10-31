@@ -41,14 +41,14 @@ export function compareDate(a, b) {
 }
 
 /**
- * 计算最后活动时间
+ * 计算最后活动时间 sortPostsByDate 函数一致 
  */
-export function lastUpdatePosts(posts) {
-    posts.sort((prev, next) => {
-        return compareDate(prev, next)
-    })
-    return posts
-}
+// export function lastUpdatePosts(posts) {
+//     posts.sort((prev, next) => {
+//         return compareDate(prev, next)
+//     })
+//     return posts
+// }
 
 /**
  * 获取两个日期相差多少天
