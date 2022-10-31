@@ -81,16 +81,24 @@ export default [
     docsearchPlugin({
         apiKey: 'VUE9LSPBO8',
         indexName: '9d972c785b0197e79df852a925cbfe88',
+        indexName: 'acme',
         locales: {
             '/': {
-                placeholder: '搜索文档 docs',
+                placeholder: 'Search',
                 translations: {
                     button: {
                         buttonText: '搜索文档'
                     }
                 }
             },
-        }
+        },
+        startUrls: [
+            'https://acme.feyoudao.cn'
+        ],
+        sitemaps: [
+            'https://acme.feyoudao.cn/sitemap.xml'
+        ],
+        schedule: 'at 02:00 every 1 day',
     }),
     commentPlugin({
         // provider: 'Waline',
