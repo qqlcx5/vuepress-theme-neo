@@ -79,8 +79,8 @@ export default [
     //     }
     // }),
     docsearchPlugin({
-        apiKey: 'VUE9LSPBO8',
-        indexName: '9d972c785b0197e79df852a925cbfe88',
+        appId: 'VUE9LSPBO8',
+        apiKey: '9d972c785b0197e79df852a925cbfe88',
         indexName: 'acme',
         locales: {
             '/': {
@@ -101,9 +101,10 @@ export default [
         schedule: 'at 02:00 every 1 day',
     }),
     commentPlugin({
-        // provider: 'Waline',
-        // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
-        // serverURL: 'https://vuepress-waline-psi.vercel.app/'
+        provider: 'Waline',
+        emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
+        serverURL: 'https://vuepress-waline-psi.vercel.app/'
+        
         // provider: 'Twikoo',
         // envId: 'https://twikoo-qqlcx5.vercel.app/',
     }),
