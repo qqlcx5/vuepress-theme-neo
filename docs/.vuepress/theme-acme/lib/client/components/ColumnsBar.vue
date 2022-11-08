@@ -1,7 +1,7 @@
 <template>
     <div class="columns-wrapper dark-shadow">
-        <RouterLink to="/columns/" class="columns-title" title="栏目">
-            栏目
+        <RouterLink to="/columns/" class="columns-title" title="专栏">
+            专栏
         </RouterLink>
         <div class="columns">
             <RouterLink :to="`/columns/?column=${encodeURIComponent(item.key)}`" v-for="(item, index) in columns" :key="index" :class="{ active: item.key === column }">

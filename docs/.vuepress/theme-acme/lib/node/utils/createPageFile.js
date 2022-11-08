@@ -32,7 +32,7 @@ article: false
     } else if (page.indexOf('column') > -1) {
         content = `---
 columnsPage: true
-title: 栏目
+title: 专栏
 permalink: /columns/
 article: false
 ---`

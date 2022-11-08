@@ -53,7 +53,7 @@ export default [
                 activeMatch: '/categories/'
             },
             {
-                text: '栏目',
+                text: '专栏',
                 link: '/columns/',
                 activeMatch: '/columns/'
             }

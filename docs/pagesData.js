@@ -148,11 +148,11 @@
     "data": {
         "key": "v-9cff642a",
         "path": "/columns/",
-        "title": "栏目",
+        "title": "专栏",
         "lang": "zh-CN",
         "frontmatter": {
             "columnsPage": true,
-            "title": "栏目",
+            "title": "专栏",
             "permalink": "/columns/",
             "article": false,
             "date": "2022-10-24T11:24:47.000Z"
@@ -164,7 +164,7 @@
         },
         "filePathRelative": "@pages/columnsPage.md"
     },
-    "title": "栏目",
+    "title": "专栏",
     "description": "",
     "author": {
         "name": "星野",
@@ -172,7 +172,7 @@
     },
     "frontmatter": {
         "columnsPage": true,
-        "title": "栏目",
+        "title": "专栏",
         "permalink": "/columns/",
         "article": false,
         "date": "2022-10-24T11:24:47.000Z"

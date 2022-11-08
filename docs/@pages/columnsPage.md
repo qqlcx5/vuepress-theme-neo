@@ -1,6 +1,6 @@
 ---
 columnsPage: true
-title: 栏目
+title: 专栏
 permalink: /columns/
 article: false
 ---

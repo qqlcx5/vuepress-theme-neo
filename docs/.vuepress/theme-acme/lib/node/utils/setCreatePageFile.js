@@ -10,7 +10,7 @@ export function createPageFile(sourceDir, themeConfig) {
     } else {
         deletePage(sourceDir, 'categoriesPage')
     }
-    // 创建栏目页文件
+    // 创建专栏页文件
     if (themeConfig.column !== false) {
         createPage(sourceDir, 'columnsPage')
     } else {
