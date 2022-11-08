@@ -98,6 +98,7 @@ export default {
     line-height: 1.1;
     margin-top: 0.75rem;
     padding: 0.75rem 0;
+    user-select: none;
 
     &__title {
         color: #333;

@@ -47,7 +47,8 @@ export default {
         const buttons = new Map([
             // ["article", 'acme-wenzhang'],
             ['category', 'acme-all'],
-            ['tag', 'acme-biaoqian5']
+            ['tag', 'acme-biaoqian5'],
+            ['cloumn', 'acme-lanmuleibie']
         ])
 
         const themeLocale = useThemeLocaleData()
