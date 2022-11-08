@@ -7,14 +7,11 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - 小程序
 ---
 # 面试官：说说微信小程序的登录流程？
 
-
-
  ![](https://static.vue-js.com/aa3ccbd0-3428-11ec-8e64-91fdec0f05a1.png)
-
 
 ## 一、背景
 
@@ -29,10 +26,6 @@ columns:
 - 调用`wx.login()`方法会生成`code`，将`code`作为参数传递给微信服务器指定接口，就可以获取用户的`openid`
 
 对于每个小程序，微信都会将用户的微信`ID`映射出一个小程序 `openid`，作为这个用户在这个小程序的唯一标识
-
-
-
-
 
 ## 二、流程
 
@@ -55,10 +48,6 @@ columns:
 
  ![](https://static.vue-js.com/c3cfbb70-3428-11ec-8e64-91fdec0f05a1.png)
 
-
-
-
-
 ## 三、扩展
 
 实际业务中，我们还需要登录态是否过期，通常的做法是在登录态（临时令牌）中保存有效期数据，该有效期数据应该在服务端校验登录态时和约定的时间（如服务端本地的系统时间或时间服务器上的标准时间）做对比
@@ -74,10 +63,8 @@ columns:
 
  ![](https://static.vue-js.com/8b446d30-349d-11ec-a752-75723a64e8f5.png)
 
-
-
 ## 参考文献
 
-- https://segmentfault.com/a/1190000016750340
-- https://juejin.cn/post/6955754095860776973
-- https://www.cnblogs.com/zwh0910/p/13977278.html
+- <https://segmentfault.com/a/1190000016750340>
+- <https://juejin.cn/post/6955754095860776973>
+- <https://www.cnblogs.com/zwh0910/p/13977278.html>

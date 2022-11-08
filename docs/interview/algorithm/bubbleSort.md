@@ -7,12 +7,11 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - 算法
 ---
 # 面试官：说说你对冒泡排序的理解？如何实现？应用场景？
 
  ![](https://static.vue-js.com/6f5e0850-2652-11ec-a752-75723a64e8f5.png)
-
 
 ## 一、是什么
 
@@ -80,8 +79,6 @@ function bubbleSort(arr) {
 
 而在每轮排序中都需要对相邻的两个元素进行比较，在最坏的情况下，每次比较之后都需要交换位置，此时时间复杂度为`O(n^2)`
 
-
-
 ### 优化
 
 对冒泡排序常见的改进方法是加入一标志性变量`exchange`，用于标志某一趟排序过程中是否有数据交换
@@ -113,17 +110,14 @@ function bubbleSort1(arr){
 
 并且从上述比较中看到，只有后一个元素比前面的元素大（小）时才会对它们交换位置并向上冒出，对于同样大小的元素，是不需要交换位置的，所以对于同样大小的元素来说，相对位置是不会改变的，因此， 冒泡排序是稳定的
 
-
-
-
-
 ## 三、应用场景
+
 冒泡排的核心部分是双重嵌套循环，
 时间复杂度是 O(N 2 )，相比其它排序算法，这是一个相对较高的时间复杂度，一般情况不推荐使用，由于冒泡排序的简洁性，通常被用来对于程序设计入门的学生介绍算法的概念
 
 ## 参考文献
 
-- https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/4602306
-- https://www.runoob.com/w3cnote/bubble-sort.html
-- http://data.biancheng.net/view/116.html
-- https://dsb123dsb.github.io/2017/03/07/js%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8C%96/
+- <https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/4602306>
+- <https://www.runoob.com/w3cnote/bubble-sort.html>
+- <http://data.biancheng.net/view/116.html>
+- <https://dsb123dsb.github.io/2017/03/07/js%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8C%96/>

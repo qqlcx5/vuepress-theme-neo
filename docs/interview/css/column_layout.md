@@ -7,7 +7,7 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - css
 ---
 # 面试官：如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？
 
@@ -29,8 +29,6 @@ columns:
 
 这种布局适用于内容上具有明显主次关系的网页
 
-
-
 ### 三栏布局
 
 三栏布局按照左中右的顺序进行排列，通常中间列最宽，左右两列次之
@@ -38,8 +36,6 @@ columns:
 大家最常见的就是`github`：
 
  ![](https://static.vue-js.com/0bf016e0-976f-11eb-ab90-d9ae814b240d.png)
-
-
 
 ## 二、两栏布局
 
@@ -78,8 +74,6 @@ columns:
 
 还有一种更为简单的使用则是采取：flex弹性布局
 
-
-
 ### flex弹性布局
 
 ```html
@@ -106,7 +100,6 @@ columns:
 
 这个属性导致了列等高的效果。 为了让两个盒子高度自动，需要设置: `align-items: flex-start`
 
-
 ## 三、三栏布局
 
 实现三栏布局中间自适应的布局方式有：
@@ -117,8 +110,6 @@ columns:
 - display: table 实现
 - flex实现
 - grid网格布局
-
-
 
 ### 两边使用 float，中间使用 margin
 
@@ -171,8 +162,6 @@ columns:
 - 主体内容是最后加载的。
 
 - 右边在主体内容之前，如果是响应式设计，不能简单的换行展示
-
-
 
 ### 两边使用 absolute，中间使用 margin
 
@@ -227,10 +216,6 @@ columns:
 - 左右两边使用绝对定位，固定在两侧。
 - 中间占满一行，但通过 margin和左右两边留出10px的间隔
 
-
-
-
-
 ### 两边使用 float 和负 margin
 
 ```html
@@ -280,14 +265,10 @@ columns:
 - 左边通过使用负 margin-left:-100%，相当于中间的宽度，所以向上偏移到左侧
 - 右边通过使用负 margin-left:-100px，相当于自身宽度，所以向上偏移到最右侧
 
- 
-
 缺点：
 
 - 增加了 .main-wrapper 一层，结构变复杂
 - 使用负 margin，调试也相对麻烦
-
-
 
 ### 使用 display: table 实现
 
@@ -335,10 +316,6 @@ columns:
 - 层通过 display: table设置为表格，设置 table-layout: fixed`表示列宽自身宽度决定，而不是自动计算。
 - 内层的左中右通过 display: table-cell设置为表格单元。
 - 左右设置固定宽度，中间设置 width: 100% 填充剩下的宽度
-
-
-
-
 
 ### 使用flex实现
 
@@ -394,8 +371,6 @@ columns:
 - 结构简单直观
 - 可以结合 flex的其他功能实现更多效果，例如使用 order属性调整显示顺序，让主体内容优先加载，但展示在中间
 
-
-
 ### grid网格布局
 
 代码如下：
@@ -437,6 +412,6 @@ columns:
 
 ## 参考文献
 
-- https://zhuqingguang.github.io/2017/08/16/adapting-two-layout/
+- <https://zhuqingguang.github.io/2017/08/16/adapting-two-layout/>
 
-- https://segmentfault.com/a/1190000008705541
+- <https://segmentfault.com/a/1190000008705541>

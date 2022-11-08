@@ -7,7 +7,7 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - 小程序
 ---
 # 面试官：说说微信小程序的发布流程？
 
@@ -25,10 +25,6 @@ columns:
 
  ![](https://static.vue-js.com/fe5da190-3652-11ec-8e64-91fdec0f05a1.png)
 
-
-
-
-
 ## 二、流程
 
 关于发布的流程，主要分成了三个部分：
@@ -36,8 +32,6 @@ columns:
 - 上传代码
 - 提交审核
 - 发布版本
-
-
 
 ### 上传代码
 
@@ -50,8 +44,6 @@ columns:
  ![](https://static.vue-js.com/1d02c8f0-3653-11ec-a752-75723a64e8f5.png)
 
 然后点击上传，编译器则会提示上传代码成功
-
-
 
 ### 提交审核
 
@@ -77,8 +69,6 @@ columns:
 
  ![](https://static.vue-js.com/5293b4c0-3653-11ec-8e64-91fdec0f05a1.png)
 
-
-
 ## 三、扩展
 
 上述是最简单的小程序代码发布的流程，通常的流程如下：
@@ -97,8 +87,7 @@ columns:
 
  ![](https://static.vue-js.com/602d9bf0-3653-11ec-a752-75723a64e8f5.png)
 
-
 ## 参考文献
 
-- https://juejin.cn/post/6994414162700927012
-- https://www.leapcloud.cn/website/docs/doc_config/xiaochengxu/xiaochengxu.html
+- <https://juejin.cn/post/6994414162700927012>
+- <https://www.leapcloud.cn/website/docs/doc_config/xiaochengxu/xiaochengxu.html>

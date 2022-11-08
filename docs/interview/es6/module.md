@@ -7,13 +7,11 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - ES6
 ---
 # 面试官：你是怎么理解ES6中Module的？使用场景？
 
  ![](https://static.vue-js.com/b6d19be0-5adb-11eb-ab90-d9ae814b240d.png)
-
-
 
 ## 一、介绍
 
@@ -45,7 +43,6 @@ columns:
 - AMD (典型代表：require.js)
 - CMD (典型代表：sea.js)
 
-
 ### AMD
 
 `Asynchronous ModuleDefinition`（AMD），异步模块定义，采用异步方式加载模块。所有依赖模块的语句，都定义在一个回调函数中，等到模块加载完成之后，这个回调函数才会运行
@@ -68,8 +65,6 @@ require(["jquery","underscore"],function($,_){
 });
 ```
 
-
-
 ### CommonJs
 
 `CommonJS` 是一套 `Javascript` 模块规范，用于服务端
@@ -89,12 +84,11 @@ const { foo,bar } = require('./a.js')
 - 模块在首次执行后就会缓存，再次加载只返回缓存结果，如果想要再次执行，可清除缓存
 - `require`返回的值是被输出的值的拷贝，模块内部的变化也不会影响这个值
 
-
 既然存在了`AMD`以及`CommonJs`机制，`ES6`的`Module`又有什么不一样？
 
-ES6 在语言标准的层面上，实现了`Module`，即模块功能，完全可以取代 `CommonJS `和 `AMD `规范，成为浏览器和服务器通用的模块解决方案
+ES6 在语言标准的层面上，实现了`Module`，即模块功能，完全可以取代 `CommonJS`和 `AMD`规范，成为浏览器和服务器通用的模块解决方案
 
-`CommonJS` 和` AMD` 模块，都只能在运行时确定这些东西。比如，`CommonJS `模块就是对象，输入时必须查找对象属性
+`CommonJS` 和`AMD` 模块，都只能在运行时确定这些东西。比如，`CommonJS`模块就是对象，输入时必须查找对象属性
 
 ```javascript
 // CommonJS模块
@@ -118,8 +112,6 @@ import { stat, exists, readFile } from 'fs';
 
 由于编译加载，使得静态分析成为可能。包括现在流行的`typeScript`也是依靠静态分析实现功能
 
-
-
 ## 二、使用
 
 `ES6`模块内部自动采用了严格模式，这里就不展开严格模式的限制，毕竟这是`ES5`之前就已经规定好
@@ -128,8 +120,6 @@ import { stat, exists, readFile } from 'fs';
 
 - `export`：用于规定模块的对外接口
 - `import`：用于输入其他模块提供的功能
-
-
 
 ### export
 
@@ -170,8 +160,6 @@ export {
   v2 as streamLatestVersion
 };
 ```
-
-
 
 ### import
 
@@ -266,8 +254,6 @@ import customName from './export-default';
 customName(); // 'foo'
 ```
 
-
-
 ### 动态加载
 
 允许您仅在需要时动态加载模块，而不必预先加载所有模块，这存在明显的性能优势
@@ -280,8 +266,6 @@ import('/modules/myModule.mjs')
     // Do something with the module.
   });
 ```
-
-
 
 ### 复合写法
 
@@ -296,8 +280,6 @@ export { foo, bar };
 ```
 
 同理能够搭配`as`、`*`搭配使用
-
-
 
 ## 三、使用场景
 
@@ -328,7 +310,7 @@ export default {
 function App() {
   return (
     <div className="App">
-		组件化开发 ---- 模块化
+  组件化开发 ---- 模块化
     </div>
   );
 }
@@ -339,5 +321,6 @@ export default App;
 包括完成一些复杂应用的时候，我们也可以拆分成各个模块
 
 ## 参考文献
-- https://macsalvation.net/the-history-of-js-module/
-- https://es6.ruanyifeng.com/#docs/module
+
+- <https://macsalvation.net/the-history-of-js-module/>
+- <https://es6.ruanyifeng.com/#docs/module>

@@ -7,7 +7,7 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - ES6
 ---
 # 面试官：你是怎么理解ES6中 Decorator 的？使用场景？
 
@@ -54,8 +54,6 @@ soldier.AK // true
 
 - 代码可读性变强了，装饰器命名相当于一个注释
 - 在不改变原有代码情况下，对原来功能进行扩展
-
-
 
 ## 二、用法
 
@@ -113,8 +111,6 @@ class MyClass {}
 MyClass.isTestable // false
 ```
 
-
-
 ### 类属性的装饰
 
 当对类属性进行装饰的时候，能够接受三个参数：
@@ -168,8 +164,6 @@ class Example {
 
 外层装饰器`@dec(1)`先进入，但是内层装饰器`@dec(2)`先执行
 
-
-
 ### 注意
 
 装饰器不能用于修饰函数，因为函数存在变量声明情况
@@ -204,8 +198,6 @@ add = function () {
 ```
 
 意图是执行后`counter`等于 1，但是实际上结果是`counter`等于 0
-
-
 
 ## 三、使用场景
 
@@ -247,11 +239,9 @@ let obj = new MyClass();
 obj.foo() // "foo"
 ```
 
-
-
 下面再讲讲`core-decorators.js`几个常见的装饰器
 
-#### @antobind
+### @antobind
 
 `autobind`装饰器使得方法中的`this`对象，绑定原始对象
 
@@ -272,8 +262,6 @@ getPerson() === person;
 // true
 ```
 
-
-
 #### @readonly
 
 `readonly`装饰器使得属性或方法不可写
@@ -290,10 +278,6 @@ var dinner = new Meal();
 dinner.entree = 'salmon';
 // Cannot assign to read only property 'entree' of [object Object]
 ```
-
-
-
-
 
 #### @deprecate
 
@@ -320,8 +304,6 @@ person.facepalmHard();
 
 ```
 
-
-
 ## 参考文献
 
-- https://es6.ruanyifeng.com/#docs/decorator
+- <https://es6.ruanyifeng.com/#docs/decorator>

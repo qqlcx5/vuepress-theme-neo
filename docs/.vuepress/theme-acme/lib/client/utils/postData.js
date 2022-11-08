@@ -21,7 +21,7 @@ export function sortPosts(posts) {
         const prevSticky = prev.frontmatter.sticky
         const nextSticky = next.frontmatter.sticky
         if (prevSticky && nextSticky) {
-            return prevSticky == nextSticky ? compareDate(prev, next) :  nextSticky - prevSticky
+            return prevSticky == nextSticky ? compareDate(prev, next) : nextSticky - prevSticky
         } else if (prevSticky && !nextSticky) {
             return -1
         } else if (!prevSticky && nextSticky) {
@@ -50,37 +50,38 @@ export function sortPostsByDate(posts) {
 export function groupPosts(posts) {
     const categoriesObj = {}
     const tagsObj = {}
+    const columnsObj = {}
 
     for (let i = 0, postsL = posts.length; i < postsL; i++) {
         const {
-            frontmatter: { categories, tags }
+            frontmatter: { categories, tags, columns }
         } = posts[i]
         if (typeOf(categories) === 'array') {
             categories.forEach(item => {
-                if (item) {
-                    // 分类值是有效的
-                    if (!categoriesObj[item]) {
-                        categoriesObj[item] = []
-                    }
-                    categoriesObj[item].push(posts[i])
-                }
+                if (!item) return
+                !categoriesObj[item] && (categoriesObj[item] = [])
+                categoriesObj[item].push(posts[i])
             })
         }
         if (typeOf(tags) === 'array') {
             tags.forEach(item => {
-                if (item) {
-                    // 标签值是有效的
-                    if (!tagsObj[item]) {
-                        tagsObj[item] = []
-                    }
-                    tagsObj[item].push(posts[i])
-                }
+                if (!item) return
+                !tagsObj[item] && (tagsObj[item] = [])
+                tagsObj[item].push(posts[i])
+            })
+        }
+        if (typeOf(columns) === 'array') {
+            columns.forEach(item => {
+                if (!item) return
+                !columnsObj[item] && (columnsObj[item] = [])
+                columnsObj[item].push(posts[i])
             })
         }
     }
     return {
         categories: categoriesObj,
-        tags: tagsObj
+        tags: tagsObj,
+        columns: columnsObj
     }
 }
 
@@ -91,6 +92,7 @@ export function groupPosts(posts) {
 export function categoriesAndTags(groupPosts) {
     const categoriesArr = []
     const tagsArr = []
+    const columnsArr = []
 
     for (let key in groupPosts.categories) {
         categoriesArr.push({
@@ -105,8 +107,15 @@ export function categoriesAndTags(groupPosts) {
             length: groupPosts.tags[key].length
         })
     }
+    for (let key in groupPosts.columns) {
+        columnsArr.push({
+            key,
+            length: groupPosts.columns[key].length
+        })
+    }
     return {
         categories: categoriesArr,
-        tags: tagsArr
+        tags: tagsArr,
+        columns: columnsArr
     }
 }
