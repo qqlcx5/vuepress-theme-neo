@@ -13,7 +13,6 @@
                 @getCurrentPage="handlePagination"
                 v-show="Math.ceil(total / perPage) > 1"
             />
-            <NoData showImg="false" />
         </template>
     </BlogLayout>
 </template>
@@ -22,15 +21,11 @@
 import BlogLayout from '@theme/BlogLayout.vue'
 import PostList from '@theme/PostList.vue'
 import Pagination from '@theme/Pagination.vue'
-import CategoriesBar from '@theme/CategoriesBar.vue'
-import ArticleBar from '@theme/ArticleBar.vue'
-import NoData from '@theme/NoData.vue'
-import BloggerInfo from '@theme/BloggerInfo.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
-    components: { BlogLayout, PostList, Pagination, BloggerInfo, NoData, CategoriesBar, ArticleBar },
+    components: { BlogLayout, PostList, Pagination},
     setup() {
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value

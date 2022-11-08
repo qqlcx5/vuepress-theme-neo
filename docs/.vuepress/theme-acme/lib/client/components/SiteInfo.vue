@@ -2,7 +2,7 @@
     <div class="site-info dark-shadow">
         <div class="site-info__title">
             <AIcon name="acme-wangzhan" />
-            站点信息
+            本站信息
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">

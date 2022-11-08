@@ -70,16 +70,17 @@ export default {
         color: var(--c-bg);
         transition: transform 0.25s ease-in-out 0.08s, opacity 0.25s ease-in-out 0.04s;
         transform: translateY(0px);
-        justify-content: flex-start;
-        // text-align: justify;
+        transition: transform 0.25s ease-in-out 0.04s, opacity 0.25s ease-in-out 0.04s;
+        // justify-content: flex-start;
+        text-align: justify;
         a {
             opacity: 0.8;
             display: inline-block;
-            padding: 0.2rem 0.3rem;
+            padding: 0.26rem 0.46rem;
             transition: all 0.4s;
             background-color: var(--textColor);
             color: var(--c-bg);
-            border-radius: 3px;
+            border-radius: 6px;
             // margin: 0 0.5rem 0.8rem 0;
             margin: 0.3rem;
             min-width: 2rem;

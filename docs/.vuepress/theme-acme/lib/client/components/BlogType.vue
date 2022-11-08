@@ -1,6 +1,6 @@
 <template>
-    <div class="articles-wrapper dark-shadow">
-        <div class="blog-type-wrapper">
+    <div class="blog-type-wrapper dark-shadow">
+        <div class="blog-type">
             <button
                 v-for="[key, icon] of buttons"
                 :key="key"
@@ -30,6 +30,11 @@
             :tagsData="categoriesAndTagsSymbol.tags"
             :tag="tag"
         />
+        <ColumnsBar
+            v-show="buttonsType === 'cloumn'"
+            :columnsData="categoriesAndTagsSymbol.columns"
+            :column="column"
+        />
     </div>
 </template>
 
@@ -37,18 +42,19 @@
 import { onMounted, ref, computed, inject, watch, nextTick, onBeforeUnmount } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 import CategoriesBar from '@theme/CategoriesBar.vue'
+import ColumnsBar from '@theme/ColumnsBar.vue'
 import TagsBar from '@theme/TagsBar.vue'
 import { useRoute, useRouter } from 'vue-router'
 
 export default {
-    components: { CategoriesBar, TagsBar },
+    components: { CategoriesBar, TagsBar, ColumnsBar },
     props: {},
     setup(props) {
         const buttons = new Map([
             // ["article", 'acme-wenzhang'],
             ['category', 'acme-all'],
             ['tag', 'acme-biaoqian5'],
-            ['cloumn', 'acme-lanmuleibie']
+            ['cloumn', 'acme-listhandle']
         ])
 
         const themeLocale = useThemeLocaleData()
@@ -112,9 +118,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.articles-wrapper {
+.blog-type-wrapper {
     margin-top: 0.75rem;
-    .blog-type-wrapper {
+    .blog-type {
         display: flex;
         justify-content: center;
         align-items: center;

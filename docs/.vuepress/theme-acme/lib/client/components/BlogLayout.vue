@@ -8,7 +8,7 @@
                 <slot name="content-right">
                     <BloggerInfo />
                     <SiteInfo />
-                    <ArticleBar />
+                    <BlogType />
                 </slot>
             </aside>
         </div>
@@ -16,10 +16,10 @@
 </template>
 <script>
 import SiteInfo from '@theme/SiteInfo.vue'
-import ArticleBar from '@theme/ArticleBar.vue'
+import BlogType from '@theme/BlogType.vue'
 import BloggerInfo from '@theme/BloggerInfo.vue'
 export default {
-    components: { SiteInfo, BloggerInfo, ArticleBar },
+    components: { SiteInfo, BloggerInfo, BlogType },
 }
 </script>
 <style lang="scss" scoped>

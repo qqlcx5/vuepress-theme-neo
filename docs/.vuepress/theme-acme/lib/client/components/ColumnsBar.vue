@@ -1,16 +1,14 @@
 <template>
-    <div class="categories-wrapper dark-shadow">
-        <RouterLink to="/categories/" class="categories-title" title="分类">
-            <!-- <AIcon name="acme-gengduo1" size="18" /> -->
-            <!-- {{ length === 'all' ? `分类` : '分类' }} -->
-            分类
+    <div class="columns-wrapper dark-shadow">
+        <RouterLink to="/columns/" class="columns-title" title="栏目">
+            栏目
         </RouterLink>
-        <div class="categories">
-            <RouterLink :to="`/categories/?category=${encodeURIComponent(item.key)}`" v-for="(item, index) in categories" :key="index" :class="{ active: item.key === category }">
+        <div class="columns">
+            <RouterLink :to="`/columns/?column=${encodeURIComponent(item.key)}`" v-for="(item, index) in columns" :key="index" :class="{ active: item.key === column }">
                 {{ item.key }}
-                <span class="categories__num">{{ item.length }}</span>
+                <span class="columns__num">{{ item.length }}</span>
             </RouterLink>
-            <RouterLink to="/categories/" v-if="length !== 'all' && length < categoriesData.length">更多 ...</RouterLink>
+            <RouterLink to="/columns/" v-if="length !== 'all' && length < columnsData.length">更多 ...</RouterLink>
         </div>
     </div>
 </template>
@@ -19,11 +17,11 @@
 import { computed } from 'vue'
 export default {
     props: {
-        category: {
+        column: {
             type: String,
             default: ''
         },
-        categoriesData: {
+        columnsData: {
             type: Array,
             default: []
         },
@@ -33,18 +31,18 @@ export default {
         }
     },
     setup(props) {
-        const categories = computed(() => {
-            return props.length === 'all' ? props.categoriesData : props.categoriesData.slice(0, props.length)
+        const columns = computed(() => {
+            return props.length === 'all' ? props.columnsData : props.columnsData.slice(0, props.length)
         })
-        return { categories }
+        return { columns }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.categories-wrapper {
+.columns-wrapper {
     padding-bottom: 0.5rem;
-    .categories-title {
+    .columns-title {
         padding: 0.68rem 0.68rem 0.68rem 0.95rem;
         color: var(--c-text);
         font-size: 1rem;
@@ -52,8 +50,8 @@ export default {
         display: flex;
         align-items: center;
     }
-    .categories {
-        // padding: 0.4rem 0;
+    .columns {
+        // padding: 0.3rem 0;
         a {
             display: block;
             opacity: 0.8;
