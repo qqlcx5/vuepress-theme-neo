@@ -52,8 +52,8 @@ export default {
     setup(props) {
         const buttons = new Map([
             // ["article", 'acme-wenzhang'],
-            ['category', 'acme-all'],
-            ['tag', 'acme-biaoqian5'],
+            ['category', 'acme-sort1'],
+            ['tag', 'acme-localoffer'],
             ['cloumn', 'acme-listhandle']
         ])
 

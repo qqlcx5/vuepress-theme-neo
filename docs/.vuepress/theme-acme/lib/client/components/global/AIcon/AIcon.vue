@@ -54,7 +54,7 @@ export default defineComponent({
         customStyle: {
             type: [Object, Boolean],
             default: () => {
-                return { marginRight: '0.2em' }
+                return { }
             }
         },
 

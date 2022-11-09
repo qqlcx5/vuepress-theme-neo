@@ -17,11 +17,11 @@ import Page from '@theme/Page.vue'
 import Navbar from '@vuepress/theme-default/components/Navbar.vue'
 // @ts-ignore
 import Sidebar from '@vuepress/theme-default/components/Sidebar.vue'
+import { useEventListener, useDebounceFn } from '@vueuse/core'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { DefaultThemePageFrontmatter } from '../../shared'
-import { useEventListener, useDebounceFn } from '@vueuse/core'
 import {
     useScrollPromise,
     useSidebarItems,

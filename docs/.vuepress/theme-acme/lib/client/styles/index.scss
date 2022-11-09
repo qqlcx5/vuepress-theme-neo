@@ -1,6 +1,8 @@
 @use 'vars'; // root变量
 @use 'border-effect'; // 边框动画
 @use 'scrollbar'; // 滚动条效果
+@use 'gap'; // gap样式
+@use 'flex'; // flex样式
 @use 'code'; // reset code 样式
 @import './variables'; // scss变量
 

@@ -15,16 +15,17 @@ export default acmeTheme({
     editLinkPattern: ':repo/edit/:branch/:path',
     sidebarDepth: 0,
     // acme主题配置项
-    bolgCreateAt: '2022-06-01', // 博客创建时间
-    category: true,
-    tag: true,
-    archive: true,
+    bolgCreateAt: '2020-01-01', // 博客创建时间
+    category: true, // 是否开启分类
+    tag: true, // 是否开启标签
+    column: true, // 是否开启专栏
+    archive: true, // 是否开启归档
     blog: {
-        name: 'vueprss-theme-acme',
-        roundAvatar: true,
-        intro: 'https://feyoudao.cn',
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
-        description: 'A blog theme for VuePress2.x'
+        name: 'Star Field',
+        intro: 'https://feyoudao.cn', // 个人简介
+        roundAvatar: true, // 头像是否圆形
+        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png', // 头像
+        description: 'この星は燃え尽きることはない。'
     },
     author: {
         name: '星野',
@@ -32,6 +33,7 @@ export default acmeTheme({
     },
     contentStyle: 'style1', // 内容风格
     contentBackground: '#fff', // 内容背景
+    contentImages: [], // 内容背景图片
     // header images information
     homeHeaderInfo: {
         name: 'Star Field',
@@ -40,9 +42,7 @@ export default acmeTheme({
     },
     // header images on home page
     homeHeaderImages: [
-        {
-            path: 'https://blog.zxh.io/img/home-bg/5.jpg'
-        }
+        { path: 'https://blog.zxh.io/img/home-bg/5.jpg' }
         // {
         //     path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/1.jpg',
         //     mask: 'rgba(40, 57, 101, .3)'
