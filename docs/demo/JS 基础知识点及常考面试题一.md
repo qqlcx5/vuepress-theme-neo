@@ -10,6 +10,10 @@ columns:
 ---
 # JS 基础知识点及常考面试题一
 
+> ## Excerpt
+>
+> web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。
+
 JS 对于每位前端开发都是必备技能，在小册中我们也会有多个章节去讲述这部分的知识。首先我们先来熟悉下 JS 的一些常考和容易混乱的基础知识点。
 
 ## 更新日志
