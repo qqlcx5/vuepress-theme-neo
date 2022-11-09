@@ -9,7 +9,7 @@
     </svg>
     <i
         v-else
-        class="acme a-icon"
+        class="acme acme-icon"
         :class="[name]"
         :style="[iconStyle_]"
     />
@@ -81,7 +81,7 @@ export default defineComponent({
             String(props.color) !== 'false' && (styleObj.color = props.color)
             // 组件动画
             rotate_.value && (styleObj.transform = isNaN(props.rotate) ? `rotate(${props.rotate})` : `rotate(${props.rotate}deg)`)
-            props.spin && (styleObj.animation = `a-spin ${props.spinSpeed}s linear infinite`)
+            props.spin && (styleObj.animation = `acme-spin ${props.spinSpeed}s linear infinite`)
             return Object.assign(styleObj, props.customStyle)
         })
         return {
@@ -94,7 +94,7 @@ export default defineComponent({
 </script>
 <style>
 /* 旋转动画 */
-@keyframes a-spin {
+@keyframes acme-spin {
     from {
         transform: rotate(0deg);
     }
@@ -104,7 +104,7 @@ export default defineComponent({
 }
 </style>
 <style lang="scss" scoped>
-.a-icon {
+.acme-icon {
     position: relative;
     display: inline-block;
     font-size: inherit;

@@ -1,9 +1,8 @@
 @use 'vars'; // root变量
-// @use '_variables'; // scss变量
 @use 'border-effect'; // 边框动画
 @use 'scrollbar'; // 滚动条效果
 @use 'code'; // reset code 样式
-@import './variables';
+@import './variables'; // scss变量
 
 // -------- navbar --------
 .navbar {

@@ -16,7 +16,7 @@
             >
                 <img
                     class="hero-avatar hide-on-mobile no-zoom"
-                    :src="withBase(personalInfo.avatar)"
+                    :src="withBase(homeHeaderInfo.avatar)"
                     alt="hero"
                     @mouseover="fetchHitokoto"
                 />
@@ -32,9 +32,9 @@
                 </div>
 
                 <div class="hero-info">
-                    <h1>{{ personalInfo.name }}</h1>
+                    <h1>{{ homeHeaderInfo.name }}</h1>
                     <p class="description">
-                        {{ personalInfo.description }}
+                        {{ homeHeaderInfo.description }}
                     </p>
                 </div>
                 <button
@@ -185,7 +185,7 @@ const bgImageMask = computed(() => {
 
 // -------- Other configs --------
 
-const personalInfo = themeLocale.value.personalInfo
+const homeHeaderInfo = themeLocale.value.homeHeaderInfo
 </script>
 <style lang="scss" scoped>
 @import '../styles/_variables';
@@ -214,8 +214,8 @@ const personalInfo = themeLocale.value.personalInfo
 
         .hero-content {
             z-index: 2;
-            width: 36%;
-            max-width: 500px;
+            // width: 36%;
+            max-width: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -263,7 +263,7 @@ const personalInfo = themeLocale.value.personalInfo
 
                 &__body {
                     min-width: 150px;
-                    max-width: 250px;
+                    max-width: 260px;
                     min-height: 80px;
                     background: rgba(0, 0, 0, 0.5);
                     border-radius: 10px;
@@ -333,10 +333,6 @@ const personalInfo = themeLocale.value.personalInfo
                 border: none;
                 outline: none;
                 transition: 0.6s ease;
-
-                svg.ov-icon {
-                    width: 20px;
-                }
 
                 &:hover {
                     color: white;

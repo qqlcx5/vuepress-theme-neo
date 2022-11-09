@@ -112,11 +112,6 @@ import { useRoute, useRouter } from 'vue-router'
 import { useThemeData } from '../composables/index.js'
 export default {
     props: {
-        mode: {
-            // category, tag, article column
-            type: String,
-            default: 'category'
-        },
         // 分类关键字
         category: {
             type: String,
@@ -124,6 +119,10 @@ export default {
         },
         // 标签关键字
         tag: {
+            type: String,
+            default: ''
+        },
+        column: {
             type: String,
             default: ''
         },
@@ -166,16 +165,17 @@ export default {
             handleSetPosts()
         })
         // 分类和标签
-        watch([() => props.category, () => props.tag], ([category, tag], [prevCategory, prevTag]) => {
+        watch([() => props.category, () => props.tag, () => props.column], ([category, tag, column], [prevCategory, prevTag, prevColumn]) => {
             handleSetPosts()
         })
         function handleSetPosts() {
             const currentPage = props.currentPage
             const perPage = props.perPage
-            let type = props.category ? 'categories' : 'tags'
-            let queryKeyword = props.category || props.tag
+            const [category, tag, column] = [props.category, props.tag, props.column]
+            const type = category && 'categories' || tag && 'tags' || column && 'columns'
+            const queryKeyword = category || tag || column || ''
             // 文章全部展示 分类和标签隐藏数据 
-            let postsData = queryKeyword ? groupPostsSymbol[type][queryKeyword] : sortPostsSymbol
+            let postsData = queryKeyword && type ? groupPostsSymbol[type][queryKeyword] : sortPostsSymbol
             sortPosts.value = postsData.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min

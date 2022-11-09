@@ -10,6 +10,8 @@ import TagsPage from '@theme/TagsPage.vue'
 // @ts-ignore
 import ArchivesPage from '@theme/ArchivesPage.vue'
 // @ts-ignore
+import ColumnsPage from '@theme/ColumnsPage.vue'
+// @ts-ignore
 import Page from '@theme/Page.vue'
 // @ts-ignore
 import Navbar from '@vuepress/theme-default/components/Navbar.vue'
@@ -186,6 +188,8 @@ const onBeforeLeave = scrollPromise.pending
             <TagsPage v-else-if="frontmatter.tagsPage" />
             <!-- 归档 -->
             <ArchivesPage v-else-if="frontmatter.archivesPage" />
+            <!-- 专栏 -->
+            <ColumnsPage v-else-if="frontmatter.columnsPage" />
 
             <Transition
                 v-else

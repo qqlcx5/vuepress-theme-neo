@@ -32,26 +32,28 @@ export default acmeTheme({
     },
     contentStyle: 'style1', // 内容风格
     contentBackground: '#fff', // 内容背景
-    // personal information
-    personalInfo: {
-        name: 'vueprss-theme-acme',
+    // header images information
+    homeHeaderInfo: {
+        name: 'Star Field',
         avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
-        description: 'A blog theme for VuePress2.x'
+        description: 'いつか、私がヒトじゃなくなっても、この星は燃え尽きることはない。'
     },
-
     // header images on home page
     homeHeaderImages: [
         {
-            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/1.jpg',
-            mask: 'rgba(40, 57, 101, .3)'
-        },
-        {
-            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/62.jpg',
-            mask: 'rgb(40, 170, 152, .3)'
-        },
-        {
-            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
-            mask: 'rgba(40, 75, 50, .3)'
+            path: 'https://blog.zxh.io/img/home-bg/5.jpg'
         }
+        // {
+        //     path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/1.jpg',
+        //     mask: 'rgba(40, 57, 101, .3)'
+        // },
+        // {
+        //     path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/62.jpg',
+        //     mask: 'rgb(40, 170, 152, .3)'
+        // },
+        // {
+        //     path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
+        //     mask: 'rgba(40, 75, 50, .3)'
+        // }
     ]
 } as DefaultThemeOptions)

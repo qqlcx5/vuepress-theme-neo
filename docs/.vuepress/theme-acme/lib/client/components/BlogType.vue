@@ -67,13 +67,15 @@ export default {
 
         let category = ref(null)
         let tag = ref(null)
-        let buttonsType = ref('category')
+        let column = ref(null)
+        let buttonsType = ref('')
         const route = useRoute()
         const router = useRouter()
 
         onMounted(() => {
-            let { category = '', tag = '' } = route.query
-            refreshTotal(category, tag)
+            let { category = '', tag = '', column } = route.query
+            refreshTotal(category, tag, column)
+            !buttonsType.value && (buttonsType.value = pageType.value)
 
             // 滚动条定位到当前分类（增强用户体验）
             const cateEl = document.querySelector('.articles-wrapper .categories')
@@ -86,18 +88,26 @@ export default {
             }
         })
 
-        watch([() => route.query.category, () => route.query.tag], ([category, tag], [prevCategory, prevTag]) => {
-            refreshTotal(category, tag)
+        watch([() => route.query.category, () => route.query.tag, () => route.query.column], ([category, tag, column], [prevCategory, prevTag, prevColumn]) => {
+            refreshTotal(category, tag, column)
         })
-
-        function refreshTotal(queryCategory, queryTag, p = 1) {
+        const pageType = computed(() => {
+            const typeMap = {
+                '/categories/': 'category',
+                '/tags/': 'tag',
+                '/columns/': 'cloumn'
+            }
+            return typeMap[route.path] || 'category'
+        })
+        function refreshTotal(queryCategory, queryTag, queryColumn, p = 1) {
             category.value = queryCategory ? decodeURIComponent(queryCategory) : ''
             tag.value = queryTag ? decodeURIComponent(queryTag) : ''
+            column.value = queryColumn ? decodeURIComponent(queryColumn) : ''
         }
         // reset open tags after navigation
         const unregisterRouterHook = router.afterEach((to) => {
             nextTick(() => {
-                buttonsType.value = route.path === '/tags/' ? 'tag' : 'category'
+                buttonsType.value = pageType.value
             })
         })
         onBeforeUnmount(() => {
