@@ -10,7 +10,7 @@
                 v-for="(item, index) in sortPosts"
                 :key="index"
             >
-                <AIcon
+                <AcmeIcon
                     v-if="item.frontmatter.sticky"
                     name="acme-tuding"
                     size="20"
@@ -39,14 +39,14 @@
                             v-if="item.author?.name && item.author?.url"
                             :href="item.author.url"
                         >
-                            <AIcon name="acme-yonghu1" class="acme-mr-4" />
+                            <AcmeIcon name="acme-yonghu1" class="acme-mr-4" />
                             {{ item.author.name }}
                         </a>
                         <span
                             v-else-if="item.author"
                             title="作者"
                         >
-                            <AIcon name="acme-yonghu1" class="acme-mr-4" />
+                            <AcmeIcon name="acme-yonghu1" class="acme-mr-4" />
                             {{ item.author }}
                         </span>
 
@@ -54,11 +54,11 @@
                             title="创建时间"
                             v-if="item.frontmatter.date"
                         >
-                            <AIcon name="acme-shijian1" class="acme-mr-4" />
+                            <AcmeIcon name="acme-shijian1" class="acme-mr-4" />
                             {{ item.frontmatter.date.split('T')[0] }}
                         </span>
                         <span v-if="themeData.category !== false && item.frontmatter.categories">
-                            <AIcon name="acme-pingtai" class="acme-mr-4" />
+                            <AcmeIcon name="acme-pingtai" class="acme-mr-4" />
                             <span title="分类">
                                 <router-link
                                     :to="`/categories/?category=${encodeURIComponent(c)}`"
@@ -68,7 +68,7 @@
                             </span>
                         </span>
                         <span v-if="themeData.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
-                            <AIcon name="acme-biaoqian" class="acme-mr-4" />
+                            <AcmeIcon name="acme-biaoqian" class="acme-mr-4" />
                             <span
                                 title="标签"
                                 class="tags"
@@ -94,7 +94,7 @@
                         :to="item.path"
                         class="readmore"
                     >
-                        <AIcon
+                        <AcmeIcon
                             name="acme-yuedu"
                             size="20"
                         />

@@ -12,7 +12,7 @@
                     :class="{ active: buttonsType === key }"
                     :aria-label="locale[key]"
                 >
-                    <AIcon
+                    <AcmeIcon
                         :name="icon"
                         size="20"
                         customStyle

@@ -41,7 +41,7 @@
                     class="hero-img-prev hide-on-mobile"
                     @click="switchImage(-1)"
                 >
-                    <AIcon
+                    <AcmeIcon
                         name="acme-zuojiantou"
                         size="24"
                         customStyle
@@ -51,7 +51,7 @@
                     class="hero-img-next hide-on-mobile"
                     @click="switchImage(1)"
                 >
-                    <AIcon
+                    <AcmeIcon
                         name="acme-youjiantou"
                         size="24"
                         customStyle
@@ -61,7 +61,7 @@
                     class="hero-arrow-down hide-on-mobile"
                     @click="scrollToPost()"
                 >
-                    <AIcon
+                    <AcmeIcon
                         name="acme-xiangxiajiantou"
                         size="50"
                         color="rgba(255,255,255,0.8)"

@@ -17,7 +17,7 @@
 <script>
 import { defineComponent, computed } from 'vue'
 export default defineComponent({
-    name: 'AIcon',
+    name: 'AcmeIcon',
     props: {
         name: {
             type: String,
@@ -54,7 +54,7 @@ export default defineComponent({
         customStyle: {
             type: [Object, Boolean],
             default: () => {
-                return { }
+                return {}
             }
         },
 

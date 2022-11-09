@@ -5,7 +5,7 @@
             :class="{disabled: currentPage === 1}"
             @click="goPrex()"
         >
-            <AIcon
+            <AcmeIcon
                 name="acme-zuojiantou"
                 size="20"
                 customStyle
@@ -98,7 +98,7 @@
             @click="goNext()"
         >
             <p>下一页</p>
-            <AIcon
+            <AcmeIcon
                 name="acme-youjiantou"
                 size="20"
                 customStyle

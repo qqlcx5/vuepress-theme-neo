@@ -1,3 +1,3 @@
-import AIcon from './AIcon/AIcon.vue'
+import AcmeIcon from './AcmeIcon/AcmeIcon.vue'
 import NavCard from './NavCard/NavCard.vue';
-export { AIcon, NavCard };
+export { AcmeIcon, NavCard };
