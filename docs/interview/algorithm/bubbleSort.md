@@ -11,7 +11,7 @@ columns:
 ---
 # 面试官：说说你对冒泡排序的理解？如何实现？应用场景？
 
- ![](https://static.vue-js.com/6f5e0850-2652-11ec-a752-75723a64e8f5.png)
+![](https://static.vue-js.com/6f5e0850-2652-11ec-a752-75723a64e8f5.png)
 
 ## 一、是什么
 

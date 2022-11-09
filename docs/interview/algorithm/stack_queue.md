@@ -79,10 +79,6 @@ class Stack {
 - push：入栈操作
 - pop：出栈操作
 
-
-
-
-
 ## 二、队列
 
 跟栈十分相似，队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作
@@ -156,8 +152,6 @@ class Queue {
 
 上述通过求余的形式代表首尾指针增1 时超出了所分配的队列空间
 
-
-
 ## 三、应用场景
 
 ### 栈
@@ -180,5 +174,5 @@ class Queue {
 
 ## 参考文献
 
-- https://baike.baidu.com/item/%E6%A0%88/12808149
-- https://baike.baidu.com/item/%E9%98%9F%E5%88%97/14580481
+- <https://baike.baidu.com/item/%E6%A0%88/12808149>
+- <https://baike.baidu.com/item/%E9%98%9F%E5%88%97/14580481>

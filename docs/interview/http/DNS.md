@@ -13,8 +13,6 @@ columns:
 
  ![](https://static.vue-js.com/88081710-b78f-11eb-ab90-d9ae814b240d.png)
 
-
-
 ## 一、是什么
 
 DNS（Domain Names System），域名系统，是互联网一项服务，是进行域名和与之相对应的 IP 地址进行转换的服务器
@@ -25,10 +23,6 @@ DNS（Domain Names System），域名系统，是互联网一项服务，是进�
 - 域名：是由一串用点分隔的名字组成的 Internet 上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识
 
  ![](https://static.vue-js.com/965a03a0-b78f-11eb-ab90-d9ae814b240d.png)
-
-
-
-
 
 ## 二、域名
 
@@ -44,8 +38,6 @@ DNS（Domain Names System），域名系统，是互联网一项服务，是进�
 
 除此之外，还有电脑默认的本地域名服务器
 
-
-
 ## 三、查询方式
 
 DNS 查询的方式有两种：
@@ -58,8 +50,6 @@ DNS 查询的方式有两种：
 
  ![](https://static.vue-js.com/b023e1c0-b78f-11eb-85f6-6fac77c0c9b3.png)
 
-
-
 ## 四、域名缓存
 
 在域名服务器解析的时候，使用缓存保存域名和`IP`地址的映射
@@ -68,8 +58,6 @@ DNS 查询的方式有两种：
 
 - 浏览器缓存：浏览器在获取网站域名的实际 IP 地址后会对其进行缓存，减少网络请求的损耗
 - 操作系统缓存：操作系统的缓存其实是用户自己配置的 `hosts` 文件
-
-
 
 ## 五、查询过程
 
@@ -93,10 +81,9 @@ DNS 查询的方式有两种：
 
  ![](https://static.vue-js.com/bec3c740-b78f-11eb-ab90-d9ae814b240d.png)
 
-
-
 ## 参考文献
-- https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F
-- https://www.cnblogs.com/jmilkfan-fanguiju/p/12789677.html
-- https://segmentfault.com/a/1190000039039275
-- https://vue3js.cn/interview
+
+- <https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F>
+- <https://www.cnblogs.com/jmilkfan-fanguiju/p/12789677.html>
+- <https://segmentfault.com/a/1190000039039275>
+- <https://vue3js.cn/interview>
