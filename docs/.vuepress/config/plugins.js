@@ -30,12 +30,11 @@ export default [
     //     componentsDir: path.resolve(__dirname, '../components')
     // }),
     commentPlugin({
-        provider: 'Waline',
-        emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
-        serverURL: 'https://vuepress-waline-psi.vercel.app/'
-        
-        // provider: 'Twikoo',
-        // envId: 'https://twikoo-qqlcx5.vercel.app/',
+        // provider: 'Waline',
+        // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
+        // serverURL: 'https://vuepress-waline-psi.vercel.app/'
+        provider: 'Twikoo',
+        envId: 'https://twikoo-qqlcx5.vercel.app/',
     }),
     copyCodePlugin({
         showInMobile: false
