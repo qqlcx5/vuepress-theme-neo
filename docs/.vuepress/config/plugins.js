@@ -34,7 +34,7 @@ export default [
         // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
         // serverURL: 'https://vuepress-waline-psi.vercel.app/'
         provider: 'Twikoo',
-        envId: 'https://twikoo-qqlcx5.vercel.app/',
+        envId: 'https://vuepress2-twikoo.vercel.app',
     }),
     copyCodePlugin({
         showInMobile: false
