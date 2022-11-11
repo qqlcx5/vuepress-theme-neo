@@ -54,7 +54,7 @@ export default {
             // ["article", 'acme-wenzhang'],
             ['category', 'acme-sort1'],
             ['tag', 'acme-localoffer'],
-            ['cloumn', 'acme-listhandle']
+            ['cloumn', 'acme-zhuantifuwu']
         ])
 
         const themeLocale = useThemeLocaleData()
@@ -116,6 +116,7 @@ export default {
 
         return {
             tag,
+            column,
             locale,
             buttons,
             category,
