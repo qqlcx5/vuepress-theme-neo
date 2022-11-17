@@ -1,6 +1,6 @@
 <script>
 import { usePageData } from "@vuepress/client";
-import { defineComponent, h, onMounted, watch, ref } from "vue";
+import { defineComponent, h, onMounted, watch, ref, resolveComponent } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 export default defineComponent({
     name: "TOC",
@@ -18,6 +18,7 @@ export default defineComponent({
         const route = useRoute();
         const page = usePageData();
         const toc = ref(null);
+        const hasToggle = ref(false);
         const scrollTo = (top) => {
             toc.value?.scrollTo({ top, behavior: "smooth" });
         };
@@ -41,6 +42,9 @@ export default defineComponent({
                     renderChildren(header.children, headerDepth - 1),
                 ]))
                 : null;
+        };
+        const handleToggle = () => {
+            hasToggle.value = !hasToggle.value;
         };
         onMounted(() => {
             // scroll to active toc item
@@ -78,8 +82,12 @@ export default defineComponent({
             return tocHeaders
                 ? h("div", { class: "toc-place-holder" }, [
                     h("aside", { id: "toc" }, [
-                        h("div", { class: "toc-header" }, '此页内容'),
-                        h("div", { class: "toc-wrapper", ref: toc }, [tocHeaders]),
+                        h("div", { class: "toc-header", onClick: () => handleToggle() }, [
+                            // h(resolveComponent("AcmeIcon"), { name: hasToggle.value ? "" : "" }),
+                            h("span", {class: 'acme-fs-16 acme-mr-4'}, hasToggle.value ? "-" : "+"),
+                            h("span", {}, "本页目录"),
+                        ]),
+                        h("div", { class: ["toc-wrapper", { 'hidden': hasToggle.value }], ref: toc }, [tocHeaders]),
                     ]),
                 ])
                 : null;
@@ -131,6 +139,11 @@ $headings: (2, 3, 4, 5, 6);
         text-overflow: ellipsis;
         white-space: nowrap;
         scroll-behavior: smooth;
+        transition: max-height 0.5s ease-in;
+        &.hidden {
+            max-height: 0;
+            // transition: max-height 0.5s ease-out;
+        }
         &::-webkit-scrollbar {
             width: 4px;
             height: 4px;

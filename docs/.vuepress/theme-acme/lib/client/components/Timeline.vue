@@ -15,12 +15,12 @@
                     <span class="date">{{ getDate(item) }}</span>
                     {{ item.title }}
                     <!-- 标题标签 -->
-                    <span
+                    <!-- <span
                         v-if="item.frontmatter.titleTag"
                         class="title-tag"
                     >
                         {{ item.frontmatter.titleTag }}
-                    </span>
+                    </span> -->
                 </router-link>
             </li>
         </template>
@@ -177,16 +177,16 @@ li {
             font-weight: 400;
             margin-right: 0.3rem;
         }
-        .title-tag {
-            border: 1px solid var(--c-brand-light);
-            color: var(--c-brand-light);
-            font-size: 0.8rem;
-            padding: 0 0.35rem;
-            border-radius: 0.2rem;
-            margin-left: 0rem;
-            transform: translate(0, -0.05rem);
-            display: inline-block;
-        }
+        // .title-tag {
+        //     border: 1px solid var(--c-brand-light);
+        //     color: var(--c-brand-light);
+        //     font-size: 0.8rem;
+        //     padding: 0 0.35rem;
+        //     border-radius: 0.2rem;
+        //     margin-left: 0rem;
+        //     transform: translate(0, -0.05rem);
+        //     display: inline-block;
+        // }
     }
 }
 .loadmore {
