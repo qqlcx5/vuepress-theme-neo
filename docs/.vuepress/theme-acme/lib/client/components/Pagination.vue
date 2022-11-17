@@ -189,7 +189,7 @@ export default {
         cursor: pointer;
         user-select: none;
         &:hover {
-            color: $accentColor;
+            color: var(--c-brand);
         }
         &.ellipsis {
             opacity: 0.5;
@@ -258,7 +258,7 @@ export default {
             line-height: 2.5rem;
             margin: 0.3rem;
             &.active {
-                background: $accentColor;
+                background: var(--c-brand);
                 color: var(--c-bg);
             }
         }

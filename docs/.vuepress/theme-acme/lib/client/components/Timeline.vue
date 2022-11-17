@@ -168,7 +168,7 @@ li {
         line-height: 1.2rem;
         &:hover {
             padding-left: 1.2rem;
-            color: $accentColor;
+            color: var(--c-brand);
             background: #f9f9f9;
         }
         span.date {
@@ -178,10 +178,8 @@ li {
             margin-right: 0.3rem;
         }
         .title-tag {
-            // height 1.1rem
-            // line-height 1.1rem
-            border: 1px solid $activeColor;
-            color: $activeColor;
+            border: 1px solid var(--c-brand-light);
+            color: var(--c-brand-light);
             font-size: 0.8rem;
             padding: 0 0.35rem;
             border-radius: 0.2rem;
