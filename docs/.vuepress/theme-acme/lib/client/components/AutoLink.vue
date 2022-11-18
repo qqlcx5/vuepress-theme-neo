@@ -94,6 +94,7 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
+    <AcmeIcon :name="item.icon" />
     {{ item.text }}
     <slot name="after" />
   </RouterLink>
@@ -107,6 +108,7 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
+    <AcmeIcon :name="item.icon" />
     {{ item.text }}
     <AutoLinkExternalIcon v-if="isBlankTarget" />
     <slot name="after" />

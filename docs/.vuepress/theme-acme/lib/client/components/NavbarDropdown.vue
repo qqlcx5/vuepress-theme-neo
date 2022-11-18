@@ -57,7 +57,10 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
     >
-      <span class="title">{{ item.text }}</span>
+    <span class="title">
+        <AcmeIcon :name="item.icon" />
+        {{ item.text }}
+      </span>
       <span class="arrow down" />
     </button>
 
@@ -67,7 +70,10 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
     >
-      <span class="title">{{ item.text }}</span>
+      <span class="title">
+        <AcmeIcon :name="item.icon" />
+        {{ item.text }}
+      </span>
       <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 

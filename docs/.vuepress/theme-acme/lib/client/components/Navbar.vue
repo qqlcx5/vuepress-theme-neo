@@ -3,6 +3,7 @@ import NavbarBrand from '@theme/NavbarBrand.vue'
 import NavbarItems from '@theme/NavbarItems.vue'
 import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
 import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
+import { usePageFrontmatter } from '@vuepress/client';
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 import { useRouter } from "vue-router";
@@ -59,9 +60,10 @@ const handleScroll = () => {
   previousTop.value = currentTop;
 };
 
+const frontmatter = usePageFrontmatter();
 const handleInvert = () => {
-  let invert = false; 
-      invert = true;
+  let invert = false;
+  if (frontmatter.value.home) invert = true;
   isInvert.value = invert;
 };
 // handle navbar color invert after navigation

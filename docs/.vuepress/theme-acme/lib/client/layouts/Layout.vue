@@ -64,7 +64,6 @@ const enableToc = computed(
         frontmatter.value.toc ||
         (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
 )
-const enableInvert = computed(() => frontmatter.value.home && isInvert.value)
 // custom acme theme
 // classes
 const containerClass = computed(() => [
