@@ -5,7 +5,7 @@ export * from './useScrollPromise.js';
 export * from './useSidebarItems.js';
 export * from './useThemeData.js';
 
-// custom
+// custom acme theme
 export * from './usePageData.js';
 export * from './useNavigate.js';
 export * from './useThemeBlogOptions';

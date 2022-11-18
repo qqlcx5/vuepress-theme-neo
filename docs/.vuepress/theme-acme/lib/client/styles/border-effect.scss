@@ -15,6 +15,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    z-index: 2;
     &::before,
     &::after {
         content: '';
@@ -42,6 +43,7 @@
         transition: all 0.6s;
         width: calc(100% + 4px);
         height: calc(100% + 4px);
+        z-index: -1;
     }
 }
 // 四色旋转动画

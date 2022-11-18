@@ -1,50 +1,21 @@
 <template>
     <div class="pagination">
-        <span
-            class="dark-shadow prev"
-            :class="{disabled: currentPage === 1}"
-            @click="goPrex()"
-        >
-            <AcmeIcon
-                name="acme-zuojiantou"
-                size="20"
-                customStyle
-            />
+        <span class="dark-shadow prev" :class="{ disabled: currentPage === 1 }" @click="goPrex()">
+            <AcmeIcon name="acme-zuojiantou" size="20" />
             <p>上一页</p>
         </span>
 
         <!-- 分页在5页及以下时 -->
-        <div
-            class="pagination-list"
-            v-if="pages <= 5"
-        >
-            <span
-                class="dark-shadow"
-                v-for="item in pages"
-                :key="item"
-                :class="{active: currentPage === item}"
-                @click="goIndex(item)"
-            >{{item}}</span>
+        <div class="pagination-list" v-if="pages <= 5">
+            <span class="dark-shadow" v-for="item in pages" :key="item" :class="{ active: currentPage === item }" @click="goIndex(item)">{{ item }}</span>
         </div>
         <!-- 分页在5页以上 -->
-        <div
-            class="pagination-list"
-            v-else
-        >
+        <div class="pagination-list" v-else>
             <!-- 一号位 -->
-            <span
-                class="dark-shadow"
-                :class="{active: currentPage === 1}"
-                @click="goIndex(1)"
-            >1</span>
+            <span class="dark-shadow" :class="{ active: currentPage === 1 }" @click="goIndex(1)">1</span>
 
             <!-- 二号位 -->
-            <span
-                class="ellipsis ell-two"
-                v-show="currentPage > 3"
-                @click="goIndex(currentPage - 3)"
-                title="上三页"
-            />
+            <span class="ellipsis ell-two" v-show="currentPage > 3" @click="goIndex(currentPage - 3)" title="上三页" />
             <!-- <span
                 class="dark-shadow"
                 v-show="currentPage <= 3"
@@ -52,31 +23,14 @@
                 @click="goIndex(2)"
             >2</span> -->
             <!-- 三号位基点 -->
-            <span
-                class="dark-shadow"
-                :class="{active: currentPage === 2}"
-                @click="goIndex(threeNum() - 1)"
-            >{{ threeNum() - 1 }}</span>
+            <span class="dark-shadow" :class="{ active: currentPage === 2 }" @click="goIndex(threeNum() - 1)">{{ threeNum() - 1 }}</span>
             <!-- 三号位 -->
-            <span
-                class="dark-shadow"
-                :class="{active: currentPage >= 3 && currentPage <= (pages - 2)}"
-                @click="goIndex(threeNum())"
-            >{{ threeNum() }}</span>
+            <span class="dark-shadow" :class="{ active: currentPage >= 3 && currentPage <= pages - 2 }" @click="goIndex(threeNum())">{{ threeNum() }}</span>
             <!-- 三号位基点 -->
-            <span
-                class="dark-shadow"
-                :class="{active: currentPage === pages - 1}"
-                @click="goIndex(threeNum() + 1)"
-            >{{ threeNum() + 1 }}</span>
+            <span class="dark-shadow" :class="{ active: currentPage === pages - 1 }" @click="goIndex(threeNum() + 1)">{{ threeNum() + 1 }}</span>
 
             <!-- 四号位 -->
-            <span
-                class="ellipsis ell-four"
-                v-show="currentPage < (pages - 2)"
-                @click="goIndex(currentPage + 3)"
-                title="下三页"
-            />
+            <span class="ellipsis ell-four" v-show="currentPage < pages - 2" @click="goIndex(currentPage + 3)" title="下三页" />
             <!-- <span
                 class="dark-shadow"
                 v-show="currentPage >= (pages - 2)"
@@ -85,24 +39,12 @@
             >{{ pages-1 }}</span> -->
 
             <!-- 五号位 -->
-            <span
-                class="dark-shadow"
-                :class="{active: currentPage === pages}"
-                @click="goIndex(pages)"
-            >{{pages}}</span>
+            <span class="dark-shadow" :class="{ active: currentPage === pages }" @click="goIndex(pages)">{{ pages }}</span>
         </div>
 
-        <span
-            class="dark-shadow next"
-            :class="{disabled: currentPage === pages}"
-            @click="goNext()"
-        >
+        <span class="dark-shadow next" :class="{ disabled: currentPage === pages }" @click="goNext()">
             <p>下一页</p>
-            <AcmeIcon
-                name="acme-youjiantou"
-                size="20"
-                customStyle
-            />
+            <AcmeIcon name="acme-youjiantou" size="20" />
         </span>
     </div>
 </template>
@@ -111,15 +53,18 @@
 import { computed } from 'vue'
 export default {
     props: {
-        total: { // 总长度
+        total: {
+            // 总长度
             type: Number,
             default: 10
         },
-        perPage: { // 每页长
+        perPage: {
+            // 每页长
             type: Number,
             default: 10
         },
-        currentPage: { // 当前页
+        currentPage: {
+            // 当前页
             type: Number,
             default: 1
         }
@@ -136,7 +81,7 @@ export default {
             const page = pages?.value || 0
             if (currentPage < 3) {
                 num = 3
-            } else if (currentPage > (page - 3)) {
+            } else if (currentPage > page - 3) {
                 num = page - 2
             } else {
                 num = currentPage

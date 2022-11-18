@@ -1,13 +1,27 @@
 <template>
     <div class="tags-wrapper dark-shadow">
-        <RouterLink to="/tags/" class="tags-title" title="标签">
+        <RouterLink
+            to="/tags/"
+            class="tags-title"
+            title="标签"
+        >
             标签
         </RouterLink>
         <div class="tags">
-            <template v-for="(item, index) in tags" :key="item.key">
-                <router-link :to="`/tags/?tag=${encodeURIComponent(item.key)}`" :style="tagStyleList[index]" :class="{ active: item.key === tag }">{{ item.key }} {{ item.length }}</router-link>
+            <template
+                v-for="(item, index) in tags"
+                :key="item.key"
+            >
+                <router-link
+                    :to="`/tags/?tag=${encodeURIComponent(item.key)}`"
+                    :style="tagStyleList[index]"
+                    :class="{ active: item.key === tag }"
+                >{{ item.key }} {{ item.length }}</router-link>
             </template>
-            <router-link to="/tags/" v-if="length !== 'all' && tagsData.length > length">更多...</router-link>
+            <router-link
+                to="/tags/"
+                v-if="length !== 'all' && tagsData.length > length"
+            >更多...</router-link>
         </div>
     </div>
 </template>
@@ -66,9 +80,11 @@ export default {
     .tags {
         padding: 0.5rem;
         color: var(--c-bg);
-        transition: transform 0.25s ease-in-out 0.08s, opacity 0.25s ease-in-out 0.04s;
+        transition: transform 0.25s ease-in-out 0.08s,
+            opacity 0.25s ease-in-out 0.04s;
         transform: translateY(0px);
-        transition: transform 0.25s ease-in-out 0.04s, opacity 0.25s ease-in-out 0.04s;
+        transition: transform 0.25s ease-in-out 0.04s,
+            opacity 0.25s ease-in-out 0.04s;
         // justify-content: flex-start;
         text-align: justify;
         a {
@@ -76,7 +92,7 @@ export default {
             display: inline-block;
             padding: 0.26rem 0.46rem;
             transition: all 0.4s;
-            background-color: var(--textColor);
+            background-color: var(--c-text);
             color: var(--c-bg);
             border-radius: 6px;
             // margin: 0 0.5rem 0.8rem 0;

@@ -15,7 +15,6 @@
                     <AcmeIcon
                         :name="icon"
                         size="20"
-                        customStyle
                     />
                 </div>
             </button>

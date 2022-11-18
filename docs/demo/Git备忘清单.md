@@ -1,23 +1,27 @@
 ---
 created: 2022-11-15T14:15:56 (UTC +08:00)
 source: https://wangchujiang.com/reference/docs/git.html
-title: Git 备忘清单 
+title: Git 备忘清单
 date: 2022-11-15 14:20:10
-categories: 
-  - nav
-columns: 
-  - 
-tags: 
-  - 
+categories:
+    - nav
+columns:
+    -
+tags:
+    -
+titleTag: 原创
 ---
 
 # Git 备忘清单 & git cheatsheet
 
-> ## Excerpt
->
-> 本备忘单总结了常用的 Git 命令行指令，以供快速参考。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201125221109860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcGhpZV9V,size_16,color_FFFFFF,t_70#pic_center)
+
+本备忘单总结了常用的 Git 命令行指令，以供快速参考。
+
+<!-- more -->
 
 ---
+
 本备忘单总结了常用的 [Git](https://git-scm.com/) 命令行指令，以供快速参考。
 
 ## 入门
@@ -371,10 +375,10 @@ node_modules
 $ cat ~/.ssh/config
 Host gitlab.com
 # 直接使用 shadowsocks 提供的 socks5 代理端口
-ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p 
+ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 
 Host github.com
-ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p    
+ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 ```
 
 ## Git 技巧
@@ -385,7 +389,7 @@ ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 
     ```
     git branch -m <new>
-    git branch -m <old> <new> #重命名分支  
+    git branch -m <old> <new> #重命名分支
     ```
 
 - **推送**并重置
@@ -426,7 +430,7 @@ git log --pretty=oneline --graph --decorate --all
 列出所有分支及其上游
 
 ```
-git branch -vv 
+git branch -vv
 ```
 
 快速切换到上一个分支
@@ -488,7 +492,7 @@ $ git config --get core.ignorecase
 # 设置大小写敏感
 $ git config core.ignorecase false
 # 远程有俩相同目录，通过这种方式清除掉，然后提交记录
-$ git rm -r --cached <目录/文件> 
+$ git rm -r --cached <目录/文件>
 ```
 
 ### 修改远程 Commit 记录
@@ -500,7 +504,7 @@ $ git rebase -i HEAD~3
 pick 96dc3f9 提交 commit 描述内容 1
 pick f1cce8a 提交 commit 描述内容 2
 pick 6293516 提交 commit 描述内容 3
-# Rebase eeb03a4..6293516 onto eeb03a4 
+# Rebase eeb03a4..6293516 onto eeb03a4
 #                     (3 commands)
 #
 # Commands:
@@ -517,16 +521,16 @@ pick 6293516 提交 commit 描述内容 3
 
 ```
 # 您现在可以修改提交，使用
-# 
+#
 #   git commit --amend
-# 
+#
 # 对更改感到满意后，运行
-# 
+#
 #   git rebase --continue
 #
 # 1. 通过这条命令进入编辑更改 commit，保存退出
 $ git commit --amend
-# 2. 保存退出确认修改，继续执行下面命令, 
+# 2. 保存退出确认修改，继续执行下面命令,
 $ git rebase --continue
 # 如果修改多条记录反复执行上面两条命令直到完成所有修改
 
@@ -537,9 +541,9 @@ $ git push -f origin master
 ### 撤销远程记录
 
 ```
-# 撤销一条记录   
+# 撤销一条记录
 $ git reset --hard HEAD~1
-# 强制同步到远程仓库  
+# 强制同步到远程仓库
 $ git push -f origin HEAD:master
 ```
 
@@ -547,9 +551,9 @@ $ git push -f origin HEAD:master
 
 ```
 # 如果有的修改以及加入暂存区的话
-$ git reset --hard 
+$ git reset --hard
 # 还原所有修改，不会删除新增的文件
-$ git checkout . 
+$ git checkout .
 # 下面命令会删除新增的文件
 $ git clean -xdf
 ```
@@ -627,7 +631,7 @@ git config --global core.quotepath false
 git diff HEAD
 ```
 
-输出工作区、暂存区 和本地最近的版本(commit)的different(不同)。
+输出工作区、暂存区 和本地最近的版本(commit)的 different(不同)。
 
 ### 删除已经合并到 master 的分支
 

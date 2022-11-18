@@ -8,7 +8,10 @@
                 v-if="(year = getYear(index)) !== getYear(index - 1)"
                 class="year"
             >
-                <h2> <img :src="getBadge()" alt=""> {{ year }} <span> <i>{{ countByYear[year] }}</i> 篇 </span> </h2>
+                <h2> <img
+                        :src="getBadge()"
+                        alt=""
+                    > {{ year }} <span> <i>{{ countByYear[year] }}</i> 篇 </span> </h2>
             </li>
             <li>
                 <router-link :to="item.path">
@@ -162,7 +165,7 @@ li {
     }
     a {
         display: block;
-        color: var(--textColor);
+        color: var(--c-text);
         transition: padding 0.3s;
         padding: 0.5rem 0;
         line-height: 1.2rem;

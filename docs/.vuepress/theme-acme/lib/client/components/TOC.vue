@@ -83,8 +83,8 @@ export default defineComponent({
                 ? h("div", { class: "toc-place-holder" }, [
                     h("aside", { id: "toc" }, [
                         h("div", { class: "toc-header", onClick: () => handleToggle() }, [
-                            // h(resolveComponent("AcmeIcon"), { name: hasToggle.value ? "" : "" }),
-                            h("span", {class: 'acme-fs-16 acme-mr-4'}, hasToggle.value ? "-" : "+"),
+                            h(resolveComponent("AcmeIcon"), { name: hasToggle.value ? "acme-tianjia" : "acme-jian" }),
+                            // h("span", {class: 'acme-fs-16 acme-mr-4'}, hasToggle.value ? "-" : "+"),
                             h("span", {}, "本页目录"),
                         ]),
                         h("div", { class: ["toc-wrapper", { 'hidden': hasToggle.value }], ref: toc }, [tocHeaders]),
@@ -139,10 +139,10 @@ $headings: (2, 3, 4, 5, 6);
         text-overflow: ellipsis;
         white-space: nowrap;
         scroll-behavior: smooth;
-        transition: max-height 0.5s ease-in;
+        transition: max-height 0.25s ease-in;
         &.hidden {
             max-height: 0;
-            // transition: max-height 0.5s ease-out;
+            transition: max-height 0.25s ease-out;
         }
         &::-webkit-scrollbar {
             width: 4px;

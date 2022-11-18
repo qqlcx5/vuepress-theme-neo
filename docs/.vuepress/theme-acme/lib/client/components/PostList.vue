@@ -1,15 +1,7 @@
 <template>
     <div class="post-list">
-        <TransitionGroup
-            name="fade-slide-y"
-            tag="div"
-        >
-            <div
-                class="post dark-shadow"
-                :class="[`effect-border-${random(2, 5)}`]"
-                v-for="(item, index) in sortPosts"
-                :key="index"
-            >
+        <TransitionGroup name="fade-slide-y" tag="div">
+            <div class="post dark-shadow" :class="[`effect-border-${random(1, 5)}`]" v-for="(item, index) in sortPosts" :key="index">
                 <AcmeIcon
                     v-if="item.frontmatter.sticky"
                     name="acme-tuding"
@@ -25,80 +17,44 @@
                     <h2>
                         <router-link :to="item.path">
                             {{ item.title }}
-                            <span
-                                class="title-tag"
-                                v-if="item.frontmatter.titleTag"
-                            >
-                                {{ item.frontmatter.titleTag }}</span>
+                            <span class="title-tag" v-if="item.frontmatter.titleTag">
+                                {{ item.frontmatter.titleTag }}
+                            </span>
                         </router-link>
                     </h2>
                     <div class="article-info">
-                        <a
-                            title="作者"
-                            target="_blank"
-                            v-if="item.author?.name && item.author?.url"
-                            :href="item.author.url"
-                        >
+                        <a title="作者" target="_blank" v-if="item.author?.name && item.author?.url" :href="item.author.url">
                             <AcmeIcon name="acme-yonghu1" class="acme-mr-4" />
                             {{ item.author.name }}
                         </a>
-                        <span
-                            v-else-if="item.author"
-                            title="作者"
-                        >
+                        <span v-else-if="item.author" title="作者">
                             <AcmeIcon name="acme-yonghu1" class="acme-mr-4" />
                             {{ item.author }}
                         </span>
 
-                        <span
-                            title="创建时间"
-                            v-if="item.frontmatter.date"
-                        >
+                        <span title="创建时间" v-if="item.frontmatter.date">
                             <AcmeIcon name="acme-shijian1" class="acme-mr-4" />
                             {{ item.frontmatter.date.split('T')[0] }}
                         </span>
                         <span v-if="themeData.category !== false && item.frontmatter.categories">
                             <AcmeIcon name="acme-pingtai" class="acme-mr-4" />
                             <span title="分类">
-                                <router-link
-                                    :to="`/categories/?category=${encodeURIComponent(c)}`"
-                                    v-for="(c, index) in item.frontmatter.categories"
-                                    :key="index"
-                                >{{ c }}</router-link>
+                                <router-link :to="`/categories/?category=${encodeURIComponent(c)}`" v-for="(c, index) in item.frontmatter.categories" :key="index">{{ c }}</router-link>
                             </span>
                         </span>
                         <span v-if="themeData.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
                             <AcmeIcon name="acme-biaoqian" class="acme-mr-4" />
-                            <span
-                                title="标签"
-                                class="tags"
-                            >
-                                <router-link
-                                    :to="`/tags/?tag=${encodeURIComponent(t)}`"
-                                    v-for="(t, index) in item.frontmatter.tags"
-                                    :key="index"
-                                >{{ t }}</router-link>
+                            <span title="标签" class="tags">
+                                <router-link :to="`/tags/?tag=${encodeURIComponent(t)}`" v-for="(t, index) in item.frontmatter.tags" :key="index">{{ t }}</router-link>
                             </span>
                         </span>
                     </div>
                 </div>
-                <div
-                    class="excerpt-wrapper"
-                    v-if="item.excerpt"
-                >
-                    <div
-                        class="excerpt"
-                        v-html="item.excerpt"
-                    ></div>
-                    <router-link
-                        :to="item.path"
-                        class="readmore"
-                    >
-                        <AcmeIcon
-                            name="acme-yuedu"
-                            size="20"
-                        />
+                <div class="excerpt-wrapper" v-if="item.description">
+                    <div class="excerpt" v-html="item.description"></div>
+                    <router-link :to="item.path" class="readmore">
                         阅读全文
+                        <AcmeIcon name="acme-youxiangshuangjiantou" size="20" />
                     </router-link>
                 </div>
             </div>
@@ -154,16 +110,19 @@ export default {
         onMounted(() => {
             handleSetPosts()
         })
-        // 当前页 
-        watch(() => props.currentPage, (currentPage) => {
-            if (route.query.p != currentPage) {
-                router.push({ query: { ...route.query, p: currentPage } })
+        // 当前页
+        watch(
+            () => props.currentPage,
+            currentPage => {
+                if (route.query.p != currentPage) {
+                    router.push({ query: { ...route.query, p: currentPage } })
+                }
+                setTimeout(() => {
+                    window.scrollTo({ top: props.offsetTop }) // behavior: 'smooth'
+                }, 0)
+                handleSetPosts()
             }
-            setTimeout(() => {
-                window.scrollTo({ top: props.offsetTop }) // behavior: 'smooth'
-            }, 0)
-            handleSetPosts()
-        })
+        )
         // 分类和标签
         watch([() => props.category, () => props.tag, () => props.column], ([category, tag, column], [prevCategory, prevTag, prevColumn]) => {
             handleSetPosts()
@@ -172,16 +131,15 @@ export default {
             const currentPage = props.currentPage
             const perPage = props.perPage
             const [category, tag, column] = [props.category, props.tag, props.column]
-            const type = category && 'categories' || tag && 'tags' || column && 'columns'
+            const type = (category && 'categories') || (tag && 'tags') || (column && 'columns')
             const queryKeyword = category || tag || column || ''
-            // 文章全部展示 分类和标签隐藏数据 
+            // 文章全部展示 分类和标签隐藏数据
             let postsData = queryKeyword && type ? groupPostsSymbol[type][queryKeyword] : sortPostsSymbol
             sortPosts.value = postsData.slice((currentPage - 1) * perPage, currentPage * perPage)
         }
         const random = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min
         return { themeData, sortPosts, random }
     }
-
 }
 </script>
 
@@ -193,11 +151,11 @@ export default {
         vertical-align: -0.2em;
     }
     .fade-slide-y-enter-active {
-        transition: all 0.3s ease;
+        transition: all 0.6s ease;
     }
 
     .fade-slide-y-leave-active {
-        transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+        transition: all 0.6s cubic-bezier(1, 0.5, 0.8, 1);
     }
 
     .fade-slide-y-enter-from,
@@ -211,7 +169,7 @@ export default {
         margin-bottom: 0.9rem;
         .title-wrapper {
             a {
-                color: var(--textColor);
+                color: var(--c-text);
                 &:hover {
                     color: var(--c-brand);
                 }
@@ -264,19 +222,22 @@ export default {
             }
         }
         .excerpt-wrapper {
-            border-top: 1px solid var(--borderColor);
-            margin: 0.5rem 0;
+            border-top: 1px solid var(--c-border);
+            margin-top: 0.5rem;
             overflow: hidden;
             .excerpt {
-                margin-bottom: 0.3rem;
-                font-size: 0.92rem;
-                h1,
-                h2,
-                h3 {
+                // margin-bottom: 0.3rem;
+                font-size: 0.9rem;
+                :deep(h1, h2) {
                     display: none;
                 }
-                img {
-                    max-height: 280px;
+                :deep(p) {
+                    display: flex;
+                    margin: 0.5rem 0;
+                }
+                :deep(img) {
+                    font-size: 0;
+                    max-height: 180px;
                     max-width: 100% !important;
                     margin: 0 auto;
                 }

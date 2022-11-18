@@ -44,7 +44,6 @@
                     <AcmeIcon
                         name="acme-zuojiantou"
                         size="24"
-                        customStyle
                     />
                 </button>
                 <button
@@ -54,7 +53,6 @@
                     <AcmeIcon
                         name="acme-youjiantou"
                         size="24"
-                        customStyle
                     />
                 </button>
                 <span
@@ -65,7 +63,6 @@
                         name="acme-xiangxiajiantou"
                         size="50"
                         color="rgba(255,255,255,0.8)"
-                        customStyle
                     />
                 </span>
             </div>
