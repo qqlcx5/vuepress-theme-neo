@@ -7,8 +7,8 @@
             <aside class="content-right">
                 <slot name="content-right">
                     <BloggerInfo />
-                    <SiteInfo />
                     <BlogType />
+                    <SiteInfo />
                 </slot>
             </aside>
         </div>
