@@ -3,10 +3,20 @@ import NavbarBrand from '@theme/NavbarBrand.vue'
 import NavbarItems from '@theme/NavbarItems.vue'
 import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
 import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
+import { useRouter } from "vue-router";
 
 defineEmits(['toggle-sidebar'])
+
+// custom acme theme
+defineProps({
+  isSidebar: {
+    type: Boolean,
+    default: true
+  }
+});
+// custom acme theme
 
 const themeLocale = useThemeLocaleData()
 
@@ -22,6 +32,40 @@ const linksWrapperStyle = computed(() => {
     maxWidth: linksWrapperMaxWidth.value + 'px',
   }
 })
+
+// custom acme theme
+const router = useRouter();
+const previousTop = ref(0);
+const isFixed = ref(false);
+const isVisible = ref(false);
+const isInvert = ref(true);
+
+const handleScroll = () => {
+  const currentTop = window.pageYOffset;
+
+  if (currentTop < previousTop.value) {
+    // Scrolling up
+    if (currentTop > 0 && isFixed.value) isVisible.value = true;
+    else {
+      isVisible.value = false;
+      isFixed.value = false;
+    }
+  } else {
+    // Scrolling down
+    isVisible.value = false;
+    if (navbar.value && currentTop > navbar.value!.offsetHeight)
+      isFixed.value = true;
+  }
+  previousTop.value = currentTop;
+};
+
+const handleInvert = () => {
+  let invert = false; 
+      invert = true;
+  isInvert.value = invert;
+};
+// handle navbar color invert after navigation
+let unregisterRouterHook;
 
 // avoid overlapping of long title and long navbar links
 onMounted(() => {
@@ -44,7 +88,23 @@ onMounted(() => {
   handleLinksWrapWidth()
   window.addEventListener('resize', handleLinksWrapWidth, false)
   window.addEventListener('orientationchange', handleLinksWrapWidth, false)
+
+  // custom acme theme
+  handleInvert();
+  unregisterRouterHook = router.afterEach(() => {
+    handleInvert();
+  });
+
+  window.addEventListener("scroll", handleScroll);
+  // custom acme theme
 })
+
+// custom acme theme
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+  unregisterRouterHook();
+});
+// custom acme theme
 
 function getCssValue(el: HTMLElement | null, property: string): number {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'
@@ -57,7 +117,12 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </script>
 
 <template>
-  <header ref="navbar" class="navbar">
+  <header ref="navbar" class="navbar" 
+    :class="{
+      'is-fixed': isFixed || isSidebar,
+      'is-visible': isVisible || isSidebar,
+      invert: isInvert
+    }">
     <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
     <span ref="navbarBrand">

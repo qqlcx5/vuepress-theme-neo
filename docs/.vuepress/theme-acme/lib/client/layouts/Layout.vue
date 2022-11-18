@@ -17,11 +17,10 @@ import Page from '@theme/Page.vue'
 import Navbar from '@theme/Navbar.vue'
 // @ts-ignore
 import Sidebar from '@theme/Sidebar.vue'
-import { useEventListener, useDebounceFn } from '@vueuse/core'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { DefaultThemePageFrontmatter } from '../../shared'
+import type { DefaultThemePageFrontmatter } from '../../shared/index.js'
 import {
     useScrollPromise,
     useSidebarItems,
@@ -33,18 +32,10 @@ const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
 // navbar
-const hideNavbar = ref(false)
 const shouldShowNavbar = computed(
-    () =>
-        frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
+    () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
 )
 
-/** Get scroll distance */
-const getScrollTop = () =>
-    window.pageYOffset ||
-    document.documentElement.scrollTop ||
-    document.body.scrollTop ||
-    0
 // sidebar
 const sidebarItems = useSidebarItems()
 const isSidebarOpen = ref(false)
@@ -67,69 +58,33 @@ const onTouchEnd = (e): void => {
         }
     }
 }
+// custom acme theme
 const enableToc = computed(
     () =>
         frontmatter.value.toc ||
         (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
 )
 const enableInvert = computed(() => frontmatter.value.home && isInvert.value)
+// custom acme theme
 // classes
 const containerClass = computed(() => [
     {
         'no-navbar': !shouldShowNavbar.value,
-        'hide-navbar': hideNavbar.value && !sidebarItems.value.length,
-        'has-toc': enableToc.value,
         'no-sidebar': !sidebarItems.value.length,
         'sidebar-open': isSidebarOpen.value,
-        invert: enableInvert.value,
+        'has-toc': enableToc.value,
     },
     frontmatter.value.pageClass,
 ])
 
-let observer
-const isDarkMode = ref(false)
-
 // close sidebar after navigation
 let unregisterRouterHook
-let lastDistance = 0
-let isInvert = ref(true)
-useEventListener(
-    'scroll',
-    useDebounceFn(() => {
-        const distance = getScrollTop()
-        // scroll down
-        if (lastDistance < distance && distance > 58) {
-            if (!isSidebarOpen.value) hideNavbar.value = true
-        }
-        // scroll up
-        else hideNavbar.value = false
-        lastDistance = distance
-        isInvert.value = distance <= 10
-    }, 60)
-)
 onMounted(() => {
     const router = useRouter()
     unregisterRouterHook = router.afterEach(() => {
         toggleSidebar(false)
     })
-
-    const html = document.querySelector('html') as HTMLElement
-    isDarkMode.value = html.classList.contains('dark')
-
-    // watch theme change
-    observer = new MutationObserver(() => {
-        isDarkMode.value = html.classList.contains('dark')
-    })
-    observer.observe(html, {
-        attributeFilter: ['class'],
-        attributes: true,
-    })
 })
-
-onBeforeUnmount(() => {
-    observer.disconnect()
-})
-
 onUnmounted(() => {
     unregisterRouterHook()
 })
@@ -141,17 +96,9 @@ const onBeforeLeave = scrollPromise.pending
 </script>
 
 <template>
-    <div
-        class="theme-container theme-acme-container"
-        :class="containerClass"
-        @touchstart="onTouchStart"
-        @touchend="onTouchEnd"
-    >
+    <div class="theme-container theme-acme-container" :class="containerClass" @touchstart="onTouchStart" @touchend="onTouchEnd">
         <slot name="navbar">
-            <Navbar
-                v-if="shouldShowNavbar"
-                @toggle-sidebar="toggleSidebar"
-            >
+            <Navbar v-if="shouldShowNavbar" :isSidebar="!!sidebarItems.length" @toggle-sidebar="toggleSidebar">
                 <template #before>
                     <slot name="navbar-before" />
                 </template>
@@ -161,10 +108,7 @@ const onBeforeLeave = scrollPromise.pending
             </Navbar>
         </slot>
 
-        <div
-            class="sidebar-mask"
-            @click="toggleSidebar(false)"
-        />
+        <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
         <slot name="sidebar">
             <Sidebar>
@@ -191,13 +135,8 @@ const onBeforeLeave = scrollPromise.pending
             <!-- 专栏 -->
             <ColumnsPage v-else-if="frontmatter.columnsPage" />
 
-            <Transition
-                v-else
-                name="fade-slide-y"
-                mode="out-in"
-                @before-enter="onBeforeEnter"
-                @before-leave="onBeforeLeave"
-            >
+            <Transition v-else name="fade-slide-y" mode="out-in" @before-enter="onBeforeEnter"
+                @before-leave="onBeforeLeave">
                 <Page :key="page.path">
                     <template #top>
                         <slot name="page-top" />
@@ -210,7 +149,7 @@ const onBeforeLeave = scrollPromise.pending
                     </template>
                     <template #bottom>
                         <slot name="page-bottom" />
-                        <CommentService :darkmode="isDarkMode" />
+                        <CommentService />
                     </template>
                 </Page>
             </Transition>
