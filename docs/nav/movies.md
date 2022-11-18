@@ -76,7 +76,7 @@ export default {
         },
         {
           cardSrc: "https://www.btbdys.com/",
-          cardImgSrc: "https://www.btbdys.com/images/logo1.svg",
+          cardImgSrc: "https://cdn.jsdelivr.net/gh/imdianying/im@2021032601/statics/images/index-logo.png",
           cardName: "哔嘀影视",
           cardContent:"超清原画免费在线观看!",
         },

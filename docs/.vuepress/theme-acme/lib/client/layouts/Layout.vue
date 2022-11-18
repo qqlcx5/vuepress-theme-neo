@@ -16,7 +16,7 @@ import Page from '@theme/Page.vue'
 // @ts-ignore
 import Navbar from '@theme/Navbar.vue'
 // @ts-ignore
-import Sidebar from '@vuepress/theme-default/components/Sidebar.vue'
+import Sidebar from '@theme/Sidebar.vue'
 import { useEventListener, useDebounceFn } from '@vueuse/core'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, onBeforeUnmount, ref } from 'vue'

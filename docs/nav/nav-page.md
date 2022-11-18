@@ -140,7 +140,7 @@ export default {
         {
           id: '1',
           cardSrc: "https://github.com/",
-          cardImgSrc: "https://img0.baidu.com/it/u=2382900870,3325593570&fm=26&fmt=auto",
+          cardImgSrc: "https://cdn.jsdelivr.net/gh/Kele-Bingtang/static/img/tools/20220104224430.png",
           cardName: "Github",
           cardContent:
             "GitHub是一个面向开源及私有软件项目的托管平台",

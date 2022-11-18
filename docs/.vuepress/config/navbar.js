@@ -23,17 +23,17 @@ export default [
         link: '/utils/Array/chunk转换二维数组.md',
         activeMatch: '^/utils/'
     },
-    {
-        text: '导航页',
-        icon: 'acme-zuojiantou',
-        link: '/nav-page/',
-        activeMatch: '^/nav-page/'
-    },
-    {
-        text: '影视推荐',
-        link: '/movies/',
-        activeMatch: '^/movies/'
-    },
+    // {
+    //     text: '导航页',
+    //     icon: 'acme-zuojiantou',
+    //     link: '/nav-page/',
+    //     activeMatch: '^/nav-page/'
+    // },
+    // {
+    //     text: '影视推荐',
+    //     link: '/movies/',
+    //     activeMatch: '^/movies/'
+    // },
     {
         text: '测试用例',
         link: '/demo/http',
