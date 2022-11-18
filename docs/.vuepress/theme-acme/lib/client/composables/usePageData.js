@@ -1,6 +1,6 @@
 import { computed, provide } from 'vue'
 import { pagesData, allWordCount } from '@temp/theme-acme/pagesData'
-import { sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from '../utils/postData'
+import { sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from '../utils/resolvePostData'
 
 export const allWordCountSymbol = Symbol('allWordCount') // 本站的总字数
 export const sortPostsSymbol = Symbol('sortPosts')

@@ -1,4 +1,4 @@
-import { typeOf, compareDate } from './date'
+import { typeOf, compareDate } from './resolveDate'
 
 /**
  * 过滤非文章页

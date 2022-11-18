@@ -146,7 +146,7 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables';
 .post-list {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     :deep(.acme-colour) {
         vertical-align: -0.2em;
     }

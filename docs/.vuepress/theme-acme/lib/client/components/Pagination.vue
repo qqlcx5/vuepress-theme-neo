@@ -126,7 +126,7 @@ export default {
 
 .pagination {
     position: relative;
-    height: 60px;
+    // height: 60px;
     text-align: center;
     span {
         line-height: 1rem;
@@ -209,16 +209,6 @@ export default {
         }
     }
 }
-// @media (max-width: 800px) {
-//     .pagination {
-//         > span {
-//             padding: 1rem 1.5rem;
-//             p {
-//                 display: none;
-//             }
-//         }
-//     }
-// }
 // 719px
 @media (max-width: $MQMobile) {
     .pagination {

@@ -14,7 +14,7 @@ import ColumnsPage from '@theme/ColumnsPage.vue'
 // @ts-ignore
 import Page from '@theme/Page.vue'
 // @ts-ignore
-import Navbar from '@vuepress/theme-default/components/Navbar.vue'
+import Navbar from '@theme/Navbar.vue'
 // @ts-ignore
 import Sidebar from '@vuepress/theme-default/components/Sidebar.vue'
 import { useEventListener, useDebounceFn } from '@vueuse/core'

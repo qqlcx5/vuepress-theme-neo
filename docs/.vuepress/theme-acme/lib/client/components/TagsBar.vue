@@ -78,7 +78,7 @@ export default {
         align-items: center;
     }
     .tags {
-        padding: 0.5rem;
+        padding: 0.25rem;
         color: var(--c-bg);
         transition: transform 0.25s ease-in-out 0.08s,
             opacity 0.25s ease-in-out 0.04s;

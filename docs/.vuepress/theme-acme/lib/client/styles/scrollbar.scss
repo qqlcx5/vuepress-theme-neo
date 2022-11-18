@@ -8,7 +8,7 @@
     // 全局默认样式
     ::-webkit-scrollbar-thumb {
         border-radius: 12px;
-        // background-color: #49b1f5;
+        background-color: #49b1f5;
         background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
     }
 }

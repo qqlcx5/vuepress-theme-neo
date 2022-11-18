@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .categories-wrapper {
-    padding-bottom: 0.5rem;
+    // padding-bottom: 0.5rem;
     .categories-title {
         padding: 0.68rem 0.68rem 0.68rem 0.95rem;
         color: var(--c-text);
@@ -51,7 +51,6 @@ export default {
         align-items: center;
     }
     .categories {
-        // padding: 0.4rem 0;
         a {
             display: block;
             opacity: 0.8;

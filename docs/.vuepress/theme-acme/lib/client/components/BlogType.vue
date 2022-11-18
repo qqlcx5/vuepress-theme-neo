@@ -170,7 +170,8 @@ export default {
         }
         .categories,
         .tags {
-            max-height: calc(100vh - var(--navbar-height) - 460px);
+            // max-height: calc(100vh - var(--navbar-height) - 460px);
+            max-height: 310px;
             overflow-y: auto;
         }
     }
