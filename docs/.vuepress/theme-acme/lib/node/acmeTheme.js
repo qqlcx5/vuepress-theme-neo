@@ -1,6 +1,6 @@
+import { defaultTheme } from '@vuepress/theme-default'
 import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
-import { defaultTheme } from '@vuepress/theme-default'
 import { createPageFile, setFrontmatter, assignLocaleOptions, readTotalFileWords,formatWordCount } from './utils/index'
 export const acmeTheme = (localeOptions = {}) => {
     assignLocaleOptions(localeOptions)
@@ -21,7 +21,7 @@ export const acmeTheme = (localeOptions = {}) => {
             const usefulPages = app.pages.filter(page => !!page.filePathRelative && !page.frontmatter['home'] && page.frontmatter.article !== false)
             const pagesMap = usefulPages.map(page => ({
                 title: page.title || '',
-                description: page.excerpt || '',
+                excerpt: page.excerpt || '',
                 data: page.data || {},
                 frontmatter: page.frontmatter || {},
                 author: page.frontmatter.author || localeOptions.author || '',

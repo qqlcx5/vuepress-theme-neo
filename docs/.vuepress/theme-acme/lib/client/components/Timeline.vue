@@ -8,22 +8,19 @@
                 v-if="(year = getYear(index)) !== getYear(index - 1)"
                 class="year"
             >
-                <h2> <img
-                        :src="getBadge()"
-                        alt=""
-                    > {{ year }} <span> <i>{{ countByYear[year] }}</i> 篇 </span> </h2>
+                <h2> <img :src="getBadge()"> {{ year }} <span> <i>{{ countByYear[year] }}</i> 篇 </span> </h2>
             </li>
             <li>
                 <router-link :to="item.path">
                     <span class="date">{{ getDate(item) }}</span>
                     {{ item.title }}
                     <!-- 标题标签 -->
-                    <!-- <span
+                    <span
                         v-if="item.frontmatter.titleTag"
                         class="title-tag"
                     >
                         {{ item.frontmatter.titleTag }}
-                    </span> -->
+                    </span>
                 </router-link>
             </li>
         </template>
@@ -59,7 +56,6 @@ export default {
                 countByYear[year] = countByYear[year] + 1
             }
         }
-        // console.log('countByYear', countByYear);
         countByYear = countByYear
 
         onMounted(() => {
@@ -113,15 +109,10 @@ export default {
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg=='
         ])
         let currentBadge = ref('')
-        // if (themeData.titleBadgeIcons) {
-        //     badges.value = themeData.titleBadgeIcons
-        // }
         currentBadge.value = getBadge()
-        watch(
-            () => route.path,
-            () => {
-                currentBadge.value = getBadge()
-            }
+        watch(() => route.path, () => {
+            currentBadge.value = getBadge()
+        }
         )
         function getBadge() {
             return badges.value[Math.floor(Math.random() * badges.value.length)]
@@ -180,16 +171,16 @@ li {
             font-weight: 400;
             margin-right: 0.3rem;
         }
-        // .title-tag {
-        //     border: 1px solid var(--c-brand-light);
-        //     color: var(--c-brand-light);
-        //     font-size: 0.8rem;
-        //     padding: 0 0.35rem;
-        //     border-radius: 0.2rem;
-        //     margin-left: 0rem;
-        //     transform: translate(0, -0.05rem);
-        //     display: inline-block;
-        // }
+        .title-tag {
+            border: 1px solid var(--c-brand-light);
+            color: var(--c-brand-light);
+            font-size: 0.8rem;
+            padding: 0 0.35rem;
+            border-radius: 0.2rem;
+            margin-left: 0.3rem;
+            transform: translate(0, -0.05rem);
+            display: inline-block;
+        }
     }
 }
 .loadmore {

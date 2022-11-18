@@ -50,8 +50,8 @@
                         </span>
                     </div>
                 </div>
-                <div class="excerpt-wrapper" v-if="item.description">
-                    <div class="excerpt" v-html="item.description"></div>
+                <div class="excerpt-wrapper" v-if="item.excerpt">
+                    <div class="excerpt" v-html="item.excerpt"></div>
                     <router-link :to="item.path" class="readmore">
                         阅读全文
                         <AcmeIcon name="acme-youxiangshuangjiantou" size="20" />
