@@ -125,6 +125,8 @@ $headings: (2, 3, 4, 5, 6);
         margin: 0 0 0.75rem 0.5rem;
         font-weight: 600;
         font-size: 0.875rem;
+        cursor: pointer;
+        user-select: none;
     }
 
     .toc-wrapper {

@@ -1,6 +1,6 @@
 <template>
     <svg
-        v-if="useSvg_"
+        v-if="useSvg_ && name"
         class="acme-colour"
         aria-hidden="true"
         :style="[iconStyle_]"
@@ -8,7 +8,7 @@
         <use :xlink:href="`#${name}`"></use>
     </svg>
     <i
-        v-else
+        v-else-if="name"
         class="acme acme-icon"
         :class="[name]"
         :style="[iconStyle_]"

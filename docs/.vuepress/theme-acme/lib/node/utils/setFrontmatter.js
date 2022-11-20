@@ -20,6 +20,8 @@ export function setFrontmatter(files, themeConfig) {
               .replace(/"|---\n/g, '')
         : ''
     files.forEach(file => {
+        const main_name = path.basename(file.filePath)?.toUpperCase()
+        if(['README.MD', 'INDEX.MD'].includes(main_name)) return
         let dataStr = fs.readFileSync(file.filePath, 'utf8') // 读取每个md文件内容
         // fileMatterObj => {content:'剔除frontmatter后的文件内容字符串', data:{<frontmatter对象>}, ...}
         const fileMatterObj = matter(dataStr, {})
