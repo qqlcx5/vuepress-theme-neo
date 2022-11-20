@@ -1,10 +1,10 @@
 <template>
     <BlogLayout>
         <template #content-left>
-            <CategoriesBar
+            <!-- <CategoriesBar
                 :categoriesData="categoriesAndTagsSymbol.categories"
                 :category="category"
-            />
+            /> -->
             <PostList
                 :perPage="perPage"
                 :category="category"

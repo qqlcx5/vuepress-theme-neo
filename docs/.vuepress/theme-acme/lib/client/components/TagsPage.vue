@@ -1,11 +1,11 @@
 <template>
     <BlogLayout>
         <template #content-left>
-            <TagsBar
+            <!-- <TagsBar
                 v-if="categoriesAndTagsSymbol.tags.length"
                 :tagsData="categoriesAndTagsSymbol.tags"
                 :tag="tag"
-            />
+            /> -->
             <PostList
                 mode="tag"
                 :tag="tag"

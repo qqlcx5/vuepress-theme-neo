@@ -1,10 +1,10 @@
 <template>
     <BlogLayout>
         <template #content-left>
-            <ColumnsBar
+            <!-- <ColumnsBar
                 :columnsData="categoriesAndTagsSymbol.columns"
                 :column="column"
-            />
+            /> -->
             <PostList
                 :perPage="perPage"
                 :column="column"
