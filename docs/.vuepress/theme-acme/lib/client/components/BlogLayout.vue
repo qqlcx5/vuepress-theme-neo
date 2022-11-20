@@ -52,13 +52,19 @@ export default {
     // 移动端
     @media (max-width: $MQNarrow) {
         .acme-blog-wrapper {
+            display: block;
             padding-top: 0.75rem;
             padding-left: 1rem;
             padding-right: 1rem;
             padding-bottom: 0.75rem;
-        }
-        .content-right {
-            display: none;
+            .content-left, .content-right {
+                width: 100%;
+                margin: 0 auto;
+            }
+            .content-right {
+                max-width: var(--content-width);
+                margin-top: 0.75rem;
+            }
         }
     }
 }
