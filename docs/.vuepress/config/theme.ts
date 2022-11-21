@@ -42,7 +42,10 @@ export default acmeTheme({
     },
     // header images on home page
     homeHeaderImages: [
-        { path: 'https://blog.zxh.io/img/home-bg/5.jpg' }
+        {
+            path: 'https://blog.zxh.io/img/home-bg/5.jpg',
+            mask: 'rgba(65, 60, 55, .2)'
+        }
         // {
         //     path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/1.jpg',
         //     mask: 'rgba(40, 57, 101, .3)'

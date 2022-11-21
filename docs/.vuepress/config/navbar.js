@@ -1,25 +1,25 @@
 export default [
     {
         text: '面试官系列',
-        icon: 'acme-qq',
+        icon: 'acme-jianzhu',
         link: '/interview/JavaScript/BOM',
         activeMatch: '^/interview/'
     },
     {
         text: '指南',
-        icon: 'acme-wechat',
+        icon: 'acme-shizhong',
         link: '/guide/',
         activeMatch: '^/guide/'
     },
     {
         text: '饿了么组件库',
-        icon: 'acme-github',
+        icon: 'acme-shanchuxian',
         link: '/el-component/01.手写el-form表单组件.md',
         activeMatch: '^/el-component/'
     },
     {
         text: '工具函数',
-        icon: 'acme-csdn',
+        icon: 'acme-renwu',
         link: '/utils/Array/chunk转换二维数组.md',
         activeMatch: '^/utils/'
     },
@@ -36,13 +36,13 @@ export default [
     // },
     {
         text: '测试用例',
-        icon: 'acme-fenlei1',
+        icon: 'acme-riqi',
         link: '/demo/http',
         activeMatch: '^/demo/'
     },
     {
         text: '索引',
-        icon: 'acme-linkedin',
+        icon: 'acme-shaixuan',
         children: [
             {
                 text: '标签',
