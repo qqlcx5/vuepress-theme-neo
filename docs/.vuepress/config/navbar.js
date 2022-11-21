@@ -2,7 +2,7 @@ export default [
     {
         text: '面试官系列',
         icon: 'acme-jianzhu',
-        link: '/interview/JavaScript/BOM',
+        link: '/interview/',
         activeMatch: '^/interview/'
     },
     {
@@ -14,7 +14,7 @@ export default [
     {
         text: '饿了么组件库',
         icon: 'acme-shanchuxian',
-        link: '/el-component/01.手写el-form表单组件.md',
+        link: '/el-component/',
         activeMatch: '^/el-component/'
     },
     {

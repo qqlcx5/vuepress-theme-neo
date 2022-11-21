@@ -83,7 +83,7 @@ export default defineComponent({
                         h('div', { onClick: () => navigate('/articles/') }, [h('div', { class: 'num' }, sortPostsSymbol.length), h('div', locale.value.article)]),
                         h('div', { onClick: () => navigate('/categories/') }, [h('div', { class: 'num' }, categoriesAndTagsSymbol?.categories?.length), h('div', locale.value.category)]),
                         h('div', { onClick: () => navigate('/tags/') }, [h('div', { class: 'num' }, categoriesAndTagsSymbol?.tags?.length), h('div', locale.value.tag)]),
-                        h('div', { onClick: () => navigate('/archives/') }, [h('div', { class: 'num' }, sortPostsByDateSymbol.length), h('div', locale.value.timeline)])
+                        h('div', { onClick: () => navigate('/archives/') }, [h('div', { class: 'num' }, sortPostsByDateSymbol.length), h('div', locale.value.archives)])
                     ]),
                 ]
             )

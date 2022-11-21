@@ -5,6 +5,20 @@ import TOC from '@theme/TOC.vue'
 import PageMeta from '@vuepress/theme-default/components/PageMeta.vue'
 // @ts-ignore
 import PageNav from '@vuepress/theme-default/components/PageNav.vue'
+// @ts-ignore
+import Catalogue from '@theme/Catalogue.vue'
+import { ref } from 'vue'
+import { usePageFrontmatter } from '@vuepress/client';
+import { useThemeLocaleData } from '../composables/index.js'
+const frontmatter = usePageFrontmatter();
+const themeLocale = useThemeLocaleData()
+
+// custom acme theme Catalogue 
+let isCatalogue = ref(false)
+let CatalogueList = ref([])
+frontmatter.value.catalogue && (isCatalogue.value = true)
+CatalogueList.value = themeLocale.value.sidebar[`/${frontmatter.value.catalogue}/`] || []
+// custom acme theme Catalogue 
 </script>
 
 <template>
@@ -14,7 +28,9 @@ import PageNav from '@vuepress/theme-default/components/PageNav.vue'
         <TOC />
         <div class="theme-default-content">
             <slot name="content-top" />
-
+            
+            <!-- 目录页 -->
+            <Catalogue v-if="isCatalogue" :list="CatalogueList" />
             <Content />
 
             <slot name="content-bottom" />

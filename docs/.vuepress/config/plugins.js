@@ -39,9 +39,9 @@ export default [
     copyCodePlugin({
         showInMobile: false
     }),
-    photoSwipePlugin({
-        selector: ':not(a) > img:not(.no-zoom)'
-    }),
+    // photoSwipePlugin({
+    //     selector: ':not(a) > img:not(.no-zoom)'
+    // }),
     sitemapPlugin({
         hostname: 'acme.feyoudao.cn'
     }),
