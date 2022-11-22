@@ -16,7 +16,7 @@ const { list } = toRefs(props)
 </script>
 
 <template>
-    <ul class="acme-pl-0 acme-pb-16">
+    <ul class="acme-pl-0">
         <li
             v-for="(item, index) in list"
             :key="item"
@@ -62,6 +62,9 @@ const { list } = toRefs(props)
     </ul>
 </template>
 <style lang="scss" scoped>
+ul ul {
+    padding-bottom: 16px;
+}
 li {
     list-style: none;
 }
