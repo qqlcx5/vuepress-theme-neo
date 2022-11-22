@@ -110,7 +110,7 @@ const onBeforeLeave = scrollPromise.pending
         <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
         <slot name="sidebar">
-            <Sidebar>
+            <Sidebar v-if="!frontmatter.catalogue">
                 <template #top>
                     <slot name="sidebar-top" />
                 </template>

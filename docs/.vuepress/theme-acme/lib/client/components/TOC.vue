@@ -84,7 +84,6 @@ export default defineComponent({
                     h("aside", { id: "toc" }, [
                         h("div", { class: "toc-header", onClick: () => handleToggle() }, [
                             h(resolveComponent("AcmeIcon"), { name: hasToggle.value ? "acme-tianjia" : "acme-jian" }),
-                            // h("span", {class: 'acme-fs-16 acme-mr-4'}, hasToggle.value ? "-" : "+"),
                             h("span", {}, "本页目录"),
                         ]),
                         h("div", { class: ["toc-wrapper", { 'hidden': hasToggle.value }], ref: toc }, [tocHeaders]),

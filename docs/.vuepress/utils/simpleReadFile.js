@@ -8,7 +8,7 @@ import { path, fs } from '@vuepress/utils'
 function readFile(dir, collapsible = false,  filesList = [], fpath = '') {
   const files = fs.readdirSync(dir)
   const rootName = path.basename(dir)
-  files.filter(o => o !== '.DS_Store').forEach((file, index) => {
+  files.filter(o => o !== '.DS_Store' && !['README.MD', 'INDEX.MD'].includes(o.toUpperCase())).forEach((file, index) => {
     const filePath = path.join(dir, file)
     const stat = fs.statSync(filePath)
     const fileName = path.basename(filePath) // 文件名数组

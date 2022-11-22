@@ -2,6 +2,30 @@
     display: flex;
     flex-direction: $direction;
 }
+.c-row {
+    @include flex(row);
+    flex-wrap: wrap;
+}
+@for $i from 1 through 12 {
+    .acme-col-#{$i} {
+        flex: 0 0 calc(#{100 * $i + "%"} / 12);
+        min-width: 0;
+    }
+    @if $i <= 6 {
+        .acme-flex-#{$i} {
+            flex: #{$i};
+            min-width: 0;
+        }
+        .acme-flex-column {
+            & > .acme-flex-#{$i},
+            & > .acme-col-#{$i} {
+                min-width: auto;
+                min-height: 0;
+            }
+        }
+    }
+}
+
 .acme-flex {
     @include flex(row);
 }

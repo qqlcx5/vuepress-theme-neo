@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { usePageFrontmatter } from '@vuepress/client';
 // @ts-ignore
 import TOC from '@theme/TOC.vue'
 // @ts-ignore
@@ -7,18 +9,14 @@ import PageMeta from '@vuepress/theme-default/components/PageMeta.vue'
 import PageNav from '@vuepress/theme-default/components/PageNav.vue'
 // @ts-ignore
 import Catalogue from '@theme/Catalogue.vue'
-import { ref } from 'vue'
-import { usePageFrontmatter } from '@vuepress/client';
-import { useThemeLocaleData } from '../composables/index.js'
+import { useSidebarItems } from '../composables/index.js'
 const frontmatter = usePageFrontmatter();
-const themeLocale = useThemeLocaleData()
 
-// custom acme theme Catalogue 
+// custom acme theme 
 let isCatalogue = ref(false)
-let CatalogueList = ref([])
+const sidebarItems = useSidebarItems()
 frontmatter.value.catalogue && (isCatalogue.value = true)
-CatalogueList.value = themeLocale.value.sidebar[`/${frontmatter.value.catalogue}/`] || []
-// custom acme theme Catalogue 
+// custom acme theme 
 </script>
 
 <template>
@@ -30,7 +28,7 @@ CatalogueList.value = themeLocale.value.sidebar[`/${frontmatter.value.catalogue}
             <slot name="content-top" />
             
             <!-- 目录页 -->
-            <Catalogue v-if="isCatalogue" :list="CatalogueList" />
+            <Catalogue v-if="isCatalogue" :list="sidebarItems" />
             <Content />
 
             <slot name="content-bottom" />
