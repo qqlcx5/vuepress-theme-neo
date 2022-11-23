@@ -41,7 +41,6 @@ export default {
 
 <style lang="scss" scoped>
 .columns-wrapper {
-    padding-bottom: 0.5rem;
     .columns-title {
         padding: 0.68rem 0.68rem 0.68rem 0.95rem;
         color: var(--c-text);

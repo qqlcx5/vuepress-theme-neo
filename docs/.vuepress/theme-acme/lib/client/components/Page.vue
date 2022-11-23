@@ -27,9 +27,9 @@ frontmatter.value.catalogue && (isCatalogue.value = true)
         <div class="theme-default-content">
             <slot name="content-top" />
             
+            <Content />
             <!-- 目录页 -->
             <Catalogue v-if="isCatalogue" :list="sidebarItems" />
-            <Content />
 
             <slot name="content-bottom" />
         </div>
