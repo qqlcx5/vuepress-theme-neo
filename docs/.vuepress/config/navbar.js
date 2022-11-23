@@ -37,7 +37,7 @@ export default [
     {
         text: '测试用例',
         icon: 'acme-riqi',
-        link: '/demo/http',
+        link: '/demo/',
         activeMatch: '^/demo/'
     },
     {
