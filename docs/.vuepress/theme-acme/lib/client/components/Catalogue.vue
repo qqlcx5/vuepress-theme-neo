@@ -31,7 +31,7 @@ const { list } = toRefs(props)
 
             <RouterLink v-else :to="item.link" :title="item.text">
                 <AcmeIcon name="acme-md" class="acme-mr-4" />
-                {{ index + 1 }}{{ item.text }}
+                {{ index + 1 }}.{{ item.text }}
             </RouterLink>
         </li>
     </ul>
