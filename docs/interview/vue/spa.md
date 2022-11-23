@@ -170,4 +170,4 @@ miniRouter.push('/page2')  // page2
 - https://juejin.cn/post/6844903512107663368
 - https://www.cnblogs.com/constantince/p/5586851.html
 
- ![](https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png)
+ 

@@ -151,4 +151,4 @@ Vue.js（/vjuː/，或简称为 Vue）是一个用于创建用户界面的开源
 - <https://zhuanlan.zhihu.com/p/20197803>
 - <https://zhuanlan.zhihu.com/p/38296857>
 
-![](https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png)
+

@@ -23,8 +23,6 @@ columns:
 
 ![](https://static.vue-js.com/482f33e0-8089-11eb-85f6-6fac77c0c9b3.png)
 
-
-
 ## 二、window
 
 `Bom`的核心对象是`window`，它表示浏览器的一个实例
@@ -72,10 +70,6 @@ const myWin = window.open('http://www.vue3js.cn','myWin')
 
 新创建的 `window` 对象有一个 `opener` 属性，该属性指向打开他的原始窗口对象
 
-
-
-
-
 ## 三、location
 
 `url`地址如下：
@@ -91,19 +85,17 @@ http://foouser:barpassword@www.wrox.com:80/WileyCDA/?q=javascript#contents
 | hash     | "#contents"                                            | utl中#后面的字符，没有则返回空串    |
 | host     | www.wrox.com:80                                        | 服务器名称和端口号                  |
 | hostname | www.wrox.com                                           | 域名，不带端口号                    |
-| href     | http://www.wrox.com:80/WileyCDA/?q=javascript#contents | 完整url                             |
+| href     | <http://www.wrox.com:80/WileyCDA/?q=javascript#contents> | 完整url                             |
 | pathname | "/WileyCDA/"                                           | 服务器下面的文件路径                |
 | port     | 80                                                     | url的端口号，没有则为空             |
 | protocol | http:                                                  | 使用的协议                          |
 | search   | ?q=javascript                                          | url的查询字符串，通常为？后面的内容 |
 
-除了 `hash `之外，只要修改` location `的一个属性，就会导致页面重新加载新` URL`
+除了 `hash`之外，只要修改`location`的一个属性，就会导致页面重新加载新`URL`
 
 `location.reload()`，此方法可以重新刷新当前页面。这个方法会根据最有效的方式刷新页面，如果页面自上一次请求以来没有改变过，页面就会从浏览器缓存中重新加载
 
 如果要强制从服务器中重新加载，传递一个参数`true`即可
-
-
 
 ## 四、navigator
 
@@ -115,15 +107,11 @@ http://foouser:barpassword@www.wrox.com:80/WileyCDA/?q=javascript#contents
 
  ![](https://static.vue-js.com/74096620-8089-11eb-ab90-d9ae814b240d.png)
 
-
-
 ## 五、screen
 
 保存的纯粹是客户端能力信息，也就是浏览器窗口外面的客户端显示器的信息，比如像素宽度和像素高度
 
  ![](https://static.vue-js.com/7d6b21e0-8089-11eb-85f6-6fac77c0c9b3.png)
-
-
 
 ## 六、history
 
