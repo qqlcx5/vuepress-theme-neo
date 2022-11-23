@@ -140,6 +140,7 @@ $headings: (2, 3, 4, 5, 6);
         text-overflow: ellipsis;
         white-space: nowrap;
         scroll-behavior: smooth;
+        overflow: hidden;
         transition: max-height 0.25s ease-in;
         &.hidden {
             max-height: 0;
