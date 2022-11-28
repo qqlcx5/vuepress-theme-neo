@@ -22,7 +22,7 @@ const scrollTag = (index: number) => {
     const activeEl = document.querySelector(`#catalogue-title-${index}`)
     const ElRect = document.querySelector('.catalogue-rect')?.getBoundingClientRect()?.height
     const anchorRect = document.querySelector('.anchor-rect')?.getBoundingClientRect()?.top
-    const top = activeEl?.getBoundingClientRect().top - (ElRect / 2) - anchorRect
+    const top = activeEl?.getBoundingClientRect().top - ElRect / 2 - anchorRect
     window?.scrollTo({ top, behavior: 'smooth' })
 }
 </script>
@@ -30,7 +30,7 @@ const scrollTag = (index: number) => {
 <template>
     <ul class="acme-pl-0">
         <!-- 这个锚点是为了解决目录跳转时，标题被遮挡的问题 -->
-        <div class="anchor-rect"></div> 
+        <div class="anchor-rect"></div>
         <!-- 这里的list是一个嵌套对象才展示 -->
         <div v-show="!isChildren && list[0]?.children" class="acme-flex acme-flex-wrap catalogue-rect">
             <div class="acme-p-8 cursor-pointer" v-for="(item, p) in list" :key="p" @click="scrollTag(p)">
@@ -61,14 +61,21 @@ ul ul {
     margin-bottom: 16px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(var(--c-brand-rgb), 0.08);
+    // background-color: rgba(var(--c-brand-rgb), 0.08);
+    // border-radius: 6px;
+    background-color: var(--c-bg);
+    // box-shadow: var(--a-box-shadow);
+
     li {
-        width: 50%;
+        // width: 50%;
+        width: 100%;
         box-sizing: border-box;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-
+        &:nth-of-type(odd) {
+            background-color: rgba(var(--c-brand-rgb), 0.09);
+        }
         // 1 4 5 8 9 12 13 16 17 20 21 24 25 28 29 32 33 36 37 40 41 44 45 48 49 52 53 56 57 60 61 64 65 68 69 72 73 76 77 80 81 84 85 88 89 92 93 96 97 100
         // &:nth-of-type(4n) {
         //     background-color: rgba(var(--c-brand-rgb), 0.07);
@@ -77,12 +84,12 @@ ul ul {
         //     background-color: rgba(var(--c-brand-rgb), 0.07);
         // }
         // 2 3 6 7 10 11 14 15 18 19 22 23 26 27 30 31 34 35 38 39 42 43 46 47 50 51 54 55 58 59 62 63 66 67 70 71 74 75 78 79 82 83 86 87 90 91 94 95 98 99
-        &:nth-of-type(4n - 1) {
-            background-color: rgba(var(--c-brand-rgb), 0.09);
-        }
-        &:nth-of-type(4n + 2) {
-            background-color: rgba(var(--c-brand-rgb), 0.09);
-        }
+        // &:nth-of-type(4n - 1) {
+        //     background-color: rgba(var(--c-brand-rgb), 0.09);
+        // }
+        // &:nth-of-type(4n + 2) {
+        //     background-color: rgba(var(--c-brand-rgb), 0.09);
+        // }
 
         a {
             color: var(--c-text-light);
