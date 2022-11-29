@@ -61,9 +61,9 @@ ul ul {
     margin-bottom: 16px;
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--c-bg);
     // background-color: rgba(var(--c-brand-rgb), 0.08);
     // border-radius: 6px;
-    background-color: var(--c-bg);
     // box-shadow: var(--a-box-shadow);
 
     li {
@@ -73,6 +73,9 @@ ul ul {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        &:nth-of-type(even) {
+            background-color: rgba(var(--c-brand-rgb), 0.04);
+        }
         &:nth-of-type(odd) {
             background-color: rgba(var(--c-brand-rgb), 0.09);
         }
