@@ -64,12 +64,13 @@ const enableToc = computed(
         frontmatter.value.toc ||
         (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
 )
+const enableCatalogue = computed(() => frontmatter.value.catalogue)
 // custom acme theme
 // classes
 const containerClass = computed(() => [
     {
         'no-navbar': !shouldShowNavbar.value,
-        'no-sidebar': !sidebarItems.value.length,
+        'no-sidebar': !sidebarItems.value.length || enableCatalogue.value,
         'sidebar-open': isSidebarOpen.value,
         'has-toc': enableToc.value,
     },
