@@ -38,7 +38,7 @@ const scrollTag = (index: number) => {
             </div>
         </div>
         <ul class="acme-pl-0">
-            <li v-for="(item, index) in list" :key="item" class="acme-ptb-4 acme-pr-8">
+            <li v-for="(item, index) in list" :key="item" class="acme-ptb-4">
                 <template v-if="item.children?.length">
                     <div :id="`catalogue-title-${index}`" class="acme-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
                         <AcmeIcon name="acme-wenjianlan" class="acme-mr-4" />
@@ -64,6 +64,7 @@ ul ul {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--c-bg);
+    transform: background-color 0.3s ease;
     // background-color: rgba(var(--c-brand-rgb), 0.08);
     // border-radius: 6px;
     // box-shadow: var(--a-box-shadow);
