@@ -5,22 +5,6 @@
 @use 'flex'; // flex样式
 @use 'code'; // reset code 样式
 @use 'navbar'; // reset code 样式
+@use 'other'; // 其他
 @import './variables'; // scss变量
 
-
-.dark-shadow {
-    border-radius: 6px;
-    background-color: var(--c-bg);
-    box-shadow: var(--a-box-shadow);
-    &:hover {
-        box-shadow: var(--a-box-shadow-hover);
-    }
-}
-
-@for $i from 0 through 32 {
-    @if $i % 2 == 0 {
-        .acme-fs-#{$i} {
-            font-size: #{$i}px;
-        }
-    }
-}

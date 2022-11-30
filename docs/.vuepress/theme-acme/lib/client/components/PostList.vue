@@ -203,7 +203,7 @@ export default {
                     opacity: 0.7;
                     font-size: 0.8rem;
                     margin-right: 1rem;
-                    cursor: pointer;
+                    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
                     &::before {
                         margin-right: 0.3rem;
                     }

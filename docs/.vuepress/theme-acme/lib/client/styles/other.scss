@@ -1,0 +1,31 @@
+//
+
+.dark-shadow {
+    border-radius: 6px;
+    background-color: var(--c-bg);
+    box-shadow: var(--a-box-shadow);
+    &:hover {
+        box-shadow: var(--a-box-shadow-hover);
+    }
+}
+
+@for $i from 0 through 32 {
+    @if $i % 2 == 0 {
+        .acme-fs-#{$i} {
+            font-size: #{$i}px;
+        }
+    }
+}
+
+html body {
+    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+    cursor: url(https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/link.cur), default;
+}
+a,
+img {
+    cursor: url(https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur), default;
+}
+
+.cursor-pointer {
+    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+}

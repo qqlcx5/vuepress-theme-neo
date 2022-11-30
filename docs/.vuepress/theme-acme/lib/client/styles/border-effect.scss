@@ -4,7 +4,6 @@
 .effect-border-1 {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     z-index: 2;
     &::before,
     &::after {

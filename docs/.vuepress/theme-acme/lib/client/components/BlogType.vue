@@ -155,7 +155,7 @@ export default {
             color: var(--c-text-lighter);
             background: rgb(127 127 127 / 15%);
             &:hover {
-                cursor: pointer;
+                cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
             }
             &.active {
                 color: var(--c-brand);

@@ -62,7 +62,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
             background-color: #ffad32;
             transition: all 0.5s ease-in-out;
             text-decoration: none;
-            cursor: pointer;
+            cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
             &:hover {
                 background: #ec9228;
                 color: #ffffff;
