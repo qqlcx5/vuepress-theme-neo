@@ -22,8 +22,9 @@ html body {
     cursor: url(https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/link.cur), default;
 }
 a,
-img {
-    cursor: url(https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur), default;
+img,
+div[class*=language-]>button.copy {
+    cursor: url(https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur), pointer !important;
 }
 
 .cursor-pointer {
