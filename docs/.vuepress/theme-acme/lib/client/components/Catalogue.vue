@@ -5,12 +5,12 @@ import Catalogue from '@theme/Catalogue.vue'
 const props = defineProps({
     list: {
         type: Array,
-        defalut: () => []
+        defalut: () => [],
     },
     isChildren: {
         type: Boolean,
-        default: false
-    }
+        default: false,
+    },
 })
 const toggleObj = reactive({})
 const toggleClick = (index: number) => {
@@ -20,8 +20,12 @@ const toggleClick = (index: number) => {
 const { list } = toRefs(props)
 const scrollTag = (index: number) => {
     const activeEl = document.querySelector(`#catalogue-title-${index}`)
-    const ElRect = document.querySelector('.catalogue-rect')?.getBoundingClientRect()?.height
-    const anchorRect = document.querySelector('.anchor-rect')?.getBoundingClientRect()?.top
+    const ElRect = document
+        .querySelector('.catalogue-rect')
+        ?.getBoundingClientRect()?.height
+    const anchorRect = document
+        .querySelector('.anchor-rect')
+        ?.getBoundingClientRect()?.top
     const top = activeEl?.getBoundingClientRect().top - ElRect / 2 - anchorRect
     window?.scrollTo({ top, behavior: 'smooth' })
 }
@@ -32,26 +36,62 @@ const scrollTag = (index: number) => {
         <!-- 这个锚点是为了解决目录跳转时，标题被遮挡的问题 -->
         <div class="anchor-rect"></div>
         <!-- 这里的list是一个嵌套对象才展示 -->
-        <div v-show="!isChildren && list[0]?.children" class="acme-flex acme-flex-wrap catalogue-rect">
-            <div class="cursor-pointer" v-for="(item, p) in list" :key="p" @click="scrollTag(p)">
+        <div
+            v-show="!isChildren && list[0]?.children"
+            class="acme-flex acme-flex-wrap catalogue-rect"
+        >
+            <div
+                class="cursor-pointer"
+                v-for="(item, p) in list"
+                :key="p"
+                @click="scrollTag(p)"
+            >
                 {{ item.text }}
             </div>
         </div>
         <ul class="acme-pl-0">
-            <li v-for="(item, index) in list" :key="item" class="acme-ptb-4">
+            <li
+                v-for="(item, index) in list"
+                :key="item"
+                class="acme-ptb-4"
+            >
                 <template v-if="item.children?.length">
-                    <div :id="`catalogue-title-${index}`" class="acme-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
-                        <AcmeIcon name="acme-wenjianlan" class="acme-mr-4" />
+                    <div
+                        :id="`catalogue-title-${index}`"
+                        class="acme-pb-4 cursor-pointer"
+                        @click.stop="toggleClick(index)"
+                    >
+                        <AcmeIcon
+                            name="acme-wenjianlan"
+                            class="acme-mr-4"
+                        />
                         <span class="catalogue-title">{{ item.text }} 目录</span>
-                        <AcmeIcon :name="toggleObj[index] ? 'acme-xiangxiajiantou' : 'acme-xiangshangjiantou'" class="acme-mr-4" />
+                        <AcmeIcon
+                            :name="toggleObj[index] ? 'acme-xiangxiajiantou' : 'acme-xiangshangjiantou'"
+                            class="acme-mr-4"
+                        />
                     </div>
-                    <Transition name="fade-slide-y" mode="out-in">
-                        <Catalogue v-show="!toggleObj[index]" isChildren :list="item.children" />
+                    <Transition
+                        name="fade-slide-y"
+                        mode="out-in"
+                    >
+                        <Catalogue
+                            v-show="!toggleObj[index]"
+                            isChildren
+                            :list="item.children"
+                        />
                     </Transition>
                 </template>
 
-                <RouterLink v-else :to="item.link" :title="item.text">
-                    <AcmeIcon name="acme-md" class="acme-mr-4" />
+                <RouterLink
+                    v-else
+                    :to="item.link"
+                    :title="item.text"
+                >
+                    <AcmeIcon
+                        name="acme-md"
+                        class="acme-mr-4"
+                    />
                     {{ index + 1 }}.{{ item.text }}
                 </RouterLink>
             </li>
@@ -107,13 +147,14 @@ ul ul {
     }
 }
 .catalogue-rect {
+    z-index: 2;
     position: sticky;
     top: calc(var(--navbar-height));
-    z-index: 2;
-    background-color: var(--c-bg);
+    background-color: var(--c-bg-navbar);
     .cursor-pointer {
         padding: 8px 16px;
         border-radius: 16px;
+        vertical-align: middle;
         background-color: var(--c-bg-light);
         margin: 6px;
     }
