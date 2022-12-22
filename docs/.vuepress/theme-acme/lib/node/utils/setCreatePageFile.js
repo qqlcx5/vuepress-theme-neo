@@ -1,7 +1,8 @@
 import { createPage, deletePage } from './createPageFile'
 
 // 生成分类标签等数据
-export function createPageFile(sourceDir, themeConfig) {
+export function prepareCreatePageFile(app, themeConfig) {
+    let sourceDir = app.dir.source()
     if (!sourceDir || !themeConfig) return
 
     // 创建分类页文件

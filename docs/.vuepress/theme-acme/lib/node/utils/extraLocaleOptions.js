@@ -16,7 +16,7 @@ export const BLOGLOCALES = {
 /**
  * Assign default options
  */
-export const assignLocaleOptions = localeOptions => {
+export const extraLocaleOptions = localeOptions => {
     const blogLocales = localeOptions.blogLocales
     localeOptions.blogLocales = blogLocales ? Object.assign(BLOGLOCALES, blogLocales) : BLOGLOCALES
     // 关闭默认主题插件

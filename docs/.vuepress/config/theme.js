@@ -1,39 +1,40 @@
 import navbar from './navbar'
 import sidebar from './sidebar'
 import acmeTheme from '../theme-acme/lib/node'
-import { type DefaultThemeOptions } from '@vuepress/theme-default'
+// import { type DefaultThemeOptions } from '@vuepress/theme-default'
 
 export default acmeTheme({
     // 默认主题配置项
-    navbar, // 导航栏配置
-    sidebar, // 侧边栏配置
-    logo: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico', // 导航栏logo
-    contributors: false, // 是否显示贡献者
+    navbar,
+    sidebar,
+    logo: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico',
+    contributors: false,
     docsDir: 'docs',
     docsBranch: 'master',
     docsRepo: 'https://github.com/qqlcx5/vuepress-next',
     editLinkPattern: ':repo/edit/:branch/:path',
     sidebarDepth: 0,
     // acme主题配置项
-    bolgCreateAt: '2020-01-01', // 博客创建时间
-    category: true, // 是否开启分类
-    tag: true, // 是否开启标签
-    column: true, // 是否开启专栏
-    archive: true, // 是否开启归档
+    bolgCreateAt: '2020-01-01',
+    category: true,
+    tag: true,
+    column: true,
+    archive: true,
     blog: {
         name: 'Star Field',
-        intro: 'https://feyoudao.cn', // 个人简介
-        roundAvatar: true, // 头像是否圆形
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png', // 头像
+        intro: 'https://feyoudao.cn',
+        roundAvatar: true,
+        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
         description: 'この星は燃え尽きることはない。'
     },
     author: {
         name: '星野',
         url: 'https://feyoudao.cn'
     },
-    contentStyle: 'style1', // 内容风格
-    contentBackground: '#fff', // 内容背景
-    contentImages: [], // 内容背景图片
+    contentStyle: 'style1',
+    contentBackground: '#fff',
+    contentImages: [],
+
     // header images information
     homeHeaderInfo: {
         name: 'Star Field',
@@ -59,4 +60,4 @@ export default acmeTheme({
         //     mask: 'rgba(40, 75, 50, .3)'
         // }
     ]
-} as DefaultThemeOptions)
+})
