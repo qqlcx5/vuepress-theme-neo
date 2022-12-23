@@ -1,4 +1,4 @@
-import readFile from './simpleReadFile' // 读取文件函数模块
+import readFile from './genSidebarData' // 读取文件函数模块
 
 export const prepareSidebarData = (app, options) => {
     let docsRoot = app.dir.source()
@@ -16,6 +16,6 @@ export const prepareSidebarData = (app, options) => {
             sidebarData[path] = []
         }
     }
-    console.log('prepareSidebarData sidebarData---------------------', sidebarData);
+    // console.log('prepareSidebarData sidebarData---------------------', sidebarData);
     options.sidebar = sidebarData
 }

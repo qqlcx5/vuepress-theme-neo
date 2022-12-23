@@ -9,6 +9,29 @@ export default {
     // '/utils/': readFile(docsRoot + '/utils', true),
     // '/demo/': readFile(docsRoot + '/demo'),
     // '/interview/': readFile(docsRoot + '/interview', false),
+    // '/el-component/' : {
+    //     text: 'Element-UI组件',
+    //     value: 'structure',
+    //     collapsible: false
+    // },
     '/el-component/' : 'structure',
     '/interview/' : 'structure',
 }
+
+// '/interview/': [
+//     { text: 'algorithm', collapsible: true, children: [Array] },
+//     { text: 'applet', collapsible: true, children: [Array] },
+//     { text: 'css', collapsible: true, children: [Array] },
+//     { text: 'design', collapsible: true, children: [Array] },
+//     { text: 'es6', collapsible: true, children: [Array] },
+//     { text: 'git', collapsible: true, children: [Array] },
+//     { text: 'http', collapsible: true, children: [Array] },
+//     { text: 'JavaScript', collapsible: true, children: [Array] },
+//     { text: 'linux', collapsible: true, children: [Array] },
+//     { text: 'NodeJS', collapsible: true, children: [Array] },
+//     { text: 'React', collapsible: true, children: [Array] },
+//     { text: 'typescript', collapsible: true, children: [Array] },
+//     { text: 'vue', collapsible: true, children: [Array] },
+//     { text: 'vue3', collapsible: true, children: [Array] },
+//     { text: 'webpack', collapsible: true, children: [Array] }
+//   ]
