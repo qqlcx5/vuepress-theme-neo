@@ -36,7 +36,7 @@ const scrollTag = (index: number) => {
             <li v-for="(item, index) in list" :key="item" class="acme-ptb-4">
                 <template v-if="item.children?.length">
                     <div :id="`catalogue-title-${index}`" class="acme-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
-                        <AcmeIcon name="acme-wenjianlan" class="acme-mr-4" />
+                        <AcmeIcon :name="item.icon || 'acme-wenjianlan'" class="acme-mr-4" />
                         <span class="catalogue-title">{{ item.text }} 目录</span>
                         <AcmeIcon :name="toggleObj[index] ? 'acme-xiangxiajiantou' : 'acme-xiangshangjiantou'" class="acme-mr-4" />
                     </div>
@@ -46,7 +46,7 @@ const scrollTag = (index: number) => {
                 </template>
 
                 <RouterLink v-else :to="item.link" :title="item.text">
-                    <AcmeIcon name="acme-md" class="acme-mr-4" />
+                    <AcmeIcon :name="item.icon || 'acme-md'" class="acme-mr-4" />
                     {{ index + 1 }}.{{ item.fullTitle ||item.text }}
                 </RouterLink>
             </li>
