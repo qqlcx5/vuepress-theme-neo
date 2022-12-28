@@ -81,6 +81,10 @@ export const resolveArraySidebarItems = (sidebarConfig, sidebarDepth) => {
         let childItem;
         if (isString(item)) {
             childItem = useNavLink(item);
+        } else if(isString(item.pathName)){
+            childItem = useNavLink(item.pathName);
+            childItem.icon = item.icon;
+            childItem.iconSize = item.iconSize;
         }
         else {
             childItem = item;

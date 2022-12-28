@@ -72,6 +72,7 @@ export default defineComponent({
             return String(props.useSvg) !== 'false'
         })
         const isNumeric = (val) => typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
+
         function addUnit(value, unit = 'px') {
             return isNumeric(value) ? value + unit : String(value);
         }
@@ -118,5 +119,8 @@ export default defineComponent({
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 </style>

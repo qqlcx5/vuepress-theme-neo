@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-ignore
 import SidebarItem from '@theme/SidebarItem.vue'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
