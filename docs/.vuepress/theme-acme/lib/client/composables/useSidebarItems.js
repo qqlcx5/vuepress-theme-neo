@@ -79,12 +79,10 @@ export const resolveArraySidebarItems = (sidebarConfig, sidebarDepth) => {
     const page = usePageData();
     const handleChildItem = (item) => {
         let childItem;
-        if (isString(item)) {
+        if (isString(item) ) {
             childItem = useNavLink(item);
-        } else if(isString(item.pathName)){
-            childItem = useNavLink(item.pathName);
-            childItem.icon = item.icon;
-            childItem.iconSize = item.iconSize;
+        }else if (isString(item.relPath)){
+            childItem = { ...useNavLink(item.relPath), ...item };
         }
         else {
             childItem = item;

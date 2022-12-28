@@ -13,7 +13,6 @@ const toggleClick = (index: number) => {
     toggleObj[index] = !toggleObj[index]
     console.log(toggleObj)
 }
-const { list } = toRefs(props)
 const scrollTag = (index: number) => {
     const activeEl = document.querySelector(`#catalogue-title-${index}`)
     const ElRect = document.querySelector('.catalogue-rect')?.getBoundingClientRect()?.height
@@ -48,7 +47,7 @@ const scrollTag = (index: number) => {
 
                 <RouterLink v-else :to="item.link" :title="item.text">
                     <AcmeIcon name="acme-md" class="acme-mr-4" />
-                    {{ index + 1 }}.{{ item.text }}
+                    {{ index + 1 }}.{{ item.fullTitle ||item.text }}
                 </RouterLink>
             </li>
         </ul>

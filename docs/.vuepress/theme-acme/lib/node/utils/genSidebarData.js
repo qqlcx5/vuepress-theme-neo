@@ -27,7 +27,7 @@ export function readFile(dir, collapsible, filesList = [], fpath, fIndex, fList,
                 readFile(path.join(dir, file), collapsible, filesList[index].children, fpath, index, filesList, true)
             } else if (fileType === '.md') {
                 const contentStr = fs.readFileSync(filePath, 'utf8') // 读取md文件内容，返回字符串
-                const { data } = matter(contentStr, {}) // 解析出front matter数据
+                const { data, content } = matter(contentStr, {}) // 解析出front matter数据
                 const { title = '', icon = '', iconSize, order, collapsible = false } = data || {}
                 if (isChild && file === 'README.md') {
                     fList[fIndex].text = title && title
@@ -36,8 +36,9 @@ export function readFile(dir, collapsible, filesList = [], fpath, fIndex, fList,
                     fList[fIndex].collapsible = collapsible && collapsible
                     fList[fIndex].order = order != null ? order : null
                 } else if (file === 'README.md') { } else {
-                    const pathName = fpath ? `${fpath}/${fileName}` : fileName
-                    order != null ? (sortFiles[order] = { pathName, icon, iconSize}) : noSortFiles.push({ pathName, icon, iconSize})
+                    const relPath = fpath ? `${fpath}/${fileName}` : fileName
+                    const fullTitle = content?.split('\n')?.filter(Boolean)[0]?.slice(2)?.trim()
+                    order != null ? (sortFiles[order] = { relPath, fullTitle, icon, iconSize}) : noSortFiles.push({ relPath, fullTitle, icon, iconSize})
                     fList[fIndex].sortFiles = sortFiles
                     fList[fIndex].noSortFiles = noSortFiles
                 }
