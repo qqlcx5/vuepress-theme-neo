@@ -15,13 +15,15 @@ export default {
     //     collapsible: false,
     //     children: []
     // },
-    // '/el-component/' : 'structure',
-    '/interview/' : 'structure',
+    // '/el-component/': 'structure',
+    '/interview/': 'structure',
+    // '/utils/': 'structure',
+    // '/demo/': 'structure'
 }
 
 // '/interview/': [
-        // icon: 'el-icon-s-help',
-        // title: '面试题',
+// icon: 'el-icon-s-help',
+// title: '面试题',
 //     { text: 'algorithm', collapsible: true, children: [Array] },
 //     { text: 'applet', collapsible: true, children: [Array] },
 //     { text: 'css', collapsible: true, children: [Array] },

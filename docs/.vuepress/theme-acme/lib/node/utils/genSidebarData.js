@@ -5,95 +5,58 @@
 import { path, fs } from '@vuepress/utils'
 import matter from 'gray-matter' // front matter解析器
 
-export function readFile(dir, collapsible, filesList = [], fpath, fIndex, fList, isChild) {
+function resolveDir(fileName = '目录') {
+    // new Promise((resolve, reject) => {})
+    return { text: fileName, collapsible: true, children: [] }
+}
+
+export function readFile(dir, allList = []) {
+    !allList?.length && (allList.push(resolveDir()))
     const files = fs.readdirSync(dir)
-    const rootName = path.basename(dir) // 根目录名
-    let sortFiles = {} // 有排序的文件
-    let noSortFiles = [] // 无排序的文件
-    files
-        .filter(o => !o.startsWith('.') && !o.startsWith('@'))
-        .map((file, index) => {
-            const filePath = path.join(dir, file)
-            const fileType = path.extname(filePath)
-            const fileName = path.basename(filePath)
-            const stat = fs.statSync(filePath)
-            if (stat.isDirectory()) {
-                filesList[index] = {
-                    text: path.basename(filePath),
-                    collapsible,
-                    children: [],
-                }
-                fpath = `/${rootName}/${file}`
-                readFile(path.join(dir, file), collapsible, filesList[index].children, fpath, index, filesList, true)
-            } else if (fileType === '.md') {
-                const contentStr = fs.readFileSync(filePath, 'utf8') // 读取md文件内容，返回字符串
-                const { data, content } = matter(contentStr, {}) // 解析出front matter数据
-                const { title = '', icon = '', iconSize, order, collapsible = false } = data || {}
-                if (isChild && file === 'README.md') {
-                    fList[fIndex].text = title && title
-                    fList[fIndex].icon = icon && icon
-                    fList[fIndex].iconSize = iconSize && iconSize
-                    fList[fIndex].collapsible = collapsible && collapsible
-                    fList[fIndex].order = order != null ? order : null
-                } else if (file === 'README.md') { } else {
-                    const relPath = fpath ? `${fpath}/${fileName}` : fileName
-                    const fullTitle = content?.split('\n')?.filter(Boolean)[0]?.slice(2)?.trim()
-                    order != null ? (sortFiles[order] = { relPath, fullTitle, icon, iconSize}) : noSortFiles.push({ relPath, fullTitle, icon, iconSize})
-                    fList[fIndex].sortFiles = sortFiles
-                    fList[fIndex].noSortFiles = noSortFiles
-                }
+    files.forEach(file => {
+        const fileName = file.name
+        const filePath = path.join(dir, fileName)
+        const fileType = path.extname(filePath)
+        // console.log(file.isFile(), file.isDirectory(), fileName, filePath, 'fileType--', fileType);
+        if (file.isFile && fileType === '.md') {
+            const fileContent = fs.readFileSync(filePath, 'utf-8')
+            const { data } = matter(fileContent)
+            const { title } = data
+            const toc = {
+                text: title,
+                link: filePath
             }
-        })
-    return filesList
-}
-
-export function resolveFiles(filesList) {
-    sortPosts(filesList).map(item => {
-        const sortFiles = item.sortFiles
-        const noSortFiles = item.noSortFiles
-        if (sortFiles) {
-            const sortKeys = Object.keys(sortFiles).sort((a, b) => a - b)
-            sortKeys.map(key => {
-                // 子节点没有icon时，使用父节点的icon
-                sortFiles[key].icon = sortFiles[key]?.icon || item.icon
-                sortFiles[key].iconSize = sortFiles[key]?.iconSize || item.iconSize
-                item.children.push(sortFiles[key])
-            })
+            // allList[0].children.push(toc)
+        } else if (file.isDirectory()) {
+            // tempList(filePath, { text: fileName, collapsible: true, children: [] })
+            // readFile(filePath, filesList)
         }
-        if (noSortFiles) {
-            noSortFiles.map(file => {
-                // 子节点没有icon时，使用父节点的icon
-                file.icon = file?.icon || item.icon
-                file.iconSize = file?.iconSize || item.iconSize
-                item.children.push(file)
-            })
-        }
-        delete item.sortFiles
-        delete item.noSortFiles
     })
-    return filesList.filter(Boolean)
 }
+export function resolveFiles(dir) {
+    return []
+}
+// const treeData = (arr, id = null, link = 'parent_id') => arr.filter(item => item[link] === id).map(item => ({ ...item, children: treeData(arr, item.id) }))
 
-// test Demo
-// let arr = [{ order: 1, text: 'ab' }, { order: 3, text: 'a' }, { order: 2, text: 'c' }, { order: 4, text: 'b' }, { text: 'c' }, { text: 'a' }, { text: 'abc' }, { text: 'aef' }, { text: 'aba' }, { text: 'BoC' }, { text: 'Def' }, { text: 'FED' }]
-export function sortPosts(posts) {
-    posts.sort((prev, next) => {
-        const { order: prevOrder, text: prevText } = prev
-        const { order: nextOrder, text: nextText } = next
-        
-        if (prevOrder && nextOrder) {
-            return prevOrder - nextOrder
-        } else if (prevOrder && !nextOrder) {
-            return -1
-        } else if (!prevOrder && nextOrder) {
-            return 1
-        }
-        if (prevText < nextText) {
-            return -1
-        } else if (prevText > nextText) {
-            return 1
-        }
-        return 0
-    })
-    return posts
-}
+// function walkSync(currentDirPath, callback) {
+
+//     // http://nodejs.cn/api/fs.html#fsreaddirsyncpath-options
+//     // http://nodejs.cn/api/fs.html#class-fsdirent 新增于: v10.10.0
+//     fs.readdirSync(currentDirPath, { withFileTypes: true }).forEach(function(dirent) {
+//       var filePath = path.join(currentDirPath, dirent.name);
+//       if (dirent.isFile()) {
+//         callback(filePath, dirent);
+//       } else if (dirent.isDirectory()) {
+//         walkSync(filePath, callback);
+//       }
+//     });
+//   }
+//   walkSync('src', function(filePath, stat) {
+//     console.log(filePath);
+//     // src/icons/card_flight.png
+//     // src/icons/clock.png
+//     // src/icons/icon-home-edit.png
+//     // src/icons/iconSprites.json
+//     // src/index.js
+//     // do something with "filePath"...
+//   });
