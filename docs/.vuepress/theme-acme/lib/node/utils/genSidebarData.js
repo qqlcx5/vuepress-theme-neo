@@ -61,13 +61,7 @@ export function readFile(dir, collapsible = false, filesList = [], fpath, fIndex
 }
 
 export function resolveFiles(filesList) {
-    let files = sortPosts(filesList)
-    if (Object.keys(files['root']?.sortFiles || {})?.length || files['root']?.noSortFiles?.length) {
-        files.unshift(files['root'])
-        delete files['root']
-    }
-    // console.log('files--------------', files);
-    files.forEach(item => {
+    sortPosts(filesList).forEach(item => {
         const sortFiles = item.sortFiles
         const noSortFiles = item.noSortFiles
         if (sortFiles) {
@@ -90,12 +84,15 @@ export function resolveFiles(filesList) {
         delete item.sortFiles
         delete item.noSortFiles
     })
-    return files.filter(Boolean)
+    return filesList.filter(Boolean)
 }
 
 // test Demo
 // let arr = [{ order: 1, text: 'ab' }, { order: 3, text: 'a' }, { order: 2, text: 'c' }, { order: 4, text: 'b' }, { text: 'c' }, { text: 'a' }, { text: 'abc' }, { text: 'aef' }, { text: 'aba' }, { text: 'BoC' }, { text: 'Def' }, { text: 'FED' }]
 export function sortPosts(posts) {
+    if (Object.keys(posts['root']?.sortFiles || {})?.length || posts['root']?.noSortFiles?.length) {
+        posts.unshift(posts['root']) && delete posts['root']
+    }
     posts.sort((prev, next) => {
         const { order: prevOrder, text: prevText } = prev
         const { order: nextOrder, text: nextText } = next
