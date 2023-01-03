@@ -9,9 +9,8 @@ export const prepareSidebarData = (app, options) => {
         const lastPath = path.substring(0, path.lastIndexOf('/'))
         if (value === 'structure') {
             const tocs = readFile(docsRoot + lastPath)
-            console.log('tocs---------------------', tocs, [path]);
-            sidebarData[path] = []
-            // sidebarData[path] = resolveFiles(tocs)
+            sidebarData[path] = resolveFiles(tocs)
+            console.log('sidebarData[path]--------', resolveFiles(tocs));
         } else if (Array.isArray(value)) {
             sidebarData[path] = value
         } else {

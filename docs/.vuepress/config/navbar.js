@@ -20,7 +20,7 @@ export default [
     {
         text: '工具函数',
         icon: 'acme-renwu',
-        link: '/utils/Array/chunk转换二维数组.md',
+        link: '/utils/',
         activeMatch: '^/utils/'
     },
     // {

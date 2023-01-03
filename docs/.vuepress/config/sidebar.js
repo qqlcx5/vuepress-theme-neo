@@ -15,10 +15,10 @@ export default {
     //     collapsible: false,
     //     children: []
     // },
-    // '/el-component/': 'structure',
+    '/el-component/': 'structure',
     '/interview/': 'structure',
-    // '/utils/': 'structure',
-    // '/demo/': 'structure'
+    '/utils/': 'structure',
+    '/demo/': 'structure'
 }
 
 // '/interview/': [
