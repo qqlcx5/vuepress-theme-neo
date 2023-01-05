@@ -10,7 +10,6 @@ export const prepareSidebarData = (app, options) => {
         if (value === 'structure') {
             const tocs = readFile(docsRoot + lastPath)
             sidebarData[path] = resolveFiles(tocs)
-            console.log('sidebarData[path]--------', resolveFiles(tocs));
         } else if (Array.isArray(value)) {
             sidebarData[path] = value
         } else {
