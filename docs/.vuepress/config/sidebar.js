@@ -18,7 +18,8 @@ export default {
     '/el-component/': 'structure',
     '/interview/': 'structure',
     '/utils/': 'structure',
-    '/demo/': 'structure'
+    '/demo/': 'structure',
+    '/guide/': 'structure'
 }
 
 // '/interview/': [

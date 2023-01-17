@@ -3,6 +3,7 @@
 </p>
 <h1 align="center">vuepress-theme-neo</h1>
 <h4 align="center">🚀一款个性化的 VuePress2.x 主题✨</h4>
+
 ## 联系
 
 <img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "230" alt="wechat" />
