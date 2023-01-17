@@ -20,7 +20,6 @@
         "vuepress-plugin-comment2": "2.0.0-beta.163",
         "vuepress-plugin-copy-code2": "2.0.0-beta.163",
         "vuepress-plugin-md-enhance": "2.0.0-beta.163",
-        "vuepress-plugin-photo-swipe": "2.0.0-beta.163",
         "vuepress-plugin-sitemap2": "2.0.0-beta.163"
     },
     "license": "MIT",
