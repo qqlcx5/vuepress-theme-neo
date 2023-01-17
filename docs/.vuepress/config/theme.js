@@ -1,9 +1,9 @@
 import navbar from './navbar'
 import sidebar from './sidebar'
-import acmeTheme from '../theme-acme/lib/node'
+import neoTheme from '../theme-neo/lib/node'
 // import { type DefaultThemeOptions } from '@vuepress/theme-default'
 
-export default acmeTheme({
+export default neoTheme({
     // 默认主题配置项
     navbar,
     sidebar,
@@ -14,7 +14,7 @@ export default acmeTheme({
     docsRepo: 'https://github.com/qqlcx5/vuepress-next',
     editLinkPattern: ':repo/edit/:branch/:path',
     sidebarDepth: 0,
-    // acme主题配置项
+    // neo主题配置项
     bolgCreateAt: '2020-01-01',
     category: true,
     tag: true,

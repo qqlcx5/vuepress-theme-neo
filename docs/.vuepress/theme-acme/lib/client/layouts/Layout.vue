@@ -58,14 +58,14 @@ const onTouchEnd = (e): void => {
         }
     }
 }
-// custom acme theme
+// custom neo theme
 const enableToc = computed(
     () =>
         frontmatter.value.toc ||
         (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
 )
 const enableCatalogue = computed(() => frontmatter.value.catalogue)
-// custom acme theme
+// custom neo theme
 // classes
 const containerClass = computed(() => [
     {
@@ -96,7 +96,7 @@ const onBeforeLeave = scrollPromise.pending
 </script>
 
 <template>
-    <div class="theme-container theme-acme-container" :class="containerClass" @touchstart="onTouchStart" @touchend="onTouchEnd">
+    <div class="theme-container theme-neo-container" :class="containerClass" @touchstart="onTouchStart" @touchend="onTouchEnd">
         <slot name="navbar">
             <Navbar v-if="shouldShowNavbar" :isSidebar="!!sidebarItems.length" @toggle-sidebar="toggleSidebar">
                 <template #before>

@@ -1,39 +1,15 @@
 <template>
     <div class="blog-type-wrapper dark-shadow">
         <div class="blog-type">
-            <button
-                v-for="[key, icon] of buttons"
-                :key="key"
-                class="blog-type-button"
-                @click="handleClasses(key)"
-            >
-                <div
-                    class="icon-wapper"
-                    :class="{ active: buttonsType === key }"
-                    :aria-label="locale[key]"
-                >
-                    <AcmeIcon
-                        :name="icon"
-                        size="20"
-                    />
+            <button v-for="[key, icon] of buttons" :key="key" class="blog-type-button" @click="handleClasses(key)">
+                <div class="icon-wapper" :class="{ active: buttonsType === key }" :aria-label="locale[key]">
+                    <NeoIcon :name="icon" size="20" />
                 </div>
             </button>
         </div>
-        <CategoriesBar
-            v-show="buttonsType === 'category'"
-            :categoriesData="categoriesAndTagsSymbol?.categories"
-            :category="category"
-        />
-        <TagsBar
-            v-show="buttonsType === 'tag'"
-            :tagsData="categoriesAndTagsSymbol.tags"
-            :tag="tag"
-        />
-        <ColumnsBar
-            v-show="buttonsType === 'cloumn'"
-            :columnsData="categoriesAndTagsSymbol.columns"
-            :column="column"
-        />
+        <CategoriesBar v-show="buttonsType === 'category'" :categoriesData="categoriesAndTagsSymbol?.categories" :category="category" />
+        <TagsBar v-show="buttonsType === 'tag'" :tagsData="categoriesAndTagsSymbol.tags" :tag="tag" />
+        <ColumnsBar v-show="buttonsType === 'cloumn'" :columnsData="categoriesAndTagsSymbol.columns" :column="column" />
     </div>
 </template>
 
@@ -50,10 +26,10 @@ export default {
     props: {},
     setup(props) {
         const buttons = new Map([
-            // ["article", 'acme-wenzhang'],
-            ['category', 'acme-sort1'],
-            ['tag', 'acme-localoffer'],
-            ['cloumn', 'acme-zhuantifuwu']
+            // ["article", 'neo-wenzhang'],
+            ['category', 'neo-sort1'],
+            ['tag', 'neo-localoffer'],
+            ['cloumn', 'neo-zhuantifuwu']
         ])
 
         const themeLocale = useThemeLocaleData()
@@ -104,7 +80,7 @@ export default {
             column.value = queryColumn ? decodeURIComponent(queryColumn) : ''
         }
         // reset open tags after navigation
-        const unregisterRouterHook = router.afterEach((to) => {
+        const unregisterRouterHook = router.afterEach(to => {
             nextTick(() => {
                 buttonsType.value = pageType.value
             })

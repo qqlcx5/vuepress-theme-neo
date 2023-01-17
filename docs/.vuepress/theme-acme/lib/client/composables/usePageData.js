@@ -1,5 +1,5 @@
 import { computed, provide } from 'vue'
-import { pagesData, allWordCount } from '@temp/theme-acme/pagesData'
+import { pagesData, allWordCount } from '@temp/theme-neo/pagesData'
 import { sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from '../utils/resolvePostData'
 
 export const allWordCountSymbol = Symbol('allWordCount') // 本站的总字数

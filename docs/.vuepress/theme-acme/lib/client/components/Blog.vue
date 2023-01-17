@@ -41,8 +41,8 @@
                     class="hero-img-prev hide-on-mobile"
                     @click="switchImage(-1)"
                 >
-                    <AcmeIcon
-                        name="acme-zuojiantou"
+                    <NeoIcon
+                        name="neo-zuojiantou"
                         size="24"
                     />
                 </button>
@@ -50,8 +50,8 @@
                     class="hero-img-next hide-on-mobile"
                     @click="switchImage(1)"
                 >
-                    <AcmeIcon
-                        name="acme-youjiantou"
+                    <NeoIcon
+                        name="neo-youjiantou"
                         size="24"
                     />
                 </button>
@@ -59,8 +59,8 @@
                     class="hero-arrow-down hide-on-mobile"
                     @click="scrollToPost()"
                 >
-                    <AcmeIcon
-                        name="acme-xiangxiajiantou"
+                    <NeoIcon
+                        name="neo-xiangxiajiantou"
                         size="50"
                         color="rgba(255,255,255,0.8)"
                     />
@@ -352,7 +352,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                 margin-left: -12px;
                   cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
 
-                svg.acme-colour {
+                svg.neo-colour {
                     width: 30px;
                     margin: -15px 0;
 

@@ -10,14 +10,14 @@ import { useRouter } from "vue-router";
 
 defineEmits(['toggle-sidebar'])
 
-// custom acme theme
+// custom neo theme
 defineProps({
   isSidebar: {
     type: Boolean,
     default: true
   }
 });
-// custom acme theme
+// custom neo theme
 
 const themeLocale = useThemeLocaleData()
 
@@ -34,7 +34,7 @@ const linksWrapperStyle = computed(() => {
   }
 })
 
-// custom acme theme
+// custom neo theme
 const router = useRouter();
 const previousTop = ref(0);
 const isFixed = ref(false);
@@ -91,22 +91,22 @@ onMounted(() => {
   window.addEventListener('resize', handleLinksWrapWidth, false)
   window.addEventListener('orientationchange', handleLinksWrapWidth, false)
 
-  // custom acme theme
+  // custom neo theme
   handleInvert();
   unregisterRouterHook = router.afterEach(() => {
     handleInvert();
   });
 
   window.addEventListener("scroll", handleScroll);
-  // custom acme theme
+  // custom neo theme
 })
 
-// custom acme theme
+// custom neo theme
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
   unregisterRouterHook();
 });
-// custom acme theme
+// custom neo theme
 
 function getCssValue(el: HTMLElement | null, property: string): number {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'

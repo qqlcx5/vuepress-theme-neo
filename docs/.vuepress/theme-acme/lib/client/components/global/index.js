@@ -1,3 +1,3 @@
-import AcmeIcon from './acme-icon/acme-icon.vue'
+import neoIcon from './neo-icon/neo-icon.vue'
 import NavCard from './nav-card/nav-card.vue';
-export { AcmeIcon, NavCard };
+export { neoIcon, NavCard };

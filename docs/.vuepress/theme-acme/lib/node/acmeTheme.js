@@ -3,7 +3,7 @@ import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 import { extraLocaleOptions, prepareCreatePageFile, preparePagesFrontmatter, prepareSidebarData } from './utils/index'
 
-export const acmeTheme = (options, legacy = false) =>
+export const neoTheme = (options, legacy = false) =>
     app => {
         // 额外参数配置
         extraLocaleOptions(options)
@@ -11,7 +11,7 @@ export const acmeTheme = (options, legacy = false) =>
         prepareSidebarData(app, options)
         const { plugins = {}, sidebarSorter } = legacy
         return {
-            name: 'vuepress-theme-acme',
+            name: 'vuepress-theme-neo',
             extends: defaultTheme(options),
             define: {},
             alias: Object.fromEntries(

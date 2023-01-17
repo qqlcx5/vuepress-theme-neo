@@ -1,5 +1,5 @@
 ---
 title: React 面试题
-icon: acme-linkedin
+icon: neo-linkedin
 order: 1
 ---

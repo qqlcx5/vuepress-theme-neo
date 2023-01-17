@@ -23,22 +23,22 @@ const scrollTag = (index: number) => {
 </script>
 
 <template>
-    <div class="acme-pl-0">
+    <div class="neo-pl-0">
         <!-- 这个锚点是为了解决目录跳转时，标题被遮挡的问题 -->
         <div class="anchor-rect"></div>
         <!-- 这里的list是一个嵌套对象才展示 -->
-        <div v-show="list.length > 1 && list[0]?.children" class="acme-flex acme-flex-wrap catalogue-rect">
+        <div v-show="list.length > 1 && list[0]?.children" class="neo-flex neo-flex-wrap catalogue-rect">
             <div class="cursor-pointer" v-for="(item, p) in list" :key="p" @click="scrollTag(p)">
                 {{ item.text }}
             </div>
         </div>
-        <ul class="acme-pl-0">
-            <li v-for="(item, index) in list" :key="item" class="acme-ptb-4">
+        <ul class="neo-pl-0">
+            <li v-for="(item, index) in list" :key="item" class="neo-ptb-4">
                 <template v-if="item.children?.length">
-                    <div :id="`catalogue-title-${index}`" class="acme-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
-                        <AcmeIcon :name="item.icon || 'acme-wenjianlan'" class="acme-mr-4" />
+                    <div :id="`catalogue-title-${index}`" class="neo-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
+                        <NeoIcon :name="item.icon || 'neo-wenjianlan'" class="neo-mr-4" />
                         <span class="catalogue-title">{{ item.text }} 目录</span>
-                        <AcmeIcon :name="toggleObj[index] ? 'acme-xiangxiajiantou' : 'acme-xiangshangjiantou'" class="acme-mr-4" />
+                        <NeoIcon :name="toggleObj[index] ? 'neo-xiangxiajiantou' : 'neo-xiangshangjiantou'" class="neo-mr-4" />
                     </div>
                     <Transition name="fade-slide-y" mode="out-in">
                         <Catalogue v-show="!toggleObj[index]" :list="item.children" />
@@ -46,7 +46,7 @@ const scrollTag = (index: number) => {
                 </template>
 
                 <RouterLink v-else :to="item.link" :title="item.text">
-                    <AcmeIcon :name="item.icon || 'acme-md'" class="acme-mr-4" />
+                    <NeoIcon :name="item.icon || 'neo-md'" class="neo-mr-4" />
                     {{ index + 1 }}.{{ item.fullTitle ||item.text }}
                 </RouterLink>
             </li>

@@ -18,5 +18,5 @@ export const preparePagesFrontmatter = async (app, options) => {
     setFrontmatter(pagesMap, options)
     // 所有文章总字数
     const allWordCount = readTotalFileWords(usefulPages)
-    await app.writeTemp(`theme-acme/pagesData.js`, `export const allWordCount = ${JSON.stringify(allWordCount)}; export const pagesData = ${JSON.stringify(pagesMap)}`)
+    await app.writeTemp(`theme-neo/pagesData.js`, `export const allWordCount = ${JSON.stringify(allWordCount)}; export const pagesData = ${JSON.stringify(pagesMap)}`)
 }

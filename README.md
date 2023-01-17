@@ -1,9 +1,8 @@
 <p align="center">
   <img width="240" src="https://v2.vuepress.vuejs.org/images/hero.png" style="text-align: center;">
 </p>
-<h1 align="center">vuepress-theme-acme</h1>
-<h4 align="center">一个简单且具有强大功能的 vuepress 主题✨</h4>
-
+<h1 align="center">vuepress-theme-neo</h1>
+<h4 align="center">🚀一款个性化的 VuePress2.x 主题✨</h4>
 ## 联系
 
 <img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "230" alt="wechat" />

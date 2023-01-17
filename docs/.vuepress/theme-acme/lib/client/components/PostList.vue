@@ -2,9 +2,9 @@
     <div class="post-list">
         <TransitionGroup name="fade-slide-y" tag="div">
             <div class="post dark-shadow" :class="[`effect-border-${random(1, 5)}`]" v-for="(item, index) in sortPosts" :key="index">
-                <AcmeIcon
+                <NeoIcon
                     v-if="item.frontmatter.sticky"
-                    name="acme-tuding"
+                    name="neo-tuding"
                     size="20"
                     :customStyle="{
                         position: 'absolute',
@@ -24,26 +24,26 @@
                     </h2>
                     <div class="article-info">
                         <a title="作者" target="_blank" v-if="item.author?.name && item.author?.url" :href="item.author.url">
-                            <AcmeIcon name="acme-yonghu1" class="acme-mr-4" />
+                            <NeoIcon name="neo-yonghu1" class="neo-mr-4" />
                             {{ item.author.name }}
                         </a>
                         <span v-else-if="item.author" title="作者">
-                            <AcmeIcon name="acme-yonghu1" class="acme-mr-4" />
+                            <NeoIcon name="neo-yonghu1" class="neo-mr-4" />
                             {{ item.author }}
                         </span>
 
                         <span title="创建时间" v-if="item.frontmatter.date">
-                            <AcmeIcon name="acme-shijian1" class="acme-mr-4" />
+                            <NeoIcon name="neo-shijian1" class="neo-mr-4" />
                             {{ item.frontmatter.date.split('T')[0] }}
                         </span>
                         <span v-if="themeData.category !== false && item.frontmatter.categories">
-                            <AcmeIcon name="acme-pingtai" class="acme-mr-4" />
+                            <NeoIcon name="neo-pingtai" class="neo-mr-4" />
                             <span title="分类">
                                 <router-link :to="`/categories/?category=${encodeURIComponent(c)}`" v-for="(c, index) in item.frontmatter.categories" :key="index">{{ c }}</router-link>
                             </span>
                         </span>
                         <span v-if="themeData.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]">
-                            <AcmeIcon name="acme-biaoqian" class="acme-mr-4" />
+                            <NeoIcon name="neo-biaoqian" class="neo-mr-4" />
                             <span title="标签" class="tags">
                                 <router-link :to="`/tags/?tag=${encodeURIComponent(t)}`" v-for="(t, index) in item.frontmatter.tags" :key="index">{{ t }}</router-link>
                             </span>
@@ -54,7 +54,7 @@
                     <div class="excerpt" v-html="item.excerpt"></div>
                     <router-link :to="item.path" class="readmore">
                         阅读全文
-                        <AcmeIcon name="acme-youxiangshuangjiantou" size="20" />
+                        <NeoIcon name="neo-youxiangshuangjiantou" size="20" />
                     </router-link>
                 </div>
             </div>
@@ -147,7 +147,7 @@ export default {
 @import '../styles/_variables';
 .post-list {
     margin-bottom: 3rem;
-    :deep(.acme-colour) {
+    :deep(.neo-colour) {
         vertical-align: -0.2em;
     }
     .fade-slide-y-enter-active {

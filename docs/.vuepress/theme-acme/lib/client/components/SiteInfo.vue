@@ -1,86 +1,57 @@
 <template>
     <div class="site-info dark-shadow">
         <div class="site-info__title">
-            <AcmeIcon
-                name="acme-pc"
-                class="acme-mr-4"
-            />
+            <NeoIcon name="neo-pc" class="neo-mr-4" />
             本站信息
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <AcmeIcon
-                    name="acme-wenbenwenjian"
-                    class="acme-mr-4"
-                />
+                <NeoIcon name="neo-wenbenwenjian" class="neo-mr-4" />
                 文章数目：
             </div>
             <div class="site-info__item-value">{{ mdFileCount }} 篇</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <AcmeIcon
-                    name="acme-yun"
-                    class="acme-mr-4"
-                />
+                <NeoIcon name="neo-yun" class="neo-mr-4" />
                 已运行时间：
             </div>
             <div class="site-info__item-value">{{ createToNowDay != 0 ? createToNowDay + ' 天' : '不到一天' }}</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <AcmeIcon
-                    name="acme-wenku"
-                    class="acme-mr-4"
-                />
+                <NeoIcon name="neo-wenku" class="neo-mr-4" />
                 本站总字数：
             </div>
             <div class="site-info__item-value">{{ totalWords }} 字</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <AcmeIcon
-                    name="acme-shijian"
-                    class="acme-mr-4"
-                />
+                <NeoIcon name="neo-shijian" class="neo-mr-4" />
                 最后活动时间：
             </div>
             <div class="site-info__item-value">{{ lastActiveDate == '刚刚' ? '刚刚' : lastActiveDate + '前' }}</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <AcmeIcon
-                    name="acme-yonghuliang"
-                    class="acme-mr-4"
-                />
+                <NeoIcon name="neo-yonghuliang" class="neo-mr-4" />
                 本站被访问了：
             </div>
             <div class="site-info__item-value">
                 <span id="busuanzi_value_site_pv">
-                    <AcmeIcon
-                        name="acme-loading"
-                        class="acme-mr-4"
-                        spin
-                    />
+                    <NeoIcon name="neo-loading" class="neo-mr-4" spin />
                 </span>
                 次
             </div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <AcmeIcon
-                    name="acme-yuyan"
-                    class="acme-mr-4"
-                />
+                <NeoIcon name="neo-yuyan" class="neo-mr-4" />
                 您的访问排名：
             </div>
             <div class="site-info__item-value">
                 <span id="busuanzi_value_site_uv">
-                    <AcmeIcon
-                        name="acme-loading"
-                        class="acme-mr-4"
-                        spin
-                    />
+                    <NeoIcon name="neo-loading" class="neo-mr-4" spin />
                 </span>
                 名
             </div>

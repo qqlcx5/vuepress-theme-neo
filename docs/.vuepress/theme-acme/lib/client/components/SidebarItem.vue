@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
       @click="onClick"
       @keydown.enter="onClick"
     >
-      <AcmeIcon :name="item.icon" :size="item.iconSize" />
+      <NeoIcon :name="item.icon" :size="item.iconSize" />
       {{ item.text }}
       <span
         v-if="item.collapsible"

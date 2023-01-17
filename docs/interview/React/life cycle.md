@@ -8,7 +8,7 @@ tags:
   - null
 columns: 
   - 
-icon: acme-yonghu1
+icon: neo-yonghu1
 order: 1
 ---
 # 面试官：说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？

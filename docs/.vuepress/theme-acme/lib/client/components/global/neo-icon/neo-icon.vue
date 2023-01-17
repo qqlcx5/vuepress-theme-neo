@@ -1,7 +1,7 @@
 <template>
     <svg
         v-if="useSvg_ && name"
-        class="acme-colour"
+        class="neo-colour"
         aria-hidden="true"
         :style="[iconStyle_]"
     >
@@ -9,7 +9,7 @@
     </svg>
     <i
         v-else-if="name"
-        class="acme acme-icon"
+        class="neo neo-icon"
         :class="[name]"
         :style="[iconStyle_]"
     />
@@ -17,7 +17,7 @@
 <script>
 import { defineComponent, computed } from 'vue'
 export default defineComponent({
-    name: 'AcmeIcon',
+    name: 'neoIcon',
     props: {
         name: {
             type: String,
@@ -82,7 +82,7 @@ export default defineComponent({
             String(props.color) !== 'false' && (styleObj.color = props.color)
             // 组件动画
             rotate_.value && (styleObj.transform = isNaN(props.rotate) ? `rotate(${props.rotate})` : `rotate(${props.rotate}deg)`)
-            props.spin && (styleObj.animation = `acme-spin ${props.spinSpeed}s linear infinite`)
+            props.spin && (styleObj.animation = `neo-spin ${props.spinSpeed}s linear infinite`)
             return Object.assign(styleObj, props.customStyle)
         })
         return {
@@ -95,7 +95,7 @@ export default defineComponent({
 </script>
 <style>
 /* 旋转动画 */
-@keyframes acme-spin {
+@keyframes neo-spin {
     from {
         transform: rotate(0deg);
     }
@@ -105,7 +105,7 @@ export default defineComponent({
 }
 </style>
 <style lang="scss" scoped>
-.acme-icon {
+.neo-icon {
     position: relative;
     display: inline-block;
     font-size: inherit;
@@ -113,7 +113,7 @@ export default defineComponent({
     vertical-align: -0.08em;
     -webkit-font-smoothing: antialiased;
 }
-.acme-colour {
+.neo-colour {
     width: 18px;
     height: 18px;
     vertical-align: -0.15em;

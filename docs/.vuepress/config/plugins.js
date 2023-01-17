@@ -43,7 +43,7 @@ export default [
     //     selector: ':not(a) > img:not(.no-zoom)'
     // }),
     sitemapPlugin({
-        hostname: 'acme.feyoudao.cn'
+        hostname: 'neo.feyoudao.cn'
     }),
     mdEnhancePlugin({
         tabs: true, // 添加选项卡支持

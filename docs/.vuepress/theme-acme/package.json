@@ -1,12 +1,12 @@
 {
-    "name": "vuepress-theme-acme",
+    "name": "vuepress-theme-neo",
     "version": "1.0.2",
-    "description": "acme theme of VuePress2.x",
+    "description": "🚀一款个性化的 VuePress2.x 主题✨",
     "keywords": [
         "vuepress-theme",
         "vuepress",
         "theme",
-        "acme"
+        "neo"
     ],
     "license": "MIT",
     "author": "feyoudao.cn",

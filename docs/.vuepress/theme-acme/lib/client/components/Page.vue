@@ -12,11 +12,11 @@ import Catalogue from '@theme/Catalogue.vue'
 import { useSidebarItems } from '../composables/index.js'
 const frontmatter = usePageFrontmatter();
 
-// custom acme theme 
+// custom neo theme 
 let isCatalogue = ref(false)
 const sidebarItems = useSidebarItems()
 frontmatter.value.catalogue && (isCatalogue.value = true)
-// custom acme theme 
+// custom neo theme 
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <template>
-    <main class="acme-page">
-        <div class="acme-blog-wrapper">
+    <main class="neo-page">
+        <div class="neo-blog-wrapper">
             <div class="content-left">
                 <slot name="content-left" />
             </div>
@@ -24,9 +24,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../styles/_variables';
-.acme-page {
+.neo-page {
     padding-top: var(--navbar-height);
-    .acme-blog-wrapper {
+    .neo-blog-wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -51,7 +51,7 @@ export default {
     }
     // 移动端
     @media (max-width: $MQNarrow) {
-        .acme-blog-wrapper {
+        .neo-blog-wrapper {
             display: flex;
             flex-direction: column-reverse;
             padding-top: 0.75rem;

@@ -2,50 +2,50 @@
 @for $i from 0 through 80 {
     // 只要能被2或者4除尽的数
     @if $i % 2 == 0 or $i % 4 == 0 {
-        .acme-p-#{$i} {
+        .neo-p-#{$i} {
             padding: $i + px;
         }
 
-        .acme-m-#{$i} {
+        .neo-m-#{$i} {
             margin: $i + px;
         }
 
-        .acme-plr-#{$i} {
+        .neo-plr-#{$i} {
             padding-left: $i + px;
             padding-right: $i + px;
         }
 
-        .acme-mlr-#{$i} {
+        .neo-mlr-#{$i} {
             margin-left: $i + px;
             margin-right: $i + px;
         }
 
-        .acme-mtb-#{$i} {
+        .neo-mtb-#{$i} {
             margin-bottom: $i + px;
         }
 
-        .acme-ptb-#{$i} {
+        .neo-ptb-#{$i} {
             padding-top: $i + px;
             padding-bottom: $i + px;
         }
 
         @each $key, $value in l left, t top, r right, b bottom {
             // 缩写版，结果如： ml30
-            .acme-m#{$key}-#{$i} {
+            .neo-m#{$key}-#{$i} {
                 margin-#{$value}: $i + px;
             }
-            .acme-p#{$key}-#{$i} {
+            .neo-p#{$key}-#{$i} {
                 padding-#{$value}: $i + px;
             }
         }
     }
 }
-.acme-tl {
+.neo-tl {
     text-align: left;
 }
-.acme-tc {
+.neo-tc {
     text-align: center;
 }
-.acme-tr {
+.neo-tr {
     text-align: right;
 }

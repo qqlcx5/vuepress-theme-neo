@@ -1,2 +1,2 @@
-import { acmeTheme } from './acmeTheme'
-export default acmeTheme
+import { neoTheme } from './neoTheme'
+export default neoTheme
