@@ -1,7 +1,7 @@
 import { setFrontmatter, readTotalFileWords, formatWordCount } from './index'
 
 export const preparePagesFrontmatter = async (app, options) => {
-    const usefulPages = app.pages.filter(page => !!page.filePathRelative && !page.frontmatter['home'] && page.frontmatter.article !== false)
+    const usefulPages = app.pages.filter(page => !!page.filePathRelative && !page.frontmatter['home'] && !page.frontmatter.catalogue && page.frontmatter.article !== false)
     const pagesMap = usefulPages.map(page => ({
         title: page.title || '',
         excerpt: page.excerpt || '',

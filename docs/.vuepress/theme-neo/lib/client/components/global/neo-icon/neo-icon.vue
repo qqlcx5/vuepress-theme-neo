@@ -1,18 +1,8 @@
 <template>
-    <svg
-        v-if="useSvg_ && name"
-        class="neo-colour"
-        aria-hidden="true"
-        :style="[iconStyle_]"
-    >
+    <svg v-if="useSvg_ && name" class="neo-colour" aria-hidden="true" :style="[iconStyle_]">
         <use :xlink:href="`#${name}`"></use>
     </svg>
-    <i
-        v-else-if="name"
-        class="neo neo-icon"
-        :class="[name]"
-        :style="[iconStyle_]"
-    />
+    <i v-else-if="name" class="neo neo-icon" :class="[name]" :style="[iconStyle_]" />
 </template>
 <script>
 import { defineComponent, computed } from 'vue'
@@ -56,12 +46,11 @@ export default defineComponent({
             default: () => {
                 return {}
             }
-        },
-
+        }
     },
     emits: ['click'],
     setup(props, { emit }) {
-        const handleClick = (e) => {
+        const handleClick = e => {
             emit('click', e, false)
         }
         // 偏转角度
@@ -71,10 +60,10 @@ export default defineComponent({
         const useSvg_ = computed(() => {
             return String(props.useSvg) !== 'false'
         })
-        const isNumeric = (val) => typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
+        const isNumeric = val => typeof val === 'number' || /^\d+(\.\d+)?$/.test(val)
 
         function addUnit(value, unit = 'px') {
-            return isNumeric(value) ? value + unit : String(value);
+            return isNumeric(value) ? value + unit : String(value)
         }
         const iconStyle_ = computed(() => {
             const fontSize = addUnit(props.size)
