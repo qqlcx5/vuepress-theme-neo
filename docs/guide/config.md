@@ -31,5 +31,3 @@ columns:
 
 前往 [配置参考](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看所有 VuePress 配置。
 :::
-
-1

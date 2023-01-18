@@ -1,0 +1,18 @@
+{
+    "sourceFile": "docs/guide/config.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1674026119618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1674026119618,
+            "name": "Commit-0",
+            "content": "---\ntitle: VuePress 配置\ndate: 2023-01-18 07:50:00\ncategories:\n    - guide\norder: 40\ncomment: false\ntoc: false\ntags:\n    -\ncolumns:\n    -\n---\n\n# VuePress 配置\n\n## 配置文件\n\n如果没有任何配置，你的 VuePress 站点仅有一些最基础的功能。为了更好地自定义你的网站，让我们首先在你的文档目录下创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里。你的项目结构可能是这样:\n\n```js\n├─ docs\n│ ├─ .vuepress\n│ │ └─ config.js\n│ └─ README.md\n├─ .gitignore\n└─ package.json\n```\n\n::: tip 提示\n\n前往 [配置参考](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看所有 VuePress 配置。\n:::"
+        }
+    ]
+}
