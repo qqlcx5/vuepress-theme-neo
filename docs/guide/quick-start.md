@@ -1,16 +1,17 @@
 ---
 title: 快速上手
 date: 2023-01-17 17:50:00
-categories:
-  - guide
 order: 20
 comment: false
 toc: false
+categories:
+  - 快速上手
 tags:
   - 
 columns:
   - 
 ---
+
 # 快速上手
 
 ## 安装和启动

@@ -1,11 +1,11 @@
 ---
 title: 目录结构
 date: 2023-01-17 17:50:00
-categories:
-  - guide
 order: 30
 comment: false
 toc: false
+categories:
+  - guide
 tags:
   - 
 columns:
@@ -28,6 +28,7 @@ columns:
 │
 └── package.json
 ```
+
 - `docs` 文件夹名称请不要修改
 
 - `docs/.vuepress` 用于存放全局的配置、样式、静态资源等
