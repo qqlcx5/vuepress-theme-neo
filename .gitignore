@@ -23,7 +23,7 @@ package-lock.js*
 *.njsproj
 *.sln
 *.sw?
-# *.bat
+*.lh?
 *.hbuilderx
 
 .yarn/*
