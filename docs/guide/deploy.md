@@ -1,11 +1,15 @@
 ---
 title: 部署项目
-
-order: 50
-categories:
+order: 5
+categories: 
   - 快速上手
-tag:
+tag: 
   - 部署项目
+date: 2023-01-18 17:02:32
+tags: 
+  - 
+columns: 
+  - 
 ---
 
 本教程指引你如何部署 VuePress 项目。

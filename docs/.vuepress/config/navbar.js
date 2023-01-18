@@ -1,21 +1,27 @@
 export default [
     {
-        text: '面试官系列',
-        icon: 'neo-jianzhu',
-        link: '/interview/',
-        activeMatch: '^/interview/'
-    },
-    {
         text: '指南',
         icon: 'neo-zhinanzhen',
         link: '/guide/introduce',
         activeMatch: '^/guide/'
     },
     {
+        text: '配置',
+        icon: 'neo-shezhi1',
+        link: '/config/introduce',
+        activeMatch: '^/config/'
+    },
+    {
         text: '饿了么组件库',
         icon: 'neo-shanchuxian',
         link: '/el-component/',
         activeMatch: '^/el-component/'
+    },
+    {
+        text: '面试官系列',
+        icon: 'neo-jianzhu',
+        link: '/interview/',
+        activeMatch: '^/interview/'
     },
     {
         text: '工具函数',
