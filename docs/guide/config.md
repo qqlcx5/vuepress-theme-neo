@@ -1,11 +1,11 @@
 ---
 title: VuePress 配置
 date: 2023-01-18 07:50:00
-categories:
-    - guide
 order: 40
 comment: false
 toc: false
+categories:
+    - 快速上手
 tags:
     -
 columns:
