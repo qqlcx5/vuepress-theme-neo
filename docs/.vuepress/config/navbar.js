@@ -7,7 +7,7 @@ export default [
     },
     {
         text: '指南',
-        icon: 'neo-shizhong',
+        icon: 'neo-zhinanzhen',
         link: '/guide/introduce',
         activeMatch: '^/guide/'
     },

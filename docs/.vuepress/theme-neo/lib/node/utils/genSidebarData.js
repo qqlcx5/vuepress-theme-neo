@@ -5,7 +5,7 @@
 import { path, fs } from '@vuepress/utils'
 import matter from 'gray-matter' // front matter解析器
 
-export function readFile(dir, collapsible = false, filesList = [], fpath, fIndex, fList, isChild) {
+export function readFile(dir, collapsible = true, filesList = [], fpath, fIndex, fList, isChild) {
     const files = fs.readdirSync(dir)
     const rootName = path.basename(dir) // 根目录名
     const sortFiles = {} // 有排序的文件
@@ -28,24 +28,33 @@ export function readFile(dir, collapsible = false, filesList = [], fpath, fIndex
             } else if (fileType === '.md') {
                 const contentStr = fs.readFileSync(filePath, 'utf8') // 读取md文件内容，返回字符串
                 const { data, content } = matter(contentStr, {}) // 解析出front matter数据
-                const { title = '', icon = '', iconSize, order, collapsible = false } = data || {}
+                const { title = '', icon = '', iconSize = '', order, collapsible = true } = data || {}
                 if (isChild && file === 'README.md') {
                     fList[fIndex].text = title && title
                     fList[fIndex].icon = icon && icon
                     fList[fIndex].iconSize = iconSize && iconSize
-                    fList[fIndex].collapsible = collapsible && collapsible
+                    fList[fIndex].collapsible = collapsible
                     fList[fIndex].order = order != null ? order : null
                 } else if (file === 'README.md') {
                     !filesList['root'] && (filesList['root'] = { text: rootName, collapsible, children: [] })
                     filesList['root'].text = title && title
                     filesList['root'].icon = icon && icon
                     filesList['root'].iconSize = iconSize && iconSize
-                    filesList['root'].collapsible = collapsible && collapsible
+                    filesList['root'].collapsible = collapsible
                     filesList['root'].order = order != null ? order : null
                 } else {
                     const relPath = fpath ? `${fpath}/${fileName}` : fileName
                     const fullTitle = content?.split('\n')?.filter(Boolean)[0]?.slice(2)?.trim()
-                    order != null ? (sortFiles[order] = { relPath, fullTitle, icon, iconSize }) : noSortFiles.push({ relPath, fullTitle, icon, iconSize })
+                    // 排序累加，防止覆盖原来order
+                    if (order != null) {
+                        const objPage = { relPath, fullTitle, icon, iconSize }
+                        function recurveOrder(order) {
+                            sortFiles[order] ? recurveOrder(++order) : (sortFiles[order] = objPage)
+                        }
+                        recurveOrder(order)
+                    } else {
+                        noSortFiles.push({ relPath, fullTitle, icon, iconSize })
+                    }
                     if (isChild) {
                         fList[fIndex].sortFiles = sortFiles
                         fList[fIndex].noSortFiles = noSortFiles

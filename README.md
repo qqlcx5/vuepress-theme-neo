@@ -8,7 +8,7 @@
 
 <img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "230" alt="wechat" />
 
-可以添加我的微信，我会创建一个微信群交流和处理您的问题。
+添加我的微信，可以在微信群交流讨论和处理你遇到的问题。
 
 ---
 
