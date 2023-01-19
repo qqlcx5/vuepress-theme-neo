@@ -87,4 +87,4 @@ export default neoTheme({
   }),
 ```
 
-其中 `README.md` 可以定义配置项 `ItemConfig` 排序或者定义`icon`等。
+其中 `README.md` 可以定义配置项 `ItemConfig` 排序或者定义`icon`等。详细见[Frontmatter 配置](../frontmatter/article.md)

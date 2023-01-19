@@ -34,7 +34,7 @@ export default [
         // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
         // serverURL: 'https://vuepress-waline-psi.vercel.app/'
         provider: 'Twikoo',
-        envId: 'https://vuepress2-twikoo.vercel.app',
+        envId: 'https://vuepress2-twikoo.vercel.app'
     }),
     copyCodePlugin({
         showInMobile: false
@@ -54,5 +54,9 @@ export default [
         demo: true, // 启用代码演示
         presentation: true, // 启用幻灯片
         container: true, // 启用自定义容器
+        // 使用 KaTeX 启用 TeX 支持
+        katex: true,
+        // 使用 mathjax 启用 TeX 支持
+        mathjax: true
     })
 ]
