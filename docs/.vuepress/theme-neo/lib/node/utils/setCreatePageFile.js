@@ -1,4 +1,4 @@
-import { createPage, deletePage } from './createPageFile'
+import { createPage, deletePage } from './createPageFile.js'
 
 // 生成分类标签等数据
 export function prepareCreatePageFile(app, themeConfig) {

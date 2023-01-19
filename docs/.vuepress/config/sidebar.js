@@ -19,7 +19,8 @@ export default {
     '/interview/': 'structure',
     '/utils/': 'structure',
     '/demo/': 'structure',
-    '/guide/': 'structure'
+    '/guide/': 'structure',
+    '/config/': 'structure'
 }
 
 // '/interview/': [

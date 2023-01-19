@@ -1,9 +1,10 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import { path, getDirname, fs } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
-import { extraLocaleOptions, prepareCreatePageFile, preparePagesFrontmatter, prepareSidebarData } from './utils/index'
+import { extraLocaleOptions, prepareCreatePageFile, preparePagesFrontmatter, prepareSidebarData } from './utils/index.js'
 
-export const neoTheme = (options, legacy = false) =>
+export const neoTheme =
+    (options, legacy = false) =>
     app => {
         // 额外参数配置
         extraLocaleOptions(options)

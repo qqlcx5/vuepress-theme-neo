@@ -8,7 +8,7 @@ export default [
     {
         text: '配置',
         icon: 'neo-shezhi1',
-        link: '/config/introduce',
+        link: '/config/theme/feature',
         activeMatch: '^/config/'
     },
     {

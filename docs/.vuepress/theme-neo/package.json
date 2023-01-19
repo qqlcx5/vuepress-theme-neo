@@ -1,6 +1,6 @@
 {
     "name": "vuepress-theme-neo",
-    "version": "1.0.2",
+    "version": "2.0.0-beta.72",
     "description": "🚀一款个性化的 VuePress2.x 主题✨",
     "keywords": [
         "vuepress-theme",
@@ -9,16 +9,32 @@
         "neo"
     ],
     "license": "MIT",
+    "type": "module",
     "author": "feyoudao.cn",
-    "main": "lib/node/index.js",
+    "main": "./lib/node/index.js",
     "files": [
         "lib",
         "templates"
     ],
+    "exports": {
+        ".": "./lib/node/index.js",
+        "./node/utils/*": "./lib/node/utils/index.js",
+        "./client": "./lib/client/index.js",
+        "./components/*": "./lib/client/components/*",
+        "./layouts/*": "./lib/client/layouts/*",
+        "./styles/*": "./lib/client/styles/*",
+        "./templates/*": "./templates/*",
+        "./lib/*": "./lib/*",
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qqlcx5/vuepress-theme-neo.git"
+    },
     "dependencies": {
-        "chalk": "^5.0.1",
-        "gray-matter": "^4.0.3",
-        "json2yaml": "^1.1.0"
+        "chalk": "5.1.2",
+        "gray-matter": "4.0.3",
+        "json2yaml": "1.1.0"
     },
     "publishConfig": {
         "access": "public"

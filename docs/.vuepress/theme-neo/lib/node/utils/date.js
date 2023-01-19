@@ -3,12 +3,6 @@ export function addZero(d, len = 2) {
     return d.toString().padStart(len, '0')
 }
 
-// 类型判断
-export function typeOf(o) {
-    var s = Object.prototype.toString.call(o)
-    return s.match(/\[object (.*?)\]/)[1].toLowerCase()
-}
-
 // 修复date时区格式的问题
 export function repairDate(date) {
     date = new Date(date)

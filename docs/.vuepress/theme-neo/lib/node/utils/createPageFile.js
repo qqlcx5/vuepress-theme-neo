@@ -1,7 +1,7 @@
 // 生成或删除页面（分类页、标签页、归档页...）
 import { path, fs } from '@vuepress/utils'
 import chalk from 'chalk' // 命令行打印美化
-import { typeOf } from './index' // 命令行打印美化
+import { typeOf } from './common.js' // 命令行打印美化
 
 const log = console.log
 

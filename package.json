@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "🚀一款个性化的 VuePress2.x 主题✨",
     "scripts": {
-        "dev": "vuepress dev docs --port 3000",
-        "docs:dev": "vuepress dev docs",
-        "docs:build": "vuepress build docs"
+        "dev": "vuepress dev docs --port 3000 --clean-cache",
+        "docs:dev": "vuepress dev docs --clean-cache",
+        "docs:build": "vuepress build docs --clean-cache"
     },
     "devDependencies": {
         "@vuepress/plugin-docsearch": "v2.0.0-beta.60",
@@ -13,14 +13,12 @@
         "@vuepress/plugin-register-components": "v2.0.0-beta.60",
         "@vuepress/plugin-search": "v2.0.0-beta.60",
         "@vueuse/core": "9.8.2",
-        "chalk": "5.1.2",
-        "gray-matter": "4.0.3",
-        "json2yaml": "1.1.0",
         "vuepress": "v2.0.0-beta.60",
         "vuepress-plugin-comment2": "2.0.0-beta.163",
         "vuepress-plugin-copy-code2": "2.0.0-beta.163",
         "vuepress-plugin-md-enhance": "2.0.0-beta.163",
-        "vuepress-plugin-sitemap2": "2.0.0-beta.163"
+        "vuepress-plugin-sitemap2": "2.0.0-beta.163",
+        "vuepress-theme-neo": "^2.0.0-beta.68"
     },
     "license": "MIT",
     "author": "feyoudao.cn",

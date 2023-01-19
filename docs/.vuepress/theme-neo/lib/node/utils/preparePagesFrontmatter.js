@@ -1,4 +1,5 @@
-import { setFrontmatter, readTotalFileWords, formatWordCount } from './index'
+import { setFrontmatter } from './setFrontmatter.js'
+import { readTotalFileWords, formatWordCount } from './readFileWords.js'
 
 export const preparePagesFrontmatter = async (app, options) => {
     const usefulPages = app.pages.filter(page => !!page.filePathRelative && !page.frontmatter['home'] && !page.frontmatter.catalogue && page.frontmatter.article !== false)

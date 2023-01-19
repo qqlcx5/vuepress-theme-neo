@@ -2,7 +2,6 @@
 title: VuePress 配置
 date: 2023-01-18 07:50:00
 order: 4
-comment: false
 toc: false
 categories:
     - 快速上手

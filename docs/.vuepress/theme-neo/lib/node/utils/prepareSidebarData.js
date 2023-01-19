@@ -1,4 +1,4 @@
-import {readFile, resolveFiles } from './genSidebarData' // 读取文件函数模块
+import { readFile, resolveFiles } from './genSidebarData.js' // 读取文件函数模块
 
 export const prepareSidebarData = (app, options) => {
     let docsRoot = app.dir.source()
