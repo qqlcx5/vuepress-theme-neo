@@ -1,6 +1,6 @@
 ---
 title: Markdown 增强
-icon: markdown
+icon: neo-markdown
 index: false
 dir:
   order: 3

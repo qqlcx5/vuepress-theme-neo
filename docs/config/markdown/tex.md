@@ -1,6 +1,5 @@
 ---
 title: Tex 语法
-icon: tex
 category: 
   - Markdown
 tag: 

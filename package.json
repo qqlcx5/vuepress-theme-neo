@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "🚀一款个性化的 VuePress2.x 主题✨",
     "scripts": {
-        "dev": "vuepress dev docs --port 3000 --clean-cache",
+        "dev": "vuepress dev docs --port 3000",
         "docs:dev": "vuepress dev docs --clean-cache",
         "docs:build": "vuepress build docs --clean-cache"
     },

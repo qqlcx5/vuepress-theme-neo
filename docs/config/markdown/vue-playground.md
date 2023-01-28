@@ -1,6 +1,5 @@
 ---
 title: Vue 交互演示
-icon: code
 date: 2023-01-19 16:37:54
 categories: 
   - config
