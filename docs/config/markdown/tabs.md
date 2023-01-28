@@ -1,6 +1,5 @@
 ---
 title: 选项卡
-icon: tab
 order: 2
 category: 
   - Markdown

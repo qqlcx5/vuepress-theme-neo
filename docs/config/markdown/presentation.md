@@ -1,6 +1,5 @@
 ---
 title: 幻灯片
-icon: slides
 category: 
   - Markdown
 tag: 

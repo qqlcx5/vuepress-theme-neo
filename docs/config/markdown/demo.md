@@ -1,6 +1,5 @@
 ---
 title: 代码演示
-icon: discover - Markdown
 tag: 
   - Markdown
   - 代码演示

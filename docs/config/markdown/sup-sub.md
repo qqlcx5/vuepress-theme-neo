@@ -1,6 +1,5 @@
 ---
 title: 上下角标
-icon: superscript
 category: 
   - Markdown
 tag: 

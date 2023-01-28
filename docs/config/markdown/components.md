@@ -1,6 +1,5 @@
 ---
 title: 组件
-icon: plugin
 category: 
   - Markdown
 tag: 

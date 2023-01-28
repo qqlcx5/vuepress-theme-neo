@@ -1,6 +1,5 @@
 ---
 title: Chart
-icon: rank - Markdown
 tag: 
   - 图表
   - Markdown

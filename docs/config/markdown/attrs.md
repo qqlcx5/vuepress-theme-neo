@@ -1,6 +1,5 @@
 ---
 title: 属性支持
-icon: code
 category: 
   - Markdown
 tag: 

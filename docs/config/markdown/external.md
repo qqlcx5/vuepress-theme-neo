@@ -1,6 +1,5 @@
 ---
 title: 外部引入
-icon: link
 order: -1
 category: 
   - Markdown

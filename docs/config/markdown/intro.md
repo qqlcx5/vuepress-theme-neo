@@ -1,6 +1,5 @@
 ---
 title: 启用 Markdown 增强
-icon: enable
 order: 1
 category: 
   - Markdown

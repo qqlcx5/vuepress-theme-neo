@@ -1,6 +1,5 @@
 ---
 title: 其他
-icon: more
 order: -2
 category: 
   - Markdown

@@ -1,6 +1,5 @@
 ---
 title: 样式化
-icon: style - Markdown
 tag: 
   - 样式化
   - Markdown

@@ -1,6 +1,5 @@
 ---
 title: 图片
-icon: pic
 category: 
   - Markdown
 tag: 

@@ -1,6 +1,5 @@
 ---
 title: 标记
-icon: write
 category: 
   - Markdown
 tag: 

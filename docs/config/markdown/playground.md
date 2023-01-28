@@ -1,6 +1,5 @@
 ---
 title: 交互演示
-icon: code
 category: 
   - Markdown
 tag: 

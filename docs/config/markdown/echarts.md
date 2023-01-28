@@ -1,6 +1,5 @@
 ---
 title: ECharts
-icon: rank - Markdown
 tag: 
   - ECharts
   - Markdown

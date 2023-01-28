@@ -1,6 +1,5 @@
 ---
 title: 导入文件
-icon: markdown - Markdown
 tag: 
   - Markdown
   - 导入文件
