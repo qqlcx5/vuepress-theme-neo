@@ -1,6 +1,7 @@
 ---
 title: 饿了么组件目录
-icon: acme-qq
+icon: neo-qq
 catalogue: true
 comment: false
+order: 2
 ---

@@ -2,16 +2,18 @@
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-// import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 // import typed from '../plugins/vuepress-plugin-typed'
 // import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2'
-import { photoSwipePlugin } from 'vuepress-plugin-photo-swipe'
+// import { photoSwipePlugin } from 'vuepress-plugin-photo-swipe'
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 import { commentPlugin } from 'vuepress-plugin-comment2'
 // import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
 import { sitemapPlugin } from 'vuepress-plugin-sitemap2'
 
+import { getDirname, path } from '@vuepress/utils'
+const __dirname = getDirname(import.meta.url)
 export default [
     googleAnalyticsPlugin({ id: 'G-7Q9JVXXQBW' }),
     searchPlugin({
@@ -26,15 +28,19 @@ export default [
     //     selector: ':not(a) > img:not(.no-zoom)'
     // }),
     // 全局组件注册
-    // registerComponentsPlugin({
-    //     componentsDir: path.resolve(__dirname, '../components')
-    // }),
+    registerComponentsPlugin({
+        getComponentName: filename => {
+            let name = filename.split('/')[0]
+            return path.trimExt(name.replace(/\/|\\/g, '-'))
+        },
+        componentsDir: path.resolve(__dirname, '../components')
+    }),
     commentPlugin({
         // provider: 'Waline',
         // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
         // serverURL: 'https://vuepress-waline-psi.vercel.app/'
         provider: 'Twikoo',
-        envId: 'https://vuepress2-twikoo.vercel.app',
+        envId: 'https://vuepress2-twikoo.vercel.app'
     }),
     copyCodePlugin({
         showInMobile: false
@@ -43,7 +49,7 @@ export default [
     //     selector: ':not(a) > img:not(.no-zoom)'
     // }),
     sitemapPlugin({
-        hostname: 'acme.feyoudao.cn'
+        hostname: 'neo.feyoudao.cn'
     }),
     mdEnhancePlugin({
         tabs: true, // 添加选项卡支持
@@ -52,6 +58,11 @@ export default [
         imageSize: true, // 启用图片大小
         include: true, // 启用导入支持
         demo: true, // 启用代码演示
-        presentation: true // 启用幻灯片
+        presentation: true, // 启用幻灯片
+        container: true, // 启用自定义容器
+        // 使用 KaTeX 启用 TeX 支持
+        katex: true,
+        // 使用 mathjax 启用 TeX 支持
+        mathjax: true
     })
 ]

@@ -2,6 +2,7 @@
 .DS_Store
 *node_modules
 .temp
+.lh
 .cache
 *dist
 .history
@@ -23,7 +24,7 @@ package-lock.js*
 *.njsproj
 *.sln
 *.sw?
-# *.bat
+*.lh?
 *.hbuilderx
 
 .yarn/*

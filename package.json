@@ -1,27 +1,24 @@
 {
     "name": "vuepress-next",
     "version": "1.0.0",
-    "description": "前端有道,技术博客,前端,前端开发,前端博客,前端框架,web前端,前端面试,技术文档,学习,面试,JavaScript,js,es6,typeScript,ts,vue,python,css3,html5,node,git,github,markdown,vuepress,react",
+    "description": "🚀一款个性化的 VuePress2.x 主题✨",
     "scripts": {
         "dev": "vuepress dev docs --port 3000",
-        "docs:dev": "vuepress dev docs",
-        "docs:build": "vuepress build docs"
+        "docs:dev": "vuepress dev docs --debug --clean-cache",
+        "docs:build": "vuepress build docs --clean-cache"
     },
     "devDependencies": {
-        "@vuepress/plugin-docsearch": "2.0.0-beta.53",
-        "@vuepress/plugin-google-analytics": "2.0.0-beta.53",
-        "@vuepress/plugin-register-components": "2.0.0-beta.53",
-        "@vuepress/plugin-search": "2.0.0-beta.53",
-        "chalk": "5.1.2",
-        "gray-matter": "4.0.3",
-        "json2yaml": "1.1.0",
-        "vuepress": "2.0.0-beta.53",
-        "@vueuse/core": "9.3.1",
-        "vuepress-plugin-comment2": "2.0.0-beta.121",
-        "vuepress-plugin-copy-code2": "2.0.0-beta.121",
-        "vuepress-plugin-md-enhance": "2.0.0-beta.121",
-        "vuepress-plugin-photo-swipe": "2.0.0-beta.121",
-        "vuepress-plugin-sitemap2": "2.0.0-beta.121"
+        "@vuepress/plugin-docsearch": "v2.0.0-beta.60",
+        "@vuepress/plugin-google-analytics": "v2.0.0-beta.60",
+        "@vuepress/plugin-register-components": "v2.0.0-beta.60",
+        "@vuepress/plugin-search": "v2.0.0-beta.60",
+        "@vueuse/core": "9.8.2",
+        "vuepress": "v2.0.0-beta.60",
+        "vuepress-plugin-comment2": "2.0.0-beta.163",
+        "vuepress-plugin-copy-code2": "2.0.0-beta.163",
+        "vuepress-plugin-md-enhance": "2.0.0-beta.163",
+        "vuepress-plugin-sitemap2": "2.0.0-beta.163",
+        "vuepress-theme-neo": "^2.0.0-beta.68"
     },
     "license": "MIT",
     "author": "feyoudao.cn",

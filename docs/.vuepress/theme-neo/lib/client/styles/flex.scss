@@ -1,0 +1,114 @@
+@mixin flex($direction: column) {
+    display: flex;
+    flex-direction: $direction;
+}
+.c-row {
+    @include flex(row);
+    flex-wrap: wrap;
+}
+@for $i from 1 through 12 {
+    .neo-col-#{$i} {
+        flex: 0 0 calc(#{100 * $i + "%"} / 12);
+        min-width: 0;
+    }
+    @if $i <= 6 {
+        .neo-flex-#{$i} {
+            flex: #{$i};
+            min-width: 0;
+        }
+        .neo-flex-column {
+            & > .neo-flex-#{$i},
+            & > .neo-col-#{$i} {
+                min-width: auto;
+                min-height: 0;
+            }
+        }
+    }
+}
+
+.neo-flex {
+    @include flex(row);
+}
+
+.neo-flex-column {
+    @include flex(column);
+}
+
+.neo-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.neo-reverse {
+    flex-direction: row-reverse;
+}
+
+.neo-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.neo-justify-between {
+    justify-content: space-between;
+}
+
+.neo-justify-around {
+    justify-content: space-around;
+}
+
+.neo-justify-end {
+    justify-content: flex-end;
+}
+
+.neo-align-center {
+    align-items: center;
+}
+
+.neo-align-start {
+    align-items: flex-start;
+}
+
+.neo-align-end {
+    align-items: flex-end;
+}
+
+.neo-justify-center {
+    justify-content: center;
+}
+.neo-align-self-start {
+    align-self: flex-start;
+}
+
+.neo-align-self-end {
+    align-self: flex-end;
+}
+
+.neo-align-self-center {
+    align-self: center;
+}
+
+.neo-justify-self-start {
+    justify-self: start;
+}
+
+.neo-justify-self-center {
+    justify-self: center;
+}
+
+.neo-justify-self-end {
+    justify-self: end;
+}
+
+.neo-shrink-0 {
+    flex-shrink: 0;
+}
+
+.neo-flex-ajcenter {
+    @extend .neo-flex;
+    @extend .neo-align-center;
+    @extend .neo-justify-center;
+}
+
+.neo-flex-column-ajcenter {
+    @extend .neo-flex-column;
+    @extend .neo-align-center;
+    @extend .neo-justify-center;
+}

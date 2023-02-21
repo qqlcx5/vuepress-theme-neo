@@ -20,6 +20,7 @@ columns:
 该占位符可以在后期使用自己的标记语言填充
 
 举个栗子
+
 ```html
 <template id="element-details-template">
   <slot name="element-name">Slot template</slot>
@@ -31,6 +32,7 @@ columns:
   <span slot="element-name">2</span>
 </element-details>
 ```
+
 `template`不会展示到页面中，需要用先获取它的引用，然后添加到`DOM`中，
 
 ```js
@@ -56,8 +58,6 @@ customElements.define('element-details',
 放张图感受一下
 ![](https://static.vue-js.com/63c0dff0-3dbd-11eb-85f6-6fac77c0c9b3.png)
 
-
-
 ## 二、使用场景
 
 通过插槽可以让用户可以拓展组件，去更好地复用组件和对其做定制化处理
@@ -75,8 +75,6 @@ customElements.define('element-details',
 - 默认插槽
 - 具名插槽
 - 作用域插槽
-
-
 
 ### 默认插槽
 
@@ -102,8 +100,6 @@ customElements.define('element-details',
 </Child>
 ```
 
-
-
 ### 具名插槽
 
 子组件用`name`属性来表示插槽的名字，不传为默认插槽
@@ -128,8 +124,6 @@ customElements.define('element-details',
     <template v-slot:content>内容...</template>
 </child>
 ```
-
-
 
 ### 作用域插槽
 
@@ -161,16 +155,12 @@ customElements.define('element-details',
 </child>
 ```
 
-
-
-### 小结：
+### 小结
 
 - `v-slot`属性只能在`<template>`上使用，但在只有默认插槽时可以在组件标签上使用
 - 默认插槽名为`default`，可以省略default直接写`v-slot`
 - 缩写为`#`时不能不写参数，写成`#default`
 - 可以通过解构获取`v-slot={user}`，还可以重命名`v-slot="{user: newName}"`和定义默认值`v-slot="{user = '默认值'}"`
-
-
 
 ## 四、原理分析
 
@@ -295,10 +285,9 @@ vm.$scopedSlots = normalizeScopedSlots(
 
 作用域插槽中父组件能够得到子组件的值是因为在`renderSlot`的时候执行会传入`props`，也就是上述`_t`第三个参数，父组件则能够得到子组件传递过来的值
 
-
 ## 参考文献
 
-- https://juejin.cn/post/6844903817746628615#heading-4
-- https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
-- https://vue3js.cn/docs/zh
-- https://segmentfault.com/a/1190000019492734?utm_source=tag-newest
+- <https://juejin.cn/post/6844903817746628615#heading-4>
+- <https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots>
+- <https://vue3js.cn/docs/zh>
+- <https://segmentfault.com/a/1190000019492734?utm_source=tag-newest>
