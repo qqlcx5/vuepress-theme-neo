@@ -21,7 +21,7 @@ export default [
         // 排除首页
         isSearchable: page => page.path !== '/',
         // 允许搜索 Frontmatter 中的 `tags`和`categories`和 columns
-        getExtraFields: page => (page.frontmatter.tags || page.frontmatter.categories || page.frontmatter.columns) ?? []
+        getExtraFields: page => (page.frontmatter.tags || page.frontmatter.categories) ?? []
     }),
     // <a> 标签以外的所有图片不包括.no-zoom都支持缩放
     // mediumZoomPlugin({
@@ -54,8 +54,8 @@ export default [
     mdEnhancePlugin({
         tabs: true, // 添加选项卡支持
         codetabs: true, // 启用代码块分组
-        imageMark: true, // 启用图片标记
-        imageSize: true, // 启用图片大小
+        imgMark: true, // 启用图片标记
+        imgSize: true, // 启用图片大小
         include: true, // 启用导入支持
         demo: true, // 启用代码演示
         presentation: true, // 启用幻灯片

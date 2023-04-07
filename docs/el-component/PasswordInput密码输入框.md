@@ -15,8 +15,6 @@ columns:
 
 <ClientOnly>
   <PasswordInput />
-  <!-- <password-input /> -->
-
 </ClientOnly>
 
 ## Input.TextArea
