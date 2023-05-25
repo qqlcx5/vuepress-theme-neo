@@ -1,6 +1,8 @@
 ---
 title: 指南
 comment: false
-actcle: false
+article: false
 collapsible: false
+icon: neo-qq
+catalogue: true
 ---

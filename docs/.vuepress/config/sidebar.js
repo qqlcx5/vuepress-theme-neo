@@ -20,7 +20,8 @@ export default {
     '/utils/': 'structure',
     '/demo/': 'structure',
     '/guide/': 'structure',
-    '/config/': 'structure'
+    '/config/': 'structure',
+    '/prompt/': 'structure',
 }
 
 // '/interview/': [

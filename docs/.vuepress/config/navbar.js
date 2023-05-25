@@ -47,6 +47,12 @@ export default [
         activeMatch: '^/demo/'
     },
     {
+        text: 'GPT Prompt',
+        icon: 'neo-riqi',
+        link: '/prompt/',
+        activeMatch: '^/prompt/'
+    },
+    {
         text: '索引',
         icon: 'neo-shaixuan',
         children: [
