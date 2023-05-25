@@ -114,7 +114,7 @@ let MyImage = (function(){
     }
 })();
 
-MyImage.setSrc( 'https://xxx.jpg' );
+MyImage.setSrc( 'https://cdn.novenn.com/random/avatars/1595853484412.jpg' );
 ```
 
 `MyImage`对象除了负责给`img`节点设置`src`外，还要负责预加载图片，违反了面向对象设计的原则——单一职责原则
@@ -153,7 +153,7 @@ let proxyImage = (function(){
     }
 })();
 
-proxyImage.setSrc( 'https://xxx.jpg' );
+proxyImage.setSrc('https://cdn.novenn.com/random/avatars/1595853155387.jpghttps://xxx.jpg');
 ```
 
 使用代理模式后，图片本地对象负责往页面中创建一个`img`标签，并且提供一个对外的`setSrc`接口；
