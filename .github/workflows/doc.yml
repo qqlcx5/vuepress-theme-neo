@@ -33,14 +33,14 @@ jobs:
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
         # if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: npm install
         # run: yarn --frozen-lockfile
 
       # 运行构建脚本
       - name: Build VuePress site
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
         run: npm run docs:build
 
       - name: Generate CNAME
