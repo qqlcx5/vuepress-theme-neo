@@ -18,7 +18,7 @@
         "vuepress-plugin-copy-code2": "2.0.0-beta.212",
         "vuepress-plugin-md-enhance": "2.0.0-beta.212",
         "vuepress-plugin-sitemap2": "2.0.0-beta.212",
-        "vuepress-theme-neo": "^2.0.0-beta.68"
+        "vuepress-theme-neo": "^2.0.0-beta.73"
     },
     "license": "MIT",
     "author": "feyoudao.cn",
