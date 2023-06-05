@@ -99,7 +99,7 @@ export default defineComponent({
     display: inline-block;
     font-size: inherit;
     text-rendering: auto;
-    vertical-align: -0.08em;
+    vertical-align: -0.14em;
     -webkit-font-smoothing: antialiased;
 }
 .neo-colour {

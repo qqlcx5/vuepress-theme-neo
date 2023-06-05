@@ -1,0 +1,18 @@
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    background-color: rgba(var(--c-brand-rgb), 0.1);
+  }
+  &.active:not(p.sidebar-heading) {
+    background-color: rgba(var(--c-brand-rgb), 0.1);
+  }
+}
+.sidebar-items {
+  // 菜单下文章标题字号大小
+  a.sidebar-item {
+    font-size: 1em;
+    font-weight: 500;
+  }
+}
