@@ -1,11 +1,7 @@
 <script setup lang="ts">
-// @ts-ignore
 import Home from '@theme/Home.vue'
-// @ts-ignore
 import Navbar from '@theme/Navbar.vue'
-// @ts-ignore
 import Page from '@theme/Page.vue'
-// @ts-ignore
 import Sidebar from '@theme/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
@@ -16,6 +12,20 @@ import {
   useSidebarItems,
   useThemeLocaleData,
 } from '../composables/index.js'
+
+defineSlots<{
+  'navbar'?: (props: Record<never, never>) => any
+  'navbar-before'?: (props: Record<never, never>) => any
+  'navbar-after'?: (props: Record<never, never>) => any
+  'sidebar'?: (props: Record<never, never>) => any
+  'sidebar-top'?: (props: Record<never, never>) => any
+  'sidebar-bottom'?: (props: Record<never, never>) => any
+  'page'?: (props: Record<never, never>) => any
+  'page-top'?: (props: Record<never, never>) => any
+  'page-bottom'?: (props: Record<never, never>) => any
+  'page-content-top'?: (props: Record<never, never>) => any
+  'page-content-bottom'?: (props: Record<never, never>) => any
+}>()
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()

@@ -19,33 +19,38 @@ export const DEFAULT_LOCALE_OPTIONS = {
     contributors: true,
     contributorsText: 'Contributors',
     // 404 page messages
-    notFound: [`There's nothing here.`, `How did we get here?`, `That's a Four-Oh-Four.`, `Looks like we've got some broken links.`],
+    notFound: [
+        `There's nothing here.`,
+        `How did we get here?`,
+        `That's a Four-Oh-Four.`,
+        `Looks like we've got some broken links.`,
+    ],
     backToHome: 'Take me home',
     // a11y
     openInNewWindow: 'open in new window',
     toggleColorMode: 'toggle color mode',
-    toggleSidebar: 'toggle sidebar'
-}
+    toggleSidebar: 'toggle sidebar',
+};
 export const DEFAULT_LOCALE_DATA = {
     // navbar
-    selectLanguageName: 'English'
-}
+    selectLanguageName: 'English',
+};
 /**
  * Assign default options
  */
-export const assignDefaultLocaleOptions = localeOptions => {
+export const assignDefaultLocaleOptions = (localeOptions) => {
     if (!localeOptions.locales) {
-        localeOptions.locales = {}
+        localeOptions.locales = {};
     }
     if (!localeOptions.locales['/']) {
-        localeOptions.locales['/'] = {}
+        localeOptions.locales['/'] = {};
     }
     Object.assign(localeOptions, {
         ...DEFAULT_LOCALE_OPTIONS,
-        ...localeOptions
-    })
+        ...localeOptions,
+    });
     Object.assign(localeOptions.locales['/'], {
         ...DEFAULT_LOCALE_DATA,
-        ...localeOptions.locales['/']
-    })
-}
+        ...localeOptions.locales['/'],
+    });
+};
