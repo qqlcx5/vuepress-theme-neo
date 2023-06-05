@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, toRefs } from 'vue'
+import { reactive } from 'vue'
 // @ts-ignore
 import Catalogue from '@theme/Catalogue.vue'
 const props = defineProps({
@@ -16,8 +16,8 @@ const toggleClick = (index: number) => {
 const scrollTag = (index: number) => {
     const activeEl = document.querySelector(`#catalogue-title-${index}`)
     const ElRect = document.querySelector('.catalogue-rect')?.getBoundingClientRect()?.height
-    const anchorRect = document.querySelector('.anchor-rect')?.getBoundingClientRect()?.top
-    const top = activeEl?.getBoundingClientRect().top - ElRect / 2 - anchorRect
+    const anchorRect = document.querySelector('.anchor-rect')?.getBoundingClientRect()?.top // 0 anchor
+    const top = ~~(activeEl?.getBoundingClientRect().top - anchorRect) - ElRect / 2 + 36
     window?.scrollTo({ top, behavior: 'smooth' })
 }
 </script>
@@ -26,7 +26,7 @@ const scrollTag = (index: number) => {
     <div class="neo-pl-0">
         <!-- 这个锚点是为了解决目录跳转时，标题被遮挡的问题 -->
         <div class="anchor-rect"></div>
-        <!-- 这里的list是一个嵌套对象才展示 -->
+        <!-- tabs标题 -->
         <div v-show="list.length > 1 && list[0]?.children" class="neo-flex neo-flex-wrap catalogue-rect">
             <div class="cursor-pointer" v-for="(item, p) in list" :key="p" @click="scrollTag(p)">
                 {{ item.text }}
@@ -36,9 +36,9 @@ const scrollTag = (index: number) => {
             <li v-for="(item, index) in list" :key="item" class="neo-ptb-4">
                 <template v-if="item.children?.length">
                     <div :id="`catalogue-title-${index}`" class="neo-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
-                        <NeoIcon :name="item.icon || 'neo-wenjianlan'" class="neo-mr-4" />
+                        <NeoIcon :name="item.icon || 'neo-wenjianlan'" class="neo-mr-8" />
                         <span class="catalogue-title">{{ item.text }} 目录</span>
-                        <NeoIcon :name="toggleObj[index] ? 'neo-xiangxiajiantou' : 'neo-xiangshangjiantou'" class="neo-mr-4" />
+                        <NeoIcon name="neo-youxiangshuangjiantou" size="20" :rotate="toggleObj[index] ? '-90deg' :'90deg'" />
                     </div>
                     <Transition name="fade-slide-y" mode="out-in">
                         <Catalogue v-show="!toggleObj[index]" :list="item.children" />
@@ -47,7 +47,7 @@ const scrollTag = (index: number) => {
 
                 <RouterLink v-else :to="item.link" :title="item.text">
                     <NeoIcon :name="item.icon || 'neo-md'" class="neo-mr-4" />
-                    {{ index + 1 }}.{{ item.fullTitle ||item.text }}
+                    {{ index + 1 }}.{{ item.fullTitle || item.text }}
                 </RouterLink>
             </li>
         </ul>
@@ -55,7 +55,7 @@ const scrollTag = (index: number) => {
 </template>
 <style lang="scss" scoped>
 ul ul {
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--c-bg);
@@ -71,12 +71,15 @@ ul ul {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
         &:nth-of-type(even) {
             background-color: rgba(var(--c-brand-rgb), 0.04);
         }
+
         &:nth-of-type(odd) {
             background-color: rgba(var(--c-brand-rgb), 0.09);
         }
+
         // 1 4 5 8 9 12 13 16 17 20 21 24 25 28 29 32 33 36 37 40 41 44 45 48 49 52 53 56 57 60 61 64 65 68 69 72 73 76 77 80 81 84 85 88 89 92 93 96 97 100
         // &:nth-of-type(4n) {
         //     background-color: rgba(var(--c-brand-rgb), 0.07);
@@ -95,17 +98,20 @@ ul ul {
         a {
             color: var(--c-text-light);
             font-weight: normal;
+
             &:hover {
                 text-decoration: none;
             }
         }
     }
 }
+// tab
 .catalogue-rect {
     z-index: 2;
     position: sticky;
     top: calc(var(--navbar-height));
     background-color: var(--c-bg-navbar);
+
     .cursor-pointer {
         padding: 8px 16px;
         border-radius: 16px;
@@ -114,6 +120,7 @@ ul ul {
         margin: 6px;
     }
 }
+
 .catalogue-title {
     color: var(--c-text);
     font-weight: 500;
