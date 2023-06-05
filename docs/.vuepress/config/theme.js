@@ -1,7 +1,7 @@
 import navbar from './navbar'
 import sidebar from './sidebar'
-// import neoTheme from '../theme-neo/lib/node/index'
-import neoTheme from 'vuepress-theme-neo'
+import neoTheme from '../theme-neo/lib/node/index'
+// import neoTheme from 'vuepress-theme-neo'
 
 export default neoTheme({
     // 默认主题配置项
