@@ -1,5 +1,5 @@
 ---
-title: 问题表
+title: GPT灵感库
 icon: neo-html
 catalogue: true
 comment: false

@@ -2,9 +2,9 @@
 import { reactive } from 'vue';
 // @ts-ignore
 import Catalogue from '@theme/Catalogue.vue';
-const props = defineProps({
+defineProps({
     list: {
-        type: Array,
+        type: Array as any,
         defalut: () => []
     }
 });
