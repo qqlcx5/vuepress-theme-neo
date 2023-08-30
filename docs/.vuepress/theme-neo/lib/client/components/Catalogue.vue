@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive } from 'vue';
 // @ts-ignore
-import Catalogue from '@theme/Catalogue.vue'
+import Catalogue from '@theme/Catalogue.vue';
 const props = defineProps({
     list: {
         type: Array,
         defalut: () => []
     }
-})
-const toggleObj = reactive({})
+});
+const toggleObj = reactive({});
 const toggleClick = (index: number) => {
-    toggleObj[index] = !toggleObj[index]
-    console.log(toggleObj)
-}
+    toggleObj[index] = !toggleObj[index];
+    console.log(toggleObj);
+};
 const scrollTag = (index: number) => {
-    const activeEl = document.querySelector(`#catalogue-title-${index}`)
-    const ElRect = document.querySelector('.catalogue-rect')?.getBoundingClientRect()?.height
-    const anchorRect = document.querySelector('.anchor-rect')?.getBoundingClientRect()?.top // 0 anchor
-    const top = ~~(activeEl?.getBoundingClientRect().top - anchorRect) - ElRect / 2 + 36
-    window?.scrollTo({ top, behavior: 'smooth' })
-}
+    const activeEl = document.querySelector(`#catalogue-title-${index}`) as HTMLElement; // 标题DOM
+    const tagRect = ~~(document.querySelector('.catalogue-rect')?.getBoundingClientRect()?.height as number); // 标签DOM
+    const anchorRect = ~~(document.querySelector('.anchor-rect')?.getBoundingClientRect()?.top as number);  // 顶部锚点
+    const { height, top } = activeEl?.getBoundingClientRect()
+    const topDistance = (~~top - anchorRect - tagRect)
+    console.log(`🚀 - scrollTag - 标题:`, height, top, tagRect, anchorRect, topDistance)
+    window?.scrollTo({ top: topDistance, behavior: 'smooth' });
+};
 </script>
 
 <template>
@@ -37,8 +39,8 @@ const scrollTag = (index: number) => {
                 <template v-if="item.children?.length">
                     <div :id="`catalogue-title-${index}`" class="neo-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
                         <NeoIcon :name="item.icon || 'neo-wenjianlan'" class="neo-mr-8" />
-                        <span class="catalogue-title">{{ item.text }} 目录</span>
-                        <NeoIcon name="neo-youxiangshuangjiantou" size="20" :rotate="toggleObj[index] ? '-90deg' :'90deg'" />
+                        <span class="catalogue-title">{{ item.text }}目录</span>
+                        <NeoIcon :name="toggleObj[index] ? 'neo-circle-plus' : 'neo-circle-minus'" color="#999" size="16" />
                     </div>
                     <Transition name="fade-slide-y" mode="out-in">
                         <Catalogue v-show="!toggleObj[index]" :list="item.children" />
@@ -105,6 +107,7 @@ ul ul {
         }
     }
 }
+
 // tab
 .catalogue-rect {
     z-index: 2;
@@ -124,6 +127,7 @@ ul ul {
 .catalogue-title {
     color: var(--c-text);
     font-weight: 500;
+    margin-right: 8px;
 }
 
 li {

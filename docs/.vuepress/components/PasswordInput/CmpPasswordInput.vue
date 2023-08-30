@@ -34,17 +34,6 @@ export default {
             this.$emit('input', this.password)
         }
     }
-    // 方式二
-    // computed: {
-    //     password: {
-    //         get() {
-    //             return this.value
-    //         },
-    //         set(val) {
-    //             this.$emit('input', val)
-    //         }
-    //     }
-    // }
 }
 </script>
 <style lang="scss" scoped>

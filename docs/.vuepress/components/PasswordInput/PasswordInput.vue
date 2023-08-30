@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import PasswordInput from './CmpPasswordInput.vue'
+import PasswordInput from './CmpPasswordInput.vue';
 
 export default {
     name: 'PasswordInputDemo',
     components: {
         PasswordInput
     }
-}
+};
 </script>
 <style lang="scss" scoped>
 .max-width {
