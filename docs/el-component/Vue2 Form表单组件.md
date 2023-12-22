@@ -1,16 +1,17 @@
 ---
-title: el-form表单组件order->5
+title: el-form表单组件
 date: 2019-06-06 14:11:35
-categories: 
+categories:
   - el-component
-tags: 
+tags:
   - null
 comment: false
-columns: 
-  - 
+columns:
+  -
 order: 5
 ---
-# el-form表单组件
+
+# Vue2 elForm 表单组件
 
 ## 前言
 
@@ -43,30 +44,30 @@ export default {
       ruleForm: {
         pass: '',
         checkPass: '',
-        age: ''
+        age: '',
       },
       rules: {
         pass: [{ required: true, message: '请输入名字', trigger: 'blur' }],
-        age: [{ required: true, message: '请输入年龄', trigger: 'blur' }]
-      }
-    }
+        age: [{ required: true, message: '请输入年龄', trigger: 'blur' }],
+      },
+    };
   },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert('submit!')
+          alert('submit!');
         } else {
-          console.log('error submit!!')
-          return false
+          console.log('error submit!!');
+          return false;
         }
-      })
+      });
     },
     resetForm(formName) {
-      this.$refs[formName].resetFields()
-    }
-  }
-}
+      this.$refs[formName].resetFields();
+    },
+  },
+};
 </script>
 ```
 
@@ -107,14 +108,14 @@ export default {
 
 ```vue
 <template>
-    <form>
-        <slot></slot>
-    </form>
+  <form>
+    <slot></slot>
+  </form>
 </template>
 <script>
 export default {
-    name:'elForm'
-}
+  name: 'elForm',
+};
 </script>
 ```
 
@@ -128,8 +129,8 @@ export default {
 </template>
 <script>
 export default {
-  name: 'elFormItem'
-}
+  name: 'elFormItem',
+};
 </script>
 ```
 
@@ -141,8 +142,8 @@ export default {
 </template>
 <script>
 export default {
-  name: 'elInput'
-}
+  name: 'elInput',
+};
 </script>
 ```
 
@@ -172,17 +173,17 @@ export default {
   name: 'elForm',
   provide() {
     return {
-      elForm: this
-    }
+      elForm: this,
+    };
   },
   props: {
     model: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
-    rules: Object
-  }
-}
+    rules: Object,
+  },
+};
 </script>
 ```
 
@@ -190,23 +191,23 @@ export default {
 
 ```vue
 <template>
-    <div><slot></slot></div>
+  <div><slot></slot></div>
 </template>
 <script>
 export default {
-    name:'elFormItem',
-    inject:['elForm'],
-    props:{
-        label:{
-            type:String,
-            default:''
-        },
-        prop:String
+  name: 'elFormItem',
+  inject: ['elForm'],
+  props: {
+    label: {
+      type: String,
+      default: '',
     },
-    mounted(){
-       console.log(this.elForm)
-    }
-}
+    prop: String,
+  },
+  mounted() {
+    console.log(this.elForm);
+  },
+};
 </script>
 ```
 
@@ -283,41 +284,41 @@ this.$children.map(child=>{
   </div>
 </template>
 <script>
-import Schema from 'async-validator'
+import Schema from 'async-validator';
 export default {
   name: 'elFormItem',
   inject: ['elForm'],
   props: {
     label: {
       type: String,
-      default: ''
+      default: '',
     },
-    prop: String
+    prop: String,
   },
   data() {
-    return { errorMessage: '' }
+    return { errorMessage: '' };
   },
   mounted() {
     this.$on('validate', () => {
       if (this.prop) {
-        let rule = this.elForm.rules[this.prop]
-        let newValue = this.elForm.model[this.prop]
+        let rule = this.elForm.rules[this.prop];
+        let newValue = this.elForm.model[this.prop];
 
         let descriptor = {
-          [this.prop]: rule
-        }
-        let schema = new Schema(descriptor)
+          [this.prop]: rule,
+        };
+        let schema = new Schema(descriptor);
 
         return schema.validate({ [this.prop]: newValue }, (err, res) => {
           if (err) {
-            this.errorMessage = err[0].message
+            this.errorMessage = err[0].message;
           } else {
-            this.errorMessage = ''
+            this.errorMessage = '';
           }
-        })
+        });
       }
-    })
-  }
-}
+    });
+  },
+};
 </script>
 ```

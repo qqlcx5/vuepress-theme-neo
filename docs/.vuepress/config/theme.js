@@ -45,9 +45,18 @@ export default neoTheme({
     },
     homeHeaderImages: [
         {
-            path: 'https://blog.zxh.io/img/home-bg/5.jpg',
+            path: 'https://temporaryx.oss-cn-hongkong.aliyuncs.com/1703153606209.png',
+            mask: 'rgba(65, 60, 55, .2)'
+        },
+        {
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/3.jpg',
+            mask: 'rgba(65, 60, 55, .2)'
+        },
+        {
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
             mask: 'rgba(65, 60, 55, .2)'
         }
     ]
+
     // header on home page
 })

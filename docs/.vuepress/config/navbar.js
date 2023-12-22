@@ -12,22 +12,22 @@ export default [
         activeMatch: '^/config/'
     },
     {
-        text: '饿了么组件库',
-        icon: 'neo-shanchuxian',
-        link: '/el-component/',
-        activeMatch: '^/el-component/'
-    },
-    {
         text: '面试官系列',
         icon: 'neo-jianzhu',
         link: '/interview/',
         activeMatch: '^/interview/'
     },
     {
-        text: '工具函数',
+        text: '手写工具函数',
         icon: 'neo-renwu',
         link: '/utils/',
         activeMatch: '^/utils/'
+    },
+    {
+        text: '饿了么组件库',
+        icon: 'neo-shanchuxian',
+        link: '/el-component/',
+        activeMatch: '^/el-component/'
     },
     // {
     //     text: '导航页',
