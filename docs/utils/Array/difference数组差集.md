@@ -9,7 +9,7 @@ tags:
   - difference
 sticky: 4
 columns: 
-  - null
+  - 
 ---
 # difference 两个数组中不包含集合
 

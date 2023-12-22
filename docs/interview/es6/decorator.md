@@ -5,7 +5,7 @@ categories:
   - interview
   - es6
 tags: 
-  - null
+  - 
 columns: 
   - ES6
 ---

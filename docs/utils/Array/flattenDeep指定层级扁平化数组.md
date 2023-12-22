@@ -9,7 +9,7 @@ tags:
   - flattenDeep
 sticky: 6
 columns: 
-  - null
+  - 
 ---
 # flattenDeep 指定层级扁平化数组
 

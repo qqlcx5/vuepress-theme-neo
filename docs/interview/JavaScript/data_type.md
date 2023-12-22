@@ -5,7 +5,7 @@ categories:
   - interview
   - JavaScript
 tags: 
-  - null
+  - 
 columns: 
   - 
 ---
@@ -32,7 +32,7 @@ columns:
 - String
 - Boolean
 - Undefined
-- null
+- 
 - symbol
 
 

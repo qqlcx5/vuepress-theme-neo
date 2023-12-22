@@ -5,7 +5,7 @@ categories:
   - interview
   - JavaScript
 tags: 
-  - null
+  - 
 columns: 
   - 
 ---
@@ -171,7 +171,7 @@ Boolean(new Boolean(false)) // true
 可以得出个小结：
 
 - undefined 
-- null 
+-  
 - false 
 - +0 
 - -0

@@ -5,7 +5,7 @@ categories:
   - interview
   - linux
 tags: 
-  - null
+  - 
 columns: 
   - 
 ---

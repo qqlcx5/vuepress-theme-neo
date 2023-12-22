@@ -9,7 +9,7 @@ tags:
   - min
 sticky: 10
 columns: 
-  - null
+  - 
 ---
 
 # min 数组中最大值

@@ -6,7 +6,7 @@ categories:
 tags: 
   - 关于
 columns: 
-  - null
+  - 
 ---
 # 关于 - 我
 

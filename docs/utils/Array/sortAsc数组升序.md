@@ -9,7 +9,7 @@ tags:
   - sortAsc
 sticky: 13
 columns: 
-  - null
+  - 
 ---
 # sortAsc 数组升序
 

@@ -9,7 +9,7 @@ tags:
   - intersection
 sticky: 7
 columns: 
-  - null
+  - 
 ---
 # intersection 两个数组中的集合
 

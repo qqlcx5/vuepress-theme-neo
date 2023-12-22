@@ -8,7 +8,7 @@ tags:
   - clone
 sticky: 2
 columns: 
-  - null
+  - 
 ---
 # clone 拷贝数组
 

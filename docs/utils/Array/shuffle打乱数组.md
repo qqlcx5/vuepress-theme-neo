@@ -9,7 +9,7 @@ tags:
   - shuffle
 sticky: 12
 columns: 
-  - null
+  - 
 ---
 # shuffle 打乱数组
 

@@ -9,7 +9,7 @@ tags:
   - isEqual
 sticky: 11
 columns: 
-  - null
+  - 
 ---
 # isEqual 检查两个对象各项值相等
 

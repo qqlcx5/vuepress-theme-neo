@@ -8,7 +8,7 @@ tags:
   - Array
 sticky: 1
 columns: 
-  - null
+  - 
 ---
 # chunk 拆分数组
 

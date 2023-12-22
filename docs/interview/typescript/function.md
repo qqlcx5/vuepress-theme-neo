@@ -5,7 +5,7 @@ categories:
   - interview
   - typescript
 tags: 
-  - null
+  - 
 columns: 
   - 
 ---

@@ -9,7 +9,7 @@ tags:
   - compact
 sticky: 3
 columns: 
-  - null
+  - 
 ---
 # compact 去除数组中的无效值
 
