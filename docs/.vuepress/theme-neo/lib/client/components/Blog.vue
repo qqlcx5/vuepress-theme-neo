@@ -155,7 +155,7 @@ onMounted(() => {
     offsetTop.value = (
         document.querySelector('.home-blog') as HTMLElement
     )?.clientHeight
-    
+
     if (bgImages && bgImages.length > 0)
         bgImageIndex.value = Math.floor(Math.random() * bgImages.length)
 })

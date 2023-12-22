@@ -6,9 +6,9 @@ toc: false
 categories:
   - 快速上手
 tags:
-  - 
+  -
 columns:
-  - 
+  -
 ---
 
 # 快速上手
@@ -70,7 +70,7 @@ yarn add -D vuepress-theme-neo
 
 ```js
 // .vuepress/config.js
-import neoTheme from 'vuepress-theme-neo'
+import neoTheme from 'vuepress-theme-neo';
 
 export default {
   // 站点选项

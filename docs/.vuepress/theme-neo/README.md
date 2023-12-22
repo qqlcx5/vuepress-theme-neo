@@ -2,7 +2,7 @@
   <img width="240" src="https://v2.vuepress.vuejs.org/images/hero.png" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-neo</h1>
-<h4 align="center">🚀一款个性化的 VuePress2.x 主题✨</h4>
+<h4 align="center">🚀一款极简风格VuePress2.x 主题✨</h4>
 
 ## 联系
 

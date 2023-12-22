@@ -41,7 +41,7 @@ export default neoTheme({
     homeHeaderInfo: {
         name: 'vuepress-theme-neo',
         avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
-        description: '🚀一款个性化的 VuePress2.x 主题✨'
+        description: '🚀一款极简风格VuePress2.x 主题✨'
     },
     homeHeaderImages: [
         {
