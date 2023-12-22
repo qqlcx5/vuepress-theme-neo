@@ -1,34 +1,43 @@
 {
-    "name": "vuepress-next",
-    "version": "1.0.0",
-    "description": "🚀一款极简风格的VuePress 2.x主题✨，打造个性化的博客和文档。",
-    "scripts": {
-        "dev": "vuepress dev docs --port 3000",
-        "docs:dev": "vuepress dev docs --debug --clean-cache",
-        "docs:build": "vuepress build docs --clean-cache"
-    },
-    "devDependencies": {
-        "@vuepress/client": "2.0.0-rc.0",
-        "@vuepress/plugin-docsearch": "2.0.0-rc.0",
-        "@vuepress/plugin-google-analytics": "2.0.0-rc.0",
-        "@vuepress/plugin-register-components": "2.0.0-rc.0",
-        "@vuepress/plugin-search": "2.0.0-rc.0",
-        "@vuepress/theme-default": "2.0.0-rc.0",
-        "@vuepress/utils": "2.0.0-rc.0",
-        "@vueuse/core": "10.7.0",
-        "chalk": "^5.3.0",
-        "gray-matter": "^4.0.3",
-        "json2yaml": "^1.1.0",
-        "vue": "^3.3.13",
-        "vuepress": "2.0.0-rc.0",
-        "vuepress-plugin-comment2": "2.0.0-rc.5",
-        "vuepress-plugin-copy-code2": "2.0.0-rc.5",
-        "vuepress-plugin-md-enhance": "2.0.0-rc.5",
-        "vuepress-plugin-sitemap2": "2.0.0-rc.5",
-        "vuepress-theme-hope": "2.0.0-rc.5",
-        "vuepress-theme-neo": "^2.0.0-beta.73"
-    },
-    "license": "MIT",
-    "author": "feyoudao.cn",
-    "main": "index.js"
+  "name": "vuepress-next",
+  "version": "1.0.0",
+  "description": "🚀一款极简风格的VuePress 2.x主题✨，打造个性化的博客和文档。",
+  "scripts": {
+    "dev": "vuepress dev docs --port 3000",
+    "docs:dev": "vuepress dev docs --debug --clean-cache",
+    "docs:build": "vuepress build docs --clean-cache"
+  },
+  "devDependencies": {
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
+    "@vuepress/plugin-google-analytics": "2.0.0-rc.0",
+    "@vuepress/plugin-register-components": "2.0.0-rc.0",
+    "@vuepress/plugin-search": "2.0.0-rc.0",
+    "@vuepress/theme-default": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "vue": "^3.3.13",
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-plugin-comment2": "2.0.0-rc.5",
+    "vuepress-plugin-copy-code2": "2.0.0-rc.5",
+    "vuepress-plugin-md-enhance": "2.0.0-rc.5",
+    "vuepress-plugin-sitemap2": "2.0.0-rc.5",
+    "vuepress-theme-hope": "2.0.0-rc.5",
+    "vuepress-theme-neo": "^2.0.0-beta.73"
+  },
+  "peerDependencies": {
+    "chalk": "^5.3.0",
+    "gray-matter": "^4.0.3",
+    "json2yaml": "^1.1.0",
+    "@vueuse/core": "10.7.0",
+    "twikoo": "^1.6.26"
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
+  },
+  "license": "MIT",
+  "author": "feyoudao.cn",
+  "main": "index.js"
 }
