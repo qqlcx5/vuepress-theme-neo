@@ -10,9 +10,7 @@ import {
   useUpdateDeviceStatus,
 } from '../composables/index.js'
 
-defineEmits<{
-  (e: 'toggle-sidebar'): void
-}>()
+defineEmits<(e: 'toggle-sidebar') => void>()
 
 defineSlots<{
   before?: (props: Record<never, never>) => any
@@ -49,7 +47,7 @@ useUpdateDeviceStatus(
         navbarHorizontalPadding -
         (navbarBrand.value?.offsetWidth || 0)
     }
-  }
+  },
 )
 
 function getCssValue(el: HTMLElement | null, property: string): number {

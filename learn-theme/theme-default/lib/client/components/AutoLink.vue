@@ -10,7 +10,7 @@ export default defineComponent({
 
 <script setup lang="ts">
 import { useSiteData } from '@vuepress/client'
-import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
+import { isLinkHttp, isLinkWithProtocol } from '@vuepress/shared'
 import { computed, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
@@ -36,7 +36,7 @@ const { item } = toRefs(props)
 const hasHttpProtocol = computed(() => isLinkHttp(item.value.link))
 // if the link has non-http protocol
 const hasNonHttpProtocol = computed(
-  () => isLinkMailto(item.value.link) || isLinkTel(item.value.link)
+  () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link),
 )
 // resolve the `target` attr
 const linkTarget = computed(() => {
@@ -50,7 +50,7 @@ const isBlankTarget = computed(() => linkTarget.value === '_blank')
 // is `<RouterLink>` or not
 const isRouterLink = computed(
   () =>
-    !hasHttpProtocol.value && !hasNonHttpProtocol.value && !isBlankTarget.value
+    !hasHttpProtocol.value && !hasNonHttpProtocol.value && !isBlankTarget.value,
 )
 // resolve the `rel` attr
 const linkRel = computed(() => {
