@@ -1,5 +1,5 @@
 ---
-title: min 数组中最大值 sticky 10
+title: min 数组中最大值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -9,7 +9,7 @@ tags:
   - min
 sticky: 10
 columns: 
-  - 
+  - null
 ---
 
 # min 数组中最大值

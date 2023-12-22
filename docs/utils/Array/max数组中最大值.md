@@ -1,5 +1,5 @@
 ---
-title: max 数组中最大值 sticky 9
+title: max 数组中最大值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -9,7 +9,7 @@ tags:
   - max
 sticky: 9
 columns: 
-  - 
+  - null
 ---
 # max 数组中最大值
 

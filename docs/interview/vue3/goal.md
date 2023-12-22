@@ -1,5 +1,5 @@
 ---
-title: 面试官：Vue3.0的设计目标是什么？做了哪些优化
+title: 面试官：Vue3.0 的设计目标是什么？做了哪些优化
 date: 2022-07-04 10:46:56
 categories: 
   - interview
@@ -7,9 +7,10 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - null
 ---
-# 面试官：Vue3.0的设计目标是什么？做了哪些优化
+
+# 面试官：Vue3.0 的设计目标是什么？做了哪些优化
 
 ![](https://static.vue-js.com/b93b49c0-5c58-11eb-85f6-6fac77c0c9b3.png)
 
@@ -31,13 +32,12 @@ columns:
 
 - 更小
 - 更快
-- TypeScript支持
-- API设计一致性
+- TypeScript 支持
+- API 设计一致性
 - 提高自身可维护性
 - 开放更多底层功能
 
 一句话概述，就是更小更快更友好了
-
 
 ### 更小
 
@@ -45,20 +45,16 @@ columns:
 
 引入`tree-shaking`，可以将无用模块“剪辑”，仅打包需要的，使打包的整体体积变小了
 
-
-
 ### 更快
 
 主要体现在编译方面：
 
-- diff算法优化
+- diff 算法优化
 - 静态提升
 - 事件监听缓存
-- SSR优化
+- SSR 优化
 
 下篇文章我们会进一步介绍
-
-
 
 ### 更友好
 
@@ -70,20 +66,20 @@ columns:
 
 ```js
 import { toRefs, reactive } from 'vue';
-function useMouse(){
-    const state = reactive({x:0,y:0});
-    const update = e=>{
-        state.x = e.pageX;
-        state.y = e.pageY;
-    }
-    onMounted(()=>{
-        window.addEventListener('mousemove',update);
-    })
-    onUnmounted(()=>{
-        window.removeEventListener('mousemove',update);
-    })
+function useMouse() {
+  const state = reactive({ x: 0, y: 0 });
+  const update = e => {
+    state.x = e.pageX;
+    state.y = e.pageY;
+  };
+  onMounted(() => {
+    window.addEventListener('mousemove', update);
+  });
+  onUnmounted(() => {
+    window.removeEventListener('mousemove', update);
+  });
 
-    return toRefs(state);
+  return toRefs(state);
 }
 ```
 
@@ -93,8 +89,6 @@ function useMouse(){
 
 同时，`VUE3`是基于`typescipt`编写的，可以享受到自动的类型定义提示
 
-
-
 ## 三、优化方案
 
 `vue3`从很多层面都做了优化，可以分成三个方面：
@@ -103,8 +97,6 @@ function useMouse(){
 - 性能
 - 语法 API
 
-
-
 ### 源码
 
 源码可以从两个层面展开：
@@ -112,25 +104,19 @@ function useMouse(){
 - 源码管理
 - TypeScript
 
-
-
 #### 源码管理
 
 `vue3`整个源码是通过 `monorepo `的方式维护的，根据功能将不同的模块拆分到`packages `目录下面不同的子目录中
 
- ![](https://static.vue-js.com/d7c32520-5c58-11eb-ab90-d9ae814b240d.png)
+![](https://static.vue-js.com/d7c32520-5c58-11eb-ab90-d9ae814b240d.png)
 
 这样使得模块拆分更细化，职责划分更明确，模块之间的依赖关系也更加明确，开发人员也更容易阅读、理解和更改所有模块源码，提高代码的可维护性
 
 另外一些 `package`（比如 `reactivity` 响应式库）是可以独立于 `Vue` 使用的，这样用户如果只想使用 `Vue3 `的响应式能力，可以单独依赖这个响应式库而不用去依赖整个 `Vue`
 
-
-
 #### TypeScript
 
 `Vue3`是基于`typeScript`编写的，提供了更好的类型检查，能支持复杂的类型推导
-
-
 
 ### 性能
 
@@ -145,14 +131,14 @@ function useMouse(){
 在`vue2`中，数据劫持是通过`Object.defineProperty `，这个 API 有一些缺陷，并不能检测对象属性的添加和删除
 
 ```js
-Object.defineProperty(data, 'a',{
-  get(){
+Object.defineProperty(data, 'a', {
+  get() {
     // track
   },
-  set(){
+  set() {
     // trigger
-  }
-})
+  },
+});
 ```
 
 尽管` Vue`为了解决这个问题提供了 `set `和`delete `实例方法，但是对于用户来说，还是增加了一定的心智负担
@@ -177,8 +163,6 @@ default {
 
 同时`Proxy ` 并不能监听到内部深层次的对象变化，而 `Vue3` 的处理方式是在` getter` 中去递归响应式，这样的好处是真正访问到的内部对象才会变成响应式，而不是无脑递归
 
-
-
 ### 语法 API
 
 这里当然说的就是`composition API`，其两大显著的优化：
@@ -186,19 +170,13 @@ default {
 - 优化逻辑组织
 - 优化逻辑复用
 
-
-
 #### 逻辑组织
 
 一张图，我们可以很直观地感受到 `Composition API `在逻辑组织方面的优势
 
- ![](https://static.vue-js.com/e5804bc0-5c58-11eb-85f6-6fac77c0c9b3.png)
-
-
+![](https://static.vue-js.com/e5804bc0-5c58-11eb-85f6-6fac77c0c9b3.png)
 
 相同功能的代码编写在一块，而不像`options API`那样，各个功能的代码混成一块
-
-
 
 #### 逻辑复用
 
@@ -210,38 +188,36 @@ default {
 
 ```js
 import { toRefs, reactive, onUnmounted, onMounted } from 'vue';
-function useMouse(){
-    const state = reactive({x:0,y:0});
-    const update = e=>{
-        state.x = e.pageX;
-        state.y = e.pageY;
-    }
-    onMounted(()=>{
-        window.addEventListener('mousemove',update);
-    })
-    onUnmounted(()=>{
-        window.removeEventListener('mousemove',update);
-    })
+function useMouse() {
+  const state = reactive({ x: 0, y: 0 });
+  const update = e => {
+    state.x = e.pageX;
+    state.y = e.pageY;
+  };
+  onMounted(() => {
+    window.addEventListener('mousemove', update);
+  });
+  onUnmounted(() => {
+    window.removeEventListener('mousemove', update);
+  });
 
-    return toRefs(state);
+  return toRefs(state);
 }
 ```
 
 组件使用
 
 ```js
-import useMousePosition from './mouse'
+import useMousePosition from './mouse';
 export default {
-    setup() {
-        const { x, y } = useMousePosition()
-        return { x, y }
-    }
-}
+  setup() {
+    const { x, y } = useMousePosition();
+    return { x, y };
+  },
+};
 ```
 
-可以看到，整个数据来源清晰了，即使去编写更多的` hook `函数，也不会出现命名冲突的问题
-
-
+可以看到，整个数据来源清晰了，即使去编写更多的`hook`函数，也不会出现命名冲突的问题
 
 ## 参考文献
 

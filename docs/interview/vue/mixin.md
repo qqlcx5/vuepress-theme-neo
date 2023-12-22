@@ -7,7 +7,7 @@ categories:
 tags: 
   - null
 columns: 
-  - 
+  - null
 ---
 # 面试官：说说你对vue的mixin的理解，有什么应用场景？ 
 

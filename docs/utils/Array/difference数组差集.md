@@ -1,5 +1,5 @@
 ---
-title: difference 两个数组中不包含集合 sticky 4
+title: difference 两个数组中不包含集合
 date: 2022-10-13 17:20:46
 categories: 
   - utils
@@ -9,7 +9,7 @@ tags:
   - difference
 sticky: 4
 columns: 
-  - 
+  - null
 ---
 # difference 两个数组中不包含集合
 

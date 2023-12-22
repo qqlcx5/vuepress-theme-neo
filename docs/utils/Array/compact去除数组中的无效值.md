@@ -1,5 +1,5 @@
 ---
-title: compact 去除数组中的无效值 sticky 3
+title: compact 去除数组中的无效值
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -9,7 +9,7 @@ tags:
   - compact
 sticky: 3
 columns: 
-  - 
+  - null
 ---
 # compact 去除数组中的无效值
 

@@ -1,5 +1,5 @@
 ---
-title: isArrayEqual 两个数组各项相等 sticky 8
+title: isArrayEqual 两个数组各项相等
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -9,7 +9,7 @@ tags:
   - isArrayEqual
 sticky: 8
 columns: 
-  - 
+  - null
 ---
 # isArrayEqual 两个数组各项相等
 

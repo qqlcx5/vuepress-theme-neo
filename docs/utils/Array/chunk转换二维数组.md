@@ -1,5 +1,5 @@
 ---
-title: chunk 拆分数组 sticky 1
+title: chunk 拆分数组
 date: 2022-10-15 17:20:46
 categories: 
   - utils
@@ -8,7 +8,7 @@ tags:
   - Array
 sticky: 1
 columns: 
-  - 
+  - null
 ---
 # chunk 拆分数组
 

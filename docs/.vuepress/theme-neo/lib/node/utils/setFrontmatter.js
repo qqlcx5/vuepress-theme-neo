@@ -27,7 +27,7 @@ export function setFrontmatter(files, themeConfig) {
         // fileMatterObj => {content:'剔除frontmatter后的文件内容字符串', data:{<frontmatter对象>}, ...}
         const fileMatterObj = matter(dataStr, {})
         // ['', '# isEqual 检查两个对象各项值相等','']
-        const fileTitle = fileMatterObj.content?.split('\n')?.filter(Boolean)[0]?.slice(2)?.trim() || file.title
+        const fileTitle = extractTitle(fileMatterObj.content) || file.title
         if (Object.keys(fileMatterObj.data).length === 0) {
             // 未定义FrontMatter数据
             const stat = fs.statSync(file.filePath)
@@ -71,6 +71,11 @@ ${extendFrontmatterStr}---`
 
             // 已有FrontMatter，但是没有title、date、permalink、categories、tags数据的
             if (!matterData.hasOwnProperty('title')) {
+                // 标题
+                matterData.title = fileTitle
+                hasChange = true
+            }
+            if (matterData.hasOwnProperty('title')) {
                 // 标题
                 matterData.title = fileTitle
                 hasChange = true
@@ -174,4 +179,12 @@ function getBirthtime(stat) {
 // 定义永久链接数据
 function getPermalink() {
     return `${PREFIX + (Math.random() + Math.random()).toString(16).slice(2, 8)}/`
+}
+
+function extractTitle(content) {
+    const fileTitle = content?.split('\n')?.filter(Boolean)
+        ?.find(line => line.startsWith('# '))
+        ?.slice(2)
+        ?.trim();
+    return fileTitle;
 }

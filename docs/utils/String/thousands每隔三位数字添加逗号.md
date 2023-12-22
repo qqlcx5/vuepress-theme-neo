@@ -8,7 +8,7 @@ categories:
 tags: 
   - thousands
 columns: 
-  - 
+  - null
 ---
 # thousands 数字每隔三位数加分号
 

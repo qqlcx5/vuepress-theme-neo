@@ -1,5 +1,5 @@
 ---
-title: shuffle 打乱数组 sticky 12
+title: shuffle 打乱数组
 date: 2022-06-15 17:20:46
 categories: 
   - utils
@@ -9,7 +9,7 @@ tags:
   - shuffle
 sticky: 12
 columns: 
-  - 
+  - null
 ---
 # shuffle 打乱数组
 
