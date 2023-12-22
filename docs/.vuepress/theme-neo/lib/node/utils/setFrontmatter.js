@@ -75,11 +75,6 @@ ${extendFrontmatterStr}---`
                 matterData.title = fileTitle
                 hasChange = true
             }
-            if (matterData.hasOwnProperty('title')) {
-                // 标题
-                matterData.title = fileTitle
-                hasChange = true
-            }
 
             if (!matterData.hasOwnProperty('date')) {
                 // 日期
