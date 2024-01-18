@@ -89,46 +89,27 @@ function extractTitleFromContent(content) {
 function applyIsReadmeProperties(items) {
     // 查找并返回isReadme对象的属性
     function findReadmeProps(siblings) {
-        const readmeItem = siblings.find(item => item.isReadme);
-        return readmeItem || {};
+        return siblings.find(item => item.isReadme) || {};
+    }
+    function extractChildren(items, readmeProps = {}) {
+        const children = [];
+        return children
     }
 
     // 递归函数，用于应用isReadme属性
     function applyPropertiesRecursively(itemsArray, readmeProps = {}) {
         itemsArray.forEach(item => {
-            // 如果当前项是isReadme项，则跳过
-            if (item.isReadme) {
-                return;
-            }
-
-            // 如果当前项不是isReadme项且有isReadme属性，则应用这些属性
-            if (readmeProps) {
-                item.icon = item.icon || readmeProps.icon;
-            }
 
             // 如果当前项有子项，则递归地应用属性
             if (item.children && Array.isArray(item.children)) {
-                // 查找子项中的isReadme属性
                 const childReadmeProps = findReadmeProps(item.children);
-                console.log('111', JSON.stringify(childReadmeProps, null, 2));
-
-                // 创建一个新对象，包含item的属性和childReadmeProps的属性，但不包括isReadme和showReadme
-                let tempItem = {
-                    ...item,
-                    ...childReadmeProps,
-                    isReadme: undefined,
-                    showReadme: undefined
-                };
-                console.log('222', JSON.stringify(tempItem, null, 2));
-
-                // 递归调用，传递tempItem的children和childReadmeProps
-                applyPropertiesRecursively(tempItem.children, childReadmeProps);
+                item = { ...item, ...readmeProps, ...childReadmeProps };
+                console.log(JSON.stringify(item, null, 2))
+                applyPropertiesRecursively(item.children, childReadmeProps);
             }
         });
     }
 
-    // 使用递归函数处理传入的items数组
-    // 首先查找顶层的isReadme属性
     const topReadmeProps = findReadmeProps(items);
     applyPropertiesRecursively(items, topReadmeProps);
 
