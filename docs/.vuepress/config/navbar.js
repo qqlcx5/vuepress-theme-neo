@@ -26,8 +26,8 @@ export default [
     {
         text: '饿了么组件库',
         icon: 'neo-shanchuxian',
-        link: '/el-component/',
-        activeMatch: '^/el-component/'
+        link: '/element/',
+        activeMatch: '^/element/'
     },
     // {
     //     text: '导航页',
@@ -82,4 +82,4 @@ export default [
             }
         ]
     }
-]
+];

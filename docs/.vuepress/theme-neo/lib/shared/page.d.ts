@@ -5,17 +5,18 @@ export interface DefaultThemePageData extends GitPluginPageData {
 }
 export interface DefaultThemePageFrontmatter {
     home?: boolean;
+    navbar?: boolean;
+    pageClass?: string;
     toc?: boolean;
     catalogue?: boolean;
     hideNavbar?: boolean;
-    navbar?: boolean;
-    pageClass?: string;
 }
 export interface DefaultThemeHomePageFrontmatter extends DefaultThemePageFrontmatter {
     home: true;
     heroImage?: string;
     heroImageDark?: string;
     heroAlt?: string;
+    heroHeight?: number;
     heroText?: string | null;
     tagline?: string | null;
     actions?: {

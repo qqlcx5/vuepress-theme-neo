@@ -1,13 +1,14 @@
 ---
 title: 关于 - 我
 date: 2021-05-16 17:52:59
-categories: 
+categories:
   - about
-tags: 
+tags:
   - 关于
-columns: 
-  - 
+columns:
+  -
 ---
+
 # 关于 - 我
 
 小菜鸡一枚。

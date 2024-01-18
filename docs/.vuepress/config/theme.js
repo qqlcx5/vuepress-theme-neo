@@ -1,6 +1,6 @@
-import navbar from './navbar'
-import sidebar from './sidebar'
-import neoTheme from '../theme-neo/lib/node/index'
+import navbar from './navbar';
+import sidebar from './sidebar';
+import neoTheme from '../theme-neo/lib/node/index';
 // import neoTheme from 'vuepress-theme-neo'
 
 export default neoTheme({
@@ -59,4 +59,4 @@ export default neoTheme({
     ]
 
     // header on home page
-})
+});

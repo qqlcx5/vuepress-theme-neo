@@ -53,7 +53,7 @@ export function readFile(dir, collapsible = true, filesList = [], fpath, fIndex,
                         }
                         recurveOrder(order)
                     } else {
-                        noSortFiles.push({ relPath, fullTitle, icon, iconSize })
+                        noSortFiles.push({ relPath, fullTitle, text: fullTitle, link: relPath, icon, iconSize })
                     }
                     if (isChild) {
                         fList[fIndex].sortFiles = sortFiles
@@ -93,7 +93,9 @@ export function resolveFiles(filesList) {
         delete item.sortFiles
         delete item.noSortFiles
     })
-    return filesList.filter(Boolean)
+    const res = filesList.filter(Boolean)
+    console.log(`🚀 - resolveFiles - res:`, res)
+    return res
 }
 
 // test Demo

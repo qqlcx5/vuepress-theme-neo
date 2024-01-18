@@ -27,6 +27,7 @@ package-lock.js*
 *.lh?
 *.hbuilderx
 
+.yarn
 .yarn/*
 !.yarn/patches
 !.yarn/releases
@@ -34,4 +35,6 @@ package-lock.js*
 !.yarn/sdks
 !.yarn/versions
 .pnp.
+.pnp.*
+yarn.lock
 

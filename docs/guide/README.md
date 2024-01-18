@@ -1,8 +1,8 @@
 ---
-title: 指南
+title: 指南meibi
 comment: false
 article: false
 collapsible: false
-icon: neo-qq
+icon: neo-meibi
 catalogue: true
 ---

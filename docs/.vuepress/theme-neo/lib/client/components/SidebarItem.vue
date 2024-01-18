@@ -1,7 +1,5 @@
 <script setup lang="ts">
-// @ts-ignore
 import AutoLink from '@theme/AutoLink.vue'
-// @ts-ignore
 import DropdownTransition from '@theme/DropdownTransition.vue'
 import { useToggle } from '@vueuse/core'
 import { computed, nextTick, onBeforeUnmount, toRefs } from 'vue'
@@ -35,7 +33,7 @@ const itemClass = computed(() => ({
 }))
 
 const isOpenDefault = computed(() =>
-  item.value.collapsible ? isActive.value : true
+  item.value.collapsible ? isActive.value : true,
 )
 const [isOpen, toggleIsOpen] = useToggle(isOpenDefault.value)
 const onClick = (e: Event): void => {
@@ -59,19 +57,36 @@ onBeforeUnmount(() => {
 
 <template>
   <li>
-    <AutoLink v-if="item.link" :class="itemClass" :item="item" />
-    <p v-else tabindex="0" :class="itemClass" @click="onClick" @keydown.enter="onClick">
-      <span>
-        <NeoIcon :name="item.icon" :size="item.iconSize" />
-        <span>{{ item.text }}</span>
-      </span>
-      <NeoIcon v-if="item.collapsible" name="neo-youjiantou" size="24" :rotate="isOpen ? '90deg' : 0" />
-      <!-- <span v-if="item.collapsible" class="arrow" :class="isOpen ? 'down' : 'right'" /> -->
+    <AutoLink v-if="item.link" :class="itemClass" :item="item">
+        <template #before>
+            <span v-show="item.icon">
+                {{ item.icon }} -
+            </span>
+        </template>
+    </AutoLink>
+    <p
+      v-else
+      tabindex="0"
+      :class="itemClass"
+      @click="onClick"
+      @keydown.enter="onClick"
+    >
+      {{item.icon}} * {{ item.text }}
+      <span
+        v-if="item.collapsible"
+        class="arrow"
+        :class="isOpen ? 'down' : 'right'"
+      />
     </p>
 
     <DropdownTransition v-if="item.children?.length">
       <ul v-show="isOpen" class="sidebar-item-children">
-        <SidebarItem v-for="child in item.children" :key="`${depth}${child.text}${child.link}`" :item="child" />
+        <SidebarItem
+          v-for="child in item.children"
+          :key="`${depth}${child.text}${child.link}`"
+          :item="child"
+          :depth="depth + 1"
+        />
       </ul>
     </DropdownTransition>
   </li>
