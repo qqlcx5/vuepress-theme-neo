@@ -10,6 +10,3 @@ collapsible: false
 
 ## 代码演示
 
-<ClientOnly>
-  <icons />
-</ClientOnly>
