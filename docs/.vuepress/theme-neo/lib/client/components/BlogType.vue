@@ -15,7 +15,7 @@
 
 <script>
 import { onMounted, ref, computed, inject, watch, nextTick, onBeforeUnmount } from 'vue'
-import { useThemeLocaleData } from '../composables/index.js'
+import { useThemeLocaleData } from '../composables/neoIndex.js'
 import CategoriesBar from '@theme/CategoriesBar.vue'
 import ColumnsBar from '@theme/ColumnsBar.vue'
 import TagsBar from '@theme/TagsBar.vue'

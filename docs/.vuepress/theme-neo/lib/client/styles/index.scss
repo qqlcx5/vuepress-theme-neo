@@ -17,16 +17,3 @@
 @use 'transitions';
 
 @use '@vuepress/plugin-palette/style';
-
-/* -------------------------------- neoTheme -------------------------------- */
-// @use 'vars'; // root变量
-// @use 'code'; // reset code 样式
-// @use 'navbar'; // reset code 样式
-// @use 'sidebar'; // sidebar
-@use 'border-effect'; // 边框动画
-@use 'scrollbar'; // 滚动条效果
-@use 'gap'; // gap样式
-@use 'flex'; // flex样式
-@use 'common'; // 其他
-@import './variables'; // scss变量
-/* -------------------------------- neoTheme -------------------------------- */

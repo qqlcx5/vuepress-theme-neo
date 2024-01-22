@@ -7,9 +7,11 @@ export interface DefaultThemePageFrontmatter {
     home?: boolean;
     navbar?: boolean;
     pageClass?: string;
+    /* -------------------------------- neoTheme -------------------------------- */
     toc?: boolean;
     catalogue?: boolean;
     hideNavbar?: boolean;
+    /* -------------------------------- neoTheme -------------------------------- */
 }
 export interface DefaultThemeHomePageFrontmatter extends DefaultThemePageFrontmatter {
     home: true;

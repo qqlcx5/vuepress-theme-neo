@@ -80,10 +80,3 @@ columns:
 - [@vuepress/plugin-prismjsopen in new window](https://vuejs.press/zh/reference/plugin/prismjs.html): 基于 prism.js 的代码高亮插件
 - [@vuepress/plugin-theme-dataopen in new window](https://vuejs.press/zh/reference/plugin/theme-data.html): 主题配置的 Composition API 插件
 
-[
-
-下一页
-
-博客配置
-
-](https://vuepress-theme-hope.github.io/v2/zh/config/plugins/blog.html)

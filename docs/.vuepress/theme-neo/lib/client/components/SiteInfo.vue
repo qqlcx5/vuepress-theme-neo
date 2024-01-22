@@ -61,9 +61,9 @@
 
 <script>
 import { onMounted, ref, inject } from 'vue'
-import { dayDiff, timeDiff } from '../utils/index.js'
-import busuanzi from '../composables/ownbusuanzi'
-import { useThemeLocaleData } from '../composables/index.js'
+import { dayDiff, timeDiff } from '../utils/neoIndex.js'
+import busuanzi from '../composables/neoOwnbusuanzi.js'
+import { useThemeLocaleData } from '../composables/neoIndex.js'
 
 export default {
     setup(props, { emit }) {
@@ -78,7 +78,8 @@ export default {
         onMounted(() => {
             busuanzi()
             mdFileCount.value = sortPostsSymbol.length || 0
-            let bolgCreateTime = themeLocale.value.bolgCreateAt || '2022-01-01'
+            const siteInformation = themeLocale.value.siteInformation || {}
+            let bolgCreateTime = siteInformation.bolgCreateAt || '2023-01-01'
             createToNowDay.value = dayDiff(bolgCreateTime)
             lastActiveDate.value = timeDiff(sortPostsByDateSymbol[0]?.data?.git?.updatedTime)
         })

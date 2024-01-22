@@ -1,0 +1,93 @@
+name: Demo Test
+
+on:
+  workflow_call:
+    inputs:
+      # controls whether to test demos in all environments
+      strict-checking:
+        type: boolean
+jobs:
+  test-demos:
+    strategy:
+      fail-fast: false
+      matrix:
+        bundler:
+          - vite
+          - webpack
+    name: Test demos using ${{ matrix.bundler }} with node 18
+    runs-on: ubuntu-latest
+    if: inputs.strict-checking == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v4
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: ${{ matrix.bundler }} build test
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |
+          pnpm run -r demo:${{ matrix.bundler }}-build
+
+  strict-test-demos:
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - 18
+          - 20
+        bundler:
+          - vite
+          - webpack
+        env:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    name: Test demos using ${{ matrix.bundler }} with node ${{ matrix.node }} on ${{ matrix.env }}
+    runs-on: ${{ matrix.env }}
+    if: inputs.strict-checking == true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v4
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: ${{ matrix.bundler }} build test
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |
+          pnpm run -r demo:${{ matrix.bundler }}-build

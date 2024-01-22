@@ -10,7 +10,7 @@ import {
   DeviceType,
   useThemeLocaleData,
   useUpdateDeviceStatus,
-} from '../composables/index.js'
+} from '../composables/neoIndex.js'
 
 
 defineEmits<(e: 'toggle-sidebar') => void>()

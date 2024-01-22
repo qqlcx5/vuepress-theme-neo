@@ -3,6 +3,7 @@ title: 部署项目
 date: 2023-01-18 17:02:32
 order: 5
 toc: false
+icon: neo-deploy
 categories: 
   - 快速上手
 tag: 

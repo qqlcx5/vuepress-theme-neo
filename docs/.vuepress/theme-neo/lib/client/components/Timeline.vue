@@ -30,8 +30,8 @@
 import { useEventListener, useDebounceFn } from '@vueuse/core'
 import { reactive, ref, onMounted, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { typeOf } from '../utils'
-import { useThemeData } from '../composables/index.js'
+import { typeOf } from '../utils/neoIndex.js'
+import { useThemeData } from '../composables/neoIndex.js'
 export default {
     setup(props) {
         let postsList = ref([]) // 当前页面的文章数据

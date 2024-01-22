@@ -1,6 +1,7 @@
 ---
 title: 侧边栏
 date: 2024-01-17 18:18:28
+icon: neo-sidebar
 categories:
   - guide
 tags:
@@ -14,13 +15,11 @@ columns:
 
 `README.md` **通常用来定义和继承目录和文件`front matter`配置**，所以我会禁用它在侧边栏在展示。如果通过 index: false，它总会在排序中成为第一项。但是你还是可以通过 link 来访问它。
 
-
 `README.md` 特有的配置
-- `index` 是否显示在侧边栏 默认false
-- `catalogue` 是否显示目录页 默认false
-- `collapsible` 是否可折叠
-- `icon` 侧边栏图标，如果设置`icon`，子文件没有单独定义其他`icon`，会采用当前`icon`。
-
+- `showSidebar` 是否显示当前目录在侧边栏展示，对第一级目录不生效（没必要）。
+- `catalogue` 是否显示目录页 默认不展示
+- `collapsible` 是否可折叠 默认可折叠
+- `icon` 侧边栏图标，如果配置`icon`，子文件没有单独定义其他`icon`，会采用当前`icon`。
 
 ## 指定侧边栏
 

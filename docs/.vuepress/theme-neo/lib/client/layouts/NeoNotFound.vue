@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouteLocale } from '@vuepress/client';
-import { useThemeLocaleData } from '../composables/index.js';
+import { useThemeLocaleData } from '../composables/neoIndex.js';
 
 const routeLocale = useRouteLocale();
 const themeLocale = useThemeLocaleData();

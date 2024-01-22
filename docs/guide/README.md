@@ -5,4 +5,5 @@ article: false
 collapsible: false
 icon: neo-meibi
 catalogue: true
+showSidebar: false
 ---

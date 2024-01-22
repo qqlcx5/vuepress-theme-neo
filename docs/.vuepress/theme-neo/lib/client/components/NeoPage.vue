@@ -1,35 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { usePageFrontmatter } from '@vuepress/client';
-// @ts-ignore
-import TOC from '@theme/TOC.vue'
-// @ts-ignore
-import PageMeta from '@vuepress/theme-default/components/PageMeta.vue'
-// @ts-ignore
-import PageNav from '@vuepress/theme-default/components/PageNav.vue'
-// @ts-ignore
-import Catalogue from '@theme/Catalogue.vue'
-import { useSidebarItems } from '../composables/index.js'
-const frontmatter = usePageFrontmatter();
+import PageMeta from '@theme/PageMeta.vue'
+import PageNav from '@theme/PageNav.vue'
 
-// custom neo theme 
-let isCatalogue = ref(false)
+/* -------------------------------- neoTheme -------------------------------- */
+import { ref } from 'vue'
+import { usePageFrontmatter } from '@vuepress/client'
+import NeoCatalogue from '@theme/NeoCatalogue.vue'
+import NeoToc from '@theme/NeoToc.vue'
+import { useSidebarItems } from '../composables/neoIndex.js'
+const frontmatter = usePageFrontmatter()
 const sidebarItems = useSidebarItems()
+const isCatalogue = ref(false)
 frontmatter.value.catalogue && (isCatalogue.value = true)
-// custom neo theme 
+/* -------------------------------- neoTheme -------------------------------- */
+defineSlots<{
+  'top'?: (props: Record<never, never>) => any
+  'bottom'?: (props: Record<never, never>) => any
+  'content-top'?: (props: Record<never, never>) => any
+  'content-bottom'?: (props: Record<never, never>) => any
+}>()
 </script>
 
 <template>
     <main class="page">
         <slot name="top" />
         <!-- 右侧目录 -->
-        <TOC />
+        <NeoToc />
         <div class="theme-default-content">
             <slot name="content-top" />
-            
+
             <Content />
             <!-- 目录页 -->
-            <Catalogue v-if="isCatalogue" :list="sidebarItems" />
+            <NeoCatalogue v-if="isCatalogue" :list="sidebarItems" />
 
             <slot name="content-bottom" />
         </div>

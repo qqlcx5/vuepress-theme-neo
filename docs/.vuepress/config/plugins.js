@@ -8,7 +8,7 @@ import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 // import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 // import { photoSwipePlugin } from 'vuepress-plugin-photo-swipe'
 // import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-// import { commentPlugin } from "vuepress-plugin-comment2";
+import { commentPlugin } from "vuepress-plugin-comment2";
 // import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
 // import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
@@ -36,13 +36,13 @@ export default [
     //     },
     //     componentsDir: path.resolve(__dirname, "../components"),
     // }),
-    // commentPlugin({
-    //     // provider: 'Waline',
-    //     // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
-    //     // serverURL: 'https://vuepress-waline-psi.vercel.app/'
-    //     provider: "Twikoo",
-    //     envId: "https://vuepress2-twikoo.vercel.app",
-    // }),
+    commentPlugin({
+        // provider: 'Waline',
+        // emoji: ['https://unpkg.com/@waline/emojis@1.0.1/bilibili', 'https://unpkg.com/@waline/emojis@1.0.1/tieba'],
+        // serverURL: 'https://vuepress-waline-psi.vercel.app/'
+        provider: "Twikoo",
+        envId: "https://vuepress2-twikoo.vercel.app",
+    }),
     // copyCodePlugin({
     //     showInMobile: false,
     // }),

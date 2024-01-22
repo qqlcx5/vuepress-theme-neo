@@ -13,9 +13,6 @@ columns:
 
 ## 代码演示
 
-<ClientOnly>
-  <PasswordInput />
-</ClientOnly>
 
 ## Input.TextArea
 

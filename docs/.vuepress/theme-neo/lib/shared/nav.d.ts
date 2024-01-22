@@ -2,7 +2,10 @@
  * Base nav item, displayed as text
  */
 export interface NavItem {
+    /* -------------------------------- neoTheme -------------------------------- */
     icon?: string;
+    iconSize?: string;
+    /* -------------------------------- neoTheme -------------------------------- */
     text: string;
     ariaLabel?: string;
 }

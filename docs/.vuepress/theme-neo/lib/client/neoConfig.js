@@ -1,14 +1,16 @@
 import { defineClientConfig } from '@vuepress/client';
 import { h } from 'vue';
-import { Badge, CodeGroup, CodeGroupItem, NeoIcon, NavCard } from './components/global/index.js';
-import { setupDarkMode, setupSidebarItems, useScrollPromise, setupPageData } from './composables/index.js';
-import Layout from './layouts/Layout.vue';
-import NotFound from './layouts/NotFound.vue';
-import './styles/index.scss';
+import { Badge, CodeGroup, CodeGroupItem, NeoIcon, NeoNavCard } from './components/global/neoIndex.js';
+import { setupDarkMode, setupSidebarItems, useScrollPromise, setupPageData } from './composables/neoIndex.js';
+import NeoLayout from './layouts/NeoLayout.vue';
+import NeoNotFound from './layouts/NeoNotFound.vue';
+import './styles/neoIndex.scss';
 export default defineClientConfig({
     enhance({ app, router }) {
+        /* -------------------------------- neoTheme -------------------------------- */
         app.component('NeoIcon', NeoIcon)
-        app.component('NavCard', NavCard)
+        app.component('NeoNavCard', NeoNavCard)
+        /* -------------------------------- neoTheme -------------------------------- */
         app.component('Badge', Badge);
         app.component('CodeGroup', CodeGroup);
         app.component('CodeGroupItem', CodeGroupItem);
@@ -43,7 +45,7 @@ export default defineClientConfig({
         /* -------------------------------- neoTheme -------------------------------- */
     },
     layouts: {
-        Layout,
-        NotFound,
+        Layout: NeoLayout,
+        NotFound: NeoNotFound,
     },
 });

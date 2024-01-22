@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.build.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["DOM", "ESNext"],
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "inlineSources": true,
+    "paths": {
+      "@theme-hope/*": ["./src/client/*.js"]
+    }
+  },
+  "include": ["./src/client", "./src/shared", "./src/presets", "./src/*.d.ts"]
+}

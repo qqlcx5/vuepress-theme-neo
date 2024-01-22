@@ -57,13 +57,7 @@ onBeforeUnmount(() => {
 
 <template>
   <li>
-    <AutoLink v-if="item.link" :class="itemClass" :item="item">
-        <template #before>
-            <span v-show="item.icon">
-                {{ item.icon }} -
-            </span>
-        </template>
-    </AutoLink>
+    <AutoLink v-if="item.link" :class="itemClass" :item="item" />
     <p
       v-else
       tabindex="0"
@@ -71,7 +65,7 @@ onBeforeUnmount(() => {
       @click="onClick"
       @keydown.enter="onClick"
     >
-      {{item.icon}} * {{ item.text }}
+      {{ item.text }}
       <span
         v-if="item.collapsible"
         class="arrow"

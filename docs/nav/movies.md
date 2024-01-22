@@ -19,7 +19,7 @@ article: false
 ## 影视网站
 
 <ClientOnly>
-    <NavCard :cardData="cardData" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+    <NeoNavCard :cardData="cardData" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 电影推荐

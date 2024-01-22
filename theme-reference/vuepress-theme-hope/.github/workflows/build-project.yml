@@ -1,0 +1,37 @@
+name: Build Project
+
+on:
+  workflow_call:
+
+jobs:
+  build-project:
+    name: Build Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run build
+
+      - name: Upload build result
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-result
+          path: |
+            docs-shared/lib/
+            packages/*/lib/

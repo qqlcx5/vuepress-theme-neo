@@ -65,7 +65,7 @@
 <script>
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useThemeData } from '../composables/index.js'
+import { useThemeData } from '../composables/neoIndex.js'
 export default {
     props: {
         // 分类关键字

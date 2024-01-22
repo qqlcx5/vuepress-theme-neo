@@ -1,62 +1,20 @@
 import navbar from './navbar';
-import sidebar from './sidebar';
-import neoTheme from '../theme-neo/lib/node/index';
+import neoOptions from './neoOptions.js';
+import sidebar, { sidebarOptions } from './sidebar';
+import neoTheme from '../theme-neo/lib/node/neoIndex';
 // import neoTheme from 'vuepress-theme-neo'
 
+// vuepress 配置项
 export default neoTheme({
-    // 默认主题配置项
     navbar,
     sidebar,
-    logo: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico',
-    contributors: false,
+    sidebarDepth: 0, // 侧边栏显示深度，默认主题配置项
+    ...neoOptions,
+    ...sidebarOptions, // 侧边栏配置项 neoTheme主题配置项
+    logo: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico', // 导航栏logo
     docsDir: 'docs',
     docsBranch: 'master',
+    contributors: false, // 贡献者信息
     docsRepo: 'https://github.com/qqlcx5/vuepress-next',
     editLinkPattern: ':repo/edit/:branch/:path',
-    sidebarDepth: 0,
-    // 主题配置项
-    bolgCreateAt: '2020-01-01',
-    category: true,
-    tag: true,
-    column: true,
-    archive: true,
-    blog: {
-        name: 'Star Field',
-        intro: 'https://feyoudao.cn',
-        roundAvatar: true,
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
-        description: 'いつか、私がヒトじゃなくなっても、この星は燃え尽きることはない。'
-    },
-    // 文章列表中作者信息
-    author: {
-        name: '星野',
-        url: 'https://feyoudao.cn'
-    },
-    // 文章页面中风格和背景图
-    contentStyle: 'style1',
-    contentBackground: '#fff',
-    contentImages: [],
-
-    // header information
-    homeHeaderInfo: {
-        name: 'vuepress-theme-neo',
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
-        description: '🚀一款极简风格VuePress2.x 主题✨'
-    },
-    homeHeaderImages: [
-        {
-            path: 'https://temporaryx.oss-cn-hongkong.aliyuncs.com/1703153606209.png',
-            mask: 'rgba(65, 60, 55, .2)'
-        },
-        {
-            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/3.jpg',
-            mask: 'rgba(65, 60, 55, .2)'
-        },
-        {
-            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
-            mask: 'rgba(65, 60, 55, .2)'
-        }
-    ]
-
-    // header on home page
 });

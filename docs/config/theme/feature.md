@@ -42,7 +42,7 @@ interface Author {
 ### bolgCreateAt
 
 - 类型: `string`
-- 默认值: `2020-01-01`
+- 默认值: `2023-01-01`
 
 记录网站已运行时间。
 

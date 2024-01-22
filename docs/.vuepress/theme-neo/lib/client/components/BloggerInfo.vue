@@ -1,7 +1,7 @@
 <script>
 import { useSiteLocaleData, withBase } from '@vuepress/client'
 import { computed, defineComponent, inject, h } from 'vue'
-import { useThemeLocaleData, useThemeBlogOptions, useNavigate } from '../composables/index.js'
+import { useThemeLocaleData, useThemeBlogOptions, useNavigate } from '../composables/neoIndex.js'
 
 export default defineComponent({
     name: 'BloggerInfo',

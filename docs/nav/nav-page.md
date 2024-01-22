@@ -15,95 +15,95 @@ article: false
 ## 搜索引擎
 
 <ClientOnly>
-  <NavCard :cardData="cardData0" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData0" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 代码托管
 
 <ClientOnly>
-  <NavCard :cardData="cardData1" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData1" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 前端开发
 
 <ClientOnly>
-  <NavCard :cardData="cardData7_1" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData7_1" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 <ClientOnly>
-  <NavCard :cardData="cardData7_2" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData7_2" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 <ClientOnly>
-  <NavCard :cardData="cardData7_3" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData7_3" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 <ClientOnly>
-  <NavCard :cardData="cardData7_4" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData7_4" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 <ClientOnly>
-  <NavCard :cardData="cardData7_99" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData7_99" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 后端开发
 
 <ClientOnly>
-  <NavCard :cardData="cardData6" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData6" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 文档工具
 
 <ClientOnly>
-  <NavCard :cardData="cardData5" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData5" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 热门社区
 
 <ClientOnly>
-  <NavCard :cardData="cardData2" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData2" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 工具合集
 
 <ClientOnly>
-  <NavCard :cardData="cardData3" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData3" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 文档教程
 
 <ClientOnly>
-  <NavCard :cardData="cardData4" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData4" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 动态图表
 
 <ClientOnly>
-  <NavCard :cardData="cardData8" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData8" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 图片图标
 
 <ClientOnly>
-  <NavCard :cardData="cardData9" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData9" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## CSS样式
 
 <ClientOnly>
-  <NavCard :cardData="cardData10" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData10" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 网站分析
 
 <ClientOnly>
-  <NavCard :cardData="cardData11" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData11" :cardListSize=3 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 ## 其它资源
 
 <ClientOnly>
-  <NavCard :cardData="cardData99" :cardListSize=4 carTitlColor="#000" carHoverColor="#000" />
+  <NeoNavCard :cardData="cardData99" :cardListSize=4 carTitlColor="#000" carHoverColor="#000" />
 </ClientOnly>
 
 <script>

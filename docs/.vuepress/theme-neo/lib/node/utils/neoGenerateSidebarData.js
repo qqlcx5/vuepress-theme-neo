@@ -9,13 +9,13 @@ import matter from 'gray-matter';
  * @returns {Array} 生成的侧边栏数据数组。
  */
 export function generateSidebarData(docsRoot, directory, sidebarOptions) {
-    const sidebarData = [];
+    let sidebarData = [];
     processDirectory(sidebarData, docsRoot, directory, sidebarOptions);
     // console.log(JSON.stringify(sidebarData, null, 2));
     // const res = sortSidebarItems(sidebarData);
-    applyIsReadmeProperties(sidebarData);
-    console.log(JSON.stringify(sidebarData, null, 2));
-    return sidebarData;
+    const inherit = inheritReadmeProperties(sidebarData);
+    const sort = sortSidebarItems(inherit);
+    return sort;
 }
 
 /**
@@ -61,7 +61,7 @@ function processDirectory(sidebarData, docsRoot, directory, sidebarOptions) {
 function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePath, sidebarOptions) {
     const contentStr = fs.readFileSync(absolutePath, 'utf8');
     const { data, content } = matter(contentStr);
-    let { title, showReadme = false, icon, iconSize, order, collapsible } = data || {};
+    let { title, showSidebar = true, icon, iconSize, order, collapsible } = data || {};
     const fileName = path.basename(absolutePath, '.md');
     const directoryName = path.basename(path.dirname(relativeFilePath));
     const isReadme = ['readme', 'index'].includes(fileName.toLowerCase());
@@ -69,10 +69,10 @@ function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePa
     // 如果是README文件，更新或创建根目录数据对象
     if (isReadme) {
         collapsible = collapsible ?? sidebarOptions.sidebarOptions ?? true;
-        const rootData = { text, isReadme: true, showReadme, link: relativeFilePath, collapsible, icon, iconSize, order };
+        const rootData = { text, link: relativeFilePath, collapsible, icon, iconSize, order, isReadme: true, showSidebar, };
         sidebarData.push(rootData);
     } else {
-        const pageData = { text, link: relativeFilePath, icon, iconSize, order };
+        const pageData = { text, link: relativeFilePath, icon, iconSize, order, showSidebar };
         sidebarData.push(pageData);
     }
 }
@@ -86,34 +86,43 @@ function extractTitleFromContent(content) {
     return content?.split('\n')?.find(line => line.startsWith('# '))?.slice(2)?.trim() || '';
 }
 
-function applyIsReadmeProperties(items) {
-    // 查找并返回isReadme对象的属性
+function inheritReadmeProperties(items) {
     function findReadmeProps(siblings) {
         return siblings.find(item => item.isReadme) || {};
     }
-    function extractChildren(items, readmeProps = {}) {
-        const children = [];
-        return children
-    }
 
-    // 递归函数，用于应用isReadme属性
-    function applyPropertiesRecursively(itemsArray, readmeProps = {}) {
-        itemsArray.forEach(item => {
-
+    // 递归函数，用于应用 isReadme 和 showReadme 属性
+    function applyReadmePropsRecursively(itemsArray, parentReadmeProps = {}) {
+        return itemsArray.map(item => {
+            let newItem = { ...item };
             // 如果当前项有子项，则递归地应用属性
-            if (item.children && Array.isArray(item.children)) {
-                const childReadmeProps = findReadmeProps(item.children);
-                item = { ...item, ...readmeProps, ...childReadmeProps };
-                console.log(JSON.stringify(item, null, 2))
-                applyPropertiesRecursively(item.children, childReadmeProps);
+            if (newItem.children && Array.isArray(newItem.children)) {
+                // 查找子项中的 isReadme 属性
+                const childReadmeProps = findReadmeProps(newItem.children);
+                // 应用 isReadme 和 showReadme 属性
+                newItem = {
+                    ...parentReadmeProps,
+                    ...item,
+                    ...childReadmeProps,
+                    link: undefined,
+                    isReadme: undefined,
+                    showReadme: undefined,
+                };
+                newItem.children = applyReadmePropsRecursively(item.children, { ...parentReadmeProps, ...childReadmeProps });
+            } else {
+                // 如果当前项没有子项，应用父级的 isReadme 和 showReadme 属性
+                newItem = {
+                    ...item,
+                    icon: item.icon || parentReadmeProps.icon,
+                    iconSize: item.iconSize || parentReadmeProps.iconSize,
+                };
             }
+            return newItem;
         });
     }
-
-    const topReadmeProps = findReadmeProps(items);
-    applyPropertiesRecursively(items, topReadmeProps);
-
-    return items;
+    // 从顶层开始递归应用属性
+    const parentReadmeProps = findReadmeProps(items);
+    return applyReadmePropsRecursively(items, parentReadmeProps);
 }
 
 /* -------------------------------- 解析并整理文件列表 ------------------------------- */
@@ -128,7 +137,8 @@ function sortSidebarItems(sidebarItems) {
     // 递归排序函数
     const sortItems = (items) => {
         // 分离有序和无序的项
-        // const indexItem = items.find(item => item.isReadme && item.index !== true);
+        // const readmeItemExists = items.find(item => item.isReadme && item.showSidebar);
+        items = items.filter(item => item.showSidebar && (!item.isReadme || item.children));
         const orderedItems = items.filter(item => typeof item.order === 'number' && item.order >= 0);
         const unorderedItems = items.filter(item => typeof item.order !== 'number');
         const negativeOrderedItems = items.filter(item => typeof item.order === 'number' && item.order < 0);
@@ -141,9 +151,8 @@ function sortSidebarItems(sidebarItems) {
         negativeOrderedItems.sort((a, b) => a.order - b.order);
 
         // 合并结果
-        // const indexItemExists = indexItem != undefined;
-        // if (indexItemExists) {
-        //     return [indexItem, ...orderedItems, ...unorderedItems, ...negativeOrderedItems];
+        // if (readmeItemExists) {
+        //     return [readmeItemExists, ...orderedItems, ...unorderedItems, ...negativeOrderedItems];
         // }
         return [...orderedItems, ...unorderedItems, ...negativeOrderedItems];
     };
