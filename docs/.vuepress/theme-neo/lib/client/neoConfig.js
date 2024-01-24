@@ -6,15 +6,11 @@ import NeoNotFound from './layouts/NeoNotFound.vue';
 import './styles/neoIndex.scss';
 export default defineClientConfig({
     enhance({ app, router }) {
-        /* -------------------------------- neoTheme -------------------------------- */
         app.component('NeoIcon', NeoIcon);
         app.component('NeoNavCard', NeoNavCard);
-        /* -------------------------------- neoTheme -------------------------------- */
     },
     setup() {
-        /* -------------------------------- neoTheme -------------------------------- */
         setupPageData();
-        /* -------------------------------- neoTheme -------------------------------- */
     },
     layouts: {
         Layout: NeoLayout,
