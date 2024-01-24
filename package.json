@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "🚀一款极简风格的VuePress 2.x主题✨，打造个性化的博客和文档。",
   "scripts": {
+    "info": "vuepress info",
     "dev": "vuepress dev docs --port 3000",
     "docs:dev": "vuepress dev docs --debug --clean-cache",
     "docs:build": "vuepress build docs --clean-cache"
