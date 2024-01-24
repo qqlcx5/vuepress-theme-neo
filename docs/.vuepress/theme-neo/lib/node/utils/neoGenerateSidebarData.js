@@ -61,7 +61,7 @@ function processDirectory(sidebarData, docsRoot, directory, sidebarOptions) {
 function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePath, sidebarOptions) {
     const contentStr = fs.readFileSync(absolutePath, 'utf8');
     const { data, content } = matter(contentStr);
-    let { title, showSidebar = true, icon, iconSize, order, collapsible } = data || {};
+    let { title, index = false, showSidebar = true, icon, iconSize, order, collapsible } = data || {};
     const fileName = path.basename(absolutePath, '.md');
     const directoryName = path.basename(path.dirname(relativeFilePath));
     const isReadme = ['readme', 'index'].includes(fileName.toLowerCase());
@@ -69,7 +69,7 @@ function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePa
     // 如果是README文件，更新或创建根目录数据对象
     if (isReadme) {
         collapsible = collapsible ?? sidebarOptions.sidebarOptions ?? true;
-        const rootData = { text, link: relativeFilePath, collapsible, icon, iconSize, order, isReadme: true, showSidebar, };
+        const rootData = { text, link: relativeFilePath, collapsible, icon, iconSize, order, isReadme: true, index, showSidebar };
         sidebarData.push(rootData);
     } else {
         const pageData = { text, link: relativeFilePath, icon, iconSize, order, showSidebar };
@@ -137,7 +137,7 @@ function sortSidebarItems(sidebarItems) {
     // 递归排序函数
     const sortItems = (items) => {
         // 分离有序和无序的项
-        // const readmeItemExists = items.find(item => item.isReadme && item.showSidebar);
+        const readmeItemExists = items.find(item => item.isReadme && item.index);
         items = items.filter(item => item.showSidebar && (!item.isReadme || item.children));
         const orderedItems = items.filter(item => typeof item.order === 'number' && item.order >= 0);
         const unorderedItems = items.filter(item => typeof item.order !== 'number');
@@ -151,9 +151,9 @@ function sortSidebarItems(sidebarItems) {
         negativeOrderedItems.sort((a, b) => a.order - b.order);
 
         // 合并结果
-        // if (readmeItemExists) {
-        //     return [readmeItemExists, ...orderedItems, ...unorderedItems, ...negativeOrderedItems];
-        // }
+        if (readmeItemExists) {
+            return [readmeItemExists, ...orderedItems, ...unorderedItems, ...negativeOrderedItems];
+        }
         return [...orderedItems, ...unorderedItems, ...negativeOrderedItems];
     };
 

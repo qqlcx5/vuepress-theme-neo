@@ -13,13 +13,20 @@ columns:
 
 在 `docs/.vuepress/config/sidebar.js` 中，你可以为每个页面指定侧边栏，或者禁用侧边栏。
 
-`README.md` **通常用来定义和继承目录和文件`front matter`配置**，所以我会禁用它在侧边栏在展示。如果通过 index: false，它总会在排序中成为第一项。但是你还是可以通过 link 来访问它。
+`README.md` **通常用来定义和继承目录和文件`front matter`配置项**，所以我会禁用它在侧边栏在展示。
+如果展示在侧边栏中可以设置`index: true`，它总会在排序中成为第一项。
 
 `README.md` 特有的配置
-- `showSidebar` 是否显示当前目录在侧边栏展示，对第一级目录不生效（没必要）。
-- `catalogue` 是否显示目录页 默认不展示
+- `index` 是否在侧边栏展示，默认为 `false`，如果设置为 `true`，则不会在侧边栏展示。
+- `catalogue` 根据侧边栏数据生成目录页，默认为 `false`。
 - `collapsible` 是否可折叠 默认可折叠
-- `icon` 侧边栏图标，如果配置`icon`，子文件没有单独定义其他`icon`，会采用当前`icon`。
+
+`Frontmatter` 通用配置
+- `showSidebar` 是否在侧边栏展示，默认为 `true`，如果设置为 `false`，则不会在侧边栏展示。
+- `icon` 侧边栏图标，子级会继承父级的图标。
+- `spin` 侧边栏图标是否旋转。
+- `iconSize` 侧边栏图标大小。
+- `iconColor` 侧边栏图标颜色。
 
 ## 指定侧边栏
 

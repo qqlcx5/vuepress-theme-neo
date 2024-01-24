@@ -11,7 +11,7 @@
   "devDependencies": {
     "@vueuse/core": "^10.6.1",
     "sass": "^1.69.5",
-    "vue": "^3.3.8",
+    "vue": "3.3.8",
     "vue-router": "^4.2.5",
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
