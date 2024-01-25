@@ -9,7 +9,6 @@
 #app {
   @include neo-helper.color($codeColor: #abb2bf, $codeBgColor: #282c34);
 }
-
 code[class*='language-'],
 pre[class*='language-'] {
   text-shadow: 0 1px rgb(0 0 0 / 30%);
