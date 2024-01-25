@@ -14,7 +14,7 @@ import ColumnsPage from '@theme/ColumnsPage.vue'
 // @ts-ignore
 import NeoPage from '@theme/NeoPage.vue'
 // @ts-ignore
-import Navbar from '@theme/Navbar.vue'
+import NeoNavbar from '@theme/NeoNavbar.vue'
 // @ts-ignore
 import NeoSidebar from '@theme/NeoSidebar.vue'
 
@@ -119,14 +119,14 @@ const onBeforeLeave = scrollPromise.pending
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" :isSidebar="!!sidebarItems.length" @toggle-sidebar="toggleSidebar">
+      <NeoNavbar v-if="shouldShowNavbar" :isSidebar="!!sidebarItems.length" @toggle-sidebar="toggleSidebar">
         <template #before>
           <slot name="navbar-before" />
         </template>
         <template #after>
           <slot name="navbar-after" />
         </template>
-      </Navbar>
+      </NeoNavbar>
     </slot>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
