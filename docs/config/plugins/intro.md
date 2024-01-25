@@ -1,19 +1,17 @@
 ---
 title: 插件介绍
 date: 2023-06-06 09:24:49
-categories: 
+categories:
   - config
   - plugins
-tags: 
-  - 
-columns: 
-  - 
+tags:
+  -
+columns:
+  -
 ---
 
 ## 插件说明
-以下插件来着hope，大约 3 分钟配置插件配置主题配置介绍
 
----
 
 `vuepress-theme-hope` 会调用很多 VuePress 插件。
 
@@ -79,4 +77,3 @@ columns:
 - [@vuepress/plugin-nprogressopen in new window](https://vuejs.press/zh/reference/plugin/nprogress.html): 进度条
 - [@vuepress/plugin-prismjsopen in new window](https://vuejs.press/zh/reference/plugin/prismjs.html): 基于 prism.js 的代码高亮插件
 - [@vuepress/plugin-theme-dataopen in new window](https://vuejs.press/zh/reference/plugin/theme-data.html): 主题配置的 Composition API 插件
-

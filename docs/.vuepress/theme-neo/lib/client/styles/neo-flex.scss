@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: $direction;
 }
-.c-row {
+
+.neo-row {
     @include flex(row);
     flex-wrap: wrap;
 }

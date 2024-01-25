@@ -1,32 +1,30 @@
 // @use 'vars';
-@use 'vars-dark';
-@use 'normalize';
+// @use 'vars-dark';
+// @use 'normalize';
 
-@use 'arrow';
-@use 'badge';
-@use 'code';
-@use 'code-group';
-@use 'custom-container';
-@use 'home';
-@use 'layout';
-@use 'navbar';
-@use 'navbar-dropdown';
-@use 'page';
-@use 'sidebar';
-@use 'toc';
-@use 'transitions';
+// @use 'arrow';
+// @use 'badge';
+// @use 'code';
+// @use 'code-group';
+// @use 'custom-container';
+// @use 'home';
+// @use 'layout';
+// @use 'navbar';
+// @use 'navbar-dropdown';
+// @use 'page';
+// @use 'sidebar';
+// @use 'toc';
+// @use 'transitions';
 
-@use '@vuepress/plugin-palette/style';
+// @use '@vuepress/plugin-palette/style';
 
 /* -------------------------------- neoTheme -------------------------------- */
-@use 'neoVars'; // root变量
-// @use 'code'; // reset code 样式
-// @use 'navbar'; // reset code 样式
-// @use 'sidebar'; // sidebar
-@use 'border-effect'; // 边框动画
-@use 'scrollbar'; // 滚动条效果
-@use 'gap'; // gap样式
-@use 'flex'; // flex样式
-@use 'common'; // 其他
-@import './variables'; // scss变量
+@use 'neo-vars'; // root变量
+@use 'neo-code'; // root变量
+@use 'neo-navbar'; // reset code 样式
+@use 'neo-border-effect'; // 边框动画
+@use 'neo-scrollbar'; // 滚动条效果
+@use 'neo-gap'; // gap样式
+@use 'neo-flex'; // flex样式
+@use 'neo-common'; // 常见的
 /* -------------------------------- neoTheme -------------------------------- */
