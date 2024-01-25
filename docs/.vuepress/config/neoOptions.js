@@ -14,6 +14,20 @@ export default {
     siteInformation: {
         bolgCreateAt: '2023-01-01',
     },
+    // 别名配置
+    blogLocales: {
+        article: '文章1',
+        articleList: '文章列表1',
+        category: '分类1',
+        tag: '标签1',
+        archives: '归档1',
+        // timelineTitle: '昨日不在',
+        all: '全部1',
+        intro: '个人介绍1',
+        star: '收藏1',
+        slides: '幻灯片1',
+        encrypt: '加密1'
+    },
     // 个人信息（文章旁边的作者信息）
     blogOptions: {
         name: 'Star Field', // 昵称

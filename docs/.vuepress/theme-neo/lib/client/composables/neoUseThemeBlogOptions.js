@@ -6,7 +6,7 @@ export const useThemeBlogOptions = () => {
     const themeLocale = useThemeLocaleData()
 
     return computed(() => ({
-        ...themeData.value.blog,
-        ...themeLocale.value.blog
+        ...themeData.value.blogOptions,
+        ...themeLocale.value.blogOptions
     }))
 }
