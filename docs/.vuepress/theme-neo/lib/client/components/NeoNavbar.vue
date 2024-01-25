@@ -64,12 +64,17 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 }
 
 /* -------------------------------- neoTheme -------------------------------- */
+defineProps({
+  isSidebar: {
+    type: Boolean,
+    default: true
+  }
+});
 const router = useRouter();
 const previousTop = ref(0);
 const isFixed = ref(false);
 const isVisible = ref(false);
 const isInvert = ref(true);
-
 const handleScroll = () => {
   const currentTop = window.pageYOffset;
 
