@@ -1,4 +1,4 @@
-import { typeOf, compareDate } from './resolveDate'
+import { typeOf, compareDate } from './neoResolveDate'
 
 /**
  * 过滤非文章页
@@ -86,7 +86,7 @@ export function groupPosts(posts) {
 }
 
 /**
- * 获取所有分类和标签
+ * 获取所有分类和标签和专栏
  * @param {Object} groupPosts 按分类和标签分组之后的文章数据
  */
 export function categoriesAndTags(groupPosts) {

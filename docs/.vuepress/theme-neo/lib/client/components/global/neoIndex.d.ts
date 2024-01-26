@@ -1,3 +1,3 @@
-import NeoIcon from './NeoIcon.vue';
+import NeoIcon from './NeoIcon.ts';
 import NeoNavCard from './NeoNavCard.vue';
 export { NeoIcon, NeoNavCard };

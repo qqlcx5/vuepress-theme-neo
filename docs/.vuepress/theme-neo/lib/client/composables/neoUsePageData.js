@@ -1,6 +1,6 @@
 import { computed, provide } from 'vue'
 import { allPagesData, allWordCount } from '@temp/theme-neo/allPagesData'
-import { sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from '../utils/resolvePostData'
+import { sortPosts, sortPostsByDate, groupPosts, categoriesAndTags } from '../utils/neoResolvePostData.js'
 
 export const allWordCountSymbol = Symbol('allWordCount') // 本站的总字数
 export const sortPostsSymbol = Symbol('sortPosts')
