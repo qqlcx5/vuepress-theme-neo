@@ -5,11 +5,11 @@ tags: []
 order: 40
 source: https://www.finclip.com/mop/document/develop/frameInterface/config/project.html
 author: null
-categories: 
+categories:
   - frameInterface
   - miniProgramConfiguration
-columns: 
-  - 
+columns:
+  -
 ---
 
 # sitemap 配置
