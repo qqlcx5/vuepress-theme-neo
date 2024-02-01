@@ -5,12 +5,12 @@
 // console.log('__dirname docs---------------------', docsRoot);
 
 export default {
-    '/element/': 'structure',
-    '/interview/': 'structure',
-    '/demo/': 'structure',
-    '/guide/': 'structure',
-    '/config/': 'structure',
-    '/utils/': 'structure',
+    // '/element/': 'structure',
+    // '/interview/': 'structure',
+    // '/demo/': 'structure',
+    // '/guide/': 'structure',
+    // '/config/': 'structure',
+    '/frameInterface/': 'structure',
 };
 export const sidebarOptions = {
     collapsible: true,

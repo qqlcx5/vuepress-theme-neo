@@ -1,34 +1,39 @@
 export default [
     {
-        text: '指南',
-        icon: 'neo-zhinanzhen',
-        link: '/guide/introduce',
-        activeMatch: '^/guide/'
+        text: '框架',
+        link: '/frameInterface/miniProgramConfiguration/pageConfiguration.md',
+        activeMatch: '^/frameInterface/'
     },
-    {
-        text: '配置',
-        icon: 'neo-shezhi1',
-        link: '/config/theme/feature',
-        activeMatch: '^/config/'
-    },
-    {
-        text: '面试官系列',
-        icon: 'neo-jianzhu',
-        link: '/interview/',
-        activeMatch: '^/interview/'
-    },
-    {
-        text: '手写工具函数',
-        icon: 'neo-renwu',
-        link: '/utils/',
-        activeMatch: '^/utils/'
-    },
-    {
-        text: '饿了么组件库',
-        icon: 'neo-shanchuxian',
-        link: '/element/',
-        activeMatch: '^/element/'
-    },
+    // {
+    //     text: '指南',
+    //     icon: 'neo-zhinanzhen',
+    //     link: '/guide/introduce',
+    //     activeMatch: '^/guide/'
+    // },
+    // {
+    //     text: '配置',
+    //     icon: 'neo-shezhi1',
+    //     link: '/config/theme/feature',
+    //     activeMatch: '^/config/'
+    // },
+    // {
+    //     text: '面试官系列',
+    //     icon: 'neo-jianzhu',
+    //     link: '/interview/',
+    //     activeMatch: '^/interview/'
+    // },
+    // {
+    //     text: '手写工具函数',
+    //     icon: 'neo-renwu',
+    //     link: '/utils/',
+    //     activeMatch: '^/utils/'
+    // },
+    // {
+    //     text: '饿了么组件库',
+    //     icon: 'neo-shanchuxian',
+    //     link: '/element/',
+    //     activeMatch: '^/element/'
+    // },
     // {
     //     text: '导航页',
     //     icon: 'neo-zuojiantou',
@@ -40,46 +45,46 @@ export default [
     //     link: '/movies/',
     //     activeMatch: '^/movies/'
     // },
-    {
-        text: '测试用例',
-        icon: 'neo-riqi',
-        link: '/demo/',
-        activeMatch: '^/demo/'
-    },
-    {
-        text: 'GPT Prompt',
-        icon: 'neo-riqi',
-        link: '/prompt/',
-        activeMatch: '^/prompt/'
-    },
-    {
-        text: '索引',
-        icon: 'neo-shaixuan',
-        children: [
-            {
-                text: '标签',
-                icon: 'neo-linkedin',
-                link: '/tags/',
-                activeMatch: '/tags/'
-            },
-            {
-                text: '归档',
-                icon: 'neo-github',
-                link: '/archives/',
-                activeMatch: '/archives/'
-            },
-            {
-                text: '分类',
-                icon: 'neo-momo',
-                link: '/categories/',
-                activeMatch: '/categories/'
-            },
-            {
-                text: '专栏',
-                icon: 'neo-ins',
-                link: '/columns/',
-                activeMatch: '/columns/'
-            }
-        ]
-    }
+    // {
+    //     text: '测试用例',
+    //     icon: 'neo-riqi',
+    //     link: '/demo/',
+    //     activeMatch: '^/demo/'
+    // },
+    // {
+    //     text: 'GPT Prompt',
+    //     icon: 'neo-riqi',
+    //     link: '/prompt/',
+    //     activeMatch: '^/prompt/'
+    // },
+    // {
+    //     text: '索引',
+    //     icon: 'neo-shaixuan',
+    //     children: [
+    //         {
+    //             text: '标签',
+    //             icon: 'neo-linkedin',
+    //             link: '/tags/',
+    //             activeMatch: '/tags/'
+    //         },
+    //         {
+    //             text: '归档',
+    //             icon: 'neo-github',
+    //             link: '/archives/',
+    //             activeMatch: '/archives/'
+    //         },
+    //         {
+    //             text: '分类',
+    //             icon: 'neo-momo',
+    //             link: '/categories/',
+    //             activeMatch: '/categories/'
+    //         },
+    //         {
+    //             text: '专栏',
+    //             icon: 'neo-ins',
+    //             link: '/columns/',
+    //             activeMatch: '/columns/'
+    //         }
+    //     ]
+    // }
 ];
