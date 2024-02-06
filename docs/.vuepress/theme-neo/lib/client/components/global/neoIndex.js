@@ -1,3 +1,4 @@
 import NeoIcon from './NeoIcon.ts';
+import NeoFontIcon from './NeoFontIcon.ts';
 import NeoNavCard from './NeoNavCard.vue';
-export { NeoIcon, NeoNavCard };
+export { NeoIcon, NeoFontIcon, NeoNavCard };

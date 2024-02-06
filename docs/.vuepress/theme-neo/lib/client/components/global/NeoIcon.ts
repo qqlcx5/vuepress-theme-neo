@@ -32,7 +32,7 @@ const NeoIcon: FunctionalComponent<NeoIconProps> = props => {
         'no-view': '',
         style,
       })
-    : h(resolveComponent('FontIcon'), props);
+    : h(resolveComponent("NeoFontIcon"), props);
 };
 
 NeoIcon.displayName = 'NeoIcon';
