@@ -1,19 +1,15 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { getDate } from "@vuepress/helper/client";
 import type { GitData } from "@vuepress/plugin-git";
-import type { ComputedRef } from "vue";
-import { computed, inject } from "vue";
-import type { ReadingTime } from "vuepress-plugin-reading-time2/client";
+import type { ReadingTime } from "@vuepress/plugin-reading-time/client";
 import {
   useReadingTimeData,
   useReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
+import type { ComputedRef } from "vue";
+import { computed, inject } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type { AuthorInfo, BasePageFrontMatter } from "vuepress-shared/client";
-import {
-  getAuthor,
-  getCategory,
-  getDate,
-  getTag,
-} from "vuepress-shared/client";
+import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 
 import type {
   CategoryMapRef,
@@ -49,29 +45,28 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
+  const categoryMap = ENABLE_BLOG
+    ? inject<CategoryMapRef>(Symbol.for("categoryMap"))
+    : undefined;
 
   return computed(() =>
     getCategory(frontmatter.value.category).map((name) => ({
       name,
-      // this is a hack
-      path: ENABLE_BLOG
-        ? inject<CategoryMapRef>(Symbol.for("categoryMap"))?.value.map[name]
-            ?.path || ""
-        : "",
+      path: categoryMap?.value.map[name]?.path || "",
     })),
   );
 };
 
 export const usePageTag = (): ComputedRef<PageTag[]> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
+  const tagMap = ENABLE_BLOG
+    ? inject<TagMapRef>(Symbol.for("tagMap"))
+    : undefined;
 
   return computed(() =>
     getTag(frontmatter.value.tag).map((name) => ({
       name,
-      // this is a hack
-      path: ENABLE_BLOG
-        ? inject<TagMapRef>(Symbol.for("tagMap"))?.value.map[name]?.path || ""
-        : "",
+      path: tagMap?.value.map[name]?.path || "",
     })),
   );
 };

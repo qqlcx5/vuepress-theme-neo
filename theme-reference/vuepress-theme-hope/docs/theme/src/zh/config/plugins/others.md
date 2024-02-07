@@ -9,13 +9,21 @@ tag:
   - 主题配置
 ---
 
-## autoCatalog <Badge text="默认启用" />
+## catalog <Badge text="默认启用" />
 
-控制 `vuepress-plugin-auto-catalog`，提供目录的自动生成。
+控制 `@vuepress/plugin-catalog`，提供目录的自动生成。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="auto-catalog" path="/zh/config.html">auto catalog 插件文档</ProjectLink>。
+插件选项请参阅 [catalog 插件文档][catalog-config]。
+
+## backToTop <Badge text="默认启用" />
+
+控制 `@vuepress/plugin-back-to-top`，提供返回顶部按钮。
+
+默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
+
+插件选项请参阅 [back-to-top 插件文档][back-to-top-config]。
 
 ## components
 
@@ -46,11 +54,11 @@ tag:
 
 ## copyCode <Badge text="默认启用" />
 
-控制 `vuepress-plugin-copy-code2`，提供代码复制按钮。
+控制 `@vuepress/plugin-copy-code`，提供代码复制按钮。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="copy-code2" path="/zh/config.html">copy-code2 插件文档</ProjectLink>。
+插件选项请参阅 [copy-code 插件文档][copy-code-config]。
 
 ## externalLinkIcon <Badge text="enabled by default" />
 
@@ -94,15 +102,15 @@ tag:
 
 ## photoSwipe <Badge text="默认启用" />
 
-控制 `vuepress-plugin-photo-swipe`，提供图片浏览功能。
+控制 `@vuepress/plugin-photo-swipe`，提供图片浏览功能。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="photo-swipe" path="/zh/config.html">photo-swipe 插件文档</ProjectLink>。
+插件选项请参阅 [photo-swipe 插件文档][photo-swipe-config]。
 
 ## readingTime <Badge text="默认启用" />
 
-控制 `vuepress-plugin-reading-time2`，为页面进行字数统计并生成预计的阅读时间。
+控制 `@vuepress/plugin-reading-time`，为页面进行字数统计并生成预计的阅读时间。
 
 ### readingTime.wordPerMinute
 
@@ -111,22 +119,29 @@ tag:
 
 每分钟的阅读字数。
 
-插件选项请参阅 <ProjectLink name="reading-time2" path="/zh/config.html">reading-time2 插件文档</ProjectLink>。
+插件选项请参阅 [reading-time 插件文档][reading-time-config]。
 
 ## seo <Badge text="默认启用" />
 
-控制 `vuepress-plugin-seo2`，提供搜索引擎增强。
+控制 `@vuepress/plugin-seo`，提供搜索引擎增强。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="seo2" path="/zh/config.html">seo2 插件文档</ProjectLink>。
+插件选项请参阅 [seo 插件文档][seo-config]。
 
 ## sitemap <Badge text="默认启用" />
 
-控制 `vuepress-plugin-sitemap2`，为网站自动生成 Sitemap。
+控制 `@vuepress/plugin-sitemap`，为网站自动生成 Sitemap。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="sitemap2" path="/zh/config.html">sitemap2 插件文档</ProjectLink>。
+插件选项请参阅 [sitemap 插件文档][sitemap-config]。
 
-[git-config]: https://vuejs.press/zh/reference/plugin/git.html
+[back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#options
+[catalog-config]: https://ecosystem.vuejs.press/zh/plugins/catalog.html#options
+[copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
+[git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
+[photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html#options
+[reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options
+[seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html

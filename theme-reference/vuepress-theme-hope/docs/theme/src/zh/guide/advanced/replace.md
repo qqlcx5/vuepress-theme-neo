@@ -21,9 +21,8 @@ tag:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+```ts title=".vuepress/config.ts"
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -51,9 +50,8 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
-import { getDirname, path } from "@vuepress/utils";
+```js title=".vuepress/config.js"
+import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
@@ -253,9 +251,8 @@ export default {
 
 @tab config.ts
 
-```ts
-// .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+```ts title=".vuepress/config.ts"
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

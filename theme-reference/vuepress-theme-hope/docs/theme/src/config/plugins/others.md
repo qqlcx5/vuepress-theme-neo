@@ -9,13 +9,21 @@ tag:
   - Theme Config
 ---
 
-## autoCatalog <Badge text="enabled by default" />
+## catalog <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-auto-catalog` which provides catalog pages generation.
+Controls `@vuepress/plugin-catalog` which provides catalog pages generation.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin docs</ProjectLink> for available plugin options.
+Check [catalog plugin docs][catalog-config] for available plugin options.
+
+## backToTop <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-back-to-top` which provides a back to top button.
+
+No extra config is required by default. Se it to `false` if you don't need it.
+
+Check [back-to-top plugin docs][back-to-top-config] for available plugin options.
 
 ## components
 
@@ -46,11 +54,11 @@ Check <ProjectLink name="components" path="/config.html">components plugin docs<
 
 ## copyCode <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-copy-code2` which provides a code copy button on desktop.
+Controls `@vuepress/plugin-copy-code` which provides a code copy button on desktop.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="copy-code2" path="/config.html">copy-code2 plugin docs</ProjectLink> for available plugin options.
+Check [copy-code plugin docs][copy-code-config] for available plugin options.
 
 ## externalLinkIcon <Badge text="enabled by default" />
 
@@ -94,15 +102,15 @@ Prism.js theme used in darkmode.
 
 ## photoSwipe <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-photo-swipe` which provides picture browsing feature.
+Controls `@vuepress/plugin-photo-swipe` which provides picture browsing feature.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="photo-swipe" path="/config.html">photo-swipe plugin docs</ProjectLink> for available plugin options.
+Check [photo-swipe plugin docs][photo-swipe-config] for available plugin options.
 
 ## readingTime <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-reading-time2` which generates words count and estimated reading time for pages.
+Controls `@vuepress/plugin-reading-time` which generates words count and estimated reading time for pages.
 
 ### readingTime.wordPerMinute
 
@@ -111,22 +119,29 @@ Controls `vuepress-plugin-reading-time2` which generates words count and estimat
 
 Reading speed (words per minute)
 
-Check <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin docs</ProjectLink> for available plugin options.
+Check [reading-time plugin docs][reading-time-config] for available plugin options.
 
 ## seo <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-seo2` which provides search engine enhancements.
+Controls `@vuepress/plugin-seo` which provides search engine enhancements.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="seo2" path="/config.html">seo2 plugin docs</ProjectLink> for available plugin options.
+Check [seo plugin docs][seo-config] for available plugin options.
 
 ## sitemap <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-seo2` which provides sitemap.
+Controls `@vuepress/plugin-sitemap` which provides sitemap.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="sitemap2" path="/config.html">sitemap2 plugin docs</ProjectLink> for available plugin options.
+Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
-[git-config]: https://vuejs.press/reference/plugin/git.html
+[back-to-top-config]: https://ecosystem.vuejs.press/plugins/back-to-top.html#options
+[catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
+[copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
+[git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
+[photo-swipe-config]: https://ecosystem.vuejs.press/plugins/photo-swipe.html#options
+[reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options
+[seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

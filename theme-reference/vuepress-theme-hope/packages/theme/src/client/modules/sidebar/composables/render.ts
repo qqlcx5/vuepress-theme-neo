@@ -1,7 +1,7 @@
-import { isString } from "@vuepress/shared";
+import { isString } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { h } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
@@ -18,12 +18,12 @@ export const renderSidebarItem = (
   props: VNode["props"],
 ): VNode =>
   isString(config.link)
-    ? // if the item has link, render it as `<AutoLink>`
+    ? // If the item has link, render it as `<AutoLink>`
       h(AutoLink, {
         ...props,
         config: config as AutoLinkType,
       })
-    : // if the item only has text, render it as `<p>`
+    : // If the item only has text, render it as `<p>`
       h("p", props, [h(HopeIcon, { icon: config.icon }), config.text]);
 
 export const renderSidebarChildren = (

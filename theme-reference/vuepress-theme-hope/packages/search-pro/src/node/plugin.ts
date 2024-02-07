@@ -1,13 +1,12 @@
-import type { PluginFunction } from "@vuepress/core";
-import { watch } from "chokidar";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
-  checkVersion,
   fromEntries,
-  getLocales,
-} from "vuepress-shared/node";
+  getLocaleConfig,
+} from "@vuepress/helper";
+import { watch } from "chokidar";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { setPageExcerpt } from "./excerpt.js";
@@ -16,9 +15,11 @@ import { searchProLocales } from "./locales.js";
 import type { SearchProOptions } from "./options.js";
 import {
   prepareSearchIndex,
+  prepareStore,
   removeSearchIndex,
   updateSearchIndex,
-} from "./prepare.js";
+} from "./prepare/index.js";
+import { Store } from "./store.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const searchProPlugin =
@@ -28,11 +29,11 @@ export const searchProPlugin =
     if (legacy)
       convertOptions(options as SearchProOptions & Record<string, unknown>);
 
+    if (app.env.isDebug) logger.info("Options:", options);
+
     useSassPalettePlugin(app, { id: "hope" });
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
-
-    if (app.env.isDebug) logger.info("Options:", options);
+    const store = new Store();
 
     return {
       name: PLUGIN_NAME,
@@ -50,7 +51,7 @@ export const searchProPlugin =
             )
             .filter((item): item is [string, string] => item !== null),
         ),
-        SEARCH_PRO_LOCALES: getLocales({
+        SEARCH_PRO_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           config: options.locales,
@@ -73,8 +74,9 @@ export const searchProPlugin =
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch");
+        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch", true);
         addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
           "fflate",
           "vuepress-shared",
         ]);
@@ -82,33 +84,36 @@ export const searchProPlugin =
 
       onInitialized: (app): void => setPageExcerpt(app),
 
-      onPrepared: (app): Promise<void> => prepareSearchIndex(app, options),
+      onPrepared: async (app): Promise<void> => {
+        await prepareSearchIndex(app, options, store);
+        await prepareStore(app, store);
+      },
 
       onWatched: (app, watchers): void => {
         const hotReload =
           "hotReload" in options ? options.hotReload : app.env.isDebug;
 
         if (hotReload) {
-          // this ensure the page is generated or updated
+          // This ensure the page is generated or updated
           const searchIndexWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
           });
 
           searchIndexWatcher.on("add", (path) => {
-            void updateSearchIndex(app, options, path);
+            void updateSearchIndex(app, options, store, path);
           });
           searchIndexWatcher.on("change", (path) => {
-            void updateSearchIndex(app, options, path);
+            void updateSearchIndex(app, options, store, path);
           });
           searchIndexWatcher.on("unlink", (path) => {
-            void removeSearchIndex(app, options, path);
+            void removeSearchIndex(app, options, store, path);
           });
 
           watchers.push(searchIndexWatcher);
         }
       },
 
-      onGenerated: (app) => generateWorker(app, options),
+      onGenerated: (app) => generateWorker(app, options, store),
     };
   };

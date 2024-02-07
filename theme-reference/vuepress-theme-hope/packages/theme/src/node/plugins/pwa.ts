@@ -1,7 +1,7 @@
-import type { Plugin } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
+import { isPlainObject } from "@vuepress/helper";
+import type { Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import { isPlainObject } from "vuepress-shared/node";
 
 import { logger } from "../utils.js";
 
@@ -10,7 +10,7 @@ let pwaPlugin: (options: PWAOptions, legacy?: boolean) => Plugin;
 try {
   ({ pwaPlugin } = await import("vuepress-plugin-pwa2"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 /**
  * @private

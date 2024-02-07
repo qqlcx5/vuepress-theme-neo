@@ -13,7 +13,7 @@ files.forEach((pkgName) => {
   const desc = `${pkgName} plugin for VuePress`;
   const pkgPath = join(packagesDir, pkgName, "package.json");
 
-  // generate package.json
+  // Generate package.json
   if (!existsSync(pkgPath)) {
     const pkgJSON = {
       name: `vuepress-plugin-${pkgName}`,
@@ -59,20 +59,7 @@ files.forEach((pkgName) => {
         yarn: ">=2",
       },
       peerDependencies: {
-        vuepress: "2.0.0-rc.0",
-        "vuepress-vite": "2.0.0-rc.0",
-        "vuepress-webpack": "2.0.0-rc.0",
-      },
-      peerDependenciesMeta: {
-        vuepress: {
-          optional: true,
-        },
-        "vuepress-vite": {
-          optional: true,
-        },
-        "vuepress-webpack": {
-          optional: true,
-        },
+        vuepress: "2.0.0-rc.7",
       },
       publishConfig: {
         access: "public",
@@ -84,7 +71,7 @@ files.forEach((pkgName) => {
 
   const readmePath = join(packagesDir, pkgName, "README.md");
 
-  // generate README.md
+  // Generate README.md
   if (!existsSync(readmePath))
     writeFileSync(
       readmePath,

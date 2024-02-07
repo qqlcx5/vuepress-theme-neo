@@ -38,7 +38,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
        "https://YOUR_WEBSITE_URL/",
      ],
      sitemaps: [
-       // if you are using sitemap plugins (e.g.: vuepress-plugin-sitemap2), you may provide one
+       // if you are using sitemap plugins (e.g.: @vuepress/plugin-sitemap), you may provide one
        "https://YOUR_WEBSITE_URL/sitemap.xml",
      ],
      ignoreCanonicalTo: false,
@@ -192,8 +192,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
    @tab TS
 
-   ```ts {8-11}
-   // .vuepress/config.ts
+   ```ts {8-11} title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -211,8 +210,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
    @tab JS
 
-   ```js {8-11}
-   // .vuepress/config.js
+   ```js {8-11} title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -270,8 +268,7 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -289,8 +286,7 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -346,8 +342,7 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -365,8 +360,7 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -390,5 +384,5 @@ See [Plugin Docs][search] for available options.
 
 :::
 
-[docsearch]: https://vuejs.press/reference/plugin/docsearch.html
-[search]: https://vuejs.press/reference/plugin/search.html
+[docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
+[search]: https://ecosystem.vuejs.press/plugins/search.html

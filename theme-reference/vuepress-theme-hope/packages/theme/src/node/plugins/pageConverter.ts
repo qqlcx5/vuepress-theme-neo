@@ -1,11 +1,6 @@
-import type { App, Page, PluginObject } from "@vuepress/core";
-import {
-  endsWith,
-  injectLocalizedDate,
-  isPlainObject,
-  keys,
-  startsWith,
-} from "vuepress-shared/node";
+import { endsWith, isPlainObject, keys, startsWith } from "@vuepress/helper";
+import type { App, Page, PluginObject } from "vuepress/core";
+import { injectLocalizedDate } from "vuepress-shared/node";
 
 import type {
   ThemeBlogHomePageFrontmatter,
@@ -32,13 +27,13 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
     | ThemeNormalPageFrontmatter;
 
   const isArticle =
-    // declaring this is an article
+    // Declaring this is an article
     frontmatter.article ||
-    // generated from markdown files
+    // Generated from markdown files
     Boolean(frontmatter.article !== false && filePathRelative);
   const isSlide = frontmatter.layout === "Slide";
 
-  // save page type to routeMeta
+  // Save page type to routeMeta
   page.routeMeta[ArticleInfoType.type] = frontmatter.home
     ? PageType.home
     : isSlide
@@ -47,7 +42,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
         ? PageType.article
         : PageType.page;
 
-  // save relative file path into page data to generate edit link
+  // Save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;
 
   page.routeMeta[ArticleInfoType.title] = page.title;
@@ -55,7 +50,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   if ("icon" in frontmatter)
     page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
-  // catalog related
+  // Catalog related
   if (endsWith(page.path, "/")) {
     if (isPlainObject(frontmatter.dir)) {
       if ("order" in frontmatter.dir)
@@ -76,7 +71,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
       page.routeMeta[ArticleInfoType.index] = false;
   }
 
-  // resolve shortTitle
+  // Resolve shortTitle
   if ("shortTitle" in frontmatter)
     page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
 };
@@ -102,7 +97,7 @@ export const extendsPagePlugin = (
 
       const isEncrypted = isPageEncrypted(page);
 
-      // encrypt page shall not appear in feed items or perform seo
+      // Encrypt page shall not appear in feed items or perform seo
       if (isEncrypted) {
         page.frontmatter["feed"] = false;
         page.frontmatter["seo"] = false;

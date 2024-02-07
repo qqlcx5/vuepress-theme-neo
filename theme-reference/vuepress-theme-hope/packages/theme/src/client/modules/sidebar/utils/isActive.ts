@@ -1,4 +1,4 @@
-import type { RouteLocationNormalizedLoaded } from "vue-router";
+import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 import { isActiveLink } from "vuepress-shared/client";
 
 import type { ResolvedSidebarItem } from "../utils/index.js";
@@ -9,7 +9,7 @@ export const isActiveSidebarItem = (
   exact = false,
 ): boolean => {
   if ("activeMatch" in item)
-    return new RegExp(item.activeMatch).test(route.path);
+    return new RegExp(item.activeMatch, "u").test(route.path);
 
   if (isActiveLink(route, item.link)) return true;
 

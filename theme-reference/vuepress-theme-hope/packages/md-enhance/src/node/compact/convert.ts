@@ -1,5 +1,5 @@
-import { isArray, isPlainObject } from "@vuepress/shared";
-import { colors } from "@vuepress/utils";
+import { isArray, isPlainObject } from "@vuepress/helper";
+import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
 import type { LinksCheckStatus, MarkdownEnhanceOptions } from "../options.js";

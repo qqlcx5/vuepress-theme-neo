@@ -1,5 +1,5 @@
+import { entries, fromEntries, isArray, isString } from "@vuepress/helper";
 import { hashSync } from "bcrypt-ts/node";
-import { entries, fromEntries, isArray, isString } from "vuepress-shared/node";
 
 import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
@@ -10,7 +10,7 @@ export const getEncryptConfig = (
 ): EncryptConfig => {
   const result: EncryptConfig = {};
 
-  // handle global token
+  // Handle global token
   if (encrypt.admin) {
     if (encrypt.global) result.global = true;
 

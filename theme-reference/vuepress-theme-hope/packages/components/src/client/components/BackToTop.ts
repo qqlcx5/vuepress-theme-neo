@@ -1,4 +1,4 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useElementSize, useWindowScroll, useWindowSize } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -9,7 +9,7 @@ import {
   onMounted,
   shallowRef,
 } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { usePageFrontmatter } from "vuepress/client";
 
 import { BackToTopIcon } from "./icons.js";
 import type { BackToTopLocaleConfig } from "../../shared/index.js";
@@ -19,6 +19,7 @@ import "../styles/back-to-top.scss";
 
 declare const BACK_TO_TOP_LOCALES: BackToTopLocaleConfig;
 
+/** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export default defineComponent({
   name: "BackToTop",
 
@@ -71,7 +72,7 @@ export default defineComponent({
               {
                 type: "button",
                 class: "vp-back-to-top-button",
-                // hint text
+                // Hint text
                 "aria-label": locale.value.backToTop,
                 "data-balloon-pos": "left",
                 // Scroll to top

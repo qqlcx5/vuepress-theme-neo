@@ -1,6 +1,7 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { onUnmounted, onMounted, ref } from "vue";
 import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 const isDarkMode = ref(false);
 
@@ -9,7 +10,7 @@ onMounted(() => {
 
   isDarkMode.value = html.classList.contains("dark");
 
-  // watch theme change
+  // Watch theme change
   const observer = new MutationObserver(() => {
     isDarkMode.value = html.classList.contains("dark");
   });
@@ -28,6 +29,7 @@ onMounted(() => {
 <template>
   <ParentLayout>
     <template #page-bottom>
+      <!-- eslint-disable-next-line vue/no-undef-components -->
       <CommentService :darkmode="isDarkMode" />
     </template>
   </ParentLayout>

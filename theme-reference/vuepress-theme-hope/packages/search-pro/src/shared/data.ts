@@ -7,27 +7,27 @@ export const enum IndexField {
   customFields = "c",
 }
 
-export type PageIndexId = `v-${string}`;
+export type PageIndexId = `${number}`;
 
 export interface PageIndexItem {
   id: PageIndexId;
-  /** heading */ h: string;
-  /** text */ t?: string[];
+  /** Heading */ h: string;
+  /** Text */ t?: string[];
 }
 
 export type SectionIndexId = `${PageIndexId}#${string}`;
 
 export interface SectionIndexItem {
   id: SectionIndexId;
-  /** heading */ h: string;
-  /** text */ t?: string[];
+  /** Heading */ h: string;
+  /** Text */ t?: string[];
 }
 
 export type CustomFieldIndexID = `${PageIndexId}@${number}`;
 
 export interface CustomFieldIndexItem {
   id: string;
-  /** customFields */ c: string[];
+  /** CustomFields */ c: string[];
 }
 
 export type IndexItem = PageIndexItem | SectionIndexItem | CustomFieldIndexItem;

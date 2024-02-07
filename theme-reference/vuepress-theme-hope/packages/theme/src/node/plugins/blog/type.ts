@@ -1,11 +1,11 @@
+import { dateSorter } from "@vuepress/helper";
+import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
-import type { BlogTypeOptions } from "vuepress-plugin-blog2";
-import { compareDate } from "vuepress-shared/node";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
   ArticleInfo,
-  BlogPluginOptions,
+  BlogOptions,
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
@@ -13,7 +13,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogArticleType = (
-  options: BlogPluginOptions,
+  options: BlogOptions,
   themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
@@ -30,11 +30,11 @@ export const getBlogArticleType = (
     key: "article",
     sorter: defaultPageSorter,
     filter: ({ frontmatter, filePathRelative }): boolean =>
-      // not home
+      // Not homepage
       !frontmatter.home &&
-      // declaring this is an article
+      // Declaring this is an article
       (frontmatter.article ||
-        // generated from markdown files
+        // Generated from markdown files
         Boolean(frontmatter.article !== false && filePathRelative)),
     path: options.article,
     layout: "BlogType",
@@ -49,7 +49,7 @@ export const getBlogArticleType = (
 
 /** @private */
 export const getBlogStarType = (
-  options: BlogPluginOptions,
+  options: BlogOptions,
   themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
@@ -74,7 +74,7 @@ export const getBlogStarType = (
       if (prevKey && !nextKey) return -1;
       if (!prevKey && nextKey) return 1;
 
-      return compareDate(
+      return dateSorter(
         pageA.routeMeta[ArticleInfoType.date],
         pageB.routeMeta[ArticleInfoType.date],
       );
@@ -93,7 +93,7 @@ export const getBlogStarType = (
 
 /** @private */
 export const getBlogTimelineType = (
-  options: BlogPluginOptions,
+  options: BlogOptions,
   themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
@@ -111,7 +111,7 @@ export const getBlogTimelineType = (
     filter: ({ frontmatter, routeMeta }) =>
       ArticleInfoType.date in routeMeta && frontmatter["timeline"] !== false,
     sorter: (pageA, pageB) =>
-      compareDate(
+      dateSorter(
         pageA.routeMeta[ArticleInfoType.date],
         pageB.routeMeta[ArticleInfoType.date],
       ),

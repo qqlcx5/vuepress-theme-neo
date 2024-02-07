@@ -1,4 +1,4 @@
-import { useSiteLocaleData } from "@vuepress/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -13,7 +13,8 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { useIsMobile, useLocaleConfig } from "vuepress-shared/client";
+import { useSiteLocaleData } from "vuepress/client";
+import { useIsMobile } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";
@@ -229,7 +230,7 @@ export default defineComponent({
                 },
               }),
 
-              // key hints should only appears in pc
+              // Key hints should only appears in PC
               isMobile.value
                 ? null
                 : h("div", { class: "search-pro-hints" }, [

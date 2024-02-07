@@ -1,10 +1,10 @@
-import type { App } from "@vuepress/core";
 import {
   getRealPath,
   isArray,
   isNumber,
   isPlainObject,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
 import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
@@ -58,18 +58,10 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
         setups.push(content);
       });
-
-    if (legacy && (item as unknown) === "Catalog") {
-      imports.push(
-        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`,
-      );
-      enhance += `\
-if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
-`;
-    }
   });
 
-  if (rootComponents.backToTop) {
+  // TODO: Remove in v2 stable
+  if (legacy && rootComponents.backToTop) {
     const { threshold, progress } = isPlainObject(rootComponents.backToTop)
       ? rootComponents.backToTop
       : <BackToTopOptions>{};
@@ -103,7 +95,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
   return app.writeTemp(
     `components/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
       "vuepress-shared/client",
       url,

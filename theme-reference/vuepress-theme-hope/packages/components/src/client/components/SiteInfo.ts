@@ -1,6 +1,7 @@
-import { withBase } from "@vuepress/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
+import { withBase } from "vuepress/client";
 import {
   BitbucketIcon,
   GitHubIcon,
@@ -8,7 +9,6 @@ import {
   GiteeIcon,
   SourceIcon,
   resolveRepoType,
-  useLocaleConfig,
 } from "vuepress-shared/client";
 
 import type { SiteInfoLocaleConfig } from "../../shared/index.js";
@@ -135,7 +135,7 @@ export default defineComponent({
                 {
                   class: "vp-site-info-source",
                   href: props.repo,
-                  // hint text
+                  // Hint text
                   "aria-label": locale.value.source,
                   "data-balloon-pos": "left",
                   title: locale.value.source,

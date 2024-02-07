@@ -1,3 +1,4 @@
+import { decodeData } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { EChartsOption, EChartsType } from "echarts";
 import type { PropType, VNode } from "vue";
@@ -9,7 +10,7 @@ import {
   ref,
   shallowRef,
 } from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useEchartsConfig } from "../helpers/index.js";
 import "../styles/echarts.scss";
@@ -56,7 +57,7 @@ export default defineComponent({
 
   props: {
     /**
-     * echarts config
+     * Echarts config
      *
      * 图表配置
      */
@@ -100,7 +101,7 @@ export default defineComponent({
     onMounted(() => {
       void Promise.all([
         import(/* webpackChunkName: "echarts" */ "echarts"),
-        // delay
+        // Delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([echarts]) => {
         await echartsConfig.setup?.();
@@ -108,7 +109,7 @@ export default defineComponent({
         chart = echarts.init(echartsContainer.value);
 
         const { option, ...size } = await parseEChartsConfig(
-          atou(props.config),
+          decodeData(props.config),
           props.type,
           chart,
         );

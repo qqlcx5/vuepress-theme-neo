@@ -1,13 +1,14 @@
-import type { App, Page } from "@vuepress/core";
+import { entries, fromEntries, isArray, keys } from "@vuepress/helper";
 import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";
 import { addAllAsync, createIndex } from "slimsearch";
-import { entries, fromEntries, isArray, keys } from "vuepress-shared/node";
+import type { App, Page } from "vuepress/core";
 
 import type {
   SearchProCustomFieldOptions,
   SearchProOptions,
 } from "./options.js";
+import type { Store } from "./store.js";
 import type {
   IndexItem,
   LocaleIndex,
@@ -49,38 +50,37 @@ const isExcerptMarker = (node: AnyNode): boolean =>
 
 const $ = load("");
 
-const renderHeader = (node: Element): string =>
-  node.children
-    .map((node) => {
-      if (node.type === "tag") {
-        // drop anchor
-        if (node.name === "a" && node.attribs["class"] === "header-anchor")
-          return "";
+const renderHeader = (node: Element): string => {
+  if (
+    node.children.length === 1 &&
+    node.children[0].type === "tag" &&
+    node.children[0].tagName === "a" &&
+    node.children[0].attribs["class"] === "header-anchor"
+  )
+    node.children = (<Element>node.children[0].children[0]).children;
 
-        return renderHeader(node);
-      }
-
-      if (node.type === "text") return node.data;
-
-      return "";
-    })
+  return node.children
+    .map((node) => (node.type === "text" ? node.data : null))
+    .filter(Boolean)
     .join(" ")
     .replace(/\s+/gu, " ")
     .trim();
+};
 
 export const generatePageIndex = (
   page: Page<{ excerpt?: string }>,
+  store: Store,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
   indexContent = false,
 ): IndexItem[] => {
   const { contentRendered, data, title } = page;
-  const key = <PageIndexId>page.key;
+  const pageId = <PageIndexId>store.addItem(page.path).toString();
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
-  const pageIndex: PageIndexItem = { id: key, h: title };
+  const pageIndex: PageIndexItem = { id: pageId, h: title };
   const results: IndexItem[] = [pageIndex];
 
-  // here are some variables holding the current state of the parser
+  // Here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
   let currentSectionIndex: PageIndexItem | SectionIndexItem | null = null;
   let currentContent = "";
@@ -89,23 +89,23 @@ export const generatePageIndex = (
   const render = (node: AnyNode, preserveSpace = false): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
-        const id = node.attribs["id"];
+        const { id } = node.attribs;
         const header = renderHeader(node);
 
         if (currentContent && shouldIndexContent) {
-          // add last content
+          // Add last content
           ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
             []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
 
-        // update current section index only if it has an id
+        // Update current section index only if it has an id
         if (id) {
           if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
           else results.push(currentSectionIndex!);
 
           currentSectionIndex = {
-            id: `${key}#${id}`,
+            id: `${pageId}#${id}`,
             h: header,
           };
         } else if (header) {
@@ -113,7 +113,7 @@ export const generatePageIndex = (
         }
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
-          // add last content
+          // Add last content
           ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
             []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
@@ -127,7 +127,7 @@ export const generatePageIndex = (
     } else if (node.type === "text") {
       currentContent += preserveSpace || node.data.trim() ? node.data : "";
     } else if (
-      // we are expecting to stop at excerpt marker if content is not indexed
+      // We are expecting to stop at excerpt marker if content is not indexed
       hasExcerpt &&
       !indexContent &&
       isExcerptMarker(node)
@@ -138,7 +138,7 @@ export const generatePageIndex = (
 
   const nodes = $.parseHTML(contentRendered);
 
-  // get custom fields
+  // Get custom fields
   const customFields = fromEntries(
     customFieldsGetter
       .map(({ getter }, index) => {
@@ -153,26 +153,26 @@ export const generatePageIndex = (
       .filter((item): item is [string, string[]] => item !== null),
   );
 
-  // no content in page and no customFields
+  // No content in page and no customFields
   if (!nodes?.length && !keys(customFields).length) return [];
 
-  // walk through nodes and extract indexes
+  // Walk through nodes and extract indexes
   nodes?.forEach((node) => {
     render(node);
   });
 
-  // push contents in last block tags
+  // Push contents in last block tags
   if (shouldIndexContent && currentContent)
     ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
       []).push(currentContent);
 
-  // push last section
+  // Push last section
   if (currentSectionIndex) results.push(currentSectionIndex);
 
-  // add custom fields
+  // Add custom fields
   entries(customFields).forEach(([customField, values]) => {
     results.push({
-      id: `${key}@${customField}`,
+      id: `${pageId}@${customField}`,
       c: values,
     });
   });
@@ -189,13 +189,14 @@ export const getSearchIndexStore = async (
     indexOptions,
     indexLocaleOptions,
   }: SearchProOptions,
+  store: Store,
 ): Promise<SearchIndexStore> => {
   const indexesByLocale: LocaleIndex = {};
 
   app.pages.forEach((page) => {
     if (filter(page) && page.frontmatter["search"] !== false)
       (indexesByLocale[page.pathLocale] ??= []).push(
-        ...generatePageIndex(page, customFields, indexContent),
+        ...generatePageIndex(page, store, customFields, indexContent),
       );
   });
 
@@ -206,12 +207,12 @@ export const getSearchIndexStore = async (
       const index = createIndex<IndexItem, string>({
         ...indexOptions,
         ...indexLocaleOptions?.[localePath],
-        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+        fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
         storeFields: [
-          /** heading */ "h",
-          /** anchor */ "a",
-          /** text */ "t",
-          /** customFields */ "c",
+          /** Heading */ "h",
+          /** Anchor */ "a",
+          /** Text */ "t",
+          /** CustomFields */ "c",
         ],
       });
 

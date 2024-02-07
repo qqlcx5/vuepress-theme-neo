@@ -1,6 +1,5 @@
-import { isLinkWithProtocol } from "@vuepress/shared";
-import { useRoute, useRouter } from "vue-router";
-import { isAbsoluteUrl } from "vuepress-shared/client";
+import { isLinkAbsolute, isLinkWithProtocol } from "@vuepress/helper/client";
+import { useRoute, useRouter } from "vuepress/client";
 
 export const useNavigate = (): ((url: string) => void) => {
   const router = useRouter();
@@ -8,7 +7,7 @@ export const useNavigate = (): ((url: string) => void) => {
 
   return (url) => {
     if (url)
-      if (isAbsoluteUrl(url)) {
+      if (isLinkAbsolute(url)) {
         // Inner absolute path
         if (route.path !== url) void router.push(url);
       } else if (isLinkWithProtocol(url)) {

@@ -1,16 +1,20 @@
 import { createRequire } from "node:module";
-import { fs, theme } from "docs-shared";
+
+import { theme } from "docs-shared";
+import { fs } from "vuepress/utils";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve(
-    "vuepress-plugin-components/package.json",
-  ),
+const { version } = <{ version: string }>(
+  fs.readJsonSync(
+    createRequire(import.meta.url).resolve(
+      "vuepress-plugin-components/package.json",
+    ),
+  )
 );
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("components", {
   locales: {
     "/": {

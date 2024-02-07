@@ -1,6 +1,6 @@
 import { loadJSONIndex } from "slimsearch";
 
-import database from "@temp/search-pro/index";
+import database from "@temp/search-pro/index.js";
 
 import { getResults } from "./result.js";
 import { getSuggestions } from "./suggestion.js";
@@ -13,8 +13,8 @@ self.onmessage = async ({
   const { default: localeIndex } = await database[locale]();
 
   const searchLocaleIndex = loadJSONIndex<IndexItem, string>(localeIndex, {
-    fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
-    storeFields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+    fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
+    storeFields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
   });
 
   if (type === "suggest")

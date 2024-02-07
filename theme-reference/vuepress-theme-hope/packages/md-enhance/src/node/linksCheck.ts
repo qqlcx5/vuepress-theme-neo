@@ -1,11 +1,11 @@
-import type { App, Page } from "@vuepress/core";
-import { logger } from "@vuepress/utils";
 import {
-  isAbsoluteUrl,
   isArray,
   isFunction,
+  isLinkAbsolute,
   isRegExp,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { App, Page } from "vuepress/core";
+import { logger } from "vuepress/utils";
 
 import type { MarkdownEnhanceOptions } from "./options.js";
 
@@ -22,11 +22,11 @@ export const getLinksCheckStatus = (
 
   return {
     enabled:
-      // always check
+      // Always check
       status === "always" ||
-      // enable in dev
+      // Enable in dev
       (app.env.isDev && status === "dev") ||
-      // enabled in build
+      // Enabled in build
       (app.env.isBuild && status === "build") ||
       false,
     isIgnoreLink: isFunction(ignore)
@@ -54,20 +54,20 @@ export const linksCheck = (
 
   const brokenLinks = [
     ...markdownLinks
-      // relative markdown links
-      .filter(({ raw }) => !isAbsoluteUrl(raw))
+      // Relative markdown links
+      .filter(({ raw }) => !isLinkAbsolute(raw))
       .filter(
         ({ relative }) =>
-          // check whether the page exists
+          // Check whether the page exists
           pages.every(
             ({ filePathRelative }) => filePathRelative !== decodeURI(relative),
           ) && !isIgnoreLink(relative),
       ),
     ...markdownLinks
-      // absolute markdown links
-      .filter(({ raw }) => isAbsoluteUrl(raw))
+      // Absolute markdown links
+      .filter(({ raw }) => isLinkAbsolute(raw))
       .filter(({ absolute }) =>
-        // check whether the page exists
+        // Check whether the page exists
         pages.every(
           ({ filePathRelative }) =>
             !filePathRelative ||

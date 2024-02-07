@@ -1,6 +1,6 @@
-import { usePageFrontmatter } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, nextTick, ref } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -34,7 +34,7 @@ export default defineComponent({
     let hintHandler: number | null = null;
 
     const verify = (): void => {
-      // clear previous handler
+      // Clear previous handler
       if (hintHandler) clearTimeout(hintHandler);
       hasTried.value = false;
 

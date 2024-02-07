@@ -76,9 +76,8 @@ Since Markdown will be converted to Vue single-file components in the cache dire
   └── ...
   ```
 
-  ```ts
-  // .vuepress/config.ts
-  import { getDirname, path } from "@vuepress/utils";
+  ```ts title=".vuepress/config.ts"
+  import { getDirname, path } from "vuepress/utils";
 
   const __dirname = getDirname(import.meta.url);
 

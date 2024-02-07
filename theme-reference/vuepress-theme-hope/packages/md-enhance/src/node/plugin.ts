@@ -13,12 +13,7 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
-import type { PluginFunction } from "@vuepress/core";
-import type { MarkdownEnv } from "@vuepress/markdown";
-import { colors } from "@vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
-  MATHML_TAGS,
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
@@ -26,10 +21,13 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
-  checkVersion,
-  getLocales,
+  getLocaleConfig,
   isPlainObject,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
+import type { MarkdownEnv } from "vuepress/markdown";
+import { colors } from "vuepress/utils";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import {
   convertOptions,
@@ -89,8 +87,6 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>,
       );
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
-
     if (app.env.isDebug) logger.info("Options:", options);
 
     const getStatus = (
@@ -107,7 +103,7 @@ export const mdEnhancePlugin =
       return enabled && pkgInstalled;
     };
 
-    const locales = getLocales({
+    const locales = getLocaleConfig({
       app,
       name: PLUGIN_NAME,
       default: markdownEnhanceLocales,
@@ -151,7 +147,7 @@ export const mdEnhancePlugin =
     const katexOptions: KatexOptions<MarkdownEnv> = {
       mathFence: options.gfm ?? false,
       macros: {
-        // support more symbols
+        // Support more symbols
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "\\liiiint": "\\int\\!\\!\\!\\iiint",
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -160,7 +156,7 @@ export const mdEnhancePlugin =
         "\\idotsint": "\\int\\!\\cdots\\!\\int",
       },
       logger: (errorCode, errorMsg, token, { filePathRelative }) => {
-        // ignore this error
+        // Ignore this error
         if (errorCode === "newLineInDisplayMode") return;
 
         if (errorCode === "unicodeTextInMathMode")
@@ -211,17 +207,13 @@ export const mdEnhancePlugin =
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
           "fflate",
           "vuepress-shared",
         ]);
 
-        if (status.katex && katexOptions.output !== "html") {
-          addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        } else if (status.mathjax) {
-          addCustomElement(bundlerOptions, app, /^mjx-/);
-          if (mathjaxInstance?.documentOptions.enableAssistiveMml)
-            addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        }
+        if (status.mathjax) addCustomElement(bundlerOptions, app, /^mjx-/);
+
         if (status.chart) {
           addViteOptimizeDepsExclude(
             bundlerOptions,
@@ -290,8 +282,14 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
-          // hide webpack warnings
+          // Hide webpack warnings
           chainWebpack(bundlerOptions, app, (config) => {
+            // TODO: Probably need to fix upstream
+            config.resolve.set("conditionNames", [
+              "browser",
+              "import",
+              "module",
+            ]);
             config.module.set("exprContextCritical", false);
             config.module.set("unknownContextCritical", false);
           });
@@ -299,7 +297,7 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (md): void => {
-        // behavior
+        // Behavior
         if (status.breaks) md.options.breaks = true;
         if (status.linkify) md.options.linkify = true;
 
@@ -333,7 +331,7 @@ export const mdEnhancePlugin =
         // @ts-expect-error
         if (options.card && legacy) md.use(legacyCard);
 
-        // additional functions
+        // Additional functions
         if (
           options.vPre ||
           // TODO: Remove this in v2 stable
@@ -345,7 +343,7 @@ export const mdEnhancePlugin =
           md.use(katex, katexOptions);
         } else if (status.mathjax) {
           md.use(mathjax, mathjaxInstance!);
-          // reset after each render
+          // Reset after each render
           md.use((md) => {
             const originalRender = md.render.bind(md);
 
@@ -377,7 +375,7 @@ export const mdEnhancePlugin =
               env.frontmatter?.["stylize"] || null,
           });
 
-        // features
+        // Features
         if (options.codetabs) {
           md.use(codeTabs);
           // TODO: Remove this in v2 stable

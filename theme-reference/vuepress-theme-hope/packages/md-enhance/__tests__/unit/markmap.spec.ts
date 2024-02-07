@@ -1,6 +1,6 @@
+import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
-import { atou } from "vuepress-shared";
 
 import { markmap } from "../../src/node/markdown-it/markmap.js";
 
@@ -26,7 +26,7 @@ markmap:
 - \`inline code\`
 -
     \`\`\`js
-    console.log('code block');
+    const a = 1;
     \`\`\`
 - Katex
   - $x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$
@@ -47,7 +47,7 @@ ${content}
       /<MarkMap id="markmap-\d+" content=".*?"><\/MarkMap>/,
     );
     expect(
-      atou(
+      decodeData(
         /<MarkMap id="markmap-\d+" content="(.*?)"><\/MarkMap>/.exec(
           renderResult,
         )?.[1] || "",

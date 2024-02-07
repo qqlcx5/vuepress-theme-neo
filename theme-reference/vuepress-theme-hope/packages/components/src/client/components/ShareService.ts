@@ -1,15 +1,16 @@
 /* eslint-disable vue/require-default-prop */
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { isArray, isLinkHttp, isString } from "@vuepress/shared";
+import {
+  endsWith,
+  isArray,
+  isLinkAbsolute,
+  isLinkHttp,
+  isString,
+  startsWith,
+} from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
-import {
-  Popup,
-  endsWith,
-  isAbsoluteUrl,
-  openPopupWindow,
-  startsWith,
-} from "vuepress-shared/client";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { Popup, openPopupWindow } from "vuepress-shared/client";
 
 import type { ShareServiceOptions } from "../../shared/share.js";
 import { getMetaContent } from "../utils/index.js";
@@ -24,7 +25,7 @@ const renderIcon = (content: string, contentClass = ""): VNode => {
   const className = ["vp-share-icon", contentClass];
 
   // is a link
-  if (isLinkHttp(content) || isAbsoluteUrl(content))
+  if (isLinkHttp(content) || isLinkAbsolute(content))
     return h("img", {
       class: className,
       src: content,
@@ -55,7 +56,7 @@ export default defineComponent({
     },
 
     /**
-     * is plain
+     * Whether use plain icon
      */
     plain: Boolean,
 

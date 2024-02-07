@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import type { PDFLocaleConfig } from "../../shared/locales.js";
 import { useSize } from "../composables/index.js";
@@ -87,7 +87,7 @@ export default defineComponent({
     noToolbar: Boolean,
 
     /**
-     * initial zoom level (in percent)
+     * Initial zoom level (in percent)
      *
      * 初始缩放比率 (百分比)
      */
@@ -102,7 +102,7 @@ export default defineComponent({
     const locales = useLocaleConfig(PDF_LOCALES);
 
     onMounted(() => {
-      viewPDF(getLink(props.url), el.value, {
+      viewPDF(getLink(props.url), el.value!, {
         title: props.title,
         hint: locales.value.hint,
         options: {

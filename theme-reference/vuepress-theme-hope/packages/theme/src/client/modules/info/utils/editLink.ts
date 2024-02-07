@@ -2,7 +2,7 @@ import {
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/shared";
+} from "@vuepress/helper/client";
 import type { RepoType } from "vuepress-shared/client";
 import { resolveRepoType } from "vuepress-shared/client";
 
@@ -42,12 +42,12 @@ export const resolveEditLink = ({
 
   return pattern
     .replace(
-      /:repo/,
+      /:repo/u,
       isLinkHttp(docsRepo) ? docsRepo : `https://github.com/${docsRepo}`,
     )
-    .replace(/:branch/, docsBranch)
+    .replace(/:branch/u, docsBranch)
     .replace(
-      /:path/,
+      /:path/u,
       removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`),
     );
 };

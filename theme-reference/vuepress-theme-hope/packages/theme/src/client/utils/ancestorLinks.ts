@@ -1,4 +1,4 @@
-import { removeEndingSlash } from "@vuepress/shared";
+import { removeEndingSlash } from "@vuepress/helper/client";
 
 export const getAncestorLinks = (
   path: string,
@@ -8,7 +8,7 @@ export const getAncestorLinks = (
   const result: { link: string; name: string }[] = [];
   let link = removeEndingSlash(routeLocale);
 
-  // generate links
+  // Generate links
   routePaths.forEach((name, index) => {
     if (index !== routePaths.length - 1) {
       link += `${name}/`;

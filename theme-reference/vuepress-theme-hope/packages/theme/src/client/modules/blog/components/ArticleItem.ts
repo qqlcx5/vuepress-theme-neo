@@ -1,7 +1,6 @@
-import { withBase } from "@vuepress/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, toRef } from "vue";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink, withBase } from "vuepress/client";
 
 import {
   SlideIcon,
@@ -94,7 +93,7 @@ export default defineComponent({
                 : []),
             sticky ? h(StickyIcon) : null,
             h(
-              VPLink,
+              RouteLink,
               { to: props.path },
               () =>
                 slots.title?.({ title, isEncrypted, type }) ||

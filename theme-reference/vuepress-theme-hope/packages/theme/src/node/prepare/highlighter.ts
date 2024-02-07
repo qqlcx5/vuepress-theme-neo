@@ -1,6 +1,6 @@
-import type { App } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
-import { isPlainObject } from "vuepress-shared/node";
+import { isPlainObject } from "@vuepress/helper";
+import type { App } from "vuepress/core";
+import { colors } from "vuepress/utils";
 
 import type {
   PluginsOptions,

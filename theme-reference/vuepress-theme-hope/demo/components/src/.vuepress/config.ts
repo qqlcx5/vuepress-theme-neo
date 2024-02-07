@@ -1,7 +1,7 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { addViteSsrNoExternal } from "@vuepress/helper";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { componentsPlugin } from "vuepress-plugin-components";
-import { addViteSsrNoExternal } from "vuepress-shared";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
 
@@ -38,10 +38,6 @@ export default defineUserConfig({
       "/demo/xi-gua",
       "/demo/you-tube",
     ],
-
-    themePlugins: {
-      backToTop: false,
-    },
   }),
 
   extendsBundlerOptions: (bundlerOptions, app) => {
@@ -80,7 +76,6 @@ export default defineUserConfig({
       },
 
       rootComponents: {
-        backToTop: true,
         notice: [
           {
             match: /^\/$/,

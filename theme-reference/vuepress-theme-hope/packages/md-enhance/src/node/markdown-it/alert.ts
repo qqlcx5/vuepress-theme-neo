@@ -1,14 +1,13 @@
 import { alert as _alert } from "@mdit/plugin-alert";
-import type { MarkdownEnv } from "@vuepress/markdown";
-import { resolveLocalePath } from "@vuepress/shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
+import { ensureLeadingSlash } from "@vuepress/helper";
 import type { PluginWithOptions } from "markdown-it";
-import type { RequiredLocaleConfig } from "vuepress-shared/node";
-import { ensureLeadingSlash } from "vuepress-shared/node";
+import type { MarkdownEnv } from "vuepress/markdown";
+import { resolveLocalePath } from "vuepress/shared";
 
 import type { MarkdownAlertLocaleData } from "../typings/index.js";
 
-export type MarkdownItAlertOptions =
-  RequiredLocaleConfig<MarkdownAlertLocaleData>;
+export type MarkdownItAlertOptions = ExactLocaleConfig<MarkdownAlertLocaleData>;
 
 export const alert: PluginWithOptions<MarkdownItAlertOptions> = (
   md,

@@ -1,11 +1,11 @@
+import { isString } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
   withBase,
-} from "@vuepress/client";
-import type { SlotsType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
-import { isString } from "vuepress-shared/client";
+} from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";

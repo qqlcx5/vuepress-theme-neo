@@ -16,8 +16,7 @@ Vercel address
 
 You can directly configure serializable options in the plugin options:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { commentPlugin } from "vuepress-plugin-comment2";
 
@@ -36,9 +35,8 @@ export default defineUserConfig({
 
 You can use the `defineTwikooConfig` function to customize Twikoo:
 
-```ts
-// .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
 import { defineTwikooConfig } from "vuepress-plugin-comment2/client";
 
 defineTwikooConfig({

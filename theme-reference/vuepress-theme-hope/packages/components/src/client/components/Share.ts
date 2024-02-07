@@ -1,8 +1,8 @@
-import type { PageData } from "@vuepress/client";
-import { usePageData } from "@vuepress/client";
+import { isFunction, isPlainObject, isString } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { isFunction, isPlainObject, isString } from "vuepress-shared/client";
+import type { PageData } from "vuepress/client";
+import { usePageData } from "vuepress/client";
 
 import ShareService from "./ShareService.js";
 import type { ShareServiceOptions } from "../../shared/share.js";
@@ -104,7 +104,7 @@ export default defineComponent({
               : null
             : shareServices.find(({ name }) => name === item),
         )
-        .filter((item): item is ShareServiceOptions => item != null);
+        .filter((item): item is ShareServiceOptions => Boolean(item));
     });
 
     const shareData = computed(() => {

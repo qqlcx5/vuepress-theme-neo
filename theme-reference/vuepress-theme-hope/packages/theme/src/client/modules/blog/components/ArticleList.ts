@@ -8,7 +8,7 @@ import {
   ref,
   watch,
 } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
@@ -62,8 +62,8 @@ export default defineComponent({
       const query = { ...route.query };
 
       const needUpdate = !(
-        query["page"] === page.toString() || // page equal as query
-        // page is 1 and query is empty
+        query["page"] === page.toString() || // Page equal as query
+        // Page is 1 and query is empty
         (page === 1 && !query["page"])
       );
 
@@ -87,12 +87,10 @@ export default defineComponent({
     onMounted(() => {
       const { page } = route.query;
 
-      console.log("mounted");
-
       void updatePage(page ? Number(page) : 1);
 
       watch(currentPage, () => {
-        // list top border distance
+        // List top border distance
         const distance =
           document.querySelector("#article-list")!.getBoundingClientRect().top +
           window.scrollY;

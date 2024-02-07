@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { ThemePageFrontmatter } from "../../shared/index.js";
@@ -99,7 +99,7 @@ export const convertFrontmatter = (
       frontmatter["layout"] = "BlogHome";
     }
 
-    // check project homepage
+    // Check project homepage
     if (!("layout" in frontmatter))
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
         ([deprecatedOption, newOption]) =>

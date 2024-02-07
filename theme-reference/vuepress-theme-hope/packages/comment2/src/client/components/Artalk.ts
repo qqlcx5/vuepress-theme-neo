@@ -1,4 +1,4 @@
-import { usePageData, useSiteData } from "@vuepress/client";
+import { isString } from "@vuepress/helper/client";
 import type Artalk from "artalk";
 import type { VNode } from "vue";
 import {
@@ -11,7 +11,8 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon, isString } from "vuepress-shared/client";
+import { usePageData, useSiteData } from "vuepress/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useArtalkOptions } from "../helpers/index.js";
 
@@ -75,7 +76,7 @@ export default defineComponent({
       });
 
       if (artalkOptions.useBackendConf)
-        artalk.on("conf-loaded", () => {
+        artalk.on("mounted", () => {
           artalk!.setDarkMode(props.darkmode);
         });
     };

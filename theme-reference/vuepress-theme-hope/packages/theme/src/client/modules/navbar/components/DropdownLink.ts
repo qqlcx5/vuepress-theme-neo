@@ -1,6 +1,6 @@
-import { usePageData } from "@vuepress/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, ref, toRef, watch } from "vue";
+import { usePageData } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
@@ -98,7 +98,7 @@ export default defineComponent({
                                 config: child as AutoLinkType,
                                 onFocusout: () => {
                                   if (
-                                    // no children
+                                    // No children
                                     child.children.length === 0 &&
                                     isLastChild
                                   )
@@ -118,7 +118,7 @@ export default defineComponent({
                                 config: grandchild,
                                 onFocusout: () => {
                                   if (
-                                    // last item of grandchild
+                                    // Last item of grandchild
                                     grandIndex === child.children.length - 1 &&
                                     isLastChild
                                   )

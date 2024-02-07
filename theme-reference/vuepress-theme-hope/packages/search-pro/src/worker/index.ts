@@ -1,6 +1,6 @@
+import { entries, fromEntries } from "@vuepress/helper/client";
 import type { IndexObject } from "slimsearch";
 import { loadIndex } from "slimsearch";
-import { entries, fromEntries } from "vuepress-shared/client";
 
 import type { MessageData } from "../client/typings/index.js";
 import { getResults } from "../client/worker/result.js";
@@ -14,11 +14,11 @@ const searchIndex: SearchIndexStore = fromEntries(
     ([localePath, index]) => [
       localePath,
       loadIndex<IndexItem, string>(index, {
-        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+        fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
         storeFields: [
-          /** heading */ "h",
-          /** text */ "t",
-          /** customFields */ "c",
+          /** Heading */ "h",
+          /** Text */ "t",
+          /** CustomFields */ "c",
         ],
       }),
     ],

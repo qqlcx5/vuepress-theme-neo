@@ -47,8 +47,7 @@ npm i -D vuepress-plugin-append-date
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { appendDatePlugin } from "vuepress-plugin-append-date";
 
 export default {
@@ -62,8 +61,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { appendDatePlugin } from "vuepress-plugin-append-date";
 
 export default {
@@ -93,4 +91,4 @@ Frontmatter key to use when appending date.
 
 Format of the date value when appending date.
 
-[git]: https://vuejs.press/reference/plugin/git.html
+[git]: https://ecosystem.vuejs.press/plugins/git.html

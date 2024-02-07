@@ -1,5 +1,5 @@
-import { colors } from "@vuepress/utils";
-import { isArray, isPlainObject, isString } from "vuepress-shared/node";
+import { isArray, isPlainObject, isString } from "@vuepress/helper";
+import { colors } from "vuepress/utils";
 
 import { deprecatedLogger } from "./utils.js";
 import type {

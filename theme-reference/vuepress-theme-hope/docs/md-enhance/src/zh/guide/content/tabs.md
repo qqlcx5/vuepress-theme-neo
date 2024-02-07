@@ -13,8 +13,7 @@ icon: table-columns
 
 @tab TS
 
-```ts {8}
-// .vuepress/config.ts
+```ts {8} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -29,8 +28,7 @@ export default {
 
 @tab JS
 
-```js {8}
-// .vuepress/config.js
+```js {8} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -128,7 +126,8 @@ npm 应该与 Node.js 被一同安装。
 @tab pnpm
 
 ```bash
-corepack prepare pnpm@latest --activated
+corepack enable
+corepack use pnpm@8
 ```
 
 :::

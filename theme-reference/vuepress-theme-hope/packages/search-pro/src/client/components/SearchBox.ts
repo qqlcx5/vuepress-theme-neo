@@ -1,12 +1,8 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, inject, onMounted, ref } from "vue";
-import {
-  checkIsIOS,
-  checkIsMacOS,
-  checkIsiPad,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import { checkIsIOS, checkIsMacOS, checkIsiPad } from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/index.js";
@@ -42,12 +38,14 @@ export default defineComponent({
 
     useEventListener("keydown", (event: KeyboardEvent): void => {
       if (
-        // not active
+        // Not active
         !isActive.value &&
-        // key matches
+        // Key matches
         isKeyMatched(event) &&
-        // event does not come from the search box itself or
-        // user isn't focusing (and thus perhaps typing in) a text control
+        /*
+         * Event does not come from the search box itself or
+         * user isn't focusing (and thus perhaps typing in) a text control
+         */
         !isFocusingTextControl(event.target as EventTarget)
       ) {
         event.preventDefault();

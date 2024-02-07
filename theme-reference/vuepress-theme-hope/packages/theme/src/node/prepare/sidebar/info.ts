@@ -1,6 +1,7 @@
-import type { Page } from "@vuepress/core";
-import { sanitizeFileName } from "@vuepress/utils";
-import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
+import { startsWith } from "@vuepress/helper";
+import type { Page } from "vuepress/core";
+import { sanitizeFileName } from "vuepress/utils";
+import { getTitleFromFilename } from "vuepress-shared/node";
 
 import type { StructureInfo } from "./structure.js";
 import { getStructureInfo } from "./structure.js";
@@ -164,7 +165,6 @@ const getSidebarInfoFromStructure = (
     title: getTitleFromFilename(info.dirname),
     order: null,
 
-    // generate information
     // group information
     groupInfo: {
       collapsible: true,

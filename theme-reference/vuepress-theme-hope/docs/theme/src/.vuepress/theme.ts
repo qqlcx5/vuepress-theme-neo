@@ -1,5 +1,7 @@
-import { getDirname, theme, path } from "docs-shared";
+import { theme } from "docs-shared";
+import { getDirname, path } from "vuepress/utils";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
+
 import { enNavbarConfig, zhNavbarConfig } from "./navbar/index.js";
 import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
 
@@ -7,7 +9,7 @@ const __dirname = getDirname(import.meta.url);
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme(
   "theme",
   {
@@ -38,7 +40,9 @@ export default theme(
 
     encrypt: {
       config: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/demo/encrypt.html": "1234",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/zh/demo/encrypt.html": "1234",
       },
     },
@@ -190,7 +194,13 @@ export default theme(
         stylize: [
           {
             matcher: "Recommended",
-            replacer: ({ tag }) => {
+            replacer: ({
+              tag,
+            }): {
+              tag: string;
+              attrs: Record<string, string>;
+              content: string;
+            } | void => {
               if (tag === "em")
                 return {
                   tag: "Badge",

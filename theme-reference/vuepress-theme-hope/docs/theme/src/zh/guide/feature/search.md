@@ -38,7 +38,7 @@ tag:
        "https://YOUR_WEBSITE_URL/",
      ],
      sitemaps: [
-       // 如果你在使用 Sitemap 插件 (如: vuepress-plugin-sitemap2)，你可以提供 Sitemap 链接
+       // 如果你在使用 Sitemap 插件 (如: @vuepress/plugin-sitemap)，你可以提供 Sitemap 链接
        "https://YOUR_WEBSITE_URL/sitemap.xml",
      ],
      ignoreCanonicalTo: false,
@@ -191,8 +191,7 @@ tag:
 
    @tab TS
 
-   ```ts {8-11}
-   // .vuepress/config.ts
+   ```ts {8-11} title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -210,8 +209,7 @@ tag:
 
    @tab JS
 
-   ```js {8-11}
-   // .vuepress/config.js
+   ```js {8-11} title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -269,8 +267,7 @@ tag:
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -288,8 +285,7 @@ tag:
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -347,8 +343,7 @@ tag:
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -366,8 +361,7 @@ tag:
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -391,5 +385,5 @@ tag:
 
 :::
 
-[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
-[search]: https://vuejs.press/zh/reference/plugin/search.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[search]: https://ecosystem.vuejs.press/zh/plugins/search.html

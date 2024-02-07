@@ -1,5 +1,6 @@
-import { Content } from "@vuepress/client";
-import { h, type FunctionalComponent } from "vue";
+import type { FunctionalComponent } from "vue";
+import { h } from "vue";
+import { Content } from "vuepress/client";
 
 const Snippet: FunctionalComponent = () => h(Content);
 

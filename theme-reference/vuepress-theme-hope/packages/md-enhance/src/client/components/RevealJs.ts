@@ -1,4 +1,4 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { decodeData } from "@vuepress/helper/client";
 import type Reveal from "reveal.js/dist/reveal.esm.js";
 import type { PropType, VNode } from "vue";
 import {
@@ -9,7 +9,8 @@ import {
   ref,
   shallowRef,
 } from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { usePageFrontmatter } from "vuepress/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useRevealJs } from "@temp/md-enhance/revealjs-plugins.js";
 
@@ -91,8 +92,6 @@ export default defineComponent({
         ...(frontmatter.value.revealJs || {}),
         embedded: frontmatter.value.layout !== "Slide",
         markdown: {
-          // FIXME: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/67226
-          // @ts-ignore
           separator: "^\r?\\n---\r?\n$",
           // @ts-ignore
           verticalSeparator: "^\r?\n--\r?\n$",
@@ -114,7 +113,7 @@ export default defineComponent({
       const container = presentationContainer.value;
 
       if (container) {
-        code.value = atou(props.code);
+        code.value = decodeData(props.code);
 
         container.setAttribute("id", props.id);
         container.setAttribute("data-theme", props.theme);

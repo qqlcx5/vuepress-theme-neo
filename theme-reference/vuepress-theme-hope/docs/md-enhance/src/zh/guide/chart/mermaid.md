@@ -43,8 +43,7 @@ npm i -D mermaid
 
 @tab TS
 
-```ts {8}
-// .vuepress/config.ts
+```ts {8} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -59,8 +58,7 @@ export default {
 
 @tab JS
 
-```js {8}
-// .vuepress/config.js
+```js {8} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -124,9 +122,8 @@ export default {
 
 你可以在[客户端配置文件][client-config]中导入并使用 `defineMermaidConfig` 来自定义 Mermaid 配置:
 
-```ts
-// .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
 import { defineMermaidConfig } from "vuepress-plugin-md-enhance/client";
 
 defineMermaidConfig({
@@ -406,12 +403,6 @@ root((VuePress))
     Plugins
       (components)
       (md-enhance)
-      (photo-swipe)
-      (copy-code2)
-      (copyright2)
-      (feed2)
-      (sitemap2)
-      (seo2)
 ```
 
 :::
@@ -553,6 +544,22 @@ x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
 y-axis "Revenue (in $)" 4000 --> 11000
 bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
+
+:::
+
+::: md-demo 块图
+
+```block
+columns 3
+前端 blockArrowId6<[" "]>(right) 后端
+space:2 down<[" "]>(down)
+硬盘 left<[" "]>(left) Database[("数据库")]
+
+classDef front fill:#696,stroke:#333;
+classDef back fill:#969,stroke:#333;
+class Frontend front
+class Backend,Database back
 ```
 
 :::

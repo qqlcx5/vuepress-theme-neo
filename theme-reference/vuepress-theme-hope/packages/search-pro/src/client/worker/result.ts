@@ -1,6 +1,6 @@
+import { entries } from "@vuepress/helper/client";
 import type { MatchInfo, SearchIndex } from "slimsearch";
 import { getStoredFields, search } from "slimsearch";
-import { entries } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
 import { getSearchOptions } from "./utils.js";
@@ -55,9 +55,9 @@ export const getResults = (
     query,
     getSearchOptions({
       boost: {
-        [/** heading */ "h"]: 2,
-        [/** text */ "t"]: 1,
-        [/** customFields */ "c"]: 4,
+        [/** Heading */ "h"]: 2,
+        [/** Text */ "t"]: 1,
+        [/** CustomFields */ "c"]: 4,
       },
       ...searchOptions,
     }),
@@ -67,7 +67,8 @@ export const getResults = (
     const { id, terms, score } = result;
     const isCustomField = id.includes("@");
     const isSection = id.includes("#");
-    const [key, info] = id.split(/[#@]/);
+    const [pageIndex, info] = id.split(/[#@]/);
+    const pageId = Number(pageIndex);
 
     const displayTerms = terms
       .sort((a, b) => a.length - b.length)
@@ -75,7 +76,7 @@ export const getResults = (
         terms.slice(index + 1).every((term) => !term.includes(item)),
       );
 
-    const { contents } = (resultMap[key] ??= {
+    const { contents } = (resultMap[pageId] ??= {
       title: "",
       contents: [],
     });
@@ -85,7 +86,7 @@ export const getResults = (
       contents.push([
         {
           type: "customField",
-          key: key,
+          id: pageId,
           index: info,
           display: displayTerms
             .map((term) =>
@@ -107,14 +108,14 @@ export const getResults = (
         contents.push([
           <TitleMatchedItem | HeadingMatchedItem>{
             type: isSection ? "heading" : "title",
-            key: key,
+            id: pageId,
             ...(isSection && { anchor: info }),
             display: headerContent,
           },
           score,
         ]);
 
-      if (/** text */ "t" in result)
+      if (/** Text */ "t" in result)
         for (const text of result.t) {
           const matchedContent = displayTerms
             .map((term) => getMatchedContent(text, term))
@@ -124,7 +125,7 @@ export const getResults = (
             contents.push([
               {
                 type: "text",
-                key,
+                id: pageId,
                 ...(isSection && { anchor: info }),
                 display: matchedContent,
               },
@@ -141,7 +142,7 @@ export const getResults = (
         : sortWithMax(valueA, valueB),
     )
     .map(([id, { title, contents }]) => {
-      // search to get title
+      // Search to get title
       if (!title) {
         const pageIndex = getStoredFields(
           localeIndex,

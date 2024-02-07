@@ -19,22 +19,26 @@ tag:
 
 例如:
 
-```js
+```ts title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
 export default {
-  plugins: [
-    mdEnhancePlugins({
-      checkLinks: {
-        // 仅在开发模式下检查链接
-        status: "dev",
-        ignore: [
-          // 忽略以 `/api/` 开头的链接
-          /^\/api\//,
-          // 忽略 `/playground.html`
-          "/playground.html",
-        ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        checkLinks: {
+          // 仅在开发模式下检查链接
+          status: "dev",
+          ignore: [
+            // 忽略以 `/api/` 开头的链接
+            /^\/api\//,
+            // 忽略 `/playground.html`
+            "/playground.html",
+          ],
+        },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 
@@ -56,7 +60,7 @@ export default {
 
 ## v-pre
 
-由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项 `vPre` 支持它。
+由于 VuePress2 已经移除了 V1 的 v-pre 容器，插件提供了一个选项 `vPre` 支持它。
 
 换言之当设置 `plugins.mdEnhance.vPre: true` 时，你可以在下面的容器中使用任何 Mustache 语法。
 

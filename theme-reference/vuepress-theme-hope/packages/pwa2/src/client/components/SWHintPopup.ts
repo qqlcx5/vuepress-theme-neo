@@ -1,6 +1,6 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { Transition, defineComponent, h, onMounted, ref } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "./icons.js";
 import { usePWAEvent } from "../composables/index.js";
@@ -36,7 +36,7 @@ export default defineComponent({
 
       event.on("updatefound", () => {
         void navigator.serviceWorker.getRegistration().then((registration) => {
-          // check whether a valid service worker is active
+          // Check whether a valid service worker is active
           if (registration && registration.active) enabled.value = true;
         });
       });

@@ -1,7 +1,7 @@
-import type { ThemeFunction } from "@vuepress/core";
-import { TEMPLATE_RENDERER_OUTLETS } from "@vuepress/utils";
+import { isPlainObject } from "@vuepress/helper";
 import { watch } from "chokidar";
-import { isPlainObject } from "vuepress-shared/node";
+import type { ThemeFunction } from "vuepress/core";
+import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
 
 import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
@@ -29,13 +29,14 @@ import type { HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER, VERSION } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
-export const hopeTheme =
-  (
-    options: ThemeOptions,
-    // TODO: Change default value in v2 stable
-    behavior: HopeThemeBehaviorOptions | boolean = true,
-  ): ThemeFunction =>
-  (app) => {
+export const hopeTheme = (
+  options: ThemeOptions,
+  // TODO: Change default value in v2 stable
+  behavior: HopeThemeBehaviorOptions | boolean = true,
+): ThemeFunction => {
+  checkVuePressVersion();
+
+  return (app) => {
     const behaviorOptions = isPlainObject(behavior)
       ? behavior
       : behavior
@@ -52,7 +53,6 @@ export const hopeTheme =
       hostname,
       iconAssets,
       iconPrefix,
-      backToTop,
       sidebarSorter,
       ...themeOptions
     } = behaviorOptions.compact
@@ -61,20 +61,11 @@ export const hopeTheme =
 
     if (behaviorOptions.compact) checkLegacyStyle(app);
 
-    checkVuePressVersion(app);
-
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
-    usePlugin(
-      app,
-      themeData,
-      plugins,
-      hotReload,
-      behaviorOptions,
-      behaviorOptions.compact,
-    );
+    usePlugin(app, themeData, plugins, hotReload, behaviorOptions);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
@@ -111,7 +102,7 @@ export const hopeTheme =
 
       onWatched: (app, watchers): void => {
         if (hotReload) {
-          // this ensure the page is generated or updated
+          // This ensures the page is generated or updated
           const structureSidebarWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
@@ -138,7 +129,6 @@ export const hopeTheme =
 
         // @ts-ignore
         {
-          backToTop,
           hostname,
           hotReload,
           iconAssets,
@@ -175,3 +165,4 @@ export const hopeTheme =
           : prepareBundleConfigFile(app, status),
     };
   };
+};

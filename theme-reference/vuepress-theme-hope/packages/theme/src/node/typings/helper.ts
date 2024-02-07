@@ -1,17 +1,17 @@
+import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
+import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
+import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
+import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
+import type { SeoPluginOptions } from "@vuepress/plugin-seo";
+import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { CommentOptions } from "vuepress-plugin-comment2";
-import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
-import type { CopyrightOptions } from "vuepress-plugin-copyright2";
-import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
-import type { SeoOptions } from "vuepress-plugin-seo2";
-import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
 import type {
-  BlogPluginOptions,
+  BlogOptions,
   NavbarOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
@@ -28,31 +28,35 @@ export type ThemeSidebarArrayHelper = Helper<SidebarArrayOptions>;
 
 export type ThemeSidebarObjectHelper = Helper<SidebarObjectOptions>;
 
-export type ThemeBlogPluginHelper = Helper<BlogPluginOptions | boolean>;
+export type ThemeBlogPluginHelper = Helper<BlogOptions | boolean>;
 
 export type ThemeCommentPluginHelper = Helper<CommentOptions | false>;
 
-export type ThemeCopyCodePluginHelper = Helper<CopyCodeOptions | false>;
+export type ThemeCopyCodePluginHelper = Helper<CopyCodePluginOptions | false>;
 
-export type ThemeCopyrightPluginHelper = Helper<CopyrightOptions | false>;
+export type ThemeCopyrightPluginHelper = Helper<CopyrightPluginOptions | false>;
 
 export type ThemeFeedPluginHelper = Helper<
-  Omit<FeedOptions, "hostname"> | false
+  Omit<FeedPluginOptions, "hostname"> | false
 >;
 
 export type ThemeGitPluginHelper = Helper<GitPluginOptions | false>;
 export type ThemeMdEnhancePluginHelper = Helper<MarkdownEnhanceOptions | false>;
 
-export type ThemePhotoSwipePluginHelper = Helper<PhotoSwipeOptions | false>;
+export type ThemePhotoSwipePluginHelper = Helper<
+  PhotoSwipePluginOptions | false
+>;
 
 export type ThemePWAPluginHelper = Helper<PWAOptions | false>;
 
-export type ThemeReadingTimePluginHelper = Helper<ReadingTimeOptions | false>;
+export type ThemeReadingTimePluginHelper = Helper<
+  ReadingTimePluginOptions | false
+>;
 
 export type ThemeSEOPluginHelper = Helper<
-  Omit<SeoOptions, "hostname" | "author"> | false
+  Omit<SeoPluginOptions, "hostname" | "author"> | false
 >;
 
 export type ThemeSitemapPluginHelper = Helper<
-  Omit<SitemapOptions, "hostname"> | false
+  Omit<SitemapPluginOptions, "hostname"> | false
 >;

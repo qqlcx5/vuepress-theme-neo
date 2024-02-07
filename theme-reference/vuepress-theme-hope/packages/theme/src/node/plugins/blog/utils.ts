@@ -1,6 +1,6 @@
-import type { Page } from "@vuepress/core";
+import { dateSorter } from "@vuepress/helper";
 import type { GitData } from "@vuepress/plugin-git";
-import { compareDate } from "vuepress-shared/node";
+import type { Page } from "vuepress/core";
 
 import type {
   ArticleInfo,
@@ -29,7 +29,7 @@ export const defaultPageSorter = (
   if (prevKey && !nextKey) return -1;
   if (!prevKey && nextKey) return 1;
 
-  return compareDate(
+  return dateSorter(
     pageA.routeMeta[ArticleInfoType.date],
     pageB.routeMeta[ArticleInfoType.date],
   );

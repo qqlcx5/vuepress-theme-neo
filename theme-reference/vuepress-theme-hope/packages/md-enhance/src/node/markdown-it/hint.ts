@@ -1,14 +1,13 @@
 import { container } from "@mdit/plugin-container";
-import type { MarkdownEnv } from "@vuepress/markdown";
-import { resolveLocalePath } from "@vuepress/shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
+import { ensureLeadingSlash } from "@vuepress/helper";
 import type { PluginWithOptions } from "markdown-it";
-import type { RequiredLocaleConfig } from "vuepress-shared/node";
-import { ensureLeadingSlash } from "vuepress-shared/node";
+import type { MarkdownEnv } from "vuepress/markdown";
+import { resolveLocalePath } from "vuepress/shared";
 
 import type { MarkdownHintLocaleData } from "../typings/index.js";
 
-export type MarkdownItHintOptions =
-  RequiredLocaleConfig<MarkdownHintLocaleData>;
+export type MarkdownItHintOptions = ExactLocaleConfig<MarkdownHintLocaleData>;
 
 export type MarkdownHintBoxName = keyof MarkdownHintLocaleData;
 
@@ -31,10 +30,10 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
       openRender: (tokens, index, _options, env: MarkdownEnv): string => {
         const token = tokens[index];
 
-        // resolve info (title)
+        // Resolve info (title)
         let info = token.info.trim().slice(name.length).trim();
 
-        // get locale
+        // Get locale
         if (!info) {
           const { filePathRelative } = env;
           const relativePath = ensureLeadingSlash(filePathRelative ?? "");
@@ -51,16 +50,16 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
     });
   });
 
-  // compact with @vuepress/theme-default
+  // Compact with @vuepress/theme-default
   md.use(container, {
     name: "danger",
     openRender: (tokens, index, _options, env: MarkdownEnv): string => {
       const token = tokens[index];
 
-      // resolve info (title)
+      // Resolve info (title)
       let info = token.info.trim().slice(6).trim();
 
-      // get locale
+      // Get locale
       if (!info) {
         const { filePathRelative } = env;
         const relativePath = ensureLeadingSlash(filePathRelative ?? "");
@@ -82,16 +81,16 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
       openRender: (tokens, index, _options, env: MarkdownEnv): string => {
         const token = tokens[index];
 
-        // resolve info (title)
+        // Resolve info (title)
         let info = token.info
           .trim()
           .slice(
-            // length of "details"
+            // Length of "details"
             7,
           )
           .trim();
 
-        // get locale
+        // Get locale
         if (!info) {
           const { filePathRelative } = env;
           const relativePath = ensureLeadingSlash(filePathRelative ?? "");

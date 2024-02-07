@@ -28,15 +28,14 @@ tag:
 
 你可以通过 `@vuepress/plugin-register-components` 插件来自动注册组件。
 
-插件的使用方法详见 [官方文档](https://vuejs.press/zh/reference/plugin/register-components.html)。
+插件的使用方法详见 [官方文档](https://ecosystem.vuejs.press/zh/plugins/register-components.html)。
 
 ### 通过 ClientConfigFile 注册
 
 你可以通过创建 `.vuepress/client.ts` 手动注册组件。
 
-```ts
-// .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
 import MyComponent from "./MyComponent.vue";
 
 export default defineClientConfig({

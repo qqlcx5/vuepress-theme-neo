@@ -1,12 +1,11 @@
-import type { PluginFunction } from "@vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
   addViteSsrNoExternal,
-  checkVersion,
-  getLocales,
-  useCustomDevServer,
-} from "vuepress-shared/node";
+  customizeDevServer,
+  getLocaleConfig,
+} from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { generateManifest, getManifest } from "./generateManifest.js";
@@ -23,7 +22,6 @@ export const pwaPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as PWAOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -46,7 +44,7 @@ export const pwaPlugin =
       name: PLUGIN_NAME,
 
       define: () => ({
-        PWA_LOCALES: getLocales({
+        PWA_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           default: pwaLocales,
@@ -61,16 +59,19 @@ export const pwaPlugin =
           "mitt",
           "register-service-worker",
         ]);
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
 
-        useCustomDevServer(bundlerOptions, app, {
+        customizeDevServer(bundlerOptions, app, {
           path: "/manifest.webmanifest",
           response: async (_, response) => {
             response.setHeader("Content-Type", "application/manifest+json");
 
             return JSON.stringify(await manifest);
           },
-          errMsg: "Unexpected manifest generate error",
+          errMsg: "Unexpected manifest generation error",
         });
       },
 

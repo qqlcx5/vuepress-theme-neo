@@ -1,7 +1,7 @@
-import type { MarkdownEnv } from "@vuepress/markdown";
 import { load } from "js-yaml";
 import type { Options, PluginSimple, Token } from "markdown-it";
 import type { RenderRule } from "markdown-it/lib/renderer.js";
+import type { MarkdownEnv } from "vuepress/markdown";
 
 import { stringifyProp } from "./utils.js";
 import { logger } from "../utils.js";
@@ -23,13 +23,13 @@ const getComponentRender =
       try {
         config = <unknown>JSON.parse(content);
       } catch (err) {
-        // do nothing
+        // Do nothing
       }
     else
       try {
         config = load(content);
       } catch (err) {
-        // do nothing
+        // Do nothing
       }
 
     if (config) return `<${name} v-bind='${stringifyProp(config)}' />`;
@@ -47,7 +47,7 @@ ${content}
 
 export const component: PluginSimple = (md) => {
   // Handle ```component  blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

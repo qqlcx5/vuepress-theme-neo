@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { getRealPath } from "vuepress-shared/node";
+import { getRealPath } from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 import type { LightGalleryPlugin } from "./options.js";
 

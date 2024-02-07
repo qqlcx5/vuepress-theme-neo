@@ -1,15 +1,14 @@
-import type { PluginFunction } from "@vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
-  checkInstalled,
-  checkVersion,
-  getLocales,
-} from "vuepress-shared/node";
+  getInstalledStatus,
+  getLocaleConfig,
+} from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
@@ -24,13 +23,12 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentPluginOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
     const pkg = getPackage(options.provider);
 
-    if (pkg && !checkInstalled(pkg, import.meta.url)) {
+    if (pkg && !getInstalledStatus(pkg, import.meta.url)) {
       logger.error(
         `Package ${pkg} is not installed, please install it manually!`,
       );
@@ -40,7 +38,7 @@ export const commentPlugin =
 
     const userWalineLocales =
       options.provider === "Waline"
-        ? getLocales({
+        ? getLocaleConfig({
             app,
             name: "waline",
             default: walineLocales,
@@ -48,7 +46,7 @@ export const commentPlugin =
           })
         : {};
 
-    // remove locales so that they won’t be injected in client twice
+    // Remove locales so that they won’t be injected in client twice
     if (options.provider === "Waline" && "locales" in options)
       delete options.locales;
 
@@ -106,7 +104,10 @@ export const commentPlugin =
           }
         }
 
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

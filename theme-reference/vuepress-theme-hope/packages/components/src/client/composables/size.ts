@@ -1,4 +1,4 @@
-import { isString } from "@vuepress/shared";
+import { isString } from "@vuepress/helper/client";
 import type { MaybeRef } from "@vueuse/core";
 import { useEventListener } from "@vueuse/core";
 import type { Ref, ShallowRef } from "vue";
@@ -54,9 +54,9 @@ export const useSize = <E extends HTMLElement>(
 
   onMounted(() => {
     updateHeight();
-    if (isRef(extraHeight)) watch(extraHeight, () => updateHeight());
-    useEventListener("orientationchange", () => updateHeight());
-    useEventListener("resize", () => updateHeight());
+    if (isRef(extraHeight)) watch(extraHeight, updateHeight);
+    useEventListener("orientationchange", updateHeight);
+    useEventListener("resize", updateHeight);
   });
 
   return {

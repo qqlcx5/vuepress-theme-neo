@@ -1,7 +1,6 @@
-import type { PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
-import { checkVersion } from "vuepress-shared/node";
+import type { PluginFunction } from "vuepress/core";
+import { getDirname, path } from "vuepress/utils";
 
 import { injectConfigModule } from "./inject.js";
 import type { SassPaletteOptions } from "./options.js";
@@ -19,8 +18,6 @@ const __dirname = getDirname(import.meta.url);
 export const sassPalettePlugin =
   (options: SassPaletteOptions): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
-
     if (app.env.isDebug) logger.info("Options:", options);
 
     const {

@@ -1,5 +1,5 @@
-import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default defineUserConfig({
@@ -17,7 +17,8 @@ export default defineUserConfig({
   plugins: [
     pwaPlugin({
       manifest: {
-        name: "vuepress-plugin-pwa2 ",
+        name: "vuepress-plugin-pwa2",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         short_name: "pwa2 demo",
         description: "PWA plugin demo for VuePress",
         orientation: "portrait-primary",

@@ -1,4 +1,4 @@
-import type { LocaleConfig } from "@vuepress/core";
+import type { LocaleConfig } from "vuepress/shared";
 
 import type {
   AttrsOptions,
@@ -273,7 +273,7 @@ export interface MarkdownEnhanceOptions {
   katex?:
     | (KatexOptions & {
         /**
-         * whether enable copy plugin
+         * Whether enable copy plugin
          *
          * @default false
          */

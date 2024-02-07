@@ -1,3 +1,4 @@
+import { decodeData } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Markmap } from "markmap-view";
 import type { VNode } from "vue";
@@ -9,7 +10,7 @@ import {
   ref,
   shallowRef,
 } from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import "../styles/markmap.scss";
 
@@ -53,26 +54,33 @@ export default defineComponent({
         import(/* webpackChunkName: "markmap" */ "markmap-lib"),
         import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
         import(/* webpackChunkName: "markmap" */ "markmap-view"),
-        // delay
+        // Delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(async ([{ Transformer }, { Toolbar }, { Markmap }]) => {
-        const transformer = new Transformer();
-        const { root } = transformer.transform(atou(props.content));
+      ]).then(
+        async ([{ Transformer }, { Toolbar }, { Markmap, deriveOptions }]) => {
+          const transformer = new Transformer();
+          const { frontmatter, root } = transformer.transform(
+            decodeData(props.content),
+          );
 
-        markupMap = Markmap.create(markmapSvg.value!);
+          markupMap = Markmap.create(
+            markmapSvg.value!,
+            deriveOptions(frontmatter?.markmap ?? {}),
+          );
 
-        const { el } = Toolbar.create(markupMap);
+          const { el } = Toolbar.create(markupMap);
 
-        markupMap.setData(root);
-        await markupMap.fit();
+          markupMap.setData(root);
+          await markupMap.fit();
 
-        el.style.position = "absolute";
-        el.style.bottom = "0.5rem";
-        el.style.right = "0.5rem";
+          el.style.position = "absolute";
+          el.style.bottom = "0.5rem";
+          el.style.right = "0.5rem";
 
-        markupWrapper.value!.append(el);
-        loading.value = false;
-      });
+          markupWrapper.value!.append(el);
+          loading.value = false;
+        },
+      );
     });
 
     onUnmounted(() => {

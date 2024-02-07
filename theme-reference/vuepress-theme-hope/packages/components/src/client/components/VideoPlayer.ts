@@ -1,4 +1,4 @@
-import { isArray } from "@vuepress/shared";
+import { isArray } from "@vuepress/helper/client";
 import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
@@ -121,7 +121,7 @@ export default defineComponent({
       try {
         player?.destroy();
       } catch (err: unknown) {
-        // do nothing
+        // Do nothing
       }
     });
 

@@ -13,8 +13,7 @@ tag:
 
 @tab TS
 
-```diff
-  // .vuepress/config.ts
+```diff title=".vuepress/config.ts"
 - import theme from "vuepress-theme-hope";
 + import { defineUserConfig } from "vuepress";
 + import { hopeTheme } from "vuepress-theme-hope";
@@ -35,8 +34,7 @@ tag:
 
 @tab JS
 
-```diff
-// .vuepress/config.js
+```diff title=".vuepress/config.js"
 - const { config } = require("vuepress-theme-hope");
 + import { hopeTheme } from "vuepress-theme-hope";
 
@@ -340,7 +338,7 @@ tag:
 
   - `plugins.mdEnhance.vPre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
+    VuePress 2 删除了以下容器支持，因此添加了此选项
 
     ```md
     ::: v-pre

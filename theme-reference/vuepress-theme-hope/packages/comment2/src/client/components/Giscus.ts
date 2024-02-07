@@ -1,6 +1,6 @@
-import { usePageLang } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { usePageLang } from "vuepress/client";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import type {
@@ -86,6 +86,7 @@ export default defineComponent({
 
   setup(props) {
     const giscusOptions = useGiscusOptions();
+    const lang = usePageLang();
 
     const enableGiscus = Boolean(
       giscusOptions.repo &&
@@ -99,11 +100,10 @@ export default defineComponent({
     const loaded = ref(false);
 
     const giscusLang = computed(() => {
-      const lang = usePageLang().value as GiscusLang;
+      if (SUPPORTED_LANGUAGES.includes(<GiscusLang>lang.value))
+        return lang.value;
 
-      if (SUPPORTED_LANGUAGES.includes(lang)) return lang;
-
-      const shortCode = lang.split("-")[0] as GiscusLang;
+      const shortCode = lang.value.split("-")[0] as GiscusLang;
 
       if (SUPPORTED_LANGUAGES.includes(shortCode)) return shortCode;
 

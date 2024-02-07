@@ -1,4 +1,4 @@
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { pageviewCount } from "@waline/client/pageview";
 import type { VNode } from "vue";
 import {
@@ -10,7 +10,8 @@ import {
   onMounted,
   watch,
 } from "vue";
-import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
+import { usePageFrontmatter, usePageLang } from "vuepress/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import type {
   CommentPluginFrontmatter,
@@ -59,7 +60,7 @@ export default defineComponent({
       return (
         // Enable in page
         Boolean(pageConfig) ||
-        // not disabled in anywhere
+        // Not disabled in anywhere
         (pluginConfig !== false && pageConfig !== false)
       );
     });

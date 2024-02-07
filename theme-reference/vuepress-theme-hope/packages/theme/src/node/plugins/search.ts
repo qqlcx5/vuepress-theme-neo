@@ -1,17 +1,17 @@
-import type { App, Page, Plugin } from "@vuepress/core";
-import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
-import type { SearchPluginOptions } from "@vuepress/plugin-search";
-import { colors } from "@vuepress/utils";
-import type { SearchProOptions } from "vuepress-plugin-search-pro";
 import {
   entries,
   fromEntries,
-  getLocales,
+  getLocaleConfig,
   getRootLangPath,
   isPlainObject,
   keys,
   startsWith,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
+import type { SearchPluginOptions } from "@vuepress/plugin-search";
+import type { App, Page, Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
+import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
 import type {
   PluginsOptions,
@@ -29,20 +29,20 @@ let cut: (content: string, strict?: boolean | undefined) => string[];
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 try {
   ({ searchPlugin } = await import("@vuepress/plugin-search"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 try {
   ({ searchProPlugin } = await import("vuepress-plugin-search-pro"));
   ({ cut } = await import("nodejs-jieba"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 const DOCSEARCH_ZH_LOCALES = {
@@ -137,12 +137,12 @@ export const getSearchPlugin = (
 
     return searchProPlugin({
       indexContent: true,
-      // add supports for category and tags
+      // Add supports for category and tags
       customFields: [
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
             page.frontmatter.category,
-          formatter: getLocales({
+          formatter: getLocaleConfig({
             app,
             name: "vuepress-theme-hope",
             default: fromEntries(
@@ -156,7 +156,7 @@ export const getSearchPlugin = (
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
             page.frontmatter.tag,
-          formatter: getLocales({
+          formatter: getLocaleConfig({
             app,
             name: "vuepress-theme-hope",
             default: fromEntries(

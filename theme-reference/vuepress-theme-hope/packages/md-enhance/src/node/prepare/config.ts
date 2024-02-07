@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { getRealPath, isPlainObject } from "vuepress-shared/node";
+import { getRealPath, isPlainObject } from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 import type { MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
@@ -209,7 +209,7 @@ app.component(
   return app.writeTemp(
     `md-enhance/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 ${Array.from(imports.values()).join("\n")}
 
 export default defineClientConfig({

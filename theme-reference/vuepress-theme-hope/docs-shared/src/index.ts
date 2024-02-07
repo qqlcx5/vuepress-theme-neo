@@ -1,4 +1,3 @@
-export { fs, getDirname, path } from "@vuepress/utils";
 export {
   addCustomElement,
   addViteConfig,
@@ -6,7 +5,7 @@ export {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
 export { navbar, sidebar } from "vuepress-theme-hope";
 export * from "./config-wrapper.js";
 export * from "./head.js";

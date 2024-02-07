@@ -1,10 +1,10 @@
-import type { App } from "@vuepress/core";
 import {
   addViteConfig,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 /**
  * @private
@@ -18,10 +18,11 @@ export const extendsBundlerOptions = (
       chunkSizeWarningLimit: 1024,
     },
   });
-  addViteOptimizeDepsInclude(bundlerOptions, app, "@vueuse/core");
+  addViteOptimizeDepsInclude(bundlerOptions, app, "@vueuse/core", true);
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
   addViteSsrNoExternal(bundlerOptions, app, [
+    "@vuepress/helper",
+    "@vuepress/plugin-reading-time",
     "vuepress-shared",
-    "vuepress-plugin-reading-time2",
   ]);
 };

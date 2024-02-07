@@ -1,3 +1,4 @@
+import { decodeData } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -10,7 +11,6 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { atou } from "vuepress-shared/client";
 
 import { getDarkmodeStatus } from "../utils/index.js";
 
@@ -50,7 +50,7 @@ export default defineComponent({
 
     const kotlinPlayground = shallowRef<HTMLDivElement>();
 
-    const files = computed(() => <string[]>JSON.parse(atou(props.files)));
+    const files = computed(() => <string[]>JSON.parse(decodeData(props.files)));
 
     const settings = computed(() => ({
       theme: isDarkmode.value ? "darcula" : "default",
@@ -70,7 +70,7 @@ export default defineComponent({
     onMounted(() => {
       isDarkmode.value = getDarkmodeStatus();
 
-      // watch darkmode change
+      // Watch darkmode change
       useMutationObserver(
         document.documentElement,
         () => {
@@ -108,7 +108,7 @@ export default defineComponent({
             },
             [
               h("pre", files.value[0]),
-              // hidden dependency
+              // Hidden dependency
               files.value.length > 1
                 ? files.value.map((content, index) =>
                     index === 0

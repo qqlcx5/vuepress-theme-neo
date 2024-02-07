@@ -1,7 +1,11 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -24,8 +28,9 @@ export const setupSidebarItems = (): void => {
   const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
   const themeLocale = useThemeLocaleData();
   const page = usePageData();
+  const routeLocale = useRouteLocale();
 
-  // get sidebar config from frontmatter > themeConfig
+  // Get sidebar config from frontmatter > themeConfig
   const sidebarConfig = computed(() =>
     frontmatter.value.home
       ? false
@@ -42,7 +47,13 @@ export const setupSidebarItems = (): void => {
       page.value.path,
       __VUEPRESS_DEV__ ? page.value.headers : null,
     ],
-    () => resolveSidebarItems(sidebarConfig.value, headerDepth.value),
+    () =>
+      resolveSidebarItems({
+        config: sidebarConfig.value,
+        routeLocale: routeLocale.value,
+        page: page.value,
+        headerDepth: headerDepth.value,
+      }),
   );
 
   provide(sidebarItemsSymbol, sidebarItems);

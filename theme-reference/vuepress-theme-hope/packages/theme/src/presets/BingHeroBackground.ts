@@ -1,4 +1,3 @@
-import { ClientOnly, usePageLang } from "@vuepress/client";
 import { onClickOutside, useStorage } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -10,6 +9,7 @@ import {
   ref,
   shallowRef,
 } from "vue";
+import { ClientOnly, usePageLang } from "vuepress/client";
 
 import "./bing-hero-background.scss";
 
@@ -40,10 +40,12 @@ const bingStorage = useStorage<{
 export default defineComponent({
   name: "BingHeroBackground",
 
-  // TODO: Add download button, image description and copyright information
-  // props: {
-  //   download: Boolean,
-  // },
+  /*
+   * TODO: Add download button
+   * props: {
+   *   download: Boolean,
+   * },
+   */
 
   setup() {
     const lang = usePageLang();
@@ -74,11 +76,11 @@ export default defineComponent({
       );
 
     const prev = (): void => {
-      bingStorage.value.index--;
+      bingStorage.value.index -= 1;
     };
 
     const next = (): void => {
-      bingStorage.value.index++;
+      bingStorage.value.index += 1;
     };
 
     onClickOutside(bingInfo, () => {

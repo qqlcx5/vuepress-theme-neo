@@ -77,9 +77,8 @@ tag:
   └── ...
   ```
 
-  ```ts
-  // .vuepress/config.ts
-  import { getDirname, path } from "@vuepress/utils";
+  ```ts title=".vuepress/config.ts"
+  import { getDirname, path } from "vuepress/utils";
 
   const __dirname = getDirname(import.meta.url);
 

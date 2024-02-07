@@ -1,9 +1,11 @@
-import { addViteSsrNoExternal, config, getDirname, path } from "docs-shared";
+import { addViteSsrNoExternal, config } from "docs-shared";
+import { getDirname, path } from "vuepress/utils";
+
 import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);
 
-// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
+// The config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config("components", {
   locales: {
     "/": {

@@ -12,9 +12,7 @@ tag:
 
 ## Original Intention
 
-VuePress default theme is just a theme to provide basic documentation layout. E.g.: it doesn't inject meta tags and generate Sitemap for SEO optimization. Besides, though VuePress has extended Markdown syntax to a certain extent, it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, code block copy, toc, etc.
-
-`vuepress-theme-hope` and related plugins were born under this situation.
+VuePress extends Markdown syntax to a certain extent, but it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, code block copy, toc, etc. Meanwhile, VuePress default theme is too simple and not powerful enough. `vuepress-theme-hope` and related plugins were born under this situation.
 
 We not only **greatly improve outlook** comparing to default theme, but also **provide a full range of enhancements for VuePress** with theme plugins.
 
@@ -157,43 +155,23 @@ The theme supports [blogging](../blog/intro.md), [with article list with sticky 
 
 The theme includes the following plugins, you can use them in other themes or directly.
 
-- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
-
-- <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Blog plugin for VuePress2
-
 - <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Comment and pageviews
 
 - <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provide some out of box plugins
 
-- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Provide copy button for code blocks
-
-- <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink>: Append copyright information when copying or disable copy and selection.
-
-- <ProjectLink name="feed2">vuepress-plugin-feed2</ProjectLink>: Feed support
-
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax
-
-- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Make the site's picture support click zoom
 
 - <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
 
-- <ProjectLink name="reading-time2">vuepress-plugin-reading-time2</ProjectLink>: Expect reading time and words count
-
 - <ProjectLink name="sass-palette">vuepress-plugin-sass-palette</ProjectLink>: Sass style plugin for all plugins and themes
-
-- <ProjectLink name="seo2">vuepress-plugin-seo2</ProjectLink>: SEO Enhancement Plugin
-
-- <ProjectLink name="sitemap2">vuepress-plugin-sitemap2</ProjectLink>: Sitemap plugin
 
 ::: tip
 
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
 
+- <ProjectLink name="append-date">vuepress-plugin-append-date</ProjectLink>: Append date to page frontmatter
+
 - <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
-
-- <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Redirect pages
-
-- <ProjectLink name="remove-pwa">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
 
 - <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
