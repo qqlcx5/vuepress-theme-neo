@@ -1,0 +1,91 @@
+@import "../_mixins";
+
+.pager {
+  @include content_wrapper;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  a {
+    color: var(--text-color);
+    border: 1px solid var(--c-border-sub);
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 20px 0;
+    max-width: 360px;
+    width: 96%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+
+    &.next {
+      grid-column: 2/3;
+      justify-self: end;
+    }
+
+    span {
+      font-weight: normal;
+      color: var(--c-text-sub);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    &:hover,
+    &:focus {
+      color: white;
+      background-color: var(--c-text-accent);
+      border: 1px solid var(--c-text-accent);
+      > span {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.postlist-wrapper .pager {
+  max-width: var(--homepage-width);
+
+  a {
+    max-width: 180px;
+  }
+
+  a.prev:before {
+    content: "← ";
+  }
+
+  a.next:after {
+    content: " →";
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .pager a {
+    padding: 15px 0;
+  }
+
+  .postlist-wrapper .pager {
+    margin-top: 50px;
+
+    a {
+      padding: 20px 0;
+    }
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .pager a {
+    padding: 12px 0;
+  }
+
+  .postlist-wrapper .pager {
+    padding: 1rem 0;
+  }
+}

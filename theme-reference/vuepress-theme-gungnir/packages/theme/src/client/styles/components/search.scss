@@ -1,0 +1,54 @@
+@import "../_variables";
+@import "../_mixins";
+
+// @renovamen/plugin-search
+.search-page {
+  @include transition(transform 0.25s);
+  @include transform(translateY(100%));
+}
+
+.gungnir-search-box {
+  input {
+    @include placeholde_text_color(var(--c-text-sub));
+  }
+  .suggestions {
+    @include hide_scrollbar;
+  }
+}
+
+// @vuepress/plugin-search
+.search-box {
+  input {
+    border-radius: 5px !important;
+    width: 0 !important;
+    cursor: pointer !important;
+
+    &:focus {
+      cursor: auto !important;
+      width: var(--search-input-width) !important;
+    }
+  }
+
+  .suggestions {
+    background: var(--c-bg) !important;
+    border-color: var(--c-border) !important;
+  }
+}
+
+.navbar.invert .search-box {
+  input {
+    color: white !important;
+    &:focus {
+      border-color: white !important;
+    }
+  }
+}
+
+.navbar.is-fixed .search-box {
+  input {
+    color: var(--search-text-color) !important;
+    &:focus {
+      border-color: var(--c-brand) !important;
+    }
+  }
+}

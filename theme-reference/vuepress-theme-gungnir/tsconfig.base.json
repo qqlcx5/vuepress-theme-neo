@@ -1,0 +1,12 @@
+{
+  "extends": "tsconfig-vuepress/base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["DOM", "ES2020"],
+    "moduleResolution": "Node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "target": "ES2020"
+  }
+}

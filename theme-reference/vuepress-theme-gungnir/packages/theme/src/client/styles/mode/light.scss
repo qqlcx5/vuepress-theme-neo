@@ -1,0 +1,133 @@
+@import "../_variables";
+
+:root {
+  // brand colors
+  --c-brand: #{$brandColor};
+
+  // background colors
+  --c-bg: #{$bgColor};
+  --c-bg-light: #{$bgColorLight};
+  --c-bg-lighter: #{$bgColorLighter};
+  --c-bg-transparent: #{$bgColorTransparent};
+  --c-bg-navbar: var(--c-bg-transparent);
+  --c-bg-sidebar: var(--c-bg);
+  --c-bg-arrow: #cccccc;
+
+  // text colors
+  --c-text: #{$textColor};
+  --c-text-accent: var(--c-brand);
+  --c-text-sub: #{$textColorSub};
+
+  // border colors
+  --c-border: #{$borderColor};
+  --c-border-sub: #{$borderColorSub};
+
+  // custom container colors
+  --c-info: #{$infoColor};
+  --c-tip: #{$tipColor};
+  --c-tip-title: #{$tipTitleColor};
+  --c-warning: #{$warningColor};
+  --c-warning-title: #{$warningTitleColor};
+  --c-danger: #{$dangerColor};
+  --c-danger-title: #{$dangerTitleColor};
+
+  // badge component colors
+  --c-badge-tip: var(--c-tip);
+  --c-badge-warning: var(--c-warning);
+  --c-badge-danger: var(--c-danger);
+
+  // transition vars
+  --t-color: 0.3s ease;
+  --t-transform: 0.3s ease;
+
+  // code blocks vars
+  --code-bg-color: #282c34;
+  --code-hl-bg-color: rgba(0, 0, 0, 0.66);
+  --code-ln-color: #9e9e9e;
+  --code-scroll-bar-color: #64748b;
+  --code-ln-wrapper-width: 3rem;
+  --inline-code-color: #{$inlineCodeText};
+  --inline-code-bg-color: #{$inlineCodeBg};
+
+  // image masks
+  --image-mask-color: transparent;
+
+  // shadows
+  --box-shadow: #{$boxShadow};
+  --box-shadow-hover: #{$boxShadowHover};
+  --box-shadow-inset: #{$boxShadowInset};
+
+  // font vars
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+  // layout vars
+  --navbar-height: 3.6rem;
+  --navbar-padding-v: 0.7rem;
+  --navbar-padding-h: 1.5rem;
+  --sidebar-width: 20rem;
+  --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
+  --content-width: 800px;
+  --homepage-width: 1126px;
+  --catalog-width: 13rem;
+}
+
+// plugin-medium-zoom
+.medium-zoom-overlay {
+  --medium-zoom-bg-color: var(--c-bg);
+}
+
+// plugin-nprogress
+#nprogress {
+  --nprogress-color: var(--c-brand);
+}
+
+// plugin-docsearch
+.DocSearch {
+  --docsearch-primary-color: var(--c-brand);
+  --docsearch-text-color: var(--c-text);
+  --docsearch-highlight-color: var(--c-brand);
+  --docsearch-muted-color: var(--c-text-sub);
+  --docsearch-container-background: rgba(9, 10, 17, 0.8);
+  --docsearch-modal-background: var(--c-bg-light);
+  --docsearch-searchbox-background: var(--c-bg-lighter);
+  --docsearch-searchbox-focus-background: var(--c-bg);
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--c-brand);
+  --docsearch-hit-color: var(--c-text-light);
+  --docsearch-hit-active-color: var(--c-bg);
+  --docsearch-hit-background: var(--c-bg);
+  --docsearch-hit-shadow: 0 1px 3px 0 var(--c-border);
+  --docsearch-footer-background: var(--c-bg);
+}
+
+// @vuepress/plugin-search
+.search-box {
+  --search-bg-color: transparent;
+  --search-accent-color: var(--c-brand);
+  --search-text-color: var(--c-text);
+  --search-border-color: transparent;
+  --search-item-text-color: var(--c-text-sub);
+  --search-item-focus-bg-color: var(--c-bg-lighter);
+}
+
+// @renovamen/plugin-search
+.search-page {
+  --search-bg-color: var(--c-bg);
+  --search-accent-color: var(--c-brand);
+  --search-text-color: var(--c-text);
+  --search-item-title-color: var(--c-text);
+  --search-item-subtitle-color: var(--c-text-sub);
+  --searc-page-z-index: 100;
+}
+
+// plugin-pwa-popup
+.pwa-popup {
+  --pwa-popup-z-index: 40;
+  --pwa-popup-text-color: var(--c-text);
+  --pwa-popup-bg-color: var(--c-bg-transparent);
+  --pwa-popup-border-color: var(--c-border-sub);
+  --pwa-popup-shadow: none;
+  --pwa-popup-btn-bg-color: #{$brandColor};
+  --pwa-popup-btn-hover-bg-color: rgba(55, 123, 181, 0.8);
+}

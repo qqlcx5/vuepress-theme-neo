@@ -1,0 +1,79 @@
+@import '../_variables';
+
+.post-wrapper {
+  position: relative;
+}
+
+.post-content .theme-gungnir-content {
+  h1 {
+    font-size: 50px
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 21px;
+  }
+
+  h5 {
+    font-size: 19px;
+    color: var(--c-text-sub);
+  }
+
+  h6 {
+    font-size: 16px;
+    color: var(--c-text-sub);
+  }
+
+  a.header-anchor {
+    opacity: 1;
+  }
+}
+
+@media (max-width: $MQLarge) {
+  .post-wrapper.show-catalog .post-content {
+    padding-right: calc(var(--catalog-width) + 1rem);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .post-content {
+    padding-right: 0 !important;
+
+    .theme-gungnir-content {
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 25px;
+      }
+      h3 {
+        font-size: 22px;
+      }
+      h4 {
+        font-size: 21px;
+      }
+      h5 {
+        font-size: 19px;
+      }
+      h6 {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "_variables";
+
+@mixin content_wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+
+  @media (max-width: $MQNarrow) {
+    padding: 2rem;
+  }
+
+  @media (max-width: $MQMobileNarrow) {
+    padding: 1rem;
+  }
+}
+
+@mixin post_header_wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 8rem 2.5rem 2rem;
+
+  @media (max-width: $MQNarrow) {
+    padding: 8rem 2rem 0;
+  }
+
+  @media (max-width: $MQMobileNarrow) {
+    padding: 6rem 1rem 0;
+  }
+}
+
+@mixin dropdown_wrapper {
+  transition: height 0.1s ease-out;
+  overflow: hidden;
+}
+
+@mixin transition($value) {
+  transition: $value;
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  -ms-transition: $value;
+}
+
+@mixin transform($value) {
+  transform: $value;
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -o-transform: $value;
+  -ms-transform: $value;
+}
+
+@mixin hide_scrollbar {
+  // Chrome, Safari
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  // IE
+  -ms-overflow-style: none;
+  // Firefox
+  scrollbar-width: none;
+}
+
+@mixin placeholde_text_color($value) {
+  &::-webkit-input-placeholder {
+    color: $value;
+  }
+  &::-moz-placeholder {
+    color: $value;
+  }
+  &:-moz-placeholder {
+    color: $value;
+  }
+  &:-ms-input-placeholder {
+    color: $value;
+  }
+}

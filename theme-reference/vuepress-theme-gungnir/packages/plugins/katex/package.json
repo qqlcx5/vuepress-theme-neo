@@ -1,0 +1,46 @@
+{
+  "name": "@renovamen/vuepress-plugin-katex",
+  "version": "2.0.0-alpha.26",
+  "description": "A plugin for adding KaTeX to VuePress 2.",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "LaTex",
+    "KaTeX",
+    "markdown"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/katex",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/katex"
+  },
+  "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.css\" lib"
+  },
+  "dependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@vuepress/client": "2.0.0-beta.49",
+    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/shared": "2.0.0-beta.49",
+    "@vuepress/utils": "2.0.0-beta.49",
+    "katex": "^0.16.0",
+    "markdown-it": "^13.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

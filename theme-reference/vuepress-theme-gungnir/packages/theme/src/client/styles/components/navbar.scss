@@ -1,0 +1,159 @@
+@import '../_variables';
+@import '../_mixins';
+
+.navbar {
+  --navbar-line-height: calc(
+    var(--navbar-height) - 2 * var(--navbar-padding-v)
+  );
+
+  padding: var(--navbar-padding-v) var(--navbar-padding-h);
+  line-height: var(--navbar-line-height);
+
+  .site-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--c-text);
+    position: relative;
+  }
+
+  .navbar-items-wrapper {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    top: var(--navbar-padding-v);
+    right: var(--navbar-padding-h);
+    height: var(--navbar-line-height);
+    padding-left: var(--navbar-padding-h);
+    white-space: nowrap;
+    font-size: 0.9rem;
+
+    .search-box {
+      flex: 0 0 auto;
+      vertical-align: top;
+    }
+  }
+
+  &.invert {
+    span.site-name,
+    .navbar-items .navbar-item > a,
+    .navbar-items .navbar-item span.title {
+      color: white;
+      &:hover, &:focus {
+        color: rgba(white, .8);
+      }
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .navbar {
+    .can-hide {
+      display: none;
+    }
+
+    .site-name {
+      width: calc(100vw - 9.4rem);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-left: -0.5rem;
+    }
+  }
+}
+
+/**
+ * navbar-items
+ */
+.navbar-items {
+  display: inline-block;
+  font-weight: 600;
+
+  a {
+    display: inline-block;
+    line-height: 1.4rem;
+    color: inherit;
+
+    &:hover,
+    &.router-link-active {
+      color: var(--c-text-accent);
+    }
+  }
+
+  .navbar-item {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+    line-height: var(--navbar-line-height);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .nav-icon {
+      position: relative;
+      display: inline-block;
+      margin-right: 4px;
+      width: 17px;
+      vertical-align: middle;
+      text-align: center;
+
+      .ov-icon {
+        width: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .navbar-items {
+    .navbar-item {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: $MQMobile) {
+  .navbar {
+    &.is-fixed {
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position: fixed;
+      top: calc(0rem - var(--navbar-height));
+      background-color: var(--c-bg-navbar);
+      border-bottom: 1px solid var(--c-border);
+      box-shadow: var(--box-shadow);
+
+      @include transition(transform .3s);
+
+      .navbar-item a, span.title, span.site-name {
+        color: var(--c-text) !important;
+        &:hover,
+        &:focus,
+        &.router-link-active {
+          color: var(--c-text-accent) !important;
+        }
+      }
+    }
+
+    &.is-visible {
+      @include transform(translateY(100%))
+    }
+  }
+
+  .navbar-items a {
+    &:hover,
+    &.router-link-active {
+      color: var(--c-text);
+    }
+  }
+
+  .navbar-item > a {
+    &:hover,
+    &.router-link-active {
+      color: var(--c-text-accent);
+    }
+  }
+}
+
+.DocSearch {
+  transition: background-color var(--t-color);
+}
