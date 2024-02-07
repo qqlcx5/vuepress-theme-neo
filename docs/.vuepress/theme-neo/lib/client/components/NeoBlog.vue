@@ -1,34 +1,17 @@
 <template>
     <main class="home-blog">
-        <div
-            class="hero"
-            :style="{ 'background-image': bgImagePath }"
-        >
-            <div
-                v-if="bgImageMask"
-                class="hero-mask"
-                :style="{ background: bgImageMask }"
-            />
+        <div class="hero" :style="{ 'background-image': bgImagePath }">
+            <div v-if="bgImageMask" class="hero-mask" :style="{ background: bgImageMask }" />
 
-            <div
-                class="hero-content"
-                :style="{ opacity: headerOpacity }"
-            >
-                <img
-                    class="hero-avatar hide-on-mobile no-zoom"
-                    :src="withBase(homeHeaderInfo.avatar)"
-                    alt="hero"
-                    @mouseover="fetchHitokoto"
-                />
+            <div class="hero-content" :style="{ opacity: headerOpacity }">
+                <img class="hero-avatar hide-on-mobile no-zoom" :src="withBase(homeHeaderInfo.avatar)" alt="hero"
+                    @mouseover="fetchHitokoto" />
 
-                <div
-                    v-if="hitokotoAPI"
-                    class="hero-bubble"
-                >
+                <div v-if="hitokotoAPI" class="hero-bubble">
                     <div class="hero-bubble__body">
                         <p>{{ hitokotoText }}</p>
                     </div>
-                    <div class="hero-bubble__tile" />
+                    <div class="hero-bubble__title" />
                 </div>
 
                 <div class="hero-info">
@@ -37,27 +20,14 @@
                         {{ homeHeaderInfo.description }}
                     </p>
                 </div>
-                <button
-                    class="hero-img-prev hide-on-mobile"
-                    @click="switchImage(-1)"
-                >
+                <button class="hero-img-prev hide-on-mobile" @click="switchImage(-1)">
                     <NeoIcon icon="neo-zuojiantou" size="26" />
                 </button>
-                <button
-                    class="hero-img-next hide-on-mobile"
-                    @click="switchImage(1)"
-                >
+                <button class="hero-img-next hide-on-mobile" @click="switchImage(1)">
                     <NeoIcon icon="neo-youjiantou" size="26" />
                 </button>
-                <span
-                    class="hero-arrow-down hide-on-mobile"
-                    @click="scrollToPost()"
-                >
-                    <NeoIcon
-                        icon="neo-xiangxiajiantou"
-                        size="60"
-                        color="rgba(255,255,255,0.8)"
-                    />
+                <span class="hero-arrow-down hide-on-mobile" @click="scrollToPost()">
+                    <NeoIcon icon="neo-xiangxiajiantou" size="60" color="rgba(255,255,255,0.8)" />
                 </span>
             </div>
         </div>
@@ -65,124 +35,116 @@
     </main>
     <NeoBlogLayout>
         <template #content-left>
-            <NeoPostList
-                mode="article"
-                :perPage="perPage"
-                :offsetTop="offsetTop"
-                :currentPage="currentPage"
-            />
-            <NeoPagination
-                :total="total"
-                :perPage="perPage"
-                :currentPage="currentPage"
-                @getCurrentPage="handlePagination"
-                v-show="Math.ceil(total / perPage) > 1"
-            />
+            <NeoPostList mode="article" :perPage="perPage" :offsetTop="offsetTop" :currentPage="currentPage" />
+            <NeoPagination :total="total" :perPage="perPage" :currentPage="currentPage" @getCurrentPage="handlePagination"
+                v-show="Math.ceil(total / perPage) > 1" />
         </template>
     </NeoBlogLayout>
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client'
-import { useRoute } from 'vue-router'
-import { computed, onMounted, ref, inject } from 'vue'
-import { useThemeLocaleData } from '../composables/neoIndex.js'
+import { withBase } from '@vuepress/client';
+import { useRoute } from 'vue-router';
+import { computed, onMounted, ref, inject } from 'vue';
+import { useThemeLocaleData } from '../composables/neoIndex.js';
 // @ts-ignore
-import NeoBubbles from '@theme/NeoBubbles.vue'
+import NeoBubbles from '@theme/NeoBubbles.vue';
 // @ts-ignore
-import NeoPostList from '@theme/NeoPostList.vue'
+import NeoPostList from '@theme/NeoPostList.vue';
 // @ts-ignore
-import NeoBlogLayout from '@theme/NeoBlogLayout.vue'
+import NeoBlogLayout from '@theme/NeoBlogLayout.vue';
 // @ts-ignore
-import NeoPagination from '@theme/NeoPagination.vue'
+import NeoPagination from '@theme/NeoPagination.vue';
 // @ts-ignore
-const sortPostsSymbol = inject('sortPostsSymbol').value
+const sortPostsSymbol = inject('sortPostsSymbol').value;
 
-const themeLocale = useThemeLocaleData()
-const bgImages = themeLocale.value.homeHeaderImages
+const themeLocale = useThemeLocaleData();
+const bgImages = themeLocale.value.homeHeaderImages;
 
-const bgImageIndex = ref(-1)
-const headerOpacity = ref(1)
+const bgImageIndex = ref(-1);
+const headerOpacity = ref(1);
 // -------- Pagination --------
-const route = useRoute()
-let total = ref(0) // 总长
-let perPage = ref(10) // 每页长
-let currentPage = ref(1) // 当前页
-let offsetTop = ref(0) // 一屏的高度
-total.value = sortPostsSymbol.length
+const route = useRoute();
+let total = ref(0); // 总长
+let perPage = ref(10); // 每页长
+let currentPage = ref(1); // 当前页
+let offsetTop = ref(0); // 一屏的高度
+total.value = sortPostsSymbol.length;
 function handlePagination(page) {
-    currentPage.value = page
+    currentPage.value = page;
 }
 // -------- Scroll --------
 const scrollToPost = () => {
     window.scrollTo({
         top: offsetTop.value,
         behavior: 'smooth',
-    })
-}
+    });
+};
 
 // -------- Hitokoto --------
-const hitokotoAPI = themeLocale.value?.homeHitokotoApi ?? true
-const hitokotoText = ref('正在加载一言...')
-let hasFetchedHitokoto = false
+const hitokotoAPI = themeLocale.value?.homeHitokotoApi ?? true;
+const hitokotoText = ref('正在加载一言...');
+let hasFetchedHitokoto = false;
 
 const fetchHitokoto = () => {
-    if (!hitokotoAPI || hasFetchedHitokoto) return
-    hasFetchedHitokoto = true
+    if (!hitokotoAPI || hasFetchedHitokoto) return;
+    hasFetchedHitokoto = true;
 
-    let api = hitokotoAPI
-    api = typeof api === 'string' ? api : 'https://v1.hitokoto.cn'
+    let api = hitokotoAPI;
+    api = typeof api === 'string' ? api : 'https://v1.hitokoto.cn';
     fetch(api)
         .then((response) => response.json())
         .then((data) => (hitokotoText.value = data.hitokoto))
         .catch((error) => {
-            console.log(`Get ${api} error: `, error)
-        })
-}
+            console.log(`Get ${api} error: `, error);
+        });
+};
 
 onMounted(() => {
-    fetchHitokoto()
+    fetchHitokoto();
     // -------- 刷新页面时，获取当前页 --------
-    let { p = 1 } = route.query
-    currentPage.value = Number(p)
+    let { p = 1 } = route.query;
+    currentPage.value = Number(p);
     // -------- 去除首页一屏的高度 --------
     offsetTop.value = (
         document.querySelector('.home-blog') as HTMLElement
-    )?.clientHeight
+    )?.clientHeight;
 
     if (bgImages && bgImages.length > 0)
-        bgImageIndex.value = Math.floor(Math.random() * bgImages.length)
-})
+        bgImageIndex.value = Math.floor(Math.random() * bgImages.length);
+});
 
 // -------- Header images --------
 
 const switchImage = (n: number) => {
-    if (!(bgImages && bgImages.length > 0)) return
-    const len = bgImages.length
-    bgImageIndex.value = (bgImageIndex.value + n + len) % len
-}
+    if (!(bgImages && bgImages.length > 0)) return;
+    const len = bgImages.length;
+    bgImageIndex.value = (bgImageIndex.value + n + len) % len;
+};
 
 const bgImagePath = computed(() => {
     return bgImages && bgImages.length > 0 && bgImageIndex.value !== -1
         ? `url(${withBase(bgImages[bgImageIndex.value].path)})`
-        : 'none'
-})
+        : 'none';
+});
 
 const bgImageMask = computed(() => {
     return bgImages && bgImages.length > 0 && bgImageIndex.value !== -1
         ? bgImages[bgImageIndex.value].mask
-        : null
-})
+        : null;
+});
 
 // -------- Other configs --------
 
-const homeHeaderInfo = themeLocale.value.homeHeaderInfo
+const homeHeaderInfo = themeLocale.value.homeHeaderInfo;
 </script>
 <style lang="scss" scoped>
 @import '../styles/_variables';
+
 .home-blog {
     padding: 0;
     margin: 0 auto;
+
     .hero {
         margin: 0 auto;
         position: relative;
@@ -219,14 +181,17 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                 padding: 5px;
                 border-radius: 100%;
                 box-shadow: inset 0 0 10px #000;
+
                 &:hover {
                     transform: rotate(360deg);
                     transition: all ease 1s;
                 }
-                &:hover + .hero-bubble {
+
+                &:hover+.hero-bubble {
                     opacity: 1;
                 }
             }
+
             @keyframes bounce-down {
                 from {
                     transform: translateY(-5px);
@@ -258,6 +223,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                     min-height: 80px;
                     background: rgba(0, 0, 0, 0.5);
                     border-radius: 10px;
+
                     p {
                         font-size: 15px;
                         padding: 10px 20px;
@@ -266,7 +232,8 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                         line-height: 1.7;
                     }
                 }
-                &__tile {
+
+                &__title {
                     position: absolute;
                     content: '';
                     margin-left: -23px;
@@ -299,6 +266,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                     line-height: 20px;
                     margin-top: 0;
                 }
+
                 p {
                     font-size: 18px;
                     font-weight: 300;
@@ -330,10 +298,12 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                     background-color: rgba(0, 0, 0, 0.6);
                 }
             }
+
             .hero-img-prev {
                 left: 0;
                 border-radius: 0 3px 3px 0;
             }
+
             .hero-img-next {
                 right: 0;
                 border-radius: 3px 0 0 3px;
@@ -344,7 +314,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                 bottom: 20px;
                 left: 50%;
                 margin-left: -12px;
-                  cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+                cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
 
                 .font-icon {
                     width: 30px;
@@ -373,18 +343,22 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
         .hide-on-mobile {
             display: none;
         }
+
         .hero {
             height: auto !important;
             padding: 150px 0;
+
             .hero-info {
                 background: transparent !important;
                 width: auto !important;
                 position: relative !important;
+
                 &__text h1 {
                     font-size: 80px !important;
                 }
             }
         }
+
         .home-blog-wrapper {
             padding: 0 13px 0 14px;
         }
@@ -394,9 +368,11 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
 @media (max-width: $MQMobile) {
     .home-blog .hero {
         padding: 80px 0 60px;
+
         .hero-mask {
             height: calc(100% + 1.2rem);
         }
+
         .hero-info__text h1 {
             font-size: 50px !important;
         }

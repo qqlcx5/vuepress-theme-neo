@@ -15,7 +15,7 @@ export default {
         bolgCreateAt: '2023-01-01',
     },
     fontIcon: {
-        assets: 'iconfont', // 字体图标的地址
+        assets: 'iconfont', // 字体图标的地址 
         prefix: 'iconfont ' // 字体图标的前缀
     },
     // 别名配置
@@ -41,9 +41,27 @@ export default {
         description: 'いつか、私がヒトじゃなくなっても、この星は燃え尽きることはない。', // 个人介绍下面的描述
     },
     // 文章页面中风格和背景图
-    contentStyle: 'style1',
+    contentStyle: 'color', // 文章页面的风格 color | image | titleImage
     contentBackground: '#fff',
-    contentImages: [],
+    contentImages: [
+        {
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/3.jpg',
+            mask: 'rgba(65, 60, 55, .2)',
+            opacity: 0.5
+        },
+        {
+            path: 'https://temporaryx.oss-cn-hongkong.aliyuncs.com/1703153606209.png',
+            mask: 'rgba(65, 60, 55, 0.5)',
+            opacity: 0.8
+        }
+    ],
+    contentTitleImage: [
+        {
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/6.jpg',
+            mask: 'rgba(65, 60, 55, .2)',
+            opacity: 0.1
+        }
+    ],
 
     // 首页一言的信息
     // homeHitokotoApi: 'https://v3.hitokoto.cn',
