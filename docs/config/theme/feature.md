@@ -3,6 +3,8 @@ title: 主题功能选项
 order: 1
 comment: false
 article: false
+iconSpin: true
+iconColor: "#f0db4f"
 collapsible: false
 ---
 

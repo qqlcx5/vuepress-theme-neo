@@ -23,7 +23,7 @@ export default defineComponent({
      * 图标颜色
      */
     color: { type: String, default: '' },
-
+    iconColor: { type: String, default: '' },
     /**
      * Icon size
      *
@@ -33,13 +33,25 @@ export default defineComponent({
       type: [String, Number],
       default: '',
     },
-    spin: {
-        type: [Boolean, Number],
-        default: false,
+    iconSize: {
+      type: [String, Number],
+      default: '',
     },
     rotate: {
       type: Number,
       default: 0,
+    },
+    iconRotate: {
+      type: Number,
+      default: 0,
+    },
+    spin: {
+      type: [Boolean, Number],
+      default: false,
+    },
+    iconSpin: {
+      type: [Boolean, Number],
+      default: false,
     },
   },
 
@@ -67,12 +79,17 @@ export default defineComponent({
 
     const style = computed(() => {
       const styleObject: Record<string, string> = {};
+      let { color, iconColor, size, iconSize, rotate, iconRotate, spin, iconSpin } = props;
+      color = color || iconColor || '';
+      size = size || iconSize || '';
+      rotate = rotate || iconRotate || 0;
+      spin = spin || iconSpin || false;
 
-      if (props.color) styleObject['color'] = props.color;
-      if (props.size) styleObject['font-size'] = Number.isNaN(Number(props.size)) ? <string>props.size : `${props.size}px`;
-      if (props.rotate) styleObject['transform'] = `rotate(${props.rotate}deg)`;
-      if (props.spin) {
-        const spinSeconds = typeof props.spin === 'boolean' ? 2 : props.spin;
+      if (color) styleObject['color'] = color;
+      if (size) styleObject['font-size'] = Number.isNaN(Number(size)) ? <string>size : `${size}px`;
+      if (rotate) styleObject['transform'] = `rotate(${rotate}deg)`;
+      if (spin) {
+        const spinSeconds = typeof spin === 'boolean' ? 2 : spin;
         styleObject['animation'] = `neo-spin ${spinSeconds}s linear infinite`;
       }
       return keys(styleObject).length ? styleObject : null;

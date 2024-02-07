@@ -51,7 +51,7 @@
             </div>
             <div class="site-info__item-value">
                 <span id="busuanzi_value_site_uv">
-                    <NeoIcon icon="neo-loading" class="neo-mr-4" spin />
+                    <NeoIcon icon="neo-loading" spin class="neo-mr-4" />
                 </span>
                 名
             </div>

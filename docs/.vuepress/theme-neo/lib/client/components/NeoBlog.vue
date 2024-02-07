@@ -41,13 +41,13 @@
                     class="hero-img-prev hide-on-mobile"
                     @click="switchImage(-1)"
                 >
-                    <NeoIcon icon="neo-zuojiantou" size="24" />
+                    <NeoIcon icon="neo-zuojiantou" size="26" />
                 </button>
                 <button
                     class="hero-img-next hide-on-mobile"
                     @click="switchImage(1)"
                 >
-                    <NeoIcon icon="neo-youjiantou" rotate="45" size="24" />
+                    <NeoIcon icon="neo-youjiantou" size="26" />
                 </button>
                 <span
                     class="hero-arrow-down hide-on-mobile"
@@ -55,8 +55,7 @@
                 >
                     <NeoIcon
                         icon="neo-xiangxiajiantou"
-                        size="50"
-                        :spin="2"
+                        size="60"
                         color="rgba(255,255,255,0.8)"
                     />
                 </span>
@@ -347,10 +346,9 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo
                 margin-left: -12px;
                   cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
 
-                svg.neo-colour {
+                .font-icon {
                     width: 30px;
                     margin: -15px 0;
-
                     animation-name: bounce-down;
                     animation-duration: 1.5s;
                     animation-timing-function: linear;

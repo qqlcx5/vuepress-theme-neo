@@ -5,6 +5,9 @@ export interface NavItem {
     /* -------------------------------- neoTheme -------------------------------- */
     icon?: string;
     iconSize?: string;
+    iconColor?: string;
+    iconSpin?: string;
+    iconRotate?: string;
     /* -------------------------------- neoTheme -------------------------------- */
     text: string;
     ariaLabel?: string;

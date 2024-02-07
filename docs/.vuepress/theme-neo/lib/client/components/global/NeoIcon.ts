@@ -9,14 +9,21 @@ const isAbsoluteUrl = (test: unknown): boolean => startsWith(test, '/');
 export interface NeoIconProps {
   icon?: string | undefined;
   color?: string | undefined;
+  iconColor?: string | undefined;
   size?: string | number | undefined;
+  iconSize?: string | number | undefined;
   rotate?: number | undefined;
+  iconRotate?: number | undefined;
   spin?: boolean | number | undefined;
+  iconSpin?: boolean | number | undefined;
 }
 
 const NeoIcon: FunctionalComponent<NeoIconProps> = props => {
-  const { icon = '', color, size, rotate, spin } = props;
-  rotate && console.log(`🚀 - rotate:`, rotate);
+  let { icon = '', color, iconColor, size, iconSize, rotate, iconRotate, spin, iconSpin } = props;
+  color = color || iconColor || '';
+  size = size || iconSize || '';
+  rotate = rotate || iconRotate || 0;
+  spin = spin || iconSpin || false;
   const style: Record<string, string> = {};
 
   if (color) style['color'] = color;

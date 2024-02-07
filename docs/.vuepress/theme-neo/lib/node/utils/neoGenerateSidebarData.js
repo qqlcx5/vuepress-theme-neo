@@ -61,7 +61,7 @@ function processDirectory(sidebarData, docsRoot, directory, sidebarOptions) {
 function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePath, sidebarOptions) {
     const contentStr = fs.readFileSync(absolutePath, 'utf8');
     const { data, content } = matter(contentStr);
-    let { title, index = false, showSidebar = true, icon, iconSize, order, collapsible } = data || {};
+    let { title, index = false, showSidebar = true, icon, iconSize, iconColor, iconRotate, iconSpin, order, collapsible } = data || {};
     const fileName = path.basename(absolutePath, '.md');
     const directoryName = path.basename(path.dirname(relativeFilePath));
     const isReadme = ['readme', 'index'].includes(fileName.toLowerCase());
@@ -69,10 +69,10 @@ function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePa
     // 如果是README文件，更新或创建根目录数据对象
     if (isReadme) {
         collapsible = collapsible ?? sidebarOptions.sidebarOptions ?? true;
-        const rootData = { text, link: relativeFilePath, collapsible, icon, iconSize, order, isReadme: true, index, showSidebar };
+        const rootData = { text, link: relativeFilePath, collapsible, icon, iconSize, iconColor, iconRotate, iconSpin, order, isReadme: true, index, showSidebar };
         sidebarData.push(rootData);
     } else {
-        const pageData = { text, link: relativeFilePath, icon, iconSize, order, showSidebar };
+        const pageData = { text, link: relativeFilePath, icon, iconSize, iconColor, iconRotate, iconSpin, order, showSidebar };
         sidebarData.push(pageData);
     }
 }
