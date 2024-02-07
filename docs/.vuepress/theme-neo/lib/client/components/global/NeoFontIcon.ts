@@ -1,9 +1,15 @@
+import { keys } from 'vuepress-shared/client';
+// import { keys } from "@vuepress/helper/client";
+// console.log(`🚀 - keys:`, keys)
+
 import type { VNode } from 'vue';
 import { computed, defineComponent, h } from 'vue';
-import { keys } from 'vuepress-shared/client';
 import { useThemeLocaleData } from '../../composables/index.js';
 
 import { getIconInfo } from '../../utils/neoFontIcon.js';
+
+import "../../styles/neo-font-icon.scss";
+
 declare const FONT_ICON_TYPE: string;
 declare const FONT_ICON_PREFIX: string;
 export default defineComponent({
@@ -72,7 +78,14 @@ export default defineComponent({
             key: props.icon,
             class: classNames.value,
             style: style.value,
-            ...(isIconify ? { mode: 'style', inline: '', icon: `${FONT_ICON_PREFIX}${props.icon}`, width: '1em', height: '1em' } : {}),
+            ...(isIconify ? {
+                  mode: 'style',
+                  inline: '',
+                  icon: `${FONT_ICON_PREFIX}${props.icon}`,
+                  width: '1em',
+                  height: '1em',
+                }
+              : {}),
           })
         : null;
   },
