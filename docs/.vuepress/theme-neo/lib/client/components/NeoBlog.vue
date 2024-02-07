@@ -56,6 +56,7 @@
                     <NeoIcon
                         icon="neo-xiangxiajiantou"
                         size="50"
+                        :animateRotate="2"
                         color="rgba(255,255,255,0.8)"
                     />
                 </span>
