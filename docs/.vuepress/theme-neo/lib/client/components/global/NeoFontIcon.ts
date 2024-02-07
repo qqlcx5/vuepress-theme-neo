@@ -33,6 +33,14 @@ export default defineComponent({
       type: [String, Number],
       default: '',
     },
+    spin: {
+        type: [Boolean, Number],
+        default: false,
+    },
+    rotate: {
+      type: Number,
+      default: 0,
+    },
   },
 
   setup(props) {
@@ -63,9 +71,9 @@ export default defineComponent({
       if (props.color) styleObject['color'] = props.color;
       if (props.size) styleObject['font-size'] = Number.isNaN(Number(props.size)) ? <string>props.size : `${props.size}px`;
       if (props.rotate) styleObject['transform'] = `rotate(${props.rotate}deg)`;
-      if (props.animateRotate) {
-        const animateSeconds = typeof props.animateRotate === 'boolean' ? 2 : props.animateRotate;
-        styleObject['animation'] = `neo-spin ${animateSeconds}s linear infinite`;
+      if (props.spin) {
+        const spinSeconds = typeof props.spin === 'boolean' ? 2 : props.spin;
+        styleObject['animation'] = `neo-spin ${spinSeconds}s linear infinite`;
       }
       return keys(styleObject).length ? styleObject : null;
     });

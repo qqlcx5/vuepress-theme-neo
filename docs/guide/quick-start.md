@@ -3,7 +3,6 @@ title: 快速上手
 date: 2023-01-17 17:50:00
 order: 2
 toc: false
-icon: neo-quickly
 categories:
   - 快速上手
 tags:

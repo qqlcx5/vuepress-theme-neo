@@ -47,7 +47,7 @@
                     class="hero-img-next hide-on-mobile"
                     @click="switchImage(1)"
                 >
-                    <NeoIcon icon="neo-youjiantou" size="24" />
+                    <NeoIcon icon="neo-youjiantou" rotate="45" size="24" />
                 </button>
                 <span
                     class="hero-arrow-down hide-on-mobile"
@@ -56,7 +56,7 @@
                     <NeoIcon
                         icon="neo-xiangxiajiantou"
                         size="50"
-                        :animateRotate="2"
+                        :spin="2"
                         color="rgba(255,255,255,0.8)"
                     />
                 </span>

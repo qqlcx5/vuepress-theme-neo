@@ -11,23 +11,21 @@ export interface NeoIconProps {
   color?: string | undefined;
   size?: string | number | undefined;
   rotate?: number | undefined;
-  animateRotate?: boolean | number | undefined;
+  spin?: boolean | number | undefined;
 }
 
 const NeoIcon: FunctionalComponent<NeoIconProps> = props => {
-  const { icon = '', color, size, rotate, animateRotate } = props;
+  const { icon = '', color, size, rotate, spin } = props;
   rotate && console.log(`🚀 - rotate:`, rotate);
   const style: Record<string, string> = {};
 
   if (color) style['color'] = color;
   if (size) style['height'] = Number.isNaN(Number(size)) ? <string>size : `${size}px`;
   if (rotate) style['transform'] = `rotate(${rotate}deg)`;
-  if (animateRotate) {
-    const animateSeconds = typeof props.animateRotate === 'boolean' ? 2 : props.animateRotate;
-    style['animation'] = `neo-spin ${animateSeconds}s linear infinite`;
+  if (spin) {
+    const spinSeconds = typeof spin === 'boolean' ? 2 : spin;
+    style['animation'] = `neo-spin ${spinSeconds}s linear infinite`;
   }
-  // 更新props，特别是style属性，以确保rotate值被传递到FontIcon组件
-  const updatedProps = { ...props, style };
   return isLinkHttp(icon)
     ? h('img', { class: 'icon', src: icon, 'no-view': '', style })
     : isAbsoluteUrl(icon)
@@ -38,7 +36,7 @@ const NeoIcon: FunctionalComponent<NeoIconProps> = props => {
         'no-view': '',
         style,
       })
-    : h(resolveComponent('NeoFontIcon'), updatedProps);
+    : h(resolveComponent('NeoFontIcon'), props);
 };
 
 NeoIcon.displayName = 'NeoIcon';

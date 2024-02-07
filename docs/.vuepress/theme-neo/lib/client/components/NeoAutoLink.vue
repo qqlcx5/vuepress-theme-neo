@@ -112,7 +112,7 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
-    <NeoIcon :name="item.icon" :size="item.iconSize" />
+    <NeoIcon v-bind="item" />
     {{ item.text }}
     <AutoLinkExternalIcon v-if="isBlankTarget" />
     <slot name="after" />
