@@ -14,6 +14,10 @@ export default {
     siteInformation: {
         bolgCreateAt: '2023-01-01',
     },
+    fontIcon: {
+        assets: 'iconfont', // 字体图标的地址
+        prefix: '' // 字体图标的前缀
+    },
     // 别名配置
     blogLocales: {
         article: '文章1',

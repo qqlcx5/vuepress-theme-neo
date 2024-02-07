@@ -1,7 +1,11 @@
 import type { VNode } from 'vue';
 import { computed, defineComponent, h } from 'vue';
 import { keys } from 'vuepress-shared/client';
+import { useThemeLocaleData } from '../../composables/index.js';
 
+import { getIconInfo } from '../../utils/neoFontIcon.js';
+declare const FONT_ICON_TYPE: string;
+declare const FONT_ICON_PREFIX: string;
 export default defineComponent({
   name: 'FontIcon',
 
@@ -31,21 +35,17 @@ export default defineComponent({
   },
 
   setup(props) {
-    // const themeLocale = useThemeLocaleData()
- 
-    // const { assets, prefix } = themeLocale.value?.fontIcon || {};
-    // const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
-    // const FONT_ICON_TYPE = type;
-    // const FONT_ICON_PREFIX = iconPrefix;
-    // const isIconify = FONT_ICON_TYPE === 'iconify';
-    // const isFontAwesome = FONT_ICON_TYPE === 'fontawesome';
-    const isIconify = true;
-    const isFontAwesome = false
-    const FONT_ICON_PREFIX = 'iconfont icon-';
+    const themeLocale = useThemeLocaleData();
+    const { assets, prefix } = themeLocale.value?.fontIcon || {};
+    const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
 
+    const FONT_ICON_TYPE = type;
+    const FONT_ICON_PREFIX = iconPrefix;
 
+    const isIconify = FONT_ICON_TYPE === 'iconify';
+    const isFontAwesome = FONT_ICON_TYPE === 'fontawesome';
     const classNames = computed(() => {
-      const classList = ['font-icon icon'];
+      const classList = ['font-icon icon iconfont'];
       const iconClass = `${FONT_ICON_PREFIX}${props.icon}`;
 
       if (isFontAwesome) classList.push('fa-fw fa-sm');
@@ -72,15 +72,7 @@ export default defineComponent({
             key: props.icon,
             class: classNames.value,
             style: style.value,
-            ...(isIconify
-              ? {
-                  mode: 'style',
-                  inline: '',
-                  icon: `${FONT_ICON_PREFIX}${props.icon}`,
-                  width: '1em',
-                  height: '1em',
-                }
-              : {}),
+            ...(isIconify ? { mode: 'style', inline: '', icon: `${FONT_ICON_PREFIX}${props.icon}`, width: '1em', height: '1em' } : {}),
           })
         : null;
   },

@@ -4,11 +4,7 @@ import {
   isArray,
   isLinkHttp,
   isString,
-//   Logger,
-} from "vuepress-shared/node";
-
-// export const PLUGIN_NAME = "vuepress-plugin-components";
-// export const logger = new Logger(PLUGIN_NAME);
+  } from "vuepress-shared/client";
 
 import type { FontIconAssets } from "../neoOptions/index.js";
 

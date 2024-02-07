@@ -1,6 +1,7 @@
 export default [
     ['link', { rel: 'icon', href: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/favicon.ico' }],
-    ['script', { src: '//at.alicdn.com/t/c/font_3645957_ojikbtjol3l.js' }],
+    // ['script', { src: '//at.alicdn.com/t/c/font_3645957_ojikbtjol3l.js' }],
+    ['link', { rel: 'stylesheet', href: '//at.alicdn.com/t/c/font_3645957_erhoj1l3oyr.css' }],
     // 在 Chrome 85 版本中，为了保护用户的隐私，默认的 Referrer Policy 则变成了 strict-origin-when-cross-origin。
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
