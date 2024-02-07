@@ -1,5 +1,5 @@
 <template>
-    <BlogLayout>
+    <NeoBlogLayout>
         <template #content-left>
             <div class="archives-page dark-shadow">
                 <div class="archives-wrapper">
@@ -7,21 +7,21 @@
                         {{ $page.title }}
                         <div class="title-count"> 总共 <i>{{ sortPostsByDateSymbol.length }}</i> 篇文章 </div>
                     </h1>
-                    <Timeline></Timeline>
+                    <NeoTimeline></NeoTimeline>
                 </div>
             </div>
         </template>
-    </BlogLayout>
+    </NeoBlogLayout>
 
 </template>
 
 <script>
-import BlogLayout from '@theme/BlogLayout.vue'
-import Timeline from '@theme/Timeline.vue'
+import NeoBlogLayout from '@theme/NeoBlogLayout.vue'
+import NeoTimeline from '@theme/NeoTimeline.vue'
 import { inject } from 'vue'
 
 export default {
-    components: { BlogLayout, Timeline },
+    components: { NeoBlogLayout, NeoTimeline },
     setup() {
         const sortPostsByDateSymbol = inject('sortPostsByDateSymbol').value
         return { sortPostsByDateSymbol }

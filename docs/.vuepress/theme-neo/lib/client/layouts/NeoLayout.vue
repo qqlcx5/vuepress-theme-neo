@@ -2,15 +2,15 @@
 // @ts-ignore
 import NeoBlog from '@theme/NeoBlog.vue'
 // @ts-ignore
-import ArticlesPage from '@theme/ArticlesPage.vue'
+import NeoArticlesPage from '@theme/NeoArticlesPage.vue'
 // @ts-ignore
-import CategoriesPage from '@theme/CategoriesPage.vue'
+import NeoCategoriesPage from '@theme/NeoCategoriesPage.vue'
 // @ts-ignore
-import TagsPage from '@theme/TagsPage.vue'
+import NeoTagsPage from '@theme/NeoTagsPage.vue'
 // @ts-ignore
-import ArchivesPage from '@theme/ArchivesPage.vue'
+import NeoArchivesPage from '@theme/NeoArchivesPage.vue'
 // @ts-ignore
-import ColumnsPage from '@theme/ColumnsPage.vue'
+import NeoColumnsPage from '@theme/NeoColumnsPage.vue'
 // @ts-ignore
 import NeoPage from '@theme/NeoPage.vue'
 // @ts-ignore
@@ -146,15 +146,15 @@ const onBeforeLeave = scrollPromise.pending
       <!-- 首页 -->
       <NeoBlog v-if="frontmatter.home" />
       <!-- 文章 -->
-      <ArticlesPage v-else-if="frontmatter.articlesPage" />
+      <NeoArticlesPage v-else-if="frontmatter.articlesPage" />
       <!-- 分类 -->
-      <CategoriesPage v-else-if="frontmatter.categoriesPage" />
+      <NeoCategoriesPage v-else-if="frontmatter.categoriesPage" />
       <!-- 标签 -->
-      <TagsPage v-else-if="frontmatter.tagsPage" />
+      <NeoTagsPage v-else-if="frontmatter.tagsPage" />
       <!-- 归档 -->
-      <ArchivesPage v-else-if="frontmatter.archivesPage" />
+      <NeoArchivesPage v-else-if="frontmatter.archivesPage" />
       <!-- 专栏 -->
-      <ColumnsPage v-else-if="frontmatter.columnsPage" />
+      <NeoColumnsPage v-else-if="frontmatter.columnsPage" />
 
       <Transition
         v-else

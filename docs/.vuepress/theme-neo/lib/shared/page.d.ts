@@ -11,6 +11,11 @@ export interface DefaultThemePageFrontmatter {
     toc?: boolean;
     catalogue?: boolean;
     hideNavbar?: boolean;
+    archivesPage: boolean;
+    tagsPage: boolean;
+    categoriesPage: boolean;
+    columnsPage: boolean;
+    articlesPage: boolean;
     /* -------------------------------- neoTheme -------------------------------- */
 }
 export interface DefaultThemeHomePageFrontmatter extends DefaultThemePageFrontmatter {

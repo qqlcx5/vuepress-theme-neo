@@ -1,5 +1,5 @@
 ---
-title: flatten 扁平化数组 sticky 5
+title: flatten 扁平化数组
 date: 2022-06-15 17:20:46
 categories: 
   - utils

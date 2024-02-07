@@ -6,20 +6,20 @@
             </div>
             <aside class="content-right">
                 <slot name="content-right">
-                    <BloggerInfo />
-                    <BlogType />
-                    <SiteInfo />
+                    <NeoBloggerInfo />
+                    <NeoBlogType />
+                    <NeoSiteInfo />
                 </slot>
             </aside>
         </div>
     </main>
 </template>
 <script>
-import SiteInfo from '@theme/SiteInfo.vue'
-import BlogType from '@theme/BlogType.vue'
-import BloggerInfo from '@theme/BloggerInfo.vue'
+import NeoSiteInfo from '@theme/NeoSiteInfo.vue'
+import NeoBlogType from '@theme/NeoBlogType.vue'
+import NeoBloggerInfo from '@theme/NeoBloggerInfo.vue'
 export default {
-    components: { SiteInfo, BloggerInfo, BlogType },
+    components: { NeoSiteInfo, NeoBlogType, NeoBloggerInfo },
 }
 </script>
 <style lang="scss" scoped>

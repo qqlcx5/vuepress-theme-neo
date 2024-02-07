@@ -1,12 +1,12 @@
 <template>
-    <BlogLayout>
+    <NeoBlogLayout>
         <template #content-left>
-            <PostList
+            <NeoPostList
                 mode="article"
                 :currentPage="currentPage"
                 :perPage="perPage"
             />
-            <Pagination
+            <NeoPagination
                 :total="total"
                 :perPage="perPage"
                 :currentPage="currentPage"
@@ -14,18 +14,18 @@
                 v-show="Math.ceil(total / perPage) > 1"
             />
         </template>
-    </BlogLayout>
+    </NeoBlogLayout>
 </template>
 
 <script>
-import BlogLayout from '@theme/BlogLayout.vue'
-import PostList from '@theme/PostList.vue'
-import Pagination from '@theme/Pagination.vue'
+import NeoBlogLayout from '@theme/NeoBlogLayout.vue'
+import NeoPostList from '@theme/NeoPostList.vue'
+import NeoPagination from '@theme/NeoPagination.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
-    components: { BlogLayout, PostList, Pagination},
+    components: { NeoBlogLayout, NeoPostList, NeoPagination},
     setup() {
         const groupPostsSymbol = inject('groupPostsSymbol').value
         const sortPostsSymbol = inject('sortPostsSymbol').value

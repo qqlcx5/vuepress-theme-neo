@@ -7,22 +7,22 @@
                 </div>
             </button>
         </div>
-        <CategoriesBar v-show="buttonsType === 'category'" :categoriesData="categoriesAndTagsSymbol?.categories" :category="category" />
-        <TagsBar v-show="buttonsType === 'tag'" :tagsData="categoriesAndTagsSymbol.tags" :tag="tag" />
-        <ColumnsBar v-show="buttonsType === 'cloumn'" :columnsData="categoriesAndTagsSymbol.columns" :column="column" />
+        <NeoCategoriesBar v-show="buttonsType === 'category'" :categoriesData="categoriesAndTagsSymbol?.categories" :category="category" />
+        <NeoTagsBar v-show="buttonsType === 'tag'" :tagsData="categoriesAndTagsSymbol.tags" :tag="tag" />
+        <NeoColumnsBar v-show="buttonsType === 'cloumn'" :columnsData="categoriesAndTagsSymbol.columns" :column="column" />
     </div>
 </template>
 
 <script>
 import { onMounted, ref, computed, inject, watch, nextTick, onBeforeUnmount } from 'vue'
 import { useThemeLocaleData } from '../composables/neoIndex.js'
-import CategoriesBar from '@theme/CategoriesBar.vue'
-import ColumnsBar from '@theme/ColumnsBar.vue'
-import TagsBar from '@theme/TagsBar.vue'
+import NeoCategoriesBar from '@theme/NeoCategoriesBar.vue'
+import NeoColumnsBar from '@theme/NeoColumnsBar.vue'
+import NeoTagsBar from '@theme/NeoTagsBar.vue'
 import { useRoute, useRouter } from 'vue-router'
 
 export default {
-    components: { CategoriesBar, TagsBar, ColumnsBar },
+    components: { NeoCategoriesBar, NeoTagsBar, NeoColumnsBar },
     props: {},
     setup(props) {
         const buttons = new Map([

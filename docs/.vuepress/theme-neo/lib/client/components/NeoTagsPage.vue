@@ -1,18 +1,18 @@
 <template>
-    <BlogLayout>
+    <NeoBlogLayout>
         <template #content-left>
             <!-- <TagsBar
                 v-if="categoriesAndTagsSymbol.tags.length"
                 :tagsData="categoriesAndTagsSymbol.tags"
                 :tag="tag"
             /> -->
-            <PostList
+            <NeoPostList
                 mode="tag"
                 :tag="tag"
                 :perPage="perPage"
                 :currentPage="currentPage"
             />
-            <Pagination
+            <NeoPagination
                 :total="total"
                 :perPage="perPage"
                 :currentPage="currentPage"
@@ -29,20 +29,20 @@
                 :tag="tag"
             />
         </template> -->
-    </BlogLayout>
+    </NeoBlogLayout>
 </template>
 
 <script>
-import BlogLayout from '@theme/BlogLayout.vue'
-import PostList from '@theme/PostList.vue'
-import Pagination from '@theme/Pagination.vue'
-import TagsBar from '@theme/TagsBar.vue'
-import NoData from '@theme/NoData.vue'
-import BloggerInfo from '@theme/BloggerInfo.vue'
+import NeoBlogLayout from '@theme/NeoBlogLayout.vue'
+import NeoPostList from '@theme/NeoPostList.vue'
+import NeoPagination from '@theme/NeoPagination.vue'
+import NeoTagsBar from '@theme/NeoTagsBar.vue'
+import NeoNoData from '@theme/NeoNoData.vue'
+import NeoBloggerInfo from '@theme/NeoBloggerInfo.vue'
 import { onMounted, ref, inject, watch } from 'vue'
 import { useRoute } from 'vue-router'
 export default {
-    components: { BlogLayout, PostList, Pagination, TagsBar, NoData, BloggerInfo },
+    components: { NeoBlogLayout, NeoPostList, NeoPagination, NeoTagsBar, NeoNoData, NeoBloggerInfo },
     setup() {
         let tag = ref()
         let total = ref(0) // 总长

@@ -67,17 +67,17 @@
                 </span>
             </div>
         </div>
-        <Bubbles selectRef=".hero" />
+        <NeoBubbles selectRef=".hero" />
     </main>
-    <BlogLayout>
+    <NeoBlogLayout>
         <template #content-left>
-            <PostList
+            <NeoPostList
                 mode="article"
                 :perPage="perPage"
                 :offsetTop="offsetTop"
                 :currentPage="currentPage"
             />
-            <Pagination
+            <NeoPagination
                 :total="total"
                 :perPage="perPage"
                 :currentPage="currentPage"
@@ -85,7 +85,7 @@
                 v-show="Math.ceil(total / perPage) > 1"
             />
         </template>
-    </BlogLayout>
+    </NeoBlogLayout>
 </template>
 
 <script setup lang="ts">
@@ -94,13 +94,13 @@ import { useRoute } from 'vue-router'
 import { computed, onMounted, ref, inject } from 'vue'
 import { useThemeLocaleData } from '../composables/neoIndex.js'
 // @ts-ignore
-import Bubbles from '@theme/Bubbles.vue'
+import NeoBubbles from '@theme/NeoBubbles.vue'
 // @ts-ignore
-import PostList from '@theme/PostList.vue'
+import NeoPostList from '@theme/NeoPostList.vue'
 // @ts-ignore
-import BlogLayout from '@theme/BlogLayout.vue'
+import NeoBlogLayout from '@theme/NeoBlogLayout.vue'
 // @ts-ignore
-import Pagination from '@theme/Pagination.vue'
+import NeoPagination from '@theme/NeoPagination.vue'
 // @ts-ignore
 const sortPostsSymbol = inject('sortPostsSymbol').value
 
