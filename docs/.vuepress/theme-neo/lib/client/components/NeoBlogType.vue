@@ -3,7 +3,7 @@
         <div class="blog-type">
             <button v-for="[key, icon] of buttons" :key="key" class="blog-type-button" @click="handleClasses(key)">
                 <div class="icon-wapper" :class="{ active: buttonsType === key }" :aria-label="locale[key]">
-                    <NeoIcon :name="icon" size="20" />
+                    <NeoIcon :icon="icon" size="20" />
                 </div>
             </button>
         </div>

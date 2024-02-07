@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
     <AutoLink v-if="item.link" :class="itemClass" :item="item">
         <template #before>
             <span v-show="item.icon">
-                <NeoIcon :name="item.icon" :size="item.iconSize" />
+                <NeoIcon :icon="item.icon" :size="item.iconSize" />
             </span>
         </template>
     </AutoLink>
@@ -73,7 +73,7 @@ onBeforeUnmount(() => {
       @keydown.enter="onClick"
     >
       <span>
-        <NeoIcon :name="item.icon" :size="item.iconSize" />
+        <NeoIcon :icon="item.icon" :size="item.iconSize" />
         {{ item.text }}
       </span>
       <NeoIcon v-if="item.collapsible" name="neo-youjiantou" size="24" :rotate="isOpen ? '90deg' : 0" />

@@ -1,7 +1,4 @@
 import { keys } from 'vuepress-shared/client';
-// import { keys } from "@vuepress/helper/client";
-// console.log(`🚀 - keys:`, keys)
-
 import type { VNode } from 'vue';
 import { computed, defineComponent, h } from 'vue';
 import { useThemeLocaleData } from '../../composables/index.js';
@@ -10,8 +7,6 @@ import { getIconInfo } from '../../utils/neoFontIcon.js';
 
 import "../../styles/neo-font-icon.scss";
 
-declare const FONT_ICON_TYPE: string;
-declare const FONT_ICON_PREFIX: string;
 export default defineComponent({
   name: 'FontIcon',
 
@@ -51,7 +46,7 @@ export default defineComponent({
     const isIconify = FONT_ICON_TYPE === 'iconify';
     const isFontAwesome = FONT_ICON_TYPE === 'fontawesome';
     const classNames = computed(() => {
-      const classList = ['font-icon icon iconfont'];
+      const classList = ['font-icon icon'];
       const iconClass = `${FONT_ICON_PREFIX}${props.icon}`;
 
       if (isFontAwesome) classList.push('fa-fw fa-sm');

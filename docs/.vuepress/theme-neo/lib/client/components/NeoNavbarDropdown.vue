@@ -58,7 +58,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       @click="handleDropdown"
     >
     <span class="title">
-        <NeoIcon :name="item.icon" />
+        <NeoIcon :icon="item.icon" />
         {{ item.text }}
       </span>
       <span class="arrow down" />
@@ -71,7 +71,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       @click="open = !open"
     >
       <span class="title">
-        <NeoIcon :name="item.icon" />
+        <NeoIcon :icon="item.icon" />
         {{ item.text }}
       </span>
       <span class="arrow" :class="open ? 'down' : 'right'" />

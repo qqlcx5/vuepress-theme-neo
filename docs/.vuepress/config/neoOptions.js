@@ -16,7 +16,7 @@ export default {
     },
     fontIcon: {
         assets: 'iconfont', // 字体图标的地址
-        prefix: '' // 字体图标的前缀
+        prefix: 'iconfont ' // 字体图标的前缀
     },
     // 别名配置
     blogLocales: {

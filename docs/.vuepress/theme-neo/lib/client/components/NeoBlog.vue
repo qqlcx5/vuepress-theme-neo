@@ -41,26 +41,20 @@
                     class="hero-img-prev hide-on-mobile"
                     @click="switchImage(-1)"
                 >
-                    <NeoIcon
-                        name="neo-zuojiantou"
-                        size="24"
-                    />
+                    <NeoIcon icon="neo-zuojiantou" size="24" />
                 </button>
                 <button
                     class="hero-img-next hide-on-mobile"
                     @click="switchImage(1)"
                 >
-                    <NeoIcon
-                        name="neo-youjiantou"
-                        size="24"
-                    />
+                    <NeoIcon icon="neo-youjiantou" size="24" />
                 </button>
                 <span
                     class="hero-arrow-down hide-on-mobile"
                     @click="scrollToPost()"
                 >
                     <NeoIcon
-                        name="neo-xiangxiajiantou"
+                        icon="neo-xiangxiajiantou"
                         size="50"
                         color="rgba(255,255,255,0.8)"
                     />

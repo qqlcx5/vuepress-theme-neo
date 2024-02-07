@@ -38,9 +38,9 @@ const scrollTag = (index: number) => {
             <li v-for="(item, index) in list" :key="item" class="neo-ptb-4">
                 <template v-if="item.children?.length">
                     <div :id="`catalogue-title-${index}`" class="neo-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
-                        <NeoIcon :name="item.icon || 'neo-wenjianlan'" class="neo-mr-8" />
+                        <NeoIcon :icon="item.icon || 'neo-wenjianlan'" class="neo-mr-8" />
                         <span class="catalogue-title">{{ item.text }}目录</span>
-                        <NeoIcon :name="toggleObj[index] ? 'neo-circle-plus' : 'neo-circle-minus'" color="#999" size="16" />
+                        <NeoIcon :icon="toggleObj[index] ? 'neo-circle-plus' : 'neo-circle-minus'" color="#999" size="16" />
                     </div>
                     <Transition name="fade-slide-y" mode="out-in">
                         <NeoCatalogue v-show="!toggleObj[index]" :list="item.children" />
@@ -48,7 +48,7 @@ const scrollTag = (index: number) => {
                 </template>
 
                 <RouterLink v-else :to="item.link" :title="item.text">
-                    <NeoIcon :name="item.icon || 'neo-md'" class="neo-mr-4" />
+                    <NeoIcon :icon="item.icon || 'neo-md'" class="neo-mr-4" />
                     {{ index + 1 }}.{{ item.fullTitle || item.text }}
                 </RouterLink>
             </li>
