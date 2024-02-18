@@ -12,10 +12,10 @@ export default {
     },
     // 站点信息（文章底部的统计信息）
     siteInformation: {
-        bolgCreateAt: '2023-01-01',
+        bolgCreateAt: '2020-01-01',
     },
     fontIcon: {
-        assets: 'iconfont', // 字体图标的地址 
+        assets: 'iconfont', // 字体图标的地址
         prefix: 'iconfont ' // 字体图标的前缀
     },
     // 别名配置

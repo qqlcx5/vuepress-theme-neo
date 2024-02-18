@@ -3,7 +3,7 @@ import { NeoIcon, NeoFontIcon, NeoNavCard } from './components/global/neoIndex.j
 import { setupPageData } from './composables/neoIndex.js';
 import NeoLayout from './layouts/NeoLayout.vue';
 import NeoNotFound from './layouts/NeoNotFound.vue';
-import './styles/neoIndex.scss';
+import './styles/neo-index.scss';
 export default defineClientConfig({
     enhance({ app, router }) {
         app.component('NeoIcon', NeoIcon);
