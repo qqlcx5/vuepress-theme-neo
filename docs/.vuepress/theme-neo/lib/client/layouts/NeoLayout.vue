@@ -147,10 +147,10 @@ const onBeforeLeave = scrollPromise.pending
       <NeoBlog v-if="frontmatter.home" />
       <!-- 文章 -->
       <NeoArticlesPage v-else-if="frontmatter.articlesPage" />
-      <!-- 分类 -->
-      <NeoCategoriesPage v-else-if="frontmatter.categoriesPage" />
       <!-- 标签 -->
       <NeoTagsPage v-else-if="frontmatter.tagsPage" />
+      <!-- 分类 -->
+      <NeoCategoriesPage v-else-if="frontmatter.categoriesPage" />
       <!-- 归档 -->
       <NeoArchivesPage v-else-if="frontmatter.archivesPage" />
       <!-- 专栏 -->
@@ -175,7 +175,7 @@ const onBeforeLeave = scrollPromise.pending
           </template>
           <template #bottom>
             <slot name="page-bottom" />
-            <CommentService />
+            <!-- <CommentService /> -->
           </template>
         </NeoPage>
       </Transition>
