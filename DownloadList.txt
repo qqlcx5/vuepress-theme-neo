@@ -1,0 +1,123 @@
+#批量下载清单
+#下载类型：主页|喜欢|合集
+#下载地址：主页和喜欢就是放主页地址就行，合集要放手机上分享出来的合集地址
+#建议第一个地址放分享出来的短地址（例如https://v.douyin.com/kA6wx85/ ），这样会自动弹出人机认证，后续的地址就可以免校验了
+#每行一个，中间用一个空格分隔
+#下载类型 下载地址
+#主页 https://v.douyin.com/iXTTXRD/
+#主页 https://www.douyin.com/user/MS4wLjABAAAAkO3FWZ-0lhKpH18c9hZlK1Ef3CPf1U2SFfEoNOIturw2MNnxJjbV_gtNgX-rsxd7
+#主页 https://v.douyin.com/UbLedVJ/
+#九尾鸭
+#主页 https://v.douyin.com/kA6wx85/
+#主页 https://v.douyin.com/SF77gLS/
+#主页 https://v.douyin.com/SFvJrbj/
+#主页 https://v.douyin.com/SF775W5/
+#源治
+#主页 https://v.douyin.com/SFv5CHK/
+#主页 https://v.douyin.com/k9QnfdF/
+#主页 https://v.douyin.com/kA6wx85
+#喜欢 https://v.douyin.com/k9QnfdF/
+#合集 https://v.douyin.com/kU8AQqg/
+
+#不略: 慢慢理解世界，慢慢更新自己。
+主页 https://www.douyin.com/user/MS4wLjABAAAA3kXtg4njxK_erHovBMZF750-Pea_RrAyx73W0fOZ7xs
+
+#田志刚知识管理: 知识管理咨询培训，《卓越密码：如何成为专家》与《你的知识需要管理》作者，+V：511956894
+主页 https://www.douyin.com/user/MS4wLjABAAAA3S6sLTBASTa3S8BW6Ku399-ix0RQs1tuqk8oHtJkThA
+
+#天涯神贴（完整版看主页）: 浏览天涯官网，真正看到原帖!
+主页 https://www.douyin.com/user/MS4wLjABAAAA2Gkkh_GVAOt22UZ9UtDx4dAJyFB60mRuD8uln213wImBJ6SIyHjGeAkHn-xNxchc
+
+#亲爱的安先生: （3.4 线下沙龙私信咨询）
+主页 https://www.douyin.com/user/MS4wLjABAAAAkzWHrOb9pgCBETkFM6RLp0GLDmfqrtz31YOJJrfHbAxH9gk3tGEEpke43cLZDgE-
+
+#八萬要努力: 过好每一个当下，不负每一寸时光…
+主页 https://www.douyin.com/user/MS4wLjABAAAA03jUcQAYb5_gCyv8xNfG13wRIN2WkPP_tjXcriEhgQ0
+
+#文君下午茶: 聚美丽CEO——文君
+主页 https://www.douyin.com/user/MS4wLjABAAAAT0scazxXeL8qkOUxq3vYYpZNdKRBbbevakk3tNsaaXXRgsTce9eqXIU-zfgHr2zE
+
+#程前Jason: 和更多创业者链接，进主页粉丝群。
+主页 https://www.douyin.com/user/MS4wLjABAAAAoGgpFqfuSXAjeMy21Qk8Pn1NvaSukBN7vCipz3xsPOU
+
+#首席灯光师: 【作者】一家国际化企业创始人
+主页 https://www.douyin.com/user/MS4wLjABAAAAEhELVaj83IziIXbVUDDRTq25b_Koy4MyocV5-MS0xRM
+
+#童年终结者: 是个普通人 有缺点 不完美 请勿圣人化 会一直拉黑不礼貌的人
+主页 https://www.douyin.com/user/MS4wLjABAAAAqgTlGelEmVztKQAuVWbB-88uN0WDKJRl7P-53IERh5Y
+
+#凡哥恋爱课堂: 我是凡哥，已加入原创者保护中心，请同行不要搬运抄袭，侵权必究
+主页 https://www.douyin.com/user/MS4wLjABAAAAqm2lJQpChoZ6-m8b-8y0A0WAjjO-5Zyet1XUZ01KKbY
+
+#圆中的猫头鹰: 思维/思考/思想/PPT
+主页 https://www.douyin.com/user/MS4wLjABAAAA9v-ve_UHoqbKFNoBtQaFzRqRnel0LO5iagq6Azskot8
+
+#记忆宫殿宁梓亦: 企鹅qun:541939312
+主页 https://www.douyin.com/user/MS4wLjABAAAAErf8D_sliZVMGg9IrpDJsddX7WXysJ9tSDxJlmTmtL8
+
+#都靓Amber: Life finds a way.
+主页 https://www.douyin.com/user/MS4wLjABAAAAy-B0V-nt2aK3olCBocokiTT_UALgoacHA5UmXslZAPR3urAGEgwu3dNzFaDpdcSi
+
+#都靓读书: 阅读是一件最重要的小事 | 每晚6点更新
+主页 https://www.douyin.com/user/MS4wLjABAAAAkKYbsFEfsx3RcbEMVdyxvkAltPPmNkfVe5dvryjDBzY
+
+#漫溯文化: 为大家分享拆解各种思维逻辑，希望大家一起进步
+主页 https://www.douyin.com/user/MS4wLjABAAAAPHEhg6ANypV5Ir6fHcvnefPliNu71EiK8qswtqRxWoz_oFK8nVQG454jE5dFaQm4
+
+#略读: 三分钟读一本书 每周一三五晚8点更新
+主页 https://www.douyin.com/user/MS4wLjABAAAAnw2d1vPCR_mB910_I0SFBRxQowcAva_pejf3vdb3rl-QsVdQMosbCSlHqCw6osDj
+
+#孙大圣说商业: 资深商业顾问，咨询公司老板。
+主页 https://www.douyin.com/user/MS4wLjABAAAA8x8Evt_EcYW9XYRGsqgkdRvXKUNIXzPPfAA7WTbJey0
+
+前端
+#渡一前端提薪课: ️渡一官方“每日进阶课”账号
+主页 https://www.douyin.com/user/MS4wLjABAAAAeIIkCgELXG6XdUxuE9nQ6W4AfS-aoPFbtmnBL8ytcYtBSyurgePBYZXJpB0LJBCT
+
+#渡一前端必修课: 渡一官方“每日必修课”账号
+主页 https://www.douyin.com/user/MS4wLjABAAAAy68qgQPB-aGWv7MKIRB544hLgzY18xgXhywYjnN-XKk
+
+#渡一Web前端学习频道: 育人为渡 经久如一
+主页 https://www.douyin.com/user/MS4wLjABAAAAi2oukRVcHpgD-HbVdzsxE7tYykr91YuIKukR_X_Yy08EFWRQhRrECDF6FvbvT8Xa
+
+#web前端舜岳同学-前沿编程知识: 一名某厂程序员利用业余时间分享前沿编程知识
+主页 https://www.douyin.com/user/MS4wLjABAAAAHDtVFdxE77vCUi-WHN6UwYwWMzxT2XEnOTkHup50CnY
+
+生活
+#纳爷的收纳研究所: 收纳研究所主理人&国内第一批整理收纳师&整理收纳导师
+主页 https://www.douyin.com/user/MS4wLjABAAAAznNUcbT8Rhpksfkg1fzSXDA_bRk35pIFx1duOyzjVd58UDU09tDuvEsjzc-RPdOq
+
+#设计师夹子: 设计师夹子的自装分享
+主页 https://www.douyin.com/user/MS4wLjABAAAA8JoCy6JvxHI4ToSPRQcjzn3I4uY4skEuT-DOusUdZrxJjPEArwuxnnoxtgGQ0lbh
+
+#君君美食记: 大家好呀，我是君君，
+主页 https://www.douyin.com/user/MS4wLjABAAAASZ5gOdZ4ZvW0dbE6gutzGXmOYWlGG8leIyCzuWQj-n4
+
+#医学科普联盟
+主页 https://www.douyin.com/user/MS4wLjABAAAAujJ5CfiTDUNiAjwgRyL68RI9bkhXJMO_mqF4a1LvNdU?vid=7334993964421893385
+
+科学
+#李论科学: 非著名物理学者
+主页 https://www.douyin.com/user/MS4wLjABAAAA178XQjV85eh8zMbSBCfrKnN_UVDdBxDsTeegMQeRLJM
+
+情感
+#梨心力: 经济学心理学双修 心理学硕士 创业
+主页 https://www.douyin.com/user/MS4wLjABAAAAKpPNjIdygxkmyyo5DWkfcBiANNFVw-Ri2fF030uzB5ScTABfP6nWyqCiSkC8PqA_
+
+#坏熊猫: 专注男性情感，目前已经帮助8000余男生成功脱单
+主页 https://www.douyin.com/user/MS4wLjABAAAA713cedd5d2b427c9b28a94c98a771f0c
+
+#沈一只: 我得想办法让这个世界变得温暖一点。
+主页 https://www.douyin.com/user/MS4wLjABAAAAckFb6Kwfr_eeOkR_ImqQ__qnrldweBrZWz0Nekm-Lto
+
+#是教你恋爱的喵喵呀（No.2）: 恋爱脑粉碎机
+主页 https://www.douyin.com/user/MS4wLjABAAAAjzTLNSmrXu_F1Ml_Zu9Y0rI03NesMPnSkl_WSj9uKpXYwN9SzKw5pWTaRnx8-OLH
+
+#恋爱班主任-小怡子: 独创《恋爱课》播放量10亿 帮助万人获得情感幸福！
+主页 https://www.douyin.com/user/MS4wLjABAAAAmiU324dvSA-jj4ZN9w7EyoL8YWFpsvVQ8e2tvXox5WXLeDnnbhTxW-kMllJJWts1
+
+#糖糖谈恋爱: 十九块九《情商课》橱窗就有
+主页 https://www.douyin.com/user/MS4wLjABAAAAyuDQzIoW15W-e4WVqQBZ2hh-BL_XuQpOKijBAKRN0SQ
+
+#捏捏肥脸: 研究生毕业5年恋爱老师，后台踢我可以领取恋爱秘籍
+主页 https://www.douyin.com/user/MS4wLjABAAAAckFb6Kwfr_eeOkR_ImqQ__qnrldweBrZWz0Nekm-Lto
