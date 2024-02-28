@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-33ca5390","path":"/demo/VSCode%20Settings.html","title":"VSCode Settings配置","lang":"zh-CN","frontmatter":{"title":"VSCode Settings配置","date":"2023-01-18T15:55:35.000Z","categories":["VSCode"],"tags":[null],"columns":[null]},"headers":[],"git":{"updatedTime":1674032681000},"filePathRelative":"demo/VSCode Settings.md"}');export{e as data};

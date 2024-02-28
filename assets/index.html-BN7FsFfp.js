@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-9cff642a","path":"/columns/","title":"专栏","lang":"zh-CN","frontmatter":{"columnsPage":true,"title":"专栏","permalink":"/columns/","article":false},"headers":[],"git":{"updatedTime":1667917837000},"filePathRelative":"@pages/columnsPage.md"}');export{e as data};

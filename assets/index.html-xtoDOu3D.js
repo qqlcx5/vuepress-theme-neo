@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-546c3c9a","path":"/config/theme/","title":"主题配置","lang":"zh-CN","frontmatter":{"title":"主题配置","icon":"neo-zhuti1","order":1,"iconSpin":true,"comment":false,"article":false,"collapsible":false},"headers":[],"git":{"updatedTime":1707296601000},"filePathRelative":"config/theme/README.md"}');export{e as data};

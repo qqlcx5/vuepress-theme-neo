@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-26f11f8c","path":"/config/markdown/","title":"markdown 语法","lang":"zh-CN","frontmatter":{"title":"markdown 语法","comment":false,"article":false,"collapsible":false},"headers":[],"git":{"updatedTime":1686014892000},"filePathRelative":"config/markdown/README.md"}');export{a as data};
