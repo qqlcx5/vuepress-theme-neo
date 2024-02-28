@@ -18,7 +18,14 @@
 #主页 https://v.douyin.com/kA6wx85
 #喜欢 https://v.douyin.com/k9QnfdF/
 #合集 https://v.douyin.com/kU8AQqg/
-
+# 恋爱攻略
+主页 https://www.douyin.com/user/MS4wLjABAAAAFSSePfOhhtNCuj4nD00WwEnhGgfPIrtgi--VqRbBGSQ
+# 老辉心理
+主页 https://www.douyin.com/user/MS4wLjABAAAAxJlDlxmzW6t14i9W6bkvonsbVlgUG4kPYgTujc1CNik
+# 彭土豆
+主页 https://www.douyin.com/user/MS4wLjABAAAAfdKbmEsmE-nvk8cqCHu4TfbnZICmckKPYEaAj0vndps
+# 小侠读书
+主页 https://www.douyin.com/user/MS4wLjABAAAAC9EWAm6lxGfntH0zx7PZ7Y7UvBIYRBZ2F4U9v2voKeogVObzfBl2Q3B_uiyOZ6ZH
 #不略: 慢慢理解世界，慢慢更新自己。
 主页 https://www.douyin.com/user/MS4wLjABAAAA3kXtg4njxK_erHovBMZF750-Pea_RrAyx73W0fOZ7xs
 
@@ -70,7 +77,6 @@
 #孙大圣说商业: 资深商业顾问，咨询公司老板。
 主页 https://www.douyin.com/user/MS4wLjABAAAA8x8Evt_EcYW9XYRGsqgkdRvXKUNIXzPPfAA7WTbJey0
 
-前端
 #渡一前端提薪课: ️渡一官方“每日进阶课”账号
 主页 https://www.douyin.com/user/MS4wLjABAAAAeIIkCgELXG6XdUxuE9nQ6W4AfS-aoPFbtmnBL8ytcYtBSyurgePBYZXJpB0LJBCT
 
@@ -83,10 +89,6 @@
 #web前端舜岳同学-前沿编程知识: 一名某厂程序员利用业余时间分享前沿编程知识
 主页 https://www.douyin.com/user/MS4wLjABAAAAHDtVFdxE77vCUi-WHN6UwYwWMzxT2XEnOTkHup50CnY
 
-生活
-#纳爷的收纳研究所: 收纳研究所主理人&国内第一批整理收纳师&整理收纳导师
-主页 https://www.douyin.com/user/MS4wLjABAAAAznNUcbT8Rhpksfkg1fzSXDA_bRk35pIFx1duOyzjVd58UDU09tDuvEsjzc-RPdOq
-
 #设计师夹子: 设计师夹子的自装分享
 主页 https://www.douyin.com/user/MS4wLjABAAAA8JoCy6JvxHI4ToSPRQcjzn3I4uY4skEuT-DOusUdZrxJjPEArwuxnnoxtgGQ0lbh
 
@@ -96,11 +98,9 @@
 #医学科普联盟
 主页 https://www.douyin.com/user/MS4wLjABAAAAujJ5CfiTDUNiAjwgRyL68RI9bkhXJMO_mqF4a1LvNdU?vid=7334993964421893385
 
-科学
 #李论科学: 非著名物理学者
 主页 https://www.douyin.com/user/MS4wLjABAAAA178XQjV85eh8zMbSBCfrKnN_UVDdBxDsTeegMQeRLJM
 
-情感
 #梨心力: 经济学心理学双修 心理学硕士 创业
 主页 https://www.douyin.com/user/MS4wLjABAAAAKpPNjIdygxkmyyo5DWkfcBiANNFVw-Ri2fF030uzB5ScTABfP6nWyqCiSkC8PqA_
 
@@ -109,15 +109,11 @@
 
 #沈一只: 我得想办法让这个世界变得温暖一点。
 主页 https://www.douyin.com/user/MS4wLjABAAAAckFb6Kwfr_eeOkR_ImqQ__qnrldweBrZWz0Nekm-Lto
-
 #是教你恋爱的喵喵呀（No.2）: 恋爱脑粉碎机
 主页 https://www.douyin.com/user/MS4wLjABAAAAjzTLNSmrXu_F1Ml_Zu9Y0rI03NesMPnSkl_WSj9uKpXYwN9SzKw5pWTaRnx8-OLH
-
 #恋爱班主任-小怡子: 独创《恋爱课》播放量10亿 帮助万人获得情感幸福！
 主页 https://www.douyin.com/user/MS4wLjABAAAAmiU324dvSA-jj4ZN9w7EyoL8YWFpsvVQ8e2tvXox5WXLeDnnbhTxW-kMllJJWts1
-
 #糖糖谈恋爱: 十九块九《情商课》橱窗就有
 主页 https://www.douyin.com/user/MS4wLjABAAAAyuDQzIoW15W-e4WVqQBZ2hh-BL_XuQpOKijBAKRN0SQ
-
 #捏捏肥脸: 研究生毕业5年恋爱老师，后台踢我可以领取恋爱秘籍
 主页 https://www.douyin.com/user/MS4wLjABAAAAckFb6Kwfr_eeOkR_ImqQ__qnrldweBrZWz0Nekm-Lto
