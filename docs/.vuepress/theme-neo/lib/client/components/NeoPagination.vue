@@ -4,7 +4,6 @@
             <NeoIcon icon="neo-zuojiantou" size="20" />
             <p>上一页</p>
         </span>
-
         <!-- 分页在5页及以下时 -->
         <div class="pagination-list" v-if="pages <= 5">
             <span class="dark-shadow" v-for="item in pages" :key="item" :class="{ active: currentPage === item }" @click="goIndex(item)">{{ item }}</span>
