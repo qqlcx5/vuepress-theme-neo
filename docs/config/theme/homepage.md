@@ -30,7 +30,7 @@ collapsible: false
 export default neoTheme({
     homeHeaderInfo: {
         name: 'vuepress-theme-neo',
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
+        avatar: 'https://r2-site.feyoudao.cn/star_field.png',
         description: '🚀一款极简风格VuePress2.x 主题✨'
     },
     homeHeaderImages: [

@@ -6,7 +6,7 @@
 
 ## 联系
 
-<img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "230" alt="wechat" />
+<img class="no-zoom" src="https://r2-site.feyoudao.cn/wechat.jpeg" width = "230" alt="wechat" />
 
 添加我的微信，可以在微信群交流讨论和处理你遇到的问题。
 

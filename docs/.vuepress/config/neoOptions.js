@@ -35,7 +35,7 @@ export default {
     // 个人信息（文章旁边的作者信息）
     blogOptions: {
         name: 'Star Field', // 昵称
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png', // 头像
+        avatar: 'https://r2-site.feyoudao.cn/star_field.png', // 头像
         roundAvatar: true,  // 是否为圆形头像
         intro: 'https://feyoudao.cn', // 个人介绍
         description: 'いつか、私がヒトじゃなくなっても、この星は燃え尽きることはない。', // 个人介绍下面的描述
@@ -68,7 +68,7 @@ export default {
     // 首页首屏的信息
     homeHeaderInfo: {
         name: 'vuepress-theme-neo',
-        avatar: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/star_field.png',
+        avatar: 'https://r2-site.feyoudao.cn/star_field.png',
         description: '🚀一款极简风格VuePress2.x 主题✨'
     },
     // 首页首屏的背景图

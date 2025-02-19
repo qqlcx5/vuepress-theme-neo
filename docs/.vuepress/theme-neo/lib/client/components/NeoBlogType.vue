@@ -131,7 +131,7 @@ export default {
             color: var(--c-text-lighter);
             background: rgb(127 127 127 / 15%);
             &:hover {
-                cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+                cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
             }
             &.active {
                 color: var(--c-brand);

@@ -124,7 +124,7 @@ $headings: (2, 3, 4, 5, 6);
         margin: 0 0 0.75rem 0.5rem;
         font-weight: 600;
         font-size: 0.875rem;
-        cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+        cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
         user-select: none;
     }
 

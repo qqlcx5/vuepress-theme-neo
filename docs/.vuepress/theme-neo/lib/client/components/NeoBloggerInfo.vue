@@ -128,7 +128,7 @@ export default defineComponent({
             font-size: 13px;
             padding: 0 0.2rem;
             text-align: center;
-            cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+            cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
             overflow: hidden;
 
             &:hover {

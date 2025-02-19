@@ -13,7 +13,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home';
     <div class="theme-container pkfrom-container">
         <div class="theme-default-content">
             <div class="pkfrom-info">
-                <img src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/404-light.gif" alt="404 error" />
+                <img src="https://r2-site.feyoudao.cn/404-light.gif" alt="404 error" />
                 <!-- end Rabbit -->
                 <p class="pkfrom-info__desc">The page you are looking for was moved, removed,<br />
                     renamed or might never existed.</p>
@@ -59,7 +59,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home';
             background-color: #ffad32;
             transition: all 0.5s ease-in-out;
             text-decoration: none;
-            cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+            cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
 
             &:hover {
                 background: #ec9228;

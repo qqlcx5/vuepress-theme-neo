@@ -281,7 +281,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo;
 
             .hero-img-prev,
             .hero-img-next {
-                cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+                cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
                 position: absolute;
                 top: 50%;
                 margin-top: -30px;
@@ -314,7 +314,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo;
                 bottom: 20px;
                 left: 50%;
                 margin-left: -12px;
-                cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+                cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
 
                 .font-icon {
                     width: 30px;

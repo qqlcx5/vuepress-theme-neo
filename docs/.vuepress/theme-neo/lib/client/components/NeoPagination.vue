@@ -131,7 +131,7 @@ export default {
     span {
         line-height: 1rem;
         opacity: 0.9;
-        cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+        cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
         user-select: none;
         &:hover {
             color: var(--c-brand);

@@ -47,7 +47,7 @@ columns:
 ### 公众号
 
 <br />
-<img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/frontend.png" width = "600" alt="frontend" />
+<img class="no-zoom" src="https://r2-site.feyoudao.cn/frontend.png" width = "600" alt="frontend" />
 
 ### 更多
 
@@ -55,4 +55,4 @@ columns:
 
 一起学习和技术交流，添加下面微信，我会将你拉进前端有道交流群。合作意向，请表明来意。
 
-<img class="no-zoom" src="https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/wechat.jpeg" width = "230" alt="wechat" />
+<img class="no-zoom" src="https://r2-site.feyoudao.cn/wechat.jpeg" width = "230" alt="wechat" />

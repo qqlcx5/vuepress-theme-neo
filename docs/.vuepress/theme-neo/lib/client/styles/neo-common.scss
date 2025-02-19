@@ -18,15 +18,15 @@
 }
 
 html body {
-    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
-    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/link.cur'), default;
+    cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
+    cursor: url('https://r2-site.feyoudao.cn/link.cur'), default;
 }
 a,
 img,
 div[class*=language-]>button.copy {
-    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer !important;
+    cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer !important;
 }
 
 .cursor-pointer {
-    cursor: url('https://feyoudao.oss-cn-hongkong.aliyuncs.com/site/pointer.cur'), pointer;
+    cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
 }
