@@ -12,13 +12,13 @@
 
     text-align: center;
 
-    @media (max-width: hope-config.$tablet) {
-      width: 25%;
-    }
+    // @media (max-width: hope-config.$tablet) {
+    //   width: 25%;
+    // }
 
-    @media (max-width: hope-config.$mobile) {
-      width: 33.333%;
-    }
+    // @media (max-width: hope-config.$mobile) {
+    //   width: 33.333%;
+    // }
 
     &:hover {
       background: var(--bg-color-light);

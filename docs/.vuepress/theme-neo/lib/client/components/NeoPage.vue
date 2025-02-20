@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PageMeta from '@theme/PageMeta.vue'
-import PageNav from '@theme/PageNav.vue'
+import PageMeta from '@theme/VPPageMeta.vue'
+import PageNav from '@theme/VPPageNav.vue'
 
 /* -------------------------------- neoTheme -------------------------------- */
 import { ref } from 'vue'

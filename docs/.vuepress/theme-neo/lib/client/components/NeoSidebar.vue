@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavbarItems from '@theme/NavbarItems.vue'
+import NavbarItems from '@theme/VPNavbarItems.vue'
 import NeoSidebarItems from '@theme/NeoSidebarItems.vue'
 
 defineSlots<{

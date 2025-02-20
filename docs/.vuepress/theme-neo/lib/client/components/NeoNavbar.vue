@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import NavbarBrand from '@theme/NavbarBrand.vue'
-import NavbarItems from '@theme/NavbarItems.vue'
-import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
-import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
+import NavbarBrand from '@theme/VPNavbarBrand.vue'
+import NavbarItems from '@theme/VPNavbarItems.vue'
+import ToggleColorModeButton from '@theme/VPToggleColorModeButton.vue'
+import ToggleSidebarButton from '@theme/VPToggleSidebarButton.vue'
 import { usePageFrontmatter } from '@vuepress/client';
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
 import { useRouter } from "vue-router";

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AutoLink from '@theme/AutoLink.vue'
+import AutoLink from '@theme/VPAutoLink.vue'
 import NeoSidebarItem from '@theme/NeoSidebarItem.vue'
-import DropdownTransition from '@theme/DropdownTransition.vue'
+import DropdownTransition from '@theme/VPDropdownTransition.vue'
 import { useToggle } from '@vueuse/core'
 import { computed, nextTick, onBeforeUnmount, toRefs } from 'vue'
 import type { PropType } from 'vue'

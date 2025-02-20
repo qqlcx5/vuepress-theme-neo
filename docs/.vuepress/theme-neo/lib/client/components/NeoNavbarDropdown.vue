@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AutoLink from '@theme/AutoLink.vue'
+import AutoLink from '@theme/VPAutoLink.vue'
 import DropdownTransition from '@theme/DropdownTransition.vue'
 import { computed, ref, toRefs, watch } from 'vue'
 import type { PropType } from 'vue'
