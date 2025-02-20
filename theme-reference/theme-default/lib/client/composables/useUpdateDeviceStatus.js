@@ -1,11 +1,12 @@
+import { useEventListener } from '@vueuse/core';
 import { onMounted } from 'vue';
-import cssVars from '../styles/_variables.module.scss?module';
+import cssVariables from '../styles/_variables.module.scss';
 export var DeviceType;
 (function (DeviceType) {
-    DeviceType["MOBILE"] = "mobile";
+    DeviceType["Mobile"] = "mobile";
 })(DeviceType || (DeviceType = {}));
 const DeviceTypeMap = {
-    [DeviceType.MOBILE]: Number.parseInt(cssVars.mobile?.replace('px', ''), 10),
+    [DeviceType.Mobile]: Number.parseInt(cssVariables.mobile.replace('px', ''), 10),
 };
 /**
  * add listener to detect screen though device type
@@ -17,9 +18,13 @@ export const useUpdateDeviceStatus = (deviceType, callback) => {
             throw new Error('device width must be a integer');
         return;
     }
+    useEventListener('orientationchange', () => {
+        callback(width);
+    }, false);
+    useEventListener('resize', () => {
+        callback(width);
+    }, false);
     onMounted(() => {
         callback(width);
-        window.addEventListener('resize', () => callback(width), false);
-        window.addEventListener('orientationchange', () => callback(width), false);
     });
 };

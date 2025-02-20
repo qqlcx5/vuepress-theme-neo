@@ -1,12 +1,12 @@
-import { isLinkHttp } from '@vuepress/shared';
+import { isLinkHttp } from 'vuepress/shared';
 export const resolveRepoType = (repo) => {
-    if (!isLinkHttp(repo) || /github\.com/.test(repo))
+    if (!isLinkHttp(repo) || repo.includes('github.com'))
         return 'GitHub';
-    if (/bitbucket\.org/.test(repo))
+    if (repo.includes('bitbucket.org'))
         return 'Bitbucket';
-    if (/gitlab\.com/.test(repo))
+    if (repo.includes('gitlab.com'))
         return 'GitLab';
-    if (/gitee\.com/.test(repo))
+    if (repo.includes('gitee.com'))
         return 'Gitee';
     return null;
 };

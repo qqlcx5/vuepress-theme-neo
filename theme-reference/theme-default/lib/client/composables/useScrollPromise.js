@@ -3,7 +3,9 @@ let promiseResolve = null;
 const scrollPromise = {
     wait: () => promise,
     pending: () => {
-        promise = new Promise((resolve) => (promiseResolve = resolve));
+        promise = new Promise((resolve) => {
+            promiseResolve = resolve;
+        });
     },
     resolve: () => {
         promiseResolve?.();

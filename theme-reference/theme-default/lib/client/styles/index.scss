@@ -1,19 +1,9 @@
 @use 'vars';
 @use 'vars-dark';
 @use 'normalize';
-
+@use 'content';
 @use 'arrow';
-@use 'badge';
-@use 'code';
-@use 'code-group';
-@use 'custom-container';
-@use 'home';
+@use 'external-link-icon';
 @use 'layout';
-@use 'navbar';
-@use 'navbar-dropdown';
-@use 'page';
-@use 'sidebar';
-@use 'toc';
-@use 'transitions';
-
+@use 'plugins';
 @use '@vuepress/plugin-palette/style';

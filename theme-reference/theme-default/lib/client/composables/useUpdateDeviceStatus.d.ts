@@ -1,5 +1,5 @@
 export declare enum DeviceType {
-    MOBILE = "mobile"
+    Mobile = "mobile"
 }
 /**
  * add listener to detect screen though device type

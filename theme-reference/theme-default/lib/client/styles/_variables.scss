@@ -1,4 +1,5 @@
-@import '@vuepress/plugin-palette/palette';
+/* stylelint-disable scss/dollar-variable-pattern */
+@forward '@vuepress/plugin-palette/palette';
 
 // responsive breakpoints
 $MQNarrow: 959px !default;
