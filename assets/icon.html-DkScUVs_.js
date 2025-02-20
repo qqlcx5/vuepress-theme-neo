@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8ba58eb4","path":"/config/theme/icon.html","title":"icon主题","lang":"zh-CN","frontmatter":{"title":"icon主题","order":5,"comment":false,"article":false,"collapsible":false},"headers":[{"level":2,"title":"代码演示","slug":"代码演示","link":"#代码演示","children":[]}],"git":{"updatedTime":1705919507000},"filePathRelative":"config/theme/icon.md"}');export{e as data};

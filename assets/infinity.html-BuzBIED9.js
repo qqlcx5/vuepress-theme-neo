@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-5f74a1ec","path":"/nav/infinity.html","title":"infinity插件数据","lang":"zh-CN","frontmatter":{"title":"infinity插件数据","date":"2022-09-07T16:25:04.000Z","categories":["nav"],"tags":[null],"columns":[null]},"headers":[],"git":{"updatedTime":1703214392000},"filePathRelative":"nav/infinity.md"}');export{t as data};

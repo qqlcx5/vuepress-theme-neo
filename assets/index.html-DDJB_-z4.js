@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-fffb8e28","path":"/guide/","title":"指南meibi","lang":"zh-CN","frontmatter":{"title":"指南meibi","comment":false,"article":false,"collapsible":false,"icon":"neo-meibi","iconSpin":true,"catalogue":true},"headers":[],"git":{"updatedTime":1707293190000},"filePathRelative":"guide/README.md"}');export{e as data};

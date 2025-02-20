@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-323ca559","path":"/config/frontmatter/","title":"Frontmatter 配置","lang":"zh-CN","frontmatter":{"title":"Frontmatter 配置","icon":"neo-meibi","order":2,"comment":false,"article":false,"collapsible":false},"headers":[],"git":{"updatedTime":1674117096000},"filePathRelative":"config/frontmatter/README.md"}');export{t as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-52365650","path":"/element/%E6%97%B6%E9%97%B4%E8%BD%B4%E6%A0%B7%E5%BC%8F.html","title":"时间轴样式","lang":"zh-CN","frontmatter":{"title":"时间轴样式","date":"2023-01-12T14:19:43.000Z","categories":["element"],"tags":[null],"columns":[null]},"headers":[],"git":{"updatedTime":1705591672000},"filePathRelative":"element/时间轴样式.md"}');export{e as data};
