@@ -1,47 +1,7 @@
 import type { ThemeData } from '@vuepress/plugin-theme-data';
-import type { LocaleData } from '@vuepress/shared';
-import type { NavbarConfig, SidebarConfig } from './nav.js';
-export interface DefaultThemePluginsOptions {
-    /**
-     * Enable @vuepress/plugin-active-header-links or not
-     */
-    activeHeaderLinks?: boolean;
-    /**
-     * Enable @vuepress/plugin-back-to-top or not
-     */
-    backToTop?: boolean;
-    /**
-     * Enable @vuepress/plugin-container or not
-     */
-    container?: {
-        tip?: boolean;
-        warning?: boolean;
-        danger?: boolean;
-        details?: boolean;
-        codeGroup?: boolean;
-        codeGroupItem?: boolean;
-    };
-    /**
-     * Enable @vuepress/plugin-external-link-icon or not
-     */
-    externalLinkIcon?: boolean;
-    /**
-     * Enable @vuepress/plugin-git or not
-     */
-    git?: boolean;
-    /**
-     * Enable @vuepress/plugin-medium-zoom or not
-     */
-    mediumZoom?: boolean;
-    /**
-     * Enable @vuepress/plugin-nprogress or not
-     */
-    nprogress?: boolean;
-    /**
-     * Enable @vuepress/plugin-prismjs or not
-     */
-    prismjs?: boolean;
-}
+import type { LocaleData } from 'vuepress/shared';
+import type { NavbarOptions } from './navbar.js';
+import type { SidebarOptions } from './sidebar.js';
 export type DefaultThemeLocaleOptions = DefaultThemeData;
 export type DefaultThemeData = ThemeData<DefaultThemeLocaleData>;
 export interface DefaultThemeLocaleData extends LocaleData {
@@ -58,6 +18,12 @@ export interface DefaultThemeLocaleData extends LocaleData {
      */
     colorModeSwitch?: boolean;
     /**
+     * Whether show external link icon
+     *
+     * @default true
+     */
+    externalLinkIcon?: boolean;
+    /**
      * Home path of current locale
      *
      * Used as the link of back-to-home and navbar logo
@@ -68,25 +34,40 @@ export interface DefaultThemeLocaleData extends LocaleData {
      *
      * Set to `false` to disable navbar in current locale
      */
-    navbar?: false | NavbarConfig;
+    navbar?: NavbarOptions | false;
+    /**
+     * Navbar label used for screen readers using the `aria-label` attribute
+     */
+    navbarLabel?: string | null;
+    /**
+     * Page navbar label used for screen readers using the `aria-label` attribute
+     */
+    pageNavbarLabel?: string | null;
     /**
      * Navbar logo config
      *
      * Logo to display in navbar
      */
-    logo?: null | string;
+    logo?: string | null;
     /**
      * Navbar logo config for dark mode
      *
      * Logo to display in navbar in dark mode
      */
-    logoDark?: null | string;
+    logoDark?: string | null;
+    /**
+     * The alt text of navbar logo.
+     * Defaults to the site title if not specified.
+     * If the value is the same as the site title, the site title rendered in the navbar will be
+     * hidden from screen readers to avoid duplication.
+     */
+    logoAlt?: string | null;
     /**
      * Navbar repository config
      *
      * Used for the repository link of navbar
      */
-    repo?: null | string;
+    repo?: string | null;
     /**
      * Navbar repository config
      *
@@ -118,7 +99,7 @@ export interface DefaultThemeLocaleData extends LocaleData {
      *
      * Set to `false` to disable sidebar in current locale
      */
-    sidebar?: 'auto' | false | SidebarConfig;
+    sidebar?: SidebarOptions | false;
     /**
      * Sidebar depth
      *
@@ -217,6 +198,18 @@ export interface DefaultThemeLocaleData extends LocaleData {
      */
     danger?: string;
     /**
+     * Custom block config
+     *
+     * Default title of IMPORTANT custom block
+     */
+    important?: string;
+    /**
+     * Custom block config
+     *
+     * Default title of NOTE custom block
+     */
+    note?: string;
+    /**
      * 404 page config
      *
      * Not Found messages for 404 page
@@ -240,4 +233,12 @@ export interface DefaultThemeLocaleData extends LocaleData {
      * A11y text for sidebar toggle button
      */
     toggleSidebar?: string;
+    /**
+     * text for prev link
+     */
+    prev?: string | false;
+    /**
+     * text for next link
+     */
+    next?: string | false;
 }

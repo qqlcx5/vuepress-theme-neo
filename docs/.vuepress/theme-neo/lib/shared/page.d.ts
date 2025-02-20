@@ -1,12 +1,15 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git';
-import type { NavLink, SidebarConfig } from './nav.js';
-export interface DefaultThemePageData extends GitPluginPageData {
+import type { PageFrontmatter } from 'vuepress/shared';
+import type { AutoLinkOptions } from './nav.js';
+import type { SidebarArrayOptions } from './sidebar.js';
+export interface DefaultThemePageData extends Partial<GitPluginPageData> {
     filePathRelative: string | null;
 }
-export interface DefaultThemePageFrontmatter {
+export interface DefaultThemePageFrontmatter extends PageFrontmatter {
     home?: boolean;
     navbar?: boolean;
     pageClass?: string;
+    externalLinkIcon?: boolean;
     /* -------------------------------- neoTheme -------------------------------- */
     toc?: boolean;
     catalogue?: boolean;
@@ -44,8 +47,8 @@ export interface DefaultThemeNormalPageFrontmatter extends DefaultThemePageFront
     editLinkPattern?: string;
     lastUpdated?: boolean;
     contributors?: boolean;
-    sidebar?: 'auto' | false | SidebarConfig;
+    sidebar?: SidebarArrayOptions | 'heading' | false;
     sidebarDepth?: number;
-    prev?: string | NavLink;
-    next?: string | NavLink;
+    prev?: AutoLinkOptions | string;
+    next?: AutoLinkOptions | string;
 }

@@ -9,7 +9,7 @@ export const DEFAULT_LOCALE_OPTIONS = {
     selectLanguageText: 'Languages',
     selectLanguageAriaLabel: 'Select language',
     // sidebar
-    sidebar: 'auto',
+    sidebar: 'heading',
     sidebarDepth: 2,
     // page meta
     editLink: true,
@@ -39,16 +39,12 @@ export const DEFAULT_LOCALE_DATA = {
  * Assign default options
  */
 export const assignDefaultLocaleOptions = (localeOptions) => {
-    if (!localeOptions.locales) {
-        localeOptions.locales = {};
-    }
-    if (!localeOptions.locales['/']) {
-        localeOptions.locales['/'] = {};
-    }
+    localeOptions.locales ??= {};
     Object.assign(localeOptions, {
         ...DEFAULT_LOCALE_OPTIONS,
         ...localeOptions,
     });
+    localeOptions.locales['/'] ??= {};
     Object.assign(localeOptions.locales['/'], {
         ...DEFAULT_LOCALE_DATA,
         ...localeOptions.locales['/'],

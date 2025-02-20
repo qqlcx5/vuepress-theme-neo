@@ -1,6 +1,6 @@
-import { isLinkHttp, removeEndingSlash, removeLeadingSlash, } from '@vuepress/shared';
-import { resolveRepoType } from './resolveRepoType.js';
-export const editLinkPatterns = {
+import { resolveRepoType } from '@theme/resolveRepoType';
+import { isLinkHttp, removeEndingSlash, removeLeadingSlash, } from 'vuepress/shared';
+export const EDIT_LINK_PATTERNS = {
     GitHub: ':repo/edit/:branch/:path',
     GitLab: ':repo/-/edit/:branch/:path',
     Gitee: ':repo/edit/:branch/:path',
@@ -12,7 +12,7 @@ const resolveEditLinkPatterns = ({ docsRepo, editLinkPattern, }) => {
     }
     const repoType = resolveRepoType(docsRepo);
     if (repoType !== null) {
-        return editLinkPatterns[repoType];
+        return EDIT_LINK_PATTERNS[repoType];
     }
     return null;
 };

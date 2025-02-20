@@ -1,5 +1,3 @@
-export * from './assignDefaultLocaleOptions.js';
-export * from './resolveContainerPluginOptions.js';
 /* -------------------------------- neoTheme -------------------------------- */
 export * from './neoCommon.js'
 export * from './neoExtraLocaleOptions.js'
