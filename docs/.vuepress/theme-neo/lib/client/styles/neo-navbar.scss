@@ -1,19 +1,19 @@
 @use '_variables' as *;
 
-.navbar {
+.vp-navbar {
     --navbar-line-height: calc(var(--navbar-height) - 2 * var(--navbar-padding-v));
 
     padding: var(--navbar-padding-v) var(--navbar-padding-h);
     line-height: var(--navbar-line-height);
 
-    .site-name {
+    .vp-site-name {
         font-size: 1.1rem;
         font-weight: 700;
         color: var(--c-text);
         position: relative;
     }
 
-    .navbar-items-wrapper {
+    .vp-navbar-items-wrapper {
         display: flex;
         position: absolute;
         box-sizing: border-box;
@@ -24,17 +24,17 @@
         white-space: nowrap;
         font-size: 0.9rem;
 
-        .search-box {
+        .vp-search-box {
             flex: 0 0 auto;
             vertical-align: top;
         }
     }
 
     &.invert {
-        span.site-name,
-        .toggle-color-mode-button,
-        .navbar-items .navbar-item > a,
-        .navbar-items .navbar-item span.title {
+        span.vp-site-name,
+        .vp-toggle-color-mode-button,
+        .vp-navbar-items .vp-navbar-item > a,
+        .vp-navbar-items .vp-navbar-item span.vp-title {
             color: white;
             &:hover,
             &:focus {
@@ -45,12 +45,12 @@
 }
 
 @media (max-width: $MQMobile) {
-    .navbar {
-        .can-hide {
+    .vp-navbar {
+        .vp-can-hide {
             display: none;
         }
 
-        .site-name {
+        .vp-site-name {
             width: calc(100vw - 9.4rem);
             overflow: hidden;
             white-space: nowrap;
@@ -63,7 +63,7 @@
 /**
  * navbar-items
  */
-.navbar-items {
+.vp-navbar-items {
     display: inline-block;
     font-weight: 600;
 
@@ -105,7 +105,7 @@
 }
 
 @media (min-width: $MQMobile) {
-    .navbar {
+    .vp-navbar {
         background-color: transparent;
         box-shadow: none;
         backdrop-filter: none;
@@ -119,9 +119,9 @@
             box-shadow: var(--box-shadow);
             transition: transform 0.3s;
 
-            .navbar-item a,
+            .vp-navbar-item a,
             span.title,
-            span.site-name {
+            span.vp-site-name {
                 color: var(--c-text) !important;
                 &:hover,
                 &:focus,
@@ -136,14 +136,14 @@
         }
     }
 
-    .navbar-items a {
+    .vp-navbar-items a {
         &:hover,
         &.router-link-active {
             color: var(--c-text);
         }
     }
 
-    .navbar-item > a {
+    .vp-navbar-item > a {
         &:hover,
         &.router-link-active {
             color: var(--c-text-accent);

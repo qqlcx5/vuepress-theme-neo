@@ -1,27 +1,14 @@
 <script setup lang="ts">
-// @ts-ignore
 import NeoBlog from '@theme/NeoBlog.vue'
-// @ts-ignore
 import NeoArticlesPage from '@theme/NeoArticlesPage.vue'
-// @ts-ignore
 import NeoCategoriesPage from '@theme/NeoCategoriesPage.vue'
-// @ts-ignore
 import NeoTagsPage from '@theme/NeoTagsPage.vue'
-// @ts-ignore
 import NeoArchivesPage from '@theme/NeoArchivesPage.vue'
-// @ts-ignore
 import NeoColumnsPage from '@theme/NeoColumnsPage.vue'
-// @ts-ignore
 import NeoPage from '@theme/NeoPage.vue'
-// @ts-ignore
 import NeoNavbar from '@theme/NeoNavbar.vue'
-// @ts-ignore
 import NeoSidebar from '@theme/NeoSidebar.vue'
-// import VPHome from '@theme/VPHome.vue'
-// import VPNavbar from '@theme/VPNavbar.vue'
-// import VPPage from '@theme/VPPage.vue'
-// import VPSidebar from '@theme/VPSidebar.vue'
-import { useScrollPromise } from '@theme/useScrollPromise';
+import { useScrollPromise } from '@theme/useScrollPromise'
 import { useSidebarItems } from '@theme/useSidebarItems'
 import { useThemeLocaleData } from '@theme/useThemeData'
 import type { VNode } from 'vue'
@@ -133,7 +120,7 @@ const onBeforeLeave = scrollPromise.pending
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
-      <NeoNavbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+      <NeoNavbar v-if="shouldShowNavbar" :isSidebar="!!sidebarItems.length" @toggle-sidebar="toggleSidebar">
         <template #before>
           <slot name="navbar-before" />
         </template>
