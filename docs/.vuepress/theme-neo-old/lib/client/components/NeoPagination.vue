@@ -122,7 +122,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_variables';
+@use '../styles/variables' as *;;
 
 .pagination {
     position: relative;

@@ -1,4 +1,4 @@
-@import '_variables';
+@use '_variables' as *;
 
 .home {
   padding: var(--navbar-height) 2rem 0;

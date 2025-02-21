@@ -138,7 +138,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_variables';
+@use '../styles/variables' as *;;
 .post-list {
     margin-bottom: 3rem;
     :deep(.neo-colour) {

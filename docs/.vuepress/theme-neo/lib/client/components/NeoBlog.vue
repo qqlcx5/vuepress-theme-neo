@@ -139,7 +139,7 @@ const bgImageMask = computed(() => {
 const homeHeaderInfo = themeLocale.value.homeHeaderInfo;
 </script>
 <style lang="scss" scoped>
-@import '../styles/_variables';
+@use '../styles/variables' as *;;
 
 .home-blog {
     padding: 0;

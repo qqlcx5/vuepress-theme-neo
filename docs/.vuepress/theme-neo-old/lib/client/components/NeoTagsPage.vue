@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_variables';
+@use '../styles/variables' as *;;
 .content-left .tags-wrapper {
     display: none;
     @media (max-width: $MQNarrow) {

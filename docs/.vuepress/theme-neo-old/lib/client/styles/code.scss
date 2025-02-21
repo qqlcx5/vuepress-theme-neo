@@ -1,4 +1,4 @@
-@import '_variables';
+@use '_variables' as *;
 
 // Safari only support integer pixel value for line-height
 // the original font-size is 16px, 1.375 will make line-height be 22px

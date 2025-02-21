@@ -23,7 +23,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '../styles/_variables';
+@use '../styles/variables' as *;;
 .neo-page {
     padding-top: var(--navbar-height);
     .neo-blog-wrapper {

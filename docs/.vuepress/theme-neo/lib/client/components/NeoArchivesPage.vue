@@ -29,7 +29,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '../styles/_variables';
+@use '../styles/variables' as *;;
 .archives-page {
     padding-right: 1.2em;
     overflow: hidden;
