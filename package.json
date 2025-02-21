@@ -9,25 +9,8 @@
     "docs:build": "vuepress build docs --clean-cache"
   },
   "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.9.10",
     "@vuepress/bundler-vite": "^2.0.0-rc.19",
-    "@vuepress/client": "2.0.0-rc.0",
-    "@vuepress/core": "2.0.0-rc.0",
-    "@vuepress/plugin-container": "2.0.0-rc.0",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
-    "@vuepress/plugin-external-link-icon": "2.0.0-rc.0",
-    "@vuepress/plugin-google-analytics": "2.0.0-rc.0",
-    "@vuepress/plugin-register-components": "2.0.0-rc.0",
-    "@vuepress/plugin-sass-palette": "^2.0.0-rc.78",
-    "@vuepress/plugin-search": "2.0.0-rc.0",
-    "@vuepress/shared": "2.0.0-rc.0",
-    "@vuepress/theme-default": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
-    "vue-router": "^4.2.5",
-    "vuepress-plugin-comment2": "2.0.0-rc.11",
-    "vuepress-plugin-copy-code2": "2.0.0-rc.11",
-    "vuepress-plugin-md-enhance": "2.0.0-rc.11",
-    "vuepress-plugin-sitemap2": "2.0.0-rc.11",
-    "vuepress-shared": "2.0.0-rc.11",
     "@vuepress/helper": "2.0.0-rc.78",
     "@vuepress/plugin-active-header-links": "2.0.0-rc.77",
     "@vuepress/plugin-back-to-top": "2.0.0-rc.78",
@@ -44,29 +27,18 @@
     "@vuepress/plugin-sitemap": "2.0.0-rc.78",
     "@vuepress/plugin-theme-data": "2.0.0-rc.77",
     "@vueuse/core": "^12.7.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.19"
   },
   "peerDependencies": {
-    "@vueuse/core": "^10.7.0",
-    "chalk": "^5.3.0",
-    "gray-matter": "^4.0.3",
-    "json2yaml": "^1.1.0",
-    "twikoo": "^1.6.26",
     "sass": "^1.80.3",
     "sass-embedded": "^1.80.3",
     "sass-loader": "^16.0.2",
-    "vuepress": "2.0.0-rc.19"
-  },
-  "peerDependenciesMeta": {
-    "sass": {
-      "optional": true
-    },
-    "sass-embedded": {
-      "optional": true
-    },
-    "sass-loader": {
-      "optional": true
-    }
+    "vuepress": "2.0.0-rc.19",
+    "chalk": "^5.3.0",
+    "gray-matter": "^4.0.3",
+    "json2yaml": "^1.1.0",
+    "twikoo": "^1.6.26"
   },
   "engines": {
     "node": ">=18.16.0",

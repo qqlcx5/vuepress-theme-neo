@@ -1,0 +1,4 @@
+packages:
+  - 'docs/.vuepress/*'
+
+shamefully-hoist: true

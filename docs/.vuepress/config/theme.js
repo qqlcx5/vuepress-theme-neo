@@ -1,11 +1,12 @@
 import navbar from './navbar';
 import neoOptions from './neoOptions.js';
 import sidebar, { sidebarOptions } from './sidebar';
-import neoTheme from '../theme-neo/lib/node/neoIndex';
+// import neoTheme from '../theme-neo/lib/node/neoIndex';
+import {defaultTheme} from '../theme-neo/lib/node/index.js';
 // import neoTheme from 'vuepress-theme-neo'
 
 // vuepress 配置项
-export default neoTheme({
+export default defaultTheme({
     navbar,
     sidebar,
     sidebarDepth: 0, // 侧边栏显示深度，默认主题配置项

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useRouteLocale } from '@vuepress/client'
-import { useThemeLocaleData } from '../composables/index.js'
+import { useThemeLocaleData } from '@theme/useThemeData'
+import { RouteLink, useRouteLocale } from 'vuepress/client'
 
 const routeLocale = useRouteLocale()
 const themeLocale = useThemeLocaleData()
@@ -13,15 +13,27 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
 </script>
 
 <template>
-  <div class="theme-container">
+  <div class="vp-theme-container" vp-container>
     <main class="page">
-      <div class="theme-default-content">
+      <div vp-content>
         <h1>404</h1>
 
         <blockquote>{{ getMsg() }}</blockquote>
 
-        <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
+        <RouteLink :to="homeLink">{{ homeText }}</RouteLink>
       </div>
     </main>
   </div>
 </template>
+
+<style scoped lang="scss">
+.vp-theme-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+
+  @media (max-width: 959px) {
+    padding: 2rem;
+  }
+}
+</style>

@@ -10,16 +10,6 @@ export interface DefaultThemePageFrontmatter extends PageFrontmatter {
     navbar?: boolean;
     pageClass?: string;
     externalLinkIcon?: boolean;
-    /* -------------------------------- neoTheme -------------------------------- */
-    toc?: boolean;
-    catalogue?: boolean;
-    hideNavbar?: boolean;
-    archivesPage: boolean;
-    tagsPage: boolean;
-    categoriesPage: boolean;
-    columnsPage: boolean;
-    articlesPage: boolean;
-    /* -------------------------------- neoTheme -------------------------------- */
 }
 export interface DefaultThemeHomePageFrontmatter extends DefaultThemePageFrontmatter {
     home: true;

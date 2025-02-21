@@ -1,5 +1,5 @@
-// const { path } from '@vuepress/utils'
-import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
+// const { path } from 'vuepress/utils'
+// import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 // import { palettePlugin } from '@vuepress/plugin-palette';
 // import { searchPlugin } from "@vuepress/plugin-search";
 // import { docsearchPlugin } from '@vuepress/plugin-docsearch'
@@ -13,10 +13,10 @@ import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 // import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
 // import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
-// import { getDirname, path } from "@vuepress/utils";
+// import { getDirname, path } from "vuepress/utils";
 // const __dirname = getDirname(import.meta.url);
 export default [
-    googleAnalyticsPlugin({ id: "G-7Q9JVXXQBW" }),
+    // googleAnalyticsPlugin({ id: "G-7Q9JVXXQBW" }),
     // searchPlugin({
     //     maxSuggestions: 30,
     //     // 排除首页

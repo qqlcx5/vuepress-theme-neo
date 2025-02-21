@@ -2,13 +2,6 @@
  * Base nav item, displayed as text
  */
 export interface NavItemOptions {
-    /* -------------------------------- neoTheme -------------------------------- */
-    icon?: string;
-    iconSize?: string;
-    iconColor?: string;
-    iconSpin?: string;
-    iconRotate?: string;
-    /* -------------------------------- neoTheme -------------------------------- */
     text: string;
     ariaLabel?: string;
 }
