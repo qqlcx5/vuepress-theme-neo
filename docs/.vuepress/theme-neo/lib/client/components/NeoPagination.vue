@@ -50,8 +50,9 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-export default {
+import { computed, defineComponent } from 'vue'
+
+export default defineComponent({
     props: {
         total: {
             // 总长度
@@ -118,7 +119,7 @@ export default {
             pages
         }
     }
-}
+})
 </script>
 
 <style lang="scss" scoped>

@@ -6,11 +6,10 @@ import VPToggleSidebarButton from '@theme/VPToggleSidebarButton.vue'
 import { useThemeLocaleData } from '@theme/useThemeData'
 import { DeviceType, useUpdateDeviceStatus } from '@theme/useUpdateDeviceStatus'
 import { hasGlobalComponent } from '@vuepress/helper/client'
-import { usePageFrontmatter } from 'vuepress/client';
+import { usePageFrontmatter, useRouter } from 'vuepress/client';
 import type { VNode } from 'vue'
 import { computed, ref, resolveComponent, useTemplateRef, onMounted, onBeforeUnmount } from 'vue'
 
-import { useRouter } from "vue-router";
 
 
 // defineEmits<(e: 'toggle-sidebar') => void>()

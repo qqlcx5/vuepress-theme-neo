@@ -1,4 +1,4 @@
-# packages:
-#   - 'docs/.vuepress/*'
+packages:
+  - 'docs/.vuepress/theme-neo'
 
 shamefully-hoist: true
