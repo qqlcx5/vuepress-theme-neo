@@ -1,0 +1,69 @@
+@use "@sass-palette/hope-palette";
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "@sass-palette/helper";
+@use "@sass-palette/hope-config";
+
+$enable-theme-color: map.has-key(
+  meta.module-variables("hope-config"),
+  "theme-colors"
+);
+
+.vp-theme-color-picker {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  font-size: 14px;
+
+  li {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+
+      width: 15px;
+      height: 15px;
+      margin: 0 2px;
+      border-radius: 2px;
+
+      // original theme-color
+      &.theme-color {
+        background: helper.get-color(hope-palette.$vp-c-accent-bg);
+
+        /* stylelint-disable-next-line max-nesting-depth */
+        [data-theme="dark"] {
+          background: helper.get-dark-color(hope-palette.$vp-c-accent-bg);
+        }
+      }
+    }
+  }
+}
+
+@if $enable-theme-color {
+  @each $color in hope-config.$theme-colors {
+    $index: list.index(hope-config.$theme-colors, $color);
+
+    :root.theme-#{$index} {
+      --vp-c-accent: #{color.change($color, $lightness: 35%, $alpha: 1)};
+      --vp-c-accent-bg: #{color.change($color, $lightness: 45%, $alpha: 1)};
+      --vp-c-accent-hover: #{color.change($color, $lightness: 50%, $alpha: 1)};
+      --vp-c-accent-soft: #{color.change(
+          $color,
+          $lightness: 40%,
+          $saturation: 80%,
+          $alpha: 0.15
+        )};
+    }
+
+    [data-theme="dark"].theme-#{$index} {
+      --vp-c-accent: #{color.change($color, $lightness: 55%, $alpha: 1)};
+      --vp-c-accent-bg: #{color.change($color, $lightness: 47.5%, $alpha: 1)};
+      --vp-c-accent-hover: #{color.change($color, $lightness: 45%, $alpha: 1)};
+    }
+  }
+}

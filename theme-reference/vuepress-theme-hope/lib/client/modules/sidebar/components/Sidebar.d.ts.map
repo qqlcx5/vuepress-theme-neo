@@ -1,0 +1,1 @@
+{"version":3,"file":"Sidebar.d.ts","sourceRoot":"","sources":["../../../../../src/client/modules/sidebar/components/Sidebar.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,KAAK,CAAC;AAO5C,OAAO,wBAAwB,CAAC;gEAqDjB,KAAK;cA/CN,MAAM,KAAK,EAAE,GAAG,KAAK,GAAG,IAAI;UAChC,MAAM,KAAK,EAAE,GAAG,KAAK,GAAG,IAAI;aACzB,MAAM,KAAK,EAAE,GAAG,KAAK,GAAG,IAAI;;AANzC,wBAoEG"}

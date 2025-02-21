@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../src/client/modules/sidebar/utils/index.ts"],"names":[],"mappings":"AAAA,cAAc,0BAA0B,CAAC;AACzC,cAAc,0BAA0B,CAAC;AACzC,cAAc,cAAc,CAAC","sourcesContent":["export * from \"./isActiveSidebarItem.js\";\nexport * from \"./resolveSidebarItems.js\";\nexport * from \"./typings.js\";\n"]}

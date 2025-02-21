@@ -1,0 +1,50 @@
+import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
+import { useRoute } from "vuepress/client";
+import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
+import "../styles/sidebar.scss";
+export default defineComponent({
+    name: "SideBar",
+    slots: Object,
+    setup(_props, { slots }) {
+        const route = useRoute();
+        const sidebarItems = useSidebarItems();
+        const sidebar = shallowRef();
+        onMounted(() => {
+            // Scroll to active sidebar item
+            watch(() => route.hash, (hash) => {
+                // Get the active sidebar item DOM, whose href equals to the current route
+                const activeSidebarItem = document.querySelector(`.vp-sidebar a.vp-sidebar-link[href="${route.path}${hash}"]`);
+                if (!activeSidebarItem)
+                    return;
+                // Get the top and height of the sidebar
+                const { top: sidebarTop, height: sidebarHeight } = 
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                sidebar.value.getBoundingClientRect();
+                // Get the top and height of the active sidebar item
+                const { top: activeSidebarItemTop, height: activeSidebarItemHeight } = activeSidebarItem.getBoundingClientRect();
+                // When the active sidebar item overflows the top edge of sidebar
+                if (activeSidebarItemTop < sidebarTop)
+                    // Scroll to the top edge of sidebar
+                    activeSidebarItem.scrollIntoView(true);
+                // When the active sidebar item overflows the bottom edge of sidebar
+                else if (activeSidebarItemTop + activeSidebarItemHeight >
+                    sidebarTop + sidebarHeight)
+                    // Scroll to the bottom edge of sidebar
+                    activeSidebarItem.scrollIntoView(false);
+            }, { immediate: true });
+        });
+        return () => h("aside", {
+            ref: sidebar,
+            key: "sidebar",
+            id: "sidebar",
+            class: "vp-sidebar",
+            "vp-sidebar": "",
+        }, [
+            slots.top?.(),
+            slots.default?.() ?? h(SidebarLinks, { config: sidebarItems.value }),
+            slots.bottom?.(),
+        ]);
+    },
+});
+//# sourceMappingURL=Sidebar.js.map
