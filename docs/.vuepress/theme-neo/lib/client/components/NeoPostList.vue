@@ -109,7 +109,7 @@ export default {
             () => props.currentPage,
             currentPage => {
                 if (route.query.p != currentPage) {
-                    router.push({ query: { ...route.query, p: currentPage, catchAll: route.params.catchAll } })
+                    router.push({ path: '/', query: { ...route.query, p: currentPage } })
                 }
                 setTimeout(() => {
                     window.scrollTo({ top: props.offsetTop }) // behavior: 'smooth'

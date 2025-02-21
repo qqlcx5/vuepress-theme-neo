@@ -91,7 +91,10 @@ importers:
         version: 2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13)
 
   docs/.vuepress/theme-neo:
-    dependencies:
+    devDependencies:
+      '@vuepress/bundler-vite':
+        specifier: ^2.0.0-rc.19
+        version: 2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0)
       '@vuepress/helper':
         specifier: 2.0.0-rc.78
         version: 2.0.0-rc.78(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))
@@ -107,6 +110,9 @@ importers:
       '@vuepress/plugin-git':
         specifier: 2.0.0-rc.68
         version: 2.0.0-rc.68(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))
+      '@vuepress/plugin-google-analytics':
+        specifier: ^1.9.10
+        version: 1.9.10
       '@vuepress/plugin-links-check':
         specifier: 2.0.0-rc.78
         version: 2.0.0-rc.78(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))
@@ -140,6 +146,15 @@ importers:
       '@vueuse/core':
         specifier: ^12.7.0
         version: 12.7.0
+      chalk:
+        specifier: ^5.3.0
+        version: 5.4.1
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
+      json2yaml:
+        specifier: ^1.1.0
+        version: 1.1.0
       sass:
         specifier: ^1.80.3
         version: 1.85.0
@@ -149,6 +164,9 @@ importers:
       sass-loader:
         specifier: ^16.0.2
         version: 16.0.5(sass-embedded@1.85.0)(sass@1.85.0)(webpack@5.98.0)
+      twikoo:
+        specifier: ^1.6.26
+        version: 1.6.41
       vue:
         specifier: ^3.5.13
         version: 3.5.13
