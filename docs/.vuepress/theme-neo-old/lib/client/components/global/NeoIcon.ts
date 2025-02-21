@@ -1,7 +1,7 @@
 import { isLinkHttp } from '@vuepress/shared';
 import type { FunctionalComponent } from 'vue';
 import { h, resolveComponent } from 'vue';
-import { withBase } from '@vuepress/client';
+import { withBase } from 'vuepress/client';
 const isString = (val: unknown): val is string => typeof val === 'string';
 const startsWith = (str: unknown, prefix: string): boolean => isString(str) && str.startsWith(prefix);
 const isAbsoluteUrl = (test: unknown): boolean => startsWith(test, '/');

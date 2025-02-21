@@ -1,0 +1,20 @@
+@use 'index';
+/* -------------------------------- neoTheme -------------------------------- */
+@use 'neo-vars'; // root变量
+@use 'neo-code'; // root变量
+@use 'neo-navbar'; // reset code 样式
+@use 'neo-border-effect'; // 边框动画
+@use 'neo-scrollbar'; // 滚动条效果
+@use 'neo-gap'; // gap样式
+@use 'neo-flex'; // flex样式
+@use 'neo-common'; // 常见的
+
+@keyframes neo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* -------------------------------- neoTheme -------------------------------- */

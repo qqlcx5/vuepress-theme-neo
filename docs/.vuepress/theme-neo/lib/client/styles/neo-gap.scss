@@ -1,0 +1,52 @@
+@for $i from 0 through 80 {
+    // 只要能被2或者4除尽的数
+    @if $i % 2 == 0 or $i % 4 == 0 {
+        // 为了提高优先级，我们使用了嵌套选择器
+        .neo {
+            &-p-#{$i} {
+                padding: $i + px;
+            }
+            &-m-#{$i} {
+                margin: $i + px;
+            }
+            &-mlr-#{$i} {
+                margin-left: $i + px;
+                margin-right: $i + px;
+            }
+            &-mtb-#{$i} {
+                margin-top: $i + px;
+                margin-bottom: $i + px;
+            }
+            &-plr-#{$i} {
+                padding-left: $i + px;
+                padding-right: $i + px;
+            }
+            &-ptb-#{$i} {
+                padding-top: $i + px;
+                padding-bottom: $i + px;
+            }
+
+            @each $key, $value in (l, left), (t, top), (r, right), (b, bottom) {
+                // 缩写版，结果如： ml30
+                &-m#{$key}-#{$i} {
+                    margin-#{$value}: $i + px;
+                }
+                &-p#{$key}-#{$i} {
+                    padding-#{$value}: $i + px;
+                }
+            }
+        }
+    }
+}
+
+.neo {
+    &-tl {
+        text-align: left;
+    }
+    &-tc {
+        text-align: center;
+    }
+    &-tr {
+        text-align: right;
+    }
+}
