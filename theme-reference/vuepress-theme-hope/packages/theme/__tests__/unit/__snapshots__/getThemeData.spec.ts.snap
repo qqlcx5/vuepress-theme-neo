@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should generate themeData correctly > Should contain basic properties 1`] = `
+{
+  "encrypt": {},
+  "locales": {
+    "/": {
+      "lang": "en-US",
+      "metaLocales": {
+        "author": "Author",
+        "category": "Category",
+        "contributors": "Contributors",
+        "date": "Writing Date",
+        "editLink": "Edit this page",
+        "lastUpdated": "Last update",
+        "next": "Next",
+        "origin": "Original",
+        "prev": "Prev",
+        "print": "Print",
+        "readingTime": "Reading Time",
+        "tag": "Tag",
+        "toc": "On This Page",
+        "views": "Page views",
+        "words": "Words",
+      },
+      "navbarLocales": {
+        "langName": "English",
+        "selectLangAriaLabel": "Select language",
+      },
+      "outlookLocales": {
+        "darkmode": "Theme Mode",
+        "fullscreen": "Full Screen",
+        "themeColor": "Theme Color",
+      },
+      "routeLocales": {
+        "back": "Go back",
+        "home": "Take me home",
+        "notFoundMsg": [
+          "There’s nothing here.",
+          "How did we get here?",
+          "That’s a Four-Oh-Four.",
+          "Looks like we've got some broken links.",
+        ],
+        "notFoundTitle": "Page not found",
+        "skipToContent": "Skip to main content",
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,103 @@
+{
+  "name": "vuepress-plugin-components",
+  "version": "2.0.0-rc.71",
+  "description": "Components collection plugin for VuePress2",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
+    "components"
+  ],
+  "homepage": "https://plugin-components.vuejs.press/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/components"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mister-hope.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client/*": "./lib/client/*",
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/client/**/*.scss\" lib/client",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
+    "dev:copy": "pnpm copy -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@stackblitz/sdk": "^1.11.0",
+    "@vuepress/helper": "catalog:vuepress",
+    "@vuepress/plugin-sass-palette": "catalog:vuepress",
+    "@vueuse/core": "catalog:range",
+    "balloon-css": "catalog:range",
+    "create-codepen": "^2.0.0",
+    "qrcode": "^1.5.4",
+    "vue": "catalog:range",
+    "vuepress-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/qrcode": "1.5.5",
+    "@vuepress/bundler-vite": "catalog:vuepress"
+  },
+  "peerDependencies": {
+    "artplayer": "^5.0.0",
+    "dashjs": "4.7.4",
+    "hls.js": "^1.4.12",
+    "mpegts.js": "^1.7.3",
+    "sass": "catalog:range",
+    "sass-embedded": "catalog:range",
+    "sass-loader": "catalog:range",
+    "vidstack": "^1.12.9",
+    "vuepress": "catalog:vuepress"
+  },
+  "peerDependenciesMeta": {
+    "artplayer": {
+      "optional": true
+    },
+    "dashjs": {
+      "optional": true
+    },
+    "hls.js": {
+      "optional": true
+    },
+    "mpegts.js": {
+      "optional": true
+    },
+    "sass": {
+      "optional": true
+    },
+    "sass-embedded": {
+      "optional": true
+    },
+    "sass-loader": {
+      "optional": true
+    },
+    "vidstack": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.19.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
+  }
+}

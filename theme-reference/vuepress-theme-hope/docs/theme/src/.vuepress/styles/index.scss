@@ -1,0 +1,37 @@
+@use "vuepress-theme-hope/presets/shinning-feature-panel";
+
+:root {
+  --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-light.svg");
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-light.svg") no-repeat
+    center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
+    no-repeat center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg")
+    no-repeat center/cover;
+}
+
+[data-theme="dark"] {
+  --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-dark.svg");
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-dark.svg") no-repeat
+    center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg") no-repeat
+    center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
+    no-repeat center/cover;
+}
+
+.home {
+  .vp-hero-info-wrapper {
+    min-height: 600px;
+  }
+}
+
+.catalog-display-container {
+  overflow: visible auto;
+
+  max-height: 75vh;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+
+  overflow-wrap: break-word;
+}

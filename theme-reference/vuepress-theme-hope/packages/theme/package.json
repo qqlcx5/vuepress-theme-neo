@@ -1,0 +1,177 @@
+{
+  "name": "vuepress-theme-hope",
+  "version": "2.0.0-rc.71",
+  "description": "A light vuepress theme with tons of features",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "theme",
+    "vuepress-theme",
+    "blog",
+    "vuepress-blog",
+    "vuepress-theme-blog"
+  ],
+  "homepage": "https://theme-hope.vuejs.press/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/theme"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mister-hope.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
+    "./client/*": "./lib/client/*",
+    "./components/*": "./lib/client/components/*",
+    "./composables": "./lib/client/composables/index.js",
+    "./composables/*": "./lib/client/composables/*",
+    "./layouts/*": "./lib/client/layouts/*",
+    "./modules/*": "./lib/client/modules/*",
+    "./styles/*": "./lib/client/styles/*",
+    "./utils": "./lib/client/utils/*",
+    "./utils/*": "./lib/client/utils/*",
+    "./blog/*": "./lib/client/modules/blog/*",
+    "./encrypt/*": "./lib/client/modules/encrypt/*",
+    "./info/*": "./lib/client/modules/info/*",
+    "./navbar/*": "./lib/client/modules/navbar/*",
+    "./outlook/*": "./lib/client/modules/outlook/*",
+    "./sidebar/*": "./lib/client/modules/sidebar/*",
+    "./presets/*": "./lib/presets/*",
+    "./templates/*": "./templates/*",
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "scripts": {
+    "build": "pnpm build:rollup && pnpm gulp && pnpm build:ts && pnpm copy",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "build:ts": "tsc -b tsconfig.release.json",
+    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
+    "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
+    "copy:bundle": "cpx \"src/client/**/*.css\" lib/bundle",
+    "copy:client": "cpx \"src/client/**/*.{css,scss}\" lib/client",
+    "copy:presets": "cpx \"src/presets/**/*.{css,scss}\" lib/presets",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
+    "dev:copy": "concurrently \"pnpm copy:client -w\" \"pnpm copy:presets -w\"",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@vuepress/helper": "catalog:vuepress",
+    "@vuepress/plugin-active-header-links": "catalog:vuepress",
+    "@vuepress/plugin-back-to-top": "catalog:vuepress",
+    "@vuepress/plugin-blog": "catalog:vuepress",
+    "@vuepress/plugin-catalog": "catalog:vuepress",
+    "@vuepress/plugin-comment": "catalog:vuepress",
+    "@vuepress/plugin-copy-code": "catalog:vuepress",
+    "@vuepress/plugin-copyright": "catalog:vuepress",
+    "@vuepress/plugin-git": "catalog:vuepress",
+    "@vuepress/plugin-icon": "catalog:vuepress",
+    "@vuepress/plugin-links-check": "catalog:vuepress",
+    "@vuepress/plugin-markdown-ext": "catalog:vuepress",
+    "@vuepress/plugin-markdown-hint": "catalog:vuepress",
+    "@vuepress/plugin-markdown-image": "catalog:vuepress",
+    "@vuepress/plugin-markdown-include": "catalog:vuepress",
+    "@vuepress/plugin-markdown-math": "catalog:vuepress",
+    "@vuepress/plugin-markdown-stylize": "catalog:vuepress",
+    "@vuepress/plugin-markdown-tab": "catalog:vuepress",
+    "@vuepress/plugin-notice": "catalog:vuepress",
+    "@vuepress/plugin-nprogress": "catalog:vuepress",
+    "@vuepress/plugin-photo-swipe": "catalog:vuepress",
+    "@vuepress/plugin-reading-time": "catalog:vuepress",
+    "@vuepress/plugin-redirect": "catalog:vuepress",
+    "@vuepress/plugin-rtl": "catalog:vuepress",
+    "@vuepress/plugin-sass-palette": "catalog:vuepress",
+    "@vuepress/plugin-seo": "catalog:vuepress",
+    "@vuepress/plugin-shiki": "catalog:vuepress",
+    "@vuepress/plugin-sitemap": "catalog:vuepress",
+    "@vuepress/plugin-theme-data": "catalog:vuepress",
+    "@vueuse/core": "catalog:range",
+    "balloon-css": "catalog:range",
+    "bcrypt-ts": "^5.0.3",
+    "chokidar": "^3.6.0",
+    "vue": "catalog:range",
+    "vuepress-plugin-components": "workspace:*",
+    "vuepress-plugin-md-enhance": "workspace:*",
+    "vuepress-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "catalog:vuepress",
+    "@vuepress/bundler-webpack": "catalog:vuepress"
+  },
+  "peerDependencies": {
+    "@vuepress/plugin-docsearch": "catalog:vuepress",
+    "@vuepress/plugin-feed": "catalog:vuepress",
+    "@vuepress/plugin-prismjs": "catalog:vuepress",
+    "@vuepress/plugin-pwa": "catalog:vuepress",
+    "@vuepress/plugin-revealjs": "catalog:vuepress",
+    "@vuepress/plugin-search": "catalog:vuepress",
+    "@vuepress/plugin-slimsearch": "catalog:vuepress",
+    "@vuepress/plugin-watermark": "catalog:vuepress",
+    "@vuepress/shiki-twoslash": "catalog:vuepress",
+    "nodejs-jieba": "^0.2.1 || ^0.3.0",
+    "sass": "catalog:range",
+    "sass-embedded": "catalog:range",
+    "sass-loader": "catalog:range",
+    "vuepress": "catalog:vuepress"
+  },
+  "peerDependenciesMeta": {
+    "@vuepress/plugin-docsearch": {
+      "optional": true
+    },
+    "@vuepress/plugin-feed": {
+      "optional": true
+    },
+    "@vuepress/plugin-prismjs": {
+      "optional": true
+    },
+    "@vuepress/plugin-pwa": {
+      "optional": true
+    },
+    "@vuepress/plugin-revealjs": {
+      "optional": true
+    },
+    "@vuepress/plugin-search": {
+      "optional": true
+    },
+    "@vuepress/plugin-slimsearch": {
+      "optional": true
+    },
+    "@vuepress/plugin-watermark": {
+      "optional": true
+    },
+    "@vuepress/shiki-twoslash": {
+      "optional": true
+    },
+    "nodejs-jieba": {
+      "optional": true
+    },
+    "sass": {
+      "optional": true
+    },
+    "sass-embedded": {
+      "optional": true
+    },
+    "sass-loader": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.19.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
+  }
+}

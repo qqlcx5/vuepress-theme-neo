@@ -1,0 +1,39 @@
+{
+  "name": "components-docs",
+  "private": true,
+  "description": "Docs for vuepress-plugin-components",
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mister-hope.com"
+  },
+  "type": "module",
+  "scripts": {
+    "docs:serve": "http-server -a localhost dist -o",
+    "docs:vite-build": "vuepress-vite build src",
+    "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:vite-dev": "vuepress-vite dev src",
+    "docs:webpack-build": "vuepress-webpack build src",
+    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "docs:webpack-dev": "vuepress-webpack dev src"
+  },
+  "dependencies": {
+    "@vuepress/bundler-vite": "catalog:vuepress",
+    "@vuepress/bundler-webpack": "catalog:vuepress",
+    "@vuepress/helper": "catalog:vuepress",
+    "artplayer": "5.2.2",
+    "artplayer-plugin-danmuku": "5.1.5",
+    "dashjs": "4.7.4",
+    "docs-shared": "workspace:*",
+    "hls.js": "1.5.20",
+    "mpegts.js": "1.8.0",
+    "sass-embedded": "catalog:",
+    "sass-loader": "catalog:",
+    "vidstack": "1.12.13",
+    "vue": "catalog:",
+    "vuepress": "catalog:vuepress",
+    "vuepress-plugin-components": "workspace:*",
+    "vuepress-shared": "workspace:*"
+  }
+}

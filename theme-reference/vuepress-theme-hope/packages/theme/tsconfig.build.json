@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.build.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["DOM", "ESNext"],
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "paths": {
+      "@theme-hope/*": ["./src/client/*.js"]
+    },
+    "types": ["vuepress/client-types", "vite/client", "webpack-env"]
+  },
+  "include": ["./src", "./src/*.d.ts"],
+  "references": [
+    { "path": "../components/tsconfig.build.json" },
+    { "path": "../md-enhance/tsconfig.build.json" },
+    { "path": "../shared/tsconfig.build.json" }
+  ]
+}

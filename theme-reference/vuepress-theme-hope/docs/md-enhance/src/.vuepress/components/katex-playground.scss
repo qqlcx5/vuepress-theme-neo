@@ -1,0 +1,44 @@
+.katex-playground {
+  textarea {
+    resize: vertical;
+
+    width: 100%;
+    border-color: var(--vp-c-border);
+    border-radius: 0.5rem;
+
+    background: var(--vp-c-grey-soft);
+    color: var(--vp-c-text);
+
+    font-size: 18px;
+
+    &:active,
+    &:focus-visible {
+      outline: 1px solid var(--vp-c-brand-bg);
+    }
+  }
+}
+
+// katex fix
+.katex {
+  font-size: 1.05em;
+  direction: ltr;
+}
+
+.katex-display {
+  overflow: auto hidden;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .katex {
+    font-size: 1.21em;
+  }
+}
+
+.katex-error {
+  color: #f00;
+}

@@ -1,0 +1,57 @@
+name: Deploy Github Docs
+
+on:
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
+
+jobs:
+  deploy-github-pages:
+    name: Deploy V2 docs to GitHub pages
+    runs-on: ubuntu-latest
+    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v4
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Docs build
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:vite-build
+
+      - name: Combine output
+        run: |
+          pnpm cpx "docs/components/dist/**" dist/components
+          pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
+          pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
+          pnpm cpx "docs/shared/dist/**" dist/shared
+          pnpm cpx "docs/theme/dist/**" dist
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/v2
+          branch: gh-pages
+          folder: dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

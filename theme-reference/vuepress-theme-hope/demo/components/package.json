@@ -1,0 +1,33 @@
+{
+  "name": "components-demo",
+  "private": true,
+  "description": "Demo for vuepress-plugin-components",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:serve": "http-server -a localhost src/.vuepress/dist -o",
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "demo:vite-dev": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-dev": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "catalog:vuepress",
+    "@vuepress/bundler-webpack": "catalog:vuepress",
+    "@vuepress/helper": "catalog:vuepress",
+    "@vuepress/theme-default": "catalog:vuepress",
+    "artplayer": "5.2.2",
+    "artplayer-plugin-danmuku": "5.1.5",
+    "dashjs": "4.7.4",
+    "hls.js": "1.5.20",
+    "mpegts.js": "1.8.0",
+    "sass-embedded": "catalog:",
+    "sass-loader": "catalog:",
+    "vidstack": "1.12.13",
+    "vue": "catalog:",
+    "vuepress": "catalog:vuepress",
+    "vuepress-plugin-components": "workspace:*"
+  }
+}

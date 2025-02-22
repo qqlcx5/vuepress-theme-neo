@@ -1,0 +1,15 @@
+extends:
+  - stylelint-config-hope
+rules:
+  declaration-block-no-redundant-longhand-properties: true
+  media-feature-range-notation: prefix
+  no-descending-specificity: null
+ignoreFiles:
+  - "**/*.module.scss"
+  - "**/node_modules/**"
+  - "**/dist/**"
+  - "docs-shared/lib/**"
+  - "packages/*/lib/**"
+  - "**/.vuepress/.cache/**"
+  - "**/.vuepress/.temp/**"
+  - "**/.vuepress/dist/**"

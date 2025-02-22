@@ -1,0 +1,36 @@
+import { dateSorter } from "@vuepress/helper";
+import type { GitData } from "@vuepress/plugin-git";
+import type { Page } from "vuepress/core";
+
+import type {
+  ArticleInfoData,
+  ThemeNormalPageFrontmatter,
+} from "../../../shared/index.js";
+import { ArticleInfo } from "../../../shared/index.js";
+
+/** @private */
+export const defaultPageSorter = (
+  pageA: Page<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >,
+  pageB: Page<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >,
+): number => {
+  const prevKey = pageA.frontmatter.sticky;
+  const nextKey = pageB.frontmatter.sticky;
+
+  if (prevKey && nextKey && prevKey !== nextKey)
+    return Number(nextKey) - Number(prevKey);
+  if (prevKey && !nextKey) return -1;
+  if (!prevKey && nextKey) return 1;
+
+  return dateSorter(
+    pageA.routeMeta[ArticleInfo.date],
+    pageB.routeMeta[ArticleInfo.date],
+  );
+};
