@@ -135,7 +135,7 @@ export default defineComponent({
         cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
         user-select: none;
         &:hover {
-            color: var(--c-brand);
+            color: var(--neo-c-brand);
         }
         &.ellipsis {
             opacity: 0.5;
@@ -204,8 +204,8 @@ export default defineComponent({
             line-height: 2.5rem;
             margin: 0.3rem;
             &.active {
-                background: var(--c-brand);
-                color: var(--c-bg);
+                background: var(--neo-c-brand);
+                color: var(--vp-c-bg);
             }
         }
     }

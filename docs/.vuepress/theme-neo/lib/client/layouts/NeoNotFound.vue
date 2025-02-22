@@ -11,7 +11,7 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home';
 
 <template>
     <div class="theme-container pkfrom-container">
-        <div class="theme-default-content">
+        <div vp-content>
             <div class="pkfrom-info">
                 <img src="https://r2-site.feyoudao.cn/404-light.gif" alt="404 error" />
                 <!-- end Rabbit -->

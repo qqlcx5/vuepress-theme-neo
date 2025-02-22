@@ -102,7 +102,7 @@ export default {
     user-select: none;
 
     &__title {
-        color: var(--c-text);
+        color: var(--vp-c-text);
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -115,12 +115,12 @@ export default {
         align-items: center;
         justify-content: space-between;
         &-label {
-            color: var(--c-text-light);
+            color: var(--vp-c-text-light);
             display: flex;
             align-items: center;
         }
         &-value {
-            color: var(--c-text);
+            color: var(--vp-c-text);
             display: flex;
             align-items: center;
         }

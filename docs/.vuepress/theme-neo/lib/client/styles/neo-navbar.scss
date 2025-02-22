@@ -9,7 +9,7 @@
     .vp-site-name {
         font-size: 1.1rem;
         font-weight: 700;
-        color: var(--c-text);
+        color: var(--vp-c-text);
         position: relative;
     }
 
@@ -34,7 +34,7 @@
         span.vp-site-name,
         .vp-toggle-color-mode-button,
         .vp-navbar-items .vp-navbar-item > a,
-        .vp-navbar-items .vp-navbar-item span.vp-title {
+        .vp-navbar-items .vp-navbar-item span.title {
             color: white;
             &:hover,
             &:focus {
@@ -74,7 +74,7 @@
 
         &:hover,
         &.router-link-active {
-            color: var(--c-text-accent);
+            color: var(--vp-c-text-accent);
         }
     }
 
@@ -94,7 +94,7 @@
     .navbar {
         padding-left: 4rem;
         &.invert .toggle-color-mode-button {
-            color: var(--c-text);
+            color: var(--vp-c-text);
         }
     }
     .navbar-items {
@@ -114,19 +114,19 @@
             /* when the user scrolls down, we hide the header right above the viewport */
             position: fixed;
             top: calc(0rem - var(--navbar-height));
-            background-color: var(--c-bg-navbar);
-            border-bottom: 1px solid var(--c-border);
+            background-color: var(--vp-c-bg-navbar);
+            border-bottom: 1px solid var(--vp-c-border);
             box-shadow: var(--box-shadow);
             transition: transform 0.3s;
 
             .vp-navbar-item a,
             span.title,
             span.vp-site-name {
-                color: var(--c-text) !important;
+                color: var(--vp-c-text) !important;
                 &:hover,
                 &:focus,
                 &.router-link-active {
-                    color: var(--c-text-accent) !important;
+                    color: var(--vp-c-text-accent) !important;
                 }
             }
         }
@@ -139,14 +139,14 @@
     .vp-navbar-items a {
         &:hover,
         &.router-link-active {
-            color: var(--c-text);
+            color: var(--vp-c-text);
         }
     }
 
     .vp-navbar-item > a {
         &:hover,
         &.router-link-active {
-            color: var(--c-text-accent);
+            color: var(--vp-c-text-accent);
         }
     }
 }

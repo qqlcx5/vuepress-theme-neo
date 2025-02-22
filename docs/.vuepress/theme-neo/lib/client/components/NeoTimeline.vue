@@ -137,7 +137,7 @@ li {
     &.year {
         position: sticky;
         top: var(--navbar-height);
-        background: var(--c-bg);
+        background: var(--vp-c-bg);
         z-index: 1;
     }
     &.year:not(:first-child) {
@@ -156,13 +156,13 @@ li {
     }
     a {
         display: block;
-        color: var(--c-text);
+        color: var(--vp-c-text);
         transition: padding 0.3s;
         padding: 0.5rem 0;
         line-height: 1.2rem;
         &:hover {
             padding-left: 1.2rem;
-            color: var(--c-brand);
+            color: var(--neo-c-brand);
             background: #f9f9f9;
         }
         span.date {
@@ -172,8 +172,8 @@ li {
             margin-right: 0.3rem;
         }
         .title-tag {
-            border: 1px solid var(--c-brand-light);
-            color: var(--c-brand-light);
+            border: 1px solid var(--neo-c-brand-light);
+            color: var(--neo-c-brand-light);
             font-size: 0.8rem;
             padding: 0 0.35rem;
             border-radius: 0.2rem;

@@ -1,12 +1,13 @@
 ---
 title: GPT 提示词优化
 date: 2023-05-25 08:47:16
-categories: 
+sidebar: false
+categories:
   - prompt
-tags: 
-  - 
-columns: 
-  - 
+tags:
+  -
+columns:
+  -
 ---
 
 # GPT 提示词优化

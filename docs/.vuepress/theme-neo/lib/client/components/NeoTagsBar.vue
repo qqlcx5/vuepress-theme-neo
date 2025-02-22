@@ -57,7 +57,7 @@ export default {
         })
         function getTagStyle() {
             const useColorRandom = tagBgColor.value[Math.floor(Math.random() * tagBgColor.value.length)]
-            return `background: ${useColorRandom}; --c-random: ${useColorRandom};`
+            return `background: ${useColorRandom}; --vp-c-random: ${useColorRandom};`
         }
         return {
             tags,
@@ -71,15 +71,15 @@ export default {
 .tags-wrapper {
     .tags-title {
         padding: 0.68rem 0.68rem 0.68rem 0.95rem;
-        color: var(--c-text);
+        color: var(--vp-c-text);
         font-size: 1rem;
-        border-bottom: 1px solid var(--c-border);
+        border-bottom: 1px solid var(--vp-c-border);
         display: flex;
         align-items: center;
     }
     .tags {
         padding: 0.25rem;
-        color: var(--c-bg);
+        color: var(--vp-c-bg);
         transition: transform 0.25s ease-in-out 0.08s,
             opacity 0.25s ease-in-out 0.04s;
         transform: translateY(0px);
@@ -92,8 +92,8 @@ export default {
             display: inline-block;
             padding: 0.26rem 0.46rem;
             transition: all 0.4s;
-            background-color: var(--c-text);
-            color: var(--c-bg);
+            background-color: var(--vp-c-text);
+            color: var(--vp-c-bg);
             border-radius: 6px;
             // margin: 0 0.5rem 0.8rem 0;
             margin: 0.3rem;
@@ -106,10 +106,10 @@ export default {
             &:hover {
                 opacity: 1;
                 transform: scale(1.1);
-                box-shadow: 0 5px 10px -5px var(--c-random, rgba(0, 0, 0, 0.15));
+                box-shadow: 0 5px 10px -5px var(--vp-c-random, rgba(0, 0, 0, 0.15));
             }
             &.active {
-                box-shadow: 0 5px 10px -5px var(--c-random, rgba(0, 0, 0, 0.15));
+                box-shadow: 0 5px 10px -5px var(--vp-c-random, rgba(0, 0, 0, 0.15));
                 transform: scale(1.2);
                 opacity: 1;
             }

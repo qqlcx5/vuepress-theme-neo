@@ -2,7 +2,7 @@
     <div class="post-list">
         <TransitionGroup name="fade-slide-y" tag="div">
             <div class="post dark-shadow" :class="[`effect-border-${random(1, 5)}`]" v-for="(item, index) in sortPosts" :key="index">
-                <NeoIcon style=" position: absolute; top: 0.4rem; right: 0.4rem; color: var(--c-brand);"
+                <NeoIcon style=" position: absolute; top: 0.4rem; right: 0.4rem; color: var(--neo-c-brand);"
                     v-if="item.frontmatter.sticky"
                     icon="neo-tuding"
                     size="30"
@@ -109,7 +109,7 @@ export default {
             () => props.currentPage,
             currentPage => {
                 if (route.query.p != currentPage) {
-                    router.push({ path: '/', query: { ...route.query, p: currentPage } })
+                  router.push({ path: route.path, query: { ...route.query, p: currentPage } })
                 }
                 setTimeout(() => {
                     window.scrollTo({ top: props.offsetTop }) // behavior: 'smooth'
@@ -163,9 +163,9 @@ export default {
         margin-bottom: 0.9rem;
         .title-wrapper {
             a {
-                color: var(--c-text);
+                color: var(--vp-c-text);
                 &:hover {
-                    color: var(--c-brand);
+                    color: var(--neo-c-brand);
                 }
             }
             h2 {
@@ -175,8 +175,8 @@ export default {
                 .title-tag {
                     height: 1.2rem;
                     line-height: 1.2rem;
-                    border: 1px solid var(--c-brand);
-                    color: var(--c-brand);
+                    border: 1px solid var(--neo-c-brand);
+                    color: var(--neo-c-brand);
                     font-size: 0.8rem;
                     padding: 0 0.35rem;
                     border-radius: 0.2rem;
@@ -216,7 +216,7 @@ export default {
             }
         }
         .excerpt-wrapper {
-            border-top: 1px solid var(--c-border);
+            border-top: 1px solid var(--vp-c-border);
             margin-top: 0.5rem;
             overflow: hidden;
             .excerpt {

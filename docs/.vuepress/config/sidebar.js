@@ -11,6 +11,7 @@ export default {
     '/guide/': 'structure',
     '/config/': 'structure',
     '/utils/': 'structure',
+    '/prompt/': 'structure',
 };
 export const sidebarOptions = {
     collapsible: true,

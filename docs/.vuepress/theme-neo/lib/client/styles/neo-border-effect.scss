@@ -16,15 +16,15 @@
     &::before {
         top: 0px;
         left: 0px;
-        border-top: 2px solid var(--c-brand-light);
-        border-left: 2px solid var(--c-brand-light);
+        border-top: 2px solid var(--neo-c-brand-light);
+        border-left: 2px solid var(--neo-c-brand-light);
     }
 
     &::after {
         right: 0px;
         bottom: 0px;
-        border-bottom: 2px solid var(--c-brand-light);
-        border-right: 2px solid var(--c-brand-light);
+        border-bottom: 2px solid var(--neo-c-brand-light);
+        border-right: 2px solid var(--neo-c-brand-light);
     }
 
     &:hover::before,
@@ -63,7 +63,7 @@
         top: 3px;
         width: calc(100% - 6px);
         height: calc(100% - 6px);
-        background: var(--c-bg);
+        background: var(--vp-c-bg);
         border-radius: 6px;
     }
 }
@@ -80,7 +80,7 @@
         top: -50%;
         width: 200%;
         height: 200%;
-        background: conic-gradient(transparent, var(--c-brand-light), transparent 30%);
+        background: conic-gradient(transparent, var(--neo-c-brand-light), transparent 30%);
         animation: linearRotate 4s linear infinite;
     }
     &:hover::after {
@@ -91,7 +91,7 @@
         top: 4px;
         width: calc(100% - 8px);
         height: calc(100% - 8px);
-        background: var(--c-bg);
+        background: var(--vp-c-bg);
         border-radius: 6px;
     }
 }
@@ -131,7 +131,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        border: 2px solid var(--c-brand-light);
+        border: 2px solid var(--neo-c-brand-light);
         border-radius: 6px;
         transition: all 0.5s;
         animation: clippath 3s infinite linear;

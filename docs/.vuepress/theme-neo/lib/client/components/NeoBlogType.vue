@@ -128,14 +128,14 @@ export default {
             height: 20px;
             padding: 8px;
             border-radius: 50%;
-            color: var(--c-text-lighter);
+            color: var(--vp-c-text-lighter);
             background: rgb(127 127 127 / 15%);
             &:hover {
                 cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
             }
             &.active {
-                color: var(--c-brand);
-                background-color: rgba(var(--c-brand-rgb), 0.2);
+                color: var(--neo-c-brand);
+                background-color: rgba(var(--neo-c-brand-rgb), 0.2);
             }
         }
     }

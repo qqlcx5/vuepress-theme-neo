@@ -43,9 +43,9 @@ export default {
 .columns-wrapper {
     .columns-title {
         padding: 0.68rem 0.68rem 0.68rem 0.95rem;
-        color: var(--c-text);
+        color: var(--vp-c-text);
         font-size: 1rem;
-        border-bottom: 1px solid var(--c-border);
+        border-bottom: 1px solid var(--vp-c-border);
         display: flex;
         align-items: center;
     }
@@ -54,7 +54,7 @@ export default {
         a {
             display: block;
             opacity: 0.8;
-            color: var(--c-text);
+            color: var(--vp-c-text);
             padding: 8px 0.95rem 7px 0.95rem;
             font-size: 0.95rem;
             line-height: 0.95rem;
@@ -65,12 +65,12 @@ export default {
             white-space: nowrap;
             text-overflow: ellipsis;
             &:not(.active):hover {
-                background-color: var(--c-bg-lighter);
-                color: var(--c-brand-light);
-                border-color: var(--c-brand-light);
+                background-color: var(--vp-c-bg-lighter);
+                color: var(--neo-c-brand-light);
+                border-color: var(--neo-c-brand-light);
             }
             &.active {
-                background-color: var(--c-bg-lighter);
+                background-color: var(--vp-c-bg-lighter);
                 padding-left: 0.8rem;
                 border-radius: 2px;
                 border-color: transparent;
@@ -78,8 +78,8 @@ export default {
         }
         &__num {
             float: right;
-            background-color: var(--c-bg-light);
-            color: var(--c-text);
+            background-color: var(--vp-c-bg-light);
+            color: var(--vp-c-text);
             border-radius: 8px;
             padding: 0 0.13rem;
             min-width: 1rem;

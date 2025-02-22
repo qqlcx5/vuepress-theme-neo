@@ -1,27 +1,115 @@
+// plugin-back-to-top
+.back-to-top {
+  --back-to-top-color: var(--vp-c-brand);
+  --back-to-top-color-hover: var(--vp-c-brand-light);
+}
+
+// plugin-nprogress
+#nprogress {
+  --nprogress-color: var(--vp-c-brand);
+}
 :root {
+  // brand colors
+  --vp-c-brand: #3eaf7c;
+  --vp-c-brand-light: #4abf8a;
+
+  // background colors
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-light: #f3f4f5;
+  --vp-c-bg-lighter: #eeeeee;
+  --vp-c-bg-dark: #ebebec;
+  --vp-c-bg-darker: #e6e6e6;
+  --vp-c-bg-navbar: var(--vp-c-bg);
+  --vp-c-bg-sidebar: var(--vp-c-bg);
+  --vp-c-bg-arrow: #cccccc;
+
+  // text colors
+  --vp-c-text: #2c3e50;
+  --vp-c-text-accent: var(--vp-c-brand);
+  --vp-c-text-light: #3a5169;
+  --vp-c-text-lighter: #4e6e8e;
+  --vp-c-text-lightest: #6a8bad;
+  --vp-c-text-quote: #999999;
+
+  // border colors
+  --vp-c-border: #eaecef;
+  --vp-c-border-dark: #dfe2e5;
+
+  // custom container colors
+  --vp-c-tip: #42b983;
+  --vp-c-tip-bg: var(--vp-c-bg-light);
+  --vp-c-tip-title: var(--vp-c-text);
+  --vp-c-tip-text: var(--vp-c-text);
+  --vp-c-tip-text-accent: var(--vp-c-text-accent);
+  --vp-c-warning: #ffc310;
+  --vp-c-warning-bg: #fffae3;
+  --vp-c-warning-bg-light: #fff3ba;
+  --vp-c-warning-bg-lighter: #fff0b0;
+  --vp-c-warning-border-dark: #f7dc91;
+  --vp-c-warning-details-bg: #fff5ca;
+  --vp-c-warning-title: #f1b300;
+  --vp-c-warning-text: #746000;
+  --vp-c-warning-text-accent: #edb100;
+  --vp-c-warning-text-light: #c1971c;
+  --vp-c-warning-text-quote: #ccab49;
+  --vp-c-danger: #f11e37;
+  --vp-c-danger-bg: #ffe0e0;
+  --vp-c-danger-bg-light: #ffcfde;
+  --vp-c-danger-bg-lighter: #ffc9c9;
+  --vp-c-danger-border-dark: #f1abab;
+  --vp-c-danger-details-bg: #ffd4d4;
+  --vp-c-danger-title: #ed1e2c;
+  --vp-c-danger-text: #660000;
+  --vp-c-danger-text-accent: #bd1a1a;
+  --vp-c-danger-text-light: #b5474d;
+  --vp-c-danger-text-quote: #c15b5b;
+  --vp-c-details-bg: #eeeeee;
+
+  // badge component colors
+  --vp-c-badge-tip: var(--vp-c-tip);
+  --vp-c-badge-warning: #ecc808;
+  --vp-c-badge-warning-text: var(--vp-c-bg);
+  --vp-c-badge-danger: #dc2626;
+  --vp-c-badge-danger-text: var(--vp-c-bg);
+
+  // transition vars
+  --t-color: 0.3s ease;
+  --t-transform: 0.3s ease;
+
+  // code blocks vars
+  --code-bg-color: #282c34;
+  --code-hl-bg-color: rgba(0, 0, 0, 0.66);
+  --code-ln-color: #9e9e9e;
+  --code-ln-wrapper-width: 3.5rem;
   /* -------------------------------- neoTheme -------------------------------- */
   // 重置主题色
-  --c-brand: #49b1f5;
-  --c-brand-rgb: 71, 176, 245;
-  --c-brand-light: #5f98e7;
-  --c-brand-light-rgb: 95, 152, 231;
-  --c-bg-navbar: rgba(255, 255, 255, 0.9);
-  --code-ln-wrapper-width: 3rem;
+  --box-shadow: #f0f1f2;
+  --card-shadow: rgba(0, 0, 0, .15);
+  --vp-c-accent: #49b1f5;
+  --neo-c-brand: #49b1f5;
+  --neo-c-brand-rgb: 71, 176, 245;
+  --neo-c-brand-light: #5f98e7;
+  --neo-c-brand-light-rgb: 95, 152, 231;
+  --vp-c-bg-navbar: rgba(255, 255, 255, 0.9);
+  --vp-code-ln-wrapper-width: 3rem;
   // 额外主题色
-  --a-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
-  --a-box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+  --neo-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  --neo-box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
   /* -------------------------------- neoTheme -------------------------------- */
 }
 
 /* -------------------------------- neoTheme -------------------------------- */
-:root.dark {
-  --c-brand: #49b1f5;
-  --c-brand-rgb: 71, 176, 245;
-  --c-brand-light: #5f98e7;
-  --c-brand-light-rgb: 95, 152, 231;
-  --c-bg-navbar: rgba(35, 40, 47, 0.9);
+[data-theme='dark'] {
+  --box-shadow: #0f0e0d;
+  --card-shadow: rgba(0, 0, 0, .3);
+  --vp-c-accent: #49b1f5;
+  --neo-c-brand: #49b1f5;
+  --neo-c-brand-rgb: 71, 176, 245;
+  --neo-c-brand-light: #5f98e7;
+  --neo-c-brand-light-rgb: 95, 152, 231;
+  --vp-c-bg-navbar: rgba(35, 40, 47, 0.9);
   // 额外主题色
-  --a-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.3);
-  --a-box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.6);
+  --neo-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.3);
+  --neo-box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.6);
 }
 /* -------------------------------- neoTheme -------------------------------- */

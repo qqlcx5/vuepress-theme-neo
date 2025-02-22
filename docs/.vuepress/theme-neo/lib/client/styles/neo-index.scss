@@ -1,7 +1,8 @@
 @use 'index';
 /* -------------------------------- neoTheme -------------------------------- */
 @use 'neo-vars'; // root变量
-@use 'neo-code'; // root变量
+@use 'neo-vars-dark'; // root变量
+// @use 'neo-code'; // root变量
 @use 'neo-navbar'; // reset code 样式
 @use 'neo-border-effect'; // 边框动画
 @use 'neo-scrollbar'; // 滚动条效果

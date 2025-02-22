@@ -1,2 +1,3 @@
 import Badge from './Badge.vue';
-export { Badge };
+import Icon from './Icon.vue';
+export { Badge, Icon };

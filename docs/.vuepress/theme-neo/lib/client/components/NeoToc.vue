@@ -166,7 +166,7 @@ $headings: (2, 3, 4, 5, 6);
             left: -0.5rem;
             z-index: -1;
             width: 2px;
-            background: var(--c-border);
+            background: var(--vp-c-border);
         }
     }
 
@@ -179,7 +179,7 @@ $headings: (2, 3, 4, 5, 6);
 
         max-width: 100%;
 
-        color: var(--c-text-light);
+        color: var(--vp-c-text-light);
 
         line-height: inherit;
         text-overflow: ellipsis;
@@ -213,18 +213,18 @@ $headings: (2, 3, 4, 5, 6);
 
         &:hover {
             > .toc-link {
-                color: var(--c-brand);
+                color: var(--neo-c-brand);
             }
         }
 
         &.active {
             > .toc-link {
-                color: var(--c-brand);
+                color: var(--neo-c-brand);
                 font-weight: bold;
             }
 
             &::before {
-                background: var(--c-brand);
+                background: var(--neo-c-brand);
             }
         }
     }

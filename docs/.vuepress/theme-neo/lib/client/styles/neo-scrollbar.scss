@@ -14,7 +14,7 @@
     }
 }
 
-html.dark {
+[data-theme='dark'] {
     ::-webkit-scrollbar-thumb {
         background-color: #89b1f5;
         background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.3) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.3) 75%, transparent 75%, transparent);

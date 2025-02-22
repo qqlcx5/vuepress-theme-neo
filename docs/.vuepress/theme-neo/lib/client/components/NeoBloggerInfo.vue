@@ -132,7 +132,7 @@ export default defineComponent({
             overflow: hidden;
 
             &:hover {
-                color: var(--c-text-accent);
+                color: var(--vp-c-text-accent);
             }
 
             .num {

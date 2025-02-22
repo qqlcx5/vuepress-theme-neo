@@ -28,10 +28,10 @@
       font-size: 1.9rem;
     }
   }
-
-  a:not(.header-anchor) {
-    text-decoration: underline;
-  }
+  // 标签添加下划线太丑了。
+  // a:not(.header-anchor) {
+  //   text-decoration: underline;
+  // }
 
   img {
     max-width: 100%;

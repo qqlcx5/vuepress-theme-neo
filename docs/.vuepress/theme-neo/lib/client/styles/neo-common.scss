@@ -2,10 +2,10 @@
 
 .dark-shadow {
     border-radius: 6px;
-    background-color: var(--c-bg);
-    box-shadow: var(--a-box-shadow);
+    background-color: var(--vp-c-bg);
+    box-shadow: var(--neo-box-shadow);
     &:hover {
-        box-shadow: var(--a-box-shadow-hover);
+        box-shadow: var(--neo-box-shadow-hover);
     }
 }
 

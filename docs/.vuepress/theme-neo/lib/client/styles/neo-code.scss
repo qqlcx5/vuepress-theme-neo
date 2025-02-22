@@ -4,19 +4,19 @@ html body {
     box-sizing: border-box;
 }
 // reset code style
-html:not(.dark) {
+html:not([data-theme='dark']) {
     @include meta.load-css('neo-one-light');
 }
 
-html.dark {
+html[data-theme='dark'] {
     @include meta.load-css('neo-one-dark');
 }
 
-.theme-default-content pre code,
-.theme-default-content pre[class*='language-'] code {
-    color: var(--code-color);
+.theme-neo-container pre code,
+.theme-neo-container pre[class*='language-'] code {
+    color: var(--vp-code-color);
 }
 
 div[class*='language-'].line-numbers-mode::after {
-    border-right: 1px solid var(--c-border-dark);
+    border-right: 1px solid var(--vp-c-border-dark);
 }
