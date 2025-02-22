@@ -43,8 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from 'vuepress/client';
-import { useRoute } from 'vuepress/client';;
+import { withBase, useRoute } from 'vuepress/client';
 import { computed, onMounted, ref, inject } from 'vue';
 import { useThemeLocaleData } from '../composables/neoIndex.js';
 // @ts-ignore

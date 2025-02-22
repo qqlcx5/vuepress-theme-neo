@@ -78,11 +78,12 @@ defineSlots<{
       padding-top: 0;
     }
   }
-  // 有侧边栏的情况下，大于1200px在页面右侧添加toc容器
-  [vp-content]:not(.no-sidebar).has-toc .page {
-      @media (min-width: 1200px) {
-          padding-right: 16rem;
-      }
-  }
+}
+// 有侧边栏的情况下，大于1200px在页面右侧添加toc容器
+// 根目录下侧边栏的情况下，在页面右侧添加toc容器
+.theme-neo-container:not(.no-sidebar).has-toc .vp-page {
+  @media (min-width: 1200px) {
+        padding-right: 16rem;
+    }
 }
 </style>
