@@ -2,7 +2,7 @@
     <div class="pagination">
         <span class="dark-shadow prev" :class="{ disabled: currentPage === 1 }" @click="goPrex()">
             <VPIcon icon="fa-solid fa-angle-left" size="16" />
-            <p>上一页</p>
+            <p class="neo-plr-4">上一页</p>
         </span>
 
         <!-- 分页在5页及以下时 -->
@@ -43,7 +43,7 @@
         </div>
 
         <span class="dark-shadow next" :class="{ disabled: currentPage === pages }" @click="goNext()">
-            <p>下一页</p>
+            <p class="neo-plr-4">下一页</p>
             <VPIcon icon="fa-solid fa-angle-right" size="16" />
         </span>
     </div>

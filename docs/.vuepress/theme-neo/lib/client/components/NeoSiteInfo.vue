@@ -39,7 +39,6 @@
             </div>
             <div class="site-info__item-value">
                 <span id="busuanzi_value_site_pv">
-
                     <VPIcon icon="fa-solid fa-spinner fa-spin" class="neo-mr-4" />
                 </span>
                 次

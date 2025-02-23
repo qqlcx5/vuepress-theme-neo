@@ -1,3 +1,4 @@
+// https://busuanzi.icodeq.com/
 var bszCaller, bszTag, scriptTag, ready
 
 var t,
@@ -86,7 +87,7 @@ bszTag = {
 
 export default () => {
     bszTag && bszTag.hides()
-    bszCaller.fetch('https://counter.busuanzi.icodeq.com/?jsonpCallback=BusuanziCallback', function (t) {
+    bszCaller.fetch('https://cn.vercount.one/js/?jsonpCallback=BusuanziCallback', function (t) {
         bszTag.texts(t), bszTag.shows()
     })
 }

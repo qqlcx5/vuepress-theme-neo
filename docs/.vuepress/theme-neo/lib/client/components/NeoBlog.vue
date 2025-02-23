@@ -27,7 +27,7 @@
                     <VPIcon icon="fa-solid fa-chevron-right" size="26" />
                 </button>
                 <span class="hero-arrow-down hide-on-mobile" @click="scrollToPost()">
-                    <VPIcon icon="fa-solid fa-chevron-down" size="40" color="rgba(255,255,255,0.8)"></VPIcon>
+                    <VPIcon class="bounce-icon" icon="fa-solid fa-chevron-down" size="36" color="rgba(255,255,255,0.8)"></VPIcon>
                 </span>
             </div>
         </div>
@@ -315,7 +315,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo;
                 margin-left: -12px;
                 cursor: url('https://r2-site.feyoudao.cn/pointer.cur'), pointer;
 
-                .font-icon {
+                .bounce-icon {
                     width: 30px;
                     margin: -15px 0;
                     animation-name: bounce-down;
