@@ -1,5 +1,7 @@
 import { path, fs } from 'vuepress/utils';
 import matter from 'gray-matter';
+import chalk from 'chalk';
+const log = console.log;
 
 /**
  * 生成指定目录的侧边栏数据。
@@ -60,7 +62,12 @@ function processDirectory(sidebarData, docsRoot, directory, sidebarOptions) {
  */
 function processMarkdownFile(sidebarData, docsRoot, absolutePath, relativeFilePath, sidebarOptions) {
     const contentStr = fs.readFileSync(absolutePath, 'utf8');
-    const { data, content } = matter(contentStr);
+    let data, content;
+    try {
+      ({ data: data, content } = matter(contentStr, {}));
+    } catch (error) {
+      log(chalk.red('YAML解析错误，跳过front') + chalk.red(`parse frontmatter error：${absolutePath} ${error} `));
+    }
     let { title, index = false, showSidebar = true, icon, iconSize, iconColor, iconRotate, iconSpin, order, collapsible } = data || {};
     const fileName = path.basename(absolutePath, '.md');
     const directoryName = path.basename(path.dirname(relativeFilePath));
