@@ -12,6 +12,7 @@ export default {
     '/config/': 'structure',
     '/utils/': 'structure',
     '/prompt/': 'structure',
+    '/dedaoBook/': 'structure',
 };
 export const sidebarOptions = {
     collapsible: true,

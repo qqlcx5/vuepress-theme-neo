@@ -18,6 +18,8 @@ export function setFrontmatter(files, themeConfig) {
               .stringify(extendFrontmatter)
               .replace(/\n\s{2}/g, '\n')
               .replace(/"|---\n/g, '')
+              .replace(/:\s*\n\s{2}/g, ': ')
+              .replace(/(\w+):\s*\n\s{4}(.+)/g, '$1: $2')
         : ''
     files.forEach(file => {
         const main_name = path.basename(file.filePath)?.toUpperCase()
@@ -59,7 +61,14 @@ columns:
             const fmData = `---
 title: ${fileTitle}
 date: ${dateStr}${cateStr}${tagsStr}${colStr}
-${extendFrontmatterStr}---`
+description: ${fileTitle}
+created: ${dateStr}
+modification_date: ${dateStr}
+tags: []
+cover_url: ''
+source: ''
+author: ''
+${extendFrontmatterStr ? '\n' + extendFrontmatterStr + '\n' : ''}---`
 
             fs.writeFileSync(file.filePath, `${fmData}${os.EOL}${fileMatterObj.content}`) // 写入
             log(chalk.blue('tip ') + chalk.green(`write frontmatter：${file.filePath} `))
@@ -126,9 +135,18 @@ ${extendFrontmatterStr}---`
                 if (matterData.date && typeOf(matterData.date) === 'date') {
                     matterData.date = repairDate(matterData.date) // 修复时间格式
                 }
+
+                // 将Date类型转换为字符串
+                const dataToYaml = Object.fromEntries(
+                    Object.entries(matterData).map(([key, value]) => [
+                        key,
+                        value instanceof Date ? dateFormat(value) : value
+                    ])
+                );
+
                 const newData =
                     jsonToYaml
-                        .stringify(matterData)
+                        .stringify(dataToYaml)  // 使用转换后的数据
                         .replace(/\n\s{2}/g, '\n')
                         .replace(/"/g, '') +
                     '---' +
