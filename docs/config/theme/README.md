@@ -1,6 +1,6 @@
 ---
 title: 主题配置
-icon: neo-zhuti1
+icon: fa-solid fa-file
 order: 1
 iconSpin: true
 comment: false

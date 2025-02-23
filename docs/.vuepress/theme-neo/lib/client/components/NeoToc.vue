@@ -83,8 +83,8 @@ export default defineComponent({
                 ? h("div", { class: "toc-place-holder" }, [
                     h("aside", { id: "toc" }, [
                         h("div", { class: "toc-header", onClick: () => handleToggle() }, [
-                            h(resolveComponent("NeoIcon"), { icon: hasToggle.value ? "neo-tianjia" : "neo-jian" }),
-                            h("span", {}, "本页目录"),
+                            h(resolveComponent("VPIcon"), { icon: hasToggle.value ? "fa-solid fa-plus" : "fa-solid fa-minus" }),
+                            h("span", { class: ["neo-pl-4" ]}, "本页目录"),
                         ]),
                         h("div", { class: ["toc-wrapper", { 'hidden': hasToggle.value }], ref: toc }, [tocHeaders]),
                     ]),

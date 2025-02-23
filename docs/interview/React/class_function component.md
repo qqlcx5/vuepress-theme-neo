@@ -1,14 +1,14 @@
 ---
 title: 面试官：说说对React中类组件和函数组件的理解？有什么区别？
 date: 2022-07-04 10:46:56
-categories: 
+categories:
   - interview
   - React
-tags: 
-  - 
-columns: 
-  - 
-icon: neo-html5
+tags:
+  -
+columns:
+  -
+icon: fa-solid fa-file
 order: 4
 ---
 # 面试官：说说对React中类组件和函数组件的理解？有什么区别？
@@ -143,25 +143,25 @@ const FunctionalComponent = () => {
 如果是一个函数组件，调用则是执行函数即可：
 
 ```jsx
-// 你的代码 
-function SayHi() { 
-    return <p>Hello, React</p > 
-} 
-// React内部 
+// 你的代码
+function SayHi() {
+    return <p>Hello, React</p >
+}
+// React内部
 const result = SayHi(props) // » <p>Hello, React</p >
 ```
 
 如果是一个类组件，则需要将组件进行实例化，然后调用实例对象的`render`方法：
 
 ```jsx
-// 你的代码 
-class SayHi extends React.Component { 
-    render() { 
-        return <p>Hello, React</p > 
-    } 
-} 
-// React内部 
-const instance = new SayHi(props) // » SayHi {} 
+// 你的代码
+class SayHi extends React.Component {
+    render() {
+        return <p>Hello, React</p >
+    }
+}
+// React内部
+const instance = new SayHi(props) // » SayHi {}
 const result = instance.render() // » <p>Hello, React</p >
 ```
 

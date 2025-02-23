@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
   <li>
     <AutoLink v-if="item.link" :class="itemClass" :item="item">
         <template #before>
-            <NeoIcon v-bind="item" />
+            <VPIcon v-bind="item" />
         </template>
     </AutoLink>
     <p
@@ -70,9 +70,9 @@ onBeforeUnmount(() => {
       @click="onClick"
       @keydown.enter="onClick"
     >
-      <NeoIcon v-bind="item" />
+      <VPIcon v-bind="item" />
       {{ item.text }}
-      <NeoIcon v-if="item.collapsible" icon="neo-youjiantou" size="18" :rotate="isOpen ? '90' : 0" />
+      <VPIcon v-if="item.collapsible" icon="neo-youjiantou" size="18" :rotate="isOpen ? '90' : 0" />
     </p>
 
     <DropdownTransition v-if="item.children?.length">

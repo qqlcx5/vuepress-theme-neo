@@ -3,7 +3,7 @@
         <div class="blog-type">
             <button v-for="[key, icon] of buttons" :key="key" class="blog-type-button" @click="handleClasses(key)">
                 <div class="icon-wapper" :class="{ active: buttonsType === key }" :aria-label="locale[key]">
-                    <NeoIcon :icon="icon" size="20" />
+                    <VPIcon :icon="icon" size="16" />
                 </div>
             </button>
         </div>
@@ -27,9 +27,9 @@ export default {
     setup(props) {
         const buttons = new Map([
             // ["article", 'neo-wenzhang'],
-            ['category', 'neo-sort1'],
-            ['tag', 'neo-localoffer'],
-            ['cloumn', 'neo-zhuantifuwu']
+            ['category', 'fa-solid fa-folder-tree'],
+            ['tag', 'fa-solid fa-tags'],
+            ['cloumn', 'fa-solid fa-columns']
         ])
 
         const themeLocale = useThemeLocaleData()
@@ -128,6 +128,9 @@ export default {
             height: 20px;
             padding: 8px;
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--vp-c-text-lighter);
             background: rgb(127 127 127 / 15%);
             &:hover {

@@ -21,18 +21,18 @@ export const sidebarOptions = {
 // '/utils/': [
 //     {
 //         text: 'Array',
-//         icon: neo-riqi,
+//         icon: fa-solid fa-file,
 //         iconSize: 18,
 //         collapsible: true,
 //         children: [
 //             {
-//                 icon: neo-riqi,
+//                 icon: fa-solid fa-file,
 //                 iconSize: 18,
 //                 text: 'chunk 拆分数组',
 //                 link: '/utils/Array/chunk转换二维数组.md',
 //             },
 //             {
-//                 icon: 'neo-riqi',
+//                 icon: 'fa-solid fa-file',
 //                 text: 'clone 拷贝数组',
 //                 link: '/utils/Array/clone克隆数组.md',
 //             },

@@ -3,7 +3,7 @@ title: 指南meibi
 comment: false
 article: false
 collapsible: false
-icon: neo-meibi
+icon: fa-solid fa-file
 iconSpin: true
 catalogue: true
 ---

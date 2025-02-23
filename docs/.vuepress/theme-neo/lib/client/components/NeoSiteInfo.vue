@@ -1,57 +1,58 @@
 <template>
     <div class="site-info dark-shadow">
         <div class="site-info__title">
-            <NeoIcon icon="neo-pc" class="neo-mr-4" />
+            <VPIcon icon="fa-solid fa-desktop" class="neo-mr-4" />
             本站信息
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <NeoIcon icon="neo-wenbenwenjian" class="neo-mr-4" />
+                <VPIcon icon="fa-solid fa-file-lines" class="neo-mr-4" />
                 文章数目：
             </div>
             <div class="site-info__item-value">{{ mdFileCount }} 篇</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <NeoIcon icon="neo-yun" class="neo-mr-4" />
+                <VPIcon icon="fa-solid fa-cloud" class="neo-mr-4" />
                 已运行时间：
             </div>
             <div class="site-info__item-value">{{ createToNowDay != 0 ? createToNowDay + ' 天' : '不到一天' }}</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <NeoIcon icon="neo-wenku" class="neo-mr-4" />
+                <VPIcon icon="fa-solid fa-book-tanakh" class="neo-mr-4" />
                 本站总字数：
             </div>
             <div class="site-info__item-value">{{ totalWords }} 字</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <NeoIcon icon="neo-shijian" class="neo-mr-4" />
+                <VPIcon icon="fa-solid fa-hexagon-nodes" class="neo-mr-4" />
                 最后活动时间：
             </div>
             <div class="site-info__item-value">{{ lastActiveDate == '刚刚' ? '刚刚' : lastActiveDate + '前' }}</div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <NeoIcon icon="neo-yonghuliang" class="neo-mr-4" />
+                <VPIcon icon="fa-solid fa-eye" class="neo-mr-4" />
                 本站被访问了：
             </div>
             <div class="site-info__item-value">
                 <span id="busuanzi_value_site_pv">
-                    <NeoIcon icon="neo-loading" class="neo-mr-4" spin />
+
+                    <VPIcon icon="fa-solid fa-spinner fa-spin" class="neo-mr-4" />
                 </span>
                 次
             </div>
         </div>
         <div class="site-info__item">
             <div class="site-info__item-label">
-                <NeoIcon icon="neo-yuyan" class="neo-mr-4" />
+                <VPIcon icon="fa-solid fa-globe" class="neo-mr-4" />
                 您的访问排名：
             </div>
             <div class="site-info__item-value">
                 <span id="busuanzi_value_site_uv">
-                    <NeoIcon icon="neo-loading" spin class="neo-mr-4" />
+                    <VPIcon icon="fa-solid fa-spinner fa-spin fa-spin-reverse" class="neo-mr-4" />
                 </span>
                 名
             </div>

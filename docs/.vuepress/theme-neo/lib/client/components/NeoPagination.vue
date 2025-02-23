@@ -1,7 +1,7 @@
 <template>
     <div class="pagination">
         <span class="dark-shadow prev" :class="{ disabled: currentPage === 1 }" @click="goPrex()">
-            <NeoIcon icon="neo-zuojiantou" size="20" />
+            <VPIcon icon="fa-solid fa-angle-left" size="16" />
             <p>上一页</p>
         </span>
 
@@ -44,7 +44,7 @@
 
         <span class="dark-shadow next" :class="{ disabled: currentPage === pages }" @click="goNext()">
             <p>下一页</p>
-            <NeoIcon icon="neo-youjiantou" size="20" />
+            <VPIcon icon="fa-solid fa-angle-right" size="16" />
         </span>
     </div>
 </template>

@@ -3,15 +3,15 @@ title: 部署项目
 date: 2023-01-18 17:02:32
 order: 5
 toc: false
-icon: neo-deploy
-categories: 
+icon: fa-solid fa-file
+categories:
   - 快速上手
-tag: 
+tag:
   - 部署项目
-tags: 
-  - 
-columns: 
-  - 
+tags:
+  -
+columns:
+  -
 ---
 
 本教程指引你如何部署 VuePress 项目。

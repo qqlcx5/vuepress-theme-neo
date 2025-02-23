@@ -21,13 +21,13 @@
                     </p>
                 </div>
                 <button class="hero-img-prev hide-on-mobile" @click="switchImage(-1)">
-                    <NeoIcon icon="neo-zuojiantou" size="26" />
+                    <VPIcon icon="fa-solid fa-chevron-left" size="26" />
                 </button>
                 <button class="hero-img-next hide-on-mobile" @click="switchImage(1)">
-                    <NeoIcon icon="neo-youjiantou" size="26" />
+                    <VPIcon icon="fa-solid fa-chevron-right" size="26" />
                 </button>
                 <span class="hero-arrow-down hide-on-mobile" @click="scrollToPost()">
-                    <NeoIcon icon="neo-xiangxiajiantou" size="60" color="rgba(255,255,255,0.8)" />
+                    <VPIcon icon="fa-solid fa-chevron-down" size="40" color="rgba(255,255,255,0.8)"></VPIcon>
                 </span>
             </div>
         </div>
@@ -285,7 +285,7 @@ const homeHeaderInfo = themeLocale.value.homeHeaderInfo;
                 top: 50%;
                 margin-top: -30px;
                 width: auto;
-                padding: 15px 4px;
+                padding: 15px 8px;
                 color: rgba(255, 255, 255, 0.6);
                 background-color: rgba(0, 0, 0, 0.3);
                 border: none;

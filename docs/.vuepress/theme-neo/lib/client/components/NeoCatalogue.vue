@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
-// @ts-ignore
+import { reactive, defineProps } from 'vue';
 import NeoCatalogue from '@theme/NeoCatalogue.vue';
 defineProps({
     list: {
@@ -38,17 +37,17 @@ const scrollTag = (index: number) => {
             <li v-for="(item, index) in list" :key="item" class="neo-ptb-4">
                 <template v-if="item.children?.length">
                     <div :id="`catalogue-title-${index}`" class="neo-pb-4 cursor-pointer" @click.stop="toggleClick(index)">
-                        <NeoIcon :icon="item.icon || 'neo-wenjianlan'" class="neo-mr-8" />
+                        <VPIcon :icon="item.icon || 'fa-solid fa-folder'" class="neo-mr-8" />
                         <span class="catalogue-title">{{ item.text }}目录</span>
-                        <NeoIcon :icon="toggleObj[index] ? 'neo-circle-plus' : 'neo-circle-minus'" color="#999" size="16" />
-                    </div>
+                        <VPIcon :icon="toggleObj[index] ? 'fa-solid fa-circle-down' : 'fa-solid fa-circle-up'" color="#999" />
+                     </div>
                     <Transition name="fade-slide-y" mode="out-in">
                         <NeoCatalogue v-show="!toggleObj[index]" :list="item.children" />
                     </Transition>
                 </template>
 
                 <RouterLink v-else :to="item.link" :title="item.text">
-                    <NeoIcon :icon="item.icon || 'neo-md'" class="neo-mr-4" />
+                    <VPIcon :icon="item.icon || 'fa-solid fa-file'" class="neo-mr-4" />
                     {{ index + 1 }}.{{ item.fullTitle || item.text }}
                 </RouterLink>
             </li>

@@ -50,10 +50,10 @@ export default {
             opacity: 0.5
         },
         {
-            path: 'https://temporaryx.oss-cn-hongkong.aliyuncs.com/1703153606209.png',
-            mask: 'rgba(65, 60, 55, 0.5)',
+            path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/3.jpg',
+            mask: 'rgba(65, 60, 55, .2)',
             opacity: 0.8
-        }
+        },
     ],
     contentTitleImage: [
         {
@@ -73,10 +73,6 @@ export default {
     },
     // 首页首屏的背景图
     homeHeaderImages: [
-        {
-            path: 'https://temporaryx.oss-cn-hongkong.aliyuncs.com/1703153606209.png',
-            mask: 'rgba(65, 60, 55, .2)'
-        },
         {
             path: 'https://feyoudao.oss-cn-hongkong.aliyuncs.com/frentend/ghostblade/3.jpg',
             mask: 'rgba(65, 60, 55, .2)'

@@ -1,6 +1,6 @@
 ---
 title: 工具函数目录
-icon: neo-html
+icon: fa-brands fa-square-js
 catalogue: true
 comment: false
 ---

@@ -1,15 +1,15 @@
 ---
 title: 说说对React Hooks的理解？
 date: 2022-07-04 10:46:56
-categories: 
+categories:
   - interview
   - React
-tags: 
-  - 
-columns: 
-  - 
+tags:
+  -
+columns:
+  -
 order: 0
-icon: neo-github
+icon: fa-solid fa-file
 ---
 # 面试官：说说对React Hooks的理解？解决了什么问题？
 
@@ -146,7 +146,7 @@ class Example extends React.Component {
 import React, { useState, useEffect } from 'react';
 function Example() {
   const [count, setCount] = useState(0);
- 
+
   useEffect(() => {    document.title = `You clicked ${count} times`;  });
   return (
     <div>

@@ -1,6 +1,6 @@
 ---
 title: Frontmatter 目录配置
-icon: neo-meibi
+icon: fa-solid fa-file
 order: 1
 comment: false
 article: false

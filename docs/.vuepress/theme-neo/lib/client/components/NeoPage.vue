@@ -46,39 +46,6 @@ defineSlots<{
 </template>
 
 <style lang="scss">
-@use '../styles/mixins';
-@use '../styles/variables' as *;
-
-.vp-page {
-  display: block;
-
-  // leave space for navbar
-  padding-top: var(--navbar-height);
-  padding-bottom: 2rem;
-
-  // leave space for sidebar
-  padding-left: var(--sidebar-width);
-
-  // narrow desktop / iPad
-  @media (max-width: $MQNarrow) {
-    // leave space for sidebar
-    padding-left: var(--sidebar-width-mobile);
-  }
-
-  // wide mobile
-  @media (max-width: $MQMobile) {
-    // sidebar is collapsed
-    padding-left: 0;
-  }
-
-  [vp-content] {
-    @include mixins.content-wrapper;
-
-    & {
-      padding-top: 0;
-    }
-  }
-}
 // 有侧边栏的情况下，大于1200px在页面右侧添加toc容器
 // 根目录下侧边栏的情况下，在页面右侧添加toc容器
 .theme-neo-container:not(.no-sidebar).has-toc .vp-page {

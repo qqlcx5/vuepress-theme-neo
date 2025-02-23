@@ -29,6 +29,9 @@ importers:
       '@vuepress/plugin-google-analytics':
         specifier: ^1.9.10
         version: 1.9.10
+      '@vuepress/plugin-icon':
+        specifier: 2.0.0-rc.78
+        version: 2.0.0-rc.78(markdown-it@14.1.0)(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))
       '@vuepress/plugin-links-check':
         specifier: 2.0.0-rc.78
         version: 2.0.0-rc.78(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))
@@ -555,6 +558,14 @@ packages:
       markdown-it:
         optional: true
 
+  '@mdit/plugin-icon@0.16.5':
+    resolution: {integrity: sha512-9T34gnNrjCMdqNLnC1oi+kZT1iCnwlHAtH3D7sjVkcP8Cw4GoDoAGy50oyryivDlczrKubOFtF05lYAfXZauuA==}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
   '@mdit/plugin-tab@0.16.0':
     resolution: {integrity: sha512-c+/oT319DIWaMHyx5chueW8cy4pjC7E09QOg3qp86abTCdG2ljGLOlMAQbst5i/iH684QG/i8EJpB4oUeQdhkw==}
     peerDependencies:
@@ -993,6 +1004,11 @@ packages:
 
   '@vuepress/plugin-google-analytics@1.9.10':
     resolution: {integrity: sha512-AyQ3IFbYIHhuTQCUBMez6qpgvqOYT05cVoxuezuCpmBQBp+xSDjTXB+C9YjP+5w3thY5x1K+13QPJfFWW8S0mA==}
+
+  '@vuepress/plugin-icon@2.0.0-rc.78':
+    resolution: {integrity: sha512-L78n6XXthjue/w9Kc1Qkg09ybsSnoLkEUth8yRDRjbjPs3lKB64RVAl7e3gW4PM0uc4LeFZkSYsOdAgppxfutg==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.19
 
   '@vuepress/plugin-links-check@2.0.0-rc.78':
     resolution: {integrity: sha512-df5yANaCrXhAxMTQmvw5ee3D8d+Ja+4EBHMSWWYDCz8WYknBe7OAuuAXw2VoHf/Wxc4LpHo6fNM5PH3XYt2iGw==}
@@ -2451,6 +2467,13 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
+  '@mdit/plugin-icon@0.16.5(markdown-it@14.1.0)':
+    dependencies:
+      '@mdit/helper': 0.16.0(markdown-it@14.1.0)
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.1.0
+
   '@mdit/plugin-tab@0.16.0(markdown-it@14.1.0)':
     dependencies:
       '@mdit/helper': 0.16.0(markdown-it@14.1.0)
@@ -2976,6 +2999,17 @@ snapshots:
       '@vuepress/types': 1.9.10
     transitivePeerDependencies:
       - debug
+
+  '@vuepress/plugin-icon@2.0.0-rc.78(markdown-it@14.1.0)(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))':
+    dependencies:
+      '@mdit/plugin-icon': 0.16.5(markdown-it@14.1.0)
+      '@vuepress/helper': 2.0.0-rc.78(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))
+      '@vueuse/core': 12.7.0
+      vue: 3.5.13
+      vuepress: 2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13)
+    transitivePeerDependencies:
+      - markdown-it
+      - typescript
 
   '@vuepress/plugin-links-check@2.0.0-rc.78(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.13.4)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13))':
     dependencies:

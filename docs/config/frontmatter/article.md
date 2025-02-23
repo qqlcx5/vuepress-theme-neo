@@ -1,6 +1,6 @@
 ---
 title: Frontmatter 文章配置
-icon: neo-meibi
+icon: fa-solid fa-file
 order: 2
 comment: false
 article: false
