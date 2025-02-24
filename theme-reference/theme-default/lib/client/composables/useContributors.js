@@ -1,10 +1,7 @@
-import { useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { computed } from 'vue';
-import { usePageData, usePageFrontmatter } from 'vuepress/client';
 export const useContributors = () => {
-    const themeLocale = useThemeLocaleData();
-    const page = usePageData();
-    const frontmatter = usePageFrontmatter();
+    const { themeLocale, page, frontmatter } = useData();
     return computed(() => {
         const showContributors = frontmatter.value.contributors ?? themeLocale.value.contributors ?? true;
         if (!showContributors)

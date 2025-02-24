@@ -1,12 +1,12 @@
 import { resolveRepoType } from '@theme/resolveRepoType';
-import { useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { computed } from 'vue';
 import { isLinkHttp } from 'vuepress/shared';
 /**
  * Get navbar config of repository link
  */
 export const useNavbarRepo = () => {
-    const themeLocale = useThemeLocaleData();
+    const { themeLocale } = useData();
     const repo = computed(() => themeLocale.value.repo);
     const repoType = computed(() => repo.value ? resolveRepoType(repo.value) : null);
     const repoLink = computed(() => {

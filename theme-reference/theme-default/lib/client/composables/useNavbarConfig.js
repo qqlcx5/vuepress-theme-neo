@@ -1,6 +1,6 @@
 import { resolveAutoLink } from '@theme/resolveAutoLink';
 import { resolvePrefix } from '@theme/resolvePrefix';
-import { useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { isLinkRelative } from '@vuepress/helper/client';
 import { computed } from 'vue';
 import { isString } from 'vuepress/shared';
@@ -22,7 +22,7 @@ const resolveNavbarItem = (item, prefix = '') => {
     };
 };
 export const useNavbarConfig = () => {
-    const themeLocale = useThemeLocaleData();
+    const { themeLocale } = useData();
     return computed(() => 
     // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     (themeLocale.value.navbar || []).map((item) => resolveNavbarItem(item)));

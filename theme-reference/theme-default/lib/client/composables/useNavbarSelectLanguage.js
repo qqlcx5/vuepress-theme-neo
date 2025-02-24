@@ -1,18 +1,14 @@
-import { useThemeData, useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { useRoutePaths } from '@vuepress/helper/client';
 import { computed } from 'vue';
-import { useRoute, useRouteLocale, useSiteData, useSiteLocaleData, } from 'vuepress/client';
+import { useRoute } from 'vuepress/client';
 /**
  * Get navbar config of select language dropdown
  */
 export const useNavbarSelectLanguage = () => {
     const route = useRoute();
     const routePaths = useRoutePaths();
-    const routeLocale = useRouteLocale();
-    const site = useSiteData();
-    const siteLocale = useSiteLocaleData();
-    const theme = useThemeData();
-    const themeLocale = useThemeLocaleData();
+    const { routeLocale, site, siteLocale, theme, themeLocale } = useData();
     return computed(() => {
         const localePaths = Object.keys(site.value.locales);
         // do not display language selection dropdown if there is only one language

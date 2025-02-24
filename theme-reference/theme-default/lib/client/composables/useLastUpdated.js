@@ -1,10 +1,7 @@
-import { useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { computed } from 'vue';
-import { usePageData, usePageFrontmatter } from 'vuepress/client';
 export const useLastUpdated = () => {
-    const themeLocale = useThemeLocaleData();
-    const page = usePageData();
-    const frontmatter = usePageFrontmatter();
+    const { frontmatter, page, themeLocale } = useData();
     return computed(() => {
         const showLastUpdated = frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true;
         if (!showLastUpdated)

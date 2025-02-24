@@ -1,11 +1,8 @@
 import { resolveEditLink } from '@theme/resolveEditLink';
-import { useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { computed } from 'vue';
-import { usePageData, usePageFrontmatter } from 'vuepress/client';
 export const useEditLink = () => {
-    const themeLocale = useThemeLocaleData();
-    const page = usePageData();
-    const frontmatter = usePageFrontmatter();
+    const { frontmatter, page, themeLocale } = useData();
     return computed(() => {
         const showEditLink = frontmatter.value.editLink ?? themeLocale.value.editLink ?? true;
         if (!showEditLink) {

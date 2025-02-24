@@ -1,8 +1,8 @@
 import { resolveAutoLink } from '@theme/resolveAutoLink';
+import { useData } from '@theme/useData';
 import { useSidebarItems } from '@theme/useSidebarItems';
-import { useThemeLocaleData } from '@theme/useThemeData';
 import { computed } from 'vue';
-import { resolveRoute, usePageFrontmatter, useRoute } from 'vuepress/client';
+import { resolveRoute, useRoute } from 'vuepress/client';
 import { isPlainObject, isString } from 'vuepress/shared';
 const resolveFromFrontmatterConfig = (config, currentPath) => {
     if (config === false) {
@@ -62,8 +62,7 @@ const resolveFromSidebarItems = (sidebarItems, currentPath, offset) => {
     return null;
 };
 export const useRelatedLinks = () => {
-    const frontmatter = usePageFrontmatter();
-    const themeLocale = useThemeLocaleData();
+    const { frontmatter, themeLocale } = useData();
     const sidebarItems = useSidebarItems();
     const route = useRoute();
     const prevLink = computed(() => {

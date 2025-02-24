@@ -1,9 +1,9 @@
 import { resolveAutoLink } from '@theme/resolveAutoLink';
 import { resolvePrefix } from '@theme/resolvePrefix';
-import { useThemeLocaleData } from '@theme/useThemeData';
+import { useData } from '@theme/useData';
 import { isLinkRelative, keys, startsWith } from '@vuepress/helper/client';
 import { computed, inject, provide } from 'vue';
-import { usePageData, usePageFrontmatter, useRoute, useRouteLocale, } from 'vuepress/client';
+import { useRoute } from 'vuepress/client';
 import { isPlainObject, isString } from 'vuepress/shared';
 /**
  * Util to transform page header to sidebar item
@@ -114,11 +114,8 @@ export const resolveSidebarItems = (sidebarConfig, page, path, routeLocale, head
  * Create sidebar items ref and provide as global computed in setup
  */
 export const setupSidebarItems = () => {
-    const themeLocale = useThemeLocaleData();
-    const frontmatter = usePageFrontmatter();
-    const page = usePageData();
+    const { frontmatter, page, routeLocale, themeLocale } = useData();
     const route = useRoute();
-    const routeLocale = useRouteLocale();
     const sidebarConfig = computed(() => frontmatter.value.home
         ? false
         : (frontmatter.value.sidebar ??
