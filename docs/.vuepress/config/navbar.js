@@ -53,12 +53,6 @@ export default [
         activeMatch: '^/prompt/'
     },
     {
-        text: '得到听书',
-        icon: 'neo-riqi',
-        link: '/dedaoBook/',
-        activeMatch: '^/dedaoBook/'
-    },
-    {
         text: '索引',
         icon: 'neo-shaixuan',
         children: [
