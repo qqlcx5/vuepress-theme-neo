@@ -9,23 +9,23 @@
     "docs:build": "vuepress build docs --clean-cache"
   },
   "devDependencies": {
-    "@vuepress/helper": "2.0.0-rc.78",
-    "@vuepress/plugin-active-header-links": "2.0.0-rc.77",
-    "@vuepress/plugin-back-to-top": "2.0.0-rc.78",
-    "@vuepress/plugin-copy-code": "2.0.0-rc.78",
-    "@vuepress/plugin-git": "2.0.0-rc.68",
+    "@vuepress/helper": "2.0.0-rc.79",
+    "@vuepress/plugin-active-header-links": "2.0.0-rc.79",
+    "@vuepress/plugin-back-to-top": "2.0.0-rc.79",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.79",
+    "@vuepress/plugin-git": "2.0.0-rc.79",
     "@vuepress/plugin-google-analytics": "^1.9.10",
     "@vuepress/plugin-icon": "2.0.0-rc.78",
-    "@vuepress/plugin-links-check": "2.0.0-rc.78",
-    "@vuepress/plugin-markdown-hint": "2.0.0-rc.78",
-    "@vuepress/plugin-markdown-tab": "2.0.0-rc.78",
-    "@vuepress/plugin-medium-zoom": "2.0.0-rc.78",
-    "@vuepress/plugin-nprogress": "2.0.0-rc.78",
-    "@vuepress/plugin-palette": "2.0.0-rc.78",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.78",
-    "@vuepress/plugin-seo": "2.0.0-rc.78",
-    "@vuepress/plugin-sitemap": "2.0.0-rc.78",
-    "@vuepress/plugin-theme-data": "2.0.0-rc.77",
+    "@vuepress/plugin-links-check": "2.0.0-rc.79",
+    "@vuepress/plugin-markdown-hint": "2.0.0-rc.79",
+    "@vuepress/plugin-markdown-tab": "2.0.0-rc.79",
+    "@vuepress/plugin-medium-zoom": "2.0.0-rc.79",
+    "@vuepress/plugin-nprogress": "2.0.0-rc.79",
+    "@vuepress/plugin-palette": "2.0.0-rc.79",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.79",
+    "@vuepress/plugin-seo": "2.0.0-rc.79",
+    "@vuepress/plugin-sitemap": "2.0.0-rc.79",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.79",
     "@vueuse/core": "^12.7.0",
     "chalk": "^5.3.0",
     "gray-matter": "^4.0.3",
@@ -34,8 +34,24 @@
     "sass-embedded": "^1.80.3",
     "sass-loader": "^16.0.2",
     "twikoo": "^1.6.26",
-    "vue": "^3.5.13",
+    "vue": "^3.5.13"
+  },
+  "peerDependencies": {
+    "sass": "^1.85.0",
+    "sass-embedded": "^1.85.0",
+    "sass-loader": "^16.0.5",
     "vuepress": "2.0.0-rc.20"
+  },
+  "peerDependenciesMeta": {
+    "sass": {
+      "optional": true
+    },
+    "sass-embedded": {
+      "optional": true
+    },
+    "sass-loader": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=18.16.0",
