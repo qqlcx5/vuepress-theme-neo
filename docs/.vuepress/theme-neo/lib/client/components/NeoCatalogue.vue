@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, defineProps } from 'vue';
+import { reactive } from 'vue';
 import NeoCatalogue from '@theme/NeoCatalogue.vue';
 defineProps({
     list: {

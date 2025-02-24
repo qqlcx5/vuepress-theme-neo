@@ -1,7 +1,6 @@
 <script>
-import { usePageData } from "vuepress/client";
 import { defineComponent, h, onMounted, watch, ref, resolveComponent } from "vue";
-import { RouterLink, useRoute } from 'vuepress/client';
+import { RouteLink, useRoute, usePageData } from 'vuepress/client';
 
 export default defineComponent({
     name: "TOC",
@@ -23,7 +22,7 @@ export default defineComponent({
         const scrollTo = (top) => {
             toc.value?.scrollTo({ top, behavior: "smooth" });
         };
-        const renderHeader = ({ title, level, slug }) => h(RouterLink, {
+        const renderHeader = ({ title, level, slug }) => h(RouteLink, {
             to: `#${slug}`,
             class: ["toc-link", `level${level}`],
         }, () => title);
