@@ -81,7 +81,7 @@ export default defineComponent({
                     : null;
             return tocHeaders
                 ? h("div", { class: "toc-place-holder" }, [
-                    h("aside", { id: "toc" }, [
+                    h("aside", { id: "toc", "neo-toc": "" }, [
                         h("div", { class: "toc-header", onClick: () => handleToggle() }, [
                             h(resolveComponent("VPIcon"), { icon: hasToggle.value ? "fa-solid fa-plus" : "fa-solid fa-minus" }),
                             h("span", { class: ["neo-pl-4" ]}, "本页目录"),
